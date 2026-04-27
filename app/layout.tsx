@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Capacitaciones IA — Aprende Inteligencia Artificial",
+  title: "Capacitaciones IA",
   description:
     "Plataforma educativa de cursos de Inteligencia Artificial para todos los niveles. Aprende desde cero, sin conocimientos previos.",
 };
