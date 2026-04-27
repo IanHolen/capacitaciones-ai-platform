@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/card";
 import { cursos, nivelConfig, type Curso } from "@/lib/cursos-data";
 import { createClient } from "@/lib/supabase/client";
+import { BadgesDisplay } from "@/components/badges-display";
 
 interface CourseProgress {
   courseId: string;
@@ -196,6 +197,11 @@ export default function DashboardPage() {
           </Card>
         </section>
       )}
+
+      {/* Badges */}
+      <section className="mb-8">
+        <BadgesDisplay />
+      </section>
 
       {/* Section 3: My Courses Grid */}
       <section aria-labelledby="courses-heading">

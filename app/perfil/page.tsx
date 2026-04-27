@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { cursos } from "@/lib/cursos-data";
 import { createClient } from "@/lib/supabase/client";
+import { BadgesDisplay } from "@/components/badges-display";
 
 interface UserProfile {
   email: string;
@@ -260,6 +261,11 @@ export default function PerfilPage() {
             </span>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Badges */}
+      <div className="mb-6">
+        <BadgesDisplay />
       </div>
 
       {/* Logout */}

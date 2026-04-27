@@ -14,6 +14,7 @@ import { LessonQuizSection } from "@/components/lesson-quiz-section";
 import { LessonCompleteButton } from "@/components/lesson-complete-button";
 import { PromptSandbox } from "@/components/prompt-sandbox";
 import { AiTutor } from "@/components/ai-tutor";
+import { LessonComments } from "@/components/lesson-comments";
 
 export function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -155,6 +156,11 @@ export default async function LeccionPage({
           />
         </div>
       )}
+
+      {/* Comments */}
+      <div className="mb-10">
+        <LessonComments lessonId={leccion.id} />
+      </div>
 
       {/* Navigation */}
       <div className="flex flex-col gap-4 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">
