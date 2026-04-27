@@ -122,7 +122,7 @@ export default async function LeccionPage({
         <div className="mb-10">
           {/* Text-to-Speech */}
           <div className="mb-4">
-            <TextToSpeech text={leccion.contenido} audioUrl={audioMap[leccion.id]} />
+            <TextToSpeech audioUrl={audioMap[leccion.id]} />
           </div>
 
           <h2 className="mb-4 text-2xl font-bold">Contenido</h2>
