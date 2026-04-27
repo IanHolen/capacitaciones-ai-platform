@@ -70,7 +70,7 @@ export default function RootLayout({
                   <BookOpen className="size-5" aria-hidden="true" />
                   Cursos
                 </NavLink>
-                <NavLink href="/dashboard">
+                <NavLink href="/cuenta">
                   <LayoutDashboard className="size-5" aria-hidden="true" />
                   Mi Progreso
                 </NavLink>
