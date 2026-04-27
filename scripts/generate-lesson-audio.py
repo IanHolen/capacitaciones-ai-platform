@@ -77,11 +77,23 @@ async def generate_audio(text: str, output_path: str, voice: str = VOICE_ES):
 
 
 async def main():
-    # Course files for Nivel 1 (Introducción)
+    # All course content files
     course_files = [
         ("curso1-content.ts", "c1"),
         ("curso2-content.ts", "c2"),
         ("curso3-content.ts", "c3"),
+        ("curso4-content.ts", "c4"),
+        ("curso5-content.ts", "c5"),
+        ("curso6-content.ts", "c6"),
+        ("curso7-content.ts", "c7"),
+        ("curso8-content.ts", "c8"),
+        ("curso9-content.ts", "c9"),
+        ("curso10-content.ts", "c10"),
+        ("curso11-content.ts", "c11"),
+        ("curso12-content.ts", "c12"),
+        ("curso13-content.ts", "c13"),
+        ("curso14-content.ts", "c14"),
+        ("curso15-content.ts", "c15"),
     ]
 
     os.makedirs(os.path.join(AUDIO_DIR, "es"), exist_ok=True)
