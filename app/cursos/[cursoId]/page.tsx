@@ -158,12 +158,6 @@ export default async function CursoDetallePage({
                       <Clock className="size-4" aria-hidden="true" />
                       {leccion.duracion}
                     </span>
-                    {leccion.tieneVideo && (
-                      <span className="flex items-center gap-1.5">
-                        <PlayCircle className="size-4" aria-hidden="true" />
-                        Video
-                      </span>
-                    )}
                     {leccion.tieneQuiz && (
                       <span className="flex items-center gap-1.5">
                         <HelpCircle className="size-4" aria-hidden="true" />

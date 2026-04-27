@@ -13,6 +13,7 @@ import { LessonQuizSection } from "@/components/lesson-quiz-section";
 import { PromptSandbox } from "@/components/prompt-sandbox";
 import { AiTutor } from "@/components/ai-tutor";
 import { LessonComments } from "@/components/lesson-comments";
+import { TextToSpeech } from "@/components/text-to-speech";
 
 export function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -115,6 +116,11 @@ export default async function LeccionPage({
       {/* Lesson Content — hide for quiz lessons with interactive quiz to avoid showing answer keys */}
       {!(leccion.tieneQuiz && leccion.quizQuestions) && (
         <div className="mb-10">
+          {/* Text-to-Speech */}
+          <div className="mb-4">
+            <TextToSpeech text={leccion.contenido} />
+          </div>
+
           <h2 className="mb-4 text-2xl font-bold">Contenido</h2>
           <div className="rounded-xl border bg-card p-6 text-lg leading-relaxed md:p-8">
             <MarkdownContent content={leccion.contenido} />
