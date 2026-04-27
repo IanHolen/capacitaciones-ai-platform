@@ -98,7 +98,7 @@ export async function POST() {
       const { data: badge } = await supabase
         .from("badges")
         .select("id")
-        .eq("slug", rule.id)
+        .eq("name", rule.name)
         .single();
 
       if (badge) {

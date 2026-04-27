@@ -39,10 +39,10 @@ export async function POST(request: Request) {
     .insert({
       user_id: user.id,
       lesson_id: lessonId,
-      content: content.trim(),
+      body: content.trim(),
       parent_id: parentId ?? null,
     })
-    .select("id, content, created_at, parent_id")
+    .select("id, body, created_at, parent_id")
     .single();
 
   if (error) {
