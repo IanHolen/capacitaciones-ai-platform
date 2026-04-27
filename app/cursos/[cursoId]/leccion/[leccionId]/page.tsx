@@ -10,7 +10,6 @@ import {
 import { getLeccion, nivelConfig, cursos } from "@/lib/cursos-data";
 import { MarkdownContent } from "@/components/markdown-content";
 import { LessonQuizSection } from "@/components/lesson-quiz-section";
-import { LessonCompleteButton } from "@/components/lesson-complete-button";
 import { PromptSandbox } from "@/components/prompt-sandbox";
 import { AiTutor } from "@/components/ai-tutor";
 import { LessonComments } from "@/components/lesson-comments";
@@ -128,21 +127,14 @@ export default async function LeccionPage({
         <PromptSandbox />
       </div>
 
-      {/* Quiz + Complete (quiz requires 80% to mark complete) */}
-      {leccion.tieneQuiz && leccion.quizQuestions ? (
+      {/* Quiz (if lesson has one) */}
+      {leccion.tieneQuiz && leccion.quizQuestions && (
         <LessonQuizSection
           questions={leccion.quizQuestions}
           courseId={curso.id}
           lessonId={leccion.id}
           accentColor={config.color}
         />
-      ) : (
-        <div className="mb-10 flex justify-center">
-          <LessonCompleteButton
-            lessonId={leccion.id}
-            accentColor={config.color}
-          />
-        </div>
       )}
 
       {/* Comments */}
@@ -159,7 +151,7 @@ export default async function LeccionPage({
               className="h-12 gap-2 px-6 text-base"
             >
               <ChevronLeft className="size-5" aria-hidden="true" />
-              Anterior: {prevLeccion.titulo}
+              Anterior
             </Button>
           </Link>
         ) : (
@@ -180,7 +172,7 @@ export default async function LeccionPage({
               className="h-12 gap-2 px-6 text-base font-semibold"
               style={{ backgroundColor: config.color }}
             >
-              Siguiente: {nextLeccion.titulo}
+              Siguiente
               <ChevronRight className="size-5" aria-hidden="true" />
             </Button>
           </Link>
