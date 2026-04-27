@@ -185,7 +185,7 @@ export const cursos: Curso[] = [
     ],
   },
   {
-    id: "primera-conversación-ia",
+    id: "primera-conversacion-ia",
     titulo: "Tu primera conversación con IA",
     descripcion:
       "Curso práctico donde vas a usar ChatGPT, Claude o Gemini por primera vez. Paso a paso, sin miedo.",
