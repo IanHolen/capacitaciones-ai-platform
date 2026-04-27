@@ -1,10 +1,13 @@
 {
   "nav": {
     "courses": "Courses",
+    "myAccount": "My Account",
     "myProgress": "My Progress",
     "logout": "Logout",
     "logoutLabel": "Log out",
-    "siteLanguage": "Site language"
+    "siteLanguage": "Site language",
+    "login": "Log in",
+    "whatIsThis": "What is this?"
   },
   "home": {
     "hero": "Learn Artificial Intelligence from scratch",
@@ -31,7 +34,13 @@
     "continueCourse": "Continue course",
     "yourProgress": "Your progress",
     "lessonsCompleted": "of {total} lessons completed",
-    "lessonsList": "Lessons"
+    "lessonsList": "Lessons",
+    "all": "All",
+    "searchPlaceholder": "Search courses or lessons...",
+    "clearSearch": "Clear search",
+    "filterByLevel": "Filter courses by level",
+    "noResults": "No courses found for \"{query}\".",
+    "noCoursesLevel": "No courses available for this level yet."
   },
   "lesson": {
     "lessonOf": "Lesson {current} of {total}",
@@ -98,6 +107,81 @@
     "continue": "Continue",
     "myCourses": "My Courses",
     "lessonsCompleted": "of {total} lessons"
+  },
+  "account": {
+    "title": "My Account",
+    "myGoal": "My goal",
+    "updateGoal": "Update my goal",
+    "goalWith": "My goal with AI",
+    "goalPlaceholder": "Example: I want to learn AI to grow my business, automate reports, or simply understand what my grandkids are talking about...",
+    "goalMotivation": "Write what you want to achieve by learning AI. Having a clear goal will help you stay motivated.",
+    "saveGoal": "Save goal",
+    "saved": "Saved",
+    "personalInfo": "Personal information",
+    "memberSince": "Member since",
+    "progressTab": "Progress",
+    "dataTab": "Personal data",
+    "overallProgress": "Overall progress",
+    "coursesCompleted": "courses completed",
+    "lessonsCount": "lessons",
+    "completedOf": "{completed} of {total} lessons completed",
+    "myCourses": "My courses",
+    "continueWhere": "Continue where you left off"
+  },
+  "sandbox": {
+    "title": "Prompt Sandbox",
+    "description": "Write a prompt and see how the AI responds in real time.",
+    "placeholder": "E.g.: Explain what artificial intelligence is as if I were 10 years old...",
+    "send": "Send prompt",
+    "generating": "Generating...",
+    "clear": "Clear and start over",
+    "connectionError": "Connection error. Please try again.",
+    "responseLabel": "AI Response"
+  },
+  "tutor": {
+    "openButton": "Questions? Ask the tutor",
+    "openButtonShort": "AI Tutor",
+    "title": "AI Tutor",
+    "close": "Close tutor",
+    "greeting": "Hi! I'm your AI tutor.",
+    "greetingSub": "Ask me anything about the lesson.",
+    "inputPlaceholder": "Type your question...",
+    "send": "Send message",
+    "connectionError": "Connection error. Please try again.",
+    "serverError": "Sorry, something went wrong. Can you try again?"
+  },
+  "comments": {
+    "title": "Comments",
+    "reply": "Reply",
+    "delete": "Delete comment",
+    "placeholder": "Write a comment...",
+    "send": "Post comment",
+    "loginRequired": "Log in to comment.",
+    "beFirst": "Be the first to comment.",
+    "replyingTo": "Replying to a comment",
+    "cancel": "Cancel"
+  },
+  "badges": {
+    "title": "My Badges",
+    "empty": "Complete lessons and quizzes to earn badges."
+  },
+  "tts": {
+    "title": "Listen to this lesson",
+    "subtitle": "Great for learning on the go",
+    "speed": "Speed"
+  },
+  "profile": {
+    "title": "My Profile",
+    "editName": "Click your name to edit it",
+    "saveName": "Save name",
+    "coursesCompleted": "Courses completed",
+    "lessonsCompleted": "Lessons completed",
+    "overallProgress": "Overall progress",
+    "logout": "Log out"
+  },
+  "certificate": {
+    "download": "Download certificate",
+    "generating": "Generating..."
   },
   "footer": {
     "rights": "© 2026 Capacitaciones IA. All rights reserved."

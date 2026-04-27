@@ -1,10 +1,13 @@
 {
   "nav": {
     "courses": "Cursos",
+    "myAccount": "Mi Cuenta",
     "myProgress": "Mi Progreso",
     "logout": "Salir",
     "logoutLabel": "Cerrar sesión",
-    "siteLanguage": "Idioma del sitio"
+    "siteLanguage": "Idioma del sitio",
+    "login": "Iniciar sesión",
+    "whatIsThis": "¿Qué es esto?"
   },
   "home": {
     "hero": "Aprende Inteligencia Artificial desde cero",
@@ -31,7 +34,13 @@
     "continueCourse": "Continuar curso",
     "yourProgress": "Tu progreso",
     "lessonsCompleted": "de {total} lecciones completadas",
-    "lessonsList": "Lecciones"
+    "lessonsList": "Lecciones",
+    "all": "Todos",
+    "searchPlaceholder": "Buscar cursos o lecciones...",
+    "clearSearch": "Limpiar búsqueda",
+    "filterByLevel": "Filtrar cursos por nivel",
+    "noResults": "No se encontraron cursos para \"{query}\".",
+    "noCoursesLevel": "No hay cursos disponibles para este nivel todavía."
   },
   "lesson": {
     "lessonOf": "Lección {current} de {total}",
@@ -98,6 +107,81 @@
     "continue": "Continuar",
     "myCourses": "Mis Cursos",
     "lessonsCompleted": "de {total} lecciones"
+  },
+  "account": {
+    "title": "Mi cuenta",
+    "myGoal": "Mi meta",
+    "updateGoal": "Actualizar mi meta",
+    "goalWith": "Mi meta con la IA",
+    "goalPlaceholder": "Ejemplo: Quiero aprender a usar IA para hacer crecer mi negocio, automatizar reportes, o simplemente entender de qué hablan mis nietos...",
+    "goalMotivation": "Escribí qué querés lograr aprendiendo IA. Tener una meta clara te va a ayudar a mantener la motivación.",
+    "saveGoal": "Guardar meta",
+    "saved": "Guardado",
+    "personalInfo": "Información personal",
+    "memberSince": "Miembro desde",
+    "progressTab": "Progreso",
+    "dataTab": "Datos personales",
+    "overallProgress": "Progreso general",
+    "coursesCompleted": "cursos completados",
+    "lessonsCount": "lecciones",
+    "completedOf": "{completed} de {total} lecciones completadas",
+    "myCourses": "Mis cursos",
+    "continueWhere": "Continuá donde lo dejaste"
+  },
+  "sandbox": {
+    "title": "Sandbox de Prompts",
+    "description": "Escribe un prompt y prueba cómo responde la IA en tiempo real.",
+    "placeholder": "Ej: Explícame qué es la inteligencia artificial como si tuviera 10 años...",
+    "send": "Enviar prompt",
+    "generating": "Generando...",
+    "clear": "Limpiar y empezar de nuevo",
+    "connectionError": "Error de conexión. Intenta de nuevo.",
+    "responseLabel": "Respuesta de la IA"
+  },
+  "tutor": {
+    "openButton": "¿Dudas? Pregúntale al tutor",
+    "openButtonShort": "Tutor IA",
+    "title": "Tutor IA",
+    "close": "Cerrar tutor",
+    "greeting": "¡Hola! Soy tu tutor de IA.",
+    "greetingSub": "Pregúntame cualquier duda sobre la lección.",
+    "inputPlaceholder": "Escribe tu pregunta...",
+    "send": "Enviar mensaje",
+    "connectionError": "Error de conexión. Intenta de nuevo.",
+    "serverError": "Disculpa, hubo un error. ¿Podés intentar de nuevo?"
+  },
+  "comments": {
+    "title": "Comentarios",
+    "reply": "Responder",
+    "delete": "Eliminar comentario",
+    "placeholder": "Escribe un comentario...",
+    "send": "Enviar comentario",
+    "loginRequired": "Inicia sesión para comentar.",
+    "beFirst": "Sé el primero en comentar.",
+    "replyingTo": "Respondiendo a un comentario",
+    "cancel": "Cancelar"
+  },
+  "badges": {
+    "title": "Mis Badges",
+    "empty": "Completa lecciones y quizzes para ganar badges."
+  },
+  "tts": {
+    "title": "Escuchá esta lección en audio",
+    "subtitle": "Ideal para aprender mientras hacés otras cosas",
+    "speed": "Velocidad"
+  },
+  "profile": {
+    "title": "Mi Perfil",
+    "editName": "Click en tu nombre para editarlo",
+    "saveName": "Guardar nombre",
+    "coursesCompleted": "Cursos completados",
+    "lessonsCompleted": "Lecciones completadas",
+    "overallProgress": "Progreso general",
+    "logout": "Cerrar sesión"
+  },
+  "certificate": {
+    "download": "Descargar certificado",
+    "generating": "Generando..."
   },
   "footer": {
     "rights": "© 2026 Capacitaciones IA. Todos los derechos reservados."
