@@ -105,8 +105,22 @@ export interface Leccion {
   contenido: string;
   tieneVideo: boolean;
   tieneQuiz: boolean;
+  tieneSandbox?: boolean;
   quizQuestions?: QuizQuestion[];
 }
+
+// Sandbox audit: which lessons should show the prompt sandbox
+export const sandboxLessons = new Set([
+  "conv-ia-3", "conv-ia-4", "conv-ia-5", "conv-ia-6",
+  "sin-miedo-5",
+  "dcg-2", "dcg-3", "dcg-4", "dcg-6",
+  "pef-1", "pef-2", "pef-3", "pef-4", "pef-5", "pef-6",
+  "ivc-1", "ivc-2", "ivc-3", "ivc-4", "ivc-5", "ivc-6",
+  "pe-1", "pe-2", "pe-3", "pe-4", "pe-5", "pe-6", "pe-7",
+  "ft-1", "ft-4", "ft-5", "ft-6",
+  "ap-2", "ap-3", "ap-4", "ap-6",
+  "aut-4", "aut-5", "aut-6",
+]);
 
 export interface Curso {
   id: string;
