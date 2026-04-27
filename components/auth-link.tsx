@@ -23,7 +23,7 @@ export function AuthLink({
     });
   }, []);
 
-  const target = loggedIn === false ? loginRedirect : href;
+  const target = loggedIn === true ? href : loginRedirect;
 
   return (
     <Link href={target} {...props}>
