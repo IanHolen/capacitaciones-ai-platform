@@ -11,7 +11,7 @@ export const curso1Quiz: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "La IA es un programa que aprende de datos para realizar tareas que normalmente requeririan inteligencia humana.",
+      "La IA es un programa que aprende de datos para realizar tareas que normalmente requerirían inteligencia humana.",
   },
   {
     question:
@@ -138,7 +138,7 @@ export const curso2Quiz: QuizQuestion[] = [
   {
     question: 'Que es una "alucinación" de la IA?',
     options: [
-      "Cuando ve imagenes",
+      "Cuando ve imágenes",
       "Cuando inventa info que suena real pero es falsa",
       "Cuando deja de funcionar",
       "Cuando pide dinero",
@@ -209,7 +209,7 @@ export const curso2Quiz: QuizQuestion[] = [
     question: "Si la IA da respuesta que no te gusta, que hacer?",
     options: [
       "Rendirte",
-      "Pedir otra version o que la cambie",
+      "Pedir otra versión o que la cambie",
       "Crear otra cuenta",
       "No se puede cambiar",
     ],
@@ -321,7 +321,7 @@ export const curso3Quiz: QuizQuestion[] = [
     question:
       "Qué debes hacer si la IA te da un dato estadistico muy específico?",
     options: [
-      "Creerlo inmediatamente porque la IA siempre tiene razon",
+      "Creerlo inmediatamente porque la IA siempre tiene razón",
       "Compartirlo en redes sociales de inmediato",
       "Verificarlo buscando en otras fuentes confiables",
       "Ignorarlo porque la IA siempre se equivoca",
@@ -367,16 +367,16 @@ export const curso3Quiz: QuizQuestion[] = [
     explanation: "Borra la conversación y cambia tu contraseña inmediatamente.",
   },
   {
-    question: "El metodo recomendado para empezar a usar IA es:",
+    question: "El método recomendado para empezar a usar IA es:",
     options: [
       "Tomar un curso universitario de 6 meses",
       "Usar todas las herramientas de IA al mismo tiempo",
-      "1 herramienta, 10 minutos al dia, 1 semana de práctica",
+      "1 herramienta, 10 minutos al día, 1 semana de práctica",
       "Pedirle a otra persona que la use por ti",
     ],
     correctIndex: 2,
     explanation:
-      "El metodo 1-10-1 es simple y efectivo para principiantes.",
+      "El método 1-10-1 es simple y efectivo para principiantes.",
   },
   {
     question: "Cuál es la actitud más saludable frente a la inteligencia artificial?",

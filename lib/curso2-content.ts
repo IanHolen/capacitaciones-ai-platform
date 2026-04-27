@@ -5,20 +5,20 @@ export const c2leccion1 = `## Introducción
 
 Seguro ya escuchaste hablar de "inteligencia artificial" o "IA" en las noticias, en la familia o entre amigos. Tal vez suena complicado, pero hoy te voy a presentar tres asistentes virtuales que puedes usar desde tu computadora o celular, gratis, y sin saber nada de tecnología.
 
-Piensa en ellos como **asistentes personales que estan disponibles las 24 horas del dia**. Les puedes hacer preguntas, pedirles ayuda para escribir un correo, que te expliquen algo que no entiendes, o hasta que te sugieran una receta con lo que tienes en la nevera.
+Piensa en ellos como **asistentes personales que estan disponibles las 24 horas del día**. Les puedes hacer preguntas, pedirles ayuda para escribir un correo, que te expliquen algo que no entiendes, o hasta que te sugieran una receta con lo que tienes en la nevera.
 
 ## Los tres asistentes más populares
 
 ### ChatGPT
 - **Quién lo creo**: Una empresa llamada OpenAI, ubicada en Estados Unidos.
 - **Donde usarlo**: Entra a **chatgpt.com** desde cualquier navegador.
-- **Costo**: Tiene una version **gratuita** que funciona muy bien. También hay una version de pago con funciones extra, pero no la necesitas para empezar.
+- **Costo**: Tiene una versión **gratuita** que funciona muy bien. También hay una versión de pago con funciones extra, pero no la necesitas para empezar.
 - **Lo mejor**: Es el más conocido y tiene mucha información. Es como un asistente que sabe un poco de todo.
 
 ### Claude
 - **Quién lo creo**: Una empresa llamada Anthropic, también en Estados Unidos.
 - **Donde usarlo**: Entra a **claude.ai** desde cualquier navegador.
-- **Costo**: Tiene una version **gratuita**. También existe una version de pago.
+- **Costo**: Tiene una versión **gratuita**. También existe una versión de pago.
 - **Lo mejor**: Es muy bueno para explicar cosas de forma clara y tiene un estilo de comunicación muy amable. Ideal si quieres respuestas bien organizadas.
 
 ### Gemini
@@ -39,12 +39,12 @@ Piensa en ellos como **asistentes personales que estan disponibles las 24 horas 
 
 ## Cuál debo usar?
 
-**Cualquiera de los tres esta bien para empezar.** Es como elegir entre tres cafeterias buenas: cada una tiene su estilo, pero en las tres te van a atender bien. Recomendamos empezar con **ChatGPT** o **Gemini** (si ya tienes Gmail).
+**Cualquiera de los tres está bien para empezar.** Es como elegir entre tres cafeterias buenas: cada una tiene su estilo, pero en las tres te van a atender bien. Recomendamos empezar con **ChatGPT** o **Gemini** (si ya tienes Gmail).
 
 ## Lo que NO son estos asistentes
 
 - **No son personas.** Son programas de computadora muy avanzados.
-- **No siempre tienen la razon.** A veces se equivocan.
+- **No siempre tienen la razón.** A veces se equivocan.
 - **No guardan información privada de forma segura.** No les des tus contraseñas ni datos bancarios.
 - **No reemplazan a un doctor, abogado o profesional.**
 
@@ -158,7 +158,7 @@ Respuesta esperada: Lista con descripcion breve de cada película.
 
 export const c2leccion4 = `## Introducción
 
-**Los asistentes de IA no siempre tienen la razon.** A veces inventan información que suena real pero es falsa. Esto se llama "alucinación". Aprender a reconocer esto te convierte en un usuario inteligente.
+**Los asistentes de IA no siempre tienen la razón.** A veces inventan información que suena real pero es falsa. Esto se llama "alucinación". Aprender a reconocer esto te convierte en un usuario inteligente.
 
 ## Qué son las "alucinaciones"?
 
@@ -168,7 +168,7 @@ Imagina que le preguntas a alguien algo que no sabe, pero en vez de decirte "no 
 
 ### Ejemplos de alucinaciones comunes
 1. **Inventar datos**: Puede inventar una fecha que suene real.
-2. **Citar fuentes falsas**: "segun un estudio de Harvard..." cuando ese estudio no existe.
+2. **Citar fuentes falsas**: "según un estudio de Harvard..." cuando ese estudio no existe.
 3. **Mezclar información**: Mezclar datos de una persona con otra.
 
 ## Señales de alerta
@@ -186,16 +186,16 @@ Imagina que le preguntas a alguien algo que no sabe, pero en vez de decirte "no 
 
 ## Estrategias cuando la respuesta no convence
 
-1. **Pide que verifique**: "Estas seguro de eso? Podrias estar equivocado?"
+1. **Pide que verifique**: "Estas seguro de eso? Podrías estar equivocado?"
 2. **Pide que resuma**: "Resumelo en 3 puntos simples"
-3. **Pide otra version**: "Dame otra respuesta diferente, más corta"
+3. **Pide otra versión**: "Dame otra respuesta diferente, más corta"
 4. **Verifica por tu cuenta**: Para salud, dinero, legal — siempre consulta un profesional.
 
 ## Frases útiles para mejorar respuestas
 
 | Lo que quieres | Escribe esto |
 |----------------|-------------|
-| Más corto | "Resumelo en 3 lineas" |
+| Más corto | "Resumelo en 3 líneas" |
 | Más fácil | "Explicalo más simple, como para alguien de 70 años" |
 | Más detallado | "Dame más detalles sobre el punto 2" |
 | Con ejemplos | "Dame un ejemplo práctico de eso" |
@@ -247,11 +247,11 @@ export const c2leccion5 = `Cada ejemplo incluye texto exacto que puedes **copiar
 ## Cosa 5: Planear un viaje o paseo
 
 **Copia y pega:**
-> Voy a viajar a [ciudad] por 3 dias con mi esposa. Somos adultos mayores, nos gusta caminar pero no demasiado. Danos un plan dia por dia con restaurantes económicos y cosas para ver. Incluye consejos de transporte.
+> Voy a viajar a [ciudad] por 3 días con mi esposa. Somos adultos mayores, nos gusta caminar pero no demasiado. Danos un plan día por día con restaurantes económicos y cosas para ver. Incluye consejos de transporte.
 
 ## Bonus: El truco del "actua como..."
 
-> Actua como un nutricionista y dime que deberia desayunar si quiero cuidar mi colesterol.
+> Actua como un nutricionista y dime que debería desayunar si quiero cuidar mi colesterol.
 > Actua como un guia turistico y recomiendame los mejores museos de Ciudad de Mexico.
 > Actua como un profesor de ingles y ensename 5 frases útiles para pedir comida en un restaurante.
 
@@ -263,7 +263,7 @@ export const c2leccion5 = `Cada ejemplo incluye texto exacto que puedes **copiar
 - El truco "actua como..." da respuestas más especializadas.
 - Mientras más detalles le des, mejor la respuesta.`;
 
-export const c2leccion6 = `**Antes de empezar:** Abre tu asistente en otra pestana del navegador.
+export const c2leccion6 = `**Antes de empezar:** Abre tu asistente en otra pestaña del navegador.
 
 ## Ejercicio 1: Pedir una explicación
 
@@ -293,7 +293,7 @@ export const c2leccion6 = `**Antes de empezar:** Abre tu asistente en otra pesta
 
 **Paso 1:** Empieza una conversación nueva.
 **Paso 2:** Copia y pega:
-> Cuales son los beneficios de caminar 30 minutos al dia para una persona de 65 años? Dame los 5 beneficios más importantes en una lista simple.
+> Cuales son los beneficios de caminar 30 minutos al día para una persona de 65 años? Dame los 5 beneficios más importantes en una lista simple.
 
 **Paso 3:** Lee y evalua: coincide con lo que tu doctor te ha dicho?
 **Paso 4:** Escribe: "Que precauciones debo tomar al caminar si tengo problemas en las rodillas?"
@@ -310,7 +310,7 @@ Hiciste 3 conversaciones reales con IA:
 
 **Práctica:** Hazle 2-3 preguntas más hoy sobre cosas que te interesen.`;
 
-export const c2leccion7 = `10 preguntas de opción multiple. No es examen — es para que veas tu progreso.
+export const c2leccion7 = `10 preguntas de opción múltiple. No es examen — es para que veas tu progreso.
 
 ## P1: Cuál de estos NO es un asistente de IA?
 a) ChatGPT b) Claude c) Wikipedia d) Gemini
@@ -325,7 +325,7 @@ a) Descargar app b) Ir a gemini.google.com con tu cuenta Google c) Llamar a Goog
 **Respuesta: b)** — Entras con la misma cuenta de Gmail.
 
 ## P4: Qué es una "alucinación" de la IA?
-a) Cuando ve imagenes b) Cuando inventa info que suena real pero es falsa c) Cuando deja de funcionar d) Cuando pide dinero
+a) Cuando ve imágenes b) Cuando inventa info que suena real pero es falsa c) Cuando deja de funcionar d) Cuando pide dinero
 **Respuesta: b)** — La IA a veces genera info convincente pero falsa.
 
 ## P5: Si la respuesta es muy larga y confusa, que hacer?
@@ -349,7 +349,7 @@ a) Convertir IA en profesional real b) Obtener respuestas más enfocadas c) Func
 **Respuesta: b)** — Hace respuestas más enfocadas, pero no es un experto real.
 
 ## P10: Si la IA da respuesta que no te gusta, que hacer?
-a) Rendirte b) Pedir otra version o que la cambie c) Crear otra cuenta d) No se puede cambiar
+a) Rendirte b) Pedir otra versión o que la cambie c) Crear otra cuenta d) No se puede cambiar
 **Respuesta: b)** — Siempre puedes pedir cambios.
 
 ## Resultados

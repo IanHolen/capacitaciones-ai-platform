@@ -25,14 +25,14 @@ La IA es muy buena para tareas repetitivas:
 
 Pero la IA **no puede** hacer muchas cosas que las personas hacemos naturalmente:
 - Entender las emociones de un cliente enojado y calmarlo
-- Tomar decisiones eticas complicadas
+- Tomar decisiones éticas complicadas
 - Crear una relación de confianza con otra persona
 - Adaptarse a situaciones completamente nuevas e inesperadas
 - Usar el sentido comun que viene de la experiencia de vida
 
 ## La frase clave que hay que recordar
 
-> **"La IA no va a reemplazarte. Pero una persona que sepa usar IA si podria tener ventaja."**
+> **"La IA no va a reemplazarte. Pero una persona que sepa usar IA si podría tener ventaja."**
 
 No se trata de competir contra la IA — se trata de aprender a usarla como una herramienta más. Igual que aprendimos a usar el celular, el correo electrónico o las hojas de calculo.
 
@@ -46,12 +46,12 @@ No se trata de competir contra la IA — se trata de aprender a usarla como una 
 
 ## Lo que dice la evidencia
 
-Los estudios más recientes muestran que la mayoria de los trabajos no desaparecen por la tecnología — **se transforman**. Hace 20 años nadie era "community manager" o "analista de datos". Esos trabajos nacieron gracias a la tecnología.
+Los estudios más recientes muestran que la mayoría de los trabajos no desaparecen por la tecnología — **se transforman**. Hace 20 años nadie era "community manager" o "analista de datos". Esos trabajos nacieron gracias a la tecnología.
 
 ## Para llevar a casa
 
-- La IA **cambia** trabajos, no los **elimina** en su mayoria
-- Las habilidades humanas (empatia, creatividad, juicio) siguen siendo insustituibles
+- La IA **cambia** trabajos, no los **elimina** en su mayoría
+- Las habilidades humanas (empatía, creatividad, juicio) siguen siendo insustituibles
 - Aprender a usar IA es como aprender cualquier otra herramienta: lleva tiempo, pero vale la pena
 - No hay que tener miedo, hay que tener curiosidad`;
 
@@ -159,7 +159,7 @@ Si le preguntas a la IA sobre una persona no muy famosa — un profesor universi
 **Lección:** La IA es menos confiable con información sobre personas especificas no mundialmente conocidas.
 
 ### Ejemplo 3: Datos estadisticos falsos
-Si le pides "el porcentaje de personas mayores de 60 que usan internet en Colombia", puede darte "47.3% segun el DANE, 2023" — dato **completamente inventado** que suena legítimo.
+Si le pides "el porcentaje de personas mayores de 60 que usan internet en Colombia", puede darte "47.3% según el DANE, 2023" — dato **completamente inventado** que suena legítimo.
 
 **Lección:** Los números específicos y las citas con fuente son los errores más peligrosos.
 
@@ -174,7 +174,7 @@ Señales de alerta:
 
 ## Como verificar lo que te dice la IA
 
-**Paso 1:** Preguntale: "Estas seguro? Podrias estar equivocado?" — A veces se corrige sola.
+**Paso 1:** Preguntale: "Estas seguro? Podrías estar equivocado?" — A veces se corrige sola.
 **Paso 2:** Busca en Google. Copia el dato clave y buscalo.
 **Paso 3:** Cruza con dos fuentes confiables.
 **Paso 4:** Usa el sentido comun. Si suena demasiado bueno, probablemente la IA exagera.
@@ -197,13 +197,13 @@ Menos confiable para:
 
 ## Para llevar a casa
 
-- **La IA se equivoca**, y eso esta bien si lo sabemos de antemano
+- **La IA se equivoca**, y eso está bien si lo sabemos de antemano
 - Las "alucinaciones" son errores que suenan muy reales — por eso son peligrosas
 - **Siempre verifica** datos importantes antes de actuar sobre ellos
 - Usa la IA como un **primer borrador**, no como la verdad absoluta
 - Tu sentido comun y tu experiencia son herramientas que la IA no tiene
 
-Saber que la IA se equivoca no es razon para no usarla. Es razon para usarla **con inteligencia**.`;
+Saber que la IA se equivoca no es razón para no usarla. Es razón para usarla **con inteligencia**.`;
 
 export const c3leccion4 = `## Pensemos en la calculadora
 
@@ -229,7 +229,7 @@ Se acuerdan cuando aparecieron las calculadoras de bolsillo? Hubo un gran debate
 | Situacion | Por que NO solo la IA |
 |---|---|
 | Decidir un tratamiento médico | La IA no te conoce, no te examina, no es tu doctor |
-| Tomar una decision legal importante | Las leyes cambian por pais y caso; necesitas un abogado |
+| Tomar una decisión legal importante | Las leyes cambian por pais y caso; necesitas un abogado |
 | Invertir dinero | La IA no tiene info en tiempo real ni conoce tu situación |
 | Verificar si una noticia es real | La IA puede repetir información falsa |
 | Evaluar si un correo es una estafa | Tu banco y tu sentido comun son mejores |
@@ -245,15 +245,15 @@ La IA es lo mismo: una herramienta que amplifica tus capacidades, pero que neces
 
 ## El secreto: la IA + vos = mejor resultado
 
-**Lo que hace bien la IA:** Procesar mucha información rápido, escribir textos claros, dar multiples opciones, explicar cosas complejas de forma simple, trabajar 24 horas.
+**Lo que hace bien la IA:** Procesar mucha información rápido, escribir textos claros, dar múltiples opciones, explicar cosas complejas de forma simple, trabajar 24 horas.
 
-**Lo que haces bien vos:** Conocer tu situación personal, tener empatia, aplicar valores y etica, tomar decisiones con sentido comun, saber qué es importante para vos.
+**Lo que haces bien vos:** Conocer tu situación personal, tener empatía, aplicar valores y ética, tomar decisiones con sentido comun, saber qué es importante para vos.
 
 **Juntos:** la IA te da el borrador, vos le das el toque final. La IA te da opciones, vos elegis la correcta. La IA te ahorra tiempo, vos usas ese tiempo en lo que importa.
 
 ## Errores comunes que hay que evitar
 
-1. **Creer todo sin verificar.** La IA suena muy segura, pero no siempre tiene razon.
+1. **Creer todo sin verificar.** La IA suena muy segura, pero no siempre tiene razón.
 2. **Pensar que no la necesitas.** No usar una herramienta útil por orgullo o miedo es como no usar el celular porque "antes no existia".
 3. **Depender completamente de ella.** Usar la IA sin pensar es como usar el GPS sin nunca mirar por la ventana.
 4. **Compararla con una persona.** La IA no es una persona, no tiene sentimientos. Es una herramienta muy avanzada, pero herramienta al fin.
@@ -267,17 +267,17 @@ La IA es lo mismo: una herramienta que amplifica tus capacidades, pero que neces
 
 Cuando entendes que la IA es una herramienta, el miedo desaparece. No le tenemos miedo al martillo — aprendemos a usarlo bien.`;
 
-export const c3leccion5 = `## Llego el momento de la accion
+export const c3leccion5 = `## Llegó el momento de la acción
 
 Ya hablamos de los miedos más comunes sobre la IA: el trabajo, la privacidad, los errores, y como verla como herramienta. Ahora es momento de pasar de la teoría a la práctica.
 
 No te preocupes — el plan es **simple, personal y a tu ritmo.**
 
-## El metodo: 1 herramienta, 10 minutos, 1 semana
+## El método: 1 herramienta, 10 minutos, 1 semana
 
 - **1 herramienta:** Elige una sola herramienta de IA
-- **10 minutos al dia:** No más. Solo 10 minutitos, como tomarte un cafe
-- **1 semana:** Date 7 dias para probar. Sin presion, sin examenes
+- **10 minutos al día:** No más. Solo 10 minutitos, como tomarte un cafe
+- **1 semana:** Date 7 días para probar. Sin presion, sin examenes
 
 ## Paso 1: Elige tu herramienta
 
@@ -298,27 +298,27 @@ No te preocupes — el plan es **simple, personal y a tu ritmo.**
 
 **Recomendación:** Si nunca usaste ninguna, empieza con **ChatGPT** o **Claude**.
 
-## Paso 2: Tu plan de 7 dias
+## Paso 2: Tu plan de 7 días
 
-### Dia 1: La primera pregunta
+### Día 1: La primera pregunta
 Pregunta algo simple: "Cuál es la capital de Japon?" El objetivo es **perderle el miedo a escribir.**
 
-### Dia 2: Algo personal
+### Día 2: Algo personal
 Pide algo útil: "Dame una receta fácil de sopa de verduras para 2 personas" o "Que ejercicios suaves puedo hacer en casa si tengo dolor de rodilla?"
 
-### Dia 3: Pide ayuda para escribir
+### Día 3: Pide ayuda para escribir
 "Ayudame a escribir un mensaje de WhatsApp para felicitar a mi amiga por su cumpleanos" o "Escribeme un correo formal para pedir una cita con el doctor."
 
-### Dia 4: Aprende algo nuevo
+### Día 4: Aprende algo nuevo
 "Explicame qué es el cambio climático como si tuviera 10 años" o "Por qué el cielo es azul? Explicamelo de forma simple."
 
-### Dia 5: Planifica algo
-"Quiero hacer un viaje de 3 dias a [una ciudad]. Que me recomiendas?" o "Organizame un menu semanal saludable y económico."
+### Día 5: Planifica algo
+"Quiero hacer un viaje de 3 días a [una ciudad]. Que me recomiendas?" o "Organizame un menu semanal saludable y económico."
 
-### Dia 6: Resuelve una duda real
+### Día 6: Resuelve una duda real
 Piensa en algo que siempre quisiste saber: "Cómo funciona una hipoteca?" o "Cómo puedo ahorrar energía en mi casa?"
 
-### Dia 7: Experimenta libremente
+### Día 7: Experimenta libremente
 Hoy no hay guia. Pregunta lo que quieras: un chiste, un poema, sobre tu hobby, consejos sobre cualquier tema.
 
 ## Paso 3: Tu plantilla personal
@@ -331,7 +331,7 @@ Copia esta plantilla (en un papel o en tu celular):
 - Fecha de inicio: _______________
 - Horario preferido: _______________
 
-Para cada dia, anota:
+Para cada día, anota:
 - Lo que pregunte
 - Cómo me fue (bien / regular / necesito ayuda)
 
@@ -344,21 +344,21 @@ Al final de la semana:
 
 1. **Elige un horario fijo.** La rutina ayuda.
 2. **No te frustres** si no entendes la respuesta. Decile: "Puedes explicarmelo más simple?"
-3. **Si la respuesta es muy larga,** decile: "Resumelo en 3 lineas."
+3. **Si la respuesta es muy larga,** decile: "Resumelo en 3 líneas."
 4. **Recuerda las reglas de privacidad** de la Lección 2.
 5. **Comparte la experiencia.** Haganlo juntos con un familiar o amigo.
-6. **Celebra cada dia completado.** Aprender algo nuevo a cualquier edad es un logro.
+6. **Celebra cada día completado.** Aprender algo nuevo a cualquier edad es un logro.
 
 ## Y después de la semana?
 
 Si te gusto: segui usando la IA, explora funciones nuevas, ayuda a alguien más a empezar.
-Si no te convencio: también esta bien! Al menos ahora sabes qué es y puedes tomar una decision informada.
+Si no te convencio: también está bien! Al menos ahora sabes qué es y puedes tomar una decisión informada.
 
 ## Para llevar a casa
 
 - Empezar con IA es tan simple como **1 herramienta, 10 minutos, 1 semana**
 - No necesitas ser experto/a en tecnología — solo necesitas curiosidad
-- El plan de 7 dias te guia paso a paso sin presion
+- El plan de 7 días te guia paso a paso sin presion
 - La plantilla personal te ayuda a registrar tu experiencia
 - Cualquier edad es buena edad para aprender algo nuevo`;
 
@@ -368,7 +368,7 @@ Este quiz cubre los tres cursos del Nivel Introducción:
 - Curso 2: Tu primera conversación con IA
 - Curso 3: IA sin miedo
 
-Hay **15 preguntas** de opción multiple. Lee cada pregunta con calma. No hay limite de tiempo.
+Hay **15 preguntas** de opción múltiple. Lee cada pregunta con calma. No hay limite de tiempo.
 
 ---
 
@@ -440,7 +440,7 @@ a) Tu nombre de pila  b) Tu contraseña del banco  c) Tu ciudad de residencia  d
 
 ### Pregunta 10
 **Qué debes hacer si la IA te da un dato estadistico muy específico?**
-a) Creerlo inmediatamente porque la IA siempre tiene razon
+a) Creerlo inmediatamente porque la IA siempre tiene razón
 b) Compartirlo en redes sociales de inmediato
 c) Verificarlo buscando en otras fuentes confiables
 d) Ignorarlo porque la IA siempre se equivoca
@@ -471,10 +471,10 @@ d) Crear una nueva cuenta de IA
 **Respuesta correcta: c)**
 
 ### Pregunta 14
-**El metodo recomendado para empezar a usar IA es:**
+**El método recomendado para empezar a usar IA es:**
 a) Tomar un curso universitario de 6 meses
 b) Usar todas las herramientas de IA al mismo tiempo
-c) 1 herramienta, 10 minutos al dia, 1 semana de práctica
+c) 1 herramienta, 10 minutos al día, 1 semana de práctica
 d) Pedirle a otra persona que la use por ti
 **Respuesta correcta: c)**
 

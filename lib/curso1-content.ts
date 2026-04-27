@@ -15,25 +15,25 @@ Imaginate que queres aprender a hacer el mejor arroz con pollo. Qué haces? Prim
 
 **La Inteligencia Artificial funciona de una manera parecida.** Es un programa de computadora que "aprende" a partir de miles y miles de ejemplos, igual que vos aprendes cada vez que cocinas.
 
-Pero hay una diferencia importante: **la IA no piensa como nosotros**. No tiene sentimientos, no tiene opiniones propias, no sabe lo que esta haciendo. Simplemente encuentra patrones en los datos que le dieron y los usa para dar respuestas.
+Pero hay una diferencia importante: **la IA no piensa como nosotros**. No tiene sentimientos, no tiene opiniones propias, no sabe lo que está haciendo. Simplemente encuentra patrones en los datos que le dieron y los usa para dar respuestas.
 
 ### Una definición simple
 
-> La Inteligencia Artificial es un conjunto de programas de computadora diseñados para realizar tareas que normalmente requeririan inteligencia humana, como entender texto, reconocer imagenes o responder preguntas.
+> La Inteligencia Artificial es un conjunto de programas de computadora diseñados para realizar tareas que normalmente requerirían inteligencia humana, como entender texto, reconocer imágenes o responder preguntas.
 
-Pensalo así: cuando usas una calculadora, la calculadora no "entiende" matemáticas. Simplemente sigue instrucciones para darte el resultado correcto. La IA es como una calculadora, pero mucho más avanzada, que puede trabajar con palabras, imagenes y sonidos.
+Pensalo así: cuando usas una calculadora, la calculadora no "entiende" matemáticas. Simplemente sigue instrucciones para darte el resultado correcto. La IA es como una calculadora, pero mucho más avanzada, que puede trabajar con palabras, imágenes y sonidos.
 
 ### De donde viene la IA?
 
-La idea de crear maquinas que piensen existe desde hace muchos años. En 1950, un matemático ingles llamado Alan Turing se pregunto: "Pueden las maquinas pensar?". Desde entonces, miles de cientificos han trabajado para crear programas cada vez más capaces.
+La idea de crear máquinas que piensen existe desde hace muchos años. En 1950, un matemático ingles llamado Alan Turing se pregunto: "Pueden las máquinas pensar?". Desde entonces, miles de científicos han trabajado para crear programas cada vez más capaces.
 
 Pero fue recién en los últimos años que la IA dio un salto enorme. Por qué? Por tres razones:
 
 1. **Hay muchisimos más datos disponibles.** Todo lo que hacemos en internet — buscar en Google, mandar mensajes, subir fotos — genera datos. Y la IA necesita datos para aprender, igual que vos necesitas ingredientes para cocinar.
 
-2. **Las computadoras son mucho más poderosas.** Hoy una computadora puede hacer en segundos lo que antes tardaba dias.
+2. **Las computadoras son mucho más poderosas.** Hoy una computadora puede hacer en segundos lo que antes tardaba días.
 
-3. **Los programas mejoraron mucho.** Los cientificos descubrieron mejores formas de enseñarle a la computadora.
+3. **Los programas mejoraron mucho.** Los científicos descubrieron mejores formas de enseñarle a la computadora.
 
 ### La analogia completa: la IA como un cocinero
 
@@ -53,7 +53,7 @@ Es igual de importante saber lo que la IA **no** es:
 - **No es perfecta.** Se equivoca, y a veces se equivoca mucho. Por eso siempre hay que verificar lo que nos dice.
 - **No es una sola cosa.** Hay muchos tipos diferentes de IA, desde las más simples hasta las más complejas.
 
-### Por que deberia importarme?
+### Por que debería importarme?
 
 Porque la IA ya es parte de tu vida, aunque no lo notes. Cuando tu teléfono sugiere la siguiente palabra mientras escribis un mensaje, eso es IA. Cuando Netflix te recomienda una película, eso es IA. Cuando el banco te manda una alerta de una transacción sospechosa, eso también es IA.
 
@@ -63,15 +63,15 @@ Entender qué es y cómo funciona te da poder. Te permite usarla a tu favor, det
 
 - La IA es un programa que aprende de datos, similar a como aprendemos al cocinar.
 - No piensa ni siente — encuentra patrones y da respuestas.
-- Existe hace decadas, pero mejoro enormemente en los últimos años.
+- Existe hace décadas, pero mejoro enormemente en los últimos años.
 - No es magia, no es perfecta y no es un robot de película.
 - Ya es parte de tu vida diaria, y entenderla te beneficia.`;
 
 export const leccion2 = `### La IA ya te conoce (más de lo que pensas)
 
-Si alguien te dijera "vos usas inteligencia artificial todos los dias", quizás no lo creerias. Pero es cierto. La IA esta en tu teléfono, en tu televisor, en tu banco y hasta en tu supermercado. Lo que pasa es que no lleva un cartel que diga "soy IA".
+Si alguien te dijera "vos usas inteligencia artificial todos los días", quizás no lo creerias. Pero es cierto. La IA está en tu teléfono, en tu televisor, en tu banco y hasta en tu supermercado. Lo que pasa es que no lleva un cartel que diga "soy IA".
 
-Vamos a recorrer un dia típico y descubrir donde se esconde.
+Vamos a recorrer un día típico y descubrir donde se esconde.
 
 ### Por la mañana
 
@@ -84,10 +84,10 @@ Cuando abris tu correo electrónico, no ves los cientos de mensajes basura que l
 **3. Las noticias que ves en tu celular**
 Si lees noticias en tu teléfono, las que aparecen primero no son al azar. La IA elige las que cree que te van a interesar más, basandose en lo que leiste antes.
 
-### Durante el dia
+### Durante el día
 
 **4. Google Maps y Waze**
-Cuando usas el GPS para ir a algún lado, la IA calcula la mejor ruta en tiempo real. Analiza el tráfico, los accidentes, las obras en la calle y hasta los eventos que podrian causar congestión. Esa vocecita que te dice "en 300 metros gire a la derecha" esta respaldada por inteligencia artificial.
+Cuando usas el GPS para ir a algún lado, la IA calcula la mejor ruta en tiempo real. Analiza el tráfico, los accidentes, las obras en la calle y hasta los eventos que podrian causar congestión. Esa vocecita que te dice "en 300 metros gire a la derecha" está respaldada por inteligencia artificial.
 
 **5. El autocorrector del teclado**
 Cada vez que escribis un mensaje de WhatsApp y tu teléfono sugiere la siguiente palabra o corrige un error, eso es IA. El programa aprendio de millones de conversaciones cuales son las palabras más probables.
@@ -107,7 +107,7 @@ Si alguna vez te bloquearon la tarjeta porque detectaron una "compra sospechosa"
 Cuando le decis "Hey Siri, que temperatura hace hoy?" o "Alexa, pone música tranquila", estas hablando con IA. Estos asistentes usan inteligencia artificial para entender tu voz, interpretar lo que pedis y darte una respuesta.
 
 **10. Las tiendas online y sus sugerencias**
-"Los clientes que compraron esto también compraron..." Esa frase en Amazon o Mercado Libre es IA pura. El sistema analiza millones de compras para predecir que más te podria interesar.
+"Los clientes que compraron esto también compraron..." Esa frase en Amazon o Mercado Libre es IA pura. El sistema analiza millones de compras para predecir que más te podría interesar.
 
 ### Otros ejemplos que quizás no conocias
 
@@ -120,17 +120,17 @@ El modo retrato que desenfoca el fondo, el modo noche que aclara fotos oscuras, 
 **13. Los chatbots de atención al cliente**
 Cuando entras a la página de tu empresa de telefonía y te aparece un chat diciendo "En que puedo ayudarte?", muchas veces no hay una persona del otro lado. Es un programa de IA entrenado para responder preguntas frecuentes.
 
-### Deberia preocuparme?
+### Debería preocuparme?
 
-Es natural preguntarse: "Si la IA sabe tanto de mi, deberia preocuparme?". Es una pregunta válida y la vamos a explorar en profundidad en el Curso 3. Por ahora, lo importante es saber que:
+Es natural preguntarse: "Si la IA sabe tanto de mi, debería preocuparme?". Es una pregunta válida y la vamos a explorar en profundidad en el Curso 3. Por ahora, lo importante es saber que:
 
-- La mayoria de estos usos estan diseñados para **facilitarte la vida**.
+- La mayoría de estos usos estan diseñados para **facilitarte la vida**.
 - Vos tenes control sobre muchas de estas funciones (podes desactivar recomendaciones, ajustar la privacidad, etc.).
 - Saber que existen te pone en una posicion de **poder**, no de vulnerabilidad.
 
 ### Resumen de la lección
 
-- La IA esta presente en tu celular, tu email, tu GPS, tu banco, tu música y tu television.
+- La IA está presente en tu celular, tu email, tu GPS, tu banco, tu música y tu television.
 - Su objetivo principal es personalizar y simplificar tu experiencia.
 - No es invisible porque sea secreta, sino porque funciona tan bien que ni la notas.
 - Conocer estos ejemplos te ayuda a entender cuanta IA ya manejas sin darte cuenta.`;
@@ -147,7 +147,7 @@ Las películas, las noticias sensacionalistas y las redes sociales nos llenan la
 | **Realidad** | NO. La IA procesa datos y encuentra patrones |
 | **Veredicto** | FALSO |
 
-**Explicación:** Cuando le haces una pregunta a ChatGPT y te da una respuesta inteligente, parece que "piensa". Pero lo que realmente hace es predecir cuál es la palabra más probable que deberia seguir, basandose en los millones de textos que leyo. Es como un loro muy sofisticado: puede repetir y combinar lo que aprendio, pero no entiende lo que dice.
+**Explicación:** Cuando le haces una pregunta a ChatGPT y te da una respuesta inteligente, parece que "piensa". Pero lo que realmente hace es predecir cuál es la palabra más probable que debería seguir, basandose en los millones de textos que leyo. Es como un loro muy sofisticado: puede repetir y combinar lo que aprendio, pero no entiende lo que dice.
 
 ### Mito 2: "La IA va a reemplazar todos los trabajos"
 
@@ -159,7 +159,7 @@ Las películas, las noticias sensacionalistas y las redes sociales nos llenan la
 
 **Explicación:** Esto ya paso antes. Cuando aparecieron los cajeros automáticos, todos pensaron que los empleados de banco iban a desaparecer. Que paso? Los bancos abrieron más sucursales y los empleados pasaron a hacer tareas más complejas. Con la IA va a pasar algo similar.
 
-### Mito 3: "La IA siempre tiene razon"
+### Mito 3: "La IA siempre tiene razón"
 
 | | |
 |---|---|
@@ -197,7 +197,7 @@ Las películas, las noticias sensacionalistas y las redes sociales nos llenan la
 | **Realidad** | Se investiga desde la decada de 1950 |
 | **Veredicto** | FALSO |
 
-**Explicación:** Lo qué es nuevo es que la IA se hizo accesible para todo el mundo. Pero los cientificos trabajan en esto hace más de 70 años. Es como el microondas: existia en laboratorios mucho antes de que llegara a tu cocina.
+**Explicación:** Lo qué es nuevo es que la IA se hizo accesible para todo el mundo. Pero los científicos trabajan en esto hace más de 70 años. Es como el microondas: existia en laboratorios mucho antes de que llegara a tu cocina.
 
 ### Mito 7: "Si uso IA, me vuelvo dependiente y dejo de pensar"
 
@@ -217,7 +217,7 @@ Las películas, las noticias sensacionalistas y las redes sociales nos llenan la
 | **Realidad** | La IA actual no tiene conciencia, voluntad ni deseos |
 | **Veredicto** | FALSO |
 
-**Explicación:** Terminator, Matrix, Ex Machina... el cine nos hizo creer que las maquinas van a rebelarse. La IA de hoy no tiene deseos, no quiere nada, no planifica dominarnos. Es una herramienta muy poderosa, si, pero una herramienta al fin.
+**Explicación:** Terminator, Matrix, Ex Machina... el cine nos hizo creer que las máquinas van a rebelarse. La IA de hoy no tiene deseos, no quiere nada, no planifica dominarnos. Es una herramienta muy poderosa, si, pero una herramienta al fin.
 
 ### Tabla resumen
 
@@ -225,7 +225,7 @@ Las películas, las noticias sensacionalistas y las redes sociales nos llenan la
 |---|---|
 | La IA piensa como humano | FALSO |
 | Reemplazara todos los trabajos | PARCIAL |
-| Siempre tiene razon | MUY FALSO |
+| Siempre tiene razón | MUY FALSO |
 | Solo para jovenes/expertos | FALSO |
 | Me espia todo el tiempo | PARCIAL |
 | Es nueva | FALSO |
@@ -234,7 +234,7 @@ Las películas, las noticias sensacionalistas y las redes sociales nos llenan la
 
 ### Resumen de la lección
 
-- La mayoria de los miedos sobre la IA vienen de la ficción, no de la realidad.
+- La mayoría de los miedos sobre la IA vienen de la ficción, no de la realidad.
 - La IA no piensa, no siente y no tiene intenciones.
 - Se equivoca seguido, así que nunca confies ciegamente en ella.
 - Cualquier persona puede aprenderla y usarla, sin importar su edad.
@@ -269,13 +269,13 @@ Los mismos ChatGPT, Claude y Gemini pueden generar textos. También hay herramie
 
 **Analogía:** Es como tener un escritor a tu disposicion. Pero recorda: siempre tenes que revisar lo que escribe.
 
-### 3. Generadores de imagenes
+### 3. Generadores de imágenes
 
-**Qué son?** IA que crean imagenes a partir de una descripcion en texto.
+**Qué son?** IA que crean imágenes a partir de una descripcion en texto.
 
 **Ejemplos:**
-- **DALL-E** (de OpenAI) — genera imagenes desde texto
-- **Midjourney** — conocido por crear imagenes muy artisticas
+- **DALL-E** (de OpenAI) — genera imágenes desde texto
+- **Midjourney** — conocido por crear imágenes muy artísticas
 - **Adobe Firefly** — integrado en Photoshop
 
 **Analogía:** Es como tener un dibujante que trabaja increiblemente rápido y al que solo tenes que describir lo que queres.
@@ -302,7 +302,7 @@ Los mismos ChatGPT, Claude y Gemini pueden generar textos. También hay herramie
 **Qué son?** Programas que traducen texto o voz de un idioma a otro.
 
 **Ejemplos:**
-- **Google Translate** — el más usado, traduce texto, voz y hasta imagenes
+- **Google Translate** — el más usado, traduce texto, voz y hasta imágenes
 - **DeepL** — conocido por traducciones más naturales
 
 **Analogía:** Es como llevar un interprete en el bolsillo que habla más de 100 idiomas.
@@ -313,14 +313,14 @@ Muchas aplicaciones que usas a diario tienen IA incorporada sin que sea evidente
 
 | Aplicación | Qué hace la IA? |
 |---|---|
-| **WhatsApp** | Sugiere respuestas rapidas, filtra spam |
+| **WhatsApp** | Sugiere respuestas rápidas, filtra spam |
 | **Google Fotos** | Reconoce caras, lugares y objetos |
 | **Gmail** | Sugiere respuestas y clasifica correos |
 | **Waze/Maps** | Calcula rutas inteligentes en tiempo real |
 | **Tu banco** | Detecta transacciones sospechosas |
 | **Spotify** | Crea playlists personalizadas |
 
-### Cual deberia usar yo?
+### Cual debería usar yo?
 
 No necesitas usar todas. Te recomendamos empezar con **una sola herramienta** y conocerla bien. En el Curso 2 te vamos a guiar paso a paso para que hagas tu primera conversación con una IA.
 
@@ -333,13 +333,13 @@ No necesitas usar todas. Te recomendamos empezar con **una sola herramienta** y 
 
 export const leccion5 = `### Las palabras que necesitas conocer
 
-Cuando escuchas hablar de IA, aparecen muchas palabras en ingles o términos técnicos que pueden resultar intimidantes. Pero la mayoria son conceptos simples disfrazados de palabras complicadas.
+Cuando escuchas hablar de IA, aparecen muchas palabras en ingles o términos técnicos que pueden resultar intimidantes. Pero la mayoría son conceptos simples disfrazados de palabras complicadas.
 
 ### Los términos fundamentales
 
 **1. Inteligencia Artificial (IA)**
 Un programa de computadora que puede realizar tareas que normalmente requieren inteligencia humana.
-*Analogía:* Una calculadora superinteligente que, además de números, puede trabajar con palabras, imagenes y sonidos.
+*Analogía:* Una calculadora superinteligente que, además de números, puede trabajar con palabras, imágenes y sonidos.
 
 **2. Prompt (se pronuncia "promT")**
 La instrucción o pregunta que vos le das a la IA. Todo lo que escribis en el chat.
@@ -367,14 +367,14 @@ Un programa diseñado para conversar con personas a traves de texto o voz.
 
 **8. Algoritmo**
 Un conjunto de instrucciones paso a paso que la computadora sigue para resolver un problema.
-*Analogía:* Una receta de cocina. Así como una receta te dice "primero corta la cebolla, después ponela en la sarten", un algoritmo le dice a la computadora que hacer.
+*Analogía:* Una receta de cocina. Así como una receta te dice "primero corta la cebolla, después ponela en la sartén", un algoritmo le dice a la computadora que hacer.
 
 **9. Machine Learning (Aprendizaje Automatico)**
 Un tipo de IA donde el programa aprende de los datos sin que alguien le diga exactamente que hacer.
 *Analogía:* Un chico que aprende a andar en bicicleta — tiene que practicar y aprender de sus caidas.
 
 **10. Datos**
-La información que la IA usa para aprender. Pueden ser textos, imagenes, números, sonidos.
+La información que la IA usa para aprender. Pueden ser textos, imágenes, números, sonidos.
 *Analogía:* La materia prima de una fabrica. Sin materia prima no hay producto.
 
 **11. Nube (Cloud)**
@@ -406,7 +406,7 @@ La información previa en una conversación que la IA usa para entender mejor tu
 *Analogía:* Cuando hablas con alguien y decis "y ella que dijo?", esa persona entiende quien es "ella" porque estuvo escuchando la conversación desde el principio.
 
 **18. Open Source (Código Abierto)**
-Software cuyo código esta disponible publicamente para que cualquiera lo vea, use y modifique.
+Software cuyo código está disponible publicamente para que cualquiera lo vea, use y modifique.
 *Analogía:* Como una receta de cocina publicada en un libro: cualquiera puede leerla y cocinar el plato.
 
 ### Tarjeta de referencia rápida
@@ -433,7 +433,7 @@ Software cuyo código esta disponible publicamente para que cualquiera lo vea, u
 
 export const leccion6 = `### Instrucciones
 
-Este quiz tiene 10 preguntas de opción multiple. Para cada pregunta, elegi la respuesta que consideres correcta. Después de cada pregunta encontras la respuesta correcta y una breve explicación.
+Este quiz tiene 10 preguntas de opción múltiple. Para cada pregunta, elegi la respuesta que consideres correcta. Después de cada pregunta encontras la respuesta correcta y una breve explicación.
 
 ---
 
@@ -445,7 +445,7 @@ c) Una tecnología que solo pueden usar los ingenieros
 d) Un invento de los últimos 2 años
 
 **Respuesta correcta: b)**
-La IA es un programa que aprende de datos para realizar tareas que normalmente requeririan inteligencia humana.
+La IA es un programa que aprende de datos para realizar tareas que normalmente requerirían inteligencia humana.
 
 ---
 
