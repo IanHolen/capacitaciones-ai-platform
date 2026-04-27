@@ -38,7 +38,7 @@ export default function Home() {
         </AnimatedHero>
         <div className="mt-10">
           <AnimatedCTA>
-            <Link href="/cursos">
+            <Link href="/login">
               <Button
                 className="h-14 px-8 text-lg font-semibold"
                 style={{ backgroundColor: "#1E40AF" }}
@@ -95,7 +95,7 @@ export default function Home() {
           </p>
           <div className="mt-8">
             <AnimatedCTA>
-              <Link href="/cursos">
+              <Link href="/login">
                 <Button className="h-14 border-2 border-white bg-white/20 px-8 text-lg font-semibold text-white hover:bg-white hover:text-blue-900">
                   {t("home.viewAll")}
                 </Button>

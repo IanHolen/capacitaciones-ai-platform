@@ -44,7 +44,7 @@ export function HeaderNav() {
   if (isLanding && !user) {
     return (
       <div className="flex items-center gap-2">
-        <LanguageToggle />
+        {/* LanguageToggle hidden — Spanish only for now */}
         <Link
           href="/about"
           className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
@@ -60,7 +60,7 @@ export function HeaderNav() {
   if (!user) {
     return (
       <div className="flex items-center gap-2">
-        <LanguageToggle />
+        {/* LanguageToggle hidden — Spanish only for now */}
         <Link
           href="/login"
           className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
