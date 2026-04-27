@@ -378,66 +378,150 @@ export default function AdminPage() {
         </motion.div>
       )}
 
-      {/* Contenido Tab — DB Health */}
+      {/* Base de Datos Tab */}
       {activeTab === "contenido" && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
-          {/* DB Usage */}
+          {/* Section 1 — Total Usage */}
           <div className="rounded-xl border p-6">
-            <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold">
-              <Database className="size-5 text-[#1E40AF]" />
-              Base de Datos
-            </h3>
+            <div className="flex items-center justify-between">
+              <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                <Database className="size-5 text-[#1E40AF]" />
+                Uso Total de la Base de Datos
+              </h3>
+              <button
+                onClick={() => window.location.reload()}
+                className="rounded-lg border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-muted"
+              >
+                Refrescar
+              </button>
+            </div>
 
             {db ? (
-              <div className="space-y-4">
-                <UsageBar
-                  label="Database"
-                  used={dbSizeMb}
-                  limit={500}
-                  unit="MB"
-                />
-                {activeConns != null && (
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">Conexiones activas</span>
-                    <span className="font-bold text-[#1E40AF]">{activeConns}</span>
-                  </div>
-                )}
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-muted-foreground">Total registros</span>
-                  <span className="font-bold text-[#1E40AF]">{db.totalRecords?.toLocaleString()}</span>
-                </div>
-                <div className="flex items-center gap-2 text-sm">
-                  <span className="text-muted-foreground">Status:</span>
-                  <span className="flex items-center gap-1 font-medium text-green-600">
-                    <Activity className="size-3" /> {dbHealth.status || "healthy"}
+              <div className="mt-4">
+                <div className="flex items-baseline gap-3">
+                  <span className="text-4xl font-bold" style={{ color: "#1E40AF" }}>
+                    {dbSizeMb.toFixed(1)} MB
                   </span>
+                  <span className="text-lg text-muted-foreground">/ 500 MB</span>
+                  <span className="text-sm text-muted-foreground">
+                    ({dbSizeMb > 0 ? Math.round((dbSizeMb / 500) * 100) : 0}%)
+                  </span>
+                  <span
+                    className="ml-2 rounded-full px-2.5 py-0.5 text-xs font-semibold"
+                    style={{
+                      backgroundColor:
+                        dbSizeMb / 500 > 0.8 ? "#fef2f2" : dbSizeMb / 500 > 0.6 ? "#fffbeb" : "#f0fdf4",
+                      color:
+                        dbSizeMb / 500 > 0.8 ? "#dc2626" : dbSizeMb / 500 > 0.6 ? "#d97706" : "#16a34a",
+                    }}
+                  >
+                    {dbSizeMb / 500 > 0.8 ? "Crítico" : dbSizeMb / 500 > 0.6 ? "Atención" : "Saludable"}
+                  </span>
+                </div>
+                <div className="mt-3">
+                  <UsageBar label="" used={dbSizeMb} limit={500} unit="MB" />
                 </div>
               </div>
             ) : (
-              <p className="text-sm text-muted-foreground">
-                Cargando datos de la base de datos...
-              </p>
-            )}
-
-            {/* Table counts */}
-            {tableCounts.length > 0 && (
-              <div className="mt-6">
-                <h4 className="mb-3 text-sm font-semibold text-muted-foreground">
-                  Registros por tabla
-                </h4>
-                <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                  {tableCounts.map(([name, count]) => (
-                    <div key={name} className="flex items-center justify-between rounded-lg border p-3">
-                      <span className="font-mono text-sm">{name}</span>
-                      <span className="font-bold text-[#1E40AF]">
-                        {typeof count === "number" ? count.toLocaleString() : count}
-                      </span>
-                    </div>
-                  ))}
-                </div>
-              </div>
+              <p className="mt-4 text-sm text-muted-foreground">Cargando datos...</p>
             )}
           </div>
+
+          {/* Section 2 — Status Banner */}
+          {db && (
+            <div
+              className="flex items-center gap-3 rounded-xl border-2 p-4"
+              style={{
+                borderColor:
+                  dbSizeMb / 500 > 0.8 ? "#fecaca" : dbSizeMb / 500 > 0.6 ? "#fde68a" : "#bbf7d0",
+                backgroundColor:
+                  dbSizeMb / 500 > 0.8 ? "#fef2f2" : dbSizeMb / 500 > 0.6 ? "#fffbeb" : "#f0fdf4",
+              }}
+            >
+              {dbSizeMb / 500 > 0.8 ? (
+                <XCircle className="size-5 text-red-500" />
+              ) : dbSizeMb / 500 > 0.6 ? (
+                <AlertTriangle className="size-5 text-amber-500" />
+              ) : (
+                <CheckCircle className="size-5 text-green-500" />
+              )}
+              <span
+                className="text-sm font-medium"
+                style={{
+                  color:
+                    dbSizeMb / 500 > 0.8 ? "#dc2626" : dbSizeMb / 500 > 0.6 ? "#d97706" : "#16a34a",
+                }}
+              >
+                {dbSizeMb / 500 > 0.8
+                  ? "Uso crítico — considera limpiar datos o actualizar el plan"
+                  : dbSizeMb / 500 > 0.6
+                  ? "Uso moderado — monitorea el crecimiento"
+                  : "Tu base de datos está en buen estado"}
+              </span>
+            </div>
+          )}
+
+          {/* Section 3 — Tables */}
+          {tableCounts.length > 0 && (() => {
+            const maxCount = Math.max(
+              ...tableCounts
+                .map(([, c]) => (typeof c === "number" ? c : 0))
+            );
+            return (
+              <div>
+                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                  Tablas ({tableCounts.length})
+                </h4>
+                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                  {tableCounts.map(([name, count]) => {
+                    const numCount = typeof count === "number" ? count : 0;
+                    const isLargest = numCount === maxCount && numCount > 0;
+                    return (
+                      <div key={name} className="rounded-xl border p-4">
+                        <div className="flex items-center justify-between">
+                          <span className="font-mono text-sm text-muted-foreground">{name}</span>
+                          {isLargest && (
+                            <span className="rounded-full bg-[#1E40AF]/10 px-2 py-0.5 text-[10px] font-bold text-[#1E40AF]">
+                              MAYOR TABLA
+                            </span>
+                          )}
+                        </div>
+                        <div className="mt-2 text-2xl font-bold">
+                          {typeof count === "number" ? count.toLocaleString() : count}
+                        </div>
+                        <div className="text-xs text-muted-foreground">filas</div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* Section 4 — Growth Stats */}
+          {db && (
+            <div>
+              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+                Crecimiento
+              </h4>
+              <div className="grid gap-4 sm:grid-cols-3">
+                <div className="rounded-xl border p-4 text-center">
+                  <div className="text-2xl font-bold text-[#1E40AF]">{db.totalRecords?.toLocaleString()}</div>
+                  <div className="text-xs text-muted-foreground">Total registros</div>
+                </div>
+                <div className="rounded-xl border p-4 text-center">
+                  <div className="text-2xl font-bold text-[#1E40AF]">{activeConns ?? "—"}</div>
+                  <div className="text-xs text-muted-foreground">Conexiones activas</div>
+                </div>
+                <div className="rounded-xl border p-4 text-center">
+                  <div className="text-2xl font-bold text-green-600">
+                    {dbSizeMb > 0 ? `~${Math.round(500 / dbSizeMb)}` : "∞"}
+                  </div>
+                  <div className="text-xs text-muted-foreground">Meses hasta llenarse</div>
+                </div>
+              </div>
+            </div>
+          )}
 
           {/* Quiz Stats */}
           {quizStats.length > 0 && (
