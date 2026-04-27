@@ -1,5 +1,4 @@
 import { createClient } from "@/lib/supabase/server";
-import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -12,17 +11,17 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const progress = await prisma.userProgress.findMany({
-    where: { userId: user.id },
-    include: {
-      lesson: {
-        include: { course: { select: { id: true, title: true, slug: true } } },
-      },
-    },
-    orderBy: { updatedAt: "desc" },
-  });
+  const { data: progress, error } = await supabase
+    .from("user_progress")
+    .select("*")
+    .eq("user_id", user.id)
+    .order("updated_at", { ascending: false });
 
-  return NextResponse.json({ progress });
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  return NextResponse.json({ progress: progress ?? [] });
 }
 
 export async function POST(request: Request) {
@@ -44,31 +43,24 @@ export async function POST(request: Request) {
     );
   }
 
-  const lesson = await prisma.lesson.findUnique({
-    where: { id: lessonId },
-  });
+  const { data: progress, error } = await supabase
+    .from("user_progress")
+    .upsert(
+      {
+        user_id: user.id,
+        lesson_id: lessonId,
+        completed: true,
+        completed_at: new Date().toISOString(),
+        last_accessed_at: new Date().toISOString(),
+      },
+      { onConflict: "user_id,lesson_id" }
+    )
+    .select()
+    .single();
 
-  if (!lesson) {
-    return NextResponse.json({ error: "Lesson not found" }, { status: 404 });
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
-
-  const progress = await prisma.userProgress.upsert({
-    where: {
-      userId_lessonId: { userId: user.id, lessonId },
-    },
-    update: {
-      completed: true,
-      completedAt: new Date(),
-      lastAccessedAt: new Date(),
-    },
-    create: {
-      userId: user.id,
-      lessonId,
-      completed: true,
-      completedAt: new Date(),
-      lastAccessedAt: new Date(),
-    },
-  });
 
   return NextResponse.json({ progress });
 }

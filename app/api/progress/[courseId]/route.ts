@@ -1,5 +1,4 @@
 import { createClient } from "@/lib/supabase/server";
-import { prisma } from "@/lib/prisma";
 import { NextResponse } from "next/server";
 
 export async function GET(
@@ -17,42 +16,38 @@ export async function GET(
 
   const { courseId } = await params;
 
-  const course = await prisma.course.findUnique({
-    where: { id: courseId },
-    include: {
-      lessons: {
-        orderBy: { sortOrder: "asc" },
-        select: { id: true, title: true, slug: true, sortOrder: true },
-      },
-    },
-  });
+  const { data: lessons, error: lessonsError } = await supabase
+    .from("lessons")
+    .select("id, title, slug, sort_order")
+    .eq("course_id", courseId)
+    .order("sort_order", { ascending: true });
 
-  if (!course) {
+  if (lessonsError || !lessons) {
     return NextResponse.json({ error: "Course not found" }, { status: 404 });
   }
 
-  const progress = await prisma.userProgress.findMany({
-    where: {
-      userId: user.id,
-      lessonId: { in: course.lessons.map((l) => l.id) },
-    },
-  });
+  const lessonIds = lessons.map((l) => l.id);
+
+  const { data: progress } = await supabase
+    .from("user_progress")
+    .select("lesson_id, completed")
+    .eq("user_id", user.id)
+    .in("lesson_id", lessonIds);
 
   const completedMap = new Map(
-    progress.map((p) => [p.lessonId, p.completed])
+    (progress ?? []).map((p) => [p.lesson_id, p.completed])
   );
 
-  const totalLessons = course.lessons.length;
-  const completedLessons = progress.filter((p) => p.completed).length;
+  const totalLessons = lessons.length;
+  const completedLessons = (progress ?? []).filter((p) => p.completed).length;
 
   return NextResponse.json({
     courseId,
-    courseTitle: course.title,
     totalLessons,
     completedLessons,
     percentage:
       totalLessons > 0 ? Math.round((completedLessons / totalLessons) * 100) : 0,
-    lessons: course.lessons.map((lesson) => ({
+    lessons: lessons.map((lesson) => ({
       ...lesson,
       completed: completedMap.get(lesson.id) ?? false,
     })),

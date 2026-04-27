@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import { createClient } from '@/lib/supabase/server';
 
 export async function GET(
   _request: Request,
@@ -7,32 +7,16 @@ export async function GET(
 ) {
   try {
     const { id } = await params;
+    const supabase = await createClient();
 
-    const course = await prisma.course.findUnique({
-      where: { id, deletedAt: null },
-      include: {
-        level: {
-          select: {
-            id: true,
-            slug: true,
-            name: true,
-          },
-        },
-        lessons: {
-          where: { published: true, deletedAt: null },
-          orderBy: { sortOrder: 'asc' },
-          select: {
-            id: true,
-            title: true,
-            slug: true,
-            description: true,
-            sortOrder: true,
-          },
-        },
-      },
-    });
+    const { data: course, error } = await supabase
+      .from('courses')
+      .select('*, levels(id, slug, name), lessons(id, title, slug, description, sort_order)')
+      .eq('id', id)
+      .is('deleted_at', null)
+      .single();
 
-    if (!course) {
+    if (error || !course) {
       return NextResponse.json(
         { error: 'Course not found' },
         { status: 404 }
