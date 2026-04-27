@@ -45,7 +45,7 @@ function LoginForm() {
       );
       setLoading(false);
     } else {
-      router.push(redirectTo);
+      window.location.href = redirectTo;
     }
   }
 
