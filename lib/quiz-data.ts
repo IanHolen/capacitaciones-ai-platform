@@ -391,3 +391,372 @@ export const curso3Quiz: QuizQuestion[] = [
       "La curiosidad informada es la mejor actitud: aprender con criterio.",
   },
 ];
+
+export const curso7Quiz: QuizQuestion[] = [
+  {
+    question: "¿Cuál de estas es una técnica core de prompting?",
+    options: [
+      "Escribir en mayúsculas para que la IA preste más atención",
+      "Dar ejemplos de lo que esperás como respuesta (few-shot)",
+      "Usar emojis para que la IA entienda el tono",
+      "Repetir la pregunta varias veces en el mismo mensaje",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Few-shot learning (dar ejemplos) es una de las 5 t��cnicas core de prompting más efectivas.",
+  },
+  {
+    question: "¿Qué es few-shot prompting?",
+    options: [
+      "Escribir prompts muy cortos de pocas palabras",
+      "Dar uno o más ejemplos del formato o resultado que esperás",
+      "Disparar muchos prompts rápidamente",
+      "Usar la IA solo para tareas pequeñas",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Few-shot prompting consiste en dar ejemplos para que la IA entienda el patrón que querés.",
+  },
+  {
+    question: "¿Qué frase activa el razonamiento paso a paso (chain-of-thought)?",
+    options: [
+      "\"Respondé rápido\"",
+      "\"Pensá paso a paso antes de responder\"",
+      "\"Sé creativo\"",
+      "\"Usá formato JSON\"",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Pedir que piense paso a paso activa el chain-of-thought, mejorando respuestas en tareas lógicas.",
+  },
+  {
+    question: "¿Para qué sirve asignar un rol a la IA?",
+    options: [
+      "Para que la IA cambie de idioma automáticamente",
+      "Para obtener respuestas más enfocadas y con el tono adecuado",
+      "Para que la IA acceda a internet",
+      "Para desbloquear funciones premium",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Asignar un rol (\"Actuá como nutricionista\") enfoca las respuestas en ese dominio y tono.",
+  },
+  {
+    question: "¿Cuándo es útil pedir la respuesta en formato JSON?",
+    options: [
+      "Siempre, porque JSON es más bonito",
+      "Cuando necesitás datos estructurados para usar en otra herramienta",
+      "Solo cuando programás en JavaScript",
+      "Nunca, la IA no puede generar JSON",
+    ],
+    correctIndex: 1,
+    explanation:
+      "JSON es ideal cuando necesitás datos estructurados que vas a procesar después.",
+  },
+  {
+    question: "¿Cuál es la diferencia entre system prompt y user prompt?",
+    options: [
+      "No hay diferencia, son lo mismo",
+      "El system prompt define el comportamiento general; el user prompt es la pregunta específica",
+      "El system prompt es más largo que el user prompt",
+      "El user prompt se ejecuta primero que el system prompt",
+    ],
+    correctIndex: 1,
+    explanation:
+      "El system prompt configura el comportamiento base de la IA; el user prompt es cada mensaje que enviás.",
+  },
+  {
+    question: "¿Cuál es la mejor estrategia cuando el primer prompt no da buenos resultados?",
+    options: [
+      "Cambiar a otra herramienta de IA",
+      "Iterar: evaluar qué falló y refinar el prompt",
+      "Escribir exactamente lo mismo pero más largo",
+      "Abandonar la tarea porque la IA no puede",
+    ],
+    correctIndex: 1,
+    explanation:
+      "La iteración (evaluar → refinar → volver a probar) es la clave del prompt engineering.",
+  },
+  {
+    question: "¿Qué ventaja tiene usar tags XML en un prompt?",
+    options: [
+      "La IA responde más rápido",
+      "Permite organizar claramente las secciones del input y el output esperado",
+      "Es obligatorio para que la IA entienda",
+      "Solo funciona con Claude, no con ChatGPT",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Las tags XML ayudan a separar contexto, instrucciones y formato esperado de forma clara.",
+  },
+  {
+    question: "En ChatGPT, ¿dónde se configuran las instrucciones personalizadas (system prompt)?",
+    options: [
+      "En el primer mensaje de cada chat",
+      "En Configuración → Instrucciones personalizadas (Custom Instructions)",
+      "No se puede configurar",
+      "En la URL del navegador",
+    ],
+    correctIndex: 1,
+    explanation:
+      "ChatGPT permite configurar instrucciones personalizadas que aplican a todas las conversaciones.",
+  },
+  {
+    question: "¿Cuándo conviene empezar un prompt desde cero en vez de iterar?",
+    options: [
+      "Siempre, cada intento debe ser independiente",
+      "Cuando el enfoque fundamental está equivocado y los ajustes menores no mejoran",
+      "Nunca, siempre hay que iterar sobre lo existente",
+      "Después de exactamente 3 intentos fallidos",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Si el enfoque base es incorrecto, es más eficiente rediseñar el prompt que seguir iterando.",
+  },
+];
+
+export const curso8Quiz: QuizQuestion[] = [
+  {
+    question: "¿Qué puede hacer la IA con un PDF que le subís?",
+    options: [
+      "Editarlo y devolverte una versión modificada",
+      "Leerlo, resumirlo, responder preguntas sobre su contenido",
+      "Firmarlo digitalmente",
+      "Convertirlo en una página web automáticamente",
+    ],
+    correctIndex: 1,
+    explanation:
+      "La IA puede leer, resumir y responder preguntas sobre el contenido de un PDF.",
+  },
+  {
+    question: "¿Cuál es la mejor técnica para resumir un documento muy largo?",
+    options: [
+      "Pedir \"resumilo\" sin más contexto",
+      "Resumir por secciones y luego hacer un resumen de los resúmenes",
+      "Copiar solo el primer párrafo y pedir un resumen",
+      "No se puede resumir documentos largos con IA",
+    ],
+    correctIndex: 1,
+    explanation:
+      "La resumirización progresiva (secciones → resumen final) funciona mejor para documentos extensos.",
+  },
+  {
+    question: "¿Qué tipo de imágenes puede analizar la IA?",
+    options: [
+      "Solo fotos de personas",
+      "Gráficos, capturas de pantalla, recibos, diagramas, fotos",
+      "Solo imágenes generadas por IA",
+      "Solo imágenes en formato PNG",
+    ],
+    correctIndex: 1,
+    explanation:
+      "La IA con visión puede analizar gráficos, screenshots, recibos, diagramas y fotos variadas.",
+  },
+  {
+    question: "¿En qué formato conviene pedir datos extraídos de una factura?",
+    options: [
+      "Texto libre en párrafos",
+      "Tabla o JSON con campos estructurados",
+      "Solo como lista de viñetas",
+      "En formato de imagen",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Tabla o JSON permiten procesar los datos extraídos de forma estructurada y verificable.",
+  },
+  {
+    question: "¿Qué son los 'Proyectos' en Claude?",
+    options: [
+      "Una carpeta para guardar imágenes",
+      "Un espacio donde podés subir documentos de contexto e instrucciones persistentes",
+      "Un plan de suscripción premium",
+      "Un tipo de prompt especial",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Los Proyectos de Claude permiten subir documentos y definir instrucciones que persisten entre conversaciones.",
+  },
+  {
+    question: "¿Qué precaución debés tener al subir documentos a la IA?",
+    options: [
+      "No subir documentos de más de 1 página",
+      "No subir documentos confidenciales o con datos personales sensibles",
+      "Solo subir documentos en inglés",
+      "Siempre convertirlos a Word antes de subir",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Nunca subas documentos con datos confidenciales, financieros o personales sensibles a la IA.",
+  },
+  {
+    question: "¿Qué pasa si subís múltiples archivos en una conversación?",
+    options: [
+      "La IA solo lee el último",
+      "La IA puede cruzar información entre ellos y responder preguntas comparativas",
+      "Se borran los anteriores",
+      "No se pueden subir múltiples archivos",
+    ],
+    correctIndex: 1,
+    explanation:
+      "La IA puede trabajar con múltiples documentos simultáneamente y cruzar información entre ellos.",
+  },
+  {
+    question: "¿Qué limitación tiene la IA al analizar imágenes?",
+    options: [
+      "No puede ver colores",
+      "Puede tener dificultades con texto muy pequeño o escritura a mano",
+      "Solo funciona con fotos tomadas ese día",
+      "No puede describir lo que ve",
+    ],
+    correctIndex: 1,
+    explanation:
+      "La IA puede tener dificultades con texto muy pequeño, letra manuscrita y razonamiento espacial complejo.",
+  },
+  {
+    question: "¿Cómo verificás que la IA extrajo datos correctamente de una tabla?",
+    options: [
+      "Confiar ciegamente en el resultado",
+      "Pedirle que revise y compare contra el original, y verificar manualmente campos clave",
+      "No se puede verificar",
+      "Repetir el proceso exacto esperando resultado diferente",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Siempre verificá manualmente campos clave y pedile a la IA que haga doble checking.",
+  },
+  {
+    question: "¿Cuál es la ventaja principal de trabajar con proyectos en vez de chats sueltos?",
+    options: [
+      "Los proyectos son más baratos",
+      "El contexto persiste entre conversaciones sin tener que re-explicar todo",
+      "Los proyectos tienen IA más inteligente",
+      "Solo los proyectos permiten usar español",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Los proyectos mantienen contexto persistente, evitando re-explicar documentos y preferencias cada vez.",
+  },
+];
+
+export const curso9Quiz: QuizQuestion[] = [
+  {
+    question: "¿Qué es prompt chaining?",
+    options: [
+      "Escribir un prompt muy largo con todas las instrucciones",
+      "Dividir una tarea compleja en pasos secuenciales donde la salida de uno alimenta al siguiente",
+      "Copiar y pegar el mismo prompt en varias herramientas",
+      "Encadenar varias cuentas de IA",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Prompt chaining divide tareas complejas en pasos secuenciales, donde cada resultado alimenta el siguiente.",
+  },
+  {
+    question: "¿Qué son los tokens en el contexto de la IA?",
+    options: [
+      "Monedas virtuales para pagar la suscripción",
+      "Las unidades mínimas de texto que la IA procesa (fragmentos de palabras)",
+      "Los errores que comete la IA",
+      "Los botones de la interfaz",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Los tokens son fragmentos de texto (partes de palabras) que la IA usa como unidad de procesamiento.",
+  },
+  {
+    question: "¿Qué pasa cuando excedés la ventana de contexto?",
+    options: [
+      "La IA se apaga",
+      "La IA empieza a \"olvidar\" la información del inicio de la conversación",
+      "Te cobran el doble",
+      "La conversación se borra automáticamente",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Al exceder el contexto, la IA pierde acceso a la información más antigua de la conversación.",
+  },
+  {
+    question: "¿Cómo evaluás si un prompt es bueno?",
+    options: [
+      "Si la respuesta es larga, el prompt es bueno",
+      "Probándolo múltiples veces y verificando consistencia, precisión y formato",
+      "Si la IA no da error, es bueno",
+      "Preguntándole a la IA si el prompt estuvo bien",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Un buen prompt da resultados consistentes, precisos y en el formato deseado al probarlo varias veces.",
+  },
+  {
+    question: "¿Por qué conviene guardar tus mejores prompts?",
+    options: [
+      "Porque la IA los necesita para funcionar",
+      "Para reutilizarlos, mejorarlos con el tiempo y compartirlos con tu equipo",
+      "Porque se borran después de 24 horas",
+      "Solo por coleccionarlos",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Una biblioteca de prompts te permite reutilizar lo que funciona, iterar y compartir con tu equipo.",
+  },
+  {
+    question: "¿Cuál es la ventaja de dividir una tarea en pasos vs un solo prompt largo?",
+    options: [
+      "Es más barato",
+      "Cada paso se puede verificar, ajustar y reutilizar independientemente",
+      "La IA solo acepta prompts cortos",
+      "No hay ventaja, es lo mismo",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Dividir en pasos permite verificar resultados intermedios y ajustar sin rehacerlo todo.",
+  },
+  {
+    question: "¿Cuántos tokens tiene aproximadamente una palabra en español?",
+    options: [
+      "Exactamente 1 token por palabra",
+      "Aproximadamente 1.5 tokens por palabra",
+      "10 tokens por palabra",
+      "0.1 tokens por palabra",
+    ],
+    correctIndex: 1,
+    explanation:
+      "En español, una palabra promedio equivale a ~1.5 tokens debido a acentos y conjugaciones.",
+  },
+  {
+    question: "¿Qué es un 'test de consistencia' para prompts?",
+    options: [
+      "Verificar que el prompt no tiene errores de ortografía",
+      "Ejecutar el mismo prompt 3+ veces y comparar si los resultados son similares",
+      "Probar el prompt en diferentes idiomas",
+      "Usar el prompt solo una vez y confiar en el resultado",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Un test de consistencia corre el mismo prompt varias veces para ver si los resultados son estables.",
+  },
+  {
+    question: "¿Qué elemento es esencial en una plantilla de prompt para tu biblioteca?",
+    options: [
+      "El color del texto",
+      "El nombre, propósito, texto del prompt, variables y notas de uso",
+      "Solo el texto del prompt",
+      "La fecha de creación únicamente",
+    ],
+    correctIndex: 1,
+    explanation:
+      "Una buena plantilla incluye nombre, propósito, prompt con variables marcadas, y notas de uso.",
+  },
+  {
+    question: "En un flujo de trabajo de creación de contenido, ¿cuál es el orden correcto?",
+    options: [
+      "Publicar → escribir → editar → planificar",
+      "Idea → investigación → esquema → borrador → edición → publicación",
+      "Editar → escribir → idea → publicar",
+      "Borrador → idea → esquema → publicar",
+    ],
+    correctIndex: 1,
+    explanation:
+      "El flujo correcto va de idea → investigación → esquema → borrador → edición → publicación.",
+  },
+];
