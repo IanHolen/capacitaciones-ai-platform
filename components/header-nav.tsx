@@ -6,8 +6,10 @@ import Link from "next/link";
 import { BookOpen, LogIn, LogOut, HelpCircle, Shield } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { LanguageToggle } from "@/components/language-toggle";
+import { useTranslation } from "react-i18next";
 
 export function HeaderNav() {
+  const { t } = useTranslation();
   const pathname = usePathname();
   const isLanding = pathname === "/";
 
@@ -48,7 +50,7 @@ export function HeaderNav() {
           className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
         >
           <HelpCircle className="size-5" aria-hidden="true" />
-          ¿Qué es esto?
+          {t("nav.whatIsThis")}
         </Link>
       </div>
     );
@@ -64,7 +66,7 @@ export function HeaderNav() {
           className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
         >
           <LogIn className="size-5" aria-hidden="true" />
-          <span>Iniciar sesión</span>
+          <span>{t("nav.login")}</span>
         </Link>
       </div>
     );
@@ -97,7 +99,7 @@ export function HeaderNav() {
         className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
       >
         <BookOpen className="size-5" aria-hidden="true" />
-        <span className="hidden sm:inline">Cursos</span>
+        <span className="hidden sm:inline">{t("nav.courses")}</span>
       </Link>
       <Link
         href="/cuenta"
@@ -113,10 +115,10 @@ export function HeaderNav() {
       <button
         onClick={handleLogout}
         className="flex items-center gap-1.5 rounded-lg px-2 py-2 text-sm font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
-        aria-label="Cerrar sesión"
+        aria-label={t("nav.logoutLabel")}
       >
         <LogOut className="size-4" aria-hidden="true" />
-        <span className="hidden sm:inline">Salir</span>
+        <span className="hidden sm:inline">{t("nav.logout")}</span>
       </button>
     </div>
   );

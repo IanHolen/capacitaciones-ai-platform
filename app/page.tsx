@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Dumbbell, Sparkles } from "lucide-react";
 import {
@@ -8,28 +11,15 @@ import {
   AnimatedSection,
 } from "@/components/animated-landing";
 
-const steps = [
-  {
-    icon: BookOpen,
-    title: "Elige tu nivel",
-    description:
-      "Desde introducción hasta avanzado. Hay un curso perfecto para ti, sin importar tu experiencia.",
-  },
-  {
-    icon: Dumbbell,
-    title: "Aprende con ejercicios",
-    description:
-      "Practicá con ejercicios interactivos y quizzes que refuerzan lo que aprendés en cada lección.",
-  },
-  {
-    icon: Sparkles,
-    title: "Domina la IA",
-    description:
-      "Aplicá lo aprendido con proyectos reales y obtené tu certificado de completación.",
-  },
-];
-
 export default function Home() {
+  const { t } = useTranslation();
+
+  const steps = [
+    { icon: BookOpen, titleKey: "home.step1Title", descKey: "home.step1Desc" },
+    { icon: Dumbbell, titleKey: "home.step2Title", descKey: "home.step2Desc" },
+    { icon: Sparkles, titleKey: "home.step3Title", descKey: "home.step3Desc" },
+  ];
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -40,11 +30,10 @@ export default function Home() {
             className="mx-auto max-w-3xl text-4xl font-bold leading-tight tracking-tight md:text-5xl lg:text-6xl"
             style={{ color: "#1E40AF" }}
           >
-            Aprende Inteligencia Artificial desde cero
+            {t("home.hero")}
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
-            Cursos diseñados para personas que no son técnicas. Paso a paso,
-            a tu ritmo, con ejercicios prácticos.
+            {t("home.heroSub")}
           </p>
         </AnimatedHero>
         <div className="mt-10">
@@ -54,7 +43,7 @@ export default function Home() {
                 className="h-14 px-8 text-lg font-semibold"
                 style={{ backgroundColor: "#1E40AF" }}
               >
-                Explorar cursos
+                {t("home.exploreCourses")}
               </Button>
             </Link>
           </AnimatedCTA>
@@ -65,12 +54,12 @@ export default function Home() {
       <section className="mx-auto w-full max-w-5xl px-4 py-16 md:py-24">
         <AnimatedSection>
           <h2 className="mb-12 text-center text-3xl font-bold tracking-tight md:text-4xl">
-            Tres pasos para aprender IA
+            {t("home.threeSteps")}
           </h2>
         </AnimatedSection>
         <div className="grid gap-8 md:grid-cols-3">
           {steps.map((step, index) => (
-            <AnimatedStep key={step.title} index={index}>
+            <AnimatedStep key={step.titleKey} index={index}>
               <div className="flex flex-col items-center rounded-2xl border bg-card p-8 text-center shadow-sm transition-shadow hover:shadow-md">
                 <div
                   className="mb-4 flex size-16 items-center justify-center rounded-full text-white"
@@ -80,11 +69,11 @@ export default function Home() {
                   <step.icon className="size-8" />
                 </div>
                 <span className="mb-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Paso {index + 1}
+                  {t("home.step")} {index + 1}
                 </span>
-                <h3 className="mb-3 text-xl font-bold">{step.title}</h3>
+                <h3 className="mb-3 text-xl font-bold">{t(step.titleKey)}</h3>
                 <p className="text-base leading-relaxed text-muted-foreground">
-                  {step.description}
+                  {t(step.descKey)}
                 </p>
               </div>
             </AnimatedStep>
@@ -99,17 +88,16 @@ export default function Home() {
           style={{ backgroundColor: "#1E40AF" }}
         >
           <h2 className="text-3xl font-bold md:text-4xl">
-            Comenzá hoy, es gratis
+            {t("home.ctaTitle")}
           </h2>
           <p className="mt-4 max-w-lg text-lg text-blue-100">
-            No necesitás experiencia previa. Nuestros cursos te guían desde lo
-            más básico hasta niveles profesionales.
+            {t("home.ctaSub")}
           </p>
           <div className="mt-8">
             <AnimatedCTA>
               <Link href="/cursos">
                 <Button className="h-14 border-2 border-white bg-white/20 px-8 text-lg font-semibold text-white hover:bg-white hover:text-blue-900">
-                  Ver todos los cursos
+                  {t("home.viewAll")}
                 </Button>
               </Link>
             </AnimatedCTA>
