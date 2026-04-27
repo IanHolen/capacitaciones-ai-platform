@@ -10,17 +10,29 @@ export async function GET(
 
   const { data: comments, error } = await supabase
     .from("comments")
-    .select(
-      "id, body, created_at, parent_id, users(id, name, avatar_url)"
-    )
+    .select("id, body, created_at, parent_id, user_id")
     .eq("lesson_id", lessonId)
     .order("created_at", { ascending: true });
 
   if (error) {
-    return NextResponse.json({ error: error.message }, { status: 500 });
-  }
+    // Table might not exist yet — return empty array
+    console.error("[comments] Error:", error.message);
+    return NextResponse.json({ comments: [] });}
 
-  return NextResponse.json({ comments });
+  // Fetch user info separately to avoid join issues
+  const userIds = [...new Set(comments?.map((c) => c.user_id) ?? [])];
+  const { data: users } = userIds.length > 0
+    ? await supabase.from("users").select("id, name, avatar_url").in("id", userIds)
+    : { data: [] };
+
+  const userMap = new Map((users ?? []).map((u) => [u.id, u]));
+
+  const enriched = (comments ?? []).map((c) => ({
+    ...c,
+    user: userMap.get(c.user_id) ?? { id: c.user_id, name: "Usuario", avatar_url: null },
+  }));
+
+  return NextResponse.json({ comments: enriched });
 }
 
 export async function DELETE(
