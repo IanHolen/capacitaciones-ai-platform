@@ -112,17 +112,14 @@ export default async function CursoDetallePage({
 
       {/* Start / Continue Button */}
       <div className="mb-10">
-        <Button
-          className="h-14 px-8 text-lg font-semibold"
-          style={{ backgroundColor: config.color }}
-          render={
-            <Link
-              href={`/cursos/${curso.id}/leccion/${curso.lecciones[0].id}`}
-            />
-          }
-        >
-          {completadas > 0 ? "Continuar curso" : "Comenzar curso"}
-        </Button>
+        <Link href={`/cursos/${curso.id}/leccion/${curso.lecciones[0].id}`}>
+          <Button
+            className="h-14 px-8 text-lg font-semibold"
+            style={{ backgroundColor: config.color }}
+          >
+            {completadas > 0 ? "Continuar curso" : "Comenzar curso"}
+          </Button>
+        </Link>
       </div>
 
       {/* Lessons List */}

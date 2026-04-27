@@ -10,7 +10,7 @@ import {
 } from "lucide-react";
 import { getLeccion, nivelConfig, cursos } from "@/lib/cursos-data";
 import { MarkdownContent } from "@/components/markdown-content";
-import { Quiz } from "@/components/quiz";
+import { LessonQuizSection } from "@/components/lesson-quiz-section";
 import { LessonCompleteButton } from "@/components/lesson-complete-button";
 
 export function generateStaticParams() {
@@ -132,27 +132,22 @@ export default async function LeccionPage({
         </div>
       </div>
 
-      {/* Quiz Section */}
-      {leccion.tieneQuiz && leccion.quizQuestions && (
-        <div className="mb-10">
-          <h2 className="mb-4 text-2xl font-bold">Quiz</h2>
-          <div className="rounded-xl border bg-card p-6 md:p-8">
-            <Quiz
-              questions={leccion.quizQuestions}
-              courseId={curso.id}
-              accentColor={config.color}
-            />
-          </div>
-        </div>
-      )}
-
-      {/* Mark Complete */}
-      <div className="mb-10 flex justify-center">
-        <LessonCompleteButton
+      {/* Quiz + Complete (quiz requires 80% to mark complete) */}
+      {leccion.tieneQuiz && leccion.quizQuestions ? (
+        <LessonQuizSection
+          questions={leccion.quizQuestions}
+          courseId={curso.id}
           lessonId={leccion.id}
           accentColor={config.color}
         />
-      </div>
+      ) : (
+        <div className="mb-10 flex justify-center">
+          <LessonCompleteButton
+            lessonId={leccion.id}
+            accentColor={config.color}
+          />
+        </div>
+      )}
 
       {/* Navigation */}
       <div className="flex flex-col gap-4 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">

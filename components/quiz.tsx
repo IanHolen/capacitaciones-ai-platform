@@ -16,9 +16,10 @@ interface QuizProps {
   questions: QuizQuestion[];
   courseId: string;
   accentColor: string;
+  onPass?: () => void;
 }
 
-export function Quiz({ questions, courseId, accentColor }: QuizProps) {
+export function Quiz({ questions, courseId, accentColor, onPass }: QuizProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
@@ -85,12 +86,16 @@ export function Quiz({ questions, courseId, accentColor }: QuizProps) {
 
   if (finished) {
     const percentage = Math.round((correctCount / questions.length) * 100);
-    const message =
-      percentage >= 80
-        ? "Excelente! Tenes una base solida."
-        : percentage >= 50
-          ? "Muy bien! Repasa los temas que te costaron."
-          : "No te desanimes. Volve a leer las lecciones con calma.";
+    const passed = percentage >= 80;
+    const message = passed
+      ? "¡Excelente! Tenés una base sólida."
+      : percentage >= 50
+        ? "Necesitás al menos 80% para completar esta lección. ¡Intentalo de nuevo!"
+        : "No te desanimes. Volvé a leer las lecciones con calma e intentá de nuevo.";
+
+    if (passed && onPass) {
+      onPass();
+    }
 
     return (
       <div className="flex flex-col items-center gap-6 py-8 text-center">
