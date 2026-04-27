@@ -1204,7 +1204,7 @@ export async function POST(req: Request) {
         execute: async ({ expresion }) => {
           try {
             // En producción, usar una librería segura como mathjs
-            const resultado = Function(\`"use strict"; return (\${expresion})\`)();
+            const resultado = Function(\`"use strict"; return (\\\${expresion})\`)();
             return { expresion, resultado };
           } catch (e) {
             return { expresion, error: "Expresión inválida" };
@@ -1543,10 +1543,10 @@ input_cost = (input_tokens_por_conv * conversaciones_dia / 1_000_000) * 3.00
 output_cost = (output_tokens_por_conv * conversaciones_dia / 1_000_000) * 15.00
 total_diario = input_cost + output_cost
 
-print(f"Input:  {input_tokens_por_conv * conversaciones_dia:,} tokens/día = ${input_cost:.2f}")
-print(f"Output: {output_tokens_por_conv * conversaciones_dia:,} tokens/día = ${output_cost:.2f}")
-print(f"Total diario: ${total_diario:.2f}")
-print(f"Total mensual: ${total_diario * 30:.2f}")
+print(f"Input:  {input_tokens_por_conv * conversaciones_dia:,} tokens/día = \${input_cost:.2f}")
+print(f"Output: {output_tokens_por_conv * conversaciones_dia:,} tokens/día = \${output_cost:.2f}")
+print(f"Total diario: \${total_diario:.2f}")
+print(f"Total mensual: \${total_diario * 30:.2f}")
 
 # Input:  7,000,000 tokens/día = $21.00
 # Output: 1,500,000 tokens/día = $22.50
@@ -1745,8 +1745,8 @@ class CostTracker:
         print(f"Requests: {self.request_count}")
         print(f"Input tokens: {self.total_input_tokens:,}")
         print(f"Output tokens: {self.total_output_tokens:,}")
-        print(f"Costo total: ${self.total_cost:.4f}")
-        print(f"Costo promedio/request: ${self.total_cost/max(1,self.request_count):.4f}")
+        print(f"Costo total: \${self.total_cost:.4f}")
+        print(f"Costo promedio/request: \${self.total_cost/max(1,self.request_count):.4f}")
 \`\`\`
 
 ### Resumen de optimizaciones
