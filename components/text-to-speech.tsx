@@ -25,10 +25,15 @@ function findBestVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | u
 }
 
 export function TextToSpeech({ text }: TextToSpeechProps) {
+  const [mounted, setMounted] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
   const [speed, setSpeed] = useState(0.9);
   const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Clean markdown to plain text for speech
   const plainText = text
@@ -104,8 +109,16 @@ export function TextToSpeech({ text }: TextToSpeechProps) {
     [playing, paused],
   );
 
-  if (typeof window === "undefined" || !("speechSynthesis" in window)) {
-    return null;
+  if (!mounted || typeof window === "undefined" || !("speechSynthesis" in window)) {
+    // Placeholder while loading
+    return (
+      <div className="rounded-2xl border-2 border-[#1E40AF]/20 bg-[#EFF6FF] p-5">
+        <div className="flex items-center gap-3">
+          <Volume2 className="size-7 shrink-0 text-[#1E40AF]" aria-hidden="true" />
+          <div className="text-lg font-bold text-[#1E40AF]">Cargando audio...</div>
+        </div>
+      </div>
+    );
   }
 
   return (
