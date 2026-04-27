@@ -7,7 +7,7 @@ import {
   ChevronRight,
   CheckCircle2,
 } from "lucide-react";
-import { getLeccion, nivelConfig, cursos } from "@/lib/cursos-data";
+import { getLeccion, nivelConfig, cursos, sandboxLessons } from "@/lib/cursos-data";
 import { MarkdownContent } from "@/components/markdown-content";
 import { LessonQuizSection } from "@/components/lesson-quiz-section";
 import { PromptSandbox } from "@/components/prompt-sandbox";
@@ -128,10 +128,12 @@ export default async function LeccionPage({
         </div>
       )}
 
-      {/* Prompt Sandbox */}
-      <div className="mb-10">
-        <PromptSandbox />
-      </div>
+      {/* Prompt Sandbox (only for eligible lessons) */}
+      {sandboxLessons.has(leccion.id) && (
+        <div className="mb-10">
+          <PromptSandbox />
+        </div>
+      )}
 
       {/* Quiz (if lesson has one) */}
       {leccion.tieneQuiz && leccion.quizQuestions && (
