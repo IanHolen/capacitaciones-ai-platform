@@ -56,7 +56,7 @@ function LoginForm() {
     if (error) {
       setError(
         error.message === "Invalid login credentials"
-          ? "Correo o contrasena incorrectos"
+          ? "Correo o contraseña incorrectos"
           : error.message,
       );
       setLoading(false);
@@ -67,7 +67,7 @@ function LoginForm() {
 
   async function handleMagicLink() {
     if (!email) {
-      setError("Ingresa tu correo electronico primero");
+      setError("Ingresa tu correo electrónico primero");
       return;
     }
     setError("");
@@ -97,8 +97,8 @@ function LoginForm() {
             <Mail className="size-12 text-[#1E40AF]" />
             <h1 className="text-2xl font-bold">Revisa tu correo</h1>
             <p className="text-lg text-gray-600">
-              Te enviamos un enlace magico a <strong>{email}</strong>. Haz clic
-              en el enlace del correo para iniciar sesion.
+              Te enviamos un enlace mágico a <strong>{email}</strong>. Haz clic
+              en el enlace del correo para iniciar sesión.
             </p>
             <button
               onClick={() => setMagicLinkSent(false)}
@@ -129,7 +129,7 @@ function LoginForm() {
           Bienvenido de vuelta
         </h1>
         <p className="mb-6 text-center text-gray-600">
-          Inicia sesion para continuar aprendiendo
+          Iniciá sesión para continuar aprendiendo
         </p>
 
         {/* Google Login */}
@@ -173,7 +173,7 @@ function LoginForm() {
               htmlFor="email"
               className="mb-1 block text-base font-medium"
             >
-              Correo electronico
+              Correo electrónico
             </label>
             <input
               id="email"
@@ -188,7 +188,7 @@ function LoginForm() {
           <div>
             <div className="mb-1 flex items-center justify-between">
               <label htmlFor="password" className="text-base font-medium">
-                Contrasena
+                Contraseña
               </label>
               <button
                 type="button"
@@ -226,7 +226,7 @@ function LoginForm() {
             className="flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-[#1E40AF] text-lg font-semibold text-white transition-colors hover:bg-[#1E3A8A] focus:outline-none focus:ring-4 focus:ring-[#1E40AF]/30 disabled:opacity-50"
           >
             {loading && <Loader2 className="size-5 animate-spin" />}
-            {loading ? "Cargando..." : "Iniciar sesion"}
+            {loading ? "Cargando..." : "Iniciar sesión"}
           </button>
         </form>
 
@@ -244,12 +244,12 @@ function LoginForm() {
           className="flex w-full items-center justify-center gap-2 text-lg text-[#1E40AF] transition-colors hover:underline"
         >
           <Mail className="size-5" />
-          Recibir enlace magico por correo
+          Recibir enlace mágico por correo
         </button>
 
         {/* Register Link */}
         <p className="mt-6 text-center text-base text-gray-600">
-          No tienes cuenta?{" "}
+          ¿No tenés cuenta?{" "}
           <Link href="/registro" className="font-semibold text-[#1E40AF]">
             Registrate
           </Link>

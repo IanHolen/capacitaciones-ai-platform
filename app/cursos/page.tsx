@@ -64,7 +64,7 @@ export default function CursosPage() {
           className="text-3xl font-bold tracking-tight md:text-4xl"
           style={{ color: "#1E40AF" }}
         >
-          Catalogo de cursos
+          Catálogo de cursos
         </h1>
         <p className="mt-3 text-lg text-muted-foreground">
           Elige el curso que mejor se adapte a tu nivel y objetivos.

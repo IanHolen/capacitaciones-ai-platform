@@ -78,7 +78,7 @@ export default async function LeccionPage({
             {config.label}
           </Badge>
           <span className="text-base text-muted-foreground">
-            Leccion {index + 1} de {curso.lecciones.length}
+            Lección {index + 1} de {curso.lecciones.length}
           </span>
         </div>
         <h1 className="text-3xl font-bold tracking-tight md:text-4xl">

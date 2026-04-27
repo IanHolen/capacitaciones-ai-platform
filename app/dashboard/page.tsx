@@ -153,7 +153,7 @@ export default function DashboardPage() {
       {continueCurso && (
         <section aria-labelledby="continue-heading" className="mb-8">
           <h2 id="continue-heading" className="mb-4 text-xl font-semibold">
-            Continua donde lo dejaste
+            Continuá donde lo dejaste
           </h2>
           <Card className="rounded-2xl border-2 border-[#1E40AF] bg-gradient-to-r from-blue-50/30 to-white shadow-md">
             <CardContent className="flex flex-col gap-4 p-6 sm:flex-row sm:items-center">

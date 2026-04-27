@@ -51,7 +51,7 @@ export default function RootLayout({
         <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
           <nav
             className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3"
-            aria-label="Navegacion principal"
+            aria-label="Navegación principal"
           >
             <Link
               href="/"

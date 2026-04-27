@@ -7,19 +7,19 @@ const steps = [
     icon: BookOpen,
     title: "Elige tu nivel",
     description:
-      "Desde introduccion hasta avanzado. Hay un curso perfecto para ti, sin importar tu experiencia.",
+      "Desde introducción hasta avanzado. Hay un curso perfecto para ti, sin importar tu experiencia.",
   },
   {
     icon: Dumbbell,
     title: "Aprende con ejercicios",
     description:
-      "Practica con ejercicios interactivos y quizzes que refuerzan lo que aprendes en cada leccion.",
+      "Practicá con ejercicios interactivos y quizzes que refuerzan lo que aprendés en cada lección.",
   },
   {
     icon: Sparkles,
     title: "Domina la IA",
     description:
-      "Aplica lo aprendido con proyectos reales y obtene tu certificado de completacion.",
+      "Aplicá lo aprendido con proyectos reales y obtené tu certificado de completación.",
   },
 ];
 
@@ -36,8 +36,8 @@ export default function Home() {
           Aprende Inteligencia Artificial desde cero
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-xl leading-relaxed text-muted-foreground md:text-2xl">
-          Cursos disenados para personas que no son tecnicas. Paso a paso,
-          a tu ritmo, con ejercicios practicos.
+          Cursos diseñados para personas que no son técnicas. Paso a paso,
+          a tu ritmo, con ejercicios prácticos.
         </p>
         <div className="mt-10">
           <Link href="/cursos">
@@ -88,11 +88,11 @@ export default function Home() {
         style={{ backgroundColor: "#1E40AF" }}
       >
         <h2 className="text-3xl font-bold md:text-4xl">
-          Comenza hoy, es gratis
+          Comenzá hoy, es gratis
         </h2>
         <p className="mt-4 max-w-lg text-lg text-blue-100">
-          No necesitas experiencia previa. Nuestros cursos te guian desde lo
-          mas basico hasta niveles profesionales.
+          No necesitás experiencia previa. Nuestros cursos te guían desde lo
+          más básico hasta niveles profesionales.
         </p>
         <div className="mt-8">
           <Link href="/cursos">

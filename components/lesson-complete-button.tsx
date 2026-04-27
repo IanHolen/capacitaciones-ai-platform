@@ -36,7 +36,7 @@ export function LessonCompleteButton({
     return (
       <div className="flex items-center gap-2 text-base font-medium text-green-600">
         <CheckCircle2 className="size-5" />
-        Leccion completada
+        Lección completada
       </div>
     );
   }

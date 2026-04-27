@@ -31,8 +31,8 @@ export const nivelConfig: Record<
   Nivel,
   { label: string; color: string; bg: string }
 > = {
-  intro: { label: "Introduccion", color: "#16A34A", bg: "#F0FDF4" },
-  basico: { label: "Basico", color: "#1E40AF", bg: "#EFF6FF" },
+  intro: { label: "Introducción", color: "#16A34A", bg: "#F0FDF4" },
+  basico: { label: "Básico", color: "#1E40AF", bg: "#EFF6FF" },
   intermedio: { label: "Intermedio", color: "#7C3AED", bg: "#F5F3FF" },
   avanzado: { label: "Avanzado", color: "#EA580C", bg: "#FFF7ED" },
   pro: { label: "Pro", color: "#CA8A04", bg: "#FEFCE8" },

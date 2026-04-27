@@ -40,7 +40,7 @@ export function UserNav() {
       <button
         onClick={handleLogout}
         className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-sm font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
-        aria-label="Cerrar sesion"
+        aria-label="Cerrar sesión"
       >
         <LogOut className="size-4" aria-hidden="true" />
         <span className="hidden sm:inline">Salir</span>

@@ -38,7 +38,7 @@ export default function RegisterPage() {
     setError("");
 
     if (password.length < 8) {
-      setError("La contrasena debe tener al menos 8 caracteres");
+      setError("La contraseña debe tener al menos 8 caracteres");
       return;
     }
 
@@ -69,14 +69,14 @@ export default function RegisterPage() {
         <div className="w-full max-w-md rounded-2xl border bg-white p-8 shadow-sm text-center">
           <h1 className="mb-4 text-2xl font-bold">Revisa tu correo</h1>
           <p className="text-lg text-gray-600">
-            Te enviamos un enlace de verificacion a <strong>{email}</strong>.
+            Te enviamos un enlace de verificación a <strong>{email}</strong>.
             Haz clic en el enlace para activar tu cuenta.
           </p>
           <Link
             href="/login"
             className="mt-6 inline-block text-[#1E40AF] underline"
           >
-            Ir al inicio de sesion
+            Ir al inicio de sesión
           </Link>
         </div>
       </div>
@@ -158,7 +158,7 @@ export default function RegisterPage() {
               htmlFor="email"
               className="mb-1 block text-base font-medium"
             >
-              Correo electronico
+              Correo electrónico
             </label>
             <input
               id="email"
@@ -173,7 +173,7 @@ export default function RegisterPage() {
           <div>
             <div className="mb-1 flex items-center justify-between">
               <label htmlFor="password" className="text-base font-medium">
-                Contrasena
+                Contraseña
               </label>
               <button
                 type="button"
@@ -193,7 +193,7 @@ export default function RegisterPage() {
               className="h-14 w-full rounded-xl border-2 border-gray-200 px-4 text-lg transition-colors focus:border-[#1E40AF] focus:outline-none focus:ring-4 focus:ring-[#1E40AF]/20"
             />
             <p className="mt-1 text-sm text-gray-500">
-              Minimo 8 caracteres
+              Mínimo 8 caracteres
             </p>
           </div>
 
@@ -220,9 +220,9 @@ export default function RegisterPage() {
 
         {/* Login Link */}
         <p className="mt-6 text-center text-base text-gray-600">
-          Ya tienes cuenta?{" "}
+          ¿Ya tenés cuenta?{" "}
           <Link href="/login" className="font-semibold text-[#1E40AF]">
-            Inicia sesion
+            Iniciá sesión
           </Link>
         </p>
       </div>
