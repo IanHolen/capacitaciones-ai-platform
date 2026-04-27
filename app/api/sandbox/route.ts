@@ -17,9 +17,9 @@ function isRateLimited(ip: string): boolean {
 }
 
 export async function POST(request: Request) {
-  if (!process.env.GEMINI_API_KEY) {
+  if (!process.env.GROQ_API_KEY && !process.env.GEMINI_API_KEY) {
     return NextResponse.json(
-      { error: "El sandbox no está configurado. Falta la API key de Gemini." },
+      { error: "El sandbox no está configurado. Falta una API key (GROQ o GEMINI)." },
       { status: 503 }
     );
   }
@@ -56,7 +56,7 @@ export async function POST(request: Request) {
   const stream = new ReadableStream({
     async start(controller) {
       try {
-        const chunks = chatStream("exercise", [
+        const chunks = chatStream("tutor", [
           {
             role: "system",
             content:
