@@ -1,5 +1,6 @@
 import { chatStream } from "@/lib/llm-client";
 import { cursos } from "@/lib/cursos-data";
+import { NextResponse } from "next/server";
 
 function getLessonContext(lessonId: string): string {
   for (const curso of cursos) {
@@ -12,6 +13,13 @@ function getLessonContext(lessonId: string): string {
 }
 
 export async function POST(request: Request) {
+  if (!process.env.GROQ_API_KEY) {
+    return NextResponse.json(
+      { error: "El tutor no está configurado. Falta la API key de Groq." },
+      { status: 503 }
+    );
+  }
+
   const { message, lessonId } = await request.json();
 
   if (!message || typeof message !== "string" || message.trim().length === 0) {

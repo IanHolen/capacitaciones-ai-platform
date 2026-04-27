@@ -1,5 +1,6 @@
 import { chatStream } from "@/lib/llm-client";
 import { headers } from "next/headers";
+import { NextResponse } from "next/server";
 
 const rateLimitMap = new Map<string, number[]>();
 const RATE_LIMIT = 10;
@@ -16,6 +17,13 @@ function isRateLimited(ip: string): boolean {
 }
 
 export async function POST(request: Request) {
+  if (!process.env.GEMINI_API_KEY) {
+    return NextResponse.json(
+      { error: "El sandbox no está configurado. Falta la API key de Gemini." },
+      { status: 503 }
+    );
+  }
+
   const headersList = await headers();
   const ip =
     headersList.get("x-forwarded-for")?.split(",")[0]?.trim() ??
