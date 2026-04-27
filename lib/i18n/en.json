@@ -42,6 +42,7 @@
     "noResults": "No courses found for \"{query}\".",
     "noCoursesLevel": "No courses available for this level yet."
   },
+  "contentNotice": "Course content is available in Spanish only. Full English translation coming soon.",
   "lesson": {
     "lessonOf": "Lesson {current} of {total}",
     "content": "Content",
