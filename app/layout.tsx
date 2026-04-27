@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className={`${inter.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col text-[18px] leading-relaxed">
+    <html lang="es" className={`${inter.variable} h-full antialiased`} suppressHydrationWarning>
+      <body className="min-h-full flex flex-col text-[18px] leading-relaxed" suppressHydrationWarning>
         <I18nProvider>
           <a
             href="#main-content"
