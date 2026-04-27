@@ -9,6 +9,7 @@ import {
   CheckCircle2,
 } from "lucide-react";
 import { getLeccion, nivelConfig, cursos } from "@/lib/cursos-data";
+import { MarkdownContent } from "@/components/markdown-content";
 
 export function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -125,7 +126,7 @@ export default async function LeccionPage({
       <div className="mb-10">
         <h2 className="mb-4 text-2xl font-bold">Contenido</h2>
         <div className="rounded-xl border bg-card p-6 text-lg leading-relaxed md:p-8">
-          {leccion.contenido}
+          <MarkdownContent content={leccion.contenido} />
         </div>
       </div>
 

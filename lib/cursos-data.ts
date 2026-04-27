@@ -1,3 +1,29 @@
+import {
+  leccion1,
+  leccion2,
+  leccion3,
+  leccion4,
+  leccion5,
+  leccion6,
+} from "./curso1-content";
+import {
+  c2leccion1,
+  c2leccion2,
+  c2leccion3,
+  c2leccion4,
+  c2leccion5,
+  c2leccion6,
+  c2leccion7,
+} from "./curso2-content";
+import {
+  c3leccion1,
+  c3leccion2,
+  c3leccion3,
+  c3leccion4,
+  c3leccion5,
+  c3leccion6,
+} from "./curso3-content";
+
 export type Nivel = "intro" | "basico" | "intermedio" | "avanzado" | "pro";
 
 export const nivelConfig: Record<
@@ -41,52 +67,204 @@ export const cursos: Curso[] = [
     lecciones: [
       {
         id: "que-es-ia-1",
-        titulo: "Bienvenida al curso",
-        descripcion: "Una introduccion al curso y que vas a aprender.",
-        duracion: "10 min",
-        contenido:
-          "En este curso vas a descubrir que es la Inteligencia Artificial, como funciona y por que esta cambiando el mundo. No necesitas saber programar ni tener conocimientos tecnicos. Vamos paso a paso.",
+        titulo: "Que es la Inteligencia Artificial",
+        descripcion: "Descubri que es la IA con una analogia simple: cocinar.",
+        duracion: "20 min",
+        contenido: leccion1,
         tieneVideo: true,
         tieneQuiz: false,
       },
       {
         id: "que-es-ia-2",
-        titulo: "Que es la IA en palabras simples",
-        descripcion: "Explicacion clara y sencilla de que es la IA.",
-        duracion: "15 min",
-        contenido:
-          "La Inteligencia Artificial es la capacidad de las computadoras para aprender de datos y tomar decisiones. Piensa en ella como un asistente muy rapido que puede leer miles de documentos en segundos y darte un resumen.",
+        titulo: "La IA en tu vida diaria",
+        descripcion: "Descubri donde se esconde la IA en tu dia a dia.",
+        duracion: "20 min",
+        contenido: leccion2,
         tieneVideo: true,
-        tieneQuiz: true,
+        tieneQuiz: false,
       },
       {
         id: "que-es-ia-3",
-        titulo: "IA en tu vida diaria",
-        descripcion: "Ejemplos de IA que ya usas sin darte cuenta.",
-        duracion: "15 min",
-        contenido:
-          "Ya usas IA todos los dias: cuando Netflix te recomienda una pelicula, cuando Google Maps te muestra la mejor ruta, o cuando tu celular reconoce tu cara. La IA esta en todas partes.",
+        titulo: "Mitos vs. Realidades de la IA",
+        descripcion: "Separamos la ficcion de la realidad sobre la IA.",
+        duracion: "20 min",
+        contenido: leccion3,
         tieneVideo: true,
-        tieneQuiz: true,
+        tieneQuiz: false,
       },
       {
         id: "que-es-ia-4",
-        titulo: "Tipos de IA",
-        descripcion: "Los diferentes tipos de IA que existen hoy.",
+        titulo: "Tipos de Inteligencia Artificial",
+        descripcion: "Conoce los diferentes tipos de IA que existen hoy.",
         duracion: "20 min",
-        contenido:
-          "Hay diferentes tipos de IA: la IA que reconoce imagenes, la que entiende texto (como ChatGPT), la que genera musica, y mas. Cada tipo esta entrenada para una tarea especifica.",
+        contenido: leccion4,
         tieneVideo: true,
-        tieneQuiz: true,
+        tieneQuiz: false,
       },
       {
         id: "que-es-ia-5",
-        titulo: "El futuro de la IA",
-        descripcion: "Que viene para la IA y como prepararte.",
-        duracion: "20 min",
-        contenido:
-          "La IA va a seguir creciendo y cambiando como trabajamos, estudiamos y vivimos. Lo mejor que podes hacer es aprender a usarla a tu favor. Este curso es el primer paso.",
+        titulo: "Vocabulario esencial de la IA",
+        descripcion:
+          "Los 18 terminos que necesitas conocer, con analogias cotidianas.",
+        duracion: "25 min",
+        contenido: leccion5,
+        tieneVideo: false,
+        tieneQuiz: false,
+      },
+      {
+        id: "que-es-ia-6",
+        titulo: "Quiz: Cuanto aprendiste sobre IA?",
+        descripcion: "Pon a prueba lo que aprendiste con 10 preguntas.",
+        duracion: "15 min",
+        contenido: leccion6,
+        tieneVideo: false,
+        tieneQuiz: true,
+      },
+    ],
+  },
+  {
+    id: "primera-conversacion-ia",
+    titulo: "Tu primera conversacion con IA",
+    descripcion:
+      "Curso practico donde vas a usar ChatGPT, Claude o Gemini por primera vez. Paso a paso, sin miedo.",
+    nivel: "intro",
+    duracion: "2 horas",
+    lecciones: [
+      {
+        id: "conv-ia-1",
+        titulo: "Que es ChatGPT, Claude y Gemini?",
+        descripcion:
+          "Conoce los tres asistentes de IA mas populares y sus diferencias.",
+        duracion: "15 min",
+        contenido: c2leccion1,
         tieneVideo: true,
+        tieneQuiz: false,
+      },
+      {
+        id: "conv-ia-2",
+        titulo: "Crear tu cuenta paso a paso",
+        descripcion: "Guia paso a paso para crear tu cuenta gratis.",
+        duracion: "10 min",
+        contenido: c2leccion2,
+        tieneVideo: true,
+        tieneQuiz: false,
+      },
+      {
+        id: "conv-ia-3",
+        titulo: "Tu primera pregunta",
+        descripcion:
+          "5 ejemplos de preguntas para romper el hielo con la IA.",
+        duracion: "15 min",
+        contenido: c2leccion3,
+        tieneVideo: true,
+        tieneQuiz: false,
+      },
+      {
+        id: "conv-ia-4",
+        titulo: "Entendiendo las respuestas de la IA",
+        descripcion:
+          "Aprende a detectar alucinaciones y mejorar las respuestas.",
+        duracion: "20 min",
+        contenido: c2leccion4,
+        tieneVideo: true,
+        tieneQuiz: false,
+      },
+      {
+        id: "conv-ia-5",
+        titulo: "5 cosas utiles que puedes hacer HOY",
+        descripcion:
+          "Correos, recetas, resumenes, traducciones y viajes con prompts copiables.",
+        duracion: "20 min",
+        contenido: c2leccion5,
+        tieneVideo: false,
+        tieneQuiz: false,
+      },
+      {
+        id: "conv-ia-6",
+        titulo: "Ejercicio practico: 3 preguntas guiadas",
+        descripcion: "Practica real paso a paso con tu asistente de IA.",
+        duracion: "15 min",
+        contenido: c2leccion6,
+        tieneVideo: false,
+        tieneQuiz: false,
+      },
+      {
+        id: "conv-ia-7",
+        titulo: "Quiz: Cuanto aprendiste?",
+        descripcion: "10 preguntas para medir tu progreso.",
+        duracion: "10 min",
+        contenido: c2leccion7,
+        tieneVideo: false,
+        tieneQuiz: true,
+      },
+    ],
+  },
+  {
+    id: "ia-sin-miedo",
+    titulo: "IA sin miedo",
+    descripcion:
+      "Abordamos los miedos mas comunes sobre la IA con honestidad y te damos un plan personal para empezar.",
+    nivel: "intro",
+    duracion: "2 horas",
+    lecciones: [
+      {
+        id: "sin-miedo-1",
+        titulo: "La IA me quita el trabajo?",
+        descripcion:
+          "La verdad sobre como la IA cambia (no elimina) los trabajos.",
+        duracion: "20 min",
+        contenido: c3leccion1,
+        tieneVideo: true,
+        tieneQuiz: false,
+      },
+      {
+        id: "sin-miedo-2",
+        titulo: "Privacidad: que puedo y que NO debo compartir",
+        descripcion:
+          "Lista clara de lo que si y lo que nunca debes compartir con la IA.",
+        duracion: "20 min",
+        contenido: c3leccion2,
+        tieneVideo: true,
+        tieneQuiz: false,
+      },
+      {
+        id: "sin-miedo-3",
+        titulo: "La IA se equivoca? Si, y asi te proteges",
+        descripcion:
+          "Alucinaciones explicadas con ejemplos reales y como verificar.",
+        duracion: "20 min",
+        contenido: c3leccion3,
+        tieneVideo: true,
+        tieneQuiz: false,
+      },
+      {
+        id: "sin-miedo-4",
+        titulo: "La IA es una herramienta, no un reemplazo",
+        descripcion:
+          "Cuando usar IA y cuando consultar a un profesional humano.",
+        duracion: "20 min",
+        contenido: c3leccion4,
+        tieneVideo: true,
+        tieneQuiz: false,
+      },
+      {
+        id: "sin-miedo-5",
+        titulo: "Tu plan personal para empezar con IA",
+        descripcion:
+          "1 herramienta, 10 minutos, 1 semana. Tu plan de accion.",
+        duracion: "15 min",
+        contenido: c3leccion5,
+        tieneVideo: false,
+        tieneQuiz: false,
+      },
+      {
+        id: "sin-miedo-6",
+        titulo: "Quiz final del Nivel Introduccion",
+        descripcion:
+          "15 preguntas cubriendo los 3 cursos del nivel introductorio.",
+        duracion: "20 min",
+        contenido: c3leccion6,
+        tieneVideo: false,
         tieneQuiz: true,
       },
     ],
@@ -122,7 +300,8 @@ export const cursos: Curso[] = [
       {
         id: "chatgpt-3",
         titulo: "Escribiendo buenos prompts",
-        descripcion: "Como escribir instrucciones claras para mejores resultados.",
+        descripcion:
+          "Como escribir instrucciones claras para mejores resultados.",
         duracion: "25 min",
         contenido:
           "Un prompt es la instruccion que le das a ChatGPT. Cuanto mas claro y especifico seas, mejor sera la respuesta. En vez de decir 'escribi sobre perros', proba con 'escribi un parrafo de 5 oraciones sobre los beneficios de tener un perro en casa'.",
@@ -162,7 +341,8 @@ export const cursos: Curso[] = [
       {
         id: "prompts-2",
         titulo: "Tecnica de rol",
-        descripcion: "Como asignarle un rol a la IA para mejores respuestas.",
+        descripcion:
+          "Como asignarle un rol a la IA para mejores respuestas.",
         duracion: "25 min",
         contenido:
           "Cuando le decis a la IA 'Actua como un profesor de historia' o 'Sos un experto en marketing', la respuesta cambia completamente. Esta tecnica se llama role prompting y es muy poderosa.",
@@ -239,7 +419,7 @@ export function getCurso(cursoId: string): Curso | undefined {
 
 export function getLeccion(
   cursoId: string,
-  leccionId: string
+  leccionId: string,
 ): { curso: Curso; leccion: Leccion; index: number } | undefined {
   const curso = getCurso(cursoId);
   if (!curso) return undefined;
