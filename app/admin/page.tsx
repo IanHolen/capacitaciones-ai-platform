@@ -180,7 +180,7 @@ export default function AdminPage() {
     { id: "overview", label: "Overview" },
     { id: "usuarios", label: "Usuarios" },
     { id: "cursos", label: "Cursos" },
-    { id: "contenido", label: "Contenido" },
+    { id: "contenido", label: "Base de Datos" },
     { id: "errores", label: "Errores" },
   ];
 
@@ -225,7 +225,7 @@ export default function AdminPage() {
       </div>
 
       {/* Tab content — consistent container */}
-      <div className="min-h-[400px] w-full">
+      <div className="min-h-[800px] w-full max-w-6xl">
       {/* Overview Tab */}
       {activeTab === "overview" && (
         <motion.div
