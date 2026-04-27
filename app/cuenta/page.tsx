@@ -25,6 +25,7 @@ import {
 import { cursos, nivelConfig, type Curso } from "@/lib/cursos-data";
 import { createClient } from "@/lib/supabase/client";
 import { BadgesDisplay } from "@/components/badges-display";
+import { FadeIn, AnimatedProgressBar } from "@/components/animations";
 
 interface CourseProgress {
   courseId: string;
@@ -289,32 +290,22 @@ export default function CuentaPage() {
       {activeTab === "progreso" && (
         <div className="space-y-6">
           {/* Overall Progress */}
-          <Card className="rounded-2xl">
-            <CardContent className="p-6">
-              <div className="mb-3 flex items-center justify-between">
-                <span className="text-base font-medium">Progreso general</span>
-                <span className="text-2xl font-bold text-[#1E40AF]">
-                  {overallPercentage}%
-                </span>
-              </div>
-              <div
-                className="h-3 w-full overflow-hidden rounded-full bg-gray-200"
-                role="progressbar"
-                aria-valuenow={overallPercentage}
-                aria-valuemin={0}
-                aria-valuemax={100}
-                aria-label="Progreso general"
-              >
-                <div
-                  className="h-full rounded-full bg-[#1E40AF] transition-all"
-                  style={{ width: `${overallPercentage}%` }}
-                />
-              </div>
-              <div className="mt-2 text-sm text-muted-foreground">
-                {completedLessons} de {totalLessons} lecciones completadas
-              </div>
-            </CardContent>
-          </Card>
+          <FadeIn>
+            <Card className="rounded-2xl">
+              <CardContent className="p-6">
+                <div className="mb-3 flex items-center justify-between">
+                  <span className="text-base font-medium">Progreso general</span>
+                  <span className="text-2xl font-bold text-[#1E40AF]">
+                    {overallPercentage}%
+                  </span>
+                </div>
+                <AnimatedProgressBar percentage={overallPercentage} />
+                <div className="mt-2 text-sm text-muted-foreground">
+                  {completedLessons} de {totalLessons} lecciones completadas
+                </div>
+              </CardContent>
+            </Card>
+          </FadeIn>
 
           {/* Badges */}
           <BadgesDisplay />
