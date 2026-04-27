@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import { LogOut, User } from "lucide-react";
+import Link from "next/link";
+import { LogOut, LogIn } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 
 export function UserNav() {
-  const router = useRouter();
-  const [user, setUser] = useState<{ email?: string; name?: string } | null>(
-    null,
-  );
+  const [user, setUser] = useState<{
+    email?: string;
+    name?: string;
+  } | null>(null);
+  const [checked, setChecked] = useState(false);
 
   useEffect(() => {
     const supabase = createClient();
@@ -20,17 +21,29 @@ export function UserNav() {
           name: user.user_metadata?.name,
         });
       }
+      setChecked(true);
     });
   }, []);
 
   async function handleLogout() {
     const supabase = createClient();
     await supabase.auth.signOut();
-    router.push("/");
-    router.refresh();
+    window.location.href = "/";
   }
 
-  if (!user) return null;
+  if (!checked) return null;
+
+  if (!user) {
+    return (
+      <Link
+        href="/login"
+        className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
+      >
+        <LogIn className="size-5" aria-hidden="true" />
+        <span>Iniciar sesión</span>
+      </Link>
+    );
+  }
 
   const initials = (user.name || user.email || "U")
     .split(" ")
@@ -41,14 +54,14 @@ export function UserNav() {
 
   return (
     <div className="flex items-center gap-3">
-      <div className="flex items-center gap-2">
+      <Link href="/cuenta" className="flex items-center gap-2">
         <div className="flex size-9 items-center justify-center rounded-full bg-[#1E40AF] text-sm font-bold text-white">
           {initials}
         </div>
         <span className="hidden text-base font-semibold sm:inline">
           {user.name || user.email?.split("@")[0]}
         </span>
-      </div>
+      </Link>
       <button
         onClick={handleLogout}
         className="flex items-center gap-1.5 rounded-lg px-2 py-2 text-sm font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
