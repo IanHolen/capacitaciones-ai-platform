@@ -1,8 +1,6 @@
 import { createClient } from "@/lib/supabase/server";
 import { NextResponse } from "next/server";
 
-const ADMIN_EMAIL = "holenderian@gmail.com";
-
 export async function requireAdmin() {
   const supabase = await createClient();
   const {
@@ -13,7 +11,14 @@ export async function requireAdmin() {
     return { error: NextResponse.json({ error: "Unauthorized" }, { status: 401 }), supabase: null, user: null };
   }
 
-  if (user.email !== ADMIN_EMAIL) {
+  // Check admin_users table, fallback to hardcoded email
+  const { data: adminUser } = await supabase
+    .from("admin_users")
+    .select("id")
+    .eq("user_id", user.id)
+    .single();
+
+  if (!adminUser && user.email !== "holenderian@gmail.com") {
     return { error: NextResponse.json({ error: "Forbidden" }, { status: 403 }), supabase: null, user: null };
   }
 
