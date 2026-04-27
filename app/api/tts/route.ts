@@ -1,21 +1,20 @@
-import OpenAI from "openai";
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
+import { execFile } from "child_process";
+import { promisify } from "util";
+import { readFile, unlink } from "fs/promises";
+import { join } from "path";
+import { randomUUID } from "crypto";
+import { tmpdir } from "os";
 
-const groq = new OpenAI({
-  apiKey: process.env.GROQ_API_KEY ?? "",
-  baseURL: "https://api.groq.com/openai/v1",
-});
+const execFileAsync = promisify(execFile);
+
+const VOICES = {
+  es: "es-MX-DaliaNeural",
+  en: "en-US-JennyNeural",
+} as const;
 
 export async function POST(request: Request) {
-  if (!process.env.GROQ_API_KEY) {
-    return NextResponse.json(
-      { error: "TTS no configurado. Falta GROQ_API_KEY." },
-      { status: 503 }
-    );
-  }
-
-  // Optional auth check — allow unauthenticated for now
   const supabase = await createClient();
   const {
     data: { user },
@@ -25,13 +24,10 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  const { text, lang } = await request.json();
+  const { text, lang = "es" } = await request.json();
 
   if (!text || typeof text !== "string" || text.trim().length === 0) {
-    return NextResponse.json(
-      { error: "text is required" },
-      { status: 400 }
-    );
+    return NextResponse.json({ error: "text is required" }, { status: 400 });
   }
 
   if (text.length > 4096) {
@@ -41,15 +37,19 @@ export async function POST(request: Request) {
     );
   }
 
-  try {
-    const response = await groq.audio.speech.create({
-      model: "playai-tts",
-      voice: lang === "en" ? "Arista-PlayAI" : "Lucia-PlayAI",
-      input: text,
-      response_format: "mp3",
-    });
+  const voice = VOICES[lang as keyof typeof VOICES] ?? VOICES.es;
+  const outputFile = join(tmpdir(), `tts-${randomUUID()}.mp3`);
 
-    const audioBuffer = Buffer.from(await response.arrayBuffer());
+  try {
+    await execFileAsync("edge-tts", [
+      "--voice", voice,
+      "--rate", "-8%",
+      "--text", text.trim(),
+      "--write-media", outputFile,
+    ], { timeout: 30000 });
+
+    const audioBuffer = await readFile(outputFile);
+    await unlink(outputFile).catch(() => {});
 
     return new Response(audioBuffer, {
       headers: {
@@ -59,8 +59,9 @@ export async function POST(request: Request) {
       },
     });
   } catch (err) {
+    await unlink(outputFile).catch(() => {});
     const message = err instanceof Error ? err.message : "TTS error";
-    console.error("[tts] Error:", message);
+    console.error("[tts] edge-tts error:", message);
     return NextResponse.json(
       { error: `Error generando audio: ${message}` },
       { status: 500 }
