@@ -17,7 +17,7 @@ export default function LoginPage() {
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirectTo = searchParams.get("redirectTo") || "/onboarding";
+  const redirectTo = searchParams.get("redirectTo") || "/cursos";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

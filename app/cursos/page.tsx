@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import CursosCatalog from "@/components/cursos-catalog";
+import { OnboardingModal } from "@/components/onboarding-modal";
 
 export default function CursosPage() {
   return (
@@ -19,6 +20,7 @@ export default function CursosPage() {
       <Suspense fallback={<div className="text-center text-muted-foreground">Cargando cursos...</div>}>
         <CursosCatalog />
       </Suspense>
+      <OnboardingModal />
     </div>
   );
 }
