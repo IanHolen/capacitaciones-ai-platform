@@ -67,13 +67,15 @@ interface QuizStat {
 }
 
 interface DbHealth {
-  db_size_mb?: number;
-  db_limit_mb?: number;
-  storage_size_mb?: number;
-  storage_limit_mb?: number;
-  active_connections?: number;
-  maus?: number;
-  tables?: Array<{ table_name: string; row_count: number; size_kb?: number }>;
+  status?: string;
+  database?: {
+    sizeMb: number | string;
+    sizeLimit: string;
+    totalRecords: number;
+    tableCounts: Record<string, number | string>;
+    activeConnections: number | string;
+  };
+  freeTierLimits?: Record<string, string>;
 }
 
 interface ErrorEntry {
@@ -133,8 +135,7 @@ export default function AdminPage() {
       setCompletions(completionsRes.data || []);
       setUsers(usersRes.users || []);
       setQuizStats(quizRes.data || []);
-      const dbData = dbRes as Record<string, unknown>;
-      setDbHealth((dbData?.data as DbHealth) || (dbData as DbHealth) || {});
+      setDbHealth(dbRes as DbHealth || {});
       setErrors(errorsRes.errors || []);
 
       setLoading(false);
@@ -183,18 +184,10 @@ export default function AdminPage() {
     { id: "errores", label: "Errores" },
   ];
 
-  const dbUsePct = dbHealth.db_size_mb && dbHealth.db_limit_mb
-    ? Math.round((dbHealth.db_size_mb / dbHealth.db_limit_mb) * 100)
-    : 0;
-  const storageUsePct = dbHealth.storage_size_mb && dbHealth.storage_limit_mb
-    ? Math.round((dbHealth.storage_size_mb / dbHealth.storage_limit_mb) * 100)
-    : 0;
-
-  function usageColor(pct: number) {
-    if (pct > 80) return "#ef4444";
-    if (pct > 60) return "#f59e0b";
-    return "#22c55e";
-  }
+  const db = dbHealth.database;
+  const dbSizeMb = typeof db?.sizeMb === "number" ? db.sizeMb : 0;
+  const tableCounts = db?.tableCounts ? Object.entries(db.tableCounts) : [];
+  const activeConns = typeof db?.activeConnections === "number" ? db.activeConnections : null;
 
   return (
     <div className="mx-auto max-w-7xl px-4 py-6 md:px-6 lg:px-8">
@@ -231,6 +224,8 @@ export default function AdminPage() {
         ))}
       </div>
 
+      {/* Tab content — consistent container */}
+      <div className="min-h-[400px] w-full">
       {/* Overview Tab */}
       {activeTab === "overview" && (
         <motion.div
@@ -393,50 +388,50 @@ export default function AdminPage() {
               Base de Datos
             </h3>
 
-            {dbHealth.db_size_mb != null ? (
+            {db ? (
               <div className="space-y-4">
                 <UsageBar
                   label="Database"
-                  used={dbHealth.db_size_mb}
-                  limit={dbHealth.db_limit_mb || 500}
+                  used={dbSizeMb}
+                  limit={500}
                   unit="MB"
                 />
-                <UsageBar
-                  label="Storage"
-                  used={dbHealth.storage_size_mb || 0}
-                  limit={dbHealth.storage_limit_mb || 1024}
-                  unit="MB"
-                />
-                {dbHealth.active_connections != null && (
+                {activeConns != null && (
                   <div className="flex items-center justify-between text-sm">
                     <span className="text-muted-foreground">Conexiones activas</span>
-                    <span className="font-bold text-[#1E40AF]">{dbHealth.active_connections}</span>
+                    <span className="font-bold text-[#1E40AF]">{activeConns}</span>
                   </div>
                 )}
-                {dbHealth.maus != null && (
-                  <div className="flex items-center justify-between text-sm">
-                    <span className="text-muted-foreground">MAUs</span>
-                    <span className="font-bold text-[#1E40AF]">{dbHealth.maus}</span>
-                  </div>
-                )}
+                <div className="flex items-center justify-between text-sm">
+                  <span className="text-muted-foreground">Total registros</span>
+                  <span className="font-bold text-[#1E40AF]">{db.totalRecords?.toLocaleString()}</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm">
+                  <span className="text-muted-foreground">Status:</span>
+                  <span className="flex items-center gap-1 font-medium text-green-600">
+                    <Activity className="size-3" /> {dbHealth.status || "healthy"}
+                  </span>
+                </div>
               </div>
             ) : (
               <p className="text-sm text-muted-foreground">
-                Conectando con /api/admin/db-health...
+                Cargando datos de la base de datos...
               </p>
             )}
 
             {/* Table counts */}
-            {dbHealth.tables && dbHealth.tables.length > 0 && (
+            {tableCounts.length > 0 && (
               <div className="mt-6">
                 <h4 className="mb-3 text-sm font-semibold text-muted-foreground">
                   Registros por tabla
                 </h4>
                 <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
-                  {dbHealth.tables.map((t) => (
-                    <div key={t.table_name} className="flex items-center justify-between rounded-lg border p-3">
-                      <span className="font-mono text-sm">{t.table_name}</span>
-                      <span className="font-bold text-[#1E40AF]">{t.row_count?.toLocaleString()}</span>
+                  {tableCounts.map(([name, count]) => (
+                    <div key={name} className="flex items-center justify-between rounded-lg border p-3">
+                      <span className="font-mono text-sm">{name}</span>
+                      <span className="font-bold text-[#1E40AF]">
+                        {typeof count === "number" ? count.toLocaleString() : count}
+                      </span>
                     </div>
                   ))}
                 </div>
@@ -534,6 +529,7 @@ export default function AdminPage() {
           </div>
         </motion.div>
       )}
+      </div>
     </div>
   );
 }
