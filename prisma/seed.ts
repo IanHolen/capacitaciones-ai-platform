@@ -189,6 +189,140 @@ async function main() {
     },
   });
 
+  // ============================================================
+  // Level 5 Pro — Course 13: Programación con IA
+  // ============================================================
+
+  const curso13 = await prisma.course.upsert({
+    where: { slug: "programacion-con-ia" },
+    update: {},
+    create: {
+      levelId: levelPro.id,
+      title: "Programación con IA: de cero a tu primera app",
+      slug: "programacion-con-ia",
+      description:
+        "Aprende Python, APIs de OpenAI/Anthropic/Gemini, embeddings, bases de datos vectoriales y construye tu primer chatbot con memoria.",
+      sortOrder: 1,
+      published: true,
+    },
+  });
+
+  const curso13Lecciones = [
+    { title: "Python básico para IA", slug: "python-basico-ia" },
+    { title: "Instalar tu entorno de desarrollo", slug: "instalar-entorno" },
+    { title: "Tu primer script con la API de OpenAI", slug: "api-openai" },
+    { title: "Tu primer script con la API de Anthropic (Claude)", slug: "api-anthropic" },
+    { title: "Tu primer script con Gemini API", slug: "api-gemini" },
+    { title: "Streaming de respuestas", slug: "streaming" },
+    { title: "Embeddings: qué son y para qué sirven", slug: "embeddings" },
+    { title: "Bases de datos vectoriales (Chroma, pgvector)", slug: "bases-vectoriales" },
+    { title: "Proyecto: chatbot con memoria", slug: "proyecto-chatbot" },
+    { title: "Quiz: Programación con IA", slug: "quiz-programacion-ia" },
+  ];
+
+  for (let i = 0; i < curso13Lecciones.length; i++) {
+    const l = curso13Lecciones[i];
+    await prisma.lesson.upsert({
+      where: { courseId_slug: { courseId: curso13.id, slug: l.slug } },
+      update: {},
+      create: {
+        courseId: curso13.id,
+        title: l.title,
+        slug: l.slug,
+        sortOrder: i + 1,
+        published: true,
+      },
+    });
+  }
+
+  // ============================================================
+  // Level 5 Pro — Course 14: RAG y búsqueda inteligente
+  // ============================================================
+
+  const curso14 = await prisma.course.upsert({
+    where: { slug: "rag-busqueda-inteligente" },
+    update: {},
+    create: {
+      levelId: levelPro.id,
+      title: "RAG y búsqueda inteligente",
+      slug: "rag-busqueda-inteligente",
+      description:
+        "Domina Retrieval-Augmented Generation: pipelines de documentos, embeddings, LangChain, evaluación y construye tu propio buscador inteligente.",
+      sortOrder: 2,
+      published: true,
+    },
+  });
+
+  const curso14Lecciones = [
+    { title: "Qué es RAG y por qué revolucionó la IA", slug: "que-es-rag" },
+    { title: "Pipeline completo: documento→chunks→embeddings→búsqueda", slug: "pipeline-rag" },
+    { title: "Implementar RAG con LangChain", slug: "rag-langchain" },
+    { title: "RAG sobre tus propios PDFs", slug: "rag-pdfs" },
+    { title: "Optimizar calidad de respuestas", slug: "optimizar-rag" },
+    { title: "Evaluaciones y métricas de RAG", slug: "evaluaciones-rag" },
+    { title: "Proyecto: buscador inteligente sobre tus documentos", slug: "proyecto-buscador" },
+    { title: "Quiz: RAG y búsqueda inteligente", slug: "quiz-rag" },
+  ];
+
+  for (let i = 0; i < curso14Lecciones.length; i++) {
+    const l = curso14Lecciones[i];
+    await prisma.lesson.upsert({
+      where: { courseId_slug: { courseId: curso14.id, slug: l.slug } },
+      update: {},
+      create: {
+        courseId: curso14.id,
+        title: l.title,
+        slug: l.slug,
+        sortOrder: i + 1,
+        published: true,
+      },
+    });
+  }
+
+  // ============================================================
+  // Level 5 Pro — Course 15: Agentes de IA y deployment
+  // ============================================================
+
+  const curso15 = await prisma.course.upsert({
+    where: { slug: "agentes-ia-deployment" },
+    update: {},
+    create: {
+      levelId: levelPro.id,
+      title: "Agentes de IA y deployment",
+      slug: "agentes-ia-deployment",
+      description:
+        "Construye agentes autónomos con tool use, MCP y function calling. Deploya en Vercel/HuggingFace. Seguridad y optimización de costos.",
+      sortOrder: 3,
+      published: true,
+    },
+  });
+
+  const curso15Lecciones = [
+    { title: "Qué son los agentes de IA", slug: "que-son-agentes" },
+    { title: "Tool use y function calling", slug: "tool-use" },
+    { title: "MCP (Model Context Protocol)", slug: "mcp" },
+    { title: "Construir un agente paso a paso", slug: "construir-agente" },
+    { title: "Deployment en Vercel/HuggingFace", slug: "deployment" },
+    { title: "Costos y optimización de latencia", slug: "costos-latencia" },
+    { title: "Seguridad: prompt injection y jailbreaks", slug: "seguridad" },
+    { title: "Quiz: Agentes de IA y deployment", slug: "quiz-agentes" },
+  ];
+
+  for (let i = 0; i < curso15Lecciones.length; i++) {
+    const l = curso15Lecciones[i];
+    await prisma.lesson.upsert({
+      where: { courseId_slug: { courseId: curso15.id, slug: l.slug } },
+      update: {},
+      create: {
+        courseId: curso15.id,
+        title: l.title,
+        slug: l.slug,
+        sortOrder: i + 1,
+        published: true,
+      },
+    });
+  }
+
   console.log("Seed complete:");
   console.log(`  Level 1: ${level.name} (${level.id})`);
   console.log(`    Course 1: ${curso1.title} — 6 lessons`);
@@ -198,6 +332,9 @@ async function main() {
   console.log(`  Level 3: ${levelIntermedio.name} (${levelIntermedio.id})`);
   console.log(`  Level 4: ${levelAvanzado.name} (${levelAvanzado.id})`);
   console.log(`  Level 5: ${levelPro.name} (${levelPro.id})`);
+  console.log(`    Course 13: ${curso13.title} — 10 lessons`);
+  console.log(`    Course 14: ${curso14.title} — 8 lessons`);
+  console.log(`    Course 15: ${curso15.title} — 8 lessons`);
 }
 
 main()
