@@ -28,11 +28,13 @@ export async function GET(
 
   const lessonIds = lessons.map((l) => l.id);
 
-  const { data: progress } = await supabase
-    .from("user_progress")
-    .select("lesson_id, completed")
-    .eq("user_id", user.id)
-    .in("lesson_id", lessonIds);
+  const { data: progress } = lessonIds.length > 0
+    ? await supabase
+        .from("user_progress")
+        .select("lesson_id, completed")
+        .eq("user_id", user.id)
+        .in("lesson_id", lessonIds)
+    : { data: [] };
 
   const completedMap = new Map(
     (progress ?? []).map((p) => [p.lesson_id, p.completed])

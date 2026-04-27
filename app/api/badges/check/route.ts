@@ -56,6 +56,7 @@ export async function POST() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
+  try {
   // Get user stats
   const { count: lessonsCompleted } = await supabase
     .from("user_progress")
@@ -115,4 +116,11 @@ export async function POST() {
     newBadges,
     stats,
   });
+  } catch (err) {
+    console.error("[badges/check] Error:", err);
+    return NextResponse.json(
+      { error: "Failed to check badges" },
+      { status: 500 }
+    );
+  }
 }

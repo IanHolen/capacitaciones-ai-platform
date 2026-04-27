@@ -15,7 +15,7 @@ export async function GET() {
     .from("user_goals")
     .select("goal")
     .eq("user_id", user.id)
-    .single();
+    .maybeSingle();
 
   return NextResponse.json({ goal: data?.goal || "" });
 }
