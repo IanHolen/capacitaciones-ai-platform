@@ -187,7 +187,6 @@ export default function DashboardPage() {
                 <Button
                   className="h-12 w-full gap-2 px-6 text-lg font-semibold sm:w-auto"
                   style={{ backgroundColor: "#1E40AF" }}
-                  nativeButton={false}
                 >
                   Continuar
                   <ArrowRight className="size-5" aria-hidden="true" />

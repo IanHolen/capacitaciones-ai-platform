@@ -46,7 +46,6 @@ function CourseCard({ curso }: { curso: Curso }) {
           <Button
             className="w-full text-base font-semibold"
             style={{ backgroundColor: config.color }}
-            nativeButton={false}
           >
             Ver curso
           </Button>

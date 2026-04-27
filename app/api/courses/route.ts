@@ -1,32 +1,21 @@
 import { NextResponse } from 'next/server';
-import { prisma } from '@/lib/prisma';
+import { createClient } from '@/lib/supabase/server';
 
 export async function GET() {
   try {
-    const courses = await prisma.course.findMany({
-      where: {
-        published: true,
-        deletedAt: null,
-      },
-      include: {
-        level: {
-          select: {
-            id: true,
-            slug: true,
-            name: true,
-          },
-        },
-        _count: {
-          select: { lessons: true },
-        },
-      },
-      orderBy: [
-        { level: { sortOrder: 'asc' } },
-        { sortOrder: 'asc' },
-      ],
-    });
+    const supabase = await createClient();
+    const { data: courses, error } = await supabase
+      .from('courses')
+      .select('*, levels(id, slug, name)')
+      .eq('published', true)
+      .is('deleted_at', null)
+      .order('sort_order', { ascending: true });
 
-    return NextResponse.json({ courses });
+    if (error) {
+      return NextResponse.json({ error: error.message }, { status: 500 });
+    }
+
+    return NextResponse.json({ courses: courses ?? [] });
   } catch {
     return NextResponse.json(
       { error: 'Failed to fetch courses' },
