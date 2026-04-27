@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback, useRef, useEffect } from "react";
-import { Play, Pause, Square, Volume2 } from "lucide-react";
+import { Play, Pause, Square, Volume2, Loader2 } from "lucide-react";
 
 interface TextToSpeechProps {
   text: string;
@@ -9,29 +9,19 @@ interface TextToSpeechProps {
 
 function findBestVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined {
   const esVoices = voices.filter((v) => v.lang.startsWith("es"));
-  // Prefer Google voices (most natural)
   const googleVoice = esVoices.find((v) => v.name.includes("Google"));
   if (googleVoice) return googleVoice;
-  // Then Natural/Enhanced voices
   const naturalVoice = esVoices.find(
     (v) => v.name.includes("Natural") || v.name.includes("Enhanced"),
   );
   if (naturalVoice) return naturalVoice;
-  // Then any es-MX
   const mxVoice = esVoices.find((v) => v.lang.startsWith("es-MX"));
   if (mxVoice) return mxVoice;
-  // Fallback to any Spanish
   return esVoices[0];
 }
 
-export function TextToSpeech({ text }: TextToSpeechProps) {
-  const [playing, setPlaying] = useState(false);
-  const [paused, setPaused] = useState(false);
-  const [speed, setSpeed] = useState(0.9);
-  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
-
-  // Clean markdown to plain text for speech
-  const plainText = text
+function cleanMarkdown(text: string): string {
+  return text
     .replace(/#{1,6}\s/g, "")
     .replace(/\*\*(.*?)\*\*/g, "$1")
     .replace(/\*(.*?)\*/g, "$1")
@@ -43,14 +33,71 @@ export function TextToSpeech({ text }: TextToSpeechProps) {
     .replace(/\n{2,}/g, ". ")
     .replace(/\n/g, " ")
     .trim();
+}
+
+export function TextToSpeech({ text }: TextToSpeechProps) {
+  const [playing, setPlaying] = useState(false);
+  const [paused, setPaused] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [speed, setSpeed] = useState(0.9);
+  const [useServer, setUseServer] = useState(true);
+  const utteranceRef = useRef<SpeechSynthesisUtterance | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const audioUrlRef = useRef<string | null>(null);
+
+  const plainText = cleanMarkdown(text);
 
   useEffect(() => {
     return () => {
       window.speechSynthesis.cancel();
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+      if (audioUrlRef.current) {
+        URL.revokeObjectURL(audioUrlRef.current);
+      }
     };
   }, []);
 
-  const handlePlay = useCallback(() => {
+  const playServerTTS = useCallback(async () => {
+    setLoading(true);
+    try {
+      const res = await fetch("/api/tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text: plainText, lang: "es" }),
+      });
+
+      if (!res.ok) throw new Error("Server TTS failed");
+
+      const blob = await res.blob();
+      if (audioUrlRef.current) URL.revokeObjectURL(audioUrlRef.current);
+      const url = URL.createObjectURL(blob);
+      audioUrlRef.current = url;
+
+      const audio = new Audio(url);
+      audio.playbackRate = speed;
+      audioRef.current = audio;
+
+      audio.onended = () => {
+        setPlaying(false);
+        setPaused(false);
+      };
+
+      await audio.play();
+      setPlaying(true);
+      setPaused(false);
+      setLoading(false);
+    } catch {
+      setLoading(false);
+      // Fallback to browser TTS
+      setUseServer(false);
+      playBrowserTTS();
+    }
+  }, [plainText, speed]);
+
+  const playBrowserTTS = useCallback(() => {
     if (paused) {
       window.speechSynthesis.resume();
       setPaused(false);
@@ -80,13 +127,40 @@ export function TextToSpeech({ text }: TextToSpeechProps) {
     setPaused(false);
   }, [plainText, speed, paused]);
 
+  const handlePlay = useCallback(() => {
+    if (paused && audioRef.current && useServer) {
+      audioRef.current.play();
+      setPaused(false);
+      setPlaying(true);
+      return;
+    }
+    if (paused && !useServer) {
+      playBrowserTTS();
+      return;
+    }
+
+    if (useServer) {
+      playServerTTS();
+    } else {
+      playBrowserTTS();
+    }
+  }, [useServer, paused, playServerTTS, playBrowserTTS]);
+
   const handlePause = useCallback(() => {
-    window.speechSynthesis.pause();
+    if (audioRef.current && useServer) {
+      audioRef.current.pause();
+    } else {
+      window.speechSynthesis.pause();
+    }
     setPaused(true);
     setPlaying(false);
-  }, []);
+  }, [useServer]);
 
   const handleStop = useCallback(() => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
+    }
     window.speechSynthesis.cancel();
     setPlaying(false);
     setPaused(false);
@@ -95,13 +169,16 @@ export function TextToSpeech({ text }: TextToSpeechProps) {
   const handleSpeedChange = useCallback(
     (newSpeed: number) => {
       setSpeed(newSpeed);
-      if (playing || paused) {
+      if (audioRef.current) {
+        audioRef.current.playbackRate = newSpeed;
+      }
+      if (!useServer && (playing || paused)) {
         window.speechSynthesis.cancel();
         setPlaying(false);
         setPaused(false);
       }
     },
-    [playing, paused],
+    [playing, paused, useServer],
   );
 
   if (typeof window === "undefined" || !("speechSynthesis" in window)) {
@@ -127,7 +204,11 @@ export function TextToSpeech({ text }: TextToSpeechProps) {
 
       <div className="flex flex-wrap items-center gap-3">
         <div className="flex items-center gap-2">
-          {playing ? (
+          {loading ? (
+            <div className="flex size-12 items-center justify-center rounded-full bg-[#1E40AF] text-white shadow-md">
+              <Loader2 className="size-6 animate-spin" />
+            </div>
+          ) : playing ? (
             <button
               onClick={handlePause}
               className="flex size-12 items-center justify-center rounded-full bg-[#1E40AF] text-white shadow-md"
