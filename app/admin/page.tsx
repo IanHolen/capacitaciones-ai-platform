@@ -185,6 +185,7 @@ export default function AdminPage() {
   ];
 
   const db = dbHealth.database;
+  const hasDbData = db != null;
   const dbSizeMb = typeof db?.sizeMb === "number" ? db.sizeMb : 0;
   const tableCounts = db?.tableCounts ? Object.entries(db.tableCounts) : [];
   const activeConns = typeof db?.activeConnections === "number" ? db.activeConnections : null;
@@ -225,7 +226,7 @@ export default function AdminPage() {
       </div>
 
       {/* Tab content — consistent container */}
-      <div className="min-h-[800px] w-full max-w-6xl">
+      <div className="min-h-[900px] w-full">
       {/* Overview Tab */}
       {activeTab === "overview" && (
         <motion.div
@@ -396,7 +397,7 @@ export default function AdminPage() {
               </button>
             </div>
 
-            {db ? (
+            {!loading ? (
               <div className="mt-4">
                 <div className="flex items-baseline gap-3">
                   <span className="text-4xl font-bold" style={{ color: "#1E40AF" }}>
@@ -423,12 +424,15 @@ export default function AdminPage() {
                 </div>
               </div>
             ) : (
-              <p className="mt-4 text-sm text-muted-foreground">Cargando datos...</p>
+              <p className="mt-4 text-sm text-muted-foreground">
+                <Loader2 className="mr-2 inline size-4 animate-spin" />
+                Cargando datos...
+              </p>
             )}
           </div>
 
           {/* Section 2 — Status Banner */}
-          {db && (
+          {hasDbData && (
             <div
               className="flex items-center gap-3 rounded-xl border-2 p-4"
               style={{
@@ -499,7 +503,7 @@ export default function AdminPage() {
           })()}
 
           {/* Section 4 — Growth Stats */}
-          {db && (
+          {hasDbData && (
             <div>
               <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 Crecimiento
