@@ -53,22 +53,13 @@ export function HeaderNav() {
   // Not logged in (but not on landing): show Cursos + Iniciar sesión
   if (!user) {
     return (
-      <div className="flex items-center gap-1">
-        <Link
-          href="/cursos"
-          className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
-        >
-          <BookOpen className="size-5" aria-hidden="true" />
-          <span className="hidden sm:inline">Cursos</span>
-        </Link>
-        <Link
-          href="/login"
-          className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
-        >
-          <LogIn className="size-5" aria-hidden="true" />
-          <span className="hidden sm:inline">Iniciar sesión</span>
-        </Link>
-      </div>
+      <Link
+        href="/login"
+        className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
+      >
+        <LogIn className="size-5" aria-hidden="true" />
+        <span>Iniciar sesión</span>
+      </Link>
     );
   }
 
