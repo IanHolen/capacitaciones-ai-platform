@@ -36,7 +36,7 @@ async function generateCertificate({
   // Header
   doc.setFontSize(14);
   doc.setTextColor("#6B7280");
-  doc.text("Capacitaciones IA", width / 2, 30, { align: "center" });
+  doc.text("Certificaciones AI", width / 2, 30, { align: "center" });
 
   // Title
   doc.setFontSize(32);

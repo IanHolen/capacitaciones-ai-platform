@@ -12,7 +12,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Capacitaciones IA",
+  title: "Certificaciones AI",
   description:
     "Plataforma educativa de cursos de Inteligencia Artificial para todos los niveles. Aprende desde cero, sin conocimientos previos.",
 };
@@ -44,7 +44,7 @@ export default function RootLayout({
                 style={{ color: "#1E40AF" }}
               >
                 <BookOpen className="size-7" aria-hidden="true" />
-                <span>Capacitaciones IA</span>
+                <span>Certificaciones AI</span>
               </Link>
 
               <HeaderNav />
@@ -57,7 +57,7 @@ export default function RootLayout({
 
           <footer className="border-t bg-muted/30 py-8">
             <div className="mx-auto max-w-6xl px-4 text-center text-base text-muted-foreground">
-              <p>&copy; 2026 Capacitaciones IA. Todos los derechos reservados.</p>
+              <p>&copy; 2026 Certificaciones AI. Todos los derechos reservados.</p>
             </div>
           </footer>
         </I18nProvider>

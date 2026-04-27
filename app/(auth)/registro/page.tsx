@@ -78,7 +78,7 @@ export default function RegisterPage() {
           style={{ color: "#1E40AF" }}
         >
           <BookOpen className="size-7" aria-hidden="true" />
-          Capacitaciones IA
+          Certificaciones AI
         </Link>
 
         <h1 className="mb-2 text-center text-2xl font-bold">

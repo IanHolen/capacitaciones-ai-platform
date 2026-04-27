@@ -64,7 +64,7 @@ export default function AboutPage() {
             className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl"
             style={{ color: "#1E40AF" }}
           >
-            ¿Qué es Capacitaciones IA?
+            ¿Qué es Certificaciones AI?
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-muted-foreground">
             Es una plataforma gratuita donde cualquier persona puede aprender a
