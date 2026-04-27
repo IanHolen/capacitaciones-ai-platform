@@ -14,7 +14,7 @@ const providers: Record<UseCase, LLMProvider> = {
       apiKey: process.env.GEMINI_API_KEY,
       baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/",
     }),
-    model: "gemini-2.0-flash-lite",
+    model: "gemini-2.0-flash",
     dailyLimit: 1000,
   },
   tutor: {

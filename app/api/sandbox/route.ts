@@ -68,9 +68,11 @@ export async function POST(request: Request) {
         for await (const chunk of chunks) {
           controller.enqueue(new TextEncoder().encode(chunk));
         }
-      } catch {
+      } catch (err) {
+        const message = err instanceof Error ? err.message : "Error desconocido";
+        console.error("[sandbox] LLM error:", message);
         controller.enqueue(
-          new TextEncoder().encode("\n[Error al procesar la solicitud]")
+          new TextEncoder().encode(`\n[Error: ${message}]`)
         );
       } finally {
         controller.close();
