@@ -17,16 +17,30 @@ interface QuizProps {
   courseId: string;
   accentColor: string;
   onPass?: () => void;
+  maxQuestions?: number;
 }
 
-export function Quiz({ questions, courseId, accentColor, onPass }: QuizProps) {
+function shuffleArray<T>(arr: T[]): T[] {
+  const shuffled = [...arr];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
+
+export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 10 }: QuizProps) {
+  const [pool] = useState(() => {
+    const shuffled = shuffleArray(questions);
+    return shuffled.slice(0, Math.min(maxQuestions, shuffled.length));
+  });
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [answered, setAnswered] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
   const [finished, setFinished] = useState(false);
 
-  const current = questions[currentIndex];
+  const current = pool[currentIndex];
   const isCorrect = selectedIndex === current?.correctIndex;
 
   const handleSelect = useCallback(
@@ -42,14 +56,14 @@ export function Quiz({ questions, courseId, accentColor, onPass }: QuizProps) {
   );
 
   const handleNext = useCallback(() => {
-    if (currentIndex < questions.length - 1) {
+    if (currentIndex < pool.length - 1) {
       setCurrentIndex((i) => i + 1);
       setSelectedIndex(null);
       setAnswered(false);
     } else {
       setFinished(true);
     }
-  }, [currentIndex, questions.length]);
+  }, [currentIndex, pool.length]);
 
   const handleRestart = useCallback(() => {
     setCurrentIndex(0);
@@ -85,7 +99,7 @@ export function Quiz({ questions, courseId, accentColor, onPass }: QuizProps) {
   );
 
   if (finished) {
-    const percentage = Math.round((correctCount / questions.length) * 100);
+    const percentage = Math.round((correctCount / pool.length) * 100);
     const passed = percentage >= 80;
     const message = passed
       ? "¡Excelente! Tenés una base sólida."
@@ -100,7 +114,7 @@ export function Quiz({ questions, courseId, accentColor, onPass }: QuizProps) {
     return (
       <div className="flex flex-col items-center gap-6 py-8 text-center">
         <div className="text-5xl font-bold" style={{ color: accentColor }}>
-          {correctCount} de {questions.length}
+          {correctCount} de {pool.length}
         </div>
         <div className="text-xl font-medium">correctas</div>
         <div
@@ -147,19 +161,19 @@ export function Quiz({ questions, courseId, accentColor, onPass }: QuizProps) {
       {/* Progress */}
       <div>
         <div className="mb-2 text-base text-gray-600">
-          Pregunta {currentIndex + 1} de {questions.length}
+          Pregunta {currentIndex + 1} de {pool.length}
         </div>
         <div
           className="h-3 w-full overflow-hidden rounded-full bg-gray-200"
           role="progressbar"
           aria-valuenow={currentIndex + 1}
           aria-valuemin={0}
-          aria-valuemax={questions.length}
+          aria-valuemax={pool.length}
         >
           <div
             className="h-full rounded-full transition-all"
             style={{
-              width: `${((currentIndex + 1) / questions.length) * 100}%`,
+              width: `${((currentIndex + 1) / pool.length) * 100}%`,
               backgroundColor: accentColor,
             }}
           />
@@ -264,7 +278,7 @@ export function Quiz({ questions, courseId, accentColor, onPass }: QuizProps) {
           style={{ backgroundColor: accentColor }}
           onClick={handleNext}
         >
-          {currentIndex < questions.length - 1
+          {currentIndex < pool.length - 1
             ? "Siguiente pregunta"
             : "Ver resultados"}
         </Button>

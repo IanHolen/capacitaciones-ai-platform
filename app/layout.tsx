@@ -3,8 +3,6 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { BookOpen, LayoutDashboard } from "lucide-react";
 import { UserNav } from "@/components/user-nav";
-import { LanguageToggle } from "@/components/language-toggle";
-import { I18nProvider } from "@/components/i18n-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -43,7 +41,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col text-[18px] leading-relaxed">
-        <I18nProvider>
+        <>
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
@@ -74,7 +72,7 @@ export default function RootLayout({
                   <LayoutDashboard className="size-5" aria-hidden="true" />
                   Mi Progreso
                 </NavLink>
-                <LanguageToggle />
+
                 <UserNav />
               </div>
 
@@ -84,7 +82,7 @@ export default function RootLayout({
                   <BookOpen className="size-5" aria-hidden="true" />
                   <span className="sr-only">Cursos</span>
                 </NavLink>
-                <LanguageToggle />
+
                 <UserNav />
               </div>
             </nav>
@@ -99,7 +97,7 @@ export default function RootLayout({
               <p>&copy; 2026 Capacitaciones IA. Todos los derechos reservados.</p>
             </div>
           </footer>
-        </I18nProvider>
+        </>
       </body>
     </html>
   );

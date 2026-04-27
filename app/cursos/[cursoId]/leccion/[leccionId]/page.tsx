@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import {
   ChevronLeft,
   ChevronRight,
-  PlayCircle,
   CheckCircle2,
 } from "lucide-react";
 import { getLeccion, nivelConfig, cursos } from "@/lib/cursos-data";
@@ -112,28 +111,17 @@ export default async function LeccionPage({
         </div>
       </div>
 
-      {/* Video Section */}
-      {leccion.tieneVideo && (
+
+
+      {/* Lesson Content — hide for quiz lessons with interactive quiz to avoid showing answer keys */}
+      {!(leccion.tieneQuiz && leccion.quizQuestions) && (
         <div className="mb-10">
-          <div className="flex aspect-video w-full items-center justify-center rounded-xl border-2 border-dashed border-muted-foreground/30 bg-muted/50">
-            <div className="flex flex-col items-center gap-3 text-muted-foreground">
-              <PlayCircle className="size-16" aria-hidden="true" />
-              <span className="text-lg font-medium">
-                Video de la leccion
-              </span>
-              <span className="text-base">Proximamente</span>
-            </div>
+          <h2 className="mb-4 text-2xl font-bold">Contenido</h2>
+          <div className="rounded-xl border bg-card p-6 text-lg leading-relaxed md:p-8">
+            <MarkdownContent content={leccion.contenido} />
           </div>
         </div>
       )}
-
-      {/* Lesson Content */}
-      <div className="mb-10">
-        <h2 className="mb-4 text-2xl font-bold">Contenido</h2>
-        <div className="rounded-xl border bg-card p-6 text-lg leading-relaxed md:p-8">
-          <MarkdownContent content={leccion.contenido} />
-        </div>
-      </div>
 
       {/* Prompt Sandbox */}
       <div className="mb-10">
