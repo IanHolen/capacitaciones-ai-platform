@@ -25,14 +25,14 @@ import {
 } from "./curso3-content";
 import { curso1Quiz, curso2Quiz, curso3Quiz } from "./quiz-data";
 
-export type Nivel = "intro" | "basico" | "intermedio" | "avanzado" | "pro";
+export type Nivel = "intro" | "básico" | "intermedio" | "avanzado" | "pro";
 
 export const nivelConfig: Record<
   Nivel,
   { label: string; color: string; bg: string }
 > = {
   intro: { label: "Introducción", color: "#16A34A", bg: "#F0FDF4" },
-  basico: { label: "Básico", color: "#1E40AF", bg: "#EFF6FF" },
+  básico: { label: "Básico", color: "#1E40AF", bg: "#EFF6FF" },
   intermedio: { label: "Intermedio", color: "#7C3AED", bg: "#F5F3FF" },
   avanzado: { label: "Avanzado", color: "#EA580C", bg: "#FFF7ED" },
   pro: { label: "Pro", color: "#CA8A04", bg: "#FEFCE8" },
@@ -70,14 +70,14 @@ export const cursos: Curso[] = [
     id: "que-es-ia",
     titulo: "Que es la Inteligencia Artificial",
     descripcion:
-      "Una introduccion amigable al mundo de la IA. Aprende que es, como funciona y por que es importante para tu vida diaria.",
+      "Una introducción amigable al mundo de la IA. Aprende que es, como funcióna y por que es importante para tu vida diaria.",
     nivel: "intro",
     duracion: "2 horas",
     lecciones: [
       {
         id: "que-es-ia-1",
         titulo: "Que es la Inteligencia Artificial",
-        descripcion: "Descubri que es la IA con una analogia simple: cocinar.",
+        descripcion: "Descubri que es la IA con una analogía simple: cocinar.",
         duracion: "20 min",
         contenido: leccion1,
         tieneVideo: true,
@@ -86,7 +86,7 @@ export const cursos: Curso[] = [
       {
         id: "que-es-ia-2",
         titulo: "La IA en tu vida diaria",
-        descripcion: "Descubri donde se esconde la IA en tu dia a dia.",
+        descripcion: "Descubri donde se esconde la IA en tu día a dia.",
         duracion: "20 min",
         contenido: leccion2,
         tieneVideo: true,
@@ -114,7 +114,7 @@ export const cursos: Curso[] = [
         id: "que-es-ia-5",
         titulo: "Vocabulario esencial de la IA",
         descripcion:
-          "Los 18 terminos que necesitas conocer, con analogias cotidianas.",
+          "Los 18 términos que necesitas conocer, con analogías cotidianas.",
         duracion: "25 min",
         contenido: leccion5,
         tieneVideo: false,
@@ -133,10 +133,10 @@ export const cursos: Curso[] = [
     ],
   },
   {
-    id: "primera-conversacion-ia",
-    titulo: "Tu primera conversacion con IA",
+    id: "primera-conversación-ia",
+    titulo: "Tu primera conversación con IA",
     descripcion:
-      "Curso practico donde vas a usar ChatGPT, Claude o Gemini por primera vez. Paso a paso, sin miedo.",
+      "Curso práctico donde vas a usar ChatGPT, Claude o Gemini por primera vez. Paso a paso, sin miedo.",
     nivel: "intro",
     duracion: "2 horas",
     lecciones: [
@@ -144,7 +144,7 @@ export const cursos: Curso[] = [
         id: "conv-ia-1",
         titulo: "Que es ChatGPT, Claude y Gemini?",
         descripcion:
-          "Conoce los tres asistentes de IA mas populares y sus diferencias.",
+          "Conoce los tres asistentes de IA más populares y sus diferencias.",
         duracion: "15 min",
         contenido: c2leccion1,
         tieneVideo: true,
@@ -173,7 +173,7 @@ export const cursos: Curso[] = [
         id: "conv-ia-4",
         titulo: "Entendiendo las respuestas de la IA",
         descripcion:
-          "Aprende a detectar alucinaciones y mejorar las respuestas.",
+          "Aprende a detectar alucinaciónes y mejorar las respuestas.",
         duracion: "20 min",
         contenido: c2leccion4,
         tieneVideo: true,
@@ -181,9 +181,9 @@ export const cursos: Curso[] = [
       },
       {
         id: "conv-ia-5",
-        titulo: "5 cosas utiles que puedes hacer HOY",
+        titulo: "5 cosas útiles que puedes hacer HOY",
         descripcion:
-          "Correos, recetas, resumenes, traducciones y viajes con prompts copiables.",
+          "Correos, recetas, resumenes, traducciónes y viajes con prompts copiables.",
         duracion: "20 min",
         contenido: c2leccion5,
         tieneVideo: false,
@@ -191,7 +191,7 @@ export const cursos: Curso[] = [
       },
       {
         id: "conv-ia-6",
-        titulo: "Ejercicio practico: 3 preguntas guiadas",
+        titulo: "Ejercicio práctico: 3 preguntas guiadas",
         descripcion: "Practica real paso a paso con tu asistente de IA.",
         duracion: "15 min",
         contenido: c2leccion6,
@@ -214,7 +214,7 @@ export const cursos: Curso[] = [
     id: "ia-sin-miedo",
     titulo: "IA sin miedo",
     descripcion:
-      "Abordamos los miedos mas comunes sobre la IA con honestidad y te damos un plan personal para empezar.",
+      "Abordamos los miedos más comunes sobre la IA con honestidad y te damos un plan personal para empezar.",
     nivel: "intro",
     duracion: "2 horas",
     lecciones: [
@@ -240,7 +240,7 @@ export const cursos: Curso[] = [
       },
       {
         id: "sin-miedo-3",
-        titulo: "La IA se equivoca? Si, y asi te proteges",
+        titulo: "La IA se equivoca? Si, y así te proteges",
         descripcion:
           "Alucinaciones explicadas con ejemplos reales y como verificar.",
         duracion: "20 min",
@@ -270,7 +270,7 @@ export const cursos: Curso[] = [
       },
       {
         id: "sin-miedo-6",
-        titulo: "Quiz final del Nivel Introduccion",
+        titulo: "Quiz final del Nivel Introducción",
         descripcion:
           "15 preguntas cubriendo los 3 cursos del nivel introductorio.",
         duracion: "20 min",
@@ -285,24 +285,24 @@ export const cursos: Curso[] = [
     id: "chatgpt-desde-cero",
     titulo: "ChatGPT desde cero",
     descripcion:
-      "Aprende a usar ChatGPT de forma efectiva. Desde tu primera conversacion hasta prompts avanzados.",
-    nivel: "basico",
+      "Aprende a usar ChatGPT de forma efectiva. Desde tu primera conversación hasta prompts avanzados.",
+    nivel: "básico",
     duracion: "4 horas",
     lecciones: [
       {
         id: "chatgpt-1",
         titulo: "Que es ChatGPT",
-        descripcion: "Introduccion a ChatGPT y como funciona.",
+        descripcion: "Introducción a ChatGPT y como funcióna.",
         duracion: "15 min",
         contenido:
-          "ChatGPT es un modelo de lenguaje creado por OpenAI que puede mantener conversaciones, responder preguntas, escribir textos y mucho mas. Es como hablar con un asistente muy inteligente.",
+          "ChatGPT es un modelo de lenguaje creado por OpenAI que puede mantener conversaciónes, responder preguntas, escribir textos y mucho mas. Es como hablar con un asistente muy inteligente.",
         tieneVideo: true,
         tieneQuiz: false,
       },
       {
         id: "chatgpt-2",
-        titulo: "Tu primera conversacion",
-        descripcion: "Como iniciar y mantener una conversacion con ChatGPT.",
+        titulo: "Tu primera conversación",
+        descripcion: "Como iniciar y mantener una conversación con ChatGPT.",
         duracion: "20 min",
         contenido:
           "Para empezar, simplemente escribe lo que necesitas. Podes preguntarle cosas, pedirle que escriba textos, que te explique conceptos, o que te ayude a resolver problemas.",
@@ -316,14 +316,14 @@ export const cursos: Curso[] = [
           "Como escribir instrucciones claras para mejores resultados.",
         duracion: "25 min",
         contenido:
-          "Un prompt es la instruccion que le das a ChatGPT. Cuanto mas claro y especifico seas, mejor sera la respuesta. En vez de decir 'escribi sobre perros', proba con 'escribi un parrafo de 5 oraciones sobre los beneficios de tener un perro en casa'.",
+          "Un prompt es la instruccion que le das a ChatGPT. Cuanto más claro y específico seas, mejor sera la respuesta. En vez de decir 'escribi sobre perros', proba con 'escribi un parrafo de 5 oraciones sobre los beneficios de tener un perro en casa'.",
         tieneVideo: true,
         tieneQuiz: true,
       },
       {
         id: "chatgpt-4",
-        titulo: "Casos de uso practicos",
-        descripcion: "Ejemplos reales de como usar ChatGPT en el dia a dia.",
+        titulo: "Casos de uso prácticos",
+        descripcion: "Ejemplos reales de como usar ChatGPT en el día a dia.",
         duracion: "30 min",
         contenido:
           "Podes usar ChatGPT para: resumir textos largos, traducir idiomas, generar ideas para proyectos, escribir emails profesionales, ayudarte a estudiar, y mucho mas.",
@@ -337,7 +337,7 @@ export const cursos: Curso[] = [
     titulo: "Prompts efectivos",
     descripcion:
       "Domina el arte de escribir prompts que obtienen los resultados que necesitas. Tecnicas y patrones probados.",
-    nivel: "basico",
+    nivel: "básico",
     duracion: "5 horas",
     lecciones: [
       {
@@ -357,7 +357,7 @@ export const cursos: Curso[] = [
           "Como asignarle un rol a la IA para mejores respuestas.",
         duracion: "25 min",
         contenido:
-          "Cuando le decis a la IA 'Actua como un profesor de historia' o 'Sos un experto en marketing', la respuesta cambia completamente. Esta tecnica se llama role prompting y es muy poderosa.",
+          "Cuando le decis a la IA 'Actua como un profesor de historia' o 'Sos un experto en marketing', la respuesta cambia completamente. Esta técnica se llama role prompting y es muy poderosa.",
         tieneVideo: true,
         tieneQuiz: true,
       },
@@ -384,7 +384,7 @@ export const cursos: Curso[] = [
     ],
   },
   {
-    id: "automatizacion-ia",
+    id: "automatización-ia",
     titulo: "Automatizacion con IA",
     descripcion:
       "Crea flujos de trabajo automatizados usando herramientas de IA. Ahorra horas de trabajo repetitivo.",
@@ -393,11 +393,11 @@ export const cursos: Curso[] = [
     lecciones: [
       {
         id: "auto-1",
-        titulo: "Introduccion a la automatizacion",
-        descripcion: "Que es la automatizacion y por que importa.",
+        titulo: "Introducción a la automatización",
+        descripcion: "Que es la automatización y por que importa.",
         duracion: "20 min",
         contenido:
-          "La automatizacion con IA te permite crear flujos de trabajo que se ejecutan solos. Imagina que cada vez que recibis un email de un cliente, la IA lo clasifica, genera una respuesta y la guarda en tu CRM.",
+          "La automatización con IA te permite crear flujos de trabajo que se ejecutan solos. Imagina que cada vez que recibis un email de un cliente, la IA lo clasifica, genera una respuesta y la guarda en tu CRM.",
         tieneVideo: true,
         tieneQuiz: false,
       },
@@ -407,17 +407,17 @@ export const cursos: Curso[] = [
     id: "agentes-ia",
     titulo: "Agentes de IA",
     descripcion:
-      "Construi tus propios agentes de IA. Aprende a disenar, implementar y desplegar agentes autonomos.",
+      "Construi tus propios agentes de IA. Aprende a diseñar, implementar y desplegar agentes autónomos.",
     nivel: "pro",
     duracion: "12 horas",
     lecciones: [
       {
         id: "agentes-1",
         titulo: "Que son los agentes de IA",
-        descripcion: "Introduccion a los agentes autonomos.",
+        descripcion: "Introducción a los agentes autónomos.",
         duracion: "25 min",
         contenido:
-          "Un agente de IA es un sistema que puede tomar decisiones y ejecutar acciones de forma autonoma. A diferencia de un chatbot, un agente puede usar herramientas, buscar informacion y completar tareas complejas sin intervencion humana.",
+          "Un agente de IA es un sistema que puede tomar decisiónes y ejecutar acciones de forma autónoma. A diferencia de un chatbot, un agente puede usar herramientas, buscar información y completar tareas complejas sin intervencion humana.",
         tieneVideo: true,
         tieneQuiz: true,
       },
