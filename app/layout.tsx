@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { BookOpen, LayoutDashboard } from "lucide-react";
+import { BookOpen, User } from "lucide-react";
 import { UserNav } from "@/components/user-nav";
 import "./globals.css";
 
@@ -69,8 +69,8 @@ export default function RootLayout({
                   Cursos
                 </NavLink>
                 <NavLink href="/cuenta">
-                  <LayoutDashboard className="size-5" aria-hidden="true" />
-                  Mi Progreso
+                  <User className="size-5" aria-hidden="true" />
+                  Mi Cuenta
                 </NavLink>
 
                 <UserNav />

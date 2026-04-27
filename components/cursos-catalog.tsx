@@ -38,7 +38,7 @@ function CourseCard({ curso, query }: { curso: Curso; query: string }) {
 
   return (
     <Card className="flex h-full flex-col transition-shadow hover:shadow-md">
-      <CardHeader>
+      <CardHeader className="flex-1">
         <div className="mb-2">
           <Badge
             className="text-sm font-semibold"
@@ -64,7 +64,7 @@ function CourseCard({ curso, query }: { curso: Curso; query: string }) {
           {curso.duracion}
         </span>
       </CardContent>
-      <CardFooter>
+      <CardFooter className="mt-auto">
         <Link href={`/cursos/${curso.id}`} className="w-full">
           <Button
             className="w-full text-base font-semibold"
