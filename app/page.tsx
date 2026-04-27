@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Dumbbell, Sparkles } from "lucide-react";
+import { AuthLink } from "@/components/auth-link";
 
 const steps = [
   {
@@ -40,14 +41,14 @@ export default function Home() {
           a tu ritmo, con ejercicios prácticos.
         </p>
         <div className="mt-10">
-          <Link href="/cursos">
+          <AuthLink href="/cursos" loginRedirect="/login?redirectTo=%2Fcursos">
             <Button
               className="h-14 px-8 text-lg font-semibold"
               style={{ backgroundColor: "#1E40AF" }}
             >
               Explorar cursos
             </Button>
-          </Link>
+          </AuthLink>
         </div>
       </section>
 
@@ -94,14 +95,13 @@ export default function Home() {
           más básico hasta niveles profesionales.
         </p>
         <div className="mt-8">
-          <Link href="/cursos">
+          <AuthLink href="/cursos" loginRedirect="/login?redirectTo=%2Fcursos">
             <Button
-              variant="outline"
-              className="h-14 border-white px-8 text-lg font-semibold text-white hover:bg-white hover:text-blue-900"
+              className="h-14 border-2 border-white bg-white/20 px-8 text-lg font-semibold text-white hover:bg-white hover:text-blue-900"
             >
               Ver todos los cursos
             </Button>
-          </Link>
+          </AuthLink>
         </div>
       </section>
     </div>
