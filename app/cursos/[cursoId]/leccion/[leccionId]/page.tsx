@@ -10,6 +10,7 @@ import {
 import { getLeccion, nivelConfig, cursos, sandboxLessons } from "@/lib/cursos-data";
 import { MarkdownContent } from "@/components/markdown-content";
 import { LessonQuizSection } from "@/components/lesson-quiz-section";
+import { LessonCompleteButton } from "@/components/lesson-complete-button";
 import { PromptSandbox } from "@/components/prompt-sandbox";
 import { AiTutor } from "@/components/ai-tutor";
 import { LessonComments } from "@/components/lesson-comments";
@@ -139,14 +140,21 @@ export default async function LeccionPage({
         </div>
       )}
 
-      {/* Quiz (if lesson has one) */}
-      {leccion.tieneQuiz && leccion.quizQuestions && (
+      {/* Quiz + Complete (quiz requires 80% to mark complete) */}
+      {leccion.tieneQuiz && leccion.quizQuestions ? (
         <LessonQuizSection
           questions={leccion.quizQuestions}
           courseId={curso.id}
           lessonId={leccion.id}
           accentColor={config.color}
         />
+      ) : (
+        <div className="mb-10 flex justify-center">
+          <LessonCompleteButton
+            lessonId={leccion.id}
+            accentColor={config.color}
+          />
+        </div>
       )}
 
       {/* Comments */}

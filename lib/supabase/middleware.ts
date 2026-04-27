@@ -29,13 +29,14 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const publicPaths = ["/", "/login", "/registro", "/auth", "/about"];
+  const publicPaths = ["/", "/login", "/registro", "/auth", "/about", "/cursos"];
   const isPublic = publicPaths.some(
     (path) =>
       request.nextUrl.pathname === path ||
       request.nextUrl.pathname.startsWith("/auth/") ||
       request.nextUrl.pathname.startsWith("/api/") ||
-      request.nextUrl.pathname.startsWith("/_next/"),
+      request.nextUrl.pathname.startsWith("/_next/") ||
+      request.nextUrl.pathname.startsWith("/cursos"),
   );
 
   if (!isPublic && !user) {
