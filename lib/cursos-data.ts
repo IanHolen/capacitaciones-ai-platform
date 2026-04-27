@@ -23,6 +23,7 @@ import {
   c3leccion5,
   c3leccion6,
 } from "./curso3-content";
+import { curso1Quiz, curso2Quiz, curso3Quiz } from "./quiz-data";
 
 export type Nivel = "intro" | "basico" | "intermedio" | "avanzado" | "pro";
 
@@ -37,6 +38,13 @@ export const nivelConfig: Record<
   pro: { label: "Pro", color: "#CA8A04", bg: "#FEFCE8" },
 };
 
+export interface QuizQuestion {
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanation: string;
+}
+
 export interface Leccion {
   id: string;
   titulo: string;
@@ -45,6 +53,7 @@ export interface Leccion {
   contenido: string;
   tieneVideo: boolean;
   tieneQuiz: boolean;
+  quizQuestions?: QuizQuestion[];
 }
 
 export interface Curso {
@@ -119,6 +128,7 @@ export const cursos: Curso[] = [
         contenido: leccion6,
         tieneVideo: false,
         tieneQuiz: true,
+        quizQuestions: curso1Quiz,
       },
     ],
   },
@@ -196,6 +206,7 @@ export const cursos: Curso[] = [
         contenido: c2leccion7,
         tieneVideo: false,
         tieneQuiz: true,
+        quizQuestions: curso2Quiz,
       },
     ],
   },
@@ -266,6 +277,7 @@ export const cursos: Curso[] = [
         contenido: c3leccion6,
         tieneVideo: false,
         tieneQuiz: true,
+        quizQuestions: curso3Quiz,
       },
     ],
   },

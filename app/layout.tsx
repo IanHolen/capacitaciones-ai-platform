@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { BookOpen, LayoutDashboard, User, Menu } from "lucide-react";
+import { BookOpen, LayoutDashboard, User } from "lucide-react";
+import { UserNav } from "@/components/user-nav";
 import "./globals.css";
 
 const inter = Inter({
@@ -70,10 +71,7 @@ export default function RootLayout({
                 <LayoutDashboard className="size-5" aria-hidden="true" />
                 Mi Progreso
               </NavLink>
-              <NavLink href="/perfil">
-                <User className="size-5" aria-hidden="true" />
-                Perfil
-              </NavLink>
+              <UserNav />
             </div>
 
             {/* Mobile: simplified nav links */}
@@ -86,10 +84,7 @@ export default function RootLayout({
                 <LayoutDashboard className="size-5" aria-hidden="true" />
                 <span className="sr-only">Mi Progreso</span>
               </NavLink>
-              <NavLink href="/perfil">
-                <User className="size-5" aria-hidden="true" />
-                <span className="sr-only">Perfil</span>
-              </NavLink>
+              <UserNav />
             </div>
           </nav>
         </header>

@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import { getLeccion, nivelConfig, cursos } from "@/lib/cursos-data";
 import { MarkdownContent } from "@/components/markdown-content";
+import { Quiz } from "@/components/quiz";
+import { LessonCompleteButton } from "@/components/lesson-complete-button";
 
 export function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -131,25 +133,26 @@ export default async function LeccionPage({
       </div>
 
       {/* Quiz Section */}
-      {leccion.tieneQuiz && (
+      {leccion.tieneQuiz && leccion.quizQuestions && (
         <div className="mb-10">
-          <h2 className="mb-4 text-2xl font-bold">Ejercicio</h2>
-          <div className="rounded-xl border-2 border-dashed border-muted-foreground/30 bg-muted/30 p-6 md:p-8">
-            <div className="flex flex-col items-center gap-4 text-center">
-              <CheckCircle2
-                className="size-12 text-muted-foreground"
-                aria-hidden="true"
-              />
-              <p className="text-lg font-medium text-muted-foreground">
-                Quiz interactivo
-              </p>
-              <p className="text-base text-muted-foreground">
-                El quiz para esta leccion estara disponible proximamente.
-              </p>
-            </div>
+          <h2 className="mb-4 text-2xl font-bold">Quiz</h2>
+          <div className="rounded-xl border bg-card p-6 md:p-8">
+            <Quiz
+              questions={leccion.quizQuestions}
+              courseId={curso.id}
+              accentColor={config.color}
+            />
           </div>
         </div>
       )}
+
+      {/* Mark Complete */}
+      <div className="mb-10 flex justify-center">
+        <LessonCompleteButton
+          lessonId={leccion.id}
+          accentColor={config.color}
+        />
+      </div>
 
       {/* Navigation */}
       <div className="flex flex-col gap-4 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">
