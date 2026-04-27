@@ -64,6 +64,18 @@ import {
   leccion4 as c15l4, leccion5 as c15l5, leccion6 as c15l6,
   leccion7 as c15l7, leccion8 as c15l8,
 } from "./curso15-content";
+import {
+  c4leccion1, c4leccion2, c4leccion3, c4leccion4,
+  c4leccion5, c4leccion6, c4leccion7, c4leccion8,
+} from "./curso4-content";
+import {
+  c5leccion1, c5leccion2, c5leccion3, c5leccion4,
+  c5leccion5, c5leccion6, c5leccion7,
+} from "./curso5-content";
+import {
+  c6leccion1, c6leccion2, c6leccion3, c6leccion4,
+  c6leccion5, c6leccion6, c6leccion7,
+} from "./curso6-content";
 
 export type Nivel = "intro" | "básico" | "intermedio" | "avanzado" | "pro";
 
@@ -321,6 +333,35 @@ export const cursos: Curso[] = [
       },
     ],
   },
+  // === NIVEL BÁSICO ===
+  { id: "domina-chatgpt-claude-gemini", titulo: "Dominá ChatGPT, Claude y Gemini", descripcion: "Conocé a fondo las diferencias, interfaces y funciones de los tres asistentes de IA más populares.", nivel: "básico", duracion: "5 horas", lecciones: [
+    { id: "dcg-1", titulo: "Diferencias reales entre ChatGPT, Claude y Gemini", descripcion: "Comparativa profunda de los tres asistentes.", duracion: "20 min", contenido: c4leccion1, tieneVideo: true, tieneQuiz: false },
+    { id: "dcg-2", titulo: "Interfaz y funciones de ChatGPT", descripcion: "Tour completo por la interfaz de ChatGPT.", duracion: "20 min", contenido: c4leccion2, tieneVideo: true, tieneQuiz: false },
+    { id: "dcg-3", titulo: "Interfaz y funciones de Claude", descripcion: "Artifacts, Projects y documentos largos.", duracion: "20 min", contenido: c4leccion3, tieneVideo: true, tieneQuiz: false },
+    { id: "dcg-4", titulo: "Interfaz y funciones de Gemini", descripcion: "Extensiones de Google y verificación.", duracion: "20 min", contenido: c4leccion4, tieneVideo: true, tieneQuiz: false },
+    { id: "dcg-5", titulo: "Apps móviles y modo voz", descripcion: "Usá IA desde tu celular y con tu voz.", duracion: "15 min", contenido: c4leccion5, tieneVideo: true, tieneQuiz: false },
+    { id: "dcg-6", titulo: "Perplexity: buscador con IA", descripcion: "Búsquedas con fuentes verificables.", duracion: "15 min", contenido: c4leccion6, tieneVideo: true, tieneQuiz: false },
+    { id: "dcg-7", titulo: "Cuándo usar cuál herramienta", descripcion: "Guía práctica por situación.", duracion: "15 min", contenido: c4leccion7, tieneVideo: false, tieneQuiz: false },
+    { id: "dcg-8", titulo: "Quiz: Dominá las herramientas", descripcion: "10 preguntas sobre las herramientas.", duracion: "15 min", contenido: c4leccion8, tieneVideo: false, tieneQuiz: true },
+  ] },
+  { id: "prompts-efectivos", titulo: "Prompts efectivos", descripcion: "Dominá el arte de escribir prompts que obtienen exactamente los resultados que necesitás.", nivel: "básico", duracion: "5 horas", lecciones: [
+    { id: "pef-1", titulo: "Anatomía de un buen prompt", descripcion: "La fórmula ROL + TAREA + CONTEXTO + FORMATO.", duracion: "20 min", contenido: c5leccion1, tieneVideo: true, tieneQuiz: false },
+    { id: "pef-2", titulo: "Dar contexto: la clave", descripcion: "Transformá respuestas genéricas en personalizadas.", duracion: "20 min", contenido: c5leccion2, tieneVideo: true, tieneQuiz: false },
+    { id: "pef-3", titulo: "Ser específico vs. ser vago", descripcion: "6 formas de ser más específico.", duracion: "20 min", contenido: c5leccion3, tieneVideo: true, tieneQuiz: false },
+    { id: "pef-4", titulo: "Pedir correcciones y mejoras", descripcion: "La conversación iterativa con IA.", duracion: "20 min", contenido: c5leccion4, tieneVideo: true, tieneQuiz: false },
+    { id: "pef-5", titulo: "Prompts para diferentes situaciones", descripcion: "Colección de prompts listos para usar.", duracion: "20 min", contenido: c5leccion5, tieneVideo: false, tieneQuiz: false },
+    { id: "pef-6", titulo: "Ejercicio: transformá 5 prompts", descripcion: "Práctica: de prompt malo a excelente.", duracion: "20 min", contenido: c5leccion6, tieneVideo: false, tieneQuiz: false },
+    { id: "pef-7", titulo: "Quiz: Prompts efectivos", descripcion: "10 preguntas sobre prompting.", duracion: "15 min", contenido: c5leccion7, tieneVideo: false, tieneQuiz: true },
+  ] },
+  { id: "ia-vida-cotidiana", titulo: "IA en tu vida cotidiana", descripcion: "Usá IA para escribir correos, cocinar, viajar, ayudar con tareas escolares y mucho más.", nivel: "básico", duracion: "5 horas", lecciones: [
+    { id: "ivc-1", titulo: "Escribir emails y mensajes", descripcion: "Desde cero, mejorar existentes y adaptar tono.", duracion: "20 min", contenido: c6leccion1, tieneVideo: true, tieneQuiz: false },
+    { id: "ivc-2", titulo: "Recetas y planificación de comidas", descripcion: "Recetas personalizadas y menús semanales.", duracion: "20 min", contenido: c6leccion2, tieneVideo: true, tieneQuiz: false },
+    { id: "ivc-3", titulo: "Planear viajes e itinerarios", descripcion: "Itinerarios, presupuestos y checklists.", duracion: "20 min", contenido: c6leccion3, tieneVideo: true, tieneQuiz: false },
+    { id: "ivc-4", titulo: "Ayudar con tareas escolares", descripcion: "IA como tutor, no como hacedor de tareas.", duracion: "20 min", contenido: c6leccion4, tieneVideo: true, tieneQuiz: false },
+    { id: "ivc-5", titulo: "Resumir artículos y documentos", descripcion: "Métodos y tipos de resúmenes.", duracion: "20 min", contenido: c6leccion5, tieneVideo: true, tieneQuiz: false },
+    { id: "ivc-6", titulo: "Traducir entre idiomas", descripcion: "Traducciones con contexto y frases de viaje.", duracion: "20 min", contenido: c6leccion6, tieneVideo: true, tieneQuiz: false },
+    { id: "ivc-7", titulo: "Quiz: IA en la vida cotidiana", descripcion: "Cierre del Nivel Básico.", duracion: "15 min", contenido: c6leccion7, tieneVideo: false, tieneQuiz: true },
+  ] },
   // === NIVEL INTERMEDIO ===
   { id: "prompt-engineering", titulo: "Prompt Engineering: el arte de preguntar", descripcion: "Dominá las técnicas avanzadas de prompting para obtener resultados profesionales de la IA.", nivel: "intermedio", duracion: "6 horas", lecciones: [
     { id: "pe-1", titulo: "Las 5 técnicas core de prompting", descripcion: "Fundamentos del prompt engineering.", duracion: "25 min", contenido: c7leccion1, tieneVideo: true, tieneQuiz: false },
