@@ -226,7 +226,7 @@ export default function AdminPage() {
       </div>
 
       {/* Tab content — consistent container */}
-      <div className="min-h-[900px] w-full">
+      <div className="min-h-[900px] w-full rounded-xl border bg-card p-6 shadow-sm">
       {/* Overview Tab */}
       {activeTab === "overview" && (
         <motion.div
