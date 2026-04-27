@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { BookOpen } from "lucide-react";
 import { HeaderNav } from "@/components/header-nav";
-import { I18nProvider } from "@/components/i18n-provider";
 import { EnglishBanner } from "@/components/english-banner";
+import { I18nProvider } from "@/components/i18n-provider";
 import "./globals.css";
 
 const inter = Inter({
