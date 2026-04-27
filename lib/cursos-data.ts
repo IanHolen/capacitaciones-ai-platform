@@ -23,7 +23,7 @@ import {
   c3leccion5,
   c3leccion6,
 } from "./curso3-content";
-import { curso1Quiz, curso2Quiz, curso3Quiz } from "./quiz-data";
+import { curso1Quiz, curso2Quiz, curso3Quiz, curso7Quiz, curso8Quiz, curso9Quiz } from "./quiz-data";
 import {
   c7leccion1, c7leccion2, c7leccion3, c7leccion4,
   c7leccion5, c7leccion6, c7leccion7, c7leccion8,
@@ -371,7 +371,7 @@ export const cursos: Curso[] = [
     { id: "pe-5", titulo: "Usar estructura: XML, markdown y JSON", descripcion: "Formatos estructurados para mejores resultados.", duracion: "25 min", contenido: c7leccion5, tieneVideo: true, tieneQuiz: false },
     { id: "pe-6", titulo: "System prompts vs user prompts", descripcion: "Diferencias y cuándo usar cada uno.", duracion: "20 min", contenido: c7leccion6, tieneVideo: true, tieneQuiz: false },
     { id: "pe-7", titulo: "Iteración y refinamiento", descripcion: "Mejorar prompts iterativamente.", duracion: "20 min", contenido: c7leccion7, tieneVideo: true, tieneQuiz: false },
-    { id: "pe-8", titulo: "Quiz: Prompt Engineering", descripcion: "Poné a prueba tus habilidades.", duracion: "15 min", contenido: c7leccion8, tieneVideo: false, tieneQuiz: true },
+    { id: "pe-8", titulo: "Quiz: Prompt Engineering", descripcion: "Poné a prueba tus habilidades.", duracion: "15 min", contenido: c7leccion8, tieneVideo: false, tieneQuiz: true, quizQuestions: curso7Quiz },
   ] },
   { id: "documentos-imagenes", titulo: "Trabaja con documentos e imágenes", descripcion: "Aprendé a analizar PDFs, imágenes y tablas con herramientas de IA.", nivel: "intermedio", duracion: "5 horas", lecciones: [
     { id: "di-1", titulo: "Subir PDFs y analizarlos con IA", descripcion: "Análisis de documentos PDF.", duracion: "25 min", contenido: c8leccion1, tieneVideo: true, tieneQuiz: false },
@@ -379,7 +379,7 @@ export const cursos: Curso[] = [
     { id: "di-3", titulo: "Analizar imágenes con IA", descripcion: "Visión por computadora al alcance de todos.", duracion: "25 min", contenido: c8leccion3, tieneVideo: true, tieneQuiz: false },
     { id: "di-4", titulo: "Extraer datos de tablas y facturas", descripcion: "Extracción automática de datos.", duracion: "25 min", contenido: c8leccion4, tieneVideo: true, tieneQuiz: false },
     { id: "di-5", titulo: "Proyectos con múltiples archivos", descripcion: "Trabajar con conjuntos de documentos.", duracion: "25 min", contenido: c8leccion5, tieneVideo: true, tieneQuiz: false },
-    { id: "di-6", titulo: "Quiz: Documentos e imágenes", descripcion: "Evaluá lo aprendido.", duracion: "15 min", contenido: c8leccion6, tieneVideo: false, tieneQuiz: true },
+    { id: "di-6", titulo: "Quiz: Documentos e imágenes", descripcion: "Evaluá lo aprendido.", duracion: "15 min", contenido: c8leccion6, tieneVideo: false, tieneQuiz: true, quizQuestions: curso8Quiz },
   ] },
   { id: "flujos-trabajo-ia", titulo: "Flujos de trabajo con IA", descripcion: "Creá flujos completos combinando múltiples técnicas de IA para proyectos reales.", nivel: "intermedio", duracion: "6 horas", lecciones: [
     { id: "ft-1", titulo: "Prompt chaining: dividir en pasos", descripcion: "Encadenar prompts para tareas complejas.", duracion: "25 min", contenido: c9leccion1, tieneVideo: true, tieneQuiz: false },
@@ -388,7 +388,7 @@ export const cursos: Curso[] = [
     { id: "ft-4", titulo: "Evaluaciones de prompts", descripcion: "Cómo saber si un prompt es bueno.", duracion: "20 min", contenido: c9leccion4, tieneVideo: true, tieneQuiz: false },
     { id: "ft-5", titulo: "Tu biblioteca personal de prompts", descripcion: "Organizá y reutilizá tus mejores prompts.", duracion: "20 min", contenido: c9leccion5, tieneVideo: true, tieneQuiz: false },
     { id: "ft-6", titulo: "Proyecto: flujo de trabajo completo", descripcion: "Proyecto práctico integrador.", duracion: "30 min", contenido: c9leccion6, tieneVideo: true, tieneQuiz: false },
-    { id: "ft-7", titulo: "Quiz final: Flujos de trabajo", descripcion: "Evaluación del nivel intermedio.", duracion: "15 min", contenido: c9leccion7, tieneVideo: false, tieneQuiz: true },
+    { id: "ft-7", titulo: "Quiz final: Flujos de trabajo", descripcion: "Evaluación del nivel intermedio.", duracion: "15 min", contenido: c9leccion7, tieneVideo: false, tieneQuiz: true, quizQuestions: curso9Quiz },
   ] },
   // === NIVEL AVANZADO ===
   { id: "asistente-ia-propio", titulo: "Creá tu propio asistente de IA", descripcion: "Construí asistentes personalizados con Custom GPTs, Claude Projects y bases de conocimiento.", nivel: "avanzado", duracion: "8 horas", lecciones: [
