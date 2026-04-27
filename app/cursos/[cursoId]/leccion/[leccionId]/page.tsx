@@ -153,51 +153,51 @@ export default async function LeccionPage({
       {/* Navigation */}
       <div className="flex flex-col gap-4 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">
         {prevLeccion ? (
-          <Button
-            variant="outline"
-            className="h-12 gap-2 px-6 text-base"
-            render={
-              <Link
-                href={`/cursos/${curso.id}/leccion/${prevLeccion.id}`}
-              />
-            }
-          >
-            <ChevronLeft className="size-5" aria-hidden="true" />
-            Anterior: {prevLeccion.titulo}
-          </Button>
+          <Link href={`/cursos/${curso.id}/leccion/${prevLeccion.id}`}>
+            <Button
+              variant="outline"
+              className="h-12 gap-2 px-6 text-base"
+              nativeButton={false}
+            >
+              <ChevronLeft className="size-5" aria-hidden="true" />
+              Anterior: {prevLeccion.titulo}
+            </Button>
+          </Link>
         ) : (
-          <Button
-            variant="outline"
-            className="h-12 gap-2 px-6 text-base"
-            render={<Link href={`/cursos/${curso.id}`} />}
-          >
-            <ChevronLeft className="size-5" aria-hidden="true" />
-            Volver al curso
-          </Button>
+          <Link href={`/cursos/${curso.id}`}>
+            <Button
+              variant="outline"
+              className="h-12 gap-2 px-6 text-base"
+              nativeButton={false}
+            >
+              <ChevronLeft className="size-5" aria-hidden="true" />
+              Volver al curso
+            </Button>
+          </Link>
         )}
 
         {nextLeccion ? (
-          <Button
-            className="h-12 gap-2 px-6 text-base font-semibold"
-            style={{ backgroundColor: config.color }}
-            render={
-              <Link
-                href={`/cursos/${curso.id}/leccion/${nextLeccion.id}`}
-              />
-            }
-          >
-            Siguiente: {nextLeccion.titulo}
-            <ChevronRight className="size-5" aria-hidden="true" />
-          </Button>
+          <Link href={`/cursos/${curso.id}/leccion/${nextLeccion.id}`}>
+            <Button
+              className="h-12 gap-2 px-6 text-base font-semibold"
+              style={{ backgroundColor: config.color }}
+              nativeButton={false}
+            >
+              Siguiente: {nextLeccion.titulo}
+              <ChevronRight className="size-5" aria-hidden="true" />
+            </Button>
+          </Link>
         ) : (
-          <Button
-            className="h-12 gap-2 px-6 text-base font-semibold"
-            style={{ backgroundColor: config.color }}
-            render={<Link href={`/cursos/${curso.id}`} />}
-          >
-            <CheckCircle2 className="size-5" aria-hidden="true" />
-            Finalizar curso
-          </Button>
+          <Link href={`/cursos/${curso.id}`}>
+            <Button
+              className="h-12 gap-2 px-6 text-base font-semibold"
+              style={{ backgroundColor: config.color }}
+              nativeButton={false}
+            >
+              <CheckCircle2 className="size-5" aria-hidden="true" />
+              Finalizar curso
+            </Button>
+          </Link>
         )}
       </div>
     </div>

@@ -42,13 +42,15 @@ function CourseCard({ curso }: { curso: Curso }) {
         </span>
       </CardContent>
       <CardFooter>
-        <Button
-          className="w-full text-base font-semibold"
-          style={{ backgroundColor: config.color }}
-          render={<Link href={`/cursos/${curso.id}`} />}
-        >
-          Ver curso
-        </Button>
+        <Link href={`/cursos/${curso.id}`} className="w-full">
+          <Button
+            className="w-full text-base font-semibold"
+            style={{ backgroundColor: config.color }}
+            nativeButton={false}
+          >
+            Ver curso
+          </Button>
+        </Link>
       </CardFooter>
     </Card>
   );

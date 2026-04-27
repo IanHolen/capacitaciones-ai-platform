@@ -40,13 +40,15 @@ export default function Home() {
           a tu ritmo, con ejercicios practicos.
         </p>
         <div className="mt-10">
-          <Button
-            className="h-14 px-8 text-lg font-semibold"
-            style={{ backgroundColor: "#1E40AF" }}
-            render={<Link href="/cursos" />}
-          >
-            Explorar cursos
-          </Button>
+          <Link href="/cursos">
+            <Button
+              className="h-14 px-8 text-lg font-semibold"
+              style={{ backgroundColor: "#1E40AF" }}
+              nativeButton={false}
+            >
+              Explorar cursos
+            </Button>
+          </Link>
         </div>
       </section>
 
@@ -93,13 +95,15 @@ export default function Home() {
           mas basico hasta niveles profesionales.
         </p>
         <div className="mt-8">
-          <Button
-            variant="outline"
-            className="h-14 border-white px-8 text-lg font-semibold text-white hover:bg-white hover:text-blue-900"
-            render={<Link href="/cursos" />}
-          >
-            Ver todos los cursos
-          </Button>
+          <Link href="/cursos">
+            <Button
+              variant="outline"
+              className="h-14 border-white px-8 text-lg font-semibold text-white hover:bg-white hover:text-blue-900"
+              nativeButton={false}
+            >
+              Ver todos los cursos
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
