@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { PrismaClient } from "../generated/prisma/client/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 
@@ -136,11 +137,67 @@ async function main() {
     });
   }
 
+  // ============================================================
+  // Remaining Levels (2–5)
+  // ============================================================
+
+  const levelBasico = await prisma.level.upsert({
+    where: { slug: "basico" },
+    update: {},
+    create: {
+      slug: "basico",
+      name: "Básico",
+      description:
+        "Aprende a usar la IA de forma práctica en tu día a día. Prompts efectivos, herramientas populares y casos de uso reales.",
+      sortOrder: 2,
+    },
+  });
+
+  const levelIntermedio = await prisma.level.upsert({
+    where: { slug: "intermedio" },
+    update: {},
+    create: {
+      slug: "intermedio",
+      name: "Intermedio",
+      description:
+        "Profundiza en técnicas avanzadas de prompting, automatización con IA y uso profesional en tu área de trabajo.",
+      sortOrder: 3,
+    },
+  });
+
+  const levelAvanzado = await prisma.level.upsert({
+    where: { slug: "avanzado" },
+    update: {},
+    create: {
+      slug: "avanzado",
+      name: "Avanzado",
+      description:
+        "Domina la IA generativa: APIs, integración en proyectos, fine-tuning de modelos y desarrollo de soluciones personalizadas.",
+      sortOrder: 4,
+    },
+  });
+
+  const levelPro = await prisma.level.upsert({
+    where: { slug: "pro" },
+    update: {},
+    create: {
+      slug: "pro",
+      name: "Pro",
+      description:
+        "Nivel experto: arquitectura de sistemas con IA, agentes autónomos, RAG, evaluación de modelos y liderazgo técnico en IA.",
+      sortOrder: 5,
+    },
+  });
+
   console.log("Seed complete:");
-  console.log(`  Level: ${level.name} (${level.id})`);
-  console.log(`  Course 1: ${curso1.title} — 6 lessons`);
-  console.log(`  Course 2: ${curso2.title} — 7 lessons`);
-  console.log(`  Course 3: ${curso3.title} — 6 lessons`);
+  console.log(`  Level 1: ${level.name} (${level.id})`);
+  console.log(`    Course 1: ${curso1.title} — 6 lessons`);
+  console.log(`    Course 2: ${curso2.title} — 7 lessons`);
+  console.log(`    Course 3: ${curso3.title} — 6 lessons`);
+  console.log(`  Level 2: ${levelBasico.name} (${levelBasico.id})`);
+  console.log(`  Level 3: ${levelIntermedio.name} (${levelIntermedio.id})`);
+  console.log(`  Level 4: ${levelAvanzado.name} (${levelAvanzado.id})`);
+  console.log(`  Level 5: ${levelPro.name} (${levelPro.id})`);
 }
 
 main()
