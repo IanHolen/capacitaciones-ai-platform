@@ -12,6 +12,8 @@ import { getLeccion, nivelConfig, cursos } from "@/lib/cursos-data";
 import { MarkdownContent } from "@/components/markdown-content";
 import { LessonQuizSection } from "@/components/lesson-quiz-section";
 import { LessonCompleteButton } from "@/components/lesson-complete-button";
+import { PromptSandbox } from "@/components/prompt-sandbox";
+import { AiTutor } from "@/components/ai-tutor";
 
 export function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -132,6 +134,11 @@ export default async function LeccionPage({
         </div>
       </div>
 
+      {/* Prompt Sandbox */}
+      <div className="mb-10">
+        <PromptSandbox />
+      </div>
+
       {/* Quiz + Complete (quiz requires 80% to mark complete) */}
       {leccion.tieneQuiz && leccion.quizQuestions ? (
         <LessonQuizSection
@@ -195,6 +202,9 @@ export default async function LeccionPage({
           </Link>
         )}
       </div>
+
+      {/* AI Tutor floating chatbot */}
+      <AiTutor lessonId={leccion.id} />
     </div>
   );
 }
