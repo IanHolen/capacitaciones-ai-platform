@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -35,6 +36,7 @@ function highlightMatch(text: string, query: string): React.ReactNode {
 }
 
 function CourseCard({ curso, query }: { curso: Curso; query: string }) {
+  const { t } = useTranslation();
   const config = nivelConfig[curso.nivel];
 
   return (
@@ -58,7 +60,7 @@ function CourseCard({ curso, query }: { curso: Curso; query: string }) {
       <CardContent className="flex items-center gap-4 text-base text-muted-foreground">
         <span className="flex items-center gap-1.5">
           <BookOpen className="size-4" aria-hidden="true" />
-          {curso.lecciones.length} lecciones
+          {curso.lecciones.length} {t("courses.lessons")}
         </span>
         <span className="flex items-center gap-1.5">
           <Clock className="size-4" aria-hidden="true" />
@@ -71,7 +73,7 @@ function CourseCard({ curso, query }: { curso: Curso; query: string }) {
             className="w-full text-base font-semibold"
             style={{ backgroundColor: config.color }}
           >
-            Ver curso
+            {t("courses.viewCourse")}
           </Button>
         </Link>
       </CardFooter>
@@ -93,6 +95,7 @@ function searchCursos(query: string): Curso[] {
 }
 
 export default function CursosCatalog() {
+  const { t } = useTranslation();
   const searchParams = useSearchParams();
   const router = useRouter();
   const [query, setQuery] = useState("");
@@ -125,15 +128,15 @@ export default function CursosCatalog() {
           type="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="Buscar cursos o lecciones..."
+          placeholder={t("courses.searchPlaceholder")}
           className="h-12 w-full rounded-xl border bg-background pl-12 pr-10 text-base focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
-          aria-label="Buscar cursos o lecciones"
+          aria-label={t("courses.searchPlaceholder")}
         />
         {query && (
           <button
             onClick={() => setQuery("")}
             className="absolute right-3 top-1/2 -translate-y-1/2 rounded p-1 text-muted-foreground hover:text-foreground"
-            aria-label="Limpiar búsqueda"
+            aria-label={t("courses.clearSearch")}
           >
             <X className="size-4" />
           </button>
@@ -144,7 +147,7 @@ export default function CursosCatalog() {
       <div
         className="mb-8 flex flex-wrap justify-center gap-2"
         role="group"
-        aria-label="Filtrar cursos por nivel"
+        aria-label={t("courses.filterByLevel")}
       >
         <button
           onClick={() => handleFilter(null)}
@@ -155,7 +158,7 @@ export default function CursosCatalog() {
           }}
           aria-pressed={!isValidNivel}
         >
-          Todos
+          {t("courses.all")}
         </button>
         {niveles.map((nivel) => {
           const config = nivelConfig[nivel];

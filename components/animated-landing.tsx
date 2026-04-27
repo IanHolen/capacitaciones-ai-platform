@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 import type { ReactNode } from "react";
 
 export function AnimatedHero({ children }: { children: ReactNode }) {
@@ -57,4 +58,10 @@ export function AnimatedSection({ children }: { children: ReactNode }) {
       {children}
     </motion.div>
   );
+}
+
+// Translatable text component for use in server component pages
+export function T({ k }: { k: string }) {
+  const { t } = useTranslation();
+  return <>{t(k)}</>;
 }
