@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { BookOpen, LogIn, LogOut, HelpCircle } from "lucide-react";
+import { BookOpen, LogIn, LogOut, HelpCircle, Shield } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { LanguageToggle } from "@/components/language-toggle";
 
@@ -78,9 +78,20 @@ export function HeaderNav() {
     .slice(0, 2)
     .toUpperCase();
 
+  const isAdmin = user.email === "holenderian@gmail.com";
+
   return (
     <div className="flex items-center gap-1">
       <LanguageToggle />
+      {isAdmin && (
+        <Link
+          href="/admin"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
+        >
+          <Shield className="size-5" aria-hidden="true" />
+          <span className="hidden sm:inline">Admin</span>
+        </Link>
+      )}
       <Link
         href="/cursos"
         className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
