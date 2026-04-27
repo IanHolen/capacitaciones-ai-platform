@@ -14,6 +14,7 @@ import { PromptSandbox } from "@/components/prompt-sandbox";
 import { AiTutor } from "@/components/ai-tutor";
 import { LessonComments } from "@/components/lesson-comments";
 import { TextToSpeech } from "@/components/text-to-speech";
+import { ContentLanguageNotice } from "@/components/content-language-notice";
 
 export function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -69,6 +70,8 @@ export default async function LeccionPage({
           <li className="font-medium text-foreground">{leccion.titulo}</li>
         </ol>
       </nav>
+
+      <ContentLanguageNotice />
 
       {/* Lesson Header */}
       <div className="mb-8">

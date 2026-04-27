@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { BookOpen, LogIn, LogOut, HelpCircle } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { LanguageToggle } from "@/components/language-toggle";
 
 export function HeaderNav() {
   const pathname = usePathname();
@@ -37,29 +38,35 @@ export function HeaderNav() {
 
   if (!checked) return null;
 
-  // Landing page + not logged in: only show "¿Qué es esto?"
+  // Landing page + not logged in: only show "¿Qué es esto?" + language
   if (isLanding && !user) {
     return (
-      <Link
-        href="/about"
-        className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
-      >
-        <HelpCircle className="size-5" aria-hidden="true" />
-        ¿Qué es esto?
-      </Link>
+      <div className="flex items-center gap-2">
+        <LanguageToggle />
+        <Link
+          href="/about"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
+        >
+          <HelpCircle className="size-5" aria-hidden="true" />
+          ¿Qué es esto?
+        </Link>
+      </div>
     );
   }
 
-  // Not logged in (but not on landing): show Cursos + Iniciar sesión
+  // Not logged in (but not on landing): show language + login
   if (!user) {
     return (
-      <Link
-        href="/login"
-        className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
-      >
-        <LogIn className="size-5" aria-hidden="true" />
-        <span>Iniciar sesión</span>
-      </Link>
+      <div className="flex items-center gap-2">
+        <LanguageToggle />
+        <Link
+          href="/login"
+          className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
+        >
+          <LogIn className="size-5" aria-hidden="true" />
+          <span>Iniciar sesión</span>
+        </Link>
+      </div>
     );
   }
 
@@ -73,6 +80,7 @@ export function HeaderNav() {
 
   return (
     <div className="flex items-center gap-1">
+      <LanguageToggle />
       <Link
         href="/cursos"
         className="flex items-center gap-2 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
