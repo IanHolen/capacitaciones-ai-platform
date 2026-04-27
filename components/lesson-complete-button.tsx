@@ -1,7 +1,23 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
+
+const PROGRESS_KEY = "capacitaciones_progress";
+
+function getLocalProgress(): Record<string, boolean> {
+  try {
+    return JSON.parse(localStorage.getItem(PROGRESS_KEY) || "{}");
+  } catch {
+    return {};
+  }
+}
+
+function saveLocalProgress(lessonId: string) {
+  const progress = getLocalProgress();
+  progress[lessonId] = true;
+  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+}
 
 interface LessonCompleteButtonProps {
   lessonId: string;
@@ -15,20 +31,31 @@ export function LessonCompleteButton({
   const [completed, setCompleted] = useState(false);
   const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    const progress = getLocalProgress();
+    if (progress[lessonId]) {
+      setCompleted(true);
+    }
+  }, [lessonId]);
+
   async function handleComplete() {
     setLoading(true);
+
+    // Always save to localStorage (works immediately)
+    saveLocalProgress(lessonId);
+
+    // Also try to save to DB (best effort)
     try {
-      const res = await fetch("/api/progress", {
+      await fetch("/api/progress", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ lessonId }),
       });
-      if (res.ok) {
-        setCompleted(true);
-      }
     } catch {
-      // silently fail if not authenticated
+      // DB save failed — localStorage still has the progress
     }
+
+    setCompleted(true);
     setLoading(false);
   }
 
