@@ -5,6 +5,7 @@ import { Play, Pause, Square, Volume2, Loader2 } from "lucide-react";
 
 interface TextToSpeechProps {
   text: string;
+  audioUrl?: string;
 }
 
 function findBestVoice(voices: SpeechSynthesisVoice[]): SpeechSynthesisVoice | undefined {
@@ -35,7 +36,7 @@ function cleanMarkdown(text: string): string {
     .trim();
 }
 
-export function TextToSpeech({ text }: TextToSpeechProps) {
+export function TextToSpeech({ text, audioUrl }: TextToSpeechProps) {
   const [mounted, setMounted] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -193,6 +194,33 @@ export function TextToSpeech({ text }: TextToSpeechProps) {
           <Volume2 className="size-7 shrink-0 text-[#1E40AF]" aria-hidden="true" />
           <div className="text-lg font-bold text-[#1E40AF]">Cargando audio...</div>
         </div>
+      </div>
+    );
+  }
+
+  // If we have a pre-generated MP3, use native audio player
+  if (audioUrl) {
+    return (
+      <div className="rounded-2xl border-2 border-[#1E40AF]/20 bg-[#EFF6FF] p-5">
+        <div className="mb-3 flex items-center gap-3">
+          <Volume2 className="size-7 shrink-0 text-[#1E40AF]" aria-hidden="true" />
+          <div>
+            <div className="text-lg font-bold text-[#1E40AF]">
+              Escuchá esta lección en audio
+            </div>
+            <div className="text-sm text-[#1E40AF]/70">
+              Ideal para aprender mientras hacés otras cosas
+            </div>
+          </div>
+        </div>
+        <audio
+          controls
+          preload="none"
+          className="w-full"
+          src={audioUrl}
+        >
+          Tu navegador no soporta audio.
+        </audio>
       </div>
     );
   }

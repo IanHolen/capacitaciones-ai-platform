@@ -14,6 +14,7 @@ import { PromptSandbox } from "@/components/prompt-sandbox";
 import { AiTutor } from "@/components/ai-tutor";
 import { LessonComments } from "@/components/lesson-comments";
 import { TextToSpeech } from "@/components/text-to-speech";
+import { audioMap } from "@/lib/audio-map";
 import { ContentLanguageNotice } from "@/components/content-language-notice";
 
 export function generateStaticParams() {
@@ -121,7 +122,7 @@ export default async function LeccionPage({
         <div className="mb-10">
           {/* Text-to-Speech */}
           <div className="mb-4">
-            <TextToSpeech text={leccion.contenido} />
+            <TextToSpeech text={leccion.contenido} audioUrl={audioMap[leccion.id]} />
           </div>
 
           <h2 className="mb-4 text-2xl font-bold">Contenido</h2>
