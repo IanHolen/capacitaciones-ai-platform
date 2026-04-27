@@ -59,47 +59,53 @@ export default function CuentaPage() {
       );
       setUserEmail(user.email || "");
 
-      // Load progress
+      // Load progress from localStorage (primary) + DB (supplement)
+      const localProgress: Record<string, boolean> = (() => {
+        try {
+          return JSON.parse(
+            localStorage.getItem("capacitaciones_progress") || "{}"
+          );
+        } catch {
+          return {};
+        }
+      })();
+
+      const completedLessonIds = new Set(
+        Object.entries(localProgress)
+          .filter(([, v]) => v)
+          .map(([k]) => k)
+      );
+
+      // Supplement with DB data
       try {
         const res = await fetch("/api/progress");
         if (res.ok) {
           const data = await res.json();
-          const progressMap = new Map<
-            string,
-            { completed: number; total: number }
-          >();
-
           for (const p of data.progress || []) {
-            const courseSlug = p.lesson?.course?.slug;
-            if (courseSlug) {
-              const existing = progressMap.get(courseSlug) || {
-                completed: 0,
-                total: 0,
-              };
-              existing.total++;
-              if (p.completed) existing.completed++;
-              progressMap.set(courseSlug, existing);
+            if (p.completed) {
+              const lessonSlug = p.lesson?.slug;
+              if (lessonSlug) completedLessonIds.add(lessonSlug);
             }
           }
-
-          const courseProgress: CourseProgress[] = cursos.map((curso) => {
-            const p = progressMap.get(curso.id);
-            const total = curso.lecciones.length;
-            const completed = p?.completed || 0;
-            return {
-              courseId: curso.id,
-              completedLessons: completed,
-              totalLessons: total,
-              percentage:
-                total > 0 ? Math.round((completed / total) * 100) : 0,
-            };
-          });
-
-          setProgress(courseProgress);
         }
       } catch {
-        // Progress API not available
+        // DB not available — localStorage still works
       }
+
+      const courseProgress: CourseProgress[] = cursos.map((curso) => {
+        const total = curso.lecciones.length;
+        const completed = curso.lecciones.filter((l) =>
+          completedLessonIds.has(l.id)
+        ).length;
+        return {
+          courseId: curso.id,
+          completedLessons: completed,
+          totalLessons: total,
+          percentage: total > 0 ? Math.round((completed / total) * 100) : 0,
+        };
+      });
+
+      setProgress(courseProgress);
 
       // Load goal
       try {

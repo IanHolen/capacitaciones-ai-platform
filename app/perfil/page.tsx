@@ -60,43 +60,55 @@ export default function PerfilPage() {
       });
       setEditName(name);
 
-      // Load progress stats
+      // Load progress stats from localStorage (primary) + DB (supplement)
       const totalLessons = cursos.reduce(
         (acc, c) => acc + c.lecciones.length,
         0,
       );
 
+      const localProgress: Record<string, boolean> = (() => {
+        try {
+          return JSON.parse(
+            localStorage.getItem("capacitaciones_progress") || "{}"
+          );
+        } catch {
+          return {};
+        }
+      })();
+
+      const completedLessonIds = new Set(
+        Object.entries(localProgress)
+          .filter(([, v]) => v)
+          .map(([k]) => k)
+      );
+
+      // Supplement with DB data
       try {
         const res = await fetch("/api/progress");
         if (res.ok) {
           const data = await res.json();
-          const completedLessons = (data.progress || []).filter(
-            (p: { completed: boolean }) => p.completed,
-          ).length;
-
-          // Count courses where all lessons are completed
-          const lessonsByCourse = new Map<string, { completed: number; total: number }>();
-          for (const curso of cursos) {
-            lessonsByCourse.set(curso.id, { completed: 0, total: curso.lecciones.length });
-          }
           for (const p of data.progress || []) {
-            const courseSlug = p.lesson?.course?.slug;
-            if (courseSlug && p.completed) {
-              const entry = lessonsByCourse.get(courseSlug);
-              if (entry) entry.completed++;
+            if (p.completed) {
+              const lessonSlug = p.lesson?.slug;
+              if (lessonSlug) completedLessonIds.add(lessonSlug);
             }
           }
-          const coursesCompleted = Array.from(lessonsByCourse.values()).filter(
-            (v) => v.total > 0 && v.completed >= v.total,
-          ).length;
-
-          setStats({ coursesCompleted, lessonsCompleted: completedLessons, totalLessons });
-        } else {
-          setStats({ coursesCompleted: 0, lessonsCompleted: 0, totalLessons });
         }
       } catch {
-        setStats({ coursesCompleted: 0, lessonsCompleted: 0, totalLessons });
+        // DB not available
       }
+
+      const lessonsCompleted = cursos.reduce(
+        (acc, curso) =>
+          acc + curso.lecciones.filter((l) => completedLessonIds.has(l.id)).length,
+        0,
+      );
+      const coursesCompleted = cursos.filter((curso) =>
+        curso.lecciones.length > 0 &&
+        curso.lecciones.every((l) => completedLessonIds.has(l.id))
+      ).length;
+
+      setStats({ coursesCompleted, lessonsCompleted, totalLessons });
 
       setLoading(false);
     }
