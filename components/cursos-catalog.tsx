@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
+import { motion, AnimatePresence, type Variants } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import {
   Card,
@@ -179,18 +180,40 @@ export default function CursosCatalog() {
       </div>
 
       {/* Course Grid */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <motion.div
+        className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        initial="hidden"
+        animate="show"
+        variants={{
+          hidden: {},
+          show: { transition: { staggerChildren: 0.08 } },
+        }}
+        key={`${activeNivel}-${query}`}
+      >
         {filteredCursos.map((curso) => (
-          <CourseCard key={curso.id} curso={curso} query={query} />
+          <motion.div
+            key={curso.id}
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              show: { opacity: 1, y: 0, transition: { duration: 0.4 } },
+            }}
+            whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
+          >
+            <CourseCard curso={curso} query={query} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
 
       {filteredCursos.length === 0 && (
-        <p className="mt-8 text-center text-lg text-muted-foreground">
+        <motion.p
+          className="mt-8 text-center text-lg text-muted-foreground"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
           {query
             ? `No se encontraron cursos para "${query}".`
             : "No hay cursos disponibles para este nivel todavía."}
-        </p>
+        </motion.p>
       )}
     </>
   );
