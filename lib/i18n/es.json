@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "courses": "Cursos",
+    "myProgress": "Mi Progreso",
+    "logout": "Salir",
+    "logoutLabel": "Cerrar sesión",
+    "siteLanguage": "Idioma del sitio"
+  },
+  "home": {
+    "hero": "Aprende Inteligencia Artificial desde cero",
+    "heroSub": "Cursos diseñados para personas que no son técnicas. Paso a paso, a tu ritmo, con ejercicios prácticos.",
+    "exploreCourses": "Explorar cursos",
+    "step1Title": "Elige tu nivel",
+    "step1Desc": "Desde introducción hasta avanzado. Hay un curso perfecto para ti, sin importar tu experiencia.",
+    "step2Title": "Aprende con ejercicios",
+    "step2Desc": "Practicá con ejercicios interactivos y quizzes que refuerzan lo que aprendés en cada lección.",
+    "step3Title": "Domina la IA",
+    "step3Desc": "Aplicá lo aprendido con proyectos reales y obtené tu certificado de completación.",
+    "threeSteps": "Tres pasos para aprender IA",
+    "step": "Paso",
+    "ctaTitle": "Comenzá hoy, es gratis",
+    "ctaSub": "No necesitás experiencia previa. Nuestros cursos te guían desde lo más básico hasta niveles profesionales.",
+    "viewAll": "Ver todos los cursos"
+  },
+  "courses": {
+    "catalog": "Catálogo de cursos",
+    "catalogSub": "Elige el curso que mejor se adapte a tu nivel y objetivos.",
+    "viewCourse": "Ver curso",
+    "lessons": "lecciones",
+    "startCourse": "Comenzar curso",
+    "continueCourse": "Continuar curso",
+    "yourProgress": "Tu progreso",
+    "lessonsCompleted": "de {total} lecciones completadas",
+    "lessonsList": "Lecciones"
+  },
+  "lesson": {
+    "lessonOf": "Lección {current} de {total}",
+    "content": "Contenido",
+    "quiz": "Quiz",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "backToCourse": "Volver al curso",
+    "finishCourse": "Finalizar curso",
+    "markComplete": "Marcar como completada",
+    "completed": "Lección completada",
+    "quizRequired": "Completá el quiz con al menos 80% para marcar esta lección como completada.",
+    "videoPlaceholder": "Video de la lección",
+    "comingSoon": "Próximamente"
+  },
+  "quiz": {
+    "questionOf": "Pregunta {current} de {total}",
+    "correct": "¡Correcto!",
+    "incorrect": "Incorrecto",
+    "nextQuestion": "Siguiente pregunta",
+    "viewResults": "Ver resultados",
+    "correctAnswers": "correctas",
+    "excellent": "¡Excelente! Tenés una base sólida.",
+    "needMore": "Necesitás al menos 80% para completar esta lección. ¡Intentalo de nuevo!",
+    "tryAgain": "No te desanimes. Volvé a leer las lecciones con calma e intentá de nuevo.",
+    "backToCourse": "Volver al curso",
+    "retryQuiz": "Repetir Quiz"
+  },
+  "auth": {
+    "welcomeBack": "Bienvenido de vuelta",
+    "loginSub": "Iniciá sesión para continuar aprendiendo",
+    "continueGoogle": "Continuar con Google",
+    "registerGoogle": "Registrarse con Google",
+    "or": "o",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "show": "Mostrar",
+    "hide": "Ocultar",
+    "login": "Iniciar sesión",
+    "loading": "Cargando...",
+    "magicLink": "Recibir enlace mágico por correo",
+    "noAccount": "¿No tenés cuenta?",
+    "register": "Registrate",
+    "createAccount": "Crea tu cuenta gratis",
+    "createSub": "Empieza a aprender IA hoy",
+    "name": "Nombre",
+    "minChars": "Mínimo 8 caracteres",
+    "createButton": "Crear mi cuenta",
+    "hasAccount": "¿Ya tenés cuenta?",
+    "loginLink": "Iniciá sesión",
+    "checkEmail": "Revisa tu correo",
+    "magicSent": "Te enviamos un enlace mágico a {email}. Haz clic en el enlace del correo para iniciar sesión.",
+    "verificationSent": "Te enviamos un enlace de verificación a {email}. Haz clic en el enlace para activar tu cuenta.",
+    "backToLogin": "Ir al inicio de sesión",
+    "wrongCredentials": "Correo o contraseña incorrectos",
+    "enterEmail": "Ingresá tu correo electrónico primero",
+    "passwordMin": "La contraseña debe tener al menos 8 caracteres"
+  },
+  "dashboard": {
+    "hello": "Hola, {name}!",
+    "overallProgress": "Tu progreso general",
+    "lessonsOf": "{completed} de {total} lecciones",
+    "continueWhere": "Continuá donde lo dejaste",
+    "continue": "Continuar",
+    "myCourses": "Mis Cursos",
+    "lessonsCompleted": "de {total} lecciones"
+  },
+  "footer": {
+    "rights": "© 2026 Capacitaciones IA. Todos los derechos reservados."
+  },
+  "a11y": {
+    "skipToContent": "Ir al contenido principal",
+    "breadcrumb": "Breadcrumb",
+    "mainNav": "Navegación principal",
+    "options": "Opciones"
+  }
+}

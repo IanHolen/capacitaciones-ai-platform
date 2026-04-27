@@ -1,0 +1,111 @@
+{
+  "nav": {
+    "courses": "Courses",
+    "myProgress": "My Progress",
+    "logout": "Logout",
+    "logoutLabel": "Log out",
+    "siteLanguage": "Site language"
+  },
+  "home": {
+    "hero": "Learn Artificial Intelligence from scratch",
+    "heroSub": "Courses designed for non-technical people. Step by step, at your pace, with hands-on exercises.",
+    "exploreCourses": "Explore courses",
+    "step1Title": "Choose your level",
+    "step1Desc": "From introductory to advanced. There's a perfect course for you, no matter your experience.",
+    "step2Title": "Learn with exercises",
+    "step2Desc": "Practice with interactive exercises and quizzes that reinforce what you learn in each lesson.",
+    "step3Title": "Master AI",
+    "step3Desc": "Apply what you've learned with real projects and get your completion certificate.",
+    "threeSteps": "Three steps to learn AI",
+    "step": "Step",
+    "ctaTitle": "Start today, it's free",
+    "ctaSub": "No prior experience needed. Our courses guide you from the basics to professional levels.",
+    "viewAll": "View all courses"
+  },
+  "courses": {
+    "catalog": "Course catalog",
+    "catalogSub": "Choose the course that best fits your level and goals.",
+    "viewCourse": "View course",
+    "lessons": "lessons",
+    "startCourse": "Start course",
+    "continueCourse": "Continue course",
+    "yourProgress": "Your progress",
+    "lessonsCompleted": "of {total} lessons completed",
+    "lessonsList": "Lessons"
+  },
+  "lesson": {
+    "lessonOf": "Lesson {current} of {total}",
+    "content": "Content",
+    "quiz": "Quiz",
+    "previous": "Previous",
+    "next": "Next",
+    "backToCourse": "Back to course",
+    "finishCourse": "Finish course",
+    "markComplete": "Mark as complete",
+    "completed": "Lesson completed",
+    "quizRequired": "Complete the quiz with at least 80% to mark this lesson as complete.",
+    "videoPlaceholder": "Lesson video",
+    "comingSoon": "Coming soon"
+  },
+  "quiz": {
+    "questionOf": "Question {current} of {total}",
+    "correct": "Correct!",
+    "incorrect": "Incorrect",
+    "nextQuestion": "Next question",
+    "viewResults": "View results",
+    "correctAnswers": "correct",
+    "excellent": "Excellent! You have a solid foundation.",
+    "needMore": "You need at least 80% to complete this lesson. Try again!",
+    "tryAgain": "Don't give up. Review the lessons calmly and try again.",
+    "backToCourse": "Back to course",
+    "retryQuiz": "Retry Quiz"
+  },
+  "auth": {
+    "welcomeBack": "Welcome back",
+    "loginSub": "Log in to continue learning",
+    "continueGoogle": "Continue with Google",
+    "registerGoogle": "Sign up with Google",
+    "or": "or",
+    "email": "Email",
+    "password": "Password",
+    "show": "Show",
+    "hide": "Hide",
+    "login": "Log in",
+    "loading": "Loading...",
+    "magicLink": "Receive magic link by email",
+    "noAccount": "Don't have an account?",
+    "register": "Sign up",
+    "createAccount": "Create your free account",
+    "createSub": "Start learning AI today",
+    "name": "Name",
+    "minChars": "Minimum 8 characters",
+    "createButton": "Create my account",
+    "hasAccount": "Already have an account?",
+    "loginLink": "Log in",
+    "checkEmail": "Check your email",
+    "magicSent": "We sent a magic link to {email}. Click the link in the email to log in.",
+    "verificationSent": "We sent a verification link to {email}. Click the link to activate your account.",
+    "backToLogin": "Back to login",
+    "wrongCredentials": "Wrong email or password",
+    "enterEmail": "Enter your email first",
+    "passwordMin": "Password must be at least 8 characters"
+  },
+  "dashboard": {
+    "hello": "Hello, {name}!",
+    "overallProgress": "Your overall progress",
+    "lessonsOf": "{completed} of {total} lessons",
+    "continueWhere": "Continue where you left off",
+    "continue": "Continue",
+    "myCourses": "My Courses",
+    "lessonsCompleted": "of {total} lessons"
+  },
+  "footer": {
+    "rights": "© 2026 Capacitaciones IA. All rights reserved."
+  },
+  "a11y": {
+    "skipToContent": "Skip to main content",
+    "breadcrumb": "Breadcrumb",
+    "mainNav": "Main navigation",
+    "options": "Options"
+  }
+}

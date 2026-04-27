@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
-import { BookOpen, LayoutDashboard, User } from "lucide-react";
+import { BookOpen, LayoutDashboard } from "lucide-react";
 import { UserNav } from "@/components/user-nav";
+import { LanguageToggle } from "@/components/language-toggle";
+import { I18nProvider } from "@/components/i18n-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -41,63 +43,63 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col text-[18px] leading-relaxed">
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
-        >
-          Ir al contenido principal
-        </a>
-
-        <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <nav
-            className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3"
-            aria-label="Navegación principal"
+        <I18nProvider>
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground"
           >
-            <Link
-              href="/"
-              className="flex items-center gap-2 text-xl font-bold text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
-              style={{ color: "#1E40AF" }}
+            Ir al contenido principal
+          </a>
+
+          <header className="sticky top-0 z-40 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+            <nav
+              className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3"
+              aria-label="Navegación principal"
             >
-              <BookOpen className="size-7" aria-hidden="true" />
-              <span>Capacitaciones IA</span>
-            </Link>
+              <Link
+                href="/"
+                className="flex items-center gap-2 text-xl font-bold text-primary focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                style={{ color: "#1E40AF" }}
+              >
+                <BookOpen className="size-7" aria-hidden="true" />
+                <span>Capacitaciones IA</span>
+              </Link>
 
-            <div className="hidden items-center gap-1 md:flex">
-              <NavLink href="/cursos">
-                <BookOpen className="size-5" aria-hidden="true" />
-                Cursos
-              </NavLink>
-              <NavLink href="/dashboard">
-                <LayoutDashboard className="size-5" aria-hidden="true" />
-                Mi Progreso
-              </NavLink>
-              <UserNav />
+              <div className="hidden items-center gap-1 md:flex">
+                <NavLink href="/cursos">
+                  <BookOpen className="size-5" aria-hidden="true" />
+                  Cursos
+                </NavLink>
+                <NavLink href="/dashboard">
+                  <LayoutDashboard className="size-5" aria-hidden="true" />
+                  Mi Progreso
+                </NavLink>
+                <LanguageToggle />
+                <UserNav />
+              </div>
+
+              {/* Mobile */}
+              <div className="flex items-center gap-2 md:hidden">
+                <NavLink href="/cursos">
+                  <BookOpen className="size-5" aria-hidden="true" />
+                  <span className="sr-only">Cursos</span>
+                </NavLink>
+                <LanguageToggle />
+                <UserNav />
+              </div>
+            </nav>
+          </header>
+
+          <main id="main-content" className="flex flex-1 flex-col">
+            {children}
+          </main>
+
+          <footer className="border-t bg-muted/30 py-8">
+            <div className="mx-auto max-w-6xl px-4 text-center text-base text-muted-foreground">
+              <p>&copy; 2026 Capacitaciones IA. Todos los derechos reservados.</p>
             </div>
-
-            {/* Mobile: simplified nav links */}
-            <div className="flex items-center gap-2 md:hidden">
-              <NavLink href="/cursos">
-                <BookOpen className="size-5" aria-hidden="true" />
-                <span className="sr-only">Cursos</span>
-              </NavLink>
-              <NavLink href="/dashboard">
-                <LayoutDashboard className="size-5" aria-hidden="true" />
-                <span className="sr-only">Mi Progreso</span>
-              </NavLink>
-              <UserNav />
-            </div>
-          </nav>
-        </header>
-
-        <main id="main-content" className="flex flex-1 flex-col">
-          {children}
-        </main>
-
-        <footer className="border-t bg-muted/30 py-8">
-          <div className="mx-auto max-w-6xl px-4 text-center text-base text-muted-foreground">
-            <p>&copy; 2026 Capacitaciones IA. Todos los derechos reservados.</p>
-          </div>
-        </footer>
+          </footer>
+        </I18nProvider>
       </body>
     </html>
   );
