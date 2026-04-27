@@ -66,6 +66,8 @@ model User {
   enrollments          Enrollment[]
   userProgress         UserProgress[]
   userExerciseResults  UserExerciseResult[]
+  userBadges           UserBadge[]
+  comments             Comment[]
 
   @@index([email])
   @@index([deletedAt])
@@ -140,6 +142,7 @@ model Lesson {
   course         Course          @relation(fields: [courseId], references: [id])
   lessonContents LessonContent[]
   userProgress   UserProgress[]
+  comments       Comment[]
 
   @@unique([courseId, slug])
   @@index([courseId, sortOrder])
@@ -302,4 +305,66 @@ model UserExerciseResult {
   @@index([userId, exerciseId])
   @@index([exerciseId])
   @@map("user_exercise_results")
+}
+
+// ============================================================
+// BADGES
+// ============================================================
+
+model Badge {
+  id           String  @id @default(uuid()) @db.Uuid
+  name         String  @unique
+  description  String?
+  icon         String?
+  criteriaJson Json?   @map("criteria_json")
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  userBadges UserBadge[]
+
+  @@map("badges")
+}
+
+// ============================================================
+// USER BADGES
+// ============================================================
+
+model UserBadge {
+  id       String @id @default(uuid()) @db.Uuid
+  userId   String @map("user_id") @db.Uuid
+  badgeId  String @map("badge_id") @db.Uuid
+  earnedAt DateTime @default(now()) @map("earned_at")
+
+  user  User  @relation(fields: [userId], references: [id])
+  badge Badge @relation(fields: [badgeId], references: [id])
+
+  @@unique([userId, badgeId])
+  @@index([userId])
+  @@index([badgeId])
+  @@map("user_badges")
+}
+
+// ============================================================
+// COMMENTS (threaded)
+// ============================================================
+
+model Comment {
+  id       String  @id @default(uuid()) @db.Uuid
+  userId   String  @map("user_id") @db.Uuid
+  lessonId String  @map("lesson_id") @db.Uuid
+  body     String  @db.Text
+  parentId String? @map("parent_id") @db.Uuid
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user     User      @relation(fields: [userId], references: [id])
+  lesson   Lesson    @relation(fields: [lessonId], references: [id])
+  parent   Comment?  @relation("CommentThread", fields: [parentId], references: [id])
+  replies  Comment[] @relation("CommentThread")
+
+  @@index([lessonId, createdAt])
+  @@index([userId])
+  @@index([parentId])
+  @@map("comments")
 }

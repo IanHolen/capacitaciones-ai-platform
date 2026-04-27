@@ -85,6 +85,40 @@ CREATE POLICY "user_exercise_results_insert_own" ON user_exercise_results
   FOR INSERT WITH CHECK (auth.uid()::text = user_id::text);
 
 -- ============================================================
+-- BADGES: public read, system-managed
+-- ============================================================
+
+ALTER TABLE badges ENABLE ROW LEVEL SECURITY;
+ALTER TABLE user_badges ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "badges_public_read" ON badges
+  FOR SELECT USING (true);
+
+CREATE POLICY "user_badges_read_own" ON user_badges
+  FOR SELECT USING (auth.uid()::text = user_id::text);
+
+CREATE POLICY "user_badges_insert_own" ON user_badges
+  FOR INSERT WITH CHECK (auth.uid()::text = user_id::text);
+
+-- ============================================================
+-- COMMENTS: all users read, own user edit/delete
+-- ============================================================
+
+ALTER TABLE comments ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "comments_public_read" ON comments
+  FOR SELECT USING (true);
+
+CREATE POLICY "comments_insert_own" ON comments
+  FOR INSERT WITH CHECK (auth.uid()::text = user_id::text);
+
+CREATE POLICY "comments_update_own" ON comments
+  FOR UPDATE USING (auth.uid()::text = user_id::text);
+
+CREATE POLICY "comments_delete_own" ON comments
+  FOR DELETE USING (auth.uid()::text = user_id::text);
+
+-- ============================================================
 -- ADMIN: full access for admin role (via service key)
 -- These use the Supabase service_role which bypasses RLS
 -- ============================================================

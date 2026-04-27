@@ -323,6 +323,36 @@ async function main() {
     });
   }
 
+  // ============================================================
+  // BADGES
+  // ============================================================
+
+  const badges = [
+    { name: "Primera lección", description: "Completaste tu primera lección", icon: "📖", criteria: { type: "lessons_completed", count: 1 } },
+    { name: "Primer quiz aprobado", description: "Aprobaste tu primer quiz", icon: "✅", criteria: { type: "quizzes_passed", count: 1 } },
+    { name: "Nivel Introducción completado", description: "Completaste todos los cursos del nivel Introducción", icon: "🌱", criteria: { type: "level_completed", level: "introduccion" } },
+    { name: "Nivel Básico completado", description: "Completaste todos los cursos del nivel Básico", icon: "📗", criteria: { type: "level_completed", level: "basico" } },
+    { name: "Nivel Intermedio completado", description: "Completaste todos los cursos del nivel Intermedio", icon: "📘", criteria: { type: "level_completed", level: "intermedio" } },
+    { name: "Nivel Avanzado completado", description: "Completaste todos los cursos del nivel Avanzado", icon: "📕", criteria: { type: "level_completed", level: "avanzado" } },
+    { name: "Nivel Pro completado", description: "Completaste todos los cursos del nivel Pro", icon: "🏆", criteria: { type: "level_completed", level: "pro" } },
+    { name: "Racha de 7 días", description: "Estudiaste 7 días seguidos", icon: "🔥", criteria: { type: "streak", days: 7 } },
+    { name: "Primer comentario", description: "Dejaste tu primer comentario en una lección", icon: "💬", criteria: { type: "comments_posted", count: 1 } },
+    { name: "Graduado completo", description: "Completaste los 5 niveles de la plataforma", icon: "🎓", criteria: { type: "all_levels_completed" } },
+  ];
+
+  for (const b of badges) {
+    await prisma.badge.upsert({
+      where: { name: b.name },
+      update: {},
+      create: {
+        name: b.name,
+        description: b.description,
+        icon: b.icon,
+        criteriaJson: b.criteria,
+      },
+    });
+  }
+
   console.log("Seed complete:");
   console.log(`  Level 1: ${level.name} (${level.id})`);
   console.log(`    Course 1: ${curso1.title} — 6 lessons`);
@@ -335,6 +365,7 @@ async function main() {
   console.log(`    Course 13: ${curso13.title} — 10 lessons`);
   console.log(`    Course 14: ${curso14.title} — 8 lessons`);
   console.log(`    Course 15: ${curso15.title} — 8 lessons`);
+  console.log(`  Badges: ${badges.length} seeded`);
 }
 
 main()
