@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Link from "next/link";
 import { BookOpen } from "lucide-react";
 import { HeaderNav } from "@/components/header-nav";
+import { GlobalLanguageBanner } from "@/components/global-language-banner";
 import { I18nProvider } from "@/components/i18n-provider";
 import "./globals.css";
 
@@ -50,6 +51,8 @@ export default function RootLayout({
               <HeaderNav />
             </nav>
           </header>
+
+          <GlobalLanguageBanner />
 
           <main id="main-content" className="flex flex-1 flex-col">
             {children}

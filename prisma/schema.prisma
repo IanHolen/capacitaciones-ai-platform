@@ -345,6 +345,18 @@ model UserBadge {
 }
 
 // ============================================================
+// USER GOALS
+// ============================================================
+
+model UserGoal {
+  userId    String   @id @map("user_id") @db.Uuid
+  goal      String   @db.Text
+  updatedAt DateTime @default(now()) @updatedAt @map("updated_at")
+
+  @@map("user_goals")
+}
+
+// ============================================================
 // COMMENTS (threaded)
 // ============================================================
 

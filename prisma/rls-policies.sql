@@ -119,6 +119,21 @@ CREATE POLICY "comments_delete_own" ON comments
   FOR DELETE USING (auth.uid()::text = user_id::text);
 
 -- ============================================================
+-- USER GOALS: users can only see/manage their own goal
+-- ============================================================
+
+ALTER TABLE user_goals ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "user_goals_read_own" ON user_goals
+  FOR SELECT USING (auth.uid()::text = user_id::text);
+
+CREATE POLICY "user_goals_insert_own" ON user_goals
+  FOR INSERT WITH CHECK (auth.uid()::text = user_id::text);
+
+CREATE POLICY "user_goals_update_own" ON user_goals
+  FOR UPDATE USING (auth.uid()::text = user_id::text);
+
+-- ============================================================
 -- ADMIN: admin_users table + read access on all tables
 -- ============================================================
 
