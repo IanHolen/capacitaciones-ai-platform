@@ -86,9 +86,9 @@ export function Quiz({ questions, courseId, accentColor }: QuizProps) {
   if (finished) {
     const percentage = Math.round((correctCount / questions.length) * 100);
     const message =
-      correctCount >= 8
+      percentage >= 80
         ? "Excelente! Tenes una base solida."
-        : correctCount >= 5
+        : percentage >= 50
           ? "Muy bien! Repasa los temas que te costaron."
           : "No te desanimes. Volve a leer las lecciones con calma.";
 
