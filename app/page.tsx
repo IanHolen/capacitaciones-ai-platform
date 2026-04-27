@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BookOpen, Dumbbell, Sparkles } from "lucide-react";
-import { AuthLink } from "@/components/auth-link";
 import {
   AnimatedHero,
   AnimatedCTA,
@@ -50,14 +49,14 @@ export default function Home() {
         </AnimatedHero>
         <div className="mt-10">
           <AnimatedCTA>
-            <AuthLink href="/cursos" loginRedirect="/login?redirectTo=%2Fcursos">
+            <Link href="/cursos">
               <Button
                 className="h-14 px-8 text-lg font-semibold"
                 style={{ backgroundColor: "#1E40AF" }}
               >
                 Explorar cursos
               </Button>
-            </AuthLink>
+            </Link>
           </AnimatedCTA>
         </div>
       </section>
@@ -108,11 +107,11 @@ export default function Home() {
           </p>
           <div className="mt-8">
             <AnimatedCTA>
-              <AuthLink href="/cursos" loginRedirect="/login?redirectTo=%2Fcursos">
+              <Link href="/cursos">
                 <Button className="h-14 border-2 border-white bg-white/20 px-8 text-lg font-semibold text-white hover:bg-white hover:text-blue-900">
                   Ver todos los cursos
                 </Button>
-              </AuthLink>
+              </Link>
             </AnimatedCTA>
           </div>
         </section>
