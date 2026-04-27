@@ -161,7 +161,6 @@ export default async function LeccionPage({
             <Button
               variant="outline"
               className="h-12 gap-2 px-6 text-base"
-              nativeButton={false}
             >
               <ChevronLeft className="size-5" aria-hidden="true" />
               Anterior: {prevLeccion.titulo}
@@ -172,7 +171,6 @@ export default async function LeccionPage({
             <Button
               variant="outline"
               className="h-12 gap-2 px-6 text-base"
-              nativeButton={false}
             >
               <ChevronLeft className="size-5" aria-hidden="true" />
               Volver al curso
@@ -185,7 +183,6 @@ export default async function LeccionPage({
             <Button
               className="h-12 gap-2 px-6 text-base font-semibold"
               style={{ backgroundColor: config.color }}
-              nativeButton={false}
             >
               Siguiente: {nextLeccion.titulo}
               <ChevronRight className="size-5" aria-hidden="true" />
@@ -196,7 +193,6 @@ export default async function LeccionPage({
             <Button
               className="h-12 gap-2 px-6 text-base font-semibold"
               style={{ backgroundColor: config.color }}
-              nativeButton={false}
             >
               <CheckCircle2 className="size-5" aria-hidden="true" />
               Finalizar curso

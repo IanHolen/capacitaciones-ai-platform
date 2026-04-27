@@ -44,7 +44,6 @@ export default function Home() {
             <Button
               className="h-14 px-8 text-lg font-semibold"
               style={{ backgroundColor: "#1E40AF" }}
-              nativeButton={false}
             >
               Explorar cursos
             </Button>
@@ -99,7 +98,6 @@ export default function Home() {
             <Button
               variant="outline"
               className="h-14 border-white px-8 text-lg font-semibold text-white hover:bg-white hover:text-blue-900"
-              nativeButton={false}
             >
               Ver todos los cursos
             </Button>

@@ -119,7 +119,6 @@ export function Quiz({ questions, courseId, accentColor }: QuizProps) {
             <Button
               variant="outline"
               className="h-12 gap-2 px-6 text-base"
-              nativeButton={false}
             >
               <ArrowLeft className="size-5" aria-hidden="true" />
               Volver al curso
