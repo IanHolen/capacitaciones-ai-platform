@@ -33,16 +33,19 @@
     "startCourse": "Comenzar curso",
     "continueCourse": "Continuar curso",
     "yourProgress": "Tu progreso",
-    "lessonsCompleted": "de {total} lecciones completadas",
+    "lessonsCompleted": "de {{total}} lecciones completadas",
     "lessonsList": "Lecciones",
     "all": "Todos",
     "searchPlaceholder": "Buscar cursos o lecciones...",
     "clearSearch": "Limpiar búsqueda",
     "filterByLevel": "Filtrar cursos por nivel",
-    "noResults": "No se encontraron cursos para \"{query}\".",
+    "noResults": "No se encontraron cursos para \"{{query}}\".",
     "noCoursesLevel": "No hay cursos disponibles para este nivel todavía.",
     "completed": "Completado",
-    "progressOf": "{completed} de {total}"
+    "progressOf": "{{completed}} de {{total}}",
+    "ratingAverage": "{{average}} ({{count}} calificaciones)",
+    "noRatings": "Sin calificaciones aún",
+    "rateStar": "Calificar {{star}} estrellas"
   },
   "levels": {
     "intro": "Introducción",
@@ -52,7 +55,7 @@
     "pro": "Pro"
   },
   "lesson": {
-    "lessonOf": "Lección {current} de {total}",
+    "lessonOf": "Lección {{current}} de {{total}}",
     "content": "Contenido",
     "quiz": "Quiz",
     "previous": "Anterior",
@@ -66,7 +69,7 @@
     "comingSoon": "Próximamente"
   },
   "quiz": {
-    "questionOf": "Pregunta {current} de {total}",
+    "questionOf": "Pregunta {{current}} de {{total}}",
     "correct": "¡Correcto!",
     "incorrect": "Incorrecto",
     "nextQuestion": "Siguiente pregunta",
@@ -101,8 +104,8 @@
     "hasAccount": "¿Ya tienes cuenta?",
     "loginLink": "Inicia sesión",
     "checkEmail": "Revisa tu correo",
-    "magicSent": "Te enviamos un enlace mágico a {email}. Haz clic en el enlace del correo para iniciar sesión.",
-    "verificationSent": "Te enviamos un enlace de verificación a {email}. Haz clic en el enlace para activar tu cuenta.",
+    "magicSent": "Te enviamos un enlace mágico a {{email}}. Haz clic en el enlace del correo para iniciar sesión.",
+    "verificationSent": "Te enviamos un enlace de verificación a {{email}}. Haz clic en el enlace para activar tu cuenta.",
     "backToLogin": "Ir al inicio de sesión",
     "wrongCredentials": "Correo o contraseña incorrectos",
     "enterEmail": "Ingresa tu correo electrónico primero",
@@ -110,13 +113,13 @@
     "spamNotice": "Si no encuentras el correo, revisa tu carpeta de spam o correo no deseado."
   },
   "dashboard": {
-    "hello": "Hola, {name}!",
+    "hello": "Hola, {{name}}!",
     "overallProgress": "Tu progreso general",
-    "lessonsOf": "{completed} de {total} lecciones",
+    "lessonsOf": "{{completed}} de {{total}} lecciones",
     "continueWhere": "Continúa donde lo dejaste",
     "continue": "Continuar",
     "myCourses": "Mis Cursos",
-    "lessonsCompleted": "de {total} lecciones"
+    "lessonsCompleted": "de {{total}} lecciones"
   },
   "account": {
     "title": "Mi cuenta",
@@ -134,7 +137,7 @@
     "overallProgress": "Progreso general",
     "coursesCompleted": "cursos completados",
     "lessonsCount": "lecciones",
-    "completedOf": "{completed} de {total} lecciones completadas",
+    "completedOf": "{{completed}} de {{total}} lecciones completadas",
     "myCourses": "Mis cursos",
     "continueWhere": "Continúa donde lo dejaste"
   },
@@ -233,10 +236,10 @@
   },
   "rating": {
     "rateThisCourse": "Califica este curso",
-    "starLabel": "{value} estrella",
-    "summary": "{average} de 5 ({count} calificaciones)",
+    "starLabel": "{{value}} estrella",
+    "summary": "{{average}} de 5 ({{count}} calificaciones)",
     "noRatings": "Sin calificaciones aún",
-    "yourRating": "Tu calificación: {rating} de 5",
+    "yourRating": "Tu calificación: {{rating}} de 5",
     "loginRequired": "Inicia sesión para calificar",
     "error": "Error al guardar calificación",
     "loading": "Cargando calificación..."

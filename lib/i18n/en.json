@@ -33,16 +33,19 @@
     "startCourse": "Start course",
     "continueCourse": "Continue course",
     "yourProgress": "Your progress",
-    "lessonsCompleted": "of {total} lessons completed",
+    "lessonsCompleted": "of {{total}} lessons completed",
     "lessonsList": "Lessons",
     "all": "All",
     "searchPlaceholder": "Search courses or lessons...",
     "clearSearch": "Clear search",
     "filterByLevel": "Filter courses by level",
-    "noResults": "No courses found for \"{query}\".",
+    "noResults": "No courses found for \"{{query}}\".",
     "noCoursesLevel": "No courses available for this level yet.",
     "completed": "Completed",
-    "progressOf": "{completed} of {total}"
+    "progressOf": "{{completed}} of {{total}}",
+    "ratingAverage": "{{average}} ({{count}} ratings)",
+    "noRatings": "No ratings yet",
+    "rateStar": "Rate {{star}} stars"
   },
   "levels": {
     "intro": "Introduction",
@@ -52,7 +55,7 @@
     "pro": "Pro"
   },
   "lesson": {
-    "lessonOf": "Lesson {current} of {total}",
+    "lessonOf": "Lesson {{current}} of {{total}}",
     "content": "Content",
     "quiz": "Quiz",
     "previous": "Previous",
@@ -66,7 +69,7 @@
     "comingSoon": "Coming soon"
   },
   "quiz": {
-    "questionOf": "Question {current} of {total}",
+    "questionOf": "Question {{current}} of {{total}}",
     "correct": "Correct!",
     "incorrect": "Incorrect",
     "nextQuestion": "Next question",
@@ -101,8 +104,8 @@
     "hasAccount": "Already have an account?",
     "loginLink": "Log in",
     "checkEmail": "Check your email",
-    "magicSent": "We sent a magic link to {email}. Click the link in the email to log in.",
-    "verificationSent": "We sent a verification link to {email}. Click the link to activate your account.",
+    "magicSent": "We sent a magic link to {{email}}. Click the link in the email to log in.",
+    "verificationSent": "We sent a verification link to {{email}}. Click the link to activate your account.",
     "backToLogin": "Back to login",
     "wrongCredentials": "Wrong email or password",
     "enterEmail": "Enter your email first",
@@ -110,13 +113,13 @@
     "spamNotice": "If you can't find the email, check your spam or junk folder."
   },
   "dashboard": {
-    "hello": "Hello, {name}!",
+    "hello": "Hello, {{name}}!",
     "overallProgress": "Your overall progress",
-    "lessonsOf": "{completed} of {total} lessons",
+    "lessonsOf": "{{completed}} of {{total}} lessons",
     "continueWhere": "Continue where you left off",
     "continue": "Continue",
     "myCourses": "My Courses",
-    "lessonsCompleted": "of {total} lessons"
+    "lessonsCompleted": "of {{total}} lessons"
   },
   "account": {
     "title": "My Account",
@@ -134,7 +137,7 @@
     "overallProgress": "Overall progress",
     "coursesCompleted": "courses completed",
     "lessonsCount": "lessons",
-    "completedOf": "{completed} of {total} lessons completed",
+    "completedOf": "{{completed}} of {{total}} lessons completed",
     "myCourses": "My courses",
     "continueWhere": "Continue where you left off"
   },
@@ -233,10 +236,10 @@
   },
   "rating": {
     "rateThisCourse": "Rate this course",
-    "starLabel": "{value} star",
-    "summary": "{average} out of 5 ({count} ratings)",
+    "starLabel": "{{value}} star",
+    "summary": "{{average}} out of 5 ({{count}} ratings)",
     "noRatings": "No ratings yet",
-    "yourRating": "Your rating: {rating} out of 5",
+    "yourRating": "Your rating: {{rating}} out of 5",
     "loginRequired": "Log in to rate",
     "error": "Failed to save rating",
     "loading": "Loading rating..."
