@@ -160,6 +160,7 @@
   },
   "comments": {
     "title": "Comments",
+    "motivation": "Share your thoughts: What did you enjoy? What would you improve? What would you like to learn?",
     "reply": "Reply",
     "delete": "Delete comment",
     "placeholder": "Write a comment...",

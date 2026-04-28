@@ -207,6 +207,11 @@ export function LessonComments({ lessonId }: { lessonId: string }) {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
+        {/* Motivational message */}
+        <p className="text-sm text-muted-foreground italic">
+          {t("comments.motivation")}
+        </p>
+
         {/* Input */}
         {currentUserId ? (
           <div className="space-y-2">

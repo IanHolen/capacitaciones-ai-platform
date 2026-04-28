@@ -100,6 +100,16 @@ export default function AdminPage() {
   const [errors, setErrors] = useState<ErrorEntry[]>([]);
   const [userSearch, setUserSearch] = useState("");
   const [userSort, setUserSort] = useState<"created_at" | "lessonsCompleted">("created_at");
+  const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null);
+  const [courseComments, setCourseComments] = useState<{
+    id: string;
+    body: string;
+    created_at: string;
+    parent_id: string | null;
+    user: { id: string; name: string; email: string };
+    lesson: { id: string; title: string; slug: string };
+  }[]>([]);
+  const [loadingComments, setLoadingComments] = useState(false);
 
   useEffect(() => {
     async function load() {
@@ -334,16 +344,52 @@ export default function AdminPage() {
 
       {/* Cursos Tab — reads from static cursos-data.ts */}
       {activeTab === "cursos" && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
           <div className="rounded-xl border">
             <div className="border-b p-4">
               <h3 className="text-lg font-semibold">Cursos ({cursos.length})</h3>
+              <p className="mt-1 text-xs text-muted-foreground">Haz clic en un curso para ver sus comentarios</p>
             </div>
             <div className="divide-y">
               {cursos.map((curso) => {
                 const config = nivelConfig[curso.nivel];
+                const isSelected = selectedCourseId === curso.id;
                 return (
-                  <div key={curso.id} className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center">
+                  <button
+                    key={curso.id}
+                    onClick={async () => {
+                      if (isSelected) {
+                        setSelectedCourseId(null);
+                        setCourseComments([]);
+                        return;
+                      }
+                      setSelectedCourseId(curso.id);
+                      setLoadingComments(true);
+                      try {
+                        // First resolve the DB course ID from slug
+                        const coursesRes = await fetch("/api/courses");
+                        const coursesData = await coursesRes.json();
+                        const dbCourse = (coursesData.courses ?? []).find(
+                          (c: { slug: string }) => c.slug === curso.id
+                        );
+                        if (dbCourse) {
+                          const res = await fetch(`/api/admin/course-comments?courseId=${dbCourse.id}`);
+                          if (res.ok) {
+                            const data = await res.json();
+                            setCourseComments(data.comments ?? []);
+                          }
+                        } else {
+                          setCourseComments([]);
+                        }
+                      } catch {
+                        setCourseComments([]);
+                      }
+                      setLoadingComments(false);
+                    }}
+                    className={`flex w-full flex-col gap-3 p-4 text-left transition-colors sm:flex-row sm:items-center ${
+                      isSelected ? "bg-[#1E40AF]/5" : "hover:bg-muted/30"
+                    }`}
+                  >
                     <div className="flex-1">
                       <div className="font-medium">{curso.titulo}</div>
                       <div className="mt-0.5 flex items-center gap-2 text-xs text-muted-foreground">
@@ -370,12 +416,82 @@ export default function AdminPage() {
                         </div>
                         <div className="text-xs text-muted-foreground">Quizzes</div>
                       </div>
+                      <MessageSquare className={`size-5 ${isSelected ? "text-[#1E40AF]" : "text-muted-foreground"}`} />
                     </div>
-                  </div>
+                  </button>
                 );
               })}
             </div>
           </div>
+
+          {/* Course Comments Panel */}
+          {selectedCourseId && (
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-xl border">
+              <div className="border-b p-4">
+                <h3 className="flex items-center gap-2 text-lg font-semibold">
+                  <MessageSquare className="size-5 text-[#06b6d4]" />
+                  Comentarios — {cursos.find((c) => c.id === selectedCourseId)?.titulo}
+                </h3>
+              </div>
+              {loadingComments ? (
+                <div className="flex justify-center p-8">
+                  <Loader2 className="size-6 animate-spin text-muted-foreground" />
+                </div>
+              ) : courseComments.length === 0 ? (
+                <div className="p-8 text-center text-sm text-muted-foreground">
+                  No hay comentarios para este curso.
+                </div>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b text-left text-xs uppercase tracking-wider text-muted-foreground">
+                        <th className="px-4 py-3">Usuario</th>
+                        <th className="px-4 py-3">Fecha</th>
+                        <th className="px-4 py-3">Lección</th>
+                        <th className="px-4 py-3">Comentario</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {courseComments.map((c) => (
+                        <tr key={c.id} className="border-b last:border-0 hover:bg-muted/30">
+                          <td className="px-4 py-3">
+                            <div className="font-medium">{c.user.name}</div>
+                            <div className="text-xs text-muted-foreground">{c.user.email}</div>
+                          </td>
+                          <td className="px-4 py-3 text-xs text-muted-foreground whitespace-nowrap">
+                            {new Date(c.created_at).toLocaleDateString("es-LA", {
+                              day: "numeric",
+                              month: "short",
+                              year: "numeric",
+                              hour: "2-digit",
+                              minute: "2-digit",
+                            })}
+                          </td>
+                          <td className="px-4 py-3 text-xs">
+                            <span className="rounded-full bg-muted px-2 py-0.5 font-medium">
+                              {c.lesson.title}
+                            </span>
+                          </td>
+                          <td className="max-w-md px-4 py-3">
+                            <p className="whitespace-pre-wrap">{c.body}</p>
+                            {c.parent_id && (
+                              <span className="mt-1 inline-block text-xs text-muted-foreground italic">
+                                (respuesta)
+                              </span>
+                            )}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                  <div className="border-t px-4 py-3 text-xs text-muted-foreground">
+                    {courseComments.length} comentario{courseComments.length !== 1 ? "s" : ""}
+                  </div>
+                </div>
+              )}
+            </motion.div>
+          )}
         </motion.div>
       )}
 

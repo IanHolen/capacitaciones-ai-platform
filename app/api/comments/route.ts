@@ -34,11 +34,25 @@ export async function POST(request: Request) {
     );
   }
 
+  // The frontend sends a lesson slug (e.g. "que-es-ia-1") — resolve to UUID
+  const { data: lesson } = await supabase
+    .from("lessons")
+    .select("id")
+    .eq("slug", lessonId)
+    .maybeSingle();
+
+  if (!lesson) {
+    return NextResponse.json(
+      { error: "Lesson not found" },
+      { status: 404 }
+    );
+  }
+
   const { data: comment, error } = await supabase
     .from("comments")
     .insert({
       user_id: user.id,
-      lesson_id: lessonId,
+      lesson_id: lesson.id,
       body: content.trim(),
       parent_id: parentId ?? null,
     })
