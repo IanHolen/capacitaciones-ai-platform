@@ -1000,18 +1000,4 @@ When you finish this project you should have:
 - There's no perfect workflow on the first try -- iterating is part of the process
 - Your complete, documented workflow is a valuable professional asset`;
 
-export const c9leccion7 = `## Final Quiz -- AI Workflows
-
-### You've Reached the End of Course 9 and the Intermediate Level
-
-Congratulations on making it this far. This is no small achievement.
-
-Throughout this course, you learned to go beyond individual prompts. You now know how to **chain prompts** for complex tasks, how to leverage the **memory and projects** features of each tool, how **tokens and context windows** work to determine AI's limits, how to **objectively evaluate** whether a prompt is good, and how to **organize your personal library** of prompts. You put all of that into practice by building a complete workflow.
-
-But this quiz doesn't evaluate just Course 9. It's the final assessment for the entire **Intermediate Level**. That means it also covers what you learned in the previous courses at this level: advanced prompting techniques, professional use of the tools, and strategic thinking about how to integrate AI into your work.
-
-Take your time answering each question. It's not about speed; it's about demonstrating that you truly understand the concepts and can apply them. Many questions will present practical situations where you need to choose the best strategy -- there are no tricks, just the application of what you've learned.
-
-If you pass this quiz, you officially complete the Intermediate Level and are ready for the **Advanced Level**, where you'll learn to create your own custom assistants, work with AI model APIs, and much more.
-
-Good luck!`;
+export const c9leccion7 = ``;

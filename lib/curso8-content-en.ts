@@ -776,12 +776,4 @@ This confirms that the AI loaded everything correctly and understands what each 
 - The more documents you use, the more important it is to be precise in your prompts
 - If the conversation gets long, start a new one within the same project`;
 
-export const c8leccion6 = `## Quiz: Working with Documents and Images
-
-You've reached the final assessment for Course 8. This quiz is designed to help you review the most important concepts we covered throughout the lessons.
-
-During this course, you learned to take advantage of one of AI's most practical capabilities: working directly with your documents and images. From uploading a PDF and getting an executive summary in seconds, to extracting data from invoices and organizing complex projects with multiple files -- these are skills you can apply starting today in your daily work.
-
-Remember the key points: always specify the output format you need, verify numerical data extracted by AI, consider privacy before uploading sensitive documents, and use Projects features (in both ChatGPT and Claude) to organize work involving multiple documents.
-
-Good luck with the quiz! You now have the tools to work with documents and images like a professional.`;
+export const c8leccion6 = ``;

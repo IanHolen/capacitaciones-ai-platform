@@ -1001,18 +1001,4 @@ Al terminar este proyecto deberías tener:
 - No existe el flujo perfecto al primer intento — iterar es parte del proceso
 - Tu flujo completo y documentado es un activo profesional valioso`;
 
-export const c9leccion7 = `## Quiz final — Flujos de trabajo con IA
-
-### Llegaste al final del Curso 9 y del Nivel Intermedio
-
-Felicitaciones por llegar hasta acá. Este no es un logro menor.
-
-A lo largo de este curso aprendiste a ir más allá de los prompts individuales. Ahora sabes cómo **encadenar prompts** para tareas complejas, cómo aprovechar la **memoria y los proyectos** de cada herramienta, cómo funcionan los **tokens y ventanas de contexto** que determinan los límites de la IA, cómo **evaluar objetivamente** si un prompt es bueno, y cómo **organizar tu biblioteca personal** de prompts. Todo eso lo pusiste en práctica al construir un flujo de trabajo completo.
-
-Pero este quiz no evalúa solo el Curso 9. Es la evaluación final de todo el **Nivel Intermedio**. Eso significa que también abarca lo que aprendiste en los cursos anteriores de este nivel: técnicas avanzadas de prompting, uso profesional de las herramientas y pensamiento estratégico sobre cómo integrar la IA en tu trabajo.
-
-Tómate tu tiempo para responder cada pregunta. No se trata de velocidad, se trata de demostrar que realmente entiendes los conceptos y puedes aplicarlos. Muchas preguntas te van a presentar situaciones prácticas donde tienes que elegir la mejor estrategia — no hay trucos, solo la aplicación de lo que aprendiste.
-
-Si apruebas este quiz, completas oficialmente el Nivel Intermedio y estás listo para el **Nivel Avanzado**, donde vas a aprender a crear tus propios asistentes personalizados, trabajar con la API de modelos de IA y mucho más.
-
-¡Buena suerte!`;
+export const c9leccion7 = ``;

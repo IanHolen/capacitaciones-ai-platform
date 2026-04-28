@@ -956,12 +956,4 @@ This incremental approach (outline -> sections -> refinement) produces much bett
 - Build responses incrementally for complex tasks
 - Your personal collection of tested prompts is one of your most valuable assets`;
 
-export const c7leccion8 = `## Quiz: Prompt Engineering
-
-You've reached the final quiz for the course "Prompt Engineering: The Art of Asking." This is the moment to put everything you've learned throughout the previous 7 lessons to the test.
-
-During this course, we covered the 5 fundamental prompting techniques, learned to teach with examples through few-shot learning, discovered the power of asking the AI to reason step by step with chain-of-thought, explored how to assign roles and personas to get specialized responses, saw how to use structure (markdown, XML, JSON) to better organize our prompts and responses, understood the difference between system prompts and user prompts, and finally learned to iterate and refine to reach the ideal result.
-
-These aren't theoretical techniques -- they're practical tools you can apply starting today in every conversation with AI. The difference between someone who "uses AI" and someone who truly gets the most out of it lies precisely in the quality of their prompts.
-
-Answer the following questions to evaluate your understanding. Don't worry if you don't get everything perfect -- the important thing is to identify which topics are worth reviewing. Each question has its answer explained so you keep learning even during the quiz.`;
+export const c7leccion8 = ``;
