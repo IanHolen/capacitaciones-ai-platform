@@ -40,7 +40,9 @@
     "clearSearch": "Limpiar búsqueda",
     "filterByLevel": "Filtrar cursos por nivel",
     "noResults": "No se encontraron cursos para \"{query}\".",
-    "noCoursesLevel": "No hay cursos disponibles para este nivel todavía."
+    "noCoursesLevel": "No hay cursos disponibles para este nivel todavía.",
+    "completed": "Completado",
+    "progressOf": "{completed} de {total}"
   },
   "levels": {
     "intro": "Introducción",

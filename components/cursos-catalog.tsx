@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
@@ -15,7 +15,7 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Clock, Search, X } from "lucide-react";
+import { BookOpen, Clock, Search, X, CheckCircle2 } from "lucide-react";
 import { cursos, nivelConfig, type Curso, type Nivel } from "@/lib/cursos-data";
 
 const niveles = Object.keys(nivelConfig) as Nivel[];
@@ -35,7 +35,12 @@ function highlightMatch(text: string, query: string): React.ReactNode {
   );
 }
 
-function CourseCard({ curso, query }: { curso: Curso; query: string }) {
+interface CourseProgress {
+  completed: number;
+  total: number;
+}
+
+function CourseCard({ curso, query, progress }: { curso: Curso; query: string; progress?: CourseProgress }) {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === "en";
   const config = nivelConfig[curso.nivel];
@@ -44,8 +49,18 @@ function CourseCard({ curso, query }: { curso: Curso; query: string }) {
   const displayDuracion = isEn && curso.duracionEn ? curso.duracionEn : curso.duracion;
   const levelLabel = t(`levels.${curso.nivel}`, config.label);
 
+  const isCompleted = progress && progress.total > 0 && progress.completed === progress.total;
+  const hasProgress = progress && progress.completed > 0;
+  const percentage = progress && progress.total > 0 ? Math.round((progress.completed / progress.total) * 100) : 0;
+
   return (
-    <Card className="flex h-full flex-col transition-shadow hover:shadow-md">
+    <Card className="relative flex h-full flex-col transition-shadow hover:shadow-md">
+      {isCompleted && (
+        <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-[#22c55e] px-3 py-1 text-sm font-semibold text-white shadow-sm">
+          <CheckCircle2 className="size-4" />
+          {t("courses.completed")}
+        </div>
+      )}
       <CardHeader className="flex-1">
         <div className="mb-2">
           <Badge
@@ -62,15 +77,34 @@ function CourseCard({ curso, query }: { curso: Curso; query: string }) {
           {highlightMatch(displayDescripcion, query)}
         </CardDescription>
       </CardHeader>
-      <CardContent className="flex items-center gap-4 text-base text-muted-foreground">
-        <span className="flex items-center gap-1.5">
-          <BookOpen className="size-4" aria-hidden="true" />
-          {curso.lecciones.length} {t("courses.lessons")}
-        </span>
-        <span className="flex items-center gap-1.5">
-          <Clock className="size-4" aria-hidden="true" />
-          {displayDuracion}
-        </span>
+      <CardContent className="flex flex-col gap-3">
+        <div className="flex items-center gap-4 text-base text-muted-foreground">
+          <span className="flex items-center gap-1.5">
+            <BookOpen className="size-4" aria-hidden="true" />
+            {curso.lecciones.length} {t("courses.lessons")}
+          </span>
+          <span className="flex items-center gap-1.5">
+            <Clock className="size-4" aria-hidden="true" />
+            {displayDuracion}
+          </span>
+        </div>
+        {hasProgress && (
+          <div className="flex flex-col gap-1.5">
+            <div className="flex items-center justify-between text-sm text-muted-foreground">
+              <span>{t("courses.progressOf", { completed: progress.completed, total: progress.total })}</span>
+              <span className="font-medium">{percentage}%</span>
+            </div>
+            <div className="h-2 w-full overflow-hidden rounded-full bg-gray-100">
+              <div
+                className="h-full rounded-full transition-all duration-500"
+                style={{
+                  width: `${percentage}%`,
+                  backgroundColor: isCompleted ? "#22c55e" : config.color,
+                }}
+              />
+            </div>
+          </div>
+        )}
       </CardContent>
       <CardFooter className="mt-auto">
         <Link href={`/cursos/${curso.id}`} className="w-full">
@@ -78,7 +112,7 @@ function CourseCard({ curso, query }: { curso: Curso; query: string }) {
             className="w-full text-base font-semibold"
             style={{ backgroundColor: config.color }}
           >
-            {t("courses.viewCourse")}
+            {hasProgress ? t("courses.continueCourse") : t("courses.viewCourse")}
           </Button>
         </Link>
       </CardFooter>
@@ -108,6 +142,49 @@ export default function CursosCatalog() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [query, setQuery] = useState("");
+  const [progressMap, setProgressMap] = useState<Record<string, CourseProgress>>({});
+
+  useEffect(() => {
+    async function loadProgress() {
+      // Merge localStorage + API progress
+      const completedIds = new Set<string>();
+
+      try {
+        const raw = localStorage.getItem("capacitaciones_progress");
+        if (raw) {
+          const local = JSON.parse(raw);
+          for (const [k, v] of Object.entries(local)) {
+            if (v) completedIds.add(k);
+          }
+        }
+      } catch { /* ignore */ }
+
+      try {
+        const res = await fetch("/api/progress");
+        if (res.ok) {
+          const data = await res.json();
+          for (const p of data.progress || []) {
+            if (p.completed && p.lesson?.slug) {
+              completedIds.add(p.lesson.slug);
+            }
+          }
+        }
+      } catch { /* not logged in or DB unavailable */ }
+
+      if (completedIds.size === 0) return;
+
+      const map: Record<string, CourseProgress> = {};
+      for (const curso of cursos) {
+        const completed = curso.lecciones.filter((l) => completedIds.has(l.id)).length;
+        if (completed > 0) {
+          map[curso.id] = { completed, total: curso.lecciones.length };
+        }
+      }
+      setProgressMap(map);
+    }
+
+    loadProgress();
+  }, []);
 
   const activeNivel = searchParams.get("nivel") as Nivel | null;
   const isValidNivel = activeNivel && niveles.includes(activeNivel);
@@ -211,7 +288,7 @@ export default function CursosCatalog() {
             }}
             whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
           >
-            <CourseCard curso={curso} query={query} />
+            <CourseCard curso={curso} query={query} progress={progressMap[curso.id]} />
           </motion.div>
         ))}
       </motion.div>
