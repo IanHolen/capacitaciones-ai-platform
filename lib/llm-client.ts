@@ -8,24 +8,26 @@ interface LLMProvider {
   dailyLimit: number;
 }
 
-const providers: Record<UseCase, LLMProvider> = {
-  exercise: {
-    client: new OpenAI({
-      apiKey: process.env.GEMINI_API_KEY,
-      baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/",
-    }),
-    model: "gemini-2.0-flash",
-    dailyLimit: 1000,
-  },
-  tutor: {
-    client: new OpenAI({
-      apiKey: process.env.GROQ_API_KEY,
-      baseURL: "https://api.groq.com/openai/v1",
-    }),
-    model: "llama-3.1-8b-instant",
-    dailyLimit: 14400,
-  },
-};
+function getProviders(): Record<UseCase, LLMProvider> {
+  return {
+    exercise: {
+      client: new OpenAI({
+        apiKey: process.env.GEMINI_API_KEY ?? "",
+        baseURL: "https://generativelanguage.googleapis.com/v1beta/openai/",
+      }),
+      model: "gemini-2.0-flash",
+      dailyLimit: 1000,
+    },
+    tutor: {
+      client: new OpenAI({
+        apiKey: process.env.GROQ_API_KEY ?? "",
+        baseURL: "https://api.groq.com/openai/v1",
+      }),
+      model: "llama-3.1-8b-instant",
+      dailyLimit: 14400,
+    },
+  };
+}
 
 async function withRetry<T>(
   fn: () => Promise<T>,
@@ -57,7 +59,7 @@ export async function chat(
   useCase: UseCase,
   messages: ChatMessage[]
 ): Promise<string> {
-  const { client, model } = providers[useCase];
+  const { client, model } = getProviders()[useCase];
 
   const response = await withRetry(() =>
     client.chat.completions.create({ model, messages })
@@ -70,7 +72,7 @@ export async function* chatStream(
   useCase: UseCase,
   messages: ChatMessage[]
 ): AsyncGenerator<string> {
-  const { client, model } = providers[useCase];
+  const { client, model } = getProviders()[useCase];
 
   const stream = await withRetry(() =>
     client.chat.completions.create({ model, messages, stream: true })
