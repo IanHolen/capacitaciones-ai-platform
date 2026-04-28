@@ -17,6 +17,7 @@ import {
   HelpCircle,
   ChevronRight,
 } from "lucide-react";
+import { CourseRating } from "@/components/course-rating";
 import type { Curso, Nivel } from "@/lib/cursos-data";
 
 interface LocalizedCourseDetailProps {
@@ -60,6 +61,11 @@ export function LocalizedCourseDetail({
         <p className="mb-6 text-xl leading-relaxed text-muted-foreground">
           {displayDescripcion}
         </p>
+
+        {/* Course Rating */}
+        <div className="mb-4">
+          <CourseRating courseId={curso.id} />
+        </div>
 
         {/* Course Stats */}
         <div className="flex flex-wrap items-center gap-6 text-base text-muted-foreground">

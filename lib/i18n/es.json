@@ -231,6 +231,16 @@
     "ctaSub": "No hay nada que perder y mucho que ganar. Tu primer curso te espera.",
     "ctaButton": "Crear mi cuenta gratis"
   },
+  "rating": {
+    "rateThisCourse": "Califica este curso",
+    "starLabel": "{value} estrella",
+    "summary": "{average} de 5 ({count} calificaciones)",
+    "noRatings": "Sin calificaciones aún",
+    "yourRating": "Tu calificación: {rating} de 5",
+    "loginRequired": "Inicia sesión para calificar",
+    "error": "Error al guardar calificación",
+    "loading": "Cargando calificación..."
+  },
   "a11y": {
     "skipToContent": "Ir al contenido principal",
     "breadcrumb": "Breadcrumb",
