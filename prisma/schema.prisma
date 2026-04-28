@@ -68,6 +68,7 @@ model User {
   userExerciseResults  UserExerciseResult[]
   userBadges           UserBadge[]
   comments             Comment[]
+  courseRatings         CourseRating[]
 
   @@index([email])
   @@index([deletedAt])
@@ -391,4 +392,24 @@ model Comment {
   @@index([userId])
   @@index([parentId])
   @@map("comments")
+}
+
+// ============================================================
+// COURSE RATINGS (1-5 stars per user per course)
+// ============================================================
+
+model CourseRating {
+  id       String @id @default(uuid()) @db.Uuid
+  userId   String @map("user_id") @db.Uuid
+  courseId  String @map("course_id")
+  rating   Int
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id])
+
+  @@unique([userId, courseId])
+  @@index([courseId])
+  @@map("course_ratings")
 }
