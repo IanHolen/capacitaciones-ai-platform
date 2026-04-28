@@ -14,11 +14,22 @@ export async function GET(request: Request) {
 
   const supabase = await createClient();
 
+  // Resolve course slug to UUID
+  const { data: course } = await supabase
+    .from("courses")
+    .select("id")
+    .eq("slug", courseId)
+    .maybeSingle();
+
+  if (!course) {
+    return NextResponse.json({ average: 0, count: 0, userRating: null });
+  }
+
   // Get average rating and count
   const { data: ratings, error } = await supabase
     .from("course_ratings")
     .select("rating")
-    .eq("course_id", courseId);
+    .eq("course_id", course.id);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
@@ -40,7 +51,7 @@ export async function GET(request: Request) {
     const { data: existing } = await supabase
       .from("course_ratings")
       .select("rating")
-      .eq("course_id", courseId)
+      .eq("course_id", course.id)
       .eq("user_id", user.id)
       .maybeSingle();
 
@@ -76,11 +87,25 @@ export async function POST(request: Request) {
     );
   }
 
+  // Resolve course slug to UUID
+  const { data: course } = await supabase
+    .from("courses")
+    .select("id")
+    .eq("slug", courseId)
+    .maybeSingle();
+
+  if (!course) {
+    return NextResponse.json(
+      { error: "Course not found" },
+      { status: 404 }
+    );
+  }
+
   // Upsert: insert or update if the user already rated this course
   const { data: existing } = await supabase
     .from("course_ratings")
     .select("id")
-    .eq("course_id", courseId)
+    .eq("course_id", course.id)
     .eq("user_id", user.id)
     .maybeSingle();
 
@@ -96,7 +121,7 @@ export async function POST(request: Request) {
   } else {
     const { error } = await supabase.from("course_ratings").insert({
       user_id: user.id,
-      course_id: courseId,
+      course_id: course.id,
       rating,
     });
 
