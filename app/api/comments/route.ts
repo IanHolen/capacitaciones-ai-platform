@@ -48,6 +48,29 @@ export async function POST(request: Request) {
     );
   }
 
+  // Validate parentId: only allow 1 level of nesting (no reply-to-reply)
+  if (parentId) {
+    const { data: parent } = await supabase
+      .from("comments")
+      .select("id, parent_id")
+      .eq("id", parentId)
+      .maybeSingle();
+
+    if (!parent) {
+      return NextResponse.json(
+        { error: "Parent comment not found" },
+        { status: 404 }
+      );
+    }
+
+    if (parent.parent_id !== null) {
+      return NextResponse.json(
+        { error: "Cannot reply to a reply. Only one level of nesting is allowed." },
+        { status: 400 }
+      );
+    }
+  }
+
   const { data: comment, error } = await supabase
     .from("comments")
     .insert({

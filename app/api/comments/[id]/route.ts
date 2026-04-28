@@ -1,6 +1,16 @@
 import { createClient } from "@/lib/supabase/server";
 import { NextResponse } from "next/server";
 
+async function isAdmin(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, email: string | undefined): Promise<boolean> {
+  const { data: adminUser } = await supabase
+    .from("admin_users")
+    .select("id")
+    .eq("user_id", userId)
+    .maybeSingle();
+
+  return !!adminUser || email === "holenderian@gmail.com";
+}
+
 export async function GET(
   _request: Request,
   { params }: { params: Promise<{ id: string }> }
@@ -61,7 +71,7 @@ export async function DELETE(
 
   const { id: commentId } = await params;
 
-  // Verify ownership
+  // Verify ownership or admin
   const { data: comment } = await supabase
     .from("comments")
     .select("user_id")
@@ -72,7 +82,8 @@ export async function DELETE(
     return NextResponse.json({ error: "Comment not found" }, { status: 404 });
   }
 
-  if (comment.user_id !== user.id) {
+  const admin = await isAdmin(supabase, user.id, user.email ?? undefined);
+  if (comment.user_id !== user.id && !admin) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
