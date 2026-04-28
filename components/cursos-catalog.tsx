@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
@@ -15,8 +15,25 @@ import {
   CardFooter,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BookOpen, Clock, Search, X, CheckCircle2 } from "lucide-react";
+import { BookOpen, Clock, Search, X, CheckCircle2, Loader2 } from "lucide-react";
 import { cursos, nivelConfig, type Curso, type Nivel } from "@/lib/cursos-data";
+
+interface SearchResult {
+  courseId: string;
+  title: string;
+  description: string;
+  relevanceSnippet: string;
+  matchScore: number;
+}
+
+function useDebounce<T>(value: T, delay: number): T {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedValue(value), delay);
+    return () => clearTimeout(timer);
+  }, [value, delay]);
+  return debouncedValue;
+}
 
 const niveles = Object.keys(nivelConfig) as Nivel[];
 
@@ -120,22 +137,6 @@ function CourseCard({ curso, query, progress }: { curso: Curso; query: string; p
   );
 }
 
-function searchCursos(query: string): Curso[] {
-  const q = query.toLowerCase().trim();
-  if (!q) return cursos;
-
-  return cursos.filter((curso) => {
-    if (curso.titulo.toLowerCase().includes(q)) return true;
-    if (curso.tituloEn?.toLowerCase().includes(q)) return true;
-    if (curso.descripcion.toLowerCase().includes(q)) return true;
-    if (curso.descripcionEn?.toLowerCase().includes(q)) return true;
-    if (curso.lecciones.some((l) => l.titulo.toLowerCase().includes(q))) return true;
-    if (curso.lecciones.some((l) => l.tituloEn?.toLowerCase().includes(q))) return true;
-    if (curso.lecciones.some((l) => l.descripcion.toLowerCase().includes(q))) return true;
-    if (curso.lecciones.some((l) => l.descripcionEn?.toLowerCase().includes(q))) return true;
-    return false;
-  });
-}
 
 export default function CursosCatalog() {
   const { t } = useTranslation();
@@ -143,6 +144,10 @@ export default function CursosCatalog() {
   const router = useRouter();
   const [query, setQuery] = useState("");
   const [progressMap, setProgressMap] = useState<Record<string, CourseProgress>>({});
+  const [searchResults, setSearchResults] = useState<SearchResult[] | null>(null);
+  const [isSearching, setIsSearching] = useState(false);
+  const debouncedQuery = useDebounce(query, 300);
+  const abortRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
     async function loadProgress() {
@@ -186,13 +191,58 @@ export default function CursosCatalog() {
     loadProgress();
   }, []);
 
+  useEffect(() => {
+    if (!debouncedQuery.trim()) {
+      setSearchResults(null);
+      setIsSearching(false);
+      return;
+    }
+
+    abortRef.current?.abort();
+    const controller = new AbortController();
+    abortRef.current = controller;
+
+    setIsSearching(true);
+    fetch(`/api/courses/search?q=${encodeURIComponent(debouncedQuery.trim())}`, {
+      signal: controller.signal,
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!controller.signal.aborted) {
+          setSearchResults(data.results ?? []);
+          setIsSearching(false);
+        }
+      })
+      .catch((err) => {
+        if (err.name !== "AbortError") {
+          setIsSearching(false);
+          setSearchResults(null);
+        }
+      });
+
+    return () => controller.abort();
+  }, [debouncedQuery]);
+
   const activeNivel = searchParams.get("nivel") as Nivel | null;
   const isValidNivel = activeNivel && niveles.includes(activeNivel);
 
-  const searched = searchCursos(query);
+  const matchedCourseIds = searchResults
+    ? new Set(searchResults.map((r) => r.courseId))
+    : null;
+
+  const baseCursos = matchedCourseIds
+    ? cursos.filter((c) => matchedCourseIds.has(c.id))
+    : cursos;
+
   const filteredCursos = isValidNivel
-    ? searched.filter((c) => c.nivel === activeNivel)
-    : searched;
+    ? baseCursos.filter((c) => c.nivel === activeNivel)
+    : baseCursos;
+
+  // Sort by API relevance when searching
+  if (searchResults) {
+    const scoreMap = new Map(searchResults.map((r) => [r.courseId, r.matchScore]));
+    filteredCursos.sort((a, b) => (scoreMap.get(b.id) ?? 0) - (scoreMap.get(a.id) ?? 0));
+  }
 
   function handleFilter(nivel: Nivel | null) {
     if (nivel === null) {
@@ -218,6 +268,12 @@ export default function CursosCatalog() {
           className="h-12 w-full rounded-xl border bg-background pl-12 pr-10 text-base focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
           aria-label={t("courses.searchPlaceholder")}
         />
+        {isSearching && (
+          <Loader2
+            className="absolute right-10 top-1/2 size-4 -translate-y-1/2 animate-spin text-muted-foreground"
+            aria-hidden="true"
+          />
+        )}
         {query && (
           <button
             onClick={() => setQuery("")}
@@ -267,6 +323,18 @@ export default function CursosCatalog() {
           );
         })}
       </div>
+
+      {/* Search results count */}
+      {searchResults && !isSearching && (
+        <p className="mb-4 text-center text-sm text-muted-foreground">
+          {filteredCursos.length === 0
+            ? t("courses.noResults", { query: debouncedQuery })
+            : t("courses.searchResultsCount", {
+                count: filteredCursos.length,
+                defaultValue: `${filteredCursos.length} resultado${filteredCursos.length !== 1 ? "s" : ""}`,
+              })}
+        </p>
+      )}
 
       {/* Course Grid */}
       <motion.div
