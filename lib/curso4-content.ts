@@ -418,13 +418,13 @@ El modo voz te permite **hablar con el asistente** como si fuera una persona. T�
 
 | Situación | Mejor usar... |
 |---|---|
-| Tenés las manos ocupadas | Voz |
+| Tienes las manos ocupadas | Voz |
 | Estás manejando o caminando | Voz |
-| Querés respuesta más natural y rápida | Voz |
-| Necesitás copiar el texto después | Texto |
+| Quieres respuesta más natural y rápida | Voz |
+| Necesitas copiar el texto después | Texto |
 | El pedido es muy detallado o técnico | Texto |
 | Estás en un lugar público con silencio | Texto |
-| Querés adjuntar un archivo | Texto |
+| Quieres adjuntar un archivo | Texto |
 
 ---
 
@@ -434,7 +434,7 @@ El modo voz te permite **hablar con el asistente** como si fuera una persona. T�
 
 **Puedes usar puntuación verbal.** Si quieres que algo quede como lista, puedes decir: *"Primero... Segundo... Tercero..."*. La IA entiende la estructura de tu discurso.
 
-**Corregí si no entendió.** Si la transcripción tiene errores, simplemente decí *"Me escuchaste mal, quise decir..."* y seguí.
+**Corrige si no entendió.** Si la transcripción tiene errores, simplemente di *"Me escuchaste mal, quise decir..."* y sigue.
 
 **Usa el modo voz para ideas rápidas.** Si de repente se te ocurre algo que quieres que la IA te ayude a desarrollar, activa la voz y dilo antes de que se te olvide.
 
@@ -488,7 +488,7 @@ Es como tener un asistente investigador que va a la biblioteca, lee los libros y
 4. Perplexity busca en internet, lee las fuentes y te da una respuesta organizada.
 5. Al final de la respuesta, verás los **números de fuente** (1, 2, 3...) y los sitios donde encontró la información.
 
-Podés hacer preguntas de seguimiento directamente debajo, igual que en un chat.
+Puedes hacer preguntas de seguimiento directamente debajo, igual que en un chat.
 
 ---
 
@@ -521,7 +521,7 @@ Puedes elegir qué tipo de fuentes quiere que busque:
 Después de cada respuesta, Perplexity te sugiere preguntas relacionadas que puedes hacer con un solo clic. Muy útil para seguir investigando sin tener que pensar el próximo paso.
 
 **Colecciones:**
-Podés organizar tus búsquedas en carpetas temáticas. Por ejemplo, tener una carpeta "Salud", otra "Viajes" y otra "Recetas".
+Puedes organizar tus búsquedas en carpetas temáticas. Por ejemplo, tener una carpeta "Salud", otra "Viajes" y otra "Recetas".
 
 ---
 
@@ -532,7 +532,7 @@ Podés organizar tus búsquedas en carpetas temáticas. Por ejemplo, tener una c
 - **No analiza archivos** que tú le subas.
 - **No genera imágenes.**
 
-Para esas tareas, seguís usando ChatGPT o Claude.
+Para esas tareas, sigues usando ChatGPT o Claude.
 
 ---
 

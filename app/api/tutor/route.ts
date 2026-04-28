@@ -80,7 +80,7 @@ Reglas:
           new TextEncoder().encode(
             userLang === 'en'
               ? "\n[Sorry, there was an error. Could you try again?]"
-              : "\n[Disculpa, hubo un error. ¿Podés intentar de nuevo?]"
+              : "\n[Disculpa, hubo un error. ¿Puedes intentar de nuevo?]"
           )
         );
       } finally {
