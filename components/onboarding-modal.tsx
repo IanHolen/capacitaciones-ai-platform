@@ -3,8 +3,10 @@
 import { useState, useEffect } from "react";
 import { Sparkles, Loader2, X } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { useTranslation } from "react-i18next";
 
 export function OnboardingModal() {
+  const { t } = useTranslation();
   const [show, setShow] = useState(false);
   const [goal, setGoal] = useState("");
   const [saving, setSaving] = useState(false);
@@ -40,7 +42,7 @@ export function OnboardingModal() {
       await fetch("/api/goal", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ goal: goal || "Aprender a usar IA" }),
+        body: JSON.stringify({ goal: goal || t("onboarding.defaultGoal") }),
       });
     } catch {
       // Best effort
@@ -63,7 +65,7 @@ export function OnboardingModal() {
           <button
             onClick={() => setShow(false)}
             className="rounded-lg p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-600"
-            aria-label="Cerrar"
+            aria-label={t("tutor.close")}
           >
             <X className="size-5" />
           </button>
@@ -73,23 +75,22 @@ export function OnboardingModal() {
           className="mb-2 text-2xl font-bold"
           style={{ color: "#1E40AF" }}
         >
-          ¡Bienvenido/a! ¿Qué te gustaría lograr con la IA?
+          {t("onboarding.title")}
         </h2>
         <p className="mb-6 text-base text-muted-foreground">
-          Tener una meta te va a ayudar a mantenerte motivado/a durante el
-          aprendizaje.
+          {t("onboarding.subtitle")}
         </p>
 
         <textarea
           value={goal}
           onChange={(e) => setGoal(e.target.value)}
-          placeholder="Ejemplo: Quiero aprender a usar IA para mi negocio, automatizar tareas del trabajo, ayudar a mis hijos con la tarea..."
+          placeholder={t("onboarding.placeholder")}
           className="min-h-[120px] w-full rounded-xl border-2 border-gray-200 p-4 text-lg leading-relaxed placeholder:text-gray-400 focus:border-[#1E40AF] focus:outline-none focus:ring-4 focus:ring-[#1E40AF]/20"
           rows={3}
         />
 
         <p className="mt-2 text-sm text-muted-foreground">
-          Puedes cambiar esto cuando quieras desde Mi Cuenta
+          {t("onboarding.hint")}
         </p>
 
         <button
@@ -103,7 +104,7 @@ export function OnboardingModal() {
           ) : (
             <Sparkles className="size-5" />
           )}
-          {saving ? "Guardando..." : "Comenzar"}
+          {saving ? t("onboarding.saving") : t("onboarding.submit")}
         </button>
       </div>
     </div>

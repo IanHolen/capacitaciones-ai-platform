@@ -1,6 +1,24 @@
 import type { QuizQuestion } from "./cursos-data";
+import {
+  curso1QuizEn,
+  curso2QuizEn,
+  curso3QuizEn,
+  curso7QuizEn,
+  curso8QuizEn,
+  curso9QuizEn,
+} from "./quiz-data-en";
 
-export const curso1Quiz: QuizQuestion[] = [
+function mergeEnglish(
+  esQuestions: QuizQuestion[],
+  enPartials: Partial<QuizQuestion>[],
+): QuizQuestion[] {
+  return esQuestions.map((q, i) => ({
+    ...q,
+    ...(enPartials[i] ?? {}),
+  }));
+}
+
+export const curso1Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "Qué es la Inteligencia Artificial?",
     options: [
@@ -109,9 +127,9 @@ export const curso1Quiz: QuizQuestion[] = [
     explanation:
       "ChatGPT es un asistente conversacional de IA creado por OpenAI.",
   },
-];
+], curso1QuizEn);
 
-export const curso2Quiz: QuizQuestion[] = [
+export const curso2Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "Cuál de estos NO es un asistente de IA?",
     options: ["ChatGPT", "Claude", "Wikipedia", "Gemini"],
@@ -216,9 +234,9 @@ export const curso2Quiz: QuizQuestion[] = [
     correctIndex: 1,
     explanation: "Siempre puedes pedir cambios.",
   },
-];
+], curso2QuizEn);
 
-export const curso3Quiz: QuizQuestion[] = [
+export const curso3Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "Qué es la inteligencia artificial en términos simples?",
     options: [
@@ -390,9 +408,9 @@ export const curso3Quiz: QuizQuestion[] = [
     explanation:
       "La curiosidad informada es la mejor actitud: aprender con criterio.",
   },
-];
+], curso3QuizEn);
 
-export const curso7Quiz: QuizQuestion[] = [
+export const curso7Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "¿Cuál de estas es una técnica core de prompting?",
     options: [
@@ -446,7 +464,7 @@ export const curso7Quiz: QuizQuestion[] = [
     options: [
       "Siempre, porque JSON es más bonito",
       "Cuando necesitas datos estructurados para usar en otra herramienta",
-      "Solo cuando programás en JavaScript",
+      "Solo cuando programas en JavaScript",
       "Nunca, la IA no puede generar JSON",
     ],
     correctIndex: 1,
@@ -463,7 +481,7 @@ export const curso7Quiz: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "El system prompt configura el comportamiento base de la IA; el user prompt es cada mensaje que enviás.",
+      "El system prompt configura el comportamiento base de la IA; el user prompt es cada mensaje que envías.",
   },
   {
     question: "¿Cuál es la mejor estrategia cuando el primer prompt no da buenos resultados?",
@@ -505,7 +523,7 @@ export const curso7Quiz: QuizQuestion[] = [
     question: "¿Cuándo conviene empezar un prompt desde cero en vez de iterar?",
     options: [
       "Siempre, cada intento debe ser independiente",
-      "Cuando el enfoque fundamental esta equivocado y los ajustes menores no mejoran",
+      "Cuando el enfoque fundamental está equivocado y los ajustes menores no mejoran",
       "Nunca, siempre hay que iterar sobre lo existente",
       "Después de exactamente 3 intentos fallidos",
     ],
@@ -513,9 +531,9 @@ export const curso7Quiz: QuizQuestion[] = [
     explanation:
       "Si el enfoque base es incorrecto, es más eficiente rediseñar el prompt que seguir iterando.",
   },
-];
+], curso7QuizEn);
 
-export const curso8Quiz: QuizQuestion[] = [
+export const curso8Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "¿Qué puede hacer la IA con un PDF que le subes?",
     options: [
@@ -531,7 +549,7 @@ export const curso8Quiz: QuizQuestion[] = [
   {
     question: "¿Cuál es la mejor técnica para resumir un documento muy largo?",
     options: [
-      "Pedir \"resumilo\" sin más contexto",
+      "Pedir \"resúmelo\" sin más contexto",
       "Resumir por secciones y luego hacer un resumen de los resúmenes",
       "Copiar solo el primer párrafo y pedir un resumen",
       "No se puede resumir documentos largos con IA",
@@ -613,7 +631,7 @@ export const curso8Quiz: QuizQuestion[] = [
       "La IA puede tener dificultades con texto muy pequeño, letra manuscrita y razonamiento espacial complejo.",
   },
   {
-    question: "¿Cómo verificás que la IA extrajo datos correctamente de una tabla?",
+    question: "¿Cómo verificas que la IA extrajo datos correctamente de una tabla?",
     options: [
       "Confiar ciegamente en el resultado",
       "Pedirle que revise y compare contra el original, y verificar manualmente campos clave",
@@ -636,9 +654,9 @@ export const curso8Quiz: QuizQuestion[] = [
     explanation:
       "Los proyectos mantienen contexto persistente, evitando re-explicar documentos y preferencias cada vez.",
   },
-];
+], curso8QuizEn);
 
-export const curso9Quiz: QuizQuestion[] = [
+export const curso9Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "¿Qué es prompt chaining?",
     options: [
@@ -676,7 +694,7 @@ export const curso9Quiz: QuizQuestion[] = [
       "Al exceder el contexto, la IA pierde acceso a la información más antigua de la conversación.",
   },
   {
-    question: "¿Cómo evaluás si un prompt es bueno?",
+    question: "¿Cómo evalúas si un prompt es bueno?",
     options: [
       "Si la respuesta es larga, el prompt es bueno",
       "Probándolo múltiples veces y verificando consistencia, precisión y formato",
@@ -759,4 +777,4 @@ export const curso9Quiz: QuizQuestion[] = [
     explanation:
       "El flujo correcto va de idea → investigación → esquema → borrador → edición → publicación.",
   },
-];
+], curso9QuizEn);

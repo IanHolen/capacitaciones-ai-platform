@@ -23,7 +23,7 @@ Imagina que vas a un restaurante:
 | Automatización | Manual | Completamente automática |
 | Volumen | Uno por uno | Miles por minuto |
 | Integración | No | Se integra con cualquier sistema |
-| Costo | Plan mensual fijo | Pagás por uso |
+| Costo | Plan mensual fijo | Pagas por uso |
 
 ### ¿Cuándo necesitas una API?
 
@@ -65,7 +65,7 @@ Todo esto pasa en segundos, automáticamente, sin que nadie tenga que abrir un c
 
 - Una API es un intermediario que permite a tu programa usar IA
 - Es más flexible y potente que la interfaz web
-- Pagás por uso en vez de un plan mensual fijo
+- Pagas por uso en vez de un plan mensual fijo
 - Es el camino para integrar IA en tus propios proyectos`;
 
 export const c12leccion2 = `## API Keys: qué son y cómo protegerlas
@@ -128,7 +128,7 @@ api_key = "sk-proj-abc123..."
 OPENAI_API_KEY=sk-proj-abc123...
 \`\`\`
 
-Y en tu código leés la variable de entorno.
+Y en tu código lees la variable de entorno.
 
 **3. Configura límites de gasto**
 - OpenAI: Settings → Billing → Usage limits
@@ -137,7 +137,7 @@ Y en tu código leés la variable de entorno.
 
 **4. Rota las llaves periódicamente**
 - Cada 3-6 meses, crea una nueva llave y elimina la vieja
-- Si sospechás que se filtró, cambiala inmediatamente
+- Si sospechas que se filtró, cámbiala inmediatamente
 
 **5. Usa llaves diferentes para cada proyecto**
 - Una llave para pruebas, otra para producción
@@ -145,7 +145,7 @@ Y en tu código leés la variable de entorno.
 
 ### ¿Qué pasa si alguien roba tu API Key?
 
-- Puede hacer solicitudes a la API y tú pagás
+- Puede hacer solicitudes a la API y tú pagas
 - En el peor caso, puede acumular miles de dólares en cargos
 - Por eso es crucial configurar límites de gasto
 
@@ -168,7 +168,7 @@ Vamos a hacer tu primera llamada a una API de IA. Elegimos **Google Gemini** por
 1. Ve a **aistudio.google.com**
 2. Inicia sesión con tu cuenta de Google
 3. Haz clic en **"Get API Key"** → **"Create API Key"**
-4. Copia la llave y guardala en un lugar seguro
+4. Copia la llave y guárdala en un lugar seguro
 
 ### Paso 2: Tu primera llamada (sin programar)
 
@@ -177,7 +177,7 @@ Antes de escribir código, puedes probar la API directamente desde Google AI Stu
 1. En **aistudio.google.com**, abre el **"Freeform prompt"**
 2. Escribe: "Explica qué es una API en 3 oraciones simples"
 3. Haz clic en **"Run"**
-4. ¡Listo! Acabás de hacer tu primera llamada a la API de Gemini
+4. ¡Listo! Acabas de hacer tu primera llamada a la API de Gemini
 
 ### Paso 3: Primera llamada con código (JavaScript)
 
@@ -252,7 +252,7 @@ main();
 
 Gemini Flash-Lite es extremadamente económico:
 - **Gratis**: 1,500 requests por día
-- **Si pagás**: $0.075 por millón de tokens de entrada
+- **Si pagas**: $0.075 por millón de tokens de entrada
 
 Para referencia: 1 millón de tokens ≈ 750,000 palabras. Tendrías que hacer miles de preguntas al día para gastar más de $1.
 
@@ -288,7 +288,7 @@ Groq usa hardware especializado llamado **LPU** (Language Processing Unit) dise�
 
 ### Tu primera llamada a Groq
 
-Groq usa el formato OpenAI-compatible, así que si ya probaste el ejemplo de la lección anterior, solo cambiás la URL y la key:
+Groq usa el formato OpenAI-compatible, así que si ya probaste el ejemplo de la lección anterior, solo cambias la URL y la key:
 
 \`\`\`javascript
 const OpenAI = require("openai");
@@ -331,7 +331,7 @@ Vas a ver que la respuesta llega en menos de 500ms — a veces menos de 200ms.
 
 ### Ejemplo práctico: Chatbot ultra-rápido
 
-Con Groq puedes crear un chatbot que responde tan rápido que parece que esta escribiendo en tiempo real. Ideal para:
+Con Groq puedes crear un chatbot que responde tan rápido que parece que está escribiendo en tiempo real. Ideal para:
 
 - **Atención al cliente**: Respuestas instantáneas
 - **Tutor educativo**: Sin esperas que frustren al estudiante
@@ -346,7 +346,7 @@ Con Groq puedes crear un chatbot que responde tan rápido que parece que esta es
 
 export const c12leccion5 = `## Costos: ¿cuánto cuesta realmente usar APIs?
 
-Una de las mayores preocupaciones al usar APIs de IA es el costo. La buena noticia: **es mucho más barato de lo que pensás**. La mala noticia: si no tienes cuidado, puede escalar.
+Una de las mayores preocupaciones al usar APIs de IA es el costo. La buena noticia: **es mucho más barato de lo que piensas**. La mala noticia: si no tienes cuidado, puede escalar.
 
 ### Cómo se cobra
 
@@ -488,7 +488,7 @@ export async function POST(request: Request) {
 
 En vez de esperar a que toda la respuesta esté lista, puedes mostrarla palabra por palabra (como hace ChatGPT):
 
-Esto requiere un poco más de configuración pero mejora mucho la experiencia del usuario. Usas el parámetro \`stream: true\` en la llamada a la API y procesas los chunks a medida que llegan.
+Esto requiere un poco más de configuración pero mejora mucho la experiencia del usuario. Usa el parámetro \`stream: true\` en la llamada a la API y procesa los chunks a medida que llegan.
 
 ### Consideraciones para producción
 
@@ -505,7 +505,7 @@ Esto requiere un poco más de configuración pero mejora mucho la experiencia de
 **Legal:**
 - Avisa que el chat usa IA
 - Incluye un disclaimer: "Las respuestas son generadas por IA y pueden contener errores"
-- Cumplí con las regulaciones de privacidad de tu país
+- Cumple con las regulaciones de privacidad de tu país
 
 ### Para llevar
 
@@ -552,7 +552,7 @@ c) En el nombre de dominio
 d) En el título de la página
 
 **Respuesta correcta: b)**
-La API Key siempre debe estar en el servidor. Si esta en el frontend, cualquiera puede verla y usarla.
+La API Key siempre debe estar en el servidor. Si está en el frontend, cualquiera puede verla y usarla.
 
 ---
 
@@ -576,7 +576,7 @@ c) Que son idénticos a ChatGPT
 d) Que necesitas una cuenta de OpenAI
 
 **Respuesta correcta: b)**
-El formato OpenAI-compatible permite reutilizar el mismo código — solo cambiás la URL base y la API Key para cambiar de proveedor.
+El formato OpenAI-compatible permite reutilizar el mismo código — solo cambias la URL base y la API Key para cambiar de proveedor.
 
 ---
 

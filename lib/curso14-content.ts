@@ -88,7 +88,7 @@ Para entender RAG a fondo, necesitas conocer estos conceptos fundamentales:
 
 El ecosistema de herramientas para RAG creció enormemente. Frameworks como **LangChain**, **LlamaIndex**, **Haystack** y **Semantic Kernel** facilitan la implementación. Bases de datos vectoriales como **Pinecone**, **Weaviate**, **Qdrant**, **ChromaDB** y **pgvector** (extensión de PostgreSQL) ofrecen almacenamiento y búsqueda eficiente.
 
-En las siguientes lecciones vas a construir tu propio sistema RAG desde cero, entender cada componente en profundidad, y aprender a optimizarlo para obtener respuestas de alta calidad.
+En las siguientes lecciones vas a construir tu propio sistema RAG desde cero, entender cada componente en profundidad y aprender a optimizarlo para obtener respuestas de alta calidad.
 
 #### Conclusión
 
@@ -202,7 +202,7 @@ print(f"Documento dividido en {len(chunks)} chunks")
 print(f"Primer chunk: {chunks[0][:100]}...")
 \`\`\`
 
-**¿Por qué overlap?** El overlap (solapamiento) asegura que si una idea importante esta en el límite entre dos chunks, no se pierda. Sin overlap, podrías cortar una oración a la mitad y perder contexto crucial.
+**¿Por qué overlap?** El overlap (solapamiento) asegura que si una idea importante está en el límite entre dos chunks, no se pierda. Sin overlap, podrías cortar una oración a la mitad y perder contexto crucial.
 
 **Estrategia 2: Chunking por separadores (párrafos, secciones)**
 
@@ -397,7 +397,7 @@ def generar_respuesta_rag(consulta: str, n_contextos: int = 3) -> str:
     contexto_combinado = "\\n\\n---\\n\\n".join(contextos)
 
     prompt = f"""Basándote ÚNICAMENTE en el siguiente contexto, responde la pregunta del usuario.
-Si la información no esta en el contexto, di que no tienes suficiente información.
+Si la información no está en el contexto, di que no tienes suficiente información.
 
 CONTEXTO:
 {contexto_combinado}
@@ -425,7 +425,7 @@ print(respuesta)
 
 #### Resumen del pipeline
 
-Acabás de ver el pipeline RAG completo en acción. Cada paso es una oportunidad de optimización:
+Acabas de ver el pipeline RAG completo en acción. Cada paso es una oportunidad de optimización:
 
 - **Chunking**: Tamaño, overlap, estrategia de división
 - **Embeddings**: Modelo, dimensiones, normalización
@@ -993,7 +993,7 @@ Eres un asistente experto que responde preguntas basándose ÚNICAMENTE en el co
 Instrucciones:
 - Responde de forma clara y completa en español
 - Cita la fuente (nombre del archivo y página) cuando sea relevante
-- Si la información no esta en el contexto, di: "No encontré información sobre esto en los documentos proporcionados."
+- Si la información no está en el contexto, di: "No encontré información sobre esto en los documentos proporcionados."
 - No inventes información
 
 Contexto de los documentos:
@@ -1070,7 +1070,7 @@ python consultar.py
 1. **PDFs escaneados (imágenes):** Necesitas OCR. Usa \`pytesseract\` o \`unstructured\` con el parámetro \`strategy="ocr_only"\`.
 2. **PDFs con tablas complejas:** \`pdfplumber\` es mejor que \`PyPDF\` para tablas. Considera \`camelot-py\` para tablas muy complejas.
 3. **PDFs con columnas:** Muchos extractores mezclan el texto de las columnas. \`unstructured\` maneja esto mejor.
-4. **Metadatos del PDF:** Extrae título, autor y fecha del PDF y agregalos como metadata a tus chunks.
+4. **Metadatos del PDF:** Extraé título, autor y fecha del PDF y agregalos como metadata a tus chunks.
 
 En la próxima lección veremos cómo optimizar la calidad de las respuestas de tu sistema RAG.
 `;
@@ -1099,7 +1099,7 @@ El tamaño del chunk tiene un impacto enorme en la calidad. Chunks muy grandes d
 
 **Técnica avanzada: Parent-Child Chunking**
 
-Creas chunks pequeños para la búsqueda (más precisa) pero recuperás el chunk padre (más contexto) para enviarlo al LLM:
+Se crean chunks pequeños para la búsqueda (más precisa) pero se recupera el chunk padre (más contexto) para enviarlo al LLM:
 
 \`\`\`python
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -1145,7 +1145,7 @@ def crear_chunks_parent_child(documentos: list[Document]):
 # Uso: buscas entre children, pero devuelves el parent al LLM
 children, parent_map, parents = crear_chunks_parent_child(documentos)
 
-# Al buscar, recuperás el parent:
+# Al buscar, se recupera el parent:
 def buscar_con_parent(query, vectorstore, parent_map, k=3):
     """Busca children pero retorna parents para contexto completo."""
     child_results = vectorstore.similarity_search(query, k=k)
@@ -1320,7 +1320,7 @@ basándote EXCLUSIVAMENTE en los fragmentos de documentos proporcionados como co
 
 REGLAS ESTRICTAS:
 1. Usa SOLO información del contexto. NO inventes ni agregues información externa.
-2. Si la respuesta no esta en el contexto, responde: "No encontré esta información en los documentos disponibles."
+2. Si la respuesta no está en el contexto, respondé: "No encontré esta información en los documentos disponibles."
 3. Cita la fuente específica (documento y página) para cada afirmación importante.
 4. Si la información es parcial, indicalo: "Basándome en la información disponible..."
 5. Si hay información contradictoria entre fuentes, menciona ambas versiones.
@@ -1424,7 +1424,7 @@ Mide si la respuesta realmente responde la pregunta del usuario.
 
 **3. Context Relevancy (Relevancia del contexto)**
 
-Mide si los documentos recuperados son relevantes para la pregunta. Si recuperás documentos irrelevantes, el LLM tiene que filtrar ruido y es más probable que genere respuestas pobres.
+Mide si los documentos recuperados son relevantes para la pregunta. Si se recuperan documentos irrelevantes, el LLM tiene que filtrar ruido y es más probable que genere respuestas pobres.
 
 **4. Context Recall**
 
@@ -1436,7 +1436,7 @@ La métrica final: ¿la respuesta es factualmente correcta? Requiere tener respu
 
 #### Evaluación manual: el punto de partida
 
-Antes de usar frameworks automáticos, construye un set de evaluación manual:
+Antes de usar frameworks automáticos, construí un set de evaluación manual:
 
 \`\`\`python
 # dataset_evaluacion.py
@@ -1483,7 +1483,7 @@ Respuesta a evaluar:
 
 Instrucciones:
 1. Identifica cada afirmación factual en la respuesta
-2. Verifica si cada afirmación esta soportada por el contexto
+2. Verifica si cada afirmación está soportada por el contexto
 3. Devuelve un JSON con:
    - "afirmaciones": lista de afirmaciones encontradas
    - "soportadas": cantidad de afirmaciones soportadas por el contexto
@@ -1714,11 +1714,12 @@ No hay un estándar universal, pero como referencia:
 - **Faithfulness > 0.85**: Tu sistema no alucina demasiado
 - **Answer Relevancy > 0.80**: Las respuestas son útiles
 - **Context Recall > 0.75**: El retrieval encuentra la información necesaria
-- **Hit Rate > 0.90**: Casi siempre recuperás al menos un documento relevante
+- **Hit Rate > 0.90**: Casi siempre se recupera al menos un documento relevante
 
 Si tus scores son bajos, la lección 5 te da las herramientas para mejorarlos. Evalúa, optimiza, evalúa de nuevo — ese es el ciclo.
 
 En la próxima lección, vas a integrar todo lo que aprendiste en un proyecto completo.
+
 `;
 
 export const leccion7 = `### Proyecto: buscador inteligente sobre tus documentos
@@ -1794,7 +1795,7 @@ COLLECTION_NAME = "buscador_docs"
 # Verificar API key
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
-    print("ADVERTENCIA: OPENAI_API_KEY no esta configurada")
+    print("ADVERTENCIA: OPENAI_API_KEY no está configurada")
     print("Ejecuta: export OPENAI_API_KEY='tu-key-aqui'")
 \`\`\`
 
@@ -1994,7 +1995,7 @@ class BuscadorInteligente:
 
             count = self.vectorstore._collection.count()
             if count == 0:
-                print("El índice esta vacío. Ejecuta primero: python main.py indexar")
+                print("El índice está vacío. Ejecuta primero: python main.py indexar")
                 return False
 
             self.retriever = self.vectorstore.as_retriever(
@@ -2391,10 +2392,10 @@ d) Un método para fusionar múltiples vector stores
 
 a) Si los documentos recuperados son relevantes para la pregunta
 b) Si la respuesta generada es consistente con el contexto recuperado (no alucina)
-c) Si el usuario esta satisfecho con la respuesta
+c) Si el usuario está satisfecho con la respuesta
 d) Si el modelo de embeddings es preciso
 
-**Respuesta correcta: b)** Faithfulness mide si las afirmaciones en la respuesta generada están soportadas por el contexto recuperado. Una fidelidad baja indica que el LLM esta inventando información que no esta en los documentos (alucinando).
+**Respuesta correcta: b)** Faithfulness mide si las afirmaciones en la respuesta generada están soportadas por el contexto recuperado. Una fidelidad baja indica que el LLM está inventando información que no está en los documentos (alucinando).
 
 ---
 
@@ -2426,12 +2427,12 @@ d) Indexar tanto el documento original como su resumen
 
 ### Pregunta 10
 
-Tienes un sistema RAG con alta "answer relevancy" pero baja "faithfulness". ¿Qué esta pasando?
+Tienes un sistema RAG con alta "answer relevancy" pero baja "faithfulness". ¿Qué está pasando?
 
 a) El sistema no encuentra documentos relevantes
-b) Las respuestas son relevantes para la pregunta pero contienen información inventada que no esta en los documentos
+b) Las respuestas son relevantes para la pregunta pero contienen información inventada que no está en los documentos
 c) El LLM es demasiado lento
 d) Los chunks son demasiado grandes
 
-**Respuesta correcta: b)** Alta relevancia con baja fidelidad significa que el LLM entiende qué se le esta preguntando y genera respuestas que parecen apropiadas, pero esta agregando información que no proviene del contexto recuperado (esta alucinando). Soluciones incluyen: mejorar el prompt para que sea más estricto con el contexto, reducir la temperatura del LLM, y mejorar el retrieval para dar mejor contexto.
+**Respuesta correcta: b)** Alta relevancia con baja fidelidad significa que el LLM entiende qué se le está preguntando y genera respuestas que parecen apropiadas, pero está agregando información que no proviene del contexto recuperado (está alucinando). Soluciones incluyen: mejorar el prompt para que sea más estricto con el contexto, reducir la temperatura del LLM, y mejorar el retrieval para dar mejor contexto.
 `;

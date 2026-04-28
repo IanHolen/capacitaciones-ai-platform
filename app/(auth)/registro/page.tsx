@@ -5,8 +5,10 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { BookOpen, AlertCircle, Loader2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { useTranslation } from "react-i18next";
 
 export default function RegisterPage() {
+  const { t } = useTranslation();
   const router = useRouter();
 
   const [name, setName] = useState("");
@@ -23,7 +25,7 @@ export default function RegisterPage() {
     setError("");
 
     if (password.length < 8) {
-      setError("La contraseña debe tener al menos 8 caracteres");
+      setError(t("auth.passwordMin"));
       return;
     }
 
@@ -52,16 +54,15 @@ export default function RegisterPage() {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50 px-4">
         <div className="w-full max-w-md rounded-2xl border bg-white p-8 shadow-sm text-center">
-          <h1 className="mb-4 text-2xl font-bold">Revisa tu correo</h1>
+          <h1 className="mb-4 text-2xl font-bold">{t("auth.checkEmail")}</h1>
           <p className="text-lg text-gray-600">
-            Te enviamos un enlace de verificación a <strong>{email}</strong>.
-            Haz clic en el enlace para activar tu cuenta.
+            {t("auth.verificationSent", { email })}
           </p>
           <Link
             href="/login"
             className="mt-6 inline-block text-[#1E40AF] underline"
           >
-            Ir al inicio de sesión
+            {t("auth.backToLogin")}
           </Link>
         </div>
       </div>
@@ -78,21 +79,21 @@ export default function RegisterPage() {
           style={{ color: "#1E40AF" }}
         >
           <BookOpen className="size-7" aria-hidden="true" />
-          Certificaciones AI
+          Capacitaciones IA
         </Link>
 
         <h1 className="mb-2 text-center text-2xl font-bold">
-          Crea tu cuenta gratis
+          {t("auth.createAccount")}
         </h1>
         <p className="mb-6 text-center text-gray-600">
-          Empieza a aprender IA hoy
+          {t("auth.createSub")}
         </p>
 
         {/* Email/Password Form */}
         <form onSubmit={handleEmailRegister} className="flex flex-col gap-4">
           <div>
             <label htmlFor="name" className="mb-1 block text-base font-medium">
-              Nombre
+              {t("auth.name")}
             </label>
             <input
               id="name"
@@ -109,7 +110,7 @@ export default function RegisterPage() {
               htmlFor="email"
               className="mb-1 block text-base font-medium"
             >
-              Correo electrónico
+              {t("auth.email")}
             </label>
             <input
               id="email"
@@ -124,14 +125,14 @@ export default function RegisterPage() {
           <div>
             <div className="mb-1 flex items-center justify-between">
               <label htmlFor="password" className="text-base font-medium">
-                Contraseña
+                {t("auth.password")}
               </label>
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 className="text-sm text-[#1E40AF]"
               >
-                {showPassword ? "Ocultar" : "Mostrar"}
+                {showPassword ? t("auth.hide") : t("auth.show")}
               </button>
             </div>
             <input
@@ -144,7 +145,7 @@ export default function RegisterPage() {
               className="h-14 w-full rounded-xl border-2 border-gray-200 px-4 text-lg transition-colors focus:border-[#1E40AF] focus:outline-none focus:ring-4 focus:ring-[#1E40AF]/20"
             />
             <p className="mt-1 text-sm text-gray-500">
-              Mínimo 8 caracteres
+              {t("auth.minChars")}
             </p>
           </div>
 
@@ -165,15 +166,15 @@ export default function RegisterPage() {
             className="flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-[#1E40AF] text-lg font-semibold text-white transition-colors hover:bg-[#1E3A8A] focus:outline-none focus:ring-4 focus:ring-[#1E40AF]/30 disabled:opacity-50"
           >
             {loading && <Loader2 className="size-5 animate-spin" />}
-            {loading ? "Cargando..." : "Crear mi cuenta"}
+            {loading ? t("auth.loading") : t("auth.createButton")}
           </button>
         </form>
 
         {/* Login Link */}
         <p className="mt-6 text-center text-base text-gray-600">
-          ¿Ya tienes cuenta?{" "}
+          {t("auth.hasAccount")}{" "}
           <Link href="/login" className="font-semibold text-[#1E40AF]">
-            Inicia sesión
+            {t("auth.loginLink")}
           </Link>
         </p>
       </div>

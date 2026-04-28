@@ -4,8 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { LogOut, LogIn } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { useTranslation } from "react-i18next";
 
 export function UserNav() {
+  const { t } = useTranslation();
   const [user, setUser] = useState<{
     email?: string;
     name?: string;
@@ -40,7 +42,7 @@ export function UserNav() {
         className="flex items-center gap-1.5 rounded-lg px-3 py-2 text-lg font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
       >
         <LogIn className="size-5" aria-hidden="true" />
-        <span>Iniciar sesión</span>
+        <span>{t("nav.login")}</span>
       </Link>
     );
   }
@@ -65,10 +67,10 @@ export function UserNav() {
       <button
         onClick={handleLogout}
         className="flex items-center gap-1.5 rounded-lg px-2 py-2 text-sm font-medium text-foreground/70 transition-colors hover:bg-muted hover:text-foreground"
-        aria-label="Cerrar sesión"
+        aria-label={t("nav.logoutLabel")}
       >
         <LogOut className="size-4" aria-hidden="true" />
-        <span className="hidden sm:inline">Salir</span>
+        <span className="hidden sm:inline">{t("nav.logout")}</span>
       </button>
     </div>
   );

@@ -42,7 +42,13 @@
     "noResults": "No courses found for \"{query}\".",
     "noCoursesLevel": "No courses available for this level yet."
   },
-  "contentNotice": "",
+  "levels": {
+    "intro": "Introduction",
+    "básico": "Basic",
+    "intermedio": "Intermediate",
+    "avanzado": "Advanced",
+    "pro": "Pro"
+  },
   "lesson": {
     "lessonOf": "Lesson {current} of {total}",
     "content": "Content",
@@ -185,7 +191,41 @@
     "generating": "Generating..."
   },
   "footer": {
-    "rights": "© 2026 Certificaciones AI. All rights reserved."
+    "rights": "© 2026 Capacitaciones IA. All rights reserved."
+  },
+  "onboarding": {
+    "title": "Welcome! What would you like to achieve with AI?",
+    "subtitle": "Having a goal will help you stay motivated during your learning journey.",
+    "placeholder": "Example: I want to learn AI for my business, automate work tasks, help my kids with homework...",
+    "hint": "You can change this anytime from My Account",
+    "submit": "Get started",
+    "saving": "Saving...",
+    "defaultGoal": "Learn to use AI"
+  },
+  "about": {
+    "heroTitle": "What is Capacitaciones IA?",
+    "heroSub": "It's a free platform where anyone can learn to use Artificial Intelligence, regardless of your age or experience with technology.",
+    "forWho": "Who is it for?",
+    "audience1Title": "Anyone who is curious",
+    "audience1Desc": "If you want to understand what AI is and how it can help you, this is your place.",
+    "audience2Title": "Professionals who want to improve",
+    "audience2Desc": "Learn to use AI to be more productive at work, regardless of your field.",
+    "audience3Title": "Older adults",
+    "audience3Desc": "Courses designed with warm language, step by step, and with audio to listen to lessons.",
+    "audience4Title": "Students",
+    "audience4Desc": "From the very basics to building your own AI applications.",
+    "howItWorks": "How does it work?",
+    "feature1": "5 levels: from zero to professional",
+    "feature2": "15 courses with over 110 lessons",
+    "feature3": "Lessons with text and audio (listen to each lesson)",
+    "feature4": "Interactive quizzes to measure your progress",
+    "feature5": "Progress saved — continue where you left off",
+    "feature6": "Completely free",
+    "techRequired": "Do I need to know anything about technology?",
+    "techAnswer": "We start from the very basics. If you know how to write a text message, you already have everything you need to begin. Our lessons are written in warm language without jargon, with everyday analogies.",
+    "ctaTitle": "Start for free",
+    "ctaSub": "There's nothing to lose and a lot to gain. Your first course is waiting.",
+    "ctaButton": "Create my free account"
   },
   "a11y": {
     "skipToContent": "Skip to main content",

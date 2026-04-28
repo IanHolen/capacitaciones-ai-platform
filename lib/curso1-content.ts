@@ -11,7 +11,7 @@ No te preocupes si la tecnología no es lo tuyo. No necesitas saber programar, n
 
 Vamos a explicarlo con algo que todos conocemos: **cocinar**.
 
-Imagínate que quieres aprender a hacer el mejor arroz con pollo. Qué haces? Primero, pruebas una receta. Quizás te queda un poco seco. Entonces la próxima vez le pones más caldo. Después pruebas con otro condimento. Cada vez que cocinas, aprendes algo nuevo de los resultados anteriores.
+Imagínate que quieres aprender a hacer el mejor arroz con pollo. Qué haces? Primero, probas una receta. Quizás te queda un poco seco. Entonces la próxima vez le pones más caldo. Después probas con otro condimento. Cada vez que cocinas, aprendes algo nuevo de los resultados anteriores.
 
 **La Inteligencia Artificial funciona de una manera parecida.** Es un programa de computadora que "aprende" a partir de miles y miles de ejemplos, igual que tú aprendes cada vez que cocinas.
 
@@ -67,7 +67,7 @@ Entender qué es y cómo funciona te da poder. Te permite usarla a tu favor, det
 - No es magia, no es perfecta y no es un robot de película.
 - Ya es parte de tu vida diaria, y entenderla te beneficia.`;
 
-export const leccion2 = `### La IA ya te conoce (más de lo que pensas)
+export const leccion2 = `### La IA ya te conoce (más de lo que piensas)
 
 Si alguien te dijera "tú usas inteligencia artificial todos los días", quizás no lo creerías. Pero es cierto. La IA está en tu teléfono, en tu televisor, en tu banco y hasta en tu supermercado. Lo que pasa es que no lleva un cartel que diga "soy IA".
 
@@ -101,10 +101,10 @@ Alguna vez Spotify te recomendo una canción que te encanto y no conocias? La IA
 ### En tus trámites y compras
 
 **8. El banco y la detección de fraude**
-Si alguna vez te bloquearon la tarjeta porque detectaron una "compra sospechosa", le debes un agradecimiento a la IA. El sistema analiza tus patrones de gasto y si aparece algo raro — como una compra en otro pais cuando estas en tu casa — lo bloquea por seguridad.
+Si alguna vez te bloquearon la tarjeta porque detectaron una "compra sospechosa", le debes un agradecimiento a la IA. El sistema analiza tus patrones de gasto y si aparece algo raro — como una compra en otro pais cuando estás en tu casa — lo bloquea por seguridad.
 
 **9. Los asistentes de voz: Siri, Alexa, Google Assistant**
-Cuando le dices "Hey Siri, que temperatura hace hoy?" o "Alexa, pone música tranquila", estas hablando con IA. Estos asistentes usan inteligencia artificial para entender tu voz, interpretar lo que pides y darte una respuesta.
+Cuando le dices "Hey Siri, que temperatura hace hoy?" o "Alexa, pone música tranquila", estás hablando con IA. Estos asistentes usan inteligencia artificial para entender tu voz, interpretar lo que pides y darte una respuesta.
 
 **10. Las tiendas online y sus sugerencias**
 "Los clientes que compraron esto también compraron..." Esa frase en Amazon o Mercado Libre es IA pura. El sistema analiza millones de compras para predecir que más te podría interesar.
@@ -125,7 +125,7 @@ Cuando entras a la página de tu empresa de telefonía y te aparece un chat dici
 Es natural preguntarse: "Si la IA sabe tanto de mi, debería preocuparme?". Es una pregunta válida y la vamos a explorar en profundidad en el Curso 3. Por ahora, lo importante es saber que:
 
 - La mayoría de estos usos estan diseñados para **facilitarte la vida**.
-- Tú tienes control sobre muchas de estas funciones (podes desactivar recomendaciones, ajustar la privacidad, etc.).
+- Tú tienes control sobre muchas de estas funciones (puedes desactivar recomendaciones, ajustar la privacidad, etc.).
 - Saber que existen te pone en una posicion de **poder**, no de vulnerabilidad.
 
 ### Resumen de la lección
@@ -187,7 +187,7 @@ Las películas, las noticias sensacionalistas y las redes sociales nos llenan la
 | **Realidad** | Algunas aplicaciones recopilan datos, pero hay controles y regulaciones |
 | **Veredicto** | PARCIALMENTE CIERTO |
 
-**Explicación:** Es verdad que muchas aplicaciones recopilan datos sobre tu uso. Pero no es que haya una IA "espiándote" personalmente. Los datos se usan de forma agregada para mejorar los servicios. Además, puedes controlar mucho de esto desde la configuración de privacidad de tu teléfono.
+**Explicación:** Es verdad que muchas aplicaciones recopilan datos sobre tu uso. Pero no es que haya una IA "espiandote" personalmente. Los datos se usan de forma agregada para mejorar los servicios. Además, puedes controlar mucho de esto desde la configuración de privacidad de tu teléfono.
 
 ### Mito 6: "La IA es nueva, aparecio hace poco"
 
@@ -278,7 +278,7 @@ Los mismos ChatGPT, Claude y Gemini pueden generar textos. También hay herramie
 - **Midjourney** — conocido por crear imágenes muy artísticas
 - **Adobe Firefly** — integrado en Photoshop
 
-**Analogía:** Es como tener un dibujante que trabaja increiblemente rápido y al que solo tienes que describir lo que queres.
+**Analogía:** Es como tener un dibujante que trabaja increiblemente rápido y al que solo tienes que describir lo que quieres.
 
 ### 4. Asistentes de voz
 
@@ -290,12 +290,12 @@ Los mismos ChatGPT, Claude y Gemini pueden generar textos. También hay herramie
 - **Google Assistant** — en telefonos Android
 
 **Para que sirven?**
-- Poner alarmas y recordatorios ("Siri, recuérdame tomar la pastilla a las 8")
+- Poner alarmas y recordatorios ("Siri, recordame tomar la pastilla a las 8")
 - Consultar el clima, noticias o resultados deportivos
 - Hacer llamadas sin tocar el teléfono
 - Poner música o podcasts
 
-**Analogía:** Es como tener un mayordomo que siempre esta listo para ayudarte con tareas simples.
+**Analogía:** Es como tener un mayordomo que siempre está listo para ayudarte con tareas simples.
 
 ### 5. IA de traducción
 
@@ -367,7 +367,7 @@ Un programa diseñado para conversar con personas a traves de texto o voz.
 
 **8. Algoritmo**
 Un conjunto de instrucciones paso a paso que la computadora sigue para resolver un problema.
-*Analogía:* Una receta de cocina. Así como una receta te dice "primero corta la cebolla, después ponla en la sartén", un algoritmo le dice a la computadora que hacer.
+*Analogía:* Una receta de cocina. Así como una receta te dice "primero corta la cebolla, después ponela en la sartén", un algoritmo le dice a la computadora que hacer.
 
 **9. Machine Learning (Aprendizaje Automatico)**
 Un tipo de IA donde el programa aprende de los datos sin que alguien le diga exactamente que hacer.
@@ -433,7 +433,7 @@ Software cuyo código está disponible publicamente para que cualquiera lo vea, 
 
 export const leccion6 = `### Instrucciones
 
-Este quiz tiene 10 preguntas de opción múltiple. Para cada pregunta, elegi la respuesta que consideres correcta. Después de cada pregunta encontras la respuesta correcta y una breve explicación.
+Este quiz tiene 10 preguntas de opción múltiple. Para cada pregunta, elige la respuesta que consideres correcta. Después de cada pregunta encuentras la respuesta correcta y una breve explicación.
 
 ---
 
@@ -465,7 +465,7 @@ Los datos son como los ingredientes: son la materia prima que la IA necesita par
 
 a) Leer tu mente para saber que quieres comprar
 b) Filtrar los correos de spam en tu email
-c) Tomar dicesiones importantes por ti sin consultarte
+c) Tomar decisiones importantes por ti sin consultarte
 d) Grabar todas tus conversaciones telefonicas
 
 **Respuesta correcta: b)**
@@ -559,10 +559,10 @@ ChatGPT es un asistente conversacional de IA creado por OpenAI.
 
 ### Cómo te fue?
 
-- **8-10 correctas:** Excelente! Tienes una base sólida sobre qué es la IA. Estas listo para el Curso 2.
+- **8-10 correctas:** ¡Excelente! Tienes una base sólida sobre qué es la IA. Estás listo para el Curso 2.
 - **5-7 correctas:** Muy bien! Repasa las lecciones de los temas que te costaron y vas a estar perfecto.
 - **Menos de 5:** No te desanimes. Vuelve a leer las lecciones con calma — no hay apuro.
 
 ### Felicitaciones por completar el Curso 1!
 
-Ahora sabes qué es la IA, donde la encontras en tu vida diaria, que mitos existen, que tipos hay y cómo se llaman las cosas. En el **Curso 2: "Tu primera conversación con IA"**, vas a poner todo esto en práctica!`;
+Ahora sabes qué es la IA, donde la encuentras en tu vida diaria, que mitos existen, que tipos hay y cómo se llaman las cosas. En el **Curso 2: "Tu primera conversación con IA"**, vas a poner todo esto en práctica!`;

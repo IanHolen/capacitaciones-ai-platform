@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardContent,
 } from "@/components/ui/card";
+import { useTranslation } from "react-i18next";
 
 interface BadgeData {
   earned_at: string;
@@ -31,15 +32,17 @@ const iconMap: Record<string, string> = {
 };
 
 export function BadgesDisplay() {
+  const { t, i18n } = useTranslation();
   const [badges, setBadges] = useState<BadgeData[]>([]);
   const [loading, setLoading] = useState(true);
   const [toast, setToast] = useState<string | null>(null);
+  const lang = i18n.language;
 
   useEffect(() => {
     async function load() {
       try {
         // Fetch earned badges
-        const res = await fetch("/api/badges");
+        const res = await fetch(`/api/badges?lang=${lang}`);
         if (res.ok) {
           const data = await res.json();
           setBadges(data.badges || []);
@@ -52,7 +55,7 @@ export function BadgesDisplay() {
           if (checkData.newBadges?.length > 0) {
             setToast(`¡Nuevo badge: ${checkData.newBadges[0]}!`);
             // Refresh badges list
-            const refreshRes = await fetch("/api/badges");
+            const refreshRes = await fetch(`/api/badges?lang=${lang}`);
             if (refreshRes.ok) {
               const refreshData = await refreshRes.json();
               setBadges(refreshData.badges || []);
@@ -96,13 +99,13 @@ export function BadgesDisplay() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-lg">
             <Award className="size-5 text-[#CA8A04]" aria-hidden="true" />
-            Mis Badges
+            {t("badges.title")}
           </CardTitle>
         </CardHeader>
         <CardContent>
           {badges.length === 0 ? (
             <p className="text-base text-muted-foreground">
-              Completa lecciones y quizzes para ganar badges.
+              {t("badges.empty")}
             </p>
           ) : (
             <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
@@ -116,7 +119,7 @@ export function BadgesDisplay() {
                   </span>
                   <span className="text-sm font-medium">{b.badges.name}</span>
                   <span className="text-xs text-muted-foreground">
-                    {new Date(b.earned_at).toLocaleDateString("es-LA")}
+                    {new Date(b.earned_at).toLocaleDateString(lang === "en" ? "en-US" : "es-LA")}
                   </span>
                 </div>
               ))}

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, Send, X, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 interface Message {
   role: "user" | "assistant";
@@ -10,6 +11,7 @@ interface Message {
 }
 
 export function AiTutor({ lessonId }: { lessonId?: string }) {
+  const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
@@ -44,7 +46,7 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
       const res = await fetch("/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: userMessage, lessonId }),
+        body: JSON.stringify({ message: userMessage, lessonId, lang: i18n.language }),
         signal: controller.signal,
       });
 
@@ -53,7 +55,7 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
           const updated = [...prev];
           updated[updated.length - 1] = {
             role: "assistant",
-            content: "Disculpa, hubo un error. ¿Puedes intentar de nuevo?",
+            content: t("tutor.serverError"),
           };
           return updated;
         });
@@ -85,7 +87,7 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
         const updated = [...prev];
         updated[updated.length - 1] = {
           role: "assistant",
-          content: "Error de conexión. Intenta de nuevo.",
+          content: t("tutor.connectionError"),
         };
         return updated;
       });
@@ -103,11 +105,11 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
           onClick={() => setOpen(true)}
           className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full px-5 py-3 text-base font-semibold text-white shadow-lg transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#1E40AF]"
           style={{ backgroundColor: "#1E40AF" }}
-          aria-label="Abrir tutor de IA"
+          aria-label={t("tutor.openButton")}
         >
           <MessageCircle className="size-5" aria-hidden="true" />
-          <span className="hidden sm:inline">¿Dudas? Pregúntale al tutor</span>
-          <span className="sm:hidden">Tutor IA</span>
+          <span className="hidden sm:inline">{t("tutor.openButton")}</span>
+          <span className="sm:hidden">{t("tutor.openButtonShort")}</span>
         </button>
       )}
 
@@ -116,7 +118,7 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
         <div
           className="fixed bottom-0 right-0 z-50 flex h-[min(600px,90vh)] w-full flex-col rounded-t-2xl border bg-background shadow-2xl sm:bottom-6 sm:right-6 sm:w-96 sm:rounded-2xl"
           role="dialog"
-          aria-label="Tutor de IA"
+          aria-label={t("tutor.title")}
         >
           {/* Header */}
           <div
@@ -125,7 +127,7 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
           >
             <div className="flex items-center gap-2">
               <MessageCircle className="size-5" aria-hidden="true" />
-              <span className="font-semibold">Tutor IA</span>
+              <span className="font-semibold">{t("tutor.title")}</span>
             </div>
             <button
               onClick={() => {
@@ -133,7 +135,7 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
                 setOpen(false);
               }}
               className="rounded-lg p-1 hover:bg-white/20"
-              aria-label="Cerrar tutor"
+              aria-label={t("tutor.close")}
             >
               <X className="size-5" />
             </button>
@@ -143,9 +145,9 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
           <div className="flex-1 overflow-y-auto p-4 space-y-3">
             {messages.length === 0 && (
               <div className="text-center text-base text-muted-foreground py-8">
-                <p className="font-medium">¡Hola! Soy tu tutor de IA.</p>
+                <p className="font-medium">{t("tutor.greeting")}</p>
                 <p className="mt-1">
-                  Pregúntame cualquier duda sobre la lección.
+                  {t("tutor.greetingSub")}
                 </p>
               </div>
             )}
@@ -184,18 +186,18 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Escribe tu pregunta..."
+                placeholder={t("tutor.inputPlaceholder")}
                 className="h-12 flex-1 rounded-xl border bg-background px-4 text-base focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
                 maxLength={2000}
                 disabled={loading}
-                aria-label="Mensaje para el tutor"
+                aria-label={t("tutor.inputPlaceholder")}
               />
               <Button
                 type="submit"
                 disabled={!input.trim() || loading}
                 className="size-12 shrink-0"
                 style={{ backgroundColor: "#1E40AF" }}
-                aria-label="Enviar mensaje"
+                aria-label={t("tutor.send")}
               >
                 {loading ? (
                   <Loader2 className="size-5 animate-spin" />

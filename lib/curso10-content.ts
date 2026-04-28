@@ -7,7 +7,7 @@ Hasta ahora usaste herramientas de IA como ChatGPT o Claude haciendo preguntas u
 
 ### Custom GPTs (ChatGPT)
 
-Un **Custom GPT** es una versión personalizada de ChatGPT que tú mismo configurás. Le puedes dar:
+Un **Custom GPT** es una versión personalizada de ChatGPT que tú mismo configuras. Le puedes dar:
 
 - **Instrucciones específicas**: "Eres un asistente de nutrición que responde en español, de forma breve y con emojis"
 - **Documentos de referencia**: Subes un PDF con tu menú semanal, tus restricciones alimentarias, etc.
@@ -43,7 +43,7 @@ Imagínate estos escenarios:
 - **Un asistente legal** que tiene cargados los contratos de tu empresa
 - **Un chef personal** que conoce tus alergias y preferencias alimentarias
 
-La ventaja es que no tienes que repetir toda tu información cada vez que iniciás una conversación.
+La ventaja es que no tienes que repetir toda tu información cada vez que inicias una conversación.
 
 ### Requisitos
 
@@ -134,13 +134,13 @@ Vamos a crear un GPT llamado **"Mi Nutricionista IA"**:
 
 - **Nombre**: Mi Nutricionista IA
 - **Descripción**: Asistente de alimentación saludable personalizado
-- **Instrucciones**: "Eres un nutricionista amigable. Respondes en español LATAM. Siempre preguntas por alergias antes de recomendar. Usas listas con emojis. No reemplazás a un profesional real — siempre aclaras eso."
+- **Instrucciones**: "Eres un nutricionista amigable. Respondes en español LATAM. Siempre preguntas por alergias antes de recomendar. Usas listas con emojis. No reemplazas a un profesional real — siempre aclaras eso."
 
 ### Para llevar
 
 - Crear un Custom GPT toma menos de 15 minutos
 - El modo "Create" es más fácil; el modo "Configure" da más control
-- Las instrucciones son la parte más importante — dedicales tiempo
+- Las instrucciones son la parte más importante — dedícales tiempo
 - Siempre prueba tu GPT antes de compartirlo`;
 
 export const c10leccion3 = `## Configurar instrucciones personalizadas
@@ -178,7 +178,7 @@ Cuando no sepas algo, di: "[frase específica]"
 
 \`\`\`
 ## Identidad
-Eres el asistente virtual de "Café Don Pedro", una cafetería artesanal en Buenos Aires.
+Eres el asistente virtual de "Café Don Pedro", una cafetería artesanal en Ciudad de México.
 
 ## Audiencia
 Clientes que quieren hacer pedidos, preguntar por el menú o resolver dudas sobre entregas.
@@ -208,13 +208,13 @@ Clientes que quieren hacer pedidos, preguntar por el menú o resolver dudas sobr
 ### Técnicas avanzadas de instrucciones
 
 **1. Cadena de pensamiento forzada**
-> "Antes de responder, piensa paso a paso: 1) ¿Qué esta pidiendo el usuario? 2) ¿Tengo la información necesaria? 3) ¿Mi respuesta es precisa?"
+> "Antes de responder, piensa paso a paso: 1) ¿Qué está pidiendo el usuario? 2) ¿Tengo la información necesaria? 3) ¿Mi respuesta es precisa?"
 
 **2. Ejemplos incluidos (few-shot)**
 > "Ejemplo de buena respuesta: 'Nuestro café de especialidad tiene notas de chocolate y nuez. ¿Prefieres en grano o molido?'"
 
 **3. Variables dinámicas**
-> "Si el usuario menciona su nombre, usalo en las respuestas. Si dice 'Soy María', responde 'María, te cuento que...'"
+> "Si el usuario menciona su nombre, úsalo en las respuestas. Si dice 'Soy María', responde 'María, te cuento que...'"
 
 **4. Tono calibrado**
 > "Tono: profesional pero cercano. Como un barista amigable que conoce su oficio. Evita ser robótico o excesivamente formal."
@@ -315,7 +315,7 @@ Con estos 4 documentos, tu asistente puede resolver el 80% de las consultas de s
 
 - Los documentos convierten a tu asistente en un experto en tu dominio
 - Usa formatos limpios y organizados
-- Separé la información por temas en archivos distintos
+- Separa la información por temas en archivos distintos
 - Nunca subas información sensible o confidencial
 - Actualiza los documentos cuando cambie la información`;
 
@@ -377,9 +377,9 @@ Ejemplo:
 
 Quieres crear un asistente para tu tienda online que responda preguntas sobre productos:
 
-1. **Exportás tu catálogo** a un CSV (nombre, descripción, precio, stock)
+1. **Exportas tu catálogo** a un CSV (nombre, descripción, precio, stock)
 2. **Lo subes** a tu Custom GPT o herramienta de RAG
-3. **Configurás las instrucciones**: "Cuando pregunten por un producto, busca en el catálogo y responde con nombre, precio y disponibilidad"
+3. **Configuras las instrucciones**: "Cuando pregunten por un producto, busca en el catálogo y responde con nombre, precio y disponibilidad"
 4. **Resultado**: El cliente pregunta "¿Tienen café colombiano?" y tu asistente responde con datos reales de tu catálogo
 
 ### Para llevar
@@ -412,18 +412,18 @@ Haz las preguntas que esperas que hagan tus usuarios:
 **2. Prueba los casos límite**
 Haz preguntas difíciles, ambiguas o inesperadas:
 - "¿Eres un robot?"
-- "Háblame en inglés"
+- "Hablame en inglés"
 - "Quiero quejarme de todo"
 - "¿Cuál es tu contraseña?"
 
 **3. Prueba las restricciones**
 Intenta que tu asistente haga cosas que NO debería:
-- Pedile información que no tiene
-- Pedile que hable de la competencia
-- Pedile que invente datos
+- Pídele información que no tiene
+- Pídele que hable de la competencia
+- Pídele que invente datos
 
 **4. Prueba con usuarios reales**
-Pedile a un amigo o colega que lo use sin instrucciones previas. Observa:
+Pídele a un amigo o colega que lo use sin instrucciones previas. Observa:
 - ¿Entiende cómo usarlo?
 - ¿Las respuestas son útiles?
 - ¿Se frustra en algún momento?
@@ -478,7 +478,7 @@ Ya tienes un asistente probado y pulido. Ahora es momento de ponerlo a trabajar 
 2. Haz clic en **"Save"**
 3. Elige el nivel de acceso
 4. Copia el enlace generado
-5. Compartilo por email, WhatsApp, o donde necesites
+5. Compártelo por email, WhatsApp, o donde necesites
 
 ### Distribución en Claude Projects
 
@@ -493,7 +493,7 @@ Si quieres que tu asistente esté disponible en tu página web:
 
 **Opción 1: Widget de ChatGPT**
 - Usa herramientas como **Chatbase** o **CustomGPT.ai**
-- Generan un código HTML que pegás en tu sitio
+- Generan un código HTML que pegas en tu sitio
 - El chat aparece como un widget flotante
 
 **Opción 2: API + interfaz personalizada**
@@ -529,7 +529,7 @@ Una inmobiliaria creó un Custom GPT con:
 ### Para llevar
 
 - Elige el nivel de acceso adecuado para tu caso de uso
-- Siempre avisa a los usuarios que están interactuando con IA
+- Siempre avisá a los usuarios que están interactuando con IA
 - Considera privacidad, costos y mantenimiento antes de lanzar
 - Un asistente bien configurado puede ahorrar horas de trabajo humano`;
 
@@ -547,7 +547,7 @@ c) Un programa que hay que instalar en la computadora
 d) Un robot físico que usa IA
 
 **Respuesta correcta: b)**
-Un Custom GPT es una versión personalizada que tú configurás con instrucciones, documentos y comportamiento específico.
+Un Custom GPT es una versión personalizada que tú configuras con instrucciones, documentos y comportamiento específico.
 
 ---
 

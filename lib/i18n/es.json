@@ -42,6 +42,13 @@
     "noResults": "No se encontraron cursos para \"{query}\".",
     "noCoursesLevel": "No hay cursos disponibles para este nivel todavía."
   },
+  "levels": {
+    "intro": "Introducción",
+    "básico": "Básico",
+    "intermedio": "Intermedio",
+    "avanzado": "Avanzado",
+    "pro": "Pro"
+  },
   "lesson": {
     "lessonOf": "Lección {current} de {total}",
     "content": "Contenido",
@@ -185,6 +192,40 @@
   },
   "footer": {
     "rights": "© 2026 Certificaciones AI. Todos los derechos reservados."
+  },
+  "onboarding": {
+    "title": "Bienvenido/a! Qué te gustaría lograr con la IA?",
+    "subtitle": "Tener una meta te va a ayudar a mantenerte motivado/a durante el aprendizaje.",
+    "placeholder": "Ejemplo: Quiero aprender a usar IA para mi negocio, automatizar tareas del trabajo, ayudar a mis hijos con la tarea...",
+    "hint": "Puedes cambiar esto cuando quieras desde Mi Cuenta",
+    "submit": "Comenzar",
+    "saving": "Guardando...",
+    "defaultGoal": "Aprender a usar IA"
+  },
+  "about": {
+    "heroTitle": "Qué es Capacitaciones IA?",
+    "heroSub": "Es una plataforma gratuita donde cualquier persona puede aprender a usar Inteligencia Artificial, sin importar tu edad o experiencia con tecnología.",
+    "forWho": "Para quién es?",
+    "audience1Title": "Cualquier persona curiosa",
+    "audience1Desc": "Si tienes ganas de entender qué es la IA y cómo puede ayudarte, este es tu lugar.",
+    "audience2Title": "Profesionales que quieren mejorar",
+    "audience2Desc": "Aprende a usar IA para ser más productivo en tu trabajo, sin importar tu área.",
+    "audience3Title": "Adultos mayores",
+    "audience3Desc": "Cursos diseñados con un lenguaje cálido, paso a paso, y con audio para escuchar las lecciones.",
+    "audience4Title": "Estudiantes",
+    "audience4Desc": "Desde lo más básico hasta construir tus propias aplicaciones con IA.",
+    "howItWorks": "Cómo funciona?",
+    "feature1": "5 niveles: desde cero hasta profesional",
+    "feature2": "15 cursos con más de 110 lecciones",
+    "feature3": "Lecciones con texto y audio (escucha cada lección)",
+    "feature4": "Quizzes interactivos para medir tu avance",
+    "feature5": "Progreso guardado — continua donde lo dejaste",
+    "feature6": "Todo completamente gratis",
+    "techRequired": "Necesito saber algo de tecnología?",
+    "techAnswer": "Empezamos desde lo más básico. Si sabes escribir un mensaje de WhatsApp, ya tienes todo lo que necesitas para empezar. Nuestras lecciones están escritas con un lenguaje cálido y sin tecnicismos, con analogías de la vida cotidiana.",
+    "ctaTitle": "Comienza gratis",
+    "ctaSub": "No hay nada que perder y mucho que ganar. Tu primer curso te espera.",
+    "ctaButton": "Crear mi cuenta gratis"
   },
   "a11y": {
     "skipToContent": "Ir al contenido principal",

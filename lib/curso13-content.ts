@@ -48,9 +48,9 @@ Para construir strings dinámicos (algo que harás constantemente con prompts de
 \`\`\`python
 usuario = "María"
 tema = "machine learning"
-prompt = f"Hola {usuario}, explicame qué es {tema} en términos simples."
+prompt = f"Hola {usuario}, explícame qué es {tema} en términos simples."
 print(prompt)
-# Output: Hola María, explicame qué es machine learning en términos simples.
+# Output: Hola María, explícame qué es machine learning en términos simples.
 \`\`\`
 
 Para prompts multilínea, usa triple comillas:
@@ -64,7 +64,7 @@ Usuario actual: {usuario}"""
 
 ## Listas
 
-Las listas son colecciones ordenadas. Las vas a usar constantemente para manejar historial de conversaciones con modelos de IA:
+Las listas son colecciones ordenadas. Las vas a usar constantemente para manejar el historial de conversaciones con modelos de IA:
 
 \`\`\`python
 # Lista simple
@@ -136,7 +136,7 @@ Las funciones encapsulan lógica reutilizable. Cuando trabajes con APIs de IA, v
 \`\`\`python
 def crear_prompt(usuario: str, tema: str) -> str:
     """Crea un prompt personalizado para el usuario."""
-    return f"Hola {usuario}, explicame sobre {tema} de forma clara y concisa."
+    return f"Hola {usuario}, explícame sobre {tema} de forma clara y concisa."
 
 # Usar la función
 mi_prompt = crear_prompt("Carlos", "redes neuronales")
@@ -217,7 +217,7 @@ while intentos < max_intentos and not exito:
 
 ## Manejo de errores con try/except
 
-Esto es CRÍTICO cuando trabajás con APIs externas, porque las llamadas pueden fallar:
+Esto es CRÍTICO cuando trabajas con APIs externas, porque las llamadas pueden fallar:
 
 \`\`\`python
 try:
@@ -316,7 +316,7 @@ python3 --version
 ## Paso 2: Instalar VS Code
 
 1. Descarga VS Code desde [code.visualstudio.com](https://code.visualstudio.com)
-2. Instalalo siguiendo las instrucciones de tu sistema operativo
+2. Instálalo siguiendo las instrucciones de tu sistema operativo
 
 ### Extensiones esenciales
 
@@ -374,7 +374,7 @@ source venv/bin/activate
 venv\\Scripts\\activate.bat
 \`\`\`
 
-Cuando el entorno virtual esta activo, vas a ver \`(venv)\` al principio de tu terminal:
+Cuando el entorno virtual está activo, verás \`(venv)\` al principio de tu terminal:
 
 \`\`\`
 (venv) usuario@computadora:~/mi-proyecto-ia$
@@ -383,7 +383,7 @@ Cuando el entorno virtual esta activo, vas a ver \`(venv)\` al principio de tu t
 ### Verificar que funciona
 
 \`\`\`bash
-# Ver qué Python se esta usando (debe apuntar a tu venv)
+# Ver qué Python se está usando (debe apuntar a tu venv)
 which python    # macOS/Linux
 where python    # Windows
 
@@ -441,7 +441,7 @@ httpx==0.27.2
 
 ## Paso 6: Variables de entorno y archivos .env
 
-**NUNCA** pongas API keys directamente en tu código. Siempre usalas como variables de entorno. La forma más práctica es con archivos \`.env\`.
+**NUNCA** pongas API keys directamente en tu código. Siempre úsalas como variables de entorno. La forma más práctica es con archivos \`.env\`.
 
 ### Crear el archivo .env
 
@@ -563,7 +563,7 @@ mi-proyecto-ia/
 
 ## Resumen
 
-Tu entorno de desarrollo esta listo. Tienes Python 3.12, VS Code configurado, un entorno virtual aislado, los SDKs de las tres principales APIs de IA instalados, y tus API keys guardadas de forma segura en un archivo \`.env\`. En la próxima lección vamos a escribir tu primer script que se conecta a la API de OpenAI.
+Tu entorno de desarrollo está listo. Tienes Python 3.12, VS Code configurado, un entorno virtual aislado, los SDKs de las tres principales APIs de IA instalados, y tus API keys guardadas de forma segura en un archivo \`.env\`. En la próxima lección vamos a escribir tu primer script que se conecta a la API de OpenAI.
 `;
 
 export const leccion3 = `
@@ -581,7 +581,7 @@ Llegó el momento de escribir código que realmente habla con un modelo de intel
 4. Haz clic en **"Create new secret key"**
 5. Dale un nombre descriptivo (por ejemplo: "curso-ia-local")
 6. **Copia la key inmediatamente** — no se vuelve a mostrar
-7. Pegala en tu archivo \`.env\`:
+7. Pégala en tu archivo \`.env\`:
 
 \`\`\`bash
 OPENAI_API_KEY=sk-proj-abc123...tu-clave-aqui
@@ -630,7 +630,7 @@ mensajes = [
     },
     {
         "role": "user",
-        "content": "¿Qué es una API y para qué sirve? Explicámelo en 3 oraciones."
+        "content": "¿Qué es una API y para qué sirve? Explícamelo en 3 oraciones."
     }
 ]
 
@@ -736,7 +736,7 @@ def generar_respuesta(
 # Ejemplo 1: Respuesta precisa (temperatura baja)
 print("=== Temperatura 0.0 (precisa) ===")
 print(generar_respuesta(
-    "¿Cuál es la capital de Argentina?",
+    "¿Cuál es la capital de México?",
     temperatura=0.0
 ))
 
@@ -844,7 +844,7 @@ def chatear():
 
     while True:
         # Leer input del usuario
-        user_input = input("\\nVos: ")
+        user_input = input("\\nTú: ")
 
         if user_input.lower() in ["salir", "exit", "quit"]:
             print("¡Hasta luego!")
@@ -899,7 +899,7 @@ Anthropic es la empresa detrás de Claude, uno de los modelos de lenguaje más c
 2. Crea una cuenta o inicia sesión
 3. Navega a **API Keys**
 4. Haz clic en **"Create Key"**
-5. Copia la key y guardala en tu archivo \`.env\`:
+5. Copia la key y guárdala en tu archivo \`.env\`:
 
 \`\`\`bash
 ANTHROPIC_API_KEY=sk-ant-api03-tu-clave-aqui
@@ -947,7 +947,7 @@ respuesta = client.messages.create(
     messages=[
         {
             "role": "user",
-            "content": "¿Qué es una API y para qué sirve? Explicámelo en 3 oraciones."
+            "content": "¿Qué es una API y para qué sirve? Explícamelo en 3 oraciones."
         }
     ],
     temperature=0.7
@@ -999,7 +999,7 @@ print(f"\\nRespuesta:\\n{respuesta.content[0].text}")
 
 ### Nota sobre content blocks
 
-La respuesta de Anthropic usa **content blocks**. Cada bloque tiene un tipo (\`text\`, \`tool_use\`, etc.). Para respuestas simples de texto, siempre vas a acceder a \`respuesta.content[0].text\`.
+La respuesta de Anthropic usa **content blocks**. Cada bloque tiene un tipo (\`text\`, \`tool_use\`, etc.). Para respuestas simples de texto, siempre accederás a \`respuesta.content[0].text\`.
 
 ## Paso 5: Función reutilizable con manejo de errores
 
@@ -1095,7 +1095,7 @@ def chatear_con_claude():
     print("-" * 50)
 
     while True:
-        user_input = input("\\nVos: ")
+        user_input = input("\\nTú: ")
 
         if user_input.lower() in ["salir", "exit", "quit"]:
             print("¡Hasta luego!")
@@ -1181,7 +1181,7 @@ print(f"Tokens: {resp_anthropic.usage.input_tokens + resp_anthropic.usage.output
 
 ## Resumen
 
-Ya sabes usar tanto la API de OpenAI como la de Anthropic. Las diferencias principales son: el system prompt se pasa como parámetro separado en Anthropic, \`max_tokens\` es obligatorio, y la respuesta usa content blocks. El patrón general es el mismo: armás una lista de mensajes, llamás a la API, y extraes el texto de la respuesta. En la próxima lección vamos a completar la trilogía con la API de Gemini de Google.
+Ya sabes usar tanto la API de OpenAI como la de Anthropic. Las diferencias principales son: el system prompt se pasa como parámetro separado en Anthropic, \`max_tokens\` es obligatorio, y la respuesta usa content blocks. El patrón general es el mismo: armas una lista de mensajes, llamas a la API, y extraes el texto de la respuesta. En la próxima lección vamos a completar la trilogía con la API de Gemini de Google.
 `;
 
 export const leccion5 = `
@@ -1197,7 +1197,7 @@ Google también tiene modelos de lenguaje de primera línea. Gemini (antes Bard)
 2. Inicia sesión con tu cuenta de Google
 3. Haz clic en **"Get API key"** en el panel izquierdo
 4. Selecciona **"Create API key in new project"** o elige un proyecto existente
-5. Copia la key y guardala en tu archivo \`.env\`:
+5. Copia la key y guárdala en tu archivo \`.env\`:
 
 \`\`\`bash
 GOOGLE_API_KEY=AIzaSy...tu-clave-aqui
@@ -1240,7 +1240,7 @@ modelo = genai.GenerativeModel(
 
 # Generar una respuesta
 respuesta = modelo.generate_content(
-    "¿Qué es una API y para qué sirve? Explicámelo en 3 oraciones."
+    "¿Qué es una API y para qué sirve? Explícamelo en 3 oraciones."
 )
 
 # Mostrar la respuesta
@@ -1352,7 +1352,7 @@ def chatear_con_gemini():
     print("-" * 50)
 
     while True:
-        user_input = input("\\nVos: ")
+        user_input = input("\\nTú: ")
 
         if user_input.lower() in ["salir", "exit", "quit"]:
             print("¡Hasta luego!")
@@ -1495,7 +1495,7 @@ print(r3.text)
 
 ## Resumen
 
-Ya dominás las tres APIs principales de IA generativa: OpenAI, Anthropic y Google Gemini. La diferencia más notable de Gemini es su SDK más abstracto con \`GenerativeModel\` y \`start_chat()\`, y su generosa capa gratuita. En la próxima lección vamos a aprender streaming de respuestas, una técnica esencial para mejorar la experiencia de usuario.
+Ya dominas las tres APIs principales de IA generativa: OpenAI, Anthropic y Google Gemini. La diferencia más notable de Gemini es su SDK más abstracto con \`GenerativeModel\` y \`start_chat()\`, y su generosa capa gratuita. En la próxima lección vamos a aprender streaming de respuestas, una técnica esencial para mejorar la experiencia de usuario.
 `;
 
 export const leccion6 = `
@@ -1510,7 +1510,7 @@ Cuando haces una llamada normal a una API de IA, tienes que esperar a que el mod
 ### Experiencia de usuario (UX)
 
 - **Sin streaming**: El usuario espera 8 segundos sin feedback → piensa que la app se colgó
-- **Con streaming**: El primer token aparece en ~200ms → el usuario ve que algo esta pasando
+- **Con streaming**: El primer token aparece en ~200ms → el usuario ve que algo está pasando
 
 ### Métricas clave
 
@@ -1793,7 +1793,7 @@ def main():
     print("-" * 50)
 
     while True:
-        user_input = input("\\nVos: ")
+        user_input = input("\\nTú: ")
         if user_input.lower() in ["salir", "exit"]:
             break
 
@@ -1871,7 +1871,7 @@ Un embedding es una **representación numérica del significado** de un texto. C
 
 ### La intuición
 
-Imagina un espacio tridimensional (como una habitación). Ahora imagina que cada palabra o frase ocupa un punto en ese espacio, de forma que **las cosas que significan algo parecido están cerca entre sí**:
+Imaginá un espacio tridimensional (como una habitación). Ahora imaginá que cada palabra o frase ocupa un punto en ese espacio, de forma que **las cosas que significan algo parecido están cerca entre sí**:
 
 - "perro" y "gato" estarían cerca (ambos son mascotas)
 - "perro" y "refrigerador" estarían lejos (no tienen relación semántica)
@@ -1894,7 +1894,7 @@ embedding_ejemplo = [0.0023, -0.0142, 0.0891, -0.0034, 0.0567, ...]
 En vez de buscar por palabras exactas (como Google en 2005), buscas por **significado**. "¿Cómo cocinar pasta?" encuentra resultados sobre "receta de fideos" aunque no compartan ninguna palabra.
 
 ### 2. RAG (Retrieval-Augmented Generation)
-Guardás tus documentos como embeddings en una base de datos vectorial. Cuando un usuario hace una pregunta, buscas los documentos más relevantes y se los pasas al modelo de lenguaje como contexto. Esto es lo que permite que un chatbot "conozca" información de tu empresa.
+Guardas tus documentos como embeddings en una base de datos vectorial. Cuando un usuario hace una pregunta, buscas los documentos más relevantes y se los pasas al modelo de lenguaje como contexto. Esto es lo que permite que un chatbot "conozca" información de tu empresa.
 
 ### 3. Detección de duplicados
 Si dos textos tienen embeddings muy similares, probablemente dicen lo mismo aunque usen palabras diferentes.
@@ -1950,7 +1950,7 @@ def generar_embedding(texto: str, modelo: str = "text-embedding-3-small") -> lis
 
 # Generar embeddings para diferentes textos
 textos = [
-    "El gato duerme en el sofa",
+    "El gato duerme en el sofá",
     "El felino descansa en el sillón",
     "Python es un lenguaje de programación",
     "Me gusta programar en Python",
@@ -2093,11 +2093,11 @@ print(f"Dimensiones por embedding: {len(embeddings[0])}")
 
 ## Tips prácticos
 
-1. **Normaliza tus textos** antes de generar embeddings: elimina caracteres extraños, normaliza espacios
+1. **Normalizá tus textos** antes de generar embeddings: eliminá caracteres extraños, normalizá espacios
 2. **Usa batch** siempre que puedas: es más eficiente y más barato
 3. **Guarda los embeddings**: no los regeneres cada vez (son determinísticos para el mismo input)
 4. **text-embedding-3-small** es suficiente para el 90% de los casos
-5. **Chunk size importa**: para documentos largos, divide en chunks de 200-500 tokens
+5. **Chunk size importa**: para documentos largos, dividí en chunks de 200-500 tokens
 
 ## Resumen
 
@@ -2233,7 +2233,7 @@ client = chromadb.PersistentClient(path="./mi_chroma_db")
 # La primera vez: crear la colección y agregar datos
 coleccion = client.get_or_create_collection(name="knowledge_base")
 
-# Solo agregar si esta vacía
+# Solo agregar si está vacía
 if coleccion.count() == 0:
     coleccion.add(
         documents=[
@@ -2458,7 +2458,7 @@ def responder_con_contexto(pregunta: str) -> str:
             {
                 "role": "system",
                 "content": f"""Responde la pregunta del usuario usando SOLO la información del contexto proporcionado.
-Si la respuesta no esta en el contexto, di que no tienes esa información.
+Si la respuesta no está en el contexto, di que no tienes esa información.
 
 Contexto:
 {contexto}"""
@@ -2902,7 +2902,7 @@ def main():
     while True:
         try:
             # Leer input del usuario
-            user_input = input("\\nVos: ").strip()
+            user_input = input("\\nTú: ").strip()
 
             # Ignorar líneas vacías
             if not user_input:
@@ -3000,16 +3000,16 @@ Tú: Hola, me llamo Carlos
 
 OpenAI: ¡Hola Carlos! ¿En qué puedo ayudarte hoy?
 
-Tú: ¿Te acuerdas cómo me llamo?
+Tú: ¿Recuerdas cómo me llamo?
 
-OpenAI: ¡Por supuesto! Te llamás Carlos. ¿Qué necesitas?
+OpenAI: ¡Por supuesto! Te llamas Carlos. ¿Qué necesitas?
 
 Tú: /anthropic
 Cambiado a Anthropic (claude-sonnet-4-20250514)
 
 Tú: ¿Sigues sabiendo mi nombre?
 
-Anthropic: Sí, te llamás Carlos. Aunque acabo de cambiar de modelo,
+Anthropic: Sí, te llamas Carlos. Aunque acabo de cambiar de modelo,
 el historial de nuestra conversación se mantiene.
 
 Tú: /stats
@@ -3168,7 +3168,7 @@ En un chatbot con memoria, ¿cómo se implementa la "memoria" de la conversació
 a) El modelo de IA guarda internamente el historial de cada usuario
 b) Se envía la lista completa de mensajes previos (user + assistant) en cada llamada a la API
 c) Se usa una base de datos vectorial para guardar cada mensaje
-d) Se usa un prompt especial que dice "recuerda lo anterior"
+d) Se usa un prompt especial que dice "recordá lo anterior"
 
 **Respuesta correcta: b)** — Los modelos de IA no tienen memoria entre llamadas. La "memoria" se implementa manteniendo una lista de todos los mensajes previos (tanto del usuario como del asistente) y enviándolos completos en cada nueva llamada a la API. Por eso es importante gestionar el tamaño del historial para no exceder el límite de tokens del modelo.
 `;

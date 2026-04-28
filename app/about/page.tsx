@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -16,44 +18,43 @@ import {
   AnimatedStep,
   AnimatedSection,
 } from "@/components/animated-landing";
-
-const audienceItems = [
-  {
-    icon: Users,
-    title: "Cualquier persona curiosa",
-    description:
-      "Si tienes ganas de entender qué es la IA y cómo puede ayudarte, este es tu lugar.",
-  },
-  {
-    icon: Brain,
-    title: "Profesionales que quieren mejorar",
-    description:
-      "Aprende a usar IA para ser más productivo en tu trabajo, sin importar tu área.",
-  },
-  {
-    icon: HeadphonesIcon,
-    title: "Adultos mayores",
-    description:
-      "Cursos diseñados con un lenguaje cálido, paso a paso, y con audio para escuchar las lecciones.",
-  },
-  {
-    icon: BookOpen,
-    title: "Estudiantes",
-    description:
-      "Desde lo más básico hasta construir tus propias aplicaciones con IA.",
-  },
-];
-
-const features = [
-  "5 niveles: desde cero hasta profesional",
-  "15 cursos con más de 110 lecciones",
-  "Lecciones con texto y audio (escucha cada lección)",
-  "Quizzes interactivos para medir tu avance",
-  "Progreso guardado — continúa donde lo dejaste",
-  "Todo completamente gratis",
-];
+import { useTranslation } from "react-i18next";
 
 export default function AboutPage() {
+  const { t } = useTranslation();
+
+  const audienceItems = [
+    {
+      icon: Users,
+      title: t("about.audience1Title"),
+      description: t("about.audience1Desc"),
+    },
+    {
+      icon: Brain,
+      title: t("about.audience2Title"),
+      description: t("about.audience2Desc"),
+    },
+    {
+      icon: HeadphonesIcon,
+      title: t("about.audience3Title"),
+      description: t("about.audience3Desc"),
+    },
+    {
+      icon: BookOpen,
+      title: t("about.audience4Title"),
+      description: t("about.audience4Desc"),
+    },
+  ];
+
+  const features = [
+    t("about.feature1"),
+    t("about.feature2"),
+    t("about.feature3"),
+    t("about.feature4"),
+    t("about.feature5"),
+    t("about.feature6"),
+  ];
+
   return (
     <div className="flex flex-col">
       {/* Hero */}
@@ -64,21 +65,19 @@ export default function AboutPage() {
             className="mx-auto max-w-3xl text-3xl font-bold leading-tight tracking-tight md:text-4xl lg:text-5xl"
             style={{ color: "#1E40AF" }}
           >
-            ¿Qué es Certificaciones AI?
+            {t("about.heroTitle")}
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-xl leading-relaxed text-muted-foreground">
-            Es una plataforma gratuita donde cualquier persona puede aprender a
-            usar Inteligencia Artificial, sin importar tu edad o experiencia con
-            tecnología.
+            {t("about.heroSub")}
           </p>
         </AnimatedHero>
       </section>
 
-      {/* Para quién */}
+      {/* For whom */}
       <section className="mx-auto w-full max-w-5xl px-4 py-12 md:py-16">
         <AnimatedSection>
           <h2 className="mb-10 text-center text-2xl font-bold md:text-3xl">
-            ¿Para quién es?
+            {t("about.forWho")}
           </h2>
         </AnimatedSection>
         <div className="grid gap-6 sm:grid-cols-2">
@@ -103,12 +102,12 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Cómo funciona */}
+      {/* How it works */}
       <AnimatedSection>
         <section className="bg-muted/30 px-4 py-12 md:py-16">
           <div className="mx-auto max-w-3xl">
             <h2 className="mb-10 text-center text-2xl font-bold md:text-3xl">
-              ¿Cómo funciona?
+              {t("about.howItWorks")}
             </h2>
             <div className="flex flex-col gap-4">
               {features.map((feature, index) => (
@@ -127,7 +126,7 @@ export default function AboutPage() {
         </section>
       </AnimatedSection>
 
-      {/* Necesito saber tecnología? */}
+      {/* Tech required? */}
       <AnimatedSection>
         <section className="mx-auto max-w-3xl px-4 py-12 text-center md:py-16">
           <div className="rounded-2xl border-2 border-[#1E40AF]/20 bg-blue-50/50 p-8 md:p-12">
@@ -136,13 +135,10 @@ export default function AboutPage() {
               aria-hidden="true"
             />
             <h2 className="mb-4 text-2xl font-bold">
-              ¿Necesito saber algo de tecnología?
+              {t("about.techRequired")}
             </h2>
             <p className="text-xl leading-relaxed text-muted-foreground">
-              <strong>No.</strong> Empezamos desde lo más básico. Si sabes
-              escribir un mensaje de WhatsApp, ya tienes todo lo que necesitas para
-              empezar. Nuestras lecciones están escritas con un lenguaje cálido y
-              sin tecnicismos, con analogías de la vida cotidiana.
+              <strong>No.</strong> {t("about.techAnswer")}
             </p>
           </div>
         </section>
@@ -155,15 +151,15 @@ export default function AboutPage() {
           style={{ backgroundColor: "#1E40AF" }}
         >
           <Sparkles className="mb-4 size-12" aria-hidden="true" />
-          <h2 className="text-3xl font-bold">Comienza gratis</h2>
+          <h2 className="text-3xl font-bold">{t("about.ctaTitle")}</h2>
           <p className="mt-4 max-w-lg text-lg text-blue-100">
-            No hay nada que perder y mucho que ganar. Tu primer curso te espera.
+            {t("about.ctaSub")}
           </p>
           <div className="mt-8">
             <AnimatedCTA>
               <Link href="/registro">
                 <Button className="h-14 gap-2 border-2 border-white bg-white px-8 text-lg font-semibold text-[#1E40AF] hover:bg-blue-50">
-                  Crear mi cuenta gratis
+                  {t("about.ctaButton")}
                   <ArrowRight className="size-5" />
                 </Button>
               </Link>

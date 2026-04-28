@@ -7,7 +7,7 @@ export const c9leccion1 = `## Prompt chaining: dividir en pasos
 
 Cuando ya tienes experiencia usando IA, es tentador escribir un solo prompt enorme que intente resolver todo de una vez. Algo como:
 
-*"Investiga sobre energía solar en Argentina, haz un resumen ejecutivo, redacta un informe de 2000 palabras con introducción, desarrollo y conclusión, agrega datos estadísticos y después crea 3 publicaciones para LinkedIn."*
+*"Investiga sobre energía solar en México, haz un resumen ejecutivo, redacta un informe de 2000 palabras con introducción, desarrollo y conclusión, agrega datos estadísticos y después crea 3 publicaciones para LinkedIn."*
 
 El resultado suele ser... mediocre. La IA intenta hacer todo al mismo tiempo y ninguna parte queda realmente bien. Es como pedirle a alguien que cocine, limpie, haga las compras y pague las cuentas — todo en simultáneo.
 
@@ -37,7 +37,7 @@ Veamos cómo transformar ese prompt gigante en una cadena efectiva.
 **Paso 1 — Investigación:**
 \`\`\`
 Actúa como un investigador especializado en energías renovables.
-Investiga el estado actual de la energía solar en Argentina.
+Investiga el estado actual de la energía solar en México.
 Lista los 8-10 datos más relevantes, incluyendo:
 - Capacidad instalada actual
 - Principales proyectos en curso
@@ -49,7 +49,7 @@ Cita fuentes cuando sea posible.
 **Paso 2 — Estructura** (usas la respuesta del paso 1 como contexto):
 \`\`\`
 Basándote en la siguiente investigación:
-[pegás el resultado del paso 1]
+[pegas el resultado del paso 1]
 
 Crea un esquema detallado para un informe ejecutivo con:
 - Título propuesto
@@ -61,10 +61,10 @@ Crea un esquema detallado para un informe ejecutivo con:
 **Paso 3 — Redacción** (usas el esquema del paso 2):
 \`\`\`
 Usando el siguiente esquema:
-[pegás el resultado del paso 2]
+[pegas el resultado del paso 2]
 
 Y estos datos de investigación:
-[pegás el resultado del paso 1]
+[pegas el resultado del paso 1]
 
 Redacta el informe completo. Usa un tono profesional pero accesible.
 Extensión: aproximadamente 2000 palabras.
@@ -74,7 +74,7 @@ Incluye datos concretos y estadísticas.
 **Paso 4 — Revisión:**
 \`\`\`
 Revisa el siguiente informe como un editor profesional:
-[pegás el resultado del paso 3]
+[pegas el resultado del paso 3]
 
 Verifica:
 - Coherencia entre secciones
@@ -88,7 +88,7 @@ Propón mejoras concretas con el texto corregido.
 **Paso 5 — Contenido derivado:**
 \`\`\`
 Basándote en este informe:
-[pegás el resultado del paso 4]
+[pegas el resultado del paso 4]
 
 Crea 3 publicaciones para LinkedIn:
 - Cada una de 150-200 palabras
@@ -123,7 +123,7 @@ Antes de empezar cualquier tarea compleja, completa esta plantilla:
 
 ### Consejos avanzados
 
-1. **Guarda los resultados intermedios**: Copialos en un documento aparte. Si un paso falla, no tienes que volver a empezar desde cero.
+1. **Guarda los resultados intermedios**: Cópialos en un documento aparte. Si un paso falla, no tienes que volver a empezar desde cero.
 
 2. **Ajusta sobre la marcha**: Si el paso 2 no te convence, puedes pedir una variación antes de pasar al paso 3.
 
@@ -136,7 +136,7 @@ Antes de empezar cualquier tarea compleja, completa esta plantilla:
 - El prompt chaining divide tareas complejas en pasos manejables
 - Cada paso produce un resultado que alimenta al siguiente
 - Te da más control, mejor calidad y la capacidad de depurar errores
-- Usalo siempre que la tarea tenga más de una etapa claramente diferente`;
+- Úsalo siempre que la tarea tenga más de una etapa claramente diferente`;
 
 export const c9leccion2 = `## Memoria y proyectos en ChatGPT/Claude
 
@@ -154,7 +154,7 @@ ChatGPT tiene dos mecanismos principales de memoria:
 
 **1. Memoria automática**
 
-ChatGPT puede recordar datos que mencionás en las conversaciones. Por ejemplo, si le dices *"soy profesor de historia en una escuela secundaria"*, puede recordar eso para futuras conversaciones.
+ChatGPT puede recordar datos que mencionas en las conversaciones. Por ejemplo, si le dices *"soy profesor de historia en una escuela secundaria"*, puede recordar eso para futuras conversaciones.
 
 Puedes gestionar esta memoria desde **Configuración → Personalización → Memoria**:
 - Ver todo lo que ChatGPT recuerda de ti
@@ -168,7 +168,7 @@ Este es el recurso más poderoso. Vas a **Configuración → Personalización �
 *"¿Qué te gustaría que ChatGPT supiera de ti?"*
 \`\`\`
 Soy gerente de marketing de una empresa mediana de tecnología
-en Buenos Aires. Manejo un equipo de 5 personas. Mi audiencia
+en Ciudad de México. Manejo un equipo de 5 personas. Mi audiencia
 principal son empresas B2B del sector financiero. Prefiero
 comunicaciones formales pero no rígidas.
 \`\`\`
@@ -178,7 +178,7 @@ comunicaciones formales pero no rígidas.
 Responde en español mexicano. Sé conciso — prefiero respuestas
 de 2-3 párrafos máximo salvo que pida más detalle. Usa bullet
 points cuando sea posible. Si necesitas más contexto para
-responder bien, preguntame antes de asumir.
+responder bien, pregúntame antes de asumir.
 \`\`\`
 
 Estas instrucciones se aplican automáticamente a **todas** tus conversaciones nuevas.
@@ -198,7 +198,7 @@ Ejemplo de instrucciones de proyecto:
 
 Eres mi asistente para el proyecto de lanzamiento del producto XYZ.
 El público objetivo es: empresas de logística medianas (50-500 empleados)
-en Argentina, Chile y Colombia.
+en México, Colombia y Chile.
 Nuestro tono de marca es: profesional, innovador, directo.
 El lanzamiento es el 15 de julio.
 Toda comunicación debe incluir el slogan "Logística inteligente".
@@ -220,7 +220,7 @@ Google Gemini maneja el contexto de una forma distinta:
 - **Extensiones**: Gemini puede conectarse a tus servicios de Google (Gmail, Drive, Maps, YouTube, etc.) y acceder a esa información durante la conversación
 - **Gems**: Puedes crear versiones personalizadas de Gemini con instrucciones específicas, similar a los Custom GPTs
 
-Por ejemplo, puedes pedirle a Gemini: *"Busca en mi Gmail los últimos correos sobre el proyecto Aurora y resumilos"* — y lo hace directamente porque tiene acceso a tu Gmail.
+Por ejemplo, puedes pedirle a Gemini: *"Busca en mi Gmail los últimos correos sobre el proyecto Aurora y resúmelos"* — y lo hace directamente porque tiene acceso a tu Gmail.
 
 ### Buenas prácticas para mantener contexto
 
@@ -233,7 +233,7 @@ Contexto relevante: [datos clave]
 
 **2. Usa resúmenes de conversaciones anteriores:**
 
-Antes de cerrar una conversación larga, pedile a la IA:
+Antes de cerrar una conversación larga, pídele a la IA:
 \`\`\`
 Resume esta conversación en un párrafo. Incluye:
 - Qué tema trabajamos
@@ -242,7 +242,7 @@ Resume esta conversación en un párrafo. Incluye:
 Voy a usar este resumen para retomar en una próxima sesión.
 \`\`\`
 
-Copia ese resumen y usalo como inicio de la siguiente conversación.
+Copia ese resumen y úsalo como inicio de la siguiente conversación.
 
 **3. Crea un "documento de contexto" maestro:**
 
@@ -252,12 +252,12 @@ Mantén un archivo con la información que siempre necesitas darle a la IA:
 - Preferencias de formato y tono
 - Datos que usas frecuentemente
 
-Pegalo al inicio de conversaciones importantes o subilo como documento de proyecto.
+Pégalo al inicio de conversaciones importantes o súbelo como documento de proyecto.
 
 ### ¿Cuándo empezar una nueva conversación?
 
 **Empieza una conversación nueva cuando:**
-- Cambiás completamente de tema
+- Cambias completamente de tema
 - La conversación actual se volvió muy larga (más de 30-40 mensajes)
 - La IA empieza a "olvidar" cosas que dijiste antes
 - Quieres un enfoque fresco sin sesgos de la conversación anterior
@@ -340,7 +340,7 @@ Si tienes una conversación con ChatGPT donde:
 - Tu instrucción personalizada tiene 200 palabras (~300 tokens)
 - Tu prompt tiene 500 palabras (~750 tokens)
 - La respuesta de ChatGPT tiene 800 palabras (~1,200 tokens)
-- Y llevás 10 intercambios similares...
+- Y llevas 10 intercambios similares...
 
 El consumo total sería aproximadamente: 300 + (750 + 1,200) × 10 = **19,800 tokens**
 
@@ -366,7 +366,7 @@ Cuando la conversación supera el límite de tokens, diferentes modelos reaccion
 
 **1. Resume antes de seguir:**
 
-Cuando una conversación se extiende, pedile a la IA:
+Cuando una conversación se extiende, pídele a la IA:
 \`\`\`
 Resume todo lo que hemos discutido hasta ahora en los puntos
 más importantes. Voy a empezar una nueva conversación con
@@ -375,7 +375,7 @@ este resumen como contexto.
 
 **2. Divide documentos largos en chunks (fragmentos):**
 
-En vez de pegar un documento de 100 páginas, dividilo:
+En vez de pegar un documento de 100 páginas, divídelo:
 \`\`\`
 Voy a darte un documento en partes. Espera a que te diga
 "listo" antes de hacer el análisis.
@@ -386,7 +386,7 @@ Parte 1 de 5:
 
 **3. Prioriza lo que incluyes:**
 
-No pegues todo. Preguntate:
+No pegues todo. Pregúntate:
 - ¿La IA realmente necesita todo este texto?
 - ¿Puedo darle un resumen en vez del documento completo?
 - ¿Puedo extraer solo las secciones relevantes?
@@ -441,7 +441,7 @@ La forma más simple de evaluar un prompt es crear una **rúbrica** — una list
 | Formato | No respeta el formato | Formato parcial | Formato perfecto |
 | Utilidad | No se puede usar así | Necesita edición menor | Listo para usar |
 
-Después de cada respuesta de la IA, puntua cada criterio y suma. Si el total es menor a 15 (de 25 posibles), tu prompt necesita ajustes.
+Después de cada respuesta de la IA, puntúa cada criterio y suma. Si el total es menor a 15 (de 25 posibles), tu prompt necesita ajustes.
 
 ### Test de consistencia: ejecuta el mismo prompt 3+ veces
 
@@ -449,12 +449,12 @@ Este es uno de los tests más reveladores y más fáciles de hacer.
 
 **Procedimiento:**
 1. Toma tu prompt exacto
-2. Ejecutalo en 3 conversaciones nuevas diferentes
+2. Ejecútalo en 3 conversaciones nuevas diferentes
 3. Compara las 3 respuestas
 
 **¿Qué buscas?**
 - **Las 3 respuestas son similares**: Tu prompt es específico y consistente. Bien.
-- **Las 3 respuestas son completamente diferentes**: Tu prompt es demasiado vago. La IA esta adivinando qué quieres.
+- **Las 3 respuestas son completamente diferentes**: Tu prompt es demasiado vago. La IA está adivinando qué quieres.
 - **2 son similares y 1 es diferente**: Tu prompt es mayormente bueno pero tiene alguna ambigüedad.
 
 **Ejemplo práctico:**
@@ -508,13 +508,13 @@ Dependiendo del tipo de tarea, prioriza diferentes métricas:
 - **Usabilidad**: ¿Puedes usarlo tal cual o necesita mucha edición?
 
 **Para tareas de análisis:**
-- **Profundidad**: ¿Va más alla de lo superficial?
+- **Profundidad**: ¿Va más allá de lo superficial?
 - **Lógica**: ¿Las conclusiones siguen de las premisas?
 - **Perspectiva**: ¿Consideró múltiples ángulos?
 
 ### Construye tu propio framework de evaluación
 
-Acá tienes un sistema simple que puedes adoptar hoy:
+Aquí tienes un sistema simple que puedes adoptar hoy:
 
 **Paso 1 — Define tus criterios** (elige 3-5 de la lista anterior, según tu tarea)
 
@@ -523,8 +523,8 @@ Acá tienes un sistema simple que puedes adoptar hoy:
 **Paso 3 — Testea:**
 \`\`\`
 Para cada prompt que quieras evaluar:
-1. Ejecutalo 3 veces en conversaciones nuevas
-2. Puntua cada respuesta con tu rúbrica
+1. Ejecútalo 3 veces en conversaciones nuevas
+2. Puntúa cada respuesta con tu rúbrica
 3. Calcula el promedio
 4. Si el promedio es < 3, reescribe el prompt
 5. Si el promedio es 3-4, ajusta detalles
@@ -542,19 +542,19 @@ Para cada prompt que quieras evaluar:
 
 **1. "La IA alucina" (inventa datos falsos)**
 - **Causa probable**: El prompt pide información muy específica sin dar fuentes
-- **Solución**: Agrega "Si no estás seguro de un dato, indicalo" o proporciona fuentes de referencia
+- **Solución**: Agrega "Si no estás seguro de un dato, indícalo" o proporciona fuentes de referencia
 
 **2. "Las respuestas son demasiado genéricas"**
 - **Causa probable**: Falta contexto o especificidad en el prompt
 - **Solución**: Agrega rol, audiencia, formato, ejemplos
 
-**3. "No sigue el formato que pide"**
+**3. "No sigue el formato que pedí"**
 - **Causa probable**: Las instrucciones de formato están al final o son ambiguas
 - **Solución**: Pon las instrucciones de formato al principio y sé explícito. Incluye un ejemplo del formato deseado.
 
 **4. "A veces funciona bien y a veces no"**
 - **Causa probable**: El prompt tiene ambigüedades que la IA interpreta diferente cada vez
-- **Solución**: Haz el test de consistencia. Identifica qué parte varía y hacela más específica.
+- **Solución**: Haz el test de consistencia. Identifica qué parte varía y hazla más específica.
 
 **5. "La respuesta es demasiado larga/corta"**
 - **Causa probable**: No especificaste la extensión deseada
@@ -578,8 +578,8 @@ Piensa en cuántas veces hiciste algo como esto:
 1. Escribiste un prompt excelente que te dio exactamente lo que necesitabas
 2. Cerraste la conversación
 3. Dos semanas después necesitaste hacer algo similar
-4. No recordás qué escribiste exactamente
-5. Pasás 20 minutos intentando recrearlo... y nunca queda tan bien
+4. No recuerdas qué escribiste exactamente
+5. Pasas 20 minutos intentando recrearlo... y nunca queda tan bien
 
 Suena familiar? Le pasa a todo el mundo.
 
@@ -587,7 +587,7 @@ Tus mejores prompts son **activos intelectuales**. Son el resultado de prueba y 
 
 ### Organiza por categorías
 
-El primer paso es definir categorías que tengan sentido para tu vida. Acá hay una estructura que funciona para la mayoría de las personas:
+El primer paso es definir categorías que tengan sentido para tu vida. Aquí hay una estructura que funciona para la mayoría de las personas:
 
 **Trabajo**
 - Emails y comunicaciones
@@ -709,7 +709,7 @@ Versión 2.1 (20/03/2025): Ajuste menor en el cierre
 
 ### Comparte prompts con tu equipo
 
-Si trabajás en equipo, compartir prompts multiplica el valor:
+Si trabajas en equipo, compartir prompts multiplica el valor:
 
 **1. Crea un repositorio compartido:**
 - Una carpeta en Google Drive o Notion compartida
@@ -728,7 +728,7 @@ Si trabajás en equipo, compartir prompts multiplica el valor:
 
 **Prompt para iniciar tu biblioteca ahora mismo:**
 \`\`\`
-Ayudame a crear una plantilla de biblioteca de prompts.
+Ayúdame a crear una plantilla de biblioteca de prompts.
 Necesito una estructura en [Notion/Google Sheets/otro] con
 las siguientes columnas:
 - Nombre del prompt
@@ -741,7 +741,7 @@ las siguientes columnas:
 - Fecha de última actualización
 - Notas
 
-Creame la estructura y 3 ejemplos de prompts completados
+Créame la estructura y 3 ejemplos de prompts completados
 para que vea cómo usarla.
 \`\`\`
 
@@ -829,7 +829,7 @@ Para cada idea incluye:
 #### Paso 2: Crear el esquema
 
 \`\`\`
-Elige la idea número [X]: "[título]"
+Elegí la idea número [X]: "[título]"
 
 Crea un esquema detallado para este artículo con:
 - Título final optimizado para SEO
@@ -872,7 +872,7 @@ Revisa el siguiente artículo:
 
 Evalúa y corrige:
 1. GANCHO: ¿Las primeras 2 oraciones capturan la atención?
-   Si no, reescribilas.
+   Si no, reescríbelas.
 2. ESTRUCTURA: ¿El flujo entre secciones es natural?
    Señala transiciones débiles.
 3. CLARIDAD: ¿Hay oraciones confusas o demasiado largas?
@@ -903,7 +903,7 @@ POST 1 - El dato impactante:
 
 POST 2 - La historia/ejemplo:
 - Empieza con un caso concreto o ejemplo del artículo
-- Conectalo con una lección más amplia
+- Conéctalo con una lección más amplia
 - Cierra con un consejo práctico
 - 150-200 palabras
 
@@ -969,11 +969,11 @@ NOTAS:
 - ¿Algún paso se puede hacer en paralelo? (ej: investigación de 2 subtemas al mismo tiempo)
 
 **"La calidad baja en los últimos pasos"**
-- Probablemente la conversación se esta haciendo muy larga
+- Probablemente la conversación se está haciendo muy larga
 - Empieza una conversación nueva para los últimos pasos, pasando solo el contexto necesario
 
-**"No sé si mi flujo esta bien diseñado"**
-Preguntale a la IA:
+**"No sé si mi flujo está bien diseñado"**
+Pregúntale a la IA:
 \`\`\`
 Diseñé el siguiente flujo de trabajo con IA:
 [describe tu flujo]
@@ -1007,11 +1007,11 @@ export const c9leccion7 = `## Quiz final — Flujos de trabajo con IA
 
 Felicitaciones por llegar hasta acá. Este no es un logro menor.
 
-A lo largo de este curso aprendiste a ir más alla de los prompts individuales. Ahora sabes cómo **encadenar prompts** para tareas complejas, cómo aprovechar la **memoria y los proyectos** de cada herramienta, cómo funcionan los **tokens y ventanas de contexto** que determinan los límites de la IA, cómo **evaluar objetivamente** si un prompt es bueno, y cómo **organizar tu biblioteca personal** de prompts. Todo eso lo pusiste en práctica al construir un flujo de trabajo completo.
+A lo largo de este curso aprendiste a ir más allá de los prompts individuales. Ahora sabes cómo **encadenar prompts** para tareas complejas, cómo aprovechar la **memoria y los proyectos** de cada herramienta, cómo funcionan los **tokens y ventanas de contexto** que determinan los límites de la IA, cómo **evaluar objetivamente** si un prompt es bueno, y cómo **organizar tu biblioteca personal** de prompts. Todo eso lo pusiste en práctica al construir un flujo de trabajo completo.
 
 Pero este quiz no evalúa solo el Curso 9. Es la evaluación final de todo el **Nivel Intermedio**. Eso significa que también abarca lo que aprendiste en los cursos anteriores de este nivel: técnicas avanzadas de prompting, uso profesional de las herramientas y pensamiento estratégico sobre cómo integrar la IA en tu trabajo.
 
-Tomate tu tiempo para responder cada pregunta. No se trata de velocidad, se trata de demostrar que realmente entiendes los conceptos y puedes aplicarlos. Muchas preguntas te van a presentar situaciones prácticas donde tienes que elegir la mejor estrategia — no hay trucos, solo la aplicación de lo que aprendiste.
+Tómate tu tiempo para responder cada pregunta. No se trata de velocidad, se trata de demostrar que realmente entiendes los conceptos y puedes aplicarlos. Muchas preguntas te van a presentar situaciones prácticas donde tienes que elegir la mejor estrategia — no hay trucos, solo la aplicación de lo que aprendiste.
 
 Si apruebas este quiz, completas oficialmente el Nivel Intermedio y estás listo para el **Nivel Avanzado**, donde vas a aprender a crear tus propios asistentes personalizados, trabajar con la API de modelos de IA y mucho más.
 

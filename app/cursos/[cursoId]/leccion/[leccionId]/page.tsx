@@ -1,12 +1,4 @@
-import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  ChevronLeft,
-  ChevronRight,
-  CheckCircle2,
-} from "lucide-react";
 import { getLeccion, nivelConfig, cursos, sandboxLessons } from "@/lib/cursos-data";
 import { MarkdownContent } from "@/components/markdown-content";
 import { LessonQuizSection } from "@/components/lesson-quiz-section";
@@ -16,7 +8,10 @@ import { AiTutor } from "@/components/ai-tutor";
 import { LessonComments } from "@/components/lesson-comments";
 import { TextToSpeech } from "@/components/text-to-speech";
 import { audioMap } from "@/lib/audio-map";
-import { ContentLanguageNotice } from "@/components/content-language-notice";
+import { LocalizedLessonHeader } from "@/components/localized-lesson-header";
+import { LocalizedBreadcrumb } from "@/components/localized-breadcrumb";
+import { LocalizedLessonNav } from "@/components/localized-lesson-nav";
+import { LocalizedSectionTitle } from "@/components/localized-section-title";
 
 export function generateStaticParams() {
   return cursos.flatMap((curso) =>
@@ -48,53 +43,33 @@ export default async function LeccionPage({
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-8 md:py-12">
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex flex-wrap items-center gap-2 text-base text-muted-foreground">
-          <li>
-            <Link href="/cursos" className="hover:text-foreground">
-              Cursos
-            </Link>
-          </li>
-          <li aria-hidden="true">
-            <ChevronRight className="size-4" />
-          </li>
-          <li>
-            <Link
-              href={`/cursos/${curso.id}`}
-              className="hover:text-foreground"
-            >
-              {curso.titulo}
-            </Link>
-          </li>
-          <li aria-hidden="true">
-            <ChevronRight className="size-4" />
-          </li>
-          <li className="font-medium text-foreground">{leccion.titulo}</li>
-        </ol>
-      </nav>
-
-      <ContentLanguageNotice />
+      <LocalizedBreadcrumb
+        items={[
+          {
+            label: curso.titulo,
+            labelEn: curso.tituloEn,
+            href: `/cursos/${curso.id}`,
+          },
+          {
+            label: leccion.titulo,
+            labelEn: leccion.tituloEn,
+          },
+        ]}
+      />
 
       {/* Lesson Header */}
-      <div className="mb-8">
-        <div className="mb-3 flex items-center gap-3">
-          <Badge
-            className="text-sm font-semibold"
-            style={{ backgroundColor: config.bg, color: config.color }}
-          >
-            {config.label}
-          </Badge>
-          <span className="text-base text-muted-foreground">
-            Lección {index + 1} de {curso.lecciones.length}
-          </span>
-        </div>
-        <h1 className="text-3xl font-bold tracking-tight md:text-4xl">
-          {leccion.titulo}
-        </h1>
-        <p className="mt-2 text-lg text-muted-foreground">
-          {leccion.descripcion}
-        </p>
-      </div>
+      <LocalizedLessonHeader
+        nivel={curso.nivel}
+        nivelColor={config.color}
+        nivelBg={config.bg}
+        nivelLabel={config.label}
+        index={index}
+        totalLecciones={curso.lecciones.length}
+        titulo={leccion.titulo}
+        tituloEn={leccion.tituloEn}
+        descripcion={leccion.descripcion}
+        descripcionEn={leccion.descripcionEn}
+      />
 
       {/* Progress indicator */}
       <div className="mb-8">
@@ -104,7 +79,6 @@ export default async function LeccionPage({
           aria-valuenow={index + 1}
           aria-valuemin={0}
           aria-valuemax={curso.lecciones.length}
-          aria-label={`Leccion ${index + 1} de ${curso.lecciones.length}`}
         >
           <div
             className="h-full rounded-full transition-all"
@@ -116,8 +90,6 @@ export default async function LeccionPage({
         </div>
       </div>
 
-
-
       {/* Lesson Content — hide for quiz lessons with interactive quiz to avoid showing answer keys */}
       {!(leccion.tieneQuiz && leccion.quizQuestions) && (
         <div className="mb-10">
@@ -126,9 +98,12 @@ export default async function LeccionPage({
             <TextToSpeech audioUrl={audioMap[leccion.id]} />
           </div>
 
-          <h2 className="mb-4 text-2xl font-bold">Contenido</h2>
+          <LocalizedSectionTitle i18nKey="lesson.content" />
           <div className="rounded-xl border bg-card p-6 text-lg leading-relaxed md:p-8">
-            <MarkdownContent content={leccion.contenido} />
+            <MarkdownContent
+              content={leccion.contenido}
+              contentEn={leccion.contenidoEn}
+            />
           </div>
         </div>
       )}
@@ -163,51 +138,12 @@ export default async function LeccionPage({
       </div>
 
       {/* Navigation */}
-      <div className="flex flex-col gap-4 border-t pt-8 sm:flex-row sm:items-center sm:justify-between">
-        {prevLeccion ? (
-          <Link href={`/cursos/${curso.id}/leccion/${prevLeccion.id}`}>
-            <Button
-              variant="outline"
-              className="h-12 gap-2 px-6 text-base"
-            >
-              <ChevronLeft className="size-5" aria-hidden="true" />
-              Anterior
-            </Button>
-          </Link>
-        ) : (
-          <Link href={`/cursos/${curso.id}`}>
-            <Button
-              variant="outline"
-              className="h-12 gap-2 px-6 text-base"
-            >
-              <ChevronLeft className="size-5" aria-hidden="true" />
-              Volver al curso
-            </Button>
-          </Link>
-        )}
-
-        {nextLeccion ? (
-          <Link href={`/cursos/${curso.id}/leccion/${nextLeccion.id}`}>
-            <Button
-              className="h-12 gap-2 px-6 text-base font-semibold"
-              style={{ backgroundColor: config.color }}
-            >
-              Siguiente
-              <ChevronRight className="size-5" aria-hidden="true" />
-            </Button>
-          </Link>
-        ) : (
-          <Link href={`/cursos/${curso.id}`}>
-            <Button
-              className="h-12 gap-2 px-6 text-base font-semibold"
-              style={{ backgroundColor: config.color }}
-            >
-              <CheckCircle2 className="size-5" aria-hidden="true" />
-              Finalizar curso
-            </Button>
-          </Link>
-        )}
-      </div>
+      <LocalizedLessonNav
+        cursoId={curso.id}
+        prevLeccionId={prevLeccion?.id ?? null}
+        nextLeccionId={nextLeccion?.id ?? null}
+        accentColor={config.color}
+      />
 
       {/* AI Tutor floating chatbot */}
       <AiTutor lessonId={leccion.id} />

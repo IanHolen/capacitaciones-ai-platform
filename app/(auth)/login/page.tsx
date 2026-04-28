@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { BookOpen, Mail, AlertCircle, Loader2 } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
+import { useTranslation } from "react-i18next";
 
 export default function LoginPage() {
   return (
@@ -15,6 +16,7 @@ export default function LoginPage() {
 }
 
 function LoginForm() {
+  const { t } = useTranslation();
   const router = useRouter();
   const searchParams = useSearchParams();
   const redirectTo = searchParams.get("redirectTo") || "/cursos";
@@ -40,7 +42,7 @@ function LoginForm() {
     if (error) {
       setError(
         error.message === "Invalid login credentials"
-          ? "Correo o contraseña incorrectos"
+          ? t("auth.wrongCredentials")
           : error.message,
       );
       setLoading(false);
@@ -51,7 +53,7 @@ function LoginForm() {
 
   async function handleMagicLink() {
     if (!email) {
-      setError("Ingresa tu correo electrónico primero");
+      setError(t("auth.enterEmail"));
       return;
     }
     setError("");
@@ -79,16 +81,15 @@ function LoginForm() {
         <div className="w-full max-w-md rounded-2xl border bg-white p-8 shadow-sm">
           <div className="flex flex-col items-center gap-4 text-center">
             <Mail className="size-12 text-[#1E40AF]" />
-            <h1 className="text-2xl font-bold">Revisa tu correo</h1>
+            <h1 className="text-2xl font-bold">{t("auth.checkEmail")}</h1>
             <p className="text-lg text-gray-600">
-              Te enviamos un enlace mágico a <strong>{email}</strong>. Haz clic
-              en el enlace del correo para iniciar sesión.
+              {t("auth.magicSent", { email })}
             </p>
             <button
               onClick={() => setMagicLinkSent(false)}
               className="mt-4 text-[#1E40AF] underline"
             >
-              Volver al inicio de sesion
+              {t("auth.backToLogin")}
             </button>
           </div>
         </div>
@@ -106,14 +107,14 @@ function LoginForm() {
           style={{ color: "#1E40AF" }}
         >
           <BookOpen className="size-7" aria-hidden="true" />
-          Certificaciones AI
+          Capacitaciones IA
         </Link>
 
         <h1 className="mb-2 text-center text-2xl font-bold">
-          Bienvenido de vuelta
+          {t("auth.welcomeBack")}
         </h1>
         <p className="mb-6 text-center text-gray-600">
-          Inicia sesión para continuar aprendiendo
+          {t("auth.loginSub")}
         </p>
 
         {/* Email/Password Form */}
@@ -123,7 +124,7 @@ function LoginForm() {
               htmlFor="email"
               className="mb-1 block text-base font-medium"
             >
-              Correo electrónico
+              {t("auth.email")}
             </label>
             <input
               id="email"
@@ -138,14 +139,14 @@ function LoginForm() {
           <div>
             <div className="mb-1 flex items-center justify-between">
               <label htmlFor="password" className="text-base font-medium">
-                Contraseña
+                {t("auth.password")}
               </label>
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 className="text-sm text-[#1E40AF]"
               >
-                {showPassword ? "Ocultar" : "Mostrar"}
+                {showPassword ? t("auth.hide") : t("auth.show")}
               </button>
             </div>
             <input
@@ -176,14 +177,14 @@ function LoginForm() {
             className="flex h-14 w-full items-center justify-center gap-2 rounded-xl bg-[#1E40AF] text-lg font-semibold text-white transition-colors hover:bg-[#1E3A8A] focus:outline-none focus:ring-4 focus:ring-[#1E40AF]/30 disabled:opacity-50"
           >
             {loading && <Loader2 className="size-5 animate-spin" />}
-            {loading ? "Cargando..." : "Iniciar sesión"}
+            {loading ? t("auth.loading") : t("auth.login")}
           </button>
         </form>
 
         {/* Separator */}
         <div className="my-6 flex items-center gap-4">
           <div className="h-px flex-1 bg-gray-200" />
-          <span className="text-sm text-gray-500">o</span>
+          <span className="text-sm text-gray-500">{t("auth.or")}</span>
           <div className="h-px flex-1 bg-gray-200" />
         </div>
 
@@ -194,14 +195,14 @@ function LoginForm() {
           className="flex w-full items-center justify-center gap-2 text-lg text-[#1E40AF] transition-colors hover:underline"
         >
           <Mail className="size-5" />
-          Recibir enlace mágico por correo
+          {t("auth.magicLink")}
         </button>
 
         {/* Register Link */}
         <p className="mt-6 text-center text-base text-gray-600">
-          ¿No tienes cuenta?{" "}
+          {t("auth.noAccount")}{" "}
           <Link href="/registro" className="font-semibold text-[#1E40AF]">
-            Regístrate
+            {t("auth.register")}
           </Link>
         </p>
       </div>

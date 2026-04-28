@@ -10,6 +10,7 @@ import {
   CardContent,
 } from "@/components/ui/card";
 import { createClient } from "@/lib/supabase/client";
+import { useTranslation } from "react-i18next";
 
 interface Comment {
   id: string;
@@ -36,6 +37,7 @@ function CommentItem({
   onReply: (parentId: string) => void;
   onDelete: (id: string) => void;
 }) {
+  const { t, i18n } = useTranslation();
   const name = comment.users?.name || "Anónimo";
   const initials = name
     .split(" ")
@@ -58,7 +60,7 @@ function CommentItem({
           <div className="flex items-center gap-2">
             <span className="text-sm font-semibold">{name}</span>
             <span className="text-xs text-muted-foreground">
-              {new Date(comment.created_at).toLocaleDateString("es-LA", {
+              {new Date(comment.created_at).toLocaleDateString(i18n.language === "en" ? "en-US" : "es-LA", {
                 day: "numeric",
                 month: "short",
                 year: "numeric",
@@ -72,19 +74,19 @@ function CommentItem({
             <button
               onClick={() => onReply(comment.id)}
               className="flex items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
-              aria-label="Responder"
+              aria-label={t("comments.reply")}
             >
               <Reply className="size-3.5" />
-              Responder
+              {t("comments.reply")}
             </button>
             {isOwner && (
               <button
                 onClick={() => onDelete(comment.id)}
                 className="flex items-center gap-1 text-sm text-muted-foreground hover:text-red-600"
-                aria-label="Eliminar comentario"
+                aria-label={t("comments.delete")}
               >
                 <Trash2 className="size-3.5" />
-                Eliminar
+                {t("comments.delete")}
               </button>
             )}
           </div>
@@ -111,6 +113,7 @@ function CommentItem({
 }
 
 export function LessonComments({ lessonId }: { lessonId: string }) {
+  const { t } = useTranslation();
   const [comments, setComments] = useState<Comment[]>([]);
   const [loading, setLoading] = useState(true);
   const [input, setInput] = useState("");
@@ -200,7 +203,7 @@ export function LessonComments({ lessonId }: { lessonId: string }) {
       <CardHeader>
         <CardTitle className="flex items-center gap-2 text-xl">
           <MessageSquare className="size-5" aria-hidden="true" />
-          Comentarios ({comments.length})
+          {t("comments.title")} ({comments.length})
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
@@ -210,12 +213,12 @@ export function LessonComments({ lessonId }: { lessonId: string }) {
             {replyTo && (
               <div className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Reply className="size-3.5" />
-                Respondiendo a un comentario
+                {t("comments.replyingTo")}
                 <button
                   onClick={() => setReplyTo(null)}
                   className="text-[#1E40AF] hover:underline"
                 >
-                  Cancelar
+                  {t("comments.cancel")}
                 </button>
               </div>
             )}
@@ -224,21 +227,21 @@ export function LessonComments({ lessonId }: { lessonId: string }) {
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Escribe un comentario..."
+                placeholder={t("comments.placeholder")}
                 className="h-12 flex-1 rounded-xl border bg-background px-4 text-base focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
                 maxLength={2000}
                 onKeyDown={(e) => {
                   if (e.key === "Enter") handleSubmit();
                 }}
                 disabled={submitting}
-                aria-label="Nuevo comentario"
+                aria-label={t("comments.placeholder")}
               />
               <Button
                 onClick={handleSubmit}
                 disabled={!input.trim() || submitting}
                 className="size-12 shrink-0"
                 style={{ backgroundColor: "#1E40AF" }}
-                aria-label="Enviar comentario"
+                aria-label={t("comments.send")}
               >
                 {submitting ? (
                   <Loader2 className="size-5 animate-spin" />
@@ -250,7 +253,7 @@ export function LessonComments({ lessonId }: { lessonId: string }) {
           </div>
         ) : (
           <p className="text-base text-muted-foreground">
-            Inicia sesión para comentar.
+            {t("comments.loginRequired")}
           </p>
         )}
 
@@ -261,7 +264,7 @@ export function LessonComments({ lessonId }: { lessonId: string }) {
           </div>
         ) : topLevel.length === 0 ? (
           <p className="text-center text-base text-muted-foreground">
-            Sé el primero en comentar.
+            {t("comments.beFirst")}
           </p>
         ) : (
           <div className="space-y-4">
