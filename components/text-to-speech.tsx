@@ -99,10 +99,10 @@ export function TextToSpeech({ audioUrl }: TextToSpeechProps) {
         />
         <div>
           <div className="text-lg font-bold text-[#1E40AF]">
-            Escuchá esta lección en audio
+            Escucha esta lección en audio
           </div>
           <div className="text-sm text-[#1E40AF]/70">
-            Ideal para aprender mientras hacés otras cosas
+            Ideal para aprender mientras haces otras cosas
           </div>
         </div>
       </div>

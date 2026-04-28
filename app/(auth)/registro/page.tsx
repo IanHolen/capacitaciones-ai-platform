@@ -171,9 +171,9 @@ export default function RegisterPage() {
 
         {/* Login Link */}
         <p className="mt-6 text-center text-base text-gray-600">
-          ¿Ya tenés cuenta?{" "}
+          ¿Ya tienes cuenta?{" "}
           <Link href="/login" className="font-semibold text-[#1E40AF]">
-            Iniciá sesión
+            Inicia sesión
           </Link>
         </p>
       </div>

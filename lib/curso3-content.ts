@@ -38,9 +38,9 @@ No se trata de competir contra la IA — se trata de aprender a usarla como una 
 
 ## Ejemplos concretos
 
-**Si trabajas en atención al cliente:** La IA puede responder las preguntas simples y repetitivas, y vos te enfocas en los casos que realmente necesitan atención humana.
+**Si trabajas en atención al cliente:** La IA puede responder las preguntas simples y repetitivas, y tú te enfocas en los casos que realmente necesitan atención humana.
 
-**Si eres profesor o capacitador:** La IA puede ayudarte a preparar material, generar ejercicios y resumir textos. Vos seguis siendo quien ensena, motiva y conecta con los estudiantes.
+**Si eres profesor o capacitador:** La IA puede ayudarte a preparar material, generar ejercicios y resumir textos. Tú seguis siendo quien ensena, motiva y conecta con los estudiantes.
 
 **Si estas jubilado/a:** La IA es simplemente una herramienta más que puede hacerte la vida más fácil — desde redactar un correo hasta planificar un viaje.
 
@@ -185,7 +185,7 @@ Bastante confiable para:
 - **Explicar conceptos generales** (qué es la inflacion, cómo funciona el sistema solar)
 - **Ayudarte a redactar** (correos, cartas, mensajes)
 - **Darte ideas** (recetas, planes de viaje, regalos)
-- **Resumir textos** que vos le das
+- **Resumir textos** que tú le das
 - **Traducir** textos de un idioma a otro
 
 Menos confiable para:
@@ -197,7 +197,7 @@ Menos confiable para:
 
 ## Para llevar a casa
 
-- **La IA se equivoca**, y eso está bien si lo sabemos de antemano
+- **La IA se equivoca**, y eso esta bien si lo sabemos de antemano
 - Las "alucinaciones" son errores que suenan muy reales — por eso son peligrosas
 - **Siempre verifica** datos importantes antes de actuar sobre ellos
 - Usa la IA como un **primer borrador**, no como la verdad absoluta
@@ -209,7 +209,7 @@ export const c3leccion4 = `## Pensemos en la calculadora
 
 Se acuerdan cuando aparecieron las calculadoras de bolsillo? Hubo un gran debate: "Los niños van a dejar de aprender matemáticas!" Que paso? La calculadora no reemplazo el conocimiento matemático — lo **complemento**. Si no sabes que necesitas multiplicar, la calculadora no te sirve de nada.
 
-**La IA funciona exactamente igual.** Necesita que **vos** le digas que hacer, revises lo que produce, y tomes las decisiones finales.
+**La IA funciona exactamente igual.** Necesita que **tú** le digas que hacer, revises lo que produce, y tomes las decisiones finales.
 
 ## Cuando USAR la IA?
 
@@ -237,19 +237,19 @@ Se acuerdan cuando aparecieron las calculadoras de bolsillo? Hubo un gran debate
 
 ## La analogia completa
 
-- **El GPS** te dice por donde ir, pero **vos** decides si tomas esa ruta. Si el GPS te dice que cruces un rio, no lo haces sin pensar.
-- **El microondas** calienta la comida, pero **vos** decides que cocinar y cuanto tiempo.
-- **Google** te da miles de resultados, pero **vos** decides cuál es confiable.
+- **El GPS** te dice por donde ir, pero **tú** decides si tomas esa ruta. Si el GPS te dice que cruces un rio, no lo haces sin pensar.
+- **El microondas** calienta la comida, pero **tú** decides que cocinar y cuanto tiempo.
+- **Google** te da miles de resultados, pero **tú** decides cuál es confiable.
 
 La IA es lo mismo: una herramienta que amplifica tus capacidades, pero que necesita tu supervision.
 
-## El secreto: la IA + vos = mejor resultado
+## El secreto: la IA + tú = mejor resultado
 
 **Lo que hace bien la IA:** Procesar mucha información rápido, escribir textos claros, dar múltiples opciones, explicar cosas complejas de forma simple, trabajar 24 horas.
 
-**Lo que haces bien vos:** Conocer tu situación personal, tener empatía, aplicar valores y ética, tomar decisiones con sentido comun, saber qué es importante para vos.
+**Lo que haces bien tú:** Conocer tu situación personal, tener empatía, aplicar valores y ética, tomar decisiones con sentido comun, saber qué es importante para ti.
 
-**Juntos:** la IA te da el borrador, vos le das el toque final. La IA te da opciones, vos elegis la correcta. La IA te ahorra tiempo, vos usas ese tiempo en lo que importa.
+**Juntos:** la IA te da el borrador, tú le das el toque final. La IA te da opciones, tú elegis la correcta. La IA te ahorra tiempo, tú usas ese tiempo en lo que importa.
 
 ## Errores comunes que hay que evitar
 
@@ -260,7 +260,7 @@ La IA es lo mismo: una herramienta que amplifica tus capacidades, pero que neces
 
 ## Para llevar a casa
 
-- La IA es como una calculadora: potente pero necesita que **vos** la dirijas
+- La IA es como una calculadora: potente pero necesita que **tú** la dirijas
 - Hay momentos para usarla y momentos para consultar a un profesional humano
 - El mejor resultado sale de combinar la velocidad de la IA con tu experiencia y criterio
 - No hay que tenerle miedo ni depender ciegamente — hay que usarla con equilibrio
@@ -343,8 +343,8 @@ Al final de la semana:
 ## Consejos para tu semana de práctica
 
 1. **Elige un horario fijo.** La rutina ayuda.
-2. **No te frustres** si no entendes la respuesta. Decile: "Puedes explicarmelo más simple?"
-3. **Si la respuesta es muy larga,** decile: "Resumelo en 3 líneas."
+2. **No te frustres** si no entendes la respuesta. Dile: "Puedes explicarmelo más simple?"
+3. **Si la respuesta es muy larga,** dile: "Resumelo en 3 líneas."
 4. **Recuerda las reglas de privacidad** de la Lección 2.
 5. **Comparte la experiencia.** Haganlo juntos con un familiar o amigo.
 6. **Celebra cada día completado.** Aprender algo nuevo a cualquier edad es un logro.
@@ -352,7 +352,7 @@ Al final de la semana:
 ## Y después de la semana?
 
 Si te gusto: segui usando la IA, explora funciones nuevas, ayuda a alguien más a empezar.
-Si no te convencio: también está bien! Al menos ahora sabes qué es y puedes tomar una decisión informada.
+Si no te convencio: también esta bien! Al menos ahora sabes qué es y puedes tomar una decisión informada.
 
 ## Para llevar a casa
 

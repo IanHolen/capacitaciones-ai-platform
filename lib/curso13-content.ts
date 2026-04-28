@@ -8,11 +8,11 @@ export const leccion1 = `
 
 Python es el lenguaje dominante en inteligencia artificial y machine learning. No es casualidad: su sintaxis clara, su ecosistema de librerías y su comunidad masiva lo hacen ideal para trabajar con APIs de IA. En esta lección vas a aprender lo mínimo necesario de Python para empezar a construir aplicaciones con inteligencia artificial.
 
-No asumimos que nunca hayas programado antes — sí asumimos que sabés qué es una variable, qué es una función y qué es un loop, aunque sea de manera conceptual. Lo que vamos a hacer es darte las herramientas concretas en Python.
+No asumimos que nunca hayas programado antes — sí asumimos que sabes qué es una variable, qué es una función y qué es un loop, aunque sea de manera conceptual. Lo que vamos a hacer es darte las herramientas concretas en Python.
 
 ## Variables y tipos de datos
 
-En Python, no necesitás declarar el tipo de una variable. Python lo infiere automáticamente:
+En Python, no necesitas declarar el tipo de una variable. Python lo infiere automáticamente:
 
 \`\`\`python
 # Strings (cadenas de texto)
@@ -32,7 +32,7 @@ debug_mode = False
 respuesta = None
 \`\`\`
 
-Podés verificar el tipo de cualquier variable con \`type()\`:
+Puedes verificar el tipo de cualquier variable con \`type()\`:
 
 \`\`\`python
 print(type(nombre))       # <class 'str'>
@@ -43,7 +43,7 @@ print(type(usar_streaming))  # <class 'bool'>
 
 ### F-strings: tu mejor amigo
 
-Para construir strings dinámicos (algo que harás constantemente con prompts de IA), usá f-strings:
+Para construir strings dinámicos (algo que harás constantemente con prompts de IA), usa f-strings:
 
 \`\`\`python
 usuario = "María"
@@ -53,7 +53,7 @@ print(prompt)
 # Output: Hola María, explicame qué es machine learning en términos simples.
 \`\`\`
 
-Para prompts multilínea, usá triple comillas:
+Para prompts multilínea, usa triple comillas:
 
 \`\`\`python
 system_prompt = f"""Eres un asistente experto en {tema}.
@@ -103,7 +103,7 @@ mensajes = [
 
 ## Diccionarios
 
-Los diccionarios son pares clave-valor. Son el equivalente de JSON en Python y los usás para configuraciones, respuestas de APIs, etc.:
+Los diccionarios son pares clave-valor. Son el equivalente de JSON en Python y los usas para configuraciones, respuestas de APIs, etc.:
 
 \`\`\`python
 config = {
@@ -265,7 +265,7 @@ if not api_key:
 
 ## Resumen
 
-Con estas bases de Python ya tenés lo necesario para empezar a trabajar con APIs de inteligencia artificial. Los conceptos clave que vas a usar constantemente son: f-strings para construir prompts, listas de diccionarios para mensajes, funciones async para streaming, y try/except para manejar errores de red. En la próxima lección vamos a instalar tu entorno de desarrollo completo.
+Con estas bases de Python ya tienes lo necesario para empezar a trabajar con APIs de inteligencia artificial. Los conceptos clave que vas a usar constantemente son: f-strings para construir prompts, listas de diccionarios para mensajes, funciones async para streaming, y try/except para manejar errores de red. En la próxima lección vamos a instalar tu entorno de desarrollo completo.
 `;
 
 export const leccion2 = `
@@ -273,7 +273,7 @@ export const leccion2 = `
 
 ## Introducción
 
-Antes de escribir una sola línea de código con APIs de IA, necesitás un entorno de desarrollo correctamente configurado. Un entorno mal configurado es la causa número uno de frustración en principiantes. En esta lección vamos a instalar y configurar todo paso a paso: VS Code, Python, pip, entornos virtuales y manejo de variables de entorno.
+Antes de escribir una sola línea de código con APIs de IA, necesitas un entorno de desarrollo correctamente configurado. Un entorno mal configurado es la causa número uno de frustración en principiantes. En esta lección vamos a instalar y configurar todo paso a paso: VS Code, Python, pip, entornos virtuales y manejo de variables de entorno.
 
 ## Paso 1: Instalar Python 3.11+
 
@@ -282,7 +282,7 @@ Antes de escribir una sola línea de código con APIs de IA, necesitás un entor
 La forma más limpia es usando Homebrew:
 
 \`\`\`bash
-# Instalar Homebrew (si no lo tenés)
+# Instalar Homebrew (si no lo tienes)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # Instalar Python
@@ -295,10 +295,10 @@ python3 --version
 
 ### En Windows
 
-1. Andá a [python.org/downloads](https://python.org/downloads)
-2. Descargá Python 3.12.x
-3. **IMPORTANTE**: Marcá la casilla "Add Python to PATH" durante la instalación
-4. Verificá en PowerShell:
+1. Ve a [python.org/downloads](https://python.org/downloads)
+2. Descarga Python 3.12.x
+3. **IMPORTANTE**: Marca la casilla "Add Python to PATH" durante la instalación
+4. Verifica en PowerShell:
 
 \`\`\`powershell
 python --version
@@ -315,12 +315,12 @@ python3 --version
 
 ## Paso 2: Instalar VS Code
 
-1. Descargá VS Code desde [code.visualstudio.com](https://code.visualstudio.com)
+1. Descarga VS Code desde [code.visualstudio.com](https://code.visualstudio.com)
 2. Instalalo siguiendo las instrucciones de tu sistema operativo
 
 ### Extensiones esenciales
 
-Abrí VS Code y andá a la pestaña de extensiones (Ctrl+Shift+X o Cmd+Shift+X en Mac). Instalá estas extensiones:
+Abre VS Code y ve a la pestaña de extensiones (Ctrl+Shift+X o Cmd+Shift+X en Mac). Instala estas extensiones:
 
 - **Python** (Microsoft) — Soporte completo para Python: intellisense, debugging, linting
 - **Pylance** (Microsoft) — Análisis de tipos avanzado para Python
@@ -330,7 +330,7 @@ Abrí VS Code y andá a la pestaña de extensiones (Ctrl+Shift+X o Cmd+Shift+X e
 
 ### Configurar VS Code para Python
 
-Abrí la configuración de VS Code (Ctrl+, o Cmd+,) y agregá estas configuraciones en \`settings.json\`:
+Abre la configuración de VS Code (Ctrl+, o Cmd+,) y agrega estas configuraciones en \`settings.json\`:
 
 \`\`\`json
 {
@@ -374,7 +374,7 @@ source venv/bin/activate
 venv\\Scripts\\activate.bat
 \`\`\`
 
-Cuando el entorno virtual está activo, vas a ver \`(venv)\` al principio de tu terminal:
+Cuando el entorno virtual esta activo, vas a ver \`(venv)\` al principio de tu terminal:
 
 \`\`\`
 (venv) usuario@computadora:~/mi-proyecto-ia$
@@ -383,7 +383,7 @@ Cuando el entorno virtual está activo, vas a ver \`(venv)\` al principio de tu 
 ### Verificar que funciona
 
 \`\`\`bash
-# Ver qué Python se está usando (debe apuntar a tu venv)
+# Ver qué Python se esta usando (debe apuntar a tu venv)
 which python    # macOS/Linux
 where python    # Windows
 
@@ -397,11 +397,11 @@ pip list
 deactivate
 \`\`\`
 
-**REGLA DE ORO**: Siempre activá tu entorno virtual antes de trabajar en tu proyecto. Siempre.
+**REGLA DE ORO**: Siempre activa tu entorno virtual antes de trabajar en tu proyecto. Siempre.
 
 ## Paso 5: Instalar paquetes con pip
 
-Con el entorno virtual activo, instalá los paquetes que vamos a usar en el curso:
+Con el entorno virtual activo, instala los paquetes que vamos a usar en el curso:
 
 \`\`\`bash
 # Paquetes esenciales para el curso
@@ -445,7 +445,7 @@ httpx==0.27.2
 
 ### Crear el archivo .env
 
-Creá un archivo llamado \`.env\` en la raíz de tu proyecto:
+Crea un archivo llamado \`.env\` en la raíz de tu proyecto:
 
 \`\`\`bash
 # .env
@@ -456,7 +456,7 @@ GOOGLE_API_KEY=tu-clave-de-google-aqui
 
 ### Crear .gitignore
 
-**CRÍTICO**: Creá un archivo \`.gitignore\` para que tu API key nunca se suba a Git:
+**CRÍTICO**: Crea un archivo \`.gitignore\` para que tu API key nunca se suba a Git:
 
 \`\`\`bash
 # .gitignore
@@ -555,15 +555,15 @@ mi-proyecto-ia/
 
 | Problema | Solución |
 |----------|----------|
-| \`python: command not found\` | Usá \`python3\` en vez de \`python\` |
-| \`pip: command not found\` | Usá \`pip3\` o \`python3 -m pip\` |
+| \`python: command not found\` | Usa \`python3\` en vez de \`python\` |
+| \`pip: command not found\` | Usa \`pip3\` o \`python3 -m pip\` |
 | Paquete no se encuentra después de instalarlo | ¿Activaste el venv? |
-| \`.env\` no se carga | Verificá que \`load_dotenv()\` se ejecute antes de \`os.getenv()\` |
-| Error de permisos al instalar | Nunca uses \`sudo pip\`. Usá venv |
+| \`.env\` no se carga | Verifica que \`load_dotenv()\` se ejecute antes de \`os.getenv()\` |
+| Error de permisos al instalar | Nunca uses \`sudo pip\`. Usa venv |
 
 ## Resumen
 
-Tu entorno de desarrollo está listo. Tenés Python 3.12, VS Code configurado, un entorno virtual aislado, los SDKs de las tres principales APIs de IA instalados, y tus API keys guardadas de forma segura en un archivo \`.env\`. En la próxima lección vamos a escribir tu primer script que se conecta a la API de OpenAI.
+Tu entorno de desarrollo esta listo. Tienes Python 3.12, VS Code configurado, un entorno virtual aislado, los SDKs de las tres principales APIs de IA instalados, y tus API keys guardadas de forma segura en un archivo \`.env\`. En la próxima lección vamos a escribir tu primer script que se conecta a la API de OpenAI.
 `;
 
 export const leccion3 = `
@@ -571,16 +571,16 @@ export const leccion3 = `
 
 ## Introducción
 
-Llegó el momento de escribir código que realmente habla con un modelo de inteligencia artificial. En esta lección vas a conectarte a la API de OpenAI, enviarle un prompt a GPT-4, y recibir una respuesta. Al final vas a tener un script completo y funcional que podés adaptar para cualquier caso de uso.
+Llegó el momento de escribir código que realmente habla con un modelo de inteligencia artificial. En esta lección vas a conectarte a la API de OpenAI, enviarle un prompt a GPT-4, y recibir una respuesta. Al final vas a tener un script completo y funcional que puedes adaptar para cualquier caso de uso.
 
 ## Paso 1: Obtener tu API key de OpenAI
 
-1. Andá a [platform.openai.com](https://platform.openai.com)
-2. Creá una cuenta o iniciá sesión
-3. Navegá a **API Keys** (Settings > API Keys)
-4. Hacé clic en **"Create new secret key"**
+1. Ve a [platform.openai.com](https://platform.openai.com)
+2. Crea una cuenta o inicia sesión
+3. Navega a **API Keys** (Settings > API Keys)
+4. Haz clic en **"Create new secret key"**
 5. Dale un nombre descriptivo (por ejemplo: "curso-ia-local")
-6. **Copiá la key inmediatamente** — no se vuelve a mostrar
+6. **Copia la key inmediatamente** — no se vuelve a mostrar
 7. Pegala en tu archivo \`.env\`:
 
 \`\`\`bash
@@ -589,7 +589,7 @@ OPENAI_API_KEY=sk-proj-abc123...tu-clave-aqui
 
 ### Sobre el billing
 
-OpenAI cobra por uso (tokens). Para este curso, el gasto total debería ser menor a $2 USD. Podés configurar un límite de gasto mensual en la sección de Billing. GPT-4o-mini es significativamente más barato que GPT-4o para practicar.
+OpenAI cobra por uso (tokens). Para este curso, el gasto total debería ser menor a $2 USD. Puedes configurar un límite de gasto mensual en la sección de Billing. GPT-4o-mini es significativamente más barato que GPT-4o para practicar.
 
 ## Paso 2: Entender la estructura de la API
 
@@ -626,7 +626,7 @@ client = OpenAI(
 mensajes = [
     {
         "role": "system",
-        "content": "Eres un asistente experto en tecnología. Respondés en español de Latinoamérica, de forma clara y concisa."
+        "content": "Eres un asistente experto en tecnología. Respondes en español de Latinoamérica, de forma clara y concisa."
     },
     {
         "role": "user",
@@ -670,7 +670,7 @@ respuesta = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
         {"role": "system", "content": "Eres un asistente útil."},
-        {"role": "user", "content": "Decime un dato curioso sobre Python."}
+        {"role": "user", "content": "Dime un dato curioso sobre Python."}
     ],
     temperature=0.7,
     max_tokens=300
@@ -689,7 +689,7 @@ print(f"\\nRespuesta:\\n{respuesta.choices[0].message.content}")
 
 ### Sobre los tokens
 
-Los tokens son las unidades que los modelos usan para procesar texto. Una regla general: **1 token ≈ 4 caracteres en inglés** y un poco menos en español. La API cobra por token, así que es importante entender cuántos usás.
+Los tokens son las unidades que los modelos usan para procesar texto. Una regla general: **1 token ≈ 4 caracteres en inglés** y un poco menos en español. La API cobra por token, así que es importante entender cuántos usas.
 
 ## Paso 5: Parámetros clave de la API
 
@@ -743,7 +743,7 @@ print(generar_respuesta(
 # Ejemplo 2: Respuesta creativa (temperatura alta)
 print("\\n=== Temperatura 1.2 (creativa) ===")
 print(generar_respuesta(
-    "Inventá un nombre para una startup de IA",
+    "Inventa un nombre para una startup de IA",
     temperatura=1.2
 ))
 
@@ -751,7 +751,7 @@ print(generar_respuesta(
 print("\\n=== Con system prompt personalizado ===")
 print(generar_respuesta(
     "¿Qué debería cenar?",
-    system_prompt="Eres un chef argentino. Respondé con humor y sugerí comidas típicas.",
+    system_prompt="Eres un chef mexicano. Responde con humor y sugiere comidas típicas.",
     temperatura=0.8
 ))
 \`\`\`
@@ -822,7 +822,7 @@ print(resultado)
 
 ## Paso 7: Conversación multi-turno
 
-Para mantener una conversación, simplemente seguís agregando mensajes a la lista:
+Para mantener una conversación, simplemente sigues agregando mensajes a la lista:
 
 \`\`\`python
 # 05_openai_conversacion.py
@@ -836,10 +836,10 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 def chatear():
     """Chat interactivo con GPT-4."""
     mensajes = [
-        {"role": "system", "content": "Eres un tutor amigable de programación. Respondé en español, de forma concisa."}
+        {"role": "system", "content": "Eres un tutor amigable de programación. Responde en español, de forma concisa."}
     ]
 
-    print("Chat con GPT-4 (escribí 'salir' para terminar)")
+    print("Chat con GPT-4 (escribe 'salir' para terminar)")
     print("-" * 50)
 
     while True:
@@ -883,7 +883,7 @@ if __name__ == "__main__":
 
 ## Resumen
 
-Ya sabés conectarte a la API de OpenAI, enviar mensajes, configurar parámetros, manejar errores con reintentos, y mantener conversaciones multi-turno. El patrón de lista de mensajes con roles es universal — lo vas a ver en todas las APIs de IA. En la próxima lección, vamos a hacer lo mismo pero con la API de Anthropic (Claude).
+Ya sabes conectarte a la API de OpenAI, enviar mensajes, configurar parámetros, manejar errores con reintentos, y mantener conversaciones multi-turno. El patrón de lista de mensajes con roles es universal — lo vas a ver en todas las APIs de IA. En la próxima lección, vamos a hacer lo mismo pero con la API de Anthropic (Claude).
 `;
 
 export const leccion4 = `
@@ -895,11 +895,11 @@ Anthropic es la empresa detrás de Claude, uno de los modelos de lenguaje más c
 
 ## Paso 1: Obtener tu API key de Anthropic
 
-1. Andá a [console.anthropic.com](https://console.anthropic.com)
-2. Creá una cuenta o iniciá sesión
-3. Navegá a **API Keys**
-4. Hacé clic en **"Create Key"**
-5. Copiá la key y guardala en tu archivo \`.env\`:
+1. Ve a [console.anthropic.com](https://console.anthropic.com)
+2. Crea una cuenta o inicia sesión
+3. Navega a **API Keys**
+4. Haz clic en **"Create Key"**
+5. Copia la key y guardala en tu archivo \`.env\`:
 
 \`\`\`bash
 ANTHROPIC_API_KEY=sk-ant-api03-tu-clave-aqui
@@ -907,7 +907,7 @@ ANTHROPIC_API_KEY=sk-ant-api03-tu-clave-aqui
 
 ### Sobre el billing
 
-Anthropic también cobra por tokens. Claude 3.5 Haiku es el modelo más económico para practicar. Cargá al menos $5 USD de créditos para empezar.
+Anthropic también cobra por tokens. Claude 3.5 Haiku es el modelo más económico para practicar. Carga al menos $5 USD de créditos para empezar.
 
 ## Paso 2: Diferencias clave entre la API de Anthropic y OpenAI
 
@@ -943,7 +943,7 @@ client = anthropic.Anthropic(
 respuesta = client.messages.create(
     model="claude-sonnet-4-20250514",
     max_tokens=500,
-    system="Eres un asistente experto en tecnología. Respondés en español de Latinoamérica, de forma clara y concisa.",
+    system="Eres un asistente experto en tecnología. Respondes en español de Latinoamérica, de forma clara y concisa.",
     messages=[
         {
             "role": "user",
@@ -980,7 +980,7 @@ respuesta = client.messages.create(
     max_tokens=300,
     system="Eres un asistente útil.",
     messages=[
-        {"role": "user", "content": "Decime un dato curioso sobre inteligencia artificial."}
+        {"role": "user", "content": "Dime un dato curioso sobre inteligencia artificial."}
     ]
 )
 
@@ -1063,13 +1063,13 @@ print(preguntar_a_claude("¿Qué es machine learning en una oración?"))
 print("\\n=== Con system prompt personalizado ===")
 print(preguntar_a_claude(
     "¿Qué debería aprender primero?",
-    system_prompt="Eres un mentor de carrera en tecnología. Respondé de forma directa y práctica.",
+    system_prompt="Eres un mentor de carrera en tecnología. Responde de forma directa y práctica.",
     temperatura=0.5
 ))
 
 print("\\n=== Usando Haiku (más rápido y barato) ===")
 print(preguntar_a_claude(
-    "Resumí qué es Python en 2 oraciones.",
+    "Resume qué es Python en 2 oraciones.",
     modelo="claude-3-5-haiku-20241022",
     max_tokens=200
 ))
@@ -1088,10 +1088,10 @@ client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
 def chatear_con_claude():
     """Chat interactivo con Claude."""
-    system_prompt = "Eres un tutor amigable de programación e IA. Respondé en español de forma concisa y práctica."
+    system_prompt = "Eres un tutor amigable de programación e IA. Responde en español de forma concisa y práctica."
     mensajes = []
 
-    print("Chat con Claude (escribí 'salir' para terminar)")
+    print("Chat con Claude (escribe 'salir' para terminar)")
     print("-" * 50)
 
     while True:
@@ -1139,8 +1139,8 @@ load_dotenv()
 openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 
-prompt = "Explicá qué es un transformer en deep learning. Máximo 3 oraciones."
-system = "Eres un experto en IA. Respondé en español de forma técnica pero accesible."
+prompt = "Explica qué es un transformer en deep learning. Máximo 3 oraciones."
+system = "Eres un experto en IA. Responde en español de forma técnica pero accesible."
 
 # Llamada a OpenAI
 resp_openai = openai_client.chat.completions.create(
@@ -1181,7 +1181,7 @@ print(f"Tokens: {resp_anthropic.usage.input_tokens + resp_anthropic.usage.output
 
 ## Resumen
 
-Ya sabés usar tanto la API de OpenAI como la de Anthropic. Las diferencias principales son: el system prompt se pasa como parámetro separado en Anthropic, \`max_tokens\` es obligatorio, y la respuesta usa content blocks. El patrón general es el mismo: armás una lista de mensajes, llamás a la API, y extraés el texto de la respuesta. En la próxima lección vamos a completar la trilogía con la API de Gemini de Google.
+Ya sabes usar tanto la API de OpenAI como la de Anthropic. Las diferencias principales son: el system prompt se pasa como parámetro separado en Anthropic, \`max_tokens\` es obligatorio, y la respuesta usa content blocks. El patrón general es el mismo: armás una lista de mensajes, llamás a la API, y extraes el texto de la respuesta. En la próxima lección vamos a completar la trilogía con la API de Gemini de Google.
 `;
 
 export const leccion5 = `
@@ -1193,11 +1193,11 @@ Google también tiene modelos de lenguaje de primera línea. Gemini (antes Bard)
 
 ## Paso 1: Obtener tu API key de Google
 
-1. Andá a [aistudio.google.com](https://aistudio.google.com)
-2. Iniciá sesión con tu cuenta de Google
-3. Hacé clic en **"Get API key"** en el panel izquierdo
-4. Seleccioná **"Create API key in new project"** o elegí un proyecto existente
-5. Copiá la key y guardala en tu archivo \`.env\`:
+1. Ve a [aistudio.google.com](https://aistudio.google.com)
+2. Inicia sesión con tu cuenta de Google
+3. Haz clic en **"Get API key"** en el panel izquierdo
+4. Selecciona **"Create API key in new project"** o elige un proyecto existente
+5. Copia la key y guardala en tu archivo \`.env\`:
 
 \`\`\`bash
 GOOGLE_API_KEY=AIzaSy...tu-clave-aqui
@@ -1205,7 +1205,7 @@ GOOGLE_API_KEY=AIzaSy...tu-clave-aqui
 
 ### Costo
 
-La API de Gemini tiene una capa gratuita generosa: Gemini 1.5 Flash permite hasta 15 requests por minuto gratis. Para practicar, no necesitás gastar nada.
+La API de Gemini tiene una capa gratuita generosa: Gemini 1.5 Flash permite hasta 15 requests por minuto gratis. Para practicar, no necesitas gastar nada.
 
 ## Paso 2: Diferencias con OpenAI y Anthropic
 
@@ -1235,7 +1235,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 # Crear el modelo
 modelo = genai.GenerativeModel(
     model_name="gemini-1.5-flash",
-    system_instruction="Eres un asistente experto en tecnología. Respondés en español de Latinoamérica, de forma clara y concisa."
+    system_instruction="Eres un asistente experto en tecnología. Respondes en español de Latinoamérica, de forma clara y concisa."
 )
 
 # Generar una respuesta
@@ -1267,7 +1267,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 modelo = genai.GenerativeModel("gemini-1.5-flash")
 
 respuesta = modelo.generate_content(
-    "Decime un dato curioso sobre inteligencia artificial."
+    "Dime un dato curioso sobre inteligencia artificial."
 )
 
 print("=== Respuesta completa ===")
@@ -1306,21 +1306,21 @@ config = GenerationConfig(
 modelo = genai.GenerativeModel(
     model_name="gemini-1.5-flash",
     generation_config=config,
-    system_instruction="Eres un experto en programación Python. Respondé en español."
+    system_instruction="Eres un experto en programación Python. Responde en español."
 )
 
 # Usar con la configuración
 respuesta = modelo.generate_content("¿Cuáles son las 3 estructuras de datos más importantes en Python?")
 print(respuesta.text)
 
-# También podés sobreescribir la configuración por llamada
+# También puedes sobreescribir la configuración por llamada
 config_creativa = GenerationConfig(
     temperature=1.0,
     max_output_tokens=200
 )
 
 respuesta_creativa = modelo.generate_content(
-    "Inventá un nombre para un lenguaje de programación del futuro.",
+    "Inventa un nombre para un lenguaje de programación del futuro.",
     generation_config=config_creativa
 )
 print(f"\\nRespuesta creativa: {respuesta_creativa.text}")
@@ -1341,14 +1341,14 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 modelo = genai.GenerativeModel(
     model_name="gemini-1.5-flash",
-    system_instruction="Eres un tutor amigable de programación e IA. Respondé en español de forma concisa."
+    system_instruction="Eres un tutor amigable de programación e IA. Responde en español de forma concisa."
 )
 
 # Iniciar un chat
 chat = modelo.start_chat(history=[])
 
 def chatear_con_gemini():
-    print("Chat con Gemini (escribí 'salir' para terminar)")
+    print("Chat con Gemini (escribe 'salir' para terminar)")
     print("-" * 50)
 
     while True:
@@ -1363,14 +1363,14 @@ def chatear_con_gemini():
 
         print(f"\\nGemini: {respuesta.text}")
 
-        # Podés ver el historial acumulado
+        # Puedes ver el historial acumulado
         print(f"  [mensajes en historial: {len(chat.history)}]")
 
 if __name__ == "__main__":
     chatear_con_gemini()
 \`\`\`
 
-Notá que \`chat.send_message()\` maneja el historial automáticamente. No necesitás mantener una lista de mensajes manualmente como en OpenAI y Anthropic.
+Nota que \`chat.send_message()\` maneja el historial automáticamente. No necesitas mantener una lista de mensajes manualmente como en OpenAI y Anthropic.
 
 ## Paso 7: Función reutilizable con manejo de errores
 
@@ -1454,7 +1454,7 @@ anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 prompt = "¿Qué es un embedding en IA? Máximo 3 oraciones."
-system = "Eres un experto en IA. Respondé en español de forma técnica pero accesible."
+system = "Eres un experto en IA. Responde en español de forma técnica pero accesible."
 
 # OpenAI
 r1 = openai_client.chat.completions.create(
@@ -1503,14 +1503,14 @@ export const leccion6 = `
 
 ## Introducción
 
-Cuando hacés una llamada normal a una API de IA, tenés que esperar a que el modelo genere **toda** la respuesta antes de recibirla. Esto puede significar esperar 5, 10 o hasta 30 segundos mirando una pantalla en blanco. El **streaming** resuelve esto: recibís la respuesta token por token, en tiempo real, mientras el modelo la genera. Es la diferencia entre ver un mensaje aparecer palabra por palabra (como en ChatGPT) o esperar una eternidad y recibir todo de golpe.
+Cuando haces una llamada normal a una API de IA, tienes que esperar a que el modelo genere **toda** la respuesta antes de recibirla. Esto puede significar esperar 5, 10 o hasta 30 segundos mirando una pantalla en blanco. El **streaming** resuelve esto: recibes la respuesta token por token, en tiempo real, mientras el modelo la genera. Es la diferencia entre ver un mensaje aparecer palabra por palabra (como en ChatGPT) o esperar una eternidad y recibir todo de golpe.
 
 ## ¿Por qué importa el streaming?
 
 ### Experiencia de usuario (UX)
 
 - **Sin streaming**: El usuario espera 8 segundos sin feedback → piensa que la app se colgó
-- **Con streaming**: El primer token aparece en ~200ms → el usuario ve que algo está pasando
+- **Con streaming**: El primer token aparece en ~200ms → el usuario ve que algo esta pasando
 
 ### Métricas clave
 
@@ -1521,7 +1521,7 @@ Cuando hacés una llamada normal a una API de IA, tenés que esperar a que el mo
 
 - **Siempre** en interfaces de chat
 - **Siempre** cuando la respuesta puede ser larga
-- **No necesario** cuando procesás la respuesta programáticamente (por ejemplo, extracción de datos)
+- **No necesario** cuando procesas la respuesta programáticamente (por ejemplo, extracción de datos)
 
 ## Streaming con OpenAI
 
@@ -1540,8 +1540,8 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 stream = client.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
-        {"role": "system", "content": "Eres un asistente útil. Respondé en español."},
-        {"role": "user", "content": "Explicá qué es el machine learning y sus 3 tipos principales."}
+        {"role": "system", "content": "Eres un asistente útil. Responde en español."},
+        {"role": "user", "content": "Explica qué es el machine learning y sus 3 tipos principales."}
     ],
     temperature=0.7,
     max_tokens=800,
@@ -1604,7 +1604,7 @@ async def main():
     print("=== Streaming async con OpenAI ===\\n")
     resultado = await stream_openai(
         "¿Cuáles son las 5 librerías de Python más usadas en data science?",
-        system="Eres un data scientist senior. Respondé en español."
+        system="Eres un data scientist senior. Responde en español."
     )
     print(f"\\n[Total: {len(resultado)} caracteres]")
 
@@ -1631,9 +1631,9 @@ respuesta_completa = ""
 with client.messages.stream(
     model="claude-sonnet-4-20250514",
     max_tokens=800,
-    system="Eres un asistente útil. Respondé en español.",
+    system="Eres un asistente útil. Responde en español.",
     messages=[
-        {"role": "user", "content": "Explicá qué es el machine learning y sus 3 tipos principales."}
+        {"role": "user", "content": "Explica qué es el machine learning y sus 3 tipos principales."}
     ],
     temperature=0.7
 ) as stream:
@@ -1699,7 +1699,7 @@ genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 
 modelo = genai.GenerativeModel(
     model_name="gemini-1.5-flash",
-    system_instruction="Eres un asistente útil. Respondé en español."
+    system_instruction="Eres un asistente útil. Responde en español."
 )
 
 # Gemini usa stream=True en generate_content
@@ -1707,7 +1707,7 @@ print("Gemini: ", end="", flush=True)
 respuesta_completa = ""
 
 respuesta = modelo.generate_content(
-    "Explicá qué es el machine learning y sus 3 tipos principales.",
+    "Explica qué es el machine learning y sus 3 tipos principales.",
     stream=True
 )
 
@@ -1779,17 +1779,17 @@ def stream_respuesta(mensajes: list, proveedor: str = "openai") -> str:
     return respuesta_completa
 
 def main():
-    proveedor = input("Elegí proveedor (openai/anthropic): ").strip().lower()
+    proveedor = input("Elige proveedor (openai/anthropic): ").strip().lower()
     if proveedor not in ["openai", "anthropic"]:
         proveedor = "openai"
 
     nombre = "GPT" if proveedor == "openai" else "Claude"
 
     mensajes = [
-        {"role": "system", "content": "Eres un tutor de programación. Respondé en español, de forma concisa."}
+        {"role": "system", "content": "Eres un tutor de programación. Responde en español, de forma concisa."}
     ]
 
-    print(f"\\nChat con {nombre} (streaming) — escribí 'salir' para terminar")
+    print(f"\\nChat con {nombre} (streaming) — escribe 'salir' para terminar")
     print("-" * 50)
 
     while True:
@@ -1812,7 +1812,7 @@ if __name__ == "__main__":
 
 ### Acumular la respuesta completa
 
-Siempre acumulá el texto durante el streaming. Lo vas a necesitar para guardar en historial:
+Siempre acumula el texto durante el streaming. Lo vas a necesitar para guardar en historial:
 
 \`\`\`python
 respuesta_completa = ""
@@ -1853,7 +1853,7 @@ def generar_con_streaming(
 
 ## Resumen
 
-El streaming transforma la experiencia de usuario de tus aplicaciones de IA. Los tres proveedores lo soportan con patrones similares: OpenAI usa iteración sobre chunks con \`delta.content\`, Anthropic usa un context manager con \`text_stream\`, y Gemini usa \`stream=True\` en \`generate_content()\`. Siempre acumulá la respuesta completa durante el streaming. En la próxima lección vamos a explorar embeddings, una de las tecnologías más poderosas detrás de las aplicaciones de IA.
+El streaming transforma la experiencia de usuario de tus aplicaciones de IA. Los tres proveedores lo soportan con patrones similares: OpenAI usa iteración sobre chunks con \`delta.content\`, Anthropic usa un context manager con \`text_stream\`, y Gemini usa \`stream=True\` en \`generate_content()\`. Siempre acumula la respuesta completa durante el streaming. En la próxima lección vamos a explorar embeddings, una de las tecnologías más poderosas detrás de las aplicaciones de IA.
 `;
 
 export const leccion7 = `
@@ -1871,7 +1871,7 @@ Un embedding es una **representación numérica del significado** de un texto. C
 
 ### La intuición
 
-Imaginá un espacio tridimensional (como una habitación). Ahora imaginá que cada palabra o frase ocupa un punto en ese espacio, de forma que **las cosas que significan algo parecido están cerca entre sí**:
+Imagina un espacio tridimensional (como una habitación). Ahora imagina que cada palabra o frase ocupa un punto en ese espacio, de forma que **las cosas que significan algo parecido están cerca entre sí**:
 
 - "perro" y "gato" estarían cerca (ambos son mascotas)
 - "perro" y "refrigerador" estarían lejos (no tienen relación semántica)
@@ -1891,16 +1891,16 @@ embedding_ejemplo = [0.0023, -0.0142, 0.0891, -0.0034, 0.0567, ...]
 ## ¿Para qué sirven?
 
 ### 1. Búsqueda semántica
-En vez de buscar por palabras exactas (como Google en 2005), buscás por **significado**. "¿Cómo cocinar pasta?" encuentra resultados sobre "receta de fideos" aunque no compartan ninguna palabra.
+En vez de buscar por palabras exactas (como Google en 2005), buscas por **significado**. "¿Cómo cocinar pasta?" encuentra resultados sobre "receta de fideos" aunque no compartan ninguna palabra.
 
 ### 2. RAG (Retrieval-Augmented Generation)
-Guardás tus documentos como embeddings en una base de datos vectorial. Cuando un usuario hace una pregunta, buscás los documentos más relevantes y se los pasás al modelo de lenguaje como contexto. Esto es lo que permite que un chatbot "conozca" información de tu empresa.
+Guardás tus documentos como embeddings en una base de datos vectorial. Cuando un usuario hace una pregunta, buscas los documentos más relevantes y se los pasas al modelo de lenguaje como contexto. Esto es lo que permite que un chatbot "conozca" información de tu empresa.
 
 ### 3. Detección de duplicados
 Si dos textos tienen embeddings muy similares, probablemente dicen lo mismo aunque usen palabras diferentes.
 
 ### 4. Clasificación
-Podés clasificar textos comparando su embedding contra embeddings de categorías predefinidas.
+Puedes clasificar textos comparando su embedding contra embeddings de categorías predefinidas.
 
 ### 5. Clustering
 Agrupar documentos similares automáticamente sin necesidad de etiquetas.
@@ -1950,7 +1950,7 @@ def generar_embedding(texto: str, modelo: str = "text-embedding-3-small") -> lis
 
 # Generar embeddings para diferentes textos
 textos = [
-    "El gato duerme en el sofá",
+    "El gato duerme en el sofa",
     "El felino descansa en el sillón",
     "Python es un lenguaje de programación",
     "Me gusta programar en Python",
@@ -2005,10 +2005,10 @@ def similitud_coseno(a, b):
 documentos = [
     "La política de vacaciones otorga 15 días hábiles al año para empleados con más de 1 año de antigüedad.",
     "El horario laboral es de lunes a viernes, de 9:00 a 18:00, con una hora de almuerzo.",
-    "Para solicitar un reembolso de gastos, completá el formulario RF-001 y adjuntá los comprobantes.",
+    "Para solicitar un reembolso de gastos, completa el formulario RF-001 y adjunta los comprobantes.",
     "La empresa ofrece capacitación en Python, machine learning y data science.",
     "El seguro médico cubre consultas, medicamentos y hospitalización para el titular y su familia.",
-    "Para trabajar de forma remota, necesitás la aprobación de tu líder directo y una conexión estable.",
+    "Para trabajar de forma remota, necesitas la aprobación de tu líder directo y una conexión estable.",
     "Las evaluaciones de desempeño se realizan cada 6 meses, en junio y diciembre.",
     "El plan de carrera incluye posiciones junior, semi-senior, senior y lead en cada área."
 ]
@@ -2093,15 +2093,15 @@ print(f"Dimensiones por embedding: {len(embeddings[0])}")
 
 ## Tips prácticos
 
-1. **Normalizá tus textos** antes de generar embeddings: eliminá caracteres extraños, normalizá espacios
-2. **Usá batch** siempre que puedas: es más eficiente y más barato
-3. **Guardá los embeddings**: no los regeneres cada vez (son determinísticos para el mismo input)
+1. **Normaliza tus textos** antes de generar embeddings: elimina caracteres extraños, normaliza espacios
+2. **Usa batch** siempre que puedas: es más eficiente y más barato
+3. **Guarda los embeddings**: no los regeneres cada vez (son determinísticos para el mismo input)
 4. **text-embedding-3-small** es suficiente para el 90% de los casos
-5. **Chunk size importa**: para documentos largos, dividí en chunks de 200-500 tokens
+5. **Chunk size importa**: para documentos largos, divide en chunks de 200-500 tokens
 
 ## Resumen
 
-Los embeddings convierten texto en vectores numéricos que capturan significado semántico. Usando similitud coseno, podés comparar qué tan parecidos son dos textos sin importar las palabras exactas que usen. Esto es la base de la búsqueda semántica y RAG. En la próxima lección vamos a aprender a guardar estos embeddings en bases de datos vectoriales para hacer búsquedas eficientes a escala.
+Los embeddings convierten texto en vectores numéricos que capturan significado semántico. Usando similitud coseno, puedes comparar qué tan parecidos son dos textos sin importar las palabras exactas que usen. Esto es la base de la búsqueda semántica y RAG. En la próxima lección vamos a aprender a guardar estos embeddings en bases de datos vectoriales para hacer búsquedas eficientes a escala.
 `;
 
 export const leccion8 = `
@@ -2109,7 +2109,7 @@ export const leccion8 = `
 
 ## Introducción
 
-En la lección anterior generamos embeddings y los buscamos iterando sobre una lista. Eso funciona para 10 o 100 documentos, pero ¿qué pasa cuando tenés 100,000 o 1,000,000? Necesitás una **base de datos vectorial**: una base de datos diseñada específicamente para almacenar vectores y buscar los más similares de forma eficiente.
+En la lección anterior generamos embeddings y los buscamos iterando sobre una lista. Eso funciona para 10 o 100 documentos, pero ¿qué pasa cuando tienes 100,000 o 1,000,000? Necesitas una **base de datos vectorial**: una base de datos diseñada específicamente para almacenar vectores y buscar los más similares de forma eficiente.
 
 ## ¿Qué es una base de datos vectorial?
 
@@ -2124,7 +2124,7 @@ Una base SQL puede guardar vectores, pero buscar por similitud requeriría calcu
 | Base de datos | Tipo | Ideal para |
 |---------------|------|------------|
 | **Chroma** | Embebida (local) | Prototipado, proyectos chicos |
-| **pgvector** | Extensión PostgreSQL | Producción, ya usás Postgres |
+| **pgvector** | Extensión PostgreSQL | Producción, ya usas Postgres |
 | **Pinecone** | Cloud (SaaS) | Escala masiva, sin ops |
 | **Weaviate** | Self-hosted / Cloud | Búsqueda avanzada |
 | **Qdrant** | Self-hosted / Cloud | Alto rendimiento |
@@ -2133,7 +2133,7 @@ En esta lección nos vamos a enfocar en **Chroma** (para empezar rápido localme
 
 ## ChromaDB: Setup y uso completo
 
-Chroma es la forma más fácil de empezar con bases de datos vectoriales. Se ejecuta localmente, no necesitás instalar un servidor separado, y se integra directamente en tu código Python.
+Chroma es la forma más fácil de empezar con bases de datos vectoriales. Se ejecuta localmente, no necesitas instalar un servidor separado, y se integra directamente en tu código Python.
 
 ### Instalación
 
@@ -2162,10 +2162,10 @@ coleccion.add(
     documents=[
         "La política de vacaciones otorga 15 días hábiles al año para empleados con más de 1 año.",
         "El horario laboral es de lunes a viernes, de 9:00 a 18:00.",
-        "Para solicitar reembolso de gastos, completá el formulario RF-001.",
+        "Para solicitar reembolso de gastos, completa el formulario RF-001.",
         "La empresa ofrece capacitación en Python, machine learning y data science.",
         "El seguro médico cubre consultas, medicamentos y hospitalización.",
-        "Para trabajar remoto, necesitás aprobación de tu líder directo.",
+        "Para trabajar remoto, necesitas aprobación de tu líder directo.",
         "Las evaluaciones de desempeño se realizan cada 6 meses.",
         "El plan de carrera incluye posiciones junior, semi-senior, senior y lead."
     ],
@@ -2199,10 +2199,10 @@ coleccion.add(
     documents=[
         "La política de vacaciones otorga 15 días hábiles al año.",
         "El horario laboral es de lunes a viernes, de 9:00 a 18:00.",
-        "Para reembolso de gastos, completá el formulario RF-001.",
+        "Para reembolso de gastos, completa el formulario RF-001.",
         "La empresa ofrece capacitación en Python y machine learning.",
         "El seguro médico cubre consultas y hospitalización.",
-        "Para trabajar remoto, necesitás aprobación del líder.",
+        "Para trabajar remoto, necesitas aprobación del líder.",
     ],
     ids=["d1", "d2", "d3", "d4", "d5", "d6"]
 )
@@ -2233,7 +2233,7 @@ client = chromadb.PersistentClient(path="./mi_chroma_db")
 # La primera vez: crear la colección y agregar datos
 coleccion = client.get_or_create_collection(name="knowledge_base")
 
-# Solo agregar si está vacía
+# Solo agregar si esta vacía
 if coleccion.count() == 0:
     coleccion.add(
         documents=[
@@ -2261,7 +2261,7 @@ for doc, dist in zip(resultados["documents"][0], resultados["distances"][0]):
 
 ### Usar embeddings de OpenAI con Chroma
 
-Por defecto, Chroma usa un modelo de embeddings local. Pero podés usar embeddings de OpenAI para mejor calidad:
+Por defecto, Chroma usa un modelo de embeddings local. Pero puedes usar embeddings de OpenAI para mejor calidad:
 
 \`\`\`python
 # 04_chroma_openai_embeddings.py
@@ -2308,7 +2308,7 @@ for doc, dist in zip(resultados["documents"][0], resultados["distances"][0]):
 
 ## pgvector: PostgreSQL como base vectorial
 
-Si ya usás PostgreSQL, pgvector te permite agregar capacidades de búsqueda vectorial sin un servicio adicional.
+Si ya usas PostgreSQL, pgvector te permite agregar capacidades de búsqueda vectorial sin un servicio adicional.
 
 ### Instalación
 
@@ -2440,7 +2440,7 @@ coleccion.add(
         "El plan profesional cuesta $50/mes e incluye consultas ilimitadas.",
         "Todos los planes incluyen soporte por email en horario laboral.",
         "El plan enterprise incluye soporte 24/7 y SLA garantizado.",
-        "Podés cancelar tu suscripción en cualquier momento sin penalidad."
+        "Puedes cancelar tu suscripción en cualquier momento sin penalidad."
     ],
     ids=["p1", "p2", "p3", "p4", "p5"]
 )
@@ -2457,8 +2457,8 @@ def responder_con_contexto(pregunta: str) -> str:
         messages=[
             {
                 "role": "system",
-                "content": f"""Respondé la pregunta del usuario usando SOLO la información del contexto proporcionado.
-Si la respuesta no está en el contexto, decí que no tenés esa información.
+                "content": f"""Responde la pregunta del usuario usando SOLO la información del contexto proporcionado.
+Si la respuesta no esta en el contexto, di que no tienes esa información.
 
 Contexto:
 {contexto}"""
@@ -2485,7 +2485,7 @@ for pregunta in preguntas:
 
 ## Resumen
 
-Las bases de datos vectoriales son el componente clave para construir aplicaciones de IA que accedan a información propia. ChromaDB es perfecta para empezar: se instala con pip, se ejecuta en memoria o persistente en disco, y se integra con embeddings de OpenAI. pgvector es la opción para producción si ya usás PostgreSQL. El patrón RAG — buscar contexto relevante y pasárselo al LLM — es la arquitectura más importante en aplicaciones de IA empresarial. En la próxima lección vamos a construir un chatbot completo con memoria.
+Las bases de datos vectoriales son el componente clave para construir aplicaciones de IA que accedan a información propia. ChromaDB es perfecta para empezar: se instala con pip, se ejecuta en memoria o persistente en disco, y se integra con embeddings de OpenAI. pgvector es la opción para producción si ya usas PostgreSQL. El patrón RAG — buscar contexto relevante y pasárselo al LLM — es la arquitectura más importante en aplicaciones de IA empresarial. En la próxima lección vamos a construir un chatbot completo con memoria.
 `;
 
 export const leccion9 = `
@@ -2496,13 +2496,13 @@ export const leccion9 = `
 Es hora de combinar todo lo que aprendimos. Vamos a construir un chatbot de línea de comandos con las siguientes capacidades:
 
 1. **Conversación multi-turno**: Recuerda todo lo que se habló en la sesión actual
-2. **System prompt configurable**: Podés cambiar la personalidad del bot
+2. **System prompt configurable**: Puedes cambiar la personalidad del bot
 3. **Streaming**: Las respuestas aparecen token por token
 4. **Soporte multi-proveedor**: Funciona con OpenAI o Anthropic
 5. **Historial de tokens**: Trackea el uso de tokens
 6. **Manejo de errores robusto**: Reintentos automáticos
 
-Este es un proyecto real que podés adaptar y extender.
+Este es un proyecto real que puedes adaptar y extender.
 
 ## Arquitectura del proyecto
 
@@ -2538,8 +2538,8 @@ class Config:
     max_historial: int = 50  # Máximo de mensajes en el historial
     system_prompt: str = (
         "Eres un asistente de IA amigable y útil. "
-        "Respondés en español de Latinoamérica, de forma clara y concisa. "
-        "Si no sabés algo, lo decís honestamente."
+        "Respondes en español de Latinoamérica, de forma clara y concisa. "
+        "Si no sabes algo, lo dices honestamente."
     )
 
 def cargar_config() -> Config:
@@ -2551,7 +2551,7 @@ def cargar_config() -> Config:
 
     if not config.openai_api_key and not config.anthropic_api_key:
         raise ValueError(
-            "Necesitás configurar al menos una API key en el archivo .env: "
+            "Necesitas configurar al menos una API key en el archivo .env: "
             "OPENAI_API_KEY o ANTHROPIC_API_KEY"
         )
 
@@ -2896,7 +2896,7 @@ def main():
     print("=" * 60)
     print("  Chatbot con Memoria")
     print(f"  Proveedor: {bot.provider.name} ({bot.provider.model})")
-    print("  Escribí /ayuda para ver los comandos disponibles")
+    print("  Escribe /ayuda para ver los comandos disponibles")
     print("=" * 60)
 
     while True:
@@ -2953,7 +2953,7 @@ def main():
                     continue
 
                 else:
-                    print(f"Comando desconocido: {comando}. Escribí /ayuda para ver los comandos.")
+                    print(f"Comando desconocido: {comando}. Escribe /ayuda para ver los comandos.")
                     continue
 
             # Procesar mensaje normal
@@ -2980,10 +2980,10 @@ cat .env
 # OPENAI_API_KEY=sk-proj-...
 # ANTHROPIC_API_KEY=sk-ant-...
 
-# 2. Activá tu entorno virtual
+# 2. Activa tu entorno virtual
 source venv/bin/activate
 
-# 3. Ejecutá
+# 3. Ejecuta
 python main.py
 \`\`\`
 
@@ -2993,26 +2993,26 @@ python main.py
 ============================================================
   Chatbot con Memoria
   Proveedor: OpenAI (gpt-4o-mini)
-  Escribí /ayuda para ver los comandos disponibles
+  Escribe /ayuda para ver los comandos disponibles
 ============================================================
 
-Vos: Hola, me llamo Carlos
+Tú: Hola, me llamo Carlos
 
 OpenAI: ¡Hola Carlos! ¿En qué puedo ayudarte hoy?
 
-Vos: ¿Te acordás cómo me llamo?
+Tú: ¿Te acuerdas cómo me llamo?
 
-OpenAI: ¡Por supuesto! Te llamás Carlos. ¿Qué necesitás?
+OpenAI: ¡Por supuesto! Te llamás Carlos. ¿Qué necesitas?
 
-Vos: /anthropic
+Tú: /anthropic
 Cambiado a Anthropic (claude-sonnet-4-20250514)
 
-Vos: ¿Seguís sabiendo mi nombre?
+Tú: ¿Sigues sabiendo mi nombre?
 
 Anthropic: Sí, te llamás Carlos. Aunque acabo de cambiar de modelo,
 el historial de nuestra conversación se mantiene.
 
-Vos: /stats
+Tú: /stats
 --- Estadísticas ---
 Proveedor: Anthropic (claude-sonnet-4-20250514)
 Turnos: 3
@@ -3020,7 +3020,7 @@ Mensajes en historial: 6
 Tokens acumulados: 847
 -------------------
 
-Vos: /salir
+Tú: /salir
 ¡Hasta luego!
 \`\`\`
 
@@ -3034,13 +3034,13 @@ Vos: /salir
 
 ## Resumen
 
-Construimos un chatbot completo con memoria, streaming, soporte multi-proveedor y una interfaz de línea de comandos con comandos útiles. La clave de la "memoria" es simplemente mantener una lista de mensajes y enviarla completa en cada llamada a la API. El historial crece con cada turno, por lo que es importante recortarlo cuando se vuelve muy largo. Este proyecto es una base sólida que podés extender para cualquier aplicación conversacional.
+Construimos un chatbot completo con memoria, streaming, soporte multi-proveedor y una interfaz de línea de comandos con comandos útiles. La clave de la "memoria" es simplemente mantener una lista de mensajes y enviarla completa en cada llamada a la API. El historial crece con cada turno, por lo que es importante recortarlo cuando se vuelve muy largo. Este proyecto es una base sólida que puedes extender para cualquier aplicación conversacional.
 `;
 
 export const leccion10 = `
 # Lección 10: Quiz final
 
-Evaluá tus conocimientos del curso con estas 10 preguntas de opción múltiple. Cada pregunta tiene una sola respuesta correcta.
+Evalúa tus conocimientos del curso con estas 10 preguntas de opción múltiple. Cada pregunta tiene una sola respuesta correcta.
 
 ---
 
@@ -3157,7 +3157,7 @@ b) Las bases de datos vectoriales son gratuitas mientras que las listas cuestan 
 c) Las bases de datos vectoriales usan índices especiales para buscar vecinos cercanos de forma eficiente, sin comparar contra cada vector
 d) Las bases de datos vectoriales pueden almacenar más tipos de datos
 
-**Respuesta correcta: c)** — Buscar en una lista requiere calcular la distancia contra cada elemento (O(n)). Las bases vectoriales usan estructuras como HNSW para hacer búsquedas aproximadas en O(log n), lo cual es crucial cuando tenés miles o millones de documentos.
+**Respuesta correcta: c)** — Buscar en una lista requiere calcular la distancia contra cada elemento (O(n)). Las bases vectoriales usan estructuras como HNSW para hacer búsquedas aproximadas en O(log n), lo cual es crucial cuando tienes miles o millones de documentos.
 
 ---
 
@@ -3168,7 +3168,7 @@ En un chatbot con memoria, ¿cómo se implementa la "memoria" de la conversació
 a) El modelo de IA guarda internamente el historial de cada usuario
 b) Se envía la lista completa de mensajes previos (user + assistant) en cada llamada a la API
 c) Se usa una base de datos vectorial para guardar cada mensaje
-d) Se usa un prompt especial que dice "recordá lo anterior"
+d) Se usa un prompt especial que dice "recuerda lo anterior"
 
 **Respuesta correcta: b)** — Los modelos de IA no tienen memoria entre llamadas. La "memoria" se implementa manteniendo una lista de todos los mensajes previos (tanto del usuario como del asistente) y enviándolos completos en cada nueva llamada a la API. Por eso es importante gestionar el tamaño del historial para no exceder el límite de tokens del modelo.
 `;

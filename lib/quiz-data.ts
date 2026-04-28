@@ -25,9 +25,9 @@ export const curso1Quiz: QuizQuestion[] = [
     question:
       "Cuál de estas es una funcion REAL de la IA en tu vida diaria?",
     options: [
-      "Leer tu mente para saber que queres comprar",
+      "Leer tu mente para saber que quieres comprar",
       "Filtrar los correos de spam en tu email",
-      "Tomar decisiones importantes por vos sin consultarte",
+      "Tomar decisiones importantes por ti sin consultarte",
       "Grabar todas tus conversaciones telefonicas",
     ],
     correctIndex: 1,
@@ -58,13 +58,13 @@ export const curso1Quiz: QuizQuestion[] = [
     question: 'Que es un "prompt"?',
     options: [
       "El nombre de un modelo de IA muy famoso",
-      "La instrucción o pregunta que vos le das a la IA",
+      "La instrucción o pregunta que tú le das a la IA",
       "Un error que comete la IA",
       "El boton para encender la IA",
     ],
     correctIndex: 1,
     explanation:
-      "Un prompt es lo que vos escribis o decis para comunicarte con la IA.",
+      "Un prompt es lo que tú escribes o dices para comunicarte con la IA.",
   },
   {
     question: "Cuál de estos NO es un ejemplo de IA en la vida cotidiana?",
@@ -397,7 +397,7 @@ export const curso7Quiz: QuizQuestion[] = [
     question: "¿Cuál de estas es una técnica core de prompting?",
     options: [
       "Escribir en mayúsculas para que la IA preste más atención",
-      "Dar ejemplos de lo que esperás como respuesta (few-shot)",
+      "Dar ejemplos de lo que esperas como respuesta (few-shot)",
       "Usar emojis para que la IA entienda el tono",
       "Repetir la pregunta varias veces en el mismo mensaje",
     ],
@@ -409,21 +409,21 @@ export const curso7Quiz: QuizQuestion[] = [
     question: "¿Qué es few-shot prompting?",
     options: [
       "Escribir prompts muy cortos de pocas palabras",
-      "Dar uno o más ejemplos del formato o resultado que esperás",
+      "Dar uno o más ejemplos del formato o resultado que esperas",
       "Disparar muchos prompts rápidamente",
       "Usar la IA solo para tareas pequeñas",
     ],
     correctIndex: 1,
     explanation:
-      "Few-shot prompting consiste en dar ejemplos para que la IA entienda el patrón que querés.",
+      "Few-shot prompting consiste en dar ejemplos para que la IA entienda el patrón que quieres.",
   },
   {
     question: "¿Qué frase activa el razonamiento paso a paso (chain-of-thought)?",
     options: [
-      "\"Respondé rápido\"",
-      "\"Pensá paso a paso antes de responder\"",
+      "\"Responde rápido\"",
+      "\"Piensa paso a paso antes de responder\"",
       "\"Sé creativo\"",
-      "\"Usá formato JSON\"",
+      "\"Usa formato JSON\"",
     ],
     correctIndex: 1,
     explanation:
@@ -439,19 +439,19 @@ export const curso7Quiz: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Asignar un rol (\"Actuá como nutricionista\") enfoca las respuestas en ese dominio y tono.",
+      "Asignar un rol (\"Actúa como nutricionista\") enfoca las respuestas en ese dominio y tono.",
   },
   {
     question: "¿Cuándo es útil pedir la respuesta en formato JSON?",
     options: [
       "Siempre, porque JSON es más bonito",
-      "Cuando necesitás datos estructurados para usar en otra herramienta",
+      "Cuando necesitas datos estructurados para usar en otra herramienta",
       "Solo cuando programás en JavaScript",
       "Nunca, la IA no puede generar JSON",
     ],
     correctIndex: 1,
     explanation:
-      "JSON es ideal cuando necesitás datos estructurados que vas a procesar después.",
+      "JSON es ideal cuando necesitas datos estructurados que vas a procesar después.",
   },
   {
     question: "¿Cuál es la diferencia entre system prompt y user prompt?",
@@ -505,7 +505,7 @@ export const curso7Quiz: QuizQuestion[] = [
     question: "¿Cuándo conviene empezar un prompt desde cero en vez de iterar?",
     options: [
       "Siempre, cada intento debe ser independiente",
-      "Cuando el enfoque fundamental está equivocado y los ajustes menores no mejoran",
+      "Cuando el enfoque fundamental esta equivocado y los ajustes menores no mejoran",
       "Nunca, siempre hay que iterar sobre lo existente",
       "Después de exactamente 3 intentos fallidos",
     ],
@@ -517,7 +517,7 @@ export const curso7Quiz: QuizQuestion[] = [
 
 export const curso8Quiz: QuizQuestion[] = [
   {
-    question: "¿Qué puede hacer la IA con un PDF que le subís?",
+    question: "¿Qué puede hacer la IA con un PDF que le subes?",
     options: [
       "Editarlo y devolverte una versión modificada",
       "Leerlo, resumirlo, responder preguntas sobre su contenido",
@@ -568,7 +568,7 @@ export const curso8Quiz: QuizQuestion[] = [
     question: "¿Qué son los 'Proyectos' en Claude?",
     options: [
       "Una carpeta para guardar imágenes",
-      "Un espacio donde podés subir documentos de contexto e instrucciones persistentes",
+      "Un espacio donde puedes subir documentos de contexto e instrucciones persistentes",
       "Un plan de suscripción premium",
       "Un tipo de prompt especial",
     ],
@@ -577,7 +577,7 @@ export const curso8Quiz: QuizQuestion[] = [
       "Los Proyectos de Claude permiten subir documentos y definir instrucciones que persisten entre conversaciones.",
   },
   {
-    question: "¿Qué precaución debés tener al subir documentos a la IA?",
+    question: "¿Qué precaución debes tener al subir documentos a la IA?",
     options: [
       "No subir documentos de más de 1 página",
       "No subir documentos confidenciales o con datos personales sensibles",
@@ -589,7 +589,7 @@ export const curso8Quiz: QuizQuestion[] = [
       "Nunca subas documentos con datos confidenciales, financieros o personales sensibles a la IA.",
   },
   {
-    question: "¿Qué pasa si subís múltiples archivos en una conversación?",
+    question: "¿Qué pasa si subes múltiples archivos en una conversación?",
     options: [
       "La IA solo lee el último",
       "La IA puede cruzar información entre ellos y responder preguntas comparativas",
@@ -622,7 +622,7 @@ export const curso8Quiz: QuizQuestion[] = [
     ],
     correctIndex: 1,
     explanation:
-      "Siempre verificá manualmente campos clave y pedile a la IA que haga doble checking.",
+      "Siempre verifica manualmente campos clave y pedile a la IA que haga doble checking.",
   },
   {
     question: "¿Cuál es la ventaja principal de trabajar con proyectos en vez de chats sueltos?",
@@ -664,7 +664,7 @@ export const curso9Quiz: QuizQuestion[] = [
       "Los tokens son fragmentos de texto (partes de palabras) que la IA usa como unidad de procesamiento.",
   },
   {
-    question: "¿Qué pasa cuando excedés la ventana de contexto?",
+    question: "¿Qué pasa cuando excedes la ventana de contexto?",
     options: [
       "La IA se apaga",
       "La IA empieza a \"olvidar\" la información del inicio de la conversación",

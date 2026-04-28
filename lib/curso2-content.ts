@@ -39,7 +39,7 @@ Piensa en ellos como **asistentes personales que estan disponibles las 24 horas 
 
 ## Cuál debo usar?
 
-**Cualquiera de los tres está bien para empezar.** Es como elegir entre tres cafeterias buenas: cada una tiene su estilo, pero en las tres te van a atender bien. Recomendamos empezar con **ChatGPT** o **Gemini** (si ya tienes Gmail).
+**Cualquiera de los tres esta bien para empezar.** Es como elegir entre tres cafeterias buenas: cada una tiene su estilo, pero en las tres te van a atender bien. Recomendamos empezar con **ChatGPT** o **Gemini** (si ya tienes Gmail).
 
 ## Lo que NO son estos asistentes
 
@@ -56,7 +56,7 @@ Piensa en ellos como **asistentes personales que estan disponibles las 24 horas 
 
 export const c2leccion2 = `## Introducción
 
-Vamos a crear tu primera cuenta. Te guio paso a paso, como si estuvieramos sentados juntos frente a la computadora. **Elige UNO** para empezar.
+Vamos a crear tu primera cuenta. Te guio paso a paso, como si estuviéramos sentados juntos frente a la computadora. **Elige UNO** para empezar.
 
 ## Opción A: Crear cuenta en ChatGPT
 
@@ -87,9 +87,9 @@ Vamos a crear tu primera cuenta. Te guio paso a paso, como si estuvieramos senta
 
 ## Consejos importantes
 
-- **Apunta tu contraseña en un lugar seguro.** Anotala en un cuaderno que guardes en casa.
+- **Apunta tu contraseña en un lugar seguro.** Anótala en un cuaderno que guardes en casa.
 - **No compartas tu cuenta.** Tu cuenta es personal.
-- **Si algo no funciona**, cierra el navegador, abrelo de nuevo y vuelve a intentar.
+- **Si algo no funciona**, cierra el navegador, ábrelo de nuevo y vuelve a intentar.
 
 ## Resumen
 
@@ -220,7 +220,7 @@ export const c2leccion5 = `Cada ejemplo incluye texto exacto que puedes **copiar
 > Ayudame a escribir un correo formal para mi jefe. Quiero pedirle permiso para faltar el viernes porque tengo una cita médica. Mi jefe se llama Roberto. Quiero sonar respetuoso pero directo.
 
 **Para mejorar un correo existente:**
-> Revisa este correo y mejoralo para que suene más profesional: "Hola Roberto necesito el viernes libre por médico gracias"
+> Revisa este correo y mejóralo para que suene más profesional: "Hola Roberto necesito el viernes libre por médico gracias"
 
 ## Cosa 2: Pedir una receta con lo que tienes
 

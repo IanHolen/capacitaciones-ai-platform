@@ -7,8 +7,8 @@ Hasta ahora usaste IA a través de interfaces web — chatgpt.com, claude.ai, ge
 
 ### La analogía del restaurante
 
-Imaginá que vas a un restaurante:
-- **Vos** (el cliente) querés comer algo
+Imagina que vas a un restaurante:
+- **Tú** (el cliente) quieres comer algo
 - **La cocina** tiene todo lo necesario para preparar la comida
 - **El mozo** es quien lleva tu pedido a la cocina y te trae el plato
 
@@ -25,18 +25,18 @@ Imaginá que vas a un restaurante:
 | Integración | No | Se integra con cualquier sistema |
 | Costo | Plan mensual fijo | Pagás por uso |
 
-### ¿Cuándo necesitás una API?
+### ¿Cuándo necesitas una API?
 
-- Querés que tu app o sitio web use IA
-- Necesitás procesar muchos datos automáticamente
-- Querés personalizar completamente la experiencia
-- Querés integrar IA en herramientas que ya tenés
+- Quieres que tu app o sitio web use IA
+- Necesitas procesar muchos datos automáticamente
+- Quieres personalizar completamente la experiencia
+- Quieres integrar IA en herramientas que ya tienes
 
 ### ¿Cómo funciona técnicamente?
 
 Sin entrar en código (todavía), así es el flujo:
 
-1. **Tu programa** manda una solicitud a la API: "Resumí este texto en 2 oraciones"
+1. **Tu programa** manda una solicitud a la API: "Resume este texto en 2 oraciones"
 2. **La API** recibe la solicitud y se la pasa al modelo de IA
 3. **El modelo** procesa y genera la respuesta
 4. **La API** te devuelve la respuesta: "Este texto habla sobre..."
@@ -54,11 +54,11 @@ Todo esto pasa en segundos, automáticamente, sin que nadie tenga que abrir un c
 
 ### Términos que vas a necesitar
 
-- **Request** (solicitud): Lo que le mandás a la API
+- **Request** (solicitud): Lo que le mandas a la API
 - **Response** (respuesta): Lo que la API te devuelve
 - **Endpoint**: La dirección web de la API (como una URL)
 - **API Key**: Tu llave de acceso (como un password)
-- **Rate limit**: El máximo de solicitudes que podés hacer por minuto
+- **Rate limit**: El máximo de solicitudes que puedes hacer por minuto
 - **Token**: Unidad de texto que procesa la IA (1 token ≈ 0.75 palabras)
 
 ### Para llevar
@@ -70,7 +70,7 @@ Todo esto pasa en segundos, automáticamente, sin que nadie tenga que abrir un c
 
 export const c12leccion2 = `## API Keys: qué son y cómo protegerlas
 
-Una **API Key** es como la llave de tu casa digital. Sin ella, no podés acceder a la API. Con ella, cualquiera puede usar tu cuenta y gastar tu crédito.
+Una **API Key** es como la llave de tu casa digital. Sin ella, no puedes acceder a la API. Con ella, cualquiera puede usar tu cuenta y gastar tu crédito.
 
 ### ¿Qué es una API Key?
 
@@ -80,32 +80,32 @@ Es un código largo y único que te identifica ante el servicio de IA. Se ve alg
 sk-proj-abc123def456ghi789jkl012mno345pqr678
 \`\`\`
 
-Cada vez que tu programa hace una solicitud a la API, incluye esta llave para que el servicio sepa que sos vos (y te cobre a vos).
+Cada vez que tu programa hace una solicitud a la API, incluye esta llave para que el servicio sepa que eres tú (y te cobre a ti).
 
 ### Cómo obtener tu API Key
 
 **OpenAI (GPT-4, GPT-4o-mini):**
-1. Andá a **platform.openai.com**
-2. Creá una cuenta o iniciá sesión
-3. Andá a **API Keys** en el menú
-4. Hacé clic en **"Create new secret key"**
-5. Copiá la llave inmediatamente (solo se muestra una vez)
-6. Agregá crédito (mínimo $5 para empezar)
+1. Ve a **platform.openai.com**
+2. Crea una cuenta o inicia sesión
+3. Ve a **API Keys** en el menú
+4. Haz clic en **"Create new secret key"**
+5. Copia la llave inmediatamente (solo se muestra una vez)
+6. Agrega crédito (mínimo $5 para empezar)
 
 **Google Gemini:**
-1. Andá a **aistudio.google.com**
-2. Iniciá sesión con tu cuenta de Google
-3. Hacé clic en **"Get API Key"**
-4. Seleccioná o creá un proyecto de Google Cloud
-5. Copiá tu API Key
+1. Ve a **aistudio.google.com**
+2. Inicia sesión con tu cuenta de Google
+3. Haz clic en **"Get API Key"**
+4. Selecciona o crea un proyecto de Google Cloud
+5. Copia tu API Key
 6. Tiene un tier gratuito generoso (1,500 requests/día para Flash)
 
 **Groq:**
-1. Andá a **console.groq.com**
-2. Creá una cuenta
-3. Andá a **API Keys**
-4. Creá una nueva llave
-5. Copiá la llave
+1. Ve a **console.groq.com**
+2. Crea una cuenta
+3. Ve a **API Keys**
+4. Crea una nueva llave
+5. Copia la llave
 6. Plan gratuito con 14,400 requests/día
 
 ### Reglas de oro para proteger tu API Key
@@ -115,7 +115,7 @@ Cada vez que tu programa hace una solicitud a la API, incluye esta llave para qu
 - No la pegues en un chat o foro
 - No la envíes por email sin encriptar
 
-**2. Usá variables de entorno**
+**2. Usa variables de entorno**
 En vez de poner la llave directamente en el código:
 
 ❌ Mal:
@@ -130,22 +130,22 @@ OPENAI_API_KEY=sk-proj-abc123...
 
 Y en tu código leés la variable de entorno.
 
-**3. Configurá límites de gasto**
+**3. Configura límites de gasto**
 - OpenAI: Settings → Billing → Usage limits
 - Google: Console → Quotas
-- Establecé un límite mensual (ej: $10) para evitar sorpresas
+- Establece un límite mensual (ej: $10) para evitar sorpresas
 
-**4. Rotá las llaves periódicamente**
-- Cada 3-6 meses, creá una nueva llave y eliminá la vieja
+**4. Rota las llaves periódicamente**
+- Cada 3-6 meses, crea una nueva llave y elimina la vieja
 - Si sospechás que se filtró, cambiala inmediatamente
 
-**5. Usá llaves diferentes para cada proyecto**
+**5. Usa llaves diferentes para cada proyecto**
 - Una llave para pruebas, otra para producción
 - Si una se compromete, no afecta todo
 
 ### ¿Qué pasa si alguien roba tu API Key?
 
-- Puede hacer solicitudes a la API y vos pagás
+- Puede hacer solicitudes a la API y tú pagás
 - En el peor caso, puede acumular miles de dólares en cargos
 - Por eso es crucial configurar límites de gasto
 
@@ -153,7 +153,7 @@ Y en tu código leés la variable de entorno.
 
 - La API Key es tu credencial de acceso — tratala como una contraseña
 - Nunca la pongas directamente en código visible
-- Siempre configurá límites de gasto
+- Siempre configura límites de gasto
 - Gemini y Groq ofrecen tiers gratuitos generosos para empezar`;
 
 export const c12leccion3 = `## Tu primera llamada a la API de Gemini
@@ -165,26 +165,26 @@ Vamos a hacer tu primera llamada a una API de IA. Elegimos **Google Gemini** por
 
 ### Paso 1: Obtener tu API Key de Gemini
 
-1. Andá a **aistudio.google.com**
-2. Iniciá sesión con tu cuenta de Google
-3. Hacé clic en **"Get API Key"** → **"Create API Key"**
-4. Copiá la llave y guardala en un lugar seguro
+1. Ve a **aistudio.google.com**
+2. Inicia sesión con tu cuenta de Google
+3. Haz clic en **"Get API Key"** → **"Create API Key"**
+4. Copia la llave y guardala en un lugar seguro
 
 ### Paso 2: Tu primera llamada (sin programar)
 
-Antes de escribir código, podés probar la API directamente desde Google AI Studio:
+Antes de escribir código, puedes probar la API directamente desde Google AI Studio:
 
-1. En **aistudio.google.com**, abrí el **"Freeform prompt"**
-2. Escribí: "Explicá qué es una API en 3 oraciones simples"
-3. Hacé clic en **"Run"**
+1. En **aistudio.google.com**, abre el **"Freeform prompt"**
+2. Escribe: "Explica qué es una API en 3 oraciones simples"
+3. Haz clic en **"Run"**
 4. ¡Listo! Acabás de hacer tu primera llamada a la API de Gemini
 
 ### Paso 3: Primera llamada con código (JavaScript)
 
-Creá un archivo \`mi-primera-api.js\`:
+Crea un archivo \`mi-primera-api.js\`:
 
 \`\`\`javascript
-// Instalá el SDK: npm install @google/generative-ai
+// Instala el SDK: npm install @google/generative-ai
 
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 
@@ -193,7 +193,7 @@ const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash-lite" });
 
 async function main() {
   const result = await model.generateContent(
-    "Explicá qué es una API en 3 oraciones simples, en español."
+    "Explica qué es una API en 3 oraciones simples, en español."
   );
   console.log(result.response.text());
 }
@@ -202,15 +202,15 @@ main();
 \`\`\`
 
 **Para ejecutarlo:**
-1. Tené Node.js instalado
-2. Ejecutá: \`npm install @google/generative-ai\`
-3. Reemplazá "TU_API_KEY_ACA" con tu llave real
-4. Ejecutá: \`node mi-primera-api.js\`
+1. Ten Node.js instalado
+2. Ejecuta: \`npm install @google/generative-ai\`
+3. Reemplaza "TU_API_KEY_ACA" con tu llave real
+4. Ejecuta: \`node mi-primera-api.js\`
 
 ### Paso 4: Primera llamada con Python
 
 \`\`\`python
-# Instalá: pip install google-generativeai
+# Instala: pip install google-generativeai
 
 import google.generativeai as genai
 
@@ -218,14 +218,14 @@ genai.configure(api_key="TU_API_KEY_ACA")
 model = genai.GenerativeModel("gemini-2.0-flash-lite")
 
 response = model.generate_content(
-    "Explicá qué es una API en 3 oraciones simples, en español."
+    "Explica qué es una API en 3 oraciones simples, en español."
 )
 print(response.text)
 \`\`\`
 
 ### Usando el formato OpenAI-compatible
 
-Gemini también soporta el formato de la API de OpenAI, lo que significa que podés usar el mismo código para ambos:
+Gemini también soporta el formato de la API de OpenAI, lo que significa que puedes usar el mismo código para ambos:
 
 \`\`\`javascript
 const OpenAI = require("openai");
@@ -239,7 +239,7 @@ async function main() {
   const response = await client.chat.completions.create({
     model: "gemini-2.0-flash-lite",
     messages: [
-      { role: "user", content: "Explicá qué es una API en 3 oraciones simples." }
+      { role: "user", content: "Explica qué es una API en 3 oraciones simples." }
     ]
   });
   console.log(response.choices[0].message.content);
@@ -304,7 +304,7 @@ async function main() {
   const response = await client.chat.completions.create({
     model: "llama-3.1-8b-instant",
     messages: [
-      { role: "system", content: "Respondé en español LATAM, de forma breve." },
+      { role: "system", content: "Responde en español LATAM, de forma breve." },
       { role: "user", content: "¿Qué ventajas tiene una API sobre una interfaz web?" }
     ]
   });
@@ -331,7 +331,7 @@ Vas a ver que la respuesta llega en menos de 500ms — a veces menos de 200ms.
 
 ### Ejemplo práctico: Chatbot ultra-rápido
 
-Con Groq podés crear un chatbot que responde tan rápido que parece que está escribiendo en tiempo real. Ideal para:
+Con Groq puedes crear un chatbot que responde tan rápido que parece que esta escribiendo en tiempo real. Ideal para:
 
 - **Atención al cliente**: Respuestas instantáneas
 - **Tutor educativo**: Sin esperas que frustren al estudiante
@@ -346,12 +346,12 @@ Con Groq podés crear un chatbot que responde tan rápido que parece que está e
 
 export const c12leccion5 = `## Costos: ¿cuánto cuesta realmente usar APIs?
 
-Una de las mayores preocupaciones al usar APIs de IA es el costo. La buena noticia: **es mucho más barato de lo que pensás**. La mala noticia: si no tenés cuidado, puede escalar.
+Una de las mayores preocupaciones al usar APIs de IA es el costo. La buena noticia: **es mucho más barato de lo que pensás**. La mala noticia: si no tienes cuidado, puede escalar.
 
 ### Cómo se cobra
 
 Las APIs de IA cobran por **tokens procesados**:
-- **Tokens de entrada** (input): Lo que vos le mandás al modelo
+- **Tokens de entrada** (input): Lo que tú le mandas al modelo
 - **Tokens de salida** (output): Lo que el modelo te responde
 - 1 token ≈ 0.75 palabras en español
 
@@ -393,28 +393,28 @@ Las APIs de IA cobran por **tokens procesados**:
 
 ### Estrategias para reducir costos
 
-**1. Elegí el modelo correcto**
+**1. Elige el modelo correcto**
 - No uses GPT-4o para tareas simples — GPT-4o-mini hace lo mismo a 1/15 del precio
 - Gemini Flash-Lite es ideal para clasificación y respuestas cortas
 
-**2. Optimizá los prompts**
+**2. Optimiza los prompts**
 - Prompts más cortos = menos tokens de entrada = menos costo
-- Pedí respuestas concisas: "Respondé en máximo 3 oraciones"
+- Pide respuestas concisas: "Responde en máximo 3 oraciones"
 
-**3. Usá caché**
-- Si muchas personas hacen la misma pregunta, guardá la respuesta
-- La próxima vez, devolvé la respuesta guardada sin llamar a la API
+**3. Usa caché**
+- Si muchas personas hacen la misma pregunta, guarda la respuesta
+- La próxima vez, devuelve la respuesta guardada sin llamar a la API
 
-**4. Configurá límites**
-- Establecé un presupuesto máximo mensual
-- Configurá alertas cuando llegués al 80% del límite
+**4. Configura límites**
+- Establece un presupuesto máximo mensual
+- Configura alertas cuando llegues al 80% del límite
 
 ### Para llevar
 
 - Las APIs de IA son sorprendentemente económicas para la mayoría de los usos
-- Empezá con tiers gratuitos — son más que suficientes para aprender
-- Elegí el modelo según la tarea, no el más caro
-- Siempre configurá límites de gasto para evitar sorpresas`;
+- Empieza con tiers gratuitos — son más que suficientes para aprender
+- Elige el modelo según la tarea, no el más caro
+- Siempre configura límites de gasto para evitar sorpresas`;
 
 export const c12leccion6 = `## Embeber un chatbot en una página web
 
@@ -425,11 +425,11 @@ El paso final: poner tu asistente de IA en tu propia página web para que tus cl
 La forma más rápida de tener un chatbot en tu web:
 
 **Chatbase (chatbase.co)**
-1. Creá una cuenta
-2. Subí tus documentos o conectá tu sitio web
-3. Personalizá el aspecto (colores, logo, mensaje de bienvenida)
-4. Copiá el código del widget
-5. Pegá el código antes del cierre \`</body>\` de tu HTML
+1. Crea una cuenta
+2. Sube tus documentos o conecta tu sitio web
+3. Personaliza el aspecto (colores, logo, mensaje de bienvenida)
+4. Copia el código del widget
+5. Pega el código antes del cierre \`</body>\` de tu HTML
 
 El código se ve algo así:
 \`\`\`html
@@ -448,7 +448,7 @@ El código se ve algo así:
 
 ### Opción 2: API + tu propia interfaz
 
-Si querés control total, podés crear tu propia interfaz de chat y conectarla a la API:
+Si quieres control total, puedes crear tu propia interfaz de chat y conectarla a la API:
 
 **Arquitectura básica:**
 \`\`\`
@@ -471,7 +471,7 @@ export async function POST(request: Request) {
   const response = await client.chat.completions.create({
     model: "gemini-2.0-flash-lite",
     messages: [
-      { role: "system", content: "Sos el asistente virtual de Mi Tienda. Respondé en español, de forma breve y amable." },
+      { role: "system", content: "Eres el asistente virtual de Mi Tienda. Responde en español, de forma breve y amable." },
       { role: "user", content: message }
     ]
   });
@@ -486,31 +486,31 @@ export async function POST(request: Request) {
 
 ### Opción 3: Streaming (respuesta en tiempo real)
 
-En vez de esperar a que toda la respuesta esté lista, podés mostrarla palabra por palabra (como hace ChatGPT):
+En vez de esperar a que toda la respuesta esté lista, puedes mostrarla palabra por palabra (como hace ChatGPT):
 
-Esto requiere un poco más de configuración pero mejora mucho la experiencia del usuario. Usás el parámetro \`stream: true\` en la llamada a la API y procesás los chunks a medida que llegan.
+Esto requiere un poco más de configuración pero mejora mucho la experiencia del usuario. Usas el parámetro \`stream: true\` en la llamada a la API y procesas los chunks a medida que llegan.
 
 ### Consideraciones para producción
 
 **Seguridad:**
 - La API Key SIEMPRE va en el servidor, nunca en el frontend
-- Validá y limpiá el input del usuario
-- Implementá rate limiting (máximo X requests por usuario por minuto)
+- Valida y limpia el input del usuario
+- Implementa rate limiting (máximo X requests por usuario por minuto)
 
 **Experiencia del usuario:**
-- Mostrá un indicador de "escribiendo..." mientras la IA responde
-- Manejá errores graciosamente: "Disculpá, no pude procesar tu consulta. ¿Podés intentar de nuevo?"
-- Agregá un botón de "Nueva conversación"
+- Muestra un indicador de "escribiendo..." mientras la IA responde
+- Maneja errores graciosamente: "Disculpa, no pude procesar tu consulta. ¿Puedes intentar de nuevo?"
+- Agrega un botón de "Nueva conversación"
 
 **Legal:**
-- Avisá que el chat usa IA
-- Incluí un disclaimer: "Las respuestas son generadas por IA y pueden contener errores"
+- Avisa que el chat usa IA
+- Incluye un disclaimer: "Las respuestas son generadas por IA y pueden contener errores"
 - Cumplí con las regulaciones de privacidad de tu país
 
 ### Para llevar
 
 - Widgets sin código como Chatbase son la forma más rápida de empezar
-- Para más control, usá la API con tu propia interfaz
+- Para más control, usa la API con tu propia interfaz
 - La API Key SIEMPRE va en el servidor, nunca en el código del frontend
 - Streaming mejora la experiencia del usuario significativamente`;
 
@@ -552,7 +552,7 @@ c) En el nombre de dominio
 d) En el título de la página
 
 **Respuesta correcta: b)**
-La API Key siempre debe estar en el servidor. Si está en el frontend, cualquiera puede verla y usarla.
+La API Key siempre debe estar en el servidor. Si esta en el frontend, cualquiera puede verla y usarla.
 
 ---
 
@@ -571,9 +571,9 @@ Groq usa hardware LPU especializado que permite respuestas en milisegundos, much
 ### Pregunta 5
 **¿Qué significa que Gemini y Groq son "OpenAI-compatible"?**
 a) Que son de la misma empresa
-b) Que podés usar el mismo código cambiando solo la URL y la API Key
+b) Que puedes usar el mismo código cambiando solo la URL y la API Key
 c) Que son idénticos a ChatGPT
-d) Que necesitás una cuenta de OpenAI
+d) Que necesitas una cuenta de OpenAI
 
 **Respuesta correcta: b)**
 El formato OpenAI-compatible permite reutilizar el mismo código — solo cambiás la URL base y la API Key para cambiar de proveedor.
@@ -629,23 +629,23 @@ Widgets como Chatbase permiten agregar un chatbot a tu web copiando y pegando un
 ---
 
 ### Pregunta 10
-**Si tu API Key se filtra accidentalmente, ¿qué debés hacer?**
+**Si tu API Key se filtra accidentalmente, ¿qué debes hacer?**
 a) Esperar a ver si alguien la usa
 b) Revocar la llave inmediatamente y crear una nueva
 c) No pasa nada, las API Keys no son importantes
 d) Cambiar el nombre de tu proyecto
 
 **Respuesta correcta: b)**
-Si una API Key se filtra, debés revocarla inmediatamente desde el panel del proveedor y generar una nueva.
+Si una API Key se filtra, debes revocarla inmediatamente desde el panel del proveedor y generar una nueva.
 
 ---
 
 ### ¿Cómo te fue?
 
 - **8-10 correctas**: Excelente. Estás listo para integrar APIs de IA en tus proyectos.
-- **5-7 correctas**: Bien. Repasá las lecciones donde tuviste dudas.
-- **Menos de 5**: Volvé a leer las lecciones con calma.
+- **5-7 correctas**: Bien. Repasa las lecciones donde tuviste dudas.
+- **Menos de 5**: Vuelve a leer las lecciones con calma.
 
 ### ¡Felicitaciones por completar el Nivel Avanzado!
 
-Ahora sabés crear asistentes personalizados, automatizar tareas con IA, y usar APIs para integrar IA en tus propios proyectos. En el **Nivel Pro** vas a aprender sobre agentes autónomos, RAG avanzado y arquitectura de sistemas con IA.`;
+Ahora sabes crear asistentes personalizados, automatizar tareas con IA, y usar APIs para integrar IA en tus propios proyectos. En el **Nivel Pro** vas a aprender sobre agentes autónomos, RAG avanzado y arquitectura de sistemas con IA.`;

@@ -432,7 +432,7 @@ export default function CuentaPage() {
             </CardHeader>
             <CardContent>
               <p className="mb-4 text-base text-muted-foreground">
-                Escribí qué querés lograr aprendiendo IA. Tener una meta clara
+                Escribe qué quieres lograr aprendiendo IA. Tener una meta clara
                 te va a ayudar a mantener la motivación.
               </p>
               <textarea

@@ -22,13 +22,13 @@ const audienceItems = [
     icon: Users,
     title: "Cualquier persona curiosa",
     description:
-      "Si tenés ganas de entender qué es la IA y cómo puede ayudarte, este es tu lugar.",
+      "Si tienes ganas de entender qué es la IA y cómo puede ayudarte, este es tu lugar.",
   },
   {
     icon: Brain,
     title: "Profesionales que quieren mejorar",
     description:
-      "Aprendé a usar IA para ser más productivo en tu trabajo, sin importar tu área.",
+      "Aprende a usar IA para ser más productivo en tu trabajo, sin importar tu área.",
   },
   {
     icon: HeadphonesIcon,
@@ -47,9 +47,9 @@ const audienceItems = [
 const features = [
   "5 niveles: desde cero hasta profesional",
   "15 cursos con más de 110 lecciones",
-  "Lecciones con texto y audio (escuchá cada lección)",
+  "Lecciones con texto y audio (escucha cada lección)",
   "Quizzes interactivos para medir tu avance",
-  "Progreso guardado — continuá donde lo dejaste",
+  "Progreso guardado — continúa donde lo dejaste",
   "Todo completamente gratis",
 ];
 
@@ -139,8 +139,8 @@ export default function AboutPage() {
               ¿Necesito saber algo de tecnología?
             </h2>
             <p className="text-xl leading-relaxed text-muted-foreground">
-              <strong>No.</strong> Empezamos desde lo más básico. Si sabés
-              escribir un mensaje de WhatsApp, ya tenés todo lo que necesitás para
+              <strong>No.</strong> Empezamos desde lo más básico. Si sabes
+              escribir un mensaje de WhatsApp, ya tienes todo lo que necesitas para
               empezar. Nuestras lecciones están escritas con un lenguaje cálido y
               sin tecnicismos, con analogías de la vida cotidiana.
             </p>
@@ -155,7 +155,7 @@ export default function AboutPage() {
           style={{ backgroundColor: "#1E40AF" }}
         >
           <Sparkles className="mb-4 size-12" aria-hidden="true" />
-          <h2 className="text-3xl font-bold">Comenzá gratis</h2>
+          <h2 className="text-3xl font-bold">Comienza gratis</h2>
           <p className="mt-4 max-w-lg text-lg text-blue-100">
             No hay nada que perder y mucho que ganar. Tu primer curso te espera.
           </p>

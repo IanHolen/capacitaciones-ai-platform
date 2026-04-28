@@ -143,7 +143,7 @@ export const cursos: Curso[] = [
       {
         id: "que-es-ia-1",
         titulo: "Que es la Inteligencia Artificial",
-        descripcion: "Descubri que es la IA con una analogía simple: cocinar.",
+        descripcion: "Descubre que es la IA con una analogía simple: cocinar.",
         duracion: "20 min",
         contenido: leccion1,
         tieneVideo: true,
@@ -152,7 +152,7 @@ export const cursos: Curso[] = [
       {
         id: "que-es-ia-2",
         titulo: "La IA en tu vida diaria",
-        descripcion: "Descubri donde se esconde la IA en tu día a dia.",
+        descripcion: "Descubre donde se esconde la IA en tu día a dia.",
         duracion: "20 min",
         contenido: leccion2,
         tieneVideo: true,
@@ -348,26 +348,26 @@ export const cursos: Curso[] = [
     ],
   },
   // === NIVEL BÁSICO ===
-  { id: "domina-chatgpt-claude-gemini", titulo: "Dominá ChatGPT, Claude y Gemini", descripcion: "Conocé a fondo las diferencias, interfaces y funciones de los tres asistentes de IA más populares.", nivel: "básico", duracion: "5 horas", lecciones: [
+  { id: "domina-chatgpt-claude-gemini", titulo: "Domina ChatGPT, Claude y Gemini", descripcion: "Conoce a fondo las diferencias, interfaces y funciones de los tres asistentes de IA más populares.", nivel: "básico", duracion: "5 horas", lecciones: [
     { id: "dcg-1", titulo: "Diferencias reales entre ChatGPT, Claude y Gemini", descripcion: "Comparativa profunda de los tres asistentes.", duracion: "20 min", contenido: c4leccion1, tieneVideo: true, tieneQuiz: false },
     { id: "dcg-2", titulo: "Interfaz y funciones de ChatGPT", descripcion: "Tour completo por la interfaz de ChatGPT.", duracion: "20 min", contenido: c4leccion2, tieneVideo: true, tieneQuiz: false },
     { id: "dcg-3", titulo: "Interfaz y funciones de Claude", descripcion: "Artifacts, Projects y documentos largos.", duracion: "20 min", contenido: c4leccion3, tieneVideo: true, tieneQuiz: false },
     { id: "dcg-4", titulo: "Interfaz y funciones de Gemini", descripcion: "Extensiones de Google y verificación.", duracion: "20 min", contenido: c4leccion4, tieneVideo: true, tieneQuiz: false },
-    { id: "dcg-5", titulo: "Apps móviles y modo voz", descripcion: "Usá IA desde tu celular y con tu voz.", duracion: "15 min", contenido: c4leccion5, tieneVideo: true, tieneQuiz: false },
+    { id: "dcg-5", titulo: "Apps móviles y modo voz", descripcion: "Usa IA desde tu celular y con tu voz.", duracion: "15 min", contenido: c4leccion5, tieneVideo: true, tieneQuiz: false },
     { id: "dcg-6", titulo: "Perplexity: buscador con IA", descripcion: "Búsquedas con fuentes verificables.", duracion: "15 min", contenido: c4leccion6, tieneVideo: true, tieneQuiz: false },
     { id: "dcg-7", titulo: "Cuándo usar cuál herramienta", descripcion: "Guía práctica por situación.", duracion: "15 min", contenido: c4leccion7, tieneVideo: false, tieneQuiz: false },
-    { id: "dcg-8", titulo: "Quiz: Dominá las herramientas", descripcion: "10 preguntas sobre las herramientas.", duracion: "15 min", contenido: c4leccion8, tieneVideo: false, tieneQuiz: true },
+    { id: "dcg-8", titulo: "Quiz: Domina las herramientas", descripcion: "10 preguntas sobre las herramientas.", duracion: "15 min", contenido: c4leccion8, tieneVideo: false, tieneQuiz: true },
   ] },
-  { id: "prompts-efectivos", titulo: "Prompts efectivos", descripcion: "Dominá el arte de escribir prompts que obtienen exactamente los resultados que necesitás.", nivel: "básico", duracion: "5 horas", lecciones: [
+  { id: "prompts-efectivos", titulo: "Prompts efectivos", descripcion: "Domina el arte de escribir prompts que obtienen exactamente los resultados que necesitas.", nivel: "básico", duracion: "5 horas", lecciones: [
     { id: "pef-1", titulo: "Anatomía de un buen prompt", descripcion: "La fórmula ROL + TAREA + CONTEXTO + FORMATO.", duracion: "20 min", contenido: c5leccion1, tieneVideo: true, tieneQuiz: false },
-    { id: "pef-2", titulo: "Dar contexto: la clave", descripcion: "Transformá respuestas genéricas en personalizadas.", duracion: "20 min", contenido: c5leccion2, tieneVideo: true, tieneQuiz: false },
+    { id: "pef-2", titulo: "Dar contexto: la clave", descripcion: "Transforma respuestas genéricas en personalizadas.", duracion: "20 min", contenido: c5leccion2, tieneVideo: true, tieneQuiz: false },
     { id: "pef-3", titulo: "Ser específico vs. ser vago", descripcion: "6 formas de ser más específico.", duracion: "20 min", contenido: c5leccion3, tieneVideo: true, tieneQuiz: false },
     { id: "pef-4", titulo: "Pedir correcciones y mejoras", descripcion: "La conversación iterativa con IA.", duracion: "20 min", contenido: c5leccion4, tieneVideo: true, tieneQuiz: false },
     { id: "pef-5", titulo: "Prompts para diferentes situaciones", descripcion: "Colección de prompts listos para usar.", duracion: "20 min", contenido: c5leccion5, tieneVideo: false, tieneQuiz: false },
-    { id: "pef-6", titulo: "Ejercicio: transformá 5 prompts", descripcion: "Práctica: de prompt malo a excelente.", duracion: "20 min", contenido: c5leccion6, tieneVideo: false, tieneQuiz: false },
+    { id: "pef-6", titulo: "Ejercicio: transforma 5 prompts", descripcion: "Práctica: de prompt malo a excelente.", duracion: "20 min", contenido: c5leccion6, tieneVideo: false, tieneQuiz: false },
     { id: "pef-7", titulo: "Quiz: Prompts efectivos", descripcion: "10 preguntas sobre prompting.", duracion: "15 min", contenido: c5leccion7, tieneVideo: false, tieneQuiz: true },
   ] },
-  { id: "ia-vida-cotidiana", titulo: "IA en tu vida cotidiana", descripcion: "Usá IA para escribir correos, cocinar, viajar, ayudar con tareas escolares y mucho más.", nivel: "básico", duracion: "5 horas", lecciones: [
+  { id: "ia-vida-cotidiana", titulo: "IA en tu vida cotidiana", descripcion: "Usa IA para escribir correos, cocinar, viajar, ayudar con tareas escolares y mucho más.", nivel: "básico", duracion: "5 horas", lecciones: [
     { id: "ivc-1", titulo: "Escribir emails y mensajes", descripcion: "Desde cero, mejorar existentes y adaptar tono.", duracion: "20 min", contenido: c6leccion1, tieneVideo: true, tieneQuiz: false },
     { id: "ivc-2", titulo: "Recetas y planificación de comidas", descripcion: "Recetas personalizadas y menús semanales.", duracion: "20 min", contenido: c6leccion2, tieneVideo: true, tieneQuiz: false },
     { id: "ivc-3", titulo: "Planear viajes e itinerarios", descripcion: "Itinerarios, presupuestos y checklists.", duracion: "20 min", contenido: c6leccion3, tieneVideo: true, tieneQuiz: false },
@@ -377,7 +377,7 @@ export const cursos: Curso[] = [
     { id: "ivc-7", titulo: "Quiz: IA en la vida cotidiana", descripcion: "Cierre del Nivel Básico.", duracion: "15 min", contenido: c6leccion7, tieneVideo: false, tieneQuiz: true },
   ] },
   // === NIVEL INTERMEDIO ===
-  { id: "prompt-engineering", titulo: "Prompt Engineering: el arte de preguntar", descripcion: "Dominá las técnicas avanzadas de prompting para obtener resultados profesionales de la IA.", nivel: "intermedio", duracion: "6 horas", lecciones: [
+  { id: "prompt-engineering", titulo: "Prompt Engineering: el arte de preguntar", descripcion: "Domina las técnicas avanzadas de prompting para obtener resultados profesionales de la IA.", nivel: "intermedio", duracion: "6 horas", lecciones: [
     { id: "pe-1", titulo: "Las 5 técnicas core de prompting", descripcion: "Fundamentos del prompt engineering.", duracion: "25 min", contenido: c7leccion1, tieneVideo: true, tieneQuiz: false },
     { id: "pe-2", titulo: "Few-shot learning: enseñar con ejemplos", descripcion: "Cómo dar ejemplos para guiar a la IA.", duracion: "25 min", contenido: c7leccion2, tieneVideo: true, tieneQuiz: false },
     { id: "pe-3", titulo: "Chain-of-thought: pensar paso a paso", descripcion: "Hacer que la IA razone paso a paso.", duracion: "25 min", contenido: c7leccion3, tieneVideo: true, tieneQuiz: false },
@@ -385,27 +385,27 @@ export const cursos: Curso[] = [
     { id: "pe-5", titulo: "Usar estructura: XML, markdown y JSON", descripcion: "Formatos estructurados para mejores resultados.", duracion: "25 min", contenido: c7leccion5, tieneVideo: true, tieneQuiz: false },
     { id: "pe-6", titulo: "System prompts vs user prompts", descripcion: "Diferencias y cuándo usar cada uno.", duracion: "20 min", contenido: c7leccion6, tieneVideo: true, tieneQuiz: false },
     { id: "pe-7", titulo: "Iteración y refinamiento", descripcion: "Mejorar prompts iterativamente.", duracion: "20 min", contenido: c7leccion7, tieneVideo: true, tieneQuiz: false },
-    { id: "pe-8", titulo: "Quiz: Prompt Engineering", descripcion: "Poné a prueba tus habilidades.", duracion: "15 min", contenido: c7leccion8, tieneVideo: false, tieneQuiz: true, quizQuestions: curso7Quiz },
+    { id: "pe-8", titulo: "Quiz: Prompt Engineering", descripcion: "Pon a prueba tus habilidades.", duracion: "15 min", contenido: c7leccion8, tieneVideo: false, tieneQuiz: true, quizQuestions: curso7Quiz },
   ] },
-  { id: "documentos-imagenes", titulo: "Trabaja con documentos e imágenes", descripcion: "Aprendé a analizar PDFs, imágenes y tablas con herramientas de IA.", nivel: "intermedio", duracion: "5 horas", lecciones: [
+  { id: "documentos-imagenes", titulo: "Trabaja con documentos e imágenes", descripcion: "Aprende a analizar PDFs, imágenes y tablas con herramientas de IA.", nivel: "intermedio", duracion: "5 horas", lecciones: [
     { id: "di-1", titulo: "Subir PDFs y analizarlos con IA", descripcion: "Análisis de documentos PDF.", duracion: "25 min", contenido: c8leccion1, tieneVideo: true, tieneQuiz: false },
     { id: "di-2", titulo: "Resumir documentos largos", descripcion: "Técnicas para resumir textos extensos.", duracion: "25 min", contenido: c8leccion2, tieneVideo: true, tieneQuiz: false },
     { id: "di-3", titulo: "Analizar imágenes con IA", descripcion: "Visión por computadora al alcance de todos.", duracion: "25 min", contenido: c8leccion3, tieneVideo: true, tieneQuiz: false },
     { id: "di-4", titulo: "Extraer datos de tablas y facturas", descripcion: "Extracción automática de datos.", duracion: "25 min", contenido: c8leccion4, tieneVideo: true, tieneQuiz: false },
     { id: "di-5", titulo: "Proyectos con múltiples archivos", descripcion: "Trabajar con conjuntos de documentos.", duracion: "25 min", contenido: c8leccion5, tieneVideo: true, tieneQuiz: false },
-    { id: "di-6", titulo: "Quiz: Documentos e imágenes", descripcion: "Evaluá lo aprendido.", duracion: "15 min", contenido: c8leccion6, tieneVideo: false, tieneQuiz: true, quizQuestions: curso8Quiz },
+    { id: "di-6", titulo: "Quiz: Documentos e imágenes", descripcion: "Evalúa lo aprendido.", duracion: "15 min", contenido: c8leccion6, tieneVideo: false, tieneQuiz: true, quizQuestions: curso8Quiz },
   ] },
-  { id: "flujos-trabajo-ia", titulo: "Flujos de trabajo con IA", descripcion: "Creá flujos completos combinando múltiples técnicas de IA para proyectos reales.", nivel: "intermedio", duracion: "6 horas", lecciones: [
+  { id: "flujos-trabajo-ia", titulo: "Flujos de trabajo con IA", descripcion: "Crea flujos completos combinando múltiples técnicas de IA para proyectos reales.", nivel: "intermedio", duracion: "6 horas", lecciones: [
     { id: "ft-1", titulo: "Prompt chaining: dividir en pasos", descripcion: "Encadenar prompts para tareas complejas.", duracion: "25 min", contenido: c9leccion1, tieneVideo: true, tieneQuiz: false },
     { id: "ft-2", titulo: "Memoria y proyectos en ChatGPT/Claude", descripcion: "Usar memoria y proyectos.", duracion: "25 min", contenido: c9leccion2, tieneVideo: true, tieneQuiz: false },
     { id: "ft-3", titulo: "Tokens y ventanas de contexto", descripcion: "Entender los límites de la IA.", duracion: "20 min", contenido: c9leccion3, tieneVideo: true, tieneQuiz: false },
     { id: "ft-4", titulo: "Evaluaciones de prompts", descripcion: "Cómo saber si un prompt es bueno.", duracion: "20 min", contenido: c9leccion4, tieneVideo: true, tieneQuiz: false },
-    { id: "ft-5", titulo: "Tu biblioteca personal de prompts", descripcion: "Organizá y reutilizá tus mejores prompts.", duracion: "20 min", contenido: c9leccion5, tieneVideo: true, tieneQuiz: false },
+    { id: "ft-5", titulo: "Tu biblioteca personal de prompts", descripcion: "Organiza y reutiliza tus mejores prompts.", duracion: "20 min", contenido: c9leccion5, tieneVideo: true, tieneQuiz: false },
     { id: "ft-6", titulo: "Proyecto: flujo de trabajo completo", descripcion: "Proyecto práctico integrador.", duracion: "30 min", contenido: c9leccion6, tieneVideo: true, tieneQuiz: false },
     { id: "ft-7", titulo: "Quiz final: Flujos de trabajo", descripcion: "Evaluación del nivel intermedio.", duracion: "15 min", contenido: c9leccion7, tieneVideo: false, tieneQuiz: true, quizQuestions: curso9Quiz },
   ] },
   // === NIVEL AVANZADO ===
-  { id: "asistente-ia-propio", titulo: "Creá tu propio asistente de IA", descripcion: "Construí asistentes personalizados con Custom GPTs, Claude Projects y bases de conocimiento.", nivel: "avanzado", duracion: "8 horas", lecciones: [
+  { id: "asistente-ia-propio", titulo: "Crea tu propio asistente de IA", descripcion: "Construye asistentes personalizados con Custom GPTs, Claude Projects y bases de conocimiento.", nivel: "avanzado", duracion: "8 horas", lecciones: [
     { id: "ap-1", titulo: "Custom GPTs y Claude Projects", descripcion: "Qué son y para qué sirven.", duracion: "25 min", contenido: c10leccion1, tieneVideo: true, tieneQuiz: false },
     { id: "ap-2", titulo: "Crear tu primer Custom GPT", descripcion: "Paso a paso desde cero.", duracion: "30 min", contenido: c10leccion2, tieneVideo: true, tieneQuiz: false },
     { id: "ap-3", titulo: "Instrucciones personalizadas", descripcion: "Configurar comportamiento del asistente.", duracion: "25 min", contenido: c10leccion3, tieneVideo: true, tieneQuiz: false },
@@ -413,28 +413,28 @@ export const cursos: Curso[] = [
     { id: "ap-5", titulo: "Conectar a datos reales (RAG básico)", descripcion: "Introducción a RAG.", duracion: "30 min", contenido: c10leccion5, tieneVideo: true, tieneQuiz: false },
     { id: "ap-6", titulo: "Probar y mejorar tu asistente", descripcion: "Testing y optimización.", duracion: "25 min", contenido: c10leccion6, tieneVideo: true, tieneQuiz: false },
     { id: "ap-7", titulo: "Compartir tu asistente", descripcion: "Publicar y distribuir.", duracion: "20 min", contenido: c10leccion7, tieneVideo: true, tieneQuiz: false },
-    { id: "ap-8", titulo: "Quiz: Asistentes de IA", descripcion: "Evaluá lo aprendido.", duracion: "15 min", contenido: c10leccion8, tieneVideo: false, tieneQuiz: true },
+    { id: "ap-8", titulo: "Quiz: Asistentes de IA", descripcion: "Evalúa lo aprendido.", duracion: "15 min", contenido: c10leccion8, tieneVideo: false, tieneQuiz: true },
   ] },
-  { id: "automatiza-con-ia", titulo: "Automatizá con IA", descripcion: "Creá flujos automatizados con Zapier, Make, n8n y vibe coding.", nivel: "avanzado", duracion: "7 horas", lecciones: [
+  { id: "automatiza-con-ia", titulo: "Automatiza con IA", descripcion: "Crea flujos automatizados con Zapier, Make, n8n y vibe coding.", nivel: "avanzado", duracion: "7 horas", lecciones: [
     { id: "aut-1", titulo: "Qué es la automatización", descripcion: "Fundamentos de automatización.", duracion: "20 min", contenido: c11leccion1, tieneVideo: true, tieneQuiz: false },
     { id: "aut-2", titulo: "Zapier + IA: tu primer flujo", descripcion: "Automatización con Zapier.", duracion: "30 min", contenido: c11leccion2, tieneVideo: true, tieneQuiz: false },
     { id: "aut-3", titulo: "Make/n8n: alternativas potentes", descripcion: "Herramientas avanzadas.", duracion: "25 min", contenido: c11leccion3, tieneVideo: true, tieneQuiz: false },
     { id: "aut-4", titulo: "Automatizar emails y respuestas", descripcion: "Email automation con IA.", duracion: "25 min", contenido: c11leccion4, tieneVideo: true, tieneQuiz: false },
     { id: "aut-5", titulo: "Automatizar resúmenes y reportes", descripcion: "Reportes automáticos.", duracion: "25 min", contenido: c11leccion5, tieneVideo: true, tieneQuiz: false },
     { id: "aut-6", titulo: "Vibe coding: describir apps en español", descripcion: "Crear apps en lenguaje natural.", duracion: "30 min", contenido: c11leccion6, tieneVideo: true, tieneQuiz: false },
-    { id: "aut-7", titulo: "Quiz: Automatización con IA", descripcion: "Evaluá lo aprendido.", duracion: "15 min", contenido: c11leccion7, tieneVideo: false, tieneQuiz: true },
+    { id: "aut-7", titulo: "Quiz: Automatización con IA", descripcion: "Evalúa lo aprendido.", duracion: "15 min", contenido: c11leccion7, tieneVideo: false, tieneQuiz: true },
   ] },
-  { id: "apis-ia", titulo: "Introducción a las APIs de IA", descripcion: "Entendé qué son las APIs, cómo usarlas y cómo embeber IA en tus proyectos.", nivel: "avanzado", duracion: "7 horas", lecciones: [
+  { id: "apis-ia", titulo: "Introducción a las APIs de IA", descripcion: "Entiende qué son las APIs, cómo usarlas y cómo embeber IA en tus proyectos.", nivel: "avanzado", duracion: "7 horas", lecciones: [
     { id: "api-1", titulo: "Qué es una API (explicado simple)", descripcion: "Fundamentos de APIs.", duracion: "20 min", contenido: c12leccion1, tieneVideo: true, tieneQuiz: false },
     { id: "api-2", titulo: "API Keys: qué son y cómo protegerlas", descripcion: "Seguridad de API keys.", duracion: "20 min", contenido: c12leccion2, tieneVideo: true, tieneQuiz: false },
     { id: "api-3", titulo: "Tu primera llamada a la API de Gemini", descripcion: "Hands-on con Gemini API.", duracion: "30 min", contenido: c12leccion3, tieneVideo: true, tieneQuiz: false },
     { id: "api-4", titulo: "API de Groq para respuestas rápidas", descripcion: "IA rápida con Groq.", duracion: "25 min", contenido: c12leccion4, tieneVideo: true, tieneQuiz: false },
     { id: "api-5", titulo: "Costos: cuánto cuesta usar APIs", descripcion: "Entender precios y tokens.", duracion: "20 min", contenido: c12leccion5, tieneVideo: true, tieneQuiz: false },
     { id: "api-6", titulo: "Embeber un chatbot en una web", descripcion: "Integrar IA en sitios web.", duracion: "30 min", contenido: c12leccion6, tieneVideo: true, tieneQuiz: false },
-    { id: "api-7", titulo: "Quiz: APIs de IA", descripcion: "Evaluá lo aprendido.", duracion: "15 min", contenido: c12leccion7, tieneVideo: false, tieneQuiz: true },
+    { id: "api-7", titulo: "Quiz: APIs de IA", descripcion: "Evalúa lo aprendido.", duracion: "15 min", contenido: c12leccion7, tieneVideo: false, tieneQuiz: true },
   ] },
   // === NIVEL PRO ===
-  { id: "programacion-con-ia", titulo: "Programación con IA: de cero a tu primera app", descripcion: "Aprendé Python básico y construí tu primera aplicación con inteligencia artificial.", nivel: "pro", duracion: "12 horas", lecciones: [
+  { id: "programacion-con-ia", titulo: "Programación con IA: de cero a tu primera app", descripcion: "Aprende Python básico y construye tu primera aplicación con inteligencia artificial.", nivel: "pro", duracion: "12 horas", lecciones: [
     { id: "prog-1", titulo: "Python básico para IA", descripcion: "Tu primer programa en Python.", duracion: "30 min", contenido: c13l1, tieneVideo: true, tieneQuiz: false },
     { id: "prog-2", titulo: "Variables, listas y funciones", descripcion: "Estructuras básicas de Python.", duracion: "30 min", contenido: c13l2, tieneVideo: true, tieneQuiz: false },
     { id: "prog-3", titulo: "Tu primera app con Streamlit", descripcion: "Interfaces web rápidas.", duracion: "30 min", contenido: c13l3, tieneVideo: true, tieneQuiz: false },
@@ -444,19 +444,19 @@ export const cursos: Curso[] = [
     { id: "prog-7", titulo: "Web scraping básico con IA", descripcion: "Extraer datos de la web.", duracion: "25 min", contenido: c13l7, tieneVideo: true, tieneQuiz: false },
     { id: "prog-8", titulo: "Git y GitHub para tus proyectos", descripcion: "Control de versiones.", duracion: "25 min", contenido: c13l8, tieneVideo: true, tieneQuiz: false },
     { id: "prog-9", titulo: "Deploy: publicar tu app gratis", descripcion: "Deployment en la nube.", duracion: "25 min", contenido: c13l9, tieneVideo: true, tieneQuiz: false },
-    { id: "prog-10", titulo: "Proyecto final: app completa", descripcion: "Construí tu app de IA.", duracion: "45 min", contenido: c13l10, tieneVideo: true, tieneQuiz: true },
+    { id: "prog-10", titulo: "Proyecto final: app completa", descripcion: "Construye tu app de IA.", duracion: "45 min", contenido: c13l10, tieneVideo: true, tieneQuiz: true },
   ] },
-  { id: "rag-busqueda-inteligente", titulo: "RAG y búsqueda inteligente", descripcion: "Implementá Retrieval-Augmented Generation para crear sistemas de búsqueda sobre tus datos.", nivel: "pro", duracion: "10 horas", lecciones: [
+  { id: "rag-busqueda-inteligente", titulo: "RAG y búsqueda inteligente", descripcion: "Implementa Retrieval-Augmented Generation para crear sistemas de búsqueda sobre tus datos.", nivel: "pro", duracion: "10 horas", lecciones: [
     { id: "rag-1", titulo: "Qué es RAG y por qué revolucionó la IA", descripcion: "Fundamentos de RAG.", duracion: "25 min", contenido: c14l1, tieneVideo: true, tieneQuiz: false },
     { id: "rag-2", titulo: "Pipeline: documento → embeddings → búsqueda", descripcion: "El pipeline completo.", duracion: "30 min", contenido: c14l2, tieneVideo: true, tieneQuiz: false },
     { id: "rag-3", titulo: "Implementar RAG con LangChain", descripcion: "Hands-on con LangChain.", duracion: "35 min", contenido: c14l3, tieneVideo: true, tieneQuiz: false },
     { id: "rag-4", titulo: "RAG sobre tus propios PDFs", descripcion: "Búsqueda inteligente en documentos.", duracion: "30 min", contenido: c14l4, tieneVideo: true, tieneQuiz: false },
     { id: "rag-5", titulo: "Optimizar calidad de respuestas", descripcion: "Mejorar la precisión del RAG.", duracion: "25 min", contenido: c14l5, tieneVideo: true, tieneQuiz: false },
     { id: "rag-6", titulo: "Evaluaciones y métricas de RAG", descripcion: "Medir calidad del sistema.", duracion: "25 min", contenido: c14l6, tieneVideo: true, tieneQuiz: false },
-    { id: "rag-7", titulo: "Proyecto: buscador inteligente", descripcion: "Construí tu buscador de documentos.", duracion: "40 min", contenido: c14l7, tieneVideo: true, tieneQuiz: false },
-    { id: "rag-8", titulo: "Quiz: RAG y búsqueda inteligente", descripcion: "Evaluá lo aprendido.", duracion: "15 min", contenido: c14l8, tieneVideo: false, tieneQuiz: true },
+    { id: "rag-7", titulo: "Proyecto: buscador inteligente", descripcion: "Construye tu buscador de documentos.", duracion: "40 min", contenido: c14l7, tieneVideo: true, tieneQuiz: false },
+    { id: "rag-8", titulo: "Quiz: RAG y búsqueda inteligente", descripcion: "Evalúa lo aprendido.", duracion: "15 min", contenido: c14l8, tieneVideo: false, tieneQuiz: true },
   ] },
-  { id: "agentes-ia-deployment", titulo: "Agentes de IA y deployment", descripcion: "Construí agentes autónomos con herramientas, MCP y desplegálos en producción.", nivel: "pro", duracion: "12 horas", lecciones: [
+  { id: "agentes-ia-deployment", titulo: "Agentes de IA y deployment", descripcion: "Construye agentes autónomos con herramientas, MCP y despliégalos en producción.", nivel: "pro", duracion: "12 horas", lecciones: [
     { id: "ag-1", titulo: "Qué son los agentes de IA", descripcion: "Fundamentos de agentes autónomos.", duracion: "25 min", contenido: c15l1, tieneVideo: true, tieneQuiz: false },
     { id: "ag-2", titulo: "Tool use y function calling", descripcion: "Dar herramientas a la IA.", duracion: "30 min", contenido: c15l2, tieneVideo: true, tieneQuiz: false },
     { id: "ag-3", titulo: "MCP: Model Context Protocol", descripcion: "El protocolo de contexto de modelos.", duracion: "30 min", contenido: c15l3, tieneVideo: true, tieneQuiz: false },
@@ -464,7 +464,7 @@ export const cursos: Curso[] = [
     { id: "ag-5", titulo: "Deploy en Vercel y HuggingFace", descripcion: "Deployment en la nube.", duracion: "30 min", contenido: c15l5, tieneVideo: true, tieneQuiz: false },
     { id: "ag-6", titulo: "Costos y optimización de latencia", descripcion: "Optimizar rendimiento y costos.", duracion: "25 min", contenido: c15l6, tieneVideo: true, tieneQuiz: false },
     { id: "ag-7", titulo: "Seguridad: prompt injection y jailbreaks", descripcion: "Proteger tus apps de IA.", duracion: "25 min", contenido: c15l7, tieneVideo: true, tieneQuiz: false },
-    { id: "ag-8", titulo: "Quiz: Agentes de IA", descripcion: "Evaluá lo aprendido.", duracion: "15 min", contenido: c15l8, tieneVideo: false, tieneQuiz: true },
+    { id: "ag-8", titulo: "Quiz: Agentes de IA", descripcion: "Evalúa lo aprendido.", duracion: "15 min", contenido: c15l8, tieneVideo: false, tieneQuiz: true },
   ] },
 ];
 

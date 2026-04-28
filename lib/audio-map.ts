@@ -22,7 +22,7 @@ export const audioMap: Record<string, string> = {
   "sin-miedo-4": "/audio/es/c3-c3leccion4.mp3",
   "sin-miedo-5": "/audio/es/c3-c3leccion5.mp3",
   "sin-miedo-6": "/audio/es/c3-c3leccion6.mp3",
-  // Curso 4: Dominá ChatGPT, Claude y Gemini (8 lecciones)
+  // Curso 4: Domina ChatGPT, Claude y Gemini (8 lecciones)
   "dcg-1": "/audio/es/c4-c4leccion1.mp3",
   "dcg-2": "/audio/es/c4-c4leccion2.mp3",
   "dcg-3": "/audio/es/c4-c4leccion3.mp3",

@@ -113,7 +113,7 @@ function LoginForm() {
           Bienvenido de vuelta
         </h1>
         <p className="mb-6 text-center text-gray-600">
-          Iniciá sesión para continuar aprendiendo
+          Inicia sesión para continuar aprendiendo
         </p>
 
         {/* Email/Password Form */}
@@ -199,9 +199,9 @@ function LoginForm() {
 
         {/* Register Link */}
         <p className="mt-6 text-center text-base text-gray-600">
-          ¿No tenés cuenta?{" "}
+          ¿No tienes cuenta?{" "}
           <Link href="/registro" className="font-semibold text-[#1E40AF]">
-            Registrate
+            Regístrate
           </Link>
         </p>
       </div>

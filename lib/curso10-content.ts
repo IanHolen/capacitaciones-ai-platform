@@ -3,14 +3,14 @@
 
 export const c10leccion1 = `## ¿Qué son los Custom GPTs y Claude Projects?
 
-Hasta ahora usaste herramientas de IA como ChatGPT o Claude haciendo preguntas una por una. Pero hay algo mucho más poderoso: **crear tu propio asistente personalizado** que ya sabe quién sos, qué necesitás y cómo querés que te responda.
+Hasta ahora usaste herramientas de IA como ChatGPT o Claude haciendo preguntas una por una. Pero hay algo mucho más poderoso: **crear tu propio asistente personalizado** que ya sabe quién eres, qué necesitas y cómo quieres que te responda.
 
 ### Custom GPTs (ChatGPT)
 
-Un **Custom GPT** es una versión personalizada de ChatGPT que vos mismo configurás. Le podés dar:
+Un **Custom GPT** es una versión personalizada de ChatGPT que tú mismo configurás. Le puedes dar:
 
-- **Instrucciones específicas**: "Sos un asistente de nutrición que responde en español, de forma breve y con emojis"
-- **Documentos de referencia**: Subís un PDF con tu menú semanal, tus restricciones alimentarias, etc.
+- **Instrucciones específicas**: "Eres un asistente de nutrición que responde en español, de forma breve y con emojis"
+- **Documentos de referencia**: Subes un PDF con tu menú semanal, tus restricciones alimentarias, etc.
 - **Acciones**: Puede conectarse a otras herramientas (calendario, emails, bases de datos)
 
 Es como crear tu propio empleado digital que ya viene entrenado con la información que le diste.
@@ -19,9 +19,9 @@ Es como crear tu propio empleado digital que ya viene entrenado con la informaci
 
 **Claude Projects** funciona de manera similar pero con un enfoque diferente:
 
-- Creás un "Proyecto" donde agrupás conversaciones relacionadas
-- Le subís documentos que Claude puede consultar durante la conversación
-- Definís "instrucciones del proyecto" que se aplican a todas las conversaciones dentro de ese proyecto
+- Creas un "Proyecto" donde agrupas conversaciones relacionadas
+- Le subes documentos que Claude puede consultar durante la conversación
+- Defines "instrucciones del proyecto" que se aplican a todas las conversaciones dentro de ese proyecto
 
 ### ¿Cuál es la diferencia?
 
@@ -36,14 +36,14 @@ Es como crear tu propio empleado digital que ya viene entrenado con la informaci
 
 ### ¿Para qué sirve tener un asistente propio?
 
-Imaginate estos escenarios:
+Imagínate estos escenarios:
 
 - **Un asistente para tu negocio** que conoce tus productos, precios y políticas de devolución
 - **Un tutor personal** que sabe tu nivel de inglés y adapta las lecciones
 - **Un asistente legal** que tiene cargados los contratos de tu empresa
 - **Un chef personal** que conoce tus alergias y preferencias alimentarias
 
-La ventaja es que no tenés que repetir toda tu información cada vez que iniciás una conversación.
+La ventaja es que no tienes que repetir toda tu información cada vez que iniciás una conversación.
 
 ### Requisitos
 
@@ -54,7 +54,7 @@ La ventaja es que no tenés que repetir toda tu información cada vez que inici�
 ### Para llevar
 
 - Custom GPTs y Claude Projects te permiten crear asistentes personalizados
-- Les podés dar instrucciones, documentos y personalidad
+- Les puedes dar instrucciones, documentos y personalidad
 - Eliminan la necesidad de repetir contexto en cada conversación
 - Son el primer paso hacia construir soluciones de IA para tu negocio`;
 
@@ -64,14 +64,14 @@ Vamos a crear un Custom GPT desde cero. Al terminar esta lección vas a tener tu
 
 ### Paso 1: Acceder al creador de GPTs
 
-1. Entrá a **chatgpt.com** e iniciá sesión
-2. En el menú lateral izquierdo, buscá **"Explore GPTs"** o **"GPTs"**
-3. Hacé clic en **"Create"** (Crear) en la esquina superior derecha
+1. Entra a **chatgpt.com** e inicia sesión
+2. En el menú lateral izquierdo, busca **"Explore GPTs"** o **"GPTs"**
+3. Haz clic en **"Create"** (Crear) en la esquina superior derecha
 4. Se abre el editor con dos pestañas: **"Create"** y **"Configure"**
 
 ### Paso 2: La pestaña "Create" (modo fácil)
 
-El modo Create te permite configurar tu GPT conversando con ChatGPT. Simplemente describí lo que querés:
+El modo Create te permite configurar tu GPT conversando con ChatGPT. Simplemente describe lo que quieres:
 
 > "Quiero un asistente que me ayude a redactar emails profesionales en español. Debe ser formal pero no frío, y siempre ofrecer 2 versiones: una corta y una detallada."
 
@@ -82,23 +82,23 @@ ChatGPT te va a hacer preguntas para refinar tu GPT:
 
 ### Paso 3: La pestaña "Configure" (modo detallado)
 
-Acá tenés control total:
+Acá tienes control total:
 
 **Nombre**: El nombre de tu GPT (ej: "Asistente de Emails Profesionales")
 
 **Descripción**: Una frase corta que explica qué hace
 
-**Instrucciones**: El corazón de tu GPT. Acá escribís exactamente cómo debe comportarse:
+**Instrucciones**: El corazón de tu GPT. Acá escribes exactamente cómo debe comportarse:
 
 \`\`\`
-Sos un asistente de redacción de emails profesionales en español.
+Eres un asistente de redacción de emails profesionales en español.
 
 REGLAS:
-- Siempre ofrecé 2 versiones: corta (máximo 3 oraciones) y detallada
-- Usá español latinoamericano formal
+- Siempre ofrece 2 versiones: corta (máximo 3 oraciones) y detallada
+- Usa español latinoamericano formal
 - Nunca incluyas información que el usuario no proporcionó
-- Si falta contexto, preguntá antes de redactar
-- Terminá siempre preguntando: "¿Querés que ajuste algo?"
+- Si falta contexto, pregunta antes de redactar
+- Termina siempre preguntando: "¿Quieres que ajuste algo?"
 
 FORMATO:
 **Versión corta:**
@@ -113,18 +113,18 @@ FORMATO:
 - "Ayudame a pedir un aumento de sueldo"
 - "Quiero reclamar un servicio defectuoso"
 
-**Knowledge**: Acá subís documentos (lo vemos en la Lección 4)
+**Knowledge**: Acá subes documentos (lo vemos en la Lección 4)
 
-**Capabilities**: Podés habilitar navegación web, generación de imágenes, y ejecución de código
+**Capabilities**: Puedes habilitar navegación web, generación de imágenes, y ejecución de código
 
 ### Paso 4: Probar tu GPT
 
-En el panel derecho hay una vista previa en tiempo real. Probá con diferentes preguntas y ajustá las instrucciones hasta que estés satisfecho.
+En el panel derecho hay una vista previa en tiempo real. Prueba con diferentes preguntas y ajusta las instrucciones hasta que estés satisfecho.
 
 ### Paso 5: Guardar
 
-Hacé clic en **"Save"** y elegí:
-- **Only me**: Solo vos podés usarlo
+Haz clic en **"Save"** y elige:
+- **Only me**: Solo tú puedes usarlo
 - **Anyone with a link**: Cualquiera con el enlace
 - **Everyone**: Publicado en la tienda de GPTs
 
@@ -134,14 +134,14 @@ Vamos a crear un GPT llamado **"Mi Nutricionista IA"**:
 
 - **Nombre**: Mi Nutricionista IA
 - **Descripción**: Asistente de alimentación saludable personalizado
-- **Instrucciones**: "Sos un nutricionista amigable. Respondés en español LATAM. Siempre preguntás por alergias antes de recomendar. Usás listas con emojis. No reemplazás a un profesional real — siempre aclarás eso."
+- **Instrucciones**: "Eres un nutricionista amigable. Respondes en español LATAM. Siempre preguntas por alergias antes de recomendar. Usas listas con emojis. No reemplazás a un profesional real — siempre aclaras eso."
 
 ### Para llevar
 
 - Crear un Custom GPT toma menos de 15 minutos
 - El modo "Create" es más fácil; el modo "Configure" da más control
 - Las instrucciones son la parte más importante — dedicales tiempo
-- Siempre probá tu GPT antes de compartirlo`;
+- Siempre prueba tu GPT antes de compartirlo`;
 
 export const c10leccion3 = `## Configurar instrucciones personalizadas
 
@@ -149,11 +149,11 @@ Las instrucciones son el alma de tu asistente. Son las reglas que definen cómo 
 
 ### La estructura de buenas instrucciones
 
-Usá esta plantilla como base:
+Usa esta plantilla como base:
 
 \`\`\`
 ## Identidad
-Sos [quién es], especializado en [qué hace].
+Eres [quién es], especializado en [qué hace].
 
 ## Audiencia
 Tu usuario típico es [descripción del usuario].
@@ -171,29 +171,29 @@ Tu usuario típico es [descripción del usuario].
 - [Restricción 2]
 
 ## Manejo de errores
-Cuando no sepas algo, decí: "[frase específica]"
+Cuando no sepas algo, di: "[frase específica]"
 \`\`\`
 
 ### Ejemplo real: Asistente de atención al cliente
 
 \`\`\`
 ## Identidad
-Sos el asistente virtual de "Café Don Pedro", una cafetería artesanal en Buenos Aires.
+Eres el asistente virtual de "Café Don Pedro", una cafetería artesanal en Buenos Aires.
 
 ## Audiencia
 Clientes que quieren hacer pedidos, preguntar por el menú o resolver dudas sobre entregas.
 
 ## Reglas
-- Siempre saludá de forma cálida
-- Respondé solo sobre nuestros productos y servicios
-- Si preguntan algo fuera de tu alcance, decí: "Para eso te recomiendo contactar a nuestro equipo en info@cafedonpedro.com"
-- Los precios son en pesos argentinos
+- Siempre saluda de forma cálida
+- Responde solo sobre nuestros productos y servicios
+- Si preguntan algo fuera de tu alcance, di: "Para eso te recomiendo contactar a nuestro equipo en info@cafedonpedro.com"
+- Los precios son en pesos mexicanos
 - Horario de atención: lunes a sábado de 8 a 20hs
 
 ## Formato
 - Respuestas cortas (máximo 4 oraciones)
-- Usá viñetas para listar opciones
-- Terminá con una pregunta: "¿Te puedo ayudar con algo más?"
+- Usa viñetas para listar opciones
+- Termina con una pregunta: "¿Te puedo ayudar con algo más?"
 
 ## NUNCA
 - Inventar productos que no tenemos
@@ -202,38 +202,38 @@ Clientes que quieren hacer pedidos, preguntar por el menú o resolver dudas sobr
 - Procesar pagos directamente
 
 ## Cuando no sepas
-"No tengo esa información disponible. ¿Querés que te pase con nuestro equipo?"
+"No tengo esa información disponible. ¿Quieres que te pase con nuestro equipo?"
 \`\`\`
 
 ### Técnicas avanzadas de instrucciones
 
 **1. Cadena de pensamiento forzada**
-> "Antes de responder, pensá paso a paso: 1) ¿Qué está pidiendo el usuario? 2) ¿Tengo la información necesaria? 3) ¿Mi respuesta es precisa?"
+> "Antes de responder, piensa paso a paso: 1) ¿Qué esta pidiendo el usuario? 2) ¿Tengo la información necesaria? 3) ¿Mi respuesta es precisa?"
 
 **2. Ejemplos incluidos (few-shot)**
-> "Ejemplo de buena respuesta: 'Nuestro café de especialidad tiene notas de chocolate y nuez. ¿Preferís en grano o molido?'"
+> "Ejemplo de buena respuesta: 'Nuestro café de especialidad tiene notas de chocolate y nuez. ¿Prefieres en grano o molido?'"
 
 **3. Variables dinámicas**
-> "Si el usuario menciona su nombre, usalo en las respuestas. Si dice 'Soy María', respondé 'María, te cuento que...'"
+> "Si el usuario menciona su nombre, usalo en las respuestas. Si dice 'Soy María', responde 'María, te cuento que...'"
 
 **4. Tono calibrado**
-> "Tono: profesional pero cercano. Como un barista amigable que conoce su oficio. Evitá ser robótico o excesivamente formal."
+> "Tono: profesional pero cercano. Como un barista amigable que conoce su oficio. Evita ser robótico o excesivamente formal."
 
 ### Errores comunes en instrucciones
 
 | Error | Ejemplo | Corrección |
 |---|---|---|
-| Muy vago | "Sé amable" | "Usá un tono cálido, incluí el nombre del cliente, y terminá con una pregunta" |
-| Contradictorio | "Sé breve" + "Explicá todo en detalle" | Definí cuándo ser breve y cuándo ser detallado |
-| Sin límites | "Respondé todo" | "Respondé solo sobre [tema]. Para lo demás, redirigí a [recurso]" |
-| Sin formato | (nada) | "Usá viñetas, negrita para conceptos clave, y párrafos cortos" |
+| Muy vago | "Sé amable" | "Usa un tono cálido, incluye el nombre del cliente, y termina con una pregunta" |
+| Contradictorio | "Sé breve" + "Explica todo en detalle" | Define cuándo ser breve y cuándo ser detallado |
+| Sin límites | "Responde todo" | "Responde solo sobre [tema]. Para lo demás, redirige a [recurso]" |
+| Sin formato | (nada) | "Usa viñetas, negrita para conceptos clave, y párrafos cortos" |
 
 ### Para llevar
 
 - Las instrucciones bien escritas son la clave de un buen asistente
-- Usá la plantilla de 6 secciones como base
-- Incluí ejemplos concretos y restricciones claras
-- Iterá: probá, detectá fallos, y ajustá las instrucciones`;
+- Usa la plantilla de 6 secciones como base
+- Incluye ejemplos concretos y restricciones claras
+- Itera: prueba, detecta fallos, y ajusta las instrucciones`;
 
 export const c10leccion4 = `## Subir documentos como base de conocimiento
 
@@ -241,9 +241,9 @@ Tu asistente es tan bueno como la información que tiene. Al subirle documentos,
 
 ### ¿Cómo funciona?
 
-Cuando subís un documento a tu Custom GPT o Claude Project, la IA puede:
+Cuando subes un documento a tu Custom GPT o Claude Project, la IA puede:
 
-1. **Buscar información** dentro del documento cuando le hacés una pregunta
+1. **Buscar información** dentro del documento cuando le haces una pregunta
 2. **Citar** partes relevantes del documento en sus respuestas
 3. **Combinar** información de múltiples documentos
 4. **Resumir** secciones específicas
@@ -262,26 +262,26 @@ Cuando subís un documento a tu Custom GPT o Claude Project, la IA puede:
 
 ### Paso a paso: subir documentos en Custom GPTs
 
-1. Abrí tu GPT en modo edición (Configure)
-2. Buscá la sección **"Knowledge"**
-3. Hacé clic en **"Upload files"**
-4. Seleccioná tus archivos (máximo 20 archivos, 512MB en total)
-5. Guardá los cambios
+1. Abre tu GPT en modo edición (Configure)
+2. Busca la sección **"Knowledge"**
+3. Haz clic en **"Upload files"**
+4. Selecciona tus archivos (máximo 20 archivos, 512MB en total)
+5. Guarda los cambios
 
 ### Paso a paso: subir documentos en Claude Projects
 
-1. Andá a **claude.ai** y abrí tu proyecto
-2. En el panel lateral, buscá **"Project knowledge"**
-3. Hacé clic en **"Add content"**
-4. Podés subir archivos o pegar texto directamente
+1. Ve a **claude.ai** y abre tu proyecto
+2. En el panel lateral, busca **"Project knowledge"**
+3. Haz clic en **"Add content"**
+4. Puedes subir archivos o pegar texto directamente
 5. El contenido queda disponible para todas las conversaciones del proyecto
 
 ### Buenas prácticas para documentos
 
-**1. Organizá la información**
+**1. Organiza la información**
 - Un documento por tema es mejor que un documento gigante
-- Usá títulos claros y secciones numeradas
-- Incluí un índice si el documento es largo
+- Usa títulos claros y secciones numeradas
+- Incluye un índice si el documento es largo
 
 **2. Formatos limpios**
 - PDFs con texto seleccionable (no escaneados)
@@ -289,9 +289,9 @@ Cuando subís un documento a tu Custom GPT o Claude Project, la IA puede:
 - Texto sin formato raro o caracteres especiales
 
 **3. Actualización**
-- Revisá tus documentos periódicamente
-- Si los precios cambian, actualizá el catálogo
-- Eliminá documentos obsoletos
+- Revisa tus documentos periódicamente
+- Si los precios cambian, actualiza el catálogo
+- Elimina documentos obsoletos
 
 ### Ejemplo práctico: Asistente de soporte técnico
 
@@ -309,19 +309,19 @@ Con estos 4 documentos, tu asistente puede resolver el 80% de las consultas de s
 - La IA no "memoriza" los documentos — los busca cada vez que los necesita
 - Documentos muy largos pueden no procesarse completamente
 - La información sensible (datos de clientes, contraseñas) NO debe subirse
-- Los documentos no se actualizan solos — vos tenés que reemplazarlos
+- Los documentos no se actualizan solos — tú tienes que reemplazarlos
 
 ### Para llevar
 
 - Los documentos convierten a tu asistente en un experto en tu dominio
-- Usá formatos limpios y organizados
+- Usa formatos limpios y organizados
 - Separé la información por temas en archivos distintos
 - Nunca subas información sensible o confidencial
-- Actualizá los documentos cuando cambie la información`;
+- Actualiza los documentos cuando cambie la información`;
 
 export const c10leccion5 = `## Conectar tu asistente a datos reales (RAG básico)
 
-Hasta ahora tu asistente trabaja con documentos estáticos que le subiste. Pero, ¿qué pasa si necesitás que acceda a información que cambia constantemente? Para eso existe **RAG** (Retrieval-Augmented Generation).
+Hasta ahora tu asistente trabaja con documentos estáticos que le subiste. Pero, ¿qué pasa si necesitas que acceda a información que cambia constantemente? Para eso existe **RAG** (Retrieval-Augmented Generation).
 
 ### ¿Qué es RAG?
 
@@ -334,29 +334,29 @@ En palabras simples: en vez de que la IA responda de memoria, primero busca la i
 
 ### Analogía
 
-Imaginá a un bibliotecario:
+Imagina a un bibliotecario:
 - **Sin RAG**: Te responde de memoria. A veces se acuerda bien, a veces inventa.
 - **Con RAG**: Antes de responderte, busca en los libros el dato exacto, y después te lo explica.
 
-### ¿Cuándo necesitás RAG?
+### ¿Cuándo necesitas RAG?
 
 - Tu información cambia frecuentemente (precios, stock, noticias)
-- Tenés más documentos de los que caben en un Custom GPT
-- Necesitás respuestas precisas basadas en datos actualizados
-- Querés reducir las "alucinaciones" de la IA
+- Tienes más documentos de los que caben en un Custom GPT
+- Necesitas respuestas precisas basadas en datos actualizados
+- Quieres reducir las "alucinaciones" de la IA
 
 ### RAG simplificado: opciones sin código
 
-No necesitás ser programador para usar RAG. Estas herramientas lo hacen accesible:
+No necesitas ser programador para usar RAG. Estas herramientas lo hacen accesible:
 
 **1. ChatGPT con búsqueda web**
-- Activá "Browse with Bing" en tu Custom GPT
+- Activa "Browse with Bing" en tu Custom GPT
 - El GPT busca en internet antes de responder
 - Útil para información que cambia (clima, noticias, precios)
 
 **2. Claude con documentos grandes**
 - Claude puede procesar hasta 200,000 tokens (equivalente a ~150,000 palabras)
-- Subí documentos extensos directamente al proyecto
+- Sube documentos extensos directamente al proyecto
 - Claude los busca automáticamente al responder
 
 **3. Herramientas especializadas**
@@ -366,32 +366,32 @@ No necesitás ser programador para usar RAG. Estas herramientas lo hacen accesib
 
 ### El concepto de embeddings (simplificado)
 
-Cuando usás RAG, la información se convierte en **embeddings** — representaciones numéricas del texto que permiten buscar por significado, no solo por palabras exactas.
+Cuando usas RAG, la información se convierte en **embeddings** — representaciones numéricas del texto que permiten buscar por significado, no solo por palabras exactas.
 
 Ejemplo:
-- Buscás: "¿Cuánto sale el café?"
+- Buscas: "¿Cuánto sale el café?"
 - El sistema encuentra: "Nuestro café de especialidad tiene un precio de $3,500"
 - Funciona porque ambas frases hablan del mismo concepto, aunque usen palabras diferentes
 
 ### Ejemplo práctico
 
-Querés crear un asistente para tu tienda online que responda preguntas sobre productos:
+Quieres crear un asistente para tu tienda online que responda preguntas sobre productos:
 
 1. **Exportás tu catálogo** a un CSV (nombre, descripción, precio, stock)
-2. **Lo subís** a tu Custom GPT o herramienta de RAG
-3. **Configurás las instrucciones**: "Cuando pregunten por un producto, buscá en el catálogo y respondé con nombre, precio y disponibilidad"
+2. **Lo subes** a tu Custom GPT o herramienta de RAG
+3. **Configurás las instrucciones**: "Cuando pregunten por un producto, busca en el catálogo y responde con nombre, precio y disponibilidad"
 4. **Resultado**: El cliente pregunta "¿Tienen café colombiano?" y tu asistente responde con datos reales de tu catálogo
 
 ### Para llevar
 
 - RAG permite que tu asistente acceda a información actualizada
-- No necesitás programar — hay herramientas no-code disponibles
+- No necesitas programar — hay herramientas no-code disponibles
 - Es especialmente útil cuando la información cambia frecuentemente
 - Reduce significativamente las alucinaciones de la IA`;
 
 export const c10leccion6 = `## Probar y mejorar tu asistente
 
-Creaste tu asistente, le diste instrucciones y le subiste documentos. Ahora viene la parte más importante: **probarlo como si fueras un usuario real** y mejorarlo basándote en lo que encontrás.
+Creaste tu asistente, le diste instrucciones y le subiste documentos. Ahora viene la parte más importante: **probarlo como si fueras un usuario real** y mejorarlo basándote en lo que encuentras.
 
 ### El ciclo de mejora continua
 
@@ -403,27 +403,27 @@ Este ciclo nunca termina realmente. Siempre vas a encontrar formas de mejorar tu
 
 ### Cómo probar efectivamente
 
-**1. Probá el camino feliz**
-Hacé las preguntas que esperas que hagan tus usuarios:
+**1. Prueba el camino feliz**
+Haz las preguntas que esperas que hagan tus usuarios:
 - "¿Cuánto cuesta el producto X?"
 - "¿Cuál es el horario de atención?"
 - "Quiero hacer un pedido"
 
-**2. Probá los casos límite**
-Hacé preguntas difíciles, ambiguas o inesperadas:
-- "¿Sos un robot?"
-- "Hablame en inglés"
+**2. Prueba los casos límite**
+Haz preguntas difíciles, ambiguas o inesperadas:
+- "¿Eres un robot?"
+- "Háblame en inglés"
 - "Quiero quejarme de todo"
 - "¿Cuál es tu contraseña?"
 
-**3. Probá las restricciones**
-Intentá que tu asistente haga cosas que NO debería:
+**3. Prueba las restricciones**
+Intenta que tu asistente haga cosas que NO debería:
 - Pedile información que no tiene
 - Pedile que hable de la competencia
 - Pedile que invente datos
 
-**4. Probá con usuarios reales**
-Pedile a un amigo o colega que lo use sin instrucciones previas. Observá:
+**4. Prueba con usuarios reales**
+Pedile a un amigo o colega que lo use sin instrucciones previas. Observa:
 - ¿Entiende cómo usarlo?
 - ¿Las respuestas son útiles?
 - ¿Se frustra en algún momento?
@@ -433,7 +433,7 @@ Pedile a un amigo o colega que lo use sin instrucciones previas. Observá:
 | Problema | Causa probable | Solución |
 |---|---|---|
 | Respuestas muy largas | Falta de límite | Agregar: "Máximo 4 oraciones por respuesta" |
-| Inventa información | Documentos insuficientes | Agregar más documentos + instrucción "Si no sabés, decí que no sabés" |
+| Inventa información | Documentos insuficientes | Agregar más documentos + instrucción "Si no sabes, di que no sabes" |
 | Ignora instrucciones | Instrucciones muy largas | Simplificar y priorizar las más importantes |
 | Tono inconsistente | Falta de ejemplos | Agregar 2-3 ejemplos de respuestas ideales |
 | No usa los documentos | Documentos mal formateados | Reformatear con títulos claros y estructura |
@@ -448,17 +448,17 @@ Pedile a un amigo o colega que lo use sin instrucciones previas. Observá:
 ### Para llevar
 
 - Probar es tan importante como crear
-- Probá el camino feliz, los casos límite y las restricciones
-- Pedí feedback de usuarios reales
-- Iterá constantemente: pequeños ajustes hacen grandes diferencias`;
+- Prueba el camino feliz, los casos límite y las restricciones
+- Pide feedback de usuarios reales
+- Itera constantemente: pequeños ajustes hacen grandes diferencias`;
 
 export const c10leccion7 = `## Compartir tu asistente con otros
 
-Ya tenés un asistente probado y pulido. Ahora es momento de ponerlo a trabajar para otros — tu equipo, tus clientes o el mundo entero.
+Ya tienes un asistente probado y pulido. Ahora es momento de ponerlo a trabajar para otros — tu equipo, tus clientes o el mundo entero.
 
 ### Opciones de distribución en Custom GPTs
 
-**1. Solo para vos (Private)**
+**1. Solo para ti (Private)**
 - Nadie más puede acceder
 - Ideal para asistentes personales o en desarrollo
 
@@ -470,29 +470,29 @@ Ya tenés un asistente probado y pulido. Ahora es momento de ponerlo a trabajar 
 **3. Público (Everyone)**
 - Disponible en la tienda de GPTs de OpenAI
 - Cualquiera puede encontrarlo y usarlo
-- Ideal si querés exposición
+- Ideal si quieres exposición
 
 ### Cómo compartir
 
-1. Abrí tu GPT en modo edición
-2. Hacé clic en **"Save"**
-3. Elegí el nivel de acceso
-4. Copiá el enlace generado
+1. Abre tu GPT en modo edición
+2. Haz clic en **"Save"**
+3. Elige el nivel de acceso
+4. Copia el enlace generado
 5. Compartilo por email, WhatsApp, o donde necesites
 
 ### Distribución en Claude Projects
 
 Claude Projects actualmente son más privados:
 - Solo están disponibles dentro de tu cuenta
-- Podés compartir conversaciones individuales por enlace
-- Para uso en equipo, necesitás un plan Team
+- Puedes compartir conversaciones individuales por enlace
+- Para uso en equipo, necesitas un plan Team
 
 ### Embeber tu asistente en un sitio web
 
-Si querés que tu asistente esté disponible en tu página web:
+Si quieres que tu asistente esté disponible en tu página web:
 
 **Opción 1: Widget de ChatGPT**
-- Usá herramientas como **Chatbase** o **CustomGPT.ai**
+- Usa herramientas como **Chatbase** o **CustomGPT.ai**
 - Generan un código HTML que pegás en tu sitio
 - El chat aparece como un widget flotante
 
@@ -510,12 +510,12 @@ Si querés que tu asistente esté disponible en tu página web:
 **Costos**
 - Custom GPTs requieren que cada usuario tenga ChatGPT Plus
 - Las soluciones con API tienen costo por uso
-- Calculá el costo antes de lanzar
+- Calcula el costo antes de lanzar
 
 **Mantenimiento**
 - Alguien debe actualizar los documentos periódicamente
 - Las instrucciones necesitan ajustes según el feedback
-- Monitoreá las conversaciones para detectar problemas
+- Monitorea las conversaciones para detectar problemas
 
 ### Caso de estudio: Asistente para una inmobiliaria
 
@@ -528,14 +528,14 @@ Una inmobiliaria creó un Custom GPT con:
 
 ### Para llevar
 
-- Elegí el nivel de acceso adecuado para tu caso de uso
-- Siempre avisá a los usuarios que están interactuando con IA
-- Considerá privacidad, costos y mantenimiento antes de lanzar
+- Elige el nivel de acceso adecuado para tu caso de uso
+- Siempre avisa a los usuarios que están interactuando con IA
+- Considera privacidad, costos y mantenimiento antes de lanzar
 - Un asistente bien configurado puede ahorrar horas de trabajo humano`;
 
 export const c10leccion8 = `## Quiz: Crea tu propio asistente de IA
 
-10 preguntas de opción múltiple. Elegí la respuesta correcta.
+10 preguntas de opción múltiple. Elige la respuesta correcta.
 
 ---
 
@@ -547,7 +547,7 @@ c) Un programa que hay que instalar en la computadora
 d) Un robot físico que usa IA
 
 **Respuesta correcta: b)**
-Un Custom GPT es una versión personalizada que vos configurás con instrucciones, documentos y comportamiento específico.
+Un Custom GPT es una versión personalizada que tú configurás con instrucciones, documentos y comportamiento específico.
 
 ---
 
@@ -600,20 +600,20 @@ RAG permite que el asistente acceda a datos actualizados en tiempo real, mientra
 ---
 
 ### Pregunta 6
-**¿Qué debés hacer PRIMERO al probar tu asistente?**
+**¿Qué debes hacer PRIMERO al probar tu asistente?**
 a) Publicarlo en la tienda
 b) Compartirlo con miles de personas
 c) Probarlo con preguntas esperadas (camino feliz)
 d) Borrar todas las instrucciones
 
 **Respuesta correcta: c)**
-Primero probá con las preguntas que esperás que hagan tus usuarios para verificar que las respuestas básicas funcionan bien.
+Primero prueba con las preguntas que esperas que hagan tus usuarios para verificar que las respuestas básicas funcionan bien.
 
 ---
 
 ### Pregunta 7
-**Si tu asistente inventa información que no tiene, ¿qué debés hacer?**
-a) Agregar más documentos y una instrucción de "si no sabés, decí que no sabés"
+**Si tu asistente inventa información que no tiene, ¿qué debes hacer?**
+a) Agregar más documentos y una instrucción de "si no sabes, di que no sabes"
 b) Reiniciar la computadora
 c) Cambiar el nombre del GPT
 d) No se puede arreglar
@@ -624,7 +624,7 @@ La combinación de más documentos de referencia y una instrucción explícita d
 ---
 
 ### Pregunta 8
-**¿Cuál dato NUNCA debés subir como documento a tu asistente?**
+**¿Cuál dato NUNCA debes subir como documento a tu asistente?**
 a) Tu catálogo de productos
 b) Preguntas frecuentes
 c) Contraseñas y datos bancarios de clientes
@@ -662,5 +662,5 @@ El ciclo de mejora continua (probar, identificar, ajustar, repetir) es la forma 
 ### ¿Cómo te fue?
 
 - **8-10 correctas**: Excelente. Estás listo para crear asistentes profesionales.
-- **5-7 correctas**: Bien. Repasá las lecciones donde tuviste dudas.
-- **Menos de 5**: Volvé a leer las lecciones con calma.`;
+- **5-7 correctas**: Bien. Repasa las lecciones donde tuviste dudas.
+- **Menos de 5**: Vuelve a leer las lecciones con calma.`;
