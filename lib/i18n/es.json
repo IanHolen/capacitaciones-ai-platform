@@ -160,6 +160,7 @@
   },
   "comments": {
     "title": "Comentarios",
+    "motivation": "Déjanos tu opinión: ¿Qué te gustó? ¿Qué mejorarías? ¿Qué te gustaría aprender?",
     "reply": "Responder",
     "delete": "Eliminar comentario",
     "placeholder": "Escribe un comentario...",

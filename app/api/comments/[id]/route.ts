@@ -6,18 +6,29 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> }
 ) {
   const supabase = await createClient();
-  const { id: lessonId } = await params;
+  const { id: lessonSlug } = await params;
+
+  // The frontend sends a lesson slug (e.g. "que-es-ia-1") — resolve to UUID
+  const { data: lesson } = await supabase
+    .from("lessons")
+    .select("id")
+    .eq("slug", lessonSlug)
+    .maybeSingle();
+
+  if (!lesson) {
+    return NextResponse.json({ comments: [] });
+  }
 
   const { data: comments, error } = await supabase
     .from("comments")
     .select("id, body, created_at, parent_id, user_id")
-    .eq("lesson_id", lessonId)
+    .eq("lesson_id", lesson.id)
     .order("created_at", { ascending: true });
 
   if (error) {
-    // Table might not exist yet — return empty array
     console.error("[comments] Error:", error.message);
-    return NextResponse.json({ comments: [] });}
+    return NextResponse.json({ comments: [] });
+  }
 
   // Fetch user info separately to avoid join issues
   const userIds = [...new Set(comments?.map((c) => c.user_id) ?? [])];
@@ -29,7 +40,7 @@ export async function GET(
 
   const enriched = (comments ?? []).map((c) => ({
     ...c,
-    user: userMap.get(c.user_id) ?? { id: c.user_id, name: "Usuario", avatar_url: null },
+    users: userMap.get(c.user_id) ?? { id: c.user_id, name: "User", avatar_url: null },
   }));
 
   return NextResponse.json({ comments: enriched });
