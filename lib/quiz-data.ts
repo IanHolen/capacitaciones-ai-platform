@@ -778,3 +778,307 @@ export const curso9Quiz: QuizQuestion[] = mergeEnglish([
       "El flujo correcto va de idea → investigación → esquema → borrador → edición → publicación.",
   },
 ], curso9QuizEn);
+
+export const curso4Quiz: QuizQuestion[] = [
+  {
+    question: "¿Cuál de estos asistentes de IA fue creado por Anthropic?",
+    options: ["ChatGPT", "Gemini", "Claude", "Perplexity"],
+    correctIndex: 2,
+    explanation: "Claude fue creado por Anthropic, una empresa fundada por ex-investigadores de OpenAI.",
+  },
+  {
+    question: "¿Cuál es la ventaja más destacada de Claude frente a los otros asistentes?",
+    options: [
+      "Acceso a Gmail y Google Drive",
+      "Puede leer y analizar documentos de hasta 200 páginas de una sola vez",
+      "Tiene el modo voz más avanzado",
+      "Genera imágenes con inteligencia artificial",
+    ],
+    correctIndex: 1,
+    explanation: "Claude puede procesar documentos de hasta 200 páginas de una vez, ideal para contratos, manuales e informes extensos.",
+  },
+  {
+    question: "¿Qué son los 'Artifacts' en Claude?",
+    options: [
+      "Versiones especializadas de Claude para tareas concretas",
+      "Archivos adjuntos que se suben al chat",
+      "Un panel separado donde Claude organiza contenido extenso sin mezclarlo con el chat",
+      "Las conversaciones guardadas en favoritos",
+    ],
+    correctIndex: 2,
+    explanation: "Los Artifacts son un panel lateral derecho donde Claude coloca contenido largo como informes, tablas o planes, separado del chat.",
+  },
+  {
+    question: "¿Qué función exclusiva de Gemini permite verificar sus propias respuestas contra internet?",
+    options: [
+      "El botón de Gems",
+      "El botón 'G' (Verificar con Google)",
+      "El modo de extensiones",
+      "El panel de Artifacts",
+    ],
+    correctIndex: 1,
+    explanation: "El botón 'G' verifica la respuesta de Gemini contra fuentes web: las partes en verde están respaldadas y las en naranja son dudosas.",
+  },
+  {
+    question: "¿Cuándo se recomienda usar Perplexity en lugar de ChatGPT o Claude?",
+    options: [
+      "Para escribir cartas formales y correos",
+      "Para analizar un contrato extenso",
+      "Para buscar información actualizada de internet con fuentes verificables",
+      "Para tener una conversación fluida por voz",
+    ],
+    correctIndex: 2,
+    explanation: "Perplexity busca en internet en tiempo real y presenta respuestas organizadas con fuentes, ideal para noticias, precios actuales o información reciente.",
+  },
+  {
+    question: "¿Cuál es el 'kit de inicio' recomendado para alguien que está empezando con la IA?",
+    options: ["Claude y Gemini", "ChatGPT y Perplexity", "Gemini y Perplexity", "Solo Claude es suficiente"],
+    correctIndex: 1,
+    explanation: "ChatGPT cubre el 80% de las tareas cotidianas y Perplexity se encarga de las búsquedas con información actual.",
+  },
+  {
+    question: "¿Cuál asistente tiene el modo voz más avanzado y natural?",
+    options: ["Claude", "Perplexity", "Gemini", "ChatGPT"],
+    correctIndex: 3,
+    explanation: "ChatGPT tiene un modo voz avanzado que permite conversaciones fluidas, posibilidad de interrumpir y respuestas con voces muy humanas.",
+  },
+  {
+    question: "¿Qué ventaja tiene Gemini sobre los demás asistentes gratuitos?",
+    options: [
+      "Puede leer documentos de hasta 200 páginas",
+      "Tiene el mejor modo voz del mercado",
+      "Está integrado con Gmail, Google Drive, Maps y YouTube",
+      "Es el único que funciona sin conexión a internet",
+    ],
+    correctIndex: 2,
+    explanation: "La gran ventaja de Gemini es su integración con todo el ecosistema de Google mediante extensiones.",
+  },
+  {
+    question: "Si necesitas resumir un contrato de 80 páginas, ¿qué herramienta deberías usar?",
+    options: ["Perplexity", "Gemini", "ChatGPT básico", "Claude"],
+    correctIndex: 3,
+    explanation: "Claude es la mejor opción para documentos largos porque puede procesar hasta 200 páginas de una sola vez.",
+  },
+  {
+    question: "¿Cuál es la diferencia clave entre los 'GPTs' de ChatGPT y los 'Gems' de Gemini?",
+    options: [
+      "Los GPTs son de pago y los Gems son gratuitos",
+      "Ambos son versiones especializadas del asistente pero en plataformas diferentes",
+      "Los GPTs generan imágenes y los Gems no",
+      "Los Gems tienen acceso a internet y los GPTs no",
+    ],
+    correctIndex: 1,
+    explanation: "Tanto los GPTs como los Gems son versiones del asistente configuradas para tareas específicas; la diferencia es que pertenecen a plataformas distintas.",
+  },
+];
+
+export const curso5Quiz: QuizQuestion[] = [
+  {
+    question: "¿Cuáles son los 4 ingredientes de la fórmula para un buen prompt?",
+    options: [
+      "Pregunta, Respuesta, Verificación y Formato",
+      "ROL, TAREA, CONTEXTO y FORMATO",
+      "Tema, Idioma, Extensión y Tono",
+      "Inicio, Desarrollo, Cierre y Revisión",
+    ],
+    correctIndex: 1,
+    explanation: "La fórmula es ROL + TAREA + CONTEXTO + FORMATO. Cuantos más incluyas, mejor será el resultado.",
+  },
+  {
+    question: "¿Qué hace el ingrediente ROL en un prompt?",
+    options: [
+      "Define cuántas palabras debe tener la respuesta",
+      "Le indica a la IA desde qué perspectiva o expertise debe responder",
+      "Configura el idioma de la conversación",
+      "Determina la velocidad de la respuesta",
+    ],
+    correctIndex: 1,
+    explanation: "Al decirle 'eres un médico' o 'eres una maestra', la IA ajusta su vocabulario, tono y nivel de detalle.",
+  },
+  {
+    question: "¿Cuál es el truco de 'otra persona' para evaluar un prompt?",
+    options: [
+      "Pedirle a otra persona que escriba el prompt por ti",
+      "Preguntarte si alguien sin conocer tu situación podría responder bien ese prompt",
+      "Compartir el prompt con un amigo antes de enviarlo",
+      "Escribir el prompt dos veces para comparar versiones",
+    ],
+    correctIndex: 1,
+    explanation: "Si otra persona leyera tu prompt sin saber nada de tu situación, ¿podría responderlo bien? Si no, falta contexto.",
+  },
+  {
+    question: "¿Cuál es la frase más útil para pedir un cambio específico en la respuesta anterior?",
+    options: [
+      "'No me gustó, empieza de cero'",
+      "'Cámbialo todo'",
+      "'Hazlo otra vez pero [cambio específico]'",
+      "'Escribe algo diferente'",
+    ],
+    correctIndex: 2,
+    explanation: "'Hazlo otra vez pero...' indica a la IA que mantenga lo esencial y aplique solo el cambio específico.",
+  },
+  {
+    question: "¿Cuántas veces puedes pedirle ajustes a la IA dentro de una misma conversación?",
+    options: ["Máximo 3 veces", "Solo una vez por sesión", "Sin límite", "Solo en la versión de pago"],
+    correctIndex: 2,
+    explanation: "Puedes iterar sin límite. La IA no se cansa ni se ofende, y cada ajuste te acerca más al resultado ideal.",
+  },
+  {
+    question: "¿Qué tipo de contexto corresponde a 'sin fritos, bajo en sal y sin azúcar añadida'?",
+    options: ["Contexto personal", "Contexto de la situación", "Contexto del destinatario", "Contexto de restricciones"],
+    correctIndex: 3,
+    explanation: "El contexto de restricciones incluye limitaciones o requisitos específicos como restricciones alimentarias, presupuesto o extensión.",
+  },
+  {
+    question: "¿Cuál de estos es un ejemplo de 'contexto del destinatario'?",
+    options: [
+      "'Explícame en menos de 100 palabras'",
+      "'Soy jubilada y tengo 68 años'",
+      "'Lo voy a publicar en el grupo de WhatsApp de mis amigas'",
+      "'Sin términos técnicos'",
+    ],
+    correctIndex: 2,
+    explanation: "El contexto del destinatario describe a la persona que va a leer o usar el resultado.",
+  },
+  {
+    question: "¿En qué situación puede ser útil hacer un prompt vago intencionalmente?",
+    options: [
+      "Nunca, siempre hay que ser específico",
+      "Cuando quieres explorar ideas o buscar inspiración sin dirección fija",
+      "Cuando usas la versión gratuita del asistente",
+      "Cuando el tema es de salud",
+    ],
+    correctIndex: 1,
+    explanation: "Un prompt más abierto puede ser útil para brainstorming. Para tareas concretas, siempre es mejor ser específico.",
+  },
+  {
+    question: "En el proceso de iteración con la IA, ¿cuál es el orden correcto?",
+    options: [
+      "Aceptar → pedir → verificar → mejorar",
+      "Pedir → recibir respuesta → indicar ajuste → recibir versión mejorada",
+      "Planificar → escribir → publicar → corregir",
+      "Buscar → copiar → pegar → editar",
+    ],
+    correctIndex: 1,
+    explanation: "La iteración sigue el ciclo: pides, la IA responde, dices qué cambiar, la IA mejora. Puedes repetir sin límite.",
+  },
+  {
+    question: "¿Cuál de estas frases pide correctamente que se simplifique una respuesta?",
+    options: [
+      "'No lo entiendo'",
+      "'Está mal'",
+      "'Usa palabras más simples, como si me hablaras a mí que no soy experto'",
+      "'Menos palabras'",
+    ],
+    correctIndex: 2,
+    explanation: "Esta opción es específica y da contexto: qué quieres (palabras simples) y por qué (no eres experto).",
+  },
+];
+
+export const curso6Quiz: QuizQuestion[] = [
+  {
+    question: "¿Cuáles son las tres formas de usar la IA para escribir correos y mensajes?",
+    options: [
+      "Dictar, copiar y traducir",
+      "Escribir desde cero, mejorar lo que ya escribiste y adaptar el tono",
+      "Buscar, resumir y publicar",
+      "Crear, guardar y enviar",
+    ],
+    correctIndex: 1,
+    explanation: "Las tres formas son: escribir desde cero, mejorar lo que ya escribiste, y adaptar el tono para diferentes destinatarios.",
+  },
+  {
+    question: "¿Qué prompt describe mejor cómo pedirle una receta a la IA con lo que tienes en casa?",
+    options: [
+      "'Dame una receta'",
+      "'¿Qué puedo cocinar?'",
+      "'Tengo arroz, pollo, cebolla y ajo. ¿Qué puedo hacer para 2 personas en menos de 30 minutos sin usar el horno?'",
+      "'Ayúdame a cocinar algo rico'",
+    ],
+    correctIndex: 2,
+    explanation: "Este prompt incluye ingredientes, cantidad de personas, tiempo máximo y restricción, dando toda la información necesaria.",
+  },
+  {
+    question: "¿Cuál es la regla de oro para usar la IA con las tareas escolares?",
+    options: [
+      "Pedirle que haga toda la tarea para ahorrar tiempo",
+      "No usar la IA para educación porque confunde",
+      "Ayudar a entender el tema, no dar las respuestas directamente",
+      "Usarla solo para materias de ciencias",
+    ],
+    correctIndex: 2,
+    explanation: "La IA es más valiosa cuando explica conceptos y crea ejercicios de práctica, sin hacer la tarea en lugar del alumno.",
+  },
+  {
+    question: "¿Cuál es el método más simple para resumir un artículo con la IA?",
+    options: [
+      "Subir el archivo PDF directamente",
+      "Copiar el texto, pegarlo en el chat y pedir el resumen",
+      "Escribir el título del artículo y pedir que lo busque",
+      "Fotografiar el texto y subirlo como imagen",
+    ],
+    correctIndex: 1,
+    explanation: "El método copy-paste es el más simple: seleccionas el texto, lo copias, lo pegas en el chat con la instrucción.",
+  },
+  {
+    question: "¿Por qué la IA traduce mejor que un diccionario para frases cotidianas?",
+    options: [
+      "Porque traduce más rápido que cualquier herramienta",
+      "Porque entiende el contexto y las expresiones idiomáticas, no solo las palabras",
+      "Porque siempre usa un estilo más formal y preciso",
+      "Porque puede traducir solo del inglés al español",
+    ],
+    correctIndex: 1,
+    explanation: "La IA entiende expresiones como 'it's raining cats and dogs' en su contexto real, no literalmente.",
+  },
+  {
+    question: "¿Cuál es el mejor flujo para planear un viaje con IA?",
+    options: [
+      "Usar solo ChatGPT para toda la planificación",
+      "Usar Perplexity para información actualizada y ChatGPT para el itinerario personalizado",
+      "Usar Claude para el itinerario y Gemini para las traducciones",
+      "Buscar todo en Google y luego pedirle a la IA que lo organice",
+    ],
+    correctIndex: 1,
+    explanation: "Perplexity para información actualizada (precios, visa) y ChatGPT para armar el itinerario personalizado.",
+  },
+  {
+    question: "¿Qué tipo de resumen debes pedir cuando quieres saber qué acción tomar?",
+    options: ["Resumen ejecutivo", "Resumen en bullets", "Resumen comparativo", "Resumen de acción"],
+    correctIndex: 3,
+    explanation: "El resumen de acción te dice qué hacer: '¿Cuáles son las 3 cosas concretas que debo hacer según este artículo?'",
+  },
+  {
+    question: "¿Cuándo no es suficiente el resumen de la IA para documentos importantes?",
+    options: [
+      "Cuando el documento tiene más de 10 páginas",
+      "Para asuntos legales o médicos críticos, donde se necesita un profesional",
+      "Cuando el texto está en otro idioma",
+      "Nunca, la IA siempre resume correctamente",
+    ],
+    correctIndex: 1,
+    explanation: "Para documentos legales o decisiones médicas críticas, el resumen de la IA es un punto de partida, no un reemplazo profesional.",
+  },
+  {
+    question: "Para adaptar el mismo mensaje a diferentes destinatarios, ¿cuál es la forma más eficiente?",
+    options: [
+      "Crear un prompt nuevo para cada versión",
+      "Usar herramientas diferentes para cada destinatario",
+      "Pedir las adaptaciones de tono en la misma conversación, una tras otra",
+      "Escribir las tres versiones manualmente",
+    ],
+    correctIndex: 2,
+    explanation: "En la misma conversación puedes pedir múltiples adaptaciones: 'Ahora haz una versión formal' y luego 'Ahora una informal'.",
+  },
+  {
+    question: "Según el curso, ¿para cuál de estas situaciones NO es recomendable depender solo de la IA?",
+    options: [
+      "Escribir un mensaje de cumpleaños",
+      "Planificar el menú semanal",
+      "Firmar un contrato legal o tomar una decisión médica crítica",
+      "Buscar frases útiles antes de un viaje",
+    ],
+    correctIndex: 2,
+    explanation: "Para contratos legales o decisiones médicas críticas siempre se debe consultar a un profesional certificado.",
+  },
+];
