@@ -170,7 +170,7 @@ export function TextToSpeech({ audioUrl }: TextToSpeechProps) {
         <span className="text-sm font-medium text-[#1E40AF]/70">
           {t("tts.speed")}:
         </span>
-        {[0.75, 0.9, 1, 1.25].map((s) => (
+        {[0.9, 1, 1.5, 2].map((s) => (
           <button
             key={s}
             onClick={() => handleSpeedChange(s)}
