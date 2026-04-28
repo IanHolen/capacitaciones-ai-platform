@@ -18,6 +18,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import type { Curso, Nivel } from "@/lib/cursos-data";
+import { CourseRating } from "@/components/course-rating";
 
 interface LocalizedCourseDetailProps {
   curso: Curso;
@@ -71,6 +72,11 @@ export function LocalizedCourseDetail({
             <Clock className="size-5" aria-hidden="true" />
             {displayDuracion}
           </span>
+        </div>
+
+        {/* Course Rating */}
+        <div className="mt-4">
+          <CourseRating courseId={curso.id} />
         </div>
 
         {/* Progress Bar */}

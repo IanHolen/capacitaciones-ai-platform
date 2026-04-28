@@ -40,7 +40,10 @@
     "clearSearch": "Clear search",
     "filterByLevel": "Filter courses by level",
     "noResults": "No courses found for \"{query}\".",
-    "noCoursesLevel": "No courses available for this level yet."
+    "noCoursesLevel": "No courses available for this level yet.",
+    "ratingAverage": "{{average}} ({{count}} ratings)",
+    "noRatings": "No ratings yet",
+    "rateStar": "Rate {{star}} stars"
   },
   "levels": {
     "intro": "Introduction",
