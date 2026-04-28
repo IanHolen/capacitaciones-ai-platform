@@ -102,10 +102,10 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
     const percentage = Math.round((correctCount / pool.length) * 100);
     const passed = percentage >= 80;
     const message = passed
-      ? "¡Excelente! Tenés una base sólida."
+      ? "¡Excelente! Tienes una base sólida."
       : percentage >= 50
-        ? "Necesitás al menos 80% para completar esta lección. ¡Intentalo de nuevo!"
-        : "No te desanimes. Volvé a leer las lecciones con calma e intentá de nuevo.";
+        ? "Necesitas al menos 80% para completar esta lección. ¡Inténtalo de nuevo!"
+        : "No te desanimes. Vuelve a leer las lecciones con calma e inténtalo de nuevo.";
 
     if (passed && onPass) {
       onPass();

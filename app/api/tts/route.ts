@@ -62,8 +62,11 @@ export async function POST(request: Request) {
     await unlink(outputFile).catch(() => {});
     const message = err instanceof Error ? err.message : "TTS error";
     console.error("[tts] edge-tts error:", message);
+    const errorMsg = lang === 'en'
+      ? `Error generating audio: ${message}`
+      : `Error generando audio: ${message}`;
     return NextResponse.json(
-      { error: `Error generando audio: ${message}` },
+      { error: errorMsg },
       { status: 500 }
     );
   }

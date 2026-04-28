@@ -42,7 +42,7 @@ export function LessonQuizSection({
           />
         ) : (
           <p className="text-base text-muted-foreground">
-            Completá el quiz con al menos 80% para marcar esta lección como
+            Completa el quiz con al menos 80% para marcar esta lección como
             completada.
           </p>
         )}

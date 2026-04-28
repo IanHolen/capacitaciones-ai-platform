@@ -89,7 +89,7 @@ export function OnboardingModal() {
         />
 
         <p className="mt-2 text-sm text-muted-foreground">
-          Podés cambiar esto cuando quieras desde Mi Cuenta
+          Puedes cambiar esto cuando quieras desde Mi Cuenta
         </p>
 
         <button

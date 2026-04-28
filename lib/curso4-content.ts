@@ -1,4 +1,4 @@
-// Contenido educativo del Curso 4: Domina ChatGPT, Claude y Gemini
+// Contenido educativo del Curso 4: Dominá ChatGPT, Claude y Gemini
 // 8 lecciones — Nivel Básico, español LATAM
 
 export const c4leccion1 = `
@@ -14,7 +14,7 @@ ChatGPT fue creado por OpenAI y es el asistente de IA más conocido del mundo. U
 
 **Sus puntos fuertes:**
 - Es muy versátil: sirve para escribir, programar, analizar datos, crear imágenes y mucho más.
-- Tiene **memoria**: puede recordar cosas de conversaciones anteriores si tú se lo permites.
+- Tiene **memoria**: puede recordar cosas de conversaciones anteriores si tú se lo permitís.
 - Tiene una galería llamada **GPTs** donde encuentras versiones especializadas para tareas concretas (por ejemplo, un GPT solo para recetas, o uno para aprender idiomas).
 - La versión gratuita es muy completa.
 
@@ -34,7 +34,7 @@ Claude fue creado por Anthropic, una empresa fundada por ex-investigadores de Op
 
 ### Gemini — El conectado al mundo de Google
 
-Gemini fue creado por Google y tiene una ventaja que los otros no tienen: esta **integrado con todos los servicios de Google**.
+Gemini fue creado por Google y tiene una ventaja que los otros no tienen: está **integrado con todos los servicios de Google**.
 
 **Sus puntos fuertes:**
 - Puede acceder en tiempo real a **Gmail, Google Drive, Google Maps y YouTube**.
@@ -79,13 +79,13 @@ En la próxima lección vamos a conocer en detalle la pantalla de ChatGPT para q
 export const c4leccion2 = `
 ## Interfaz y funciones de ChatGPT
 
-Antes de pedirle algo a ChatGPT, conviene conocer bien su pantalla. Así como cuando empiezas a usar un celular nuevo primero buscas dónde están las cosas, con ChatGPT pasa lo mismo. En esta lección hacemos un recorrido completo por su interfaz.
+Antes de pedirle algo a ChatGPT, conviene conocer bien su pantalla. Así como cuando empiezas a usar un celular nuevo primero buscás dónde están las cosas, con ChatGPT pasa lo mismo. En esta lección hacemos un recorrido completo por su interfaz.
 
 ---
 
 ### Un recorrido por la pantalla
 
-Cuando abres ChatGPT (en chat.openai.com o en la app), la pantalla se divide en dos partes principales:
+Cuando abrís ChatGPT (en chat.openai.com o en la app), la pantalla se divide en dos partes principales:
 
 **La barra lateral izquierda:**
 - **Nuevo chat**: el botón para empezar una conversación desde cero.
@@ -95,7 +95,7 @@ Cuando abres ChatGPT (en chat.openai.com o en la app), la pantalla se divide en 
 - **Tu nombre y configuración**: en la parte de abajo.
 
 **El área central:**
-- La **caja de texto** grande donde escribes tu pregunta o pedido.
+- La **caja de texto** grande donde escribís tu pregunta o pedido.
 - El **ícono de clip** (📎) para adjuntar archivos, imágenes o documentos.
 - El **selector de modelo** (en la versión paga): para elegir qué versión de GPT quieres usar.
 - El **ícono de micrófono** para usar la voz en lugar de escribir.
@@ -105,10 +105,10 @@ Cuando abres ChatGPT (en chat.openai.com o en la app), la pantalla se divide en 
 ### Funciones principales que vas a usar todo el tiempo
 
 **1. Adjuntar archivos**
-Puedes subir fotos, documentos PDF o de Word, y pedirle a ChatGPT que los analice, resuma o explique. Solo haz clic en el clip antes de enviar tu mensaje.
+Puedes subir fotos, documentos PDF o de Word, y pedirle a ChatGPT que los analice, resuma o explique. Solo hacé clic en el clip antes de enviar tu mensaje.
 
 **2. Contexto de la conversación**
-ChatGPT recuerda todo lo que dijeron dentro del mismo chat. Si en el mensaje 1 le dices que tienes 65 años y en el mensaje 10 le preguntas sobre ejercicio, va a considerar tu edad sin que tú lo repitas.
+ChatGPT recuerda todo lo que dijeron dentro del mismo chat. Si en el mensaje 1 le decís que tienes 65 años y en el mensaje 10 le preguntás sobre ejercicio, va a considerar tu edad sin que tú lo repitas.
 
 **3. Editar mensajes**
 Si cometiste un error en tu pregunta, puedes **editarla** haciendo clic en el lápiz que aparece al pasar el mouse sobre tu mensaje. Así no necesitas empezar de cero.
@@ -140,7 +140,7 @@ En la app móvil y también en la web, puedes mantener una conversación hablada
 
 ### Configuración básica
 
-Para acceder a la configuración, haz clic en tu nombre (parte inferior del menú lateral). Desde ahí puedes:
+Para acceder a la configuración, hacé clic en tu nombre (parte inferior del menú lateral). Desde ahí podés:
 
 - **Cambiar el idioma**: puedes elegir español si quieres la interfaz en tu idioma.
 - **Activar o desactivar la memoria**: decidir si ChatGPT puede recordar cosas entre conversaciones.
@@ -151,9 +151,9 @@ Para acceder a la configuración, haz clic en tu nombre (parte inferior del men�
 
 ### Consejo práctico
 
-La primera vez que entres a ChatGPT, te recomendamos escribir este mensaje de presentación:
+La primera vez que entrés a ChatGPT, te recomendamos escribir este mensaje de presentación:
 
-*"Hola, me llamo [tu nombre] y tengo [tu edad] años. Vivo en [tu país]. No tengo mucha experiencia con tecnología. Por favor, cuando me respondas usa un lenguaje simple y explícame las cosas paso a paso."*
+*"Hola, me llamo [tu nombre] y tengo [tu edad] años. Vivo en [tu país]. No tengo mucha experiencia con tecnología. Por favor, cuando me respondas usá un lenguaje simple y explícame las cosas paso a paso."*
 
 Esto va a hacer que todas las respuestas sean mucho más útiles para ti desde el primer momento.
 
@@ -173,7 +173,7 @@ Claude tiene una personalidad diferente a ChatGPT: es más cuidadoso, más detal
 
 ### Un recorrido por la pantalla de Claude
 
-Accedes a Claude desde **claude.ai** (en la web) o desde la app oficial. La pantalla tiene:
+Accedés a Claude desde **claude.ai** (en la web) o desde la app oficial. La pantalla tiene:
 
 **La barra lateral izquierda:**
 - **Nuevo chat**: para empezar una conversación nueva.
@@ -192,16 +192,16 @@ Accedes a Claude desde **claude.ai** (en la web) o desde la app oficial. La pant
 
 **1. Artifacts — El panel de contenido largo**
 
-Esta es la función más especial de Claude. Cuando le pides que cree algo extenso — como un informe, una carta formal, una tabla, un plan — Claude lo abre en un **panel separado a la derecha** en vez de escribirlo en el chat.
+Esta es la función más especial de Claude. Cuando le pedís que cree algo extenso — como un informe, una carta formal, una tabla, un plan — Claude lo abre en un **panel separado a la derecha** en vez de escribirlo en el chat.
 
 Esto tiene varias ventajas:
 - El contenido largo no se mezcla con la conversación.
 - Puedes copiarlo, descargarlo o seguir editándolo.
-- Puedes ver el resultado final claramente mientras sigues conversando a la izquierda.
+- Puedes ver el resultado final claramente mientras seguís conversando a la izquierda.
 
 **2. Proyectos — Instrucciones que siempre se aplican**
 
-En la sección "Proyectos" puedes crear un espacio de trabajo con instrucciones permanentes. Por ejemplo: *"Siempre háblame de ti, usa español de Argentina, soy maestra de primaria."* Esas instrucciones se aplican en todos los chats dentro de ese proyecto.
+En la sección "Proyectos" puedes crear un espacio de trabajo con instrucciones permanentes. Por ejemplo: *"Siempre hablame de vos, usá español de Argentina, soy maestra de primaria."* Esas instrucciones se aplican en todos los chats dentro de ese proyecto.
 
 **3. Subir documentos largos (hasta 200 páginas)**
 
@@ -241,12 +241,12 @@ No es la mejor opción si necesitas información actualizada de internet (Claude
 
 ### Consejo práctico
 
-Prueba esta secuencia para entender los Artifacts:
+Probá esta secuencia para entender los Artifacts:
 
-1. Abre Claude en claude.ai.
-2. Escribe: *"Haceme un plan de 5 días para aprender a usar la inteligencia artificial. Que incluya actividades diarias de 20 minutos."*
+1. Abrí Claude en claude.ai.
+2. Escribí: *"Haceme un plan de 5 días para aprender a usar la inteligencia artificial. Que incluya actividades diarias de 20 minutos."*
 3. Fíjate cómo Claude crea el plan en el panel Artifact a la derecha, separado del chat.
-4. Edita el plan pidiéndole ajustes en el chat de la izquierda.
+4. Editá el plan pidiéndole ajustes en el chat de la izquierda.
 
 ---
 
@@ -264,7 +264,7 @@ Gemini es el asistente de Google, y eso le da una ventaja única: puede conectar
 
 ### Un recorrido por la pantalla de Gemini
 
-Accedes a Gemini desde **gemini.google.com** o desde la app en tu celular. Si tienes cuenta de Gmail, ya puedes entrar con esa misma cuenta.
+Accedés a Gemini desde **gemini.google.com** o desde la app en tu celular. Si tienes cuenta de Gmail, ya puedes entrar con esa misma cuenta.
 
 **La barra lateral izquierda:**
 - **Nuevo chat**: para empezar una conversación nueva.
@@ -307,7 +307,7 @@ Los Gems son versiones de Gemini configuradas para tareas específicas. Google y
 
 **4. Generación de imágenes**
 
-Gemini puede crear imágenes con el modelo **Imagen de Google**. Solo describes lo que quieres ver y Gemini lo genera. Funciona directamente desde el chat, sin necesidad de herramientas externas.
+Gemini puede crear imágenes con el modelo **Imagen de Google**. Solo describís lo que quieres ver y Gemini lo genera. Funciona directamente desde el chat, sin necesidad de herramientas externas.
 
 **5. Voz en el navegador**
 
@@ -336,16 +336,16 @@ Gemini es la mejor opción cuando:
 - Quieres **integrar con tus servicios de Google** (Gmail, Drive, Maps, YouTube).
 - Usas **Google en tu trabajo o vida diaria** y quieres todo en un solo lugar.
 - Quieres **generar imágenes** sin pagar por herramientas adicionales.
-- Prefieres **verificar** la información con fuentes de internet antes de usarla.
+- Preferís **verificar** la información con fuentes de internet antes de usarla.
 
 ---
 
 ### Consejo práctico
 
-Si tienes Gmail, prueba esto:
+Si tienes Gmail, probá esto:
 
-1. Entra a gemini.google.com con tu cuenta de Gmail.
-2. Escribe: *"@Gmail, ¿tengo algún correo importante sin responder de esta semana?"*
+1. Entrá a gemini.google.com con tu cuenta de Gmail.
+2. Escribí: *"@Gmail, ¿tengo algún correo importante sin responder de esta semana?"*
 3. Fíjate cómo Gemini accede a tu bandeja y te da un resumen.
 
 Esto puede ahorrarte mucho tiempo cuando tienes muchos correos acumulados.
@@ -354,7 +354,7 @@ Esto puede ahorrarte mucho tiempo cuando tienes muchos correos acumulados.
 
 ### Resumen
 
-Gemini brilla por su **integración con Google** (Gmail, Drive, Maps, YouTube), la capacidad de **verificar sus propias respuestas** con fuentes web, y el acceso a **información en tiempo real**. Si ya eres usuario de Google, Gemini va a sentirse como una extensión natural de las herramientas que ya conoces.
+Gemini brilla por su **integración con Google** (Gmail, Drive, Maps, YouTube), la capacidad de **verificar sus propias respuestas** con fuentes web, y el acceso a **información en tiempo real**. Si ya eres usuario de Google, Gemini va a sentirse como una extensión natural de las herramientas que ya conocés.
 `;
 
 export const c4leccion5 = `
@@ -369,36 +369,36 @@ Una de las ventajas más grandes de los asistentes de IA es que los puedes lleva
 Las tres apps son **gratuitas** y están disponibles tanto para Android (Google Play) como para iPhone (App Store).
 
 **ChatGPT:**
-1. Abre la tienda de apps de tu celular.
-2. Busca "ChatGPT" (con la C y la G mayúsculas).
-3. Instala la app oficial de **OpenAI** (tiene el logo negro con una flor estilizada).
-4. Ingresa con tu cuenta o crea una nueva (puedes usar tu Gmail para registrarte).
+1. Abrí la tienda de apps de tu celular.
+2. Buscá "ChatGPT" (con la C y la G mayúsculas).
+3. Instalá la app oficial de **OpenAI** (tiene el logo negro con una flor estilizada).
+4. Ingresá con tu cuenta o creá una nueva (podés usar tu Gmail para registrarte).
 
 **Claude:**
-1. Busca "Claude" en la tienda de apps.
-2. Instala la app oficial de **Anthropic**.
-3. Ingresa con tu cuenta o crea una (puedes usar tu Gmail o correo habitual).
+1. Buscá "Claude" en la tienda de apps.
+2. Instalá la app oficial de **Anthropic**.
+3. Ingresá con tu cuenta o creá una (podés usar tu Gmail o correo habitual).
 
 **Gemini:**
-1. Busca "Google Gemini" en la tienda de apps.
+1. Buscá "Google Gemini" en la tienda de apps.
 2. Probablemente ya la tienes instalada si tienes un celular Android reciente.
 3. En iPhone, buscala en la App Store.
-4. Ingresa con tu cuenta de Gmail, que ya tienes.
+4. Ingresá con tu cuenta de Gmail, que ya tenés.
 
 ---
 
 ### El modo voz — Hablar en vez de escribir
 
-El modo voz te permite **hablar con el asistente** como si fuera una persona. Tú hablas, la IA escucha, entiende y te responde (también con voz, si quieres, o en texto).
+El modo voz te permite **hablar con el asistente** como si fuera una persona. Tú hablás, la IA escucha, entiende y te responde (también con voz, si querés, o en texto).
 
 **¿Cómo activar el modo voz?**
 
 | App | Cómo activar el modo voz |
 |---|---|
-| ChatGPT | Toca el ícono del micrófono 🎤 en la caja de texto |
-| ChatGPT (modo avanzado) | Toca el ícono de los auriculares para modo conversacional completo |
-| Claude | Toca el micrófono 🎤 en la caja de texto |
-| Gemini | Toca el micrófono 🎤 en la caja de texto |
+| ChatGPT | Tocá el ícono del micrófono 🎤 en la caja de texto |
+| ChatGPT (modo avanzado) | Tocá el ícono de los auriculares para modo conversacional completo |
+| Claude | Tocá el micrófono 🎤 en la caja de texto |
+| Gemini | Tocá el micrófono 🎤 en la caja de texto |
 
 ---
 
@@ -430,13 +430,13 @@ El modo voz te permite **hablar con el asistente** como si fuera una persona. T�
 
 ### Tips para usar el modo voz bien
 
-**Habla con claridad y sin apuro.** No necesitas gritar ni hablar más lento de lo normal. Solo habla como lo harías con una persona.
+**Hablá con claridad y sin apuro.** No necesitas gritar ni hablar más lento de lo normal. Solo hablá como lo harías con una persona.
 
 **Puedes usar puntuación verbal.** Si quieres que algo quede como lista, puedes decir: *"Primero... Segundo... Tercero..."*. La IA entiende la estructura de tu discurso.
 
-**Corrige si no entendió.** Si la transcripción tiene errores, simplemente di *"Me escuchaste mal, quise decir..."* y sigue.
+**Corregí si no entendió.** Si la transcripción tiene errores, simplemente decí *"Me escuchaste mal, quise decir..."* y seguí.
 
-**Usa el modo voz para ideas rápidas.** Si de repente se te ocurre algo que quieres que la IA te ayude a desarrollar, activa la voz y dilo antes de que se te olvide.
+**Usá el modo voz para ideas rápidas.** Si de repente se te ocurre algo que quieres que la IA te ayude a desarrollar, activá la voz y dilo antes de que se te olvide.
 
 **ChatGPT tiene el mejor modo voz.** Si la experiencia de hablar con la IA es importante para ti, ChatGPT en modo avanzado ofrece la conversación más fluida y natural, con voces muy humanas.
 
@@ -444,12 +444,12 @@ El modo voz te permite **hablar con el asistente** como si fuera una persona. T�
 
 ### Consejo práctico
 
-Prueba esto en la app de ChatGPT:
+Probá esto en la app de ChatGPT:
 
-1. Abre la app y toca el ícono del auricular (modo voz avanzado).
-2. Di: *"Cuéntame un chiste corto."*
-3. Escucha cómo te responde con voz.
-4. Di: *"Ahora cuéntame otro, más gracioso."*
+1. Abrí la app y tocá el ícono del auricular (modo voz avanzado).
+2. Decí: *"Contame un chiste corto."*
+3. Escuchá cómo te responde con voz.
+4. Decí: *"Ahora contame otro, más gracioso."*
 
 Así vas a sentir cómo es tener una conversación real con una IA.
 
@@ -482,9 +482,9 @@ Es como tener un asistente investigador que va a la biblioteca, lee los libros y
 
 ### ¿Cómo usar Perplexity?
 
-1. Abre tu navegador y ve a **perplexity.ai**
-2. Escribe tu pregunta en la caja de texto central (como si buscaras en Google).
-3. Toca Enter o el botón de buscar.
+1. Abrí tu navegador y andá a **perplexity.ai**
+2. Escribí tu pregunta en la caja de texto central (como si buscaras en Google).
+3. Tocá Enter o el botón de buscar.
 4. Perplexity busca en internet, lee las fuentes y te da una respuesta organizada.
 5. Al final de la respuesta, verás los **números de fuente** (1, 2, 3...) y los sitios donde encontró la información.
 
@@ -532,16 +532,16 @@ Puedes organizar tus búsquedas en carpetas temáticas. Por ejemplo, tener una c
 - **No analiza archivos** que tú le subas.
 - **No genera imágenes.**
 
-Para esas tareas, sigues usando ChatGPT o Claude.
+Para esas tareas, seguís usando ChatGPT o Claude.
 
 ---
 
 ### Consejo práctico
 
-Haz esta prueba para sentir la diferencia entre Perplexity y Google:
+Hacé esta prueba para sentir la diferencia entre Perplexity y Google:
 
-1. Busca en Google: *"síntomas del colesterol alto"* — vas a ver una lista de links.
-2. Busca en Perplexity: *"¿cuáles son los síntomas del colesterol alto?"* — vas a recibir una respuesta clara y organizada con fuentes.
+1. Buscá en Google: *"síntomas del colesterol alto"* — vas a ver una lista de links.
+2. Buscá en Perplexity: *"¿cuáles son los síntomas del colesterol alto?"* — vas a recibir una respuesta clara y organizada con fuentes.
 
 La diferencia es inmediata y muy visible.
 
@@ -555,7 +555,7 @@ La diferencia es inmediata y muy visible.
 export const c4leccion7 = `
 ## ¿Cuándo usar cuál herramienta?
 
-Ya conoces ChatGPT, Claude, Gemini y Perplexity. Ahora viene la pregunta clave: **¿cómo saber cuál usar en cada momento?** En esta lección te damos una guía práctica para tomar esa decisión rápido y sin dudas.
+Ya conocés ChatGPT, Claude, Gemini y Perplexity. Ahora viene la pregunta clave: **¿cómo saber cuál usar en cada momento?** En esta lección te damos una guía práctica para tomar esa dicesión rápido y sin dudas.
 
 ---
 
@@ -565,9 +565,9 @@ Antes de abrir cualquier herramienta, hacete esta pregunta:
 
 > ¿Qué quiero hacer exactamente?
 
-Y aplica esta regla general:
+Y aplicá esta regla general:
 
-| Si quieres... | Usa... |
+| Si querés... | Usá... |
 |---|---|
 | Buscar información actual o de noticias | **Perplexity** |
 | Escribir algo (mail, carta, texto) | **ChatGPT o Claude** |
@@ -583,13 +583,13 @@ Y aplica esta regla general:
 
 **En casa:**
 - *"¿Qué tiempo va a hacer este fin de semana?"* → Perplexity o Gemini
-- *"Escríbeme un mensaje de feliz cumpleaños para mi nieto"* → ChatGPT
-- *"Buscame una receta con lo que tengo en la refrigerador"* → ChatGPT
+- *"Escribime un mensaje de feliz cumpleaños para mi nieto"* → ChatGPT
+- *"Buscame una receta con lo que tengo en la heladera"* → ChatGPT
 
 **En el trabajo o con documentos:**
 - *"Resumime este contrato de 30 páginas"* → Claude
-- *"Redacta un correo formal al banco"* → Claude o ChatGPT
-- *"Busca en mis correos de Gmail algo del médico"* → Gemini
+- *"Redactá un correo formal al banco"* → Claude o ChatGPT
+- *"Buscá en mis correos de Gmail algo del médico"* → Gemini
 
 **Para aprender:**
 - *"Explicame qué es la diabetes en palabras simples"* → ChatGPT o Perplexity
@@ -597,17 +597,17 @@ Y aplica esta regla general:
 - *"Ayudame a preparar un tema para enseñar a mis alumnos"* → Claude o ChatGPT
 
 **Para entretenimiento:**
-- *"Cuéntame una historia corta sobre un viaje al Polo Sur"* → ChatGPT
+- *"Contame una historia corta sobre un viaje al Polo Sur"* → ChatGPT
 - *"Haceme una imagen de una casa de campo en otoño"* → ChatGPT o Gemini
 
 ---
 
 ### La estrategia del "doble chequeo"
 
-Cuando la información que buscas es **importante** (salud, legal, finanzas), te recomendamos esta estrategia de dos pasos:
+Cuando la información que buscás es **importante** (salud, legal, finanzas), te recomendamos esta estrategia de dos pasos:
 
-1. **Paso 1**: Usa Perplexity para buscar información actualizada con fuentes verificables.
-2. **Paso 2**: Pega lo que encontraste en ChatGPT o Claude y pedile que te lo explique con más detalle o en palabras más simples.
+1. **Paso 1**: Usá Perplexity para buscar información actualizada con fuentes verificables.
+2. **Paso 2**: Pegá lo que encontraste en ChatGPT o Claude y pedile que te lo explique con más detalle o en palabras más simples.
 
 Esta combinación te da información actualizada Y bien explicada, lo mejor de ambos mundos.
 
@@ -631,19 +631,19 @@ Esta semana, cada vez que vayas a usar una IA, hacete primero la pregunta:
 
 *"¿Esto lo sé mejor buscando en internet (Perplexity) o creando desde cero (ChatGPT/Claude)?"*
 
-Esa simple pregunta va a guiar el 90% de tus decisiones.
+Esa simple pregunta va a guiar el 90% de tus dicesiones.
 
 ---
 
 ### Resumen
 
-No existe una herramienta perfecta para todo: cada una brilla en algo específico. **Perplexity** para buscar, **Claude** para documentos largos, **Gemini** para Google, y **ChatGPT** para todo lo demás. El kit de inicio ideal es ChatGPT + Perplexity. A medida que avances, vas a ir sumando herramientas naturalmente según tus necesidades.
+No existe una herramienta perfecta para todo: cada una brilla en algo específico. **Perplexity** para buscar, **Claude** para documentos largos, **Gemini** para Google, y **ChatGPT** para todo lo demás. El kit de inicio ideal es ChatGPT + Perplexity. A medida que avancés, vas a ir sumando herramientas naturalmente según tus necesidades.
 `;
 
 export const c4leccion8 = `
-## Quiz: Domina ChatGPT, Claude y Gemini
+## Quiz: Dominá ChatGPT, Claude y Gemini
 
-¡Llegamos al final del Curso 4! Es momento de poner a prueba todo lo que aprendiste. Este quiz tiene 10 preguntas con su respuesta y una explicación corta. Lee cada pregunta, piensa tu respuesta y después lee la explicación.
+¡Llegamos al final del Curso 4! Es momento de poner a prueba todo lo que aprendiste. Este quiz tiene 10 preguntas con su respuesta y una explicación corta. Leé cada pregunta, pensá tu respuesta y después leé la explicación.
 
 ---
 
@@ -784,7 +784,7 @@ D) ChatGPT con plugin
 
 ### Pregunta 10
 
-**¿Cuál es el "kit de inicio" recomendado para alguien que esta empezando con la IA?**
+**¿Cuál es el "kit de inicio" recomendado para alguien que está empezando con la IA?**
 
 A) Claude y Perplexity
 B) Gemini y Claude
@@ -799,7 +799,7 @@ D) Solo ChatGPT es suficiente
 
 ### ¡Felicitaciones!
 
-Completaste el Curso 4. Ya sabes:
+Completaste el Curso 4. Ya sabés:
 - Las diferencias entre ChatGPT, Claude y Gemini.
 - Cómo navegar la interfaz de cada uno.
 - Para qué sirven las apps móviles y el modo voz.

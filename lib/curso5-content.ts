@@ -4,9 +4,9 @@
 export const c5leccion1 = `
 ## Anatomía de un buen prompt
 
-Un **prompt** es simplemente el mensaje que le escribes a la IA. Pero no todos los mensajes funcionan igual: algunos dan resultados increíbles y otros dan respuestas vagas o inútiles. La diferencia casi siempre esta en cómo esta escrito el prompt.
+Un **prompt** es simplemente el mensaje que le escribís a la IA. Pero no todos los mensajes funcionan igual: algunos dan resultados increíbles y otros dan respuestas vagas o inútiles. La diferencia casi siempre está en cómo está escrito el prompt.
 
-En esta lección aprendes una fórmula simple que transforma cualquier prompt mediocre en uno excelente.
+En esta lección aprendés una fórmula simple que transforma cualquier prompt mediocre en uno excelente.
 
 ---
 
@@ -34,12 +34,12 @@ Ejemplos:
 
 **2. TAREA — ¿Qué quieres que haga exactamente?**
 
-Describe la acción concreta que necesitas. Usa verbos claros: explica, escribe, resume, haz una lista, compara, crea, traduce.
+Describí la acción concreta que necesitás. Usá verbos claros: explicá, escribí, resumí, hacé una lista, comparé, creá, traducí.
 
 Ejemplos:
 - *"...explicame en palabras simples..."*
-- *"...escribe un mail formal..."*
-- *"...haz una lista de 5 opciones..."*
+- *"...escribí un mail formal..."*
+- *"...hacé una lista de 5 opciones..."*
 
 **3. CONTEXTO — ¿Cuál es la situación?**
 
@@ -52,7 +52,7 @@ Ejemplos:
 
 **4. FORMATO — ¿Cómo quieres la respuesta?**
 
-Especifica cómo quieres que esté organizada la respuesta.
+Especificá cómo quieres que esté organizada la respuesta.
 
 Ejemplos:
 - *"...en una lista con puntos."*
@@ -70,17 +70,17 @@ Ejemplos:
 
 ⚠️ Regular: *"Explicame qué es la presión alta de forma simple."*
 
-✅ Excelente: *"Eres un médico de cabecera amable. Explicame qué es la presión alta, cuáles son sus síntomas y qué puedo hacer en casa para bajarla. Háblame como si fuera un paciente de 70 años sin conocimientos médicos. Usa lenguaje simple y haz una lista con los puntos más importantes."*
+✅ Excelente: *"Eres un médico de cabecera amable. Explicame qué es la presión alta, cuáles son sus síntomas y qué puedo hacer en casa para bajarla. Hablame como si fuera un paciente de 70 años sin conocimientos médicos. Usá lenguaje simple y hacé una lista con los puntos más importantes."*
 
 ---
 
 **Ejemplo 2 — Sobre comunicación:**
 
-❌ Malo: *"Escribe un mail."*
+❌ Malo: *"Escribí un mail."*
 
-⚠️ Regular: *"Escribe un mail pidiendo un turno médico."*
+⚠️ Regular: *"Escribí un mail pidiendo un turno médico."*
 
-✅ Excelente: *"Eres una asistente administrativa. Escríbeme un mail formal pidiendo turno con el cardiólogo Dr. Rodríguez. Necesito una cita para la semana que viene. El mail debe sonar educado y profesional, con saludo, cuerpo y despedida. Máximo 5 líneas."*
+✅ Excelente: *"Eres una asistente administrativa. Escribime un mail formal pidiendo turno con el cardiólogo Dr. Rodríguez. Necesito una cita para la semana que viene. El mail debe sonar educado y profesional, con saludo, cuerpo y despedida. Máximo 5 líneas."*
 
 ---
 
@@ -96,9 +96,9 @@ Ejemplos:
 
 ### Una regla de oro
 
-> **Cuanto más claro seas tú, más útil es la respuesta.**
+> **Cuanto más claro seas vos, más útil es la respuesta.**
 
-La IA no adivina lo que tienes en la cabeza. Si le das poco, recibes poco. Si le das mucho, recibes exactamente lo que necesitas.
+La IA no adivina lo que tienes en la cabeza. Si le das poco, recibís poco. Si le das mucho, recibís exactamente lo que necesitás.
 
 ---
 
@@ -110,18 +110,18 @@ La fórmula **ROL + TAREA + CONTEXTO + FORMATO** es la base de un prompt efectiv
 export const c5leccion2 = `
 ## Dar contexto
 
-De todos los ingredientes de un buen prompt, el **contexto** es el que más impacto tiene en la calidad de la respuesta. Cuando la IA sabe quién eres, cuál es tu situación y para qué necesitas la información, puede darte una respuesta que realmente se adapta a ti.
+De todos los ingredientes de un buen prompt, el **contexto** es el que más impacto tiene en la calidad de la respuesta. Cuando la IA sabe quién sos, cuál es tu situación y para qué necesitas la información, puede darte una respuesta que realmente se adapta a vos.
 
 ---
 
 ### ¿Por qué el contexto importa tanto?
 
-Imagina que le preguntas a un médico: *"¿Puedo tomar ibuprofeno?"*
+Imaginá que le preguntás a un médico: *"¿Puedo tomar ibuprofeno?"*
 
 Sin contexto, el médico no puede responder bien. Necesita saber:
-- ¿Cuántos años tienes?
+- ¿Cuántos años tenés?
 - ¿Tomás otros medicamentos?
-- ¿Para qué lo necesitas?
+- ¿Para qué lo necesitás?
 - ¿Tienes alguna condición médica?
 
 Con la IA pasa exactamente lo mismo. El contexto convierte una respuesta genérica en una respuesta personalizada.
@@ -131,12 +131,12 @@ Con la IA pasa exactamente lo mismo. El contexto convierte una respuesta genéri
 ### Los 5 tipos de contexto más útiles
 
 **1. Contexto personal**
-Quién eres, tu edad, tu profesión, tu nivel de experiencia.
+Quién sos, tu edad, tu profesión, tu nivel de experiencia.
 
 *Ejemplos: "Tengo 72 años", "soy jubilada", "no sé nada de tecnología", "soy maestra de primaria".*
 
 **2. Contexto de la situación**
-Qué esta pasando, para qué necesitas la información.
+Qué está pasando, para qué necesitas la información.
 
 *Ejemplos: "Tengo que hablar con mi médico mañana", "mi nieto me preguntó esto", "voy de vacaciones la semana que viene".*
 
@@ -157,16 +157,16 @@ Cómo quieres que suene el resultado.
 
 ---
 
-### El truco de "imagina que..."
+### El truco de "imaginá que..."
 
 Una de las formas más poderosas de dar contexto es usar esta frase al principio de tu prompt:
 
-**"Imagina que..."**
+**"Imaginá que..."**
 
 Ejemplos:
-- *"Imagina que soy una persona de 65 años que nunca usó una computadora. Explicame cómo crear un correo electrónico."*
-- *"Imagina que le estás explicando esto a tu abuela. ¿Cómo describirías qué es la inteligencia artificial?"*
-- *"Imagina que eres mi nutricionista personal. Haceme un menú de una semana que sea sano, simple de cocinar y sin mariscos."*
+- *"Imaginá que soy una persona de 65 años que nunca usó una computadora. Explicame cómo crear un correo electrónico."*
+- *"Imaginá que le estás explicando esto a tu abuela. ¿Cómo describirías qué es la inteligencia artificial?"*
+- *"Imaginá que eres mi nutricionista personal. Haceme un menú de una semana que sea sano, simple de cocinar y sin mariscos."*
 
 ---
 
@@ -175,10 +175,10 @@ Ejemplos:
 **Sin contexto:**
 *"Dame ideas para un regalo."*
 
-Con esta pregunta, la IA no sabe para quién es el regalo, cuánto quieres gastar, si es para un cumpleaños, ni cuándo lo necesitas. La respuesta va a ser muy genérica.
+Con esta pregunta, la IA no sabe para quién es el regalo, cuánto quieres gastar, si es para un cumpleaños, ni cuándo lo necesitás. La respuesta va a ser muy genérica.
 
 **Con contexto:**
-*"Dame 5 ideas de regalo para mi nieta de 12 años que le encanta leer y dibujar. El presupuesto es de unos $2000 pesos mexicanos y lo necesito para su cumpleaños la semana que viene."*
+*"Dame 5 ideas de regalo para mi nieta de 12 años que le encanta leer y dibujar. El presupuesto es de unos $2000 pesos argentinos y lo necesito para su cumpleaños la semana que viene."*
 
 Esta pregunta va a dar resultados específicos, útiles y accionables.
 
@@ -188,36 +188,36 @@ Esta pregunta va a dar resultados específicos, útiles y accionables.
 
 El contexto ayuda, pero hay un límite. Si tu mensaje tiene más de 3-4 párrafos antes de llegar a la pregunta real, probablemente estás dando demasiado contexto innecesario.
 
-**Regla práctica:** incluye el contexto que cambia la respuesta. Si la IA puede responder igual sin cierta información, no es necesario incluirla.
+**Regla práctica:** incluí el contexto que cambia la respuesta. Si la IA puede responder igual sin cierta información, no es necesario incluirla.
 
 ---
 
 ### Consejo práctico
 
-Elige una pregunta que le hayas hecho antes a la IA y obtuviste una respuesta muy general. Vuelve a hacerla, pero esta vez agrega:
+Elegí una pregunta que le hayas hecho antes a la IA y obtuviste una respuesta muy general. Vuelve a hacerla, pero esta vez agregá:
 - Tu edad y situación.
 - Para qué necesitas la información.
 - Quién va a leer o usar el resultado.
 
-Compara los dos resultados y nota la diferencia.
+Comparé los dos resultados y notá la diferencia.
 
 ---
 
 ### Resumen
 
-El contexto transforma respuestas genéricas en respuestas personalizadas. Los 5 tipos de contexto más útiles son: **personal**, **de la situación**, **del destinatario**, **de restricciones** y **de estilo**. El truco de *"imagina que..."* es una forma rápida y efectiva de dar contexto rico en pocas palabras.
+El contexto transforma respuestas genéricas en respuestas personalizadas. Los 5 tipos de contexto más útiles son: **personal**, **de la situación**, **del destinatario**, **de restricciones** y **de estilo**. El truco de *"imaginá que..."* es una forma rápida y efectiva de dar contexto rico en pocas palabras.
 `;
 
 export const c5leccion3 = `
 ## Ser específico vs. ser vago
 
-Uno de los errores más comunes al usar IA es hacer preguntas demasiado vagas. Cuando el prompt es impreciso, la respuesta también lo es. En esta lección aprendes a ser específico de manera natural y sin complicarte.
+Uno de los errores más comunes al usar IA es hacer preguntas demasiado vagas. Cuando el prompt es impreciso, la respuesta también lo es. En esta lección aprendés a ser específico de manera natural y sin complicarte.
 
 ---
 
 ### ¿Por qué la especificidad importa?
 
-La inteligencia artificial intenta cumplir exactamente lo que le pides. Si pides algo vago, tiene que adivinar, y muchas veces adivina mal o da una respuesta demasiado amplia para ser útil.
+La inteligencia artificial intenta cumplir exactamente lo que le pedís. Si pedís algo vago, tiene que adivinar, y muchas veces adivina mal o da una respuesta demasiado amplia para ser útil.
 
 Es como ir a la farmacia y decir: *"Deme algo para el dolor."* El farmacéutico te va a preguntar: ¿dónde duele?, ¿hace cuánto?, ¿tomás otros medicamentos? La IA no siempre hace esas preguntas; simplemente responde lo más genérico posible.
 
@@ -225,29 +225,29 @@ Es como ir a la farmacia y decir: *"Deme algo para el dolor."* El farmacéutico 
 
 ### 6 formas de ser más específico
 
-**1. Especifica el tema exacto**
-En vez de: *"Háblame de salud."*
-Mejor: *"Háblame de los beneficios de caminar 30 minutos diarios para personas mayores de 60 años."*
+**1. Especificá el tema exacto**
+En vez de: *"Hablame de salud."*
+Mejor: *"Hablame de los beneficios de caminar 30 minutos diarios para personas mayores de 60 años."*
 
-**2. Incluye números cuando sea relevante**
+**2. Incluí números cuando sea relevante**
 En vez de: *"Dame ideas de regalos."*
 Mejor: *"Dame 5 ideas de regalos de menos de $1000 pesos para una mujer de 70 años."*
 
-**3. Especifica el nivel de detalle**
+**3. Especificá el nivel de detalle**
 En vez de: *"Explicame el tema."*
 Mejor: *"Explicamelo en 3 puntos simples, sin términos técnicos."*
 
-**4. Nombra el tipo de resultado que quieres**
+**4. Nombrá el tipo de resultado que querés**
 En vez de: *"Ayudame con esto."*
-Mejor: *"Escríbeme un mail / haz una lista / crea un plan / resume este texto."*
+Mejor: *"Escribime un mail / hacé una lista / creá un plan / resumí este texto."*
 
-**5. Define el destinatario**
-En vez de: *"Escribe algo sobre alimentación."*
-Mejor: *"Escribe un consejo de alimentación para compartir con mis amigos en el grupo de WhatsApp."*
+**5. Definí el destinatario**
+En vez de: *"Escribí algo sobre alimentación."*
+Mejor: *"Escribí un consejo de alimentación para compartir con mis amigos en el grupo de WhatsApp."*
 
-**6. Ponle un límite de extensión**
-En vez de: *"Cuéntame sobre los beneficios del yoga."*
-Mejor: *"Cuéntame 3 beneficios del yoga en menos de 5 oraciones."*
+**6. Ponele un límite de extensión**
+En vez de: *"Contame sobre los beneficios del yoga."*
+Mejor: *"Contame 3 beneficios del yoga en menos de 5 oraciones."*
 
 ---
 
@@ -256,9 +256,9 @@ Mejor: *"Cuéntame 3 beneficios del yoga en menos de 5 oraciones."*
 | Prompt vago | Prompt específico |
 |---|---|
 | "¿Qué como?" | "¿Qué puedo comer si tengo diabetes tipo 2 y me gusta la comida argentina?" |
-| "Escribe algo motivador" | "Escribe un mensaje motivador corto para alguien que empieza a hacer ejercicio a los 65 años" |
-| "Cuéntame de historia" | "Cuéntame en 3 párrafos simples cómo llegó el tango a ser famoso en Europa" |
-| "Ayudame con mi mail" | "Revisa este mail y hazlo más formal y conciso, máximo 5 líneas" |
+| "Escribí algo motivador" | "Escribí un mensaje motivador corto para alguien que empieza a hacer ejercicio a los 65 años" |
+| "Contame de historia" | "Contame en 3 párrafos simples cómo llegó el tango a ser famoso en Europa" |
+| "Ayudame con mi mail" | "Revisá este mail y hacelo más formal y conciso, máximo 5 líneas" |
 | "Dame una receta" | "Dame una receta fácil con pollo, papa y zanahoria para 2 personas, sin usar horno" |
 | "¿Cómo mejoro mi memoria?" | "Dame 4 hábitos cotidianos respaldados por la ciencia para mejorar la memoria en adultos mayores" |
 | "Habla de tecnología" | "Explicame qué es el WiFi como si tuvieras que explicárselo a alguien de 80 años" |
@@ -274,7 +274,7 @@ Después de escribir tu prompt, antes de enviarlo, hacete esta pregunta:
 
 > *"Si otra persona leyera esto sin saber nada de mi situación, ¿podría responderlo bien?"*
 
-Si la respuesta es "no" o "tal vez", agrega más detalles. Si la respuesta es "sí", el prompt probablemente esta bien.
+Si la respuesta es "no" o "tal vez", agregá más detalles. Si la respuesta es "sí", el prompt probablemente está bien.
 
 ---
 
@@ -284,17 +284,17 @@ Sí. Si quieres **inspirarte** o explorar ideas sin dirección, un prompt más a
 
 *"Dame 10 ideas creativas para usar en un taller de adultos mayores."*
 
-Este prompt es amplio a propósito porque quieres variedad. Pero si ya sabes lo que quieres, sé específico.
+Este prompt es amplio a propósito porque quieres variedad. Pero si ya sabes lo que querés, sé específico.
 
 ---
 
 ### Consejo práctico
 
-Toma esta pregunta vaga: *"¿Cómo estoy bien de salud?"*
+Tomá esta pregunta vaga: *"¿Cómo estoy bien de salud?"*
 
 Reescribila siendo específico:
-- ¿A qué aspecto de la salud te refieres?
-- ¿Cuántos años tienes?
+- ¿A qué aspecto de la salud te referís?
+- ¿Cuántos años tenés?
 - ¿Tienes alguna condición médica?
 - ¿Qué tipo de respuesta quieres (consejos, lista de chequeo, preguntas para el médico)?
 
@@ -302,13 +302,13 @@ Reescribila siendo específico:
 
 ### Resumen
 
-Ser específico no significa complicarse: significa decir claramente lo que necesitas. Las 6 claves son: **tema exacto, números, nivel de detalle, tipo de resultado, destinatario y extensión**. La prueba de "otra persona" es una forma rápida de saber si tu prompt esta suficientemente claro.
+Ser específico no significa complicarse: significa decir claramente lo que necesitás. Las 6 claves son: **tema exacto, números, nivel de detalle, tipo de resultado, destinatario y extensión**. La prueba de "otra persona" es una forma rápida de saber si tu prompt está suficientemente claro.
 `;
 
 export const c5leccion4 = `
 ## Pedir correcciones y mejoras
 
-Una de las habilidades más valiosas con la IA es saber **continuar la conversación**. La primera respuesta no siempre es la mejor, y esta perfectamente bien — y muy recomendable — pedirle que mejore, ajuste o cambie lo que generó.
+Una de las habilidades más valiosas con la IA es saber **continuar la conversación**. La primera respuesta no siempre es la mejor, y está perfectamente bien — y muy recomendable — pedirle que mejore, ajuste o cambie lo que generó.
 
 ---
 
@@ -317,11 +317,11 @@ Una de las habilidades más valiosas con la IA es saber **continuar la conversac
 Los usuarios más avanzados no mandan un prompt y aceptan la primera respuesta. En cambio, **van y vienen** con la IA, refinando el resultado hasta que queda exactamente como quieren.
 
 Este proceso se llama **iteración**, y es muy natural:
-1. Pides algo.
+1. Pedís algo.
 2. La IA responde.
-3. Tú dices qué esta bien y qué quieres cambiar.
+3. Tú decís qué está bien y qué quieres cambiar.
 4. La IA mejora.
-5. Repites hasta estar satisfecho.
+5. Repetís hasta estar satisfecho.
 
 No hay límite de veces que puedes pedir ajustes dentro de una misma conversación.
 
@@ -330,39 +330,39 @@ No hay límite de veces que puedes pedir ajustes dentro de una misma conversaci�
 ### Frases mágicas para pedir mejoras
 
 **Para acortar:**
-- *"Esta muy largo. Resumilo a la mitad."*
-- *"Haz una versión más corta, en máximo 3 oraciones."*
-- *"Quedatecon lo esencial y saca todo lo que no es necesario."*
+- *"Está muy largo. Resumilo a la mitad."*
+- *"Hacé una versión más corta, en máximo 3 oraciones."*
+- *"Quedatecon lo esencial y sacá todo lo que no es necesario."*
 
 **Para simplificar:**
-- *"Usa palabras más simples, como si me hablaras a mí que no soy experto."*
+- *"Usá palabras más simples, como si me hablaras a mí que no soy experto."*
 - *"Explicalo de una manera más fácil de entender."*
 - *"Sácale los términos técnicos."*
 
 **Para expandir:**
 - *"Me parece bien pero quiero más detalle en la parte de [X]."*
-- *"Expande el segundo punto, que quedó muy corto."*
+- *"Expandí el segundo punto, que quedó muy corto."*
 - *"Agregale ejemplos concretos."*
 
 **Para cambiar el tono:**
-- *"Hazlo más formal."*
+- *"Hacelo más formal."*
 - *"Que suene más cálido y amigable."*
 - *"Cambialo a un tono más serio."*
 - *"Que sea más divertido y liviano."*
 
 **Para cambiar el formato:**
-- *"Ponlo en forma de lista en vez de párrafos."*
+- *"Ponelo en forma de lista en vez de párrafos."*
 - *"Armalo como una tabla."*
 - *"Escribilo como si fuera un mail, con saludo y despedida."*
 - *"Organizalo con títulos y subtítulos."*
 
 **Para corregir errores:**
-- *"Cometiste un error: [describe el error]. Corregilo."*
+- *"Cometiste un error: [describí el error]. Corregilo."*
 - *"Eso no es así. La realidad es [X]. Reescribilo con esa corrección."*
-- *"Esta parte no me convence: [cita la parte]. Reescribila."*
+- *"Esta parte no me convence: [citá la parte]. Reescribila."*
 
 **Para explorar alternativas:**
-- *"Esta bien, pero dame 3 versiones diferentes de esto."*
+- *"Está bien, pero dame 3 versiones diferentes de esto."*
 - *"¿Puedes escribir una versión más formal y una más informal?"*
 - *"Dameotras opciones para el primer párrafo."*
 
@@ -372,13 +372,13 @@ No hay límite de veces que puedes pedir ajustes dentro de una misma conversaci�
 
 La frase más poderosa para iterar es:
 
-**"Hazlo otra vez pero [cambio específico]."**
+**"Hacelo otra vez pero [cambio específico]."**
 
 Ejemplos:
-- *"Hazlo otra vez pero más corto."*
-- *"Hazlo otra vez pero en tono más formal."*
-- *"Hazlo otra vez pero explicando también por qué es importante."*
-- *"Hazlo otra vez pero como si fuera para un grupo de WhatsApp."*
+- *"Hacelo otra vez pero más corto."*
+- *"Hacelo otra vez pero en tono más formal."*
+- *"Hacelo otra vez pero explicando también por qué es importante."*
+- *"Hacelo otra vez pero como si fuera para un grupo de WhatsApp."*
 
 Esta frase le indica a la IA que mantenga lo esencial pero modifique un elemento específico.
 
@@ -386,15 +386,15 @@ Esta frase le indica a la IA que mantenga lo esencial pero modifique un elemento
 
 ### Ejemplo real de iteración
 
-**Mensaje 1:** *"Escríbeme un mensaje para invitar a mis amigos al cumpleaños de mi marido."*
+**Mensaje 1:** *"Escribime un mensaje para invitar a mis amigos al cumpleaños de mi marido."*
 
 **Respuesta 1:** La IA escribe un mensaje genérico.
 
-**Mensaje 2:** *"Bien, pero hazlo más divertido y agrega que es sorpresa."*
+**Mensaje 2:** *"Bien, pero hacelo más divertido y agregá que es sorpresa."*
 
 **Respuesta 2:** La IA lo reescribe con más humor y aclara que es sorpresa.
 
-**Mensaje 3:** *"Perfecto. Ahora acortalo, que para WhatsApp esta muy largo."*
+**Mensaje 3:** *"Perfecto. Ahora acortalo, que para WhatsApp está muy largo."*
 
 **Respuesta 3:** La IA da una versión corta y lista para copiar.
 
@@ -404,21 +404,21 @@ En solo 3 turnos llegaste exactamente al resultado que necesitabas.
 
 ### Lo que NO tienes que hacer
 
-- **No empezar de cero** cada vez que la respuesta no es perfecta. Mejor pide el ajuste específico en el mismo chat.
+- **No empezar de cero** cada vez que la respuesta no es perfecta. Mejor pedí el ajuste específico en el mismo chat.
 - **No aceptar una respuesta mediocre** sin pedir mejoras. La IA no se ofende ni se cansa.
-- **No ser vago al pedir correcciones.** En vez de *"No me gusta"*, di exactamente qué no te gusta y por qué.
+- **No ser vago al pedir correcciones.** En vez de *"No me gusta"*, decí exactamente qué no te gusta y por qué.
 
 ---
 
 ### Resumen
 
-La conversación con la IA es un proceso de ida y vuelta. Las frases mágicas (**acorta, simplifica, expande, cambia el tono, ponlo en lista, dame alternativas**) te permiten afinar cualquier respuesta. El truco *"hazlo otra vez pero..."* es la herramienta más rápida para pedir un cambio específico.
+La conversación con la IA es un proceso de ida y vuelta. Las frases mágicas (**acortá, simplificá, expandí, cambiá el tono, ponelo en lista, dame alternativas**) te permiten afinar cualquier respuesta. El truco *"hazlo otra vez pero..."* es la herramienta más rápida para pedir un cambio específico.
 `;
 
 export const c5leccion5 = `
 ## Prompts para diferentes situaciones
 
-En esta lección te damos una colección de prompts listos para copiar y pegar. Guarda los que más te sirvan: van a ahorrarte tiempo y van a darte respuestas mucho mejores desde el primer intento.
+En esta lección te damos una colección de prompts listos para copiar y pegar. Guardá los que más te sirvan: van a ahorrarte tiempo y van a darte respuestas mucho mejores desde el primer intento.
 
 ---
 
@@ -428,10 +428,10 @@ En esta lección te damos una colección de prompts listos para copiar y pegar. 
 *"Necesito mandarle un mensaje a [persona] diciéndole que [situación]. Que sea [tono: cálido/formal/corto]. En no más de 3 oraciones."*
 
 **Responder un mail difícil:**
-*"Recibe este mail: [pega el mail]. No sé cómo responder. Escríbeme una respuesta que sea amable pero firme, y que aclare [punto específico]."*
+*"Recibí este mail: [pegá el mail]. No sé cómo responder. Escribime una respuesta que sea amable pero firme, y que aclare [punto específico]."*
 
 **Escribir una felicitación:**
-*"Escríbeme un mensaje de felicitación de [cumpleaños/casamiento/nacimiento/jubilación] para [relación: amigo/familiar/colega]. Que sea [cálido y personal/formal/divertido]. Máximo 4 oraciones."*
+*"Escribime un mensaje de felicitación de [cumpleaños/casamiento/nacimiento/jubilación] para [relación: amigo/familiar/colega]. Que sea [cálido y personal/formal/divertido]. Máximo 4 oraciones."*
 
 **Disculparse:**
 *"Necesito disculparme con [persona] por [motivo]. Ayudame a escribir un mensaje sincero que no suene forzado. Que tenga entre 3 y 5 oraciones."*
@@ -441,16 +441,16 @@ En esta lección te damos una colección de prompts listos para copiar y pegar. 
 ### Para el trabajo y trámites
 
 **Escribir un correo formal:**
-*"Escríbeme un correo formal para [institución/empresa] pidiendo [trámite/información/turno]. El tono debe ser respetuoso y profesional. Firmado por [tu nombre]."*
+*"Escribime un correo formal para [institución/empresa] pidiendo [trámite/información/turno]. El tono debe ser respetuoso y profesional. Firmado por [tu nombre]."*
 
 **Resumir un documento:**
-*"Resume el siguiente texto en 5 puntos principales, usando lenguaje simple: [pega el texto]."*
+*"Resumí el siguiente texto en 5 puntos principales, usando lenguaje simple: [pegá el texto]."*
 
 **Preparar una reunión:**
 *"Voy a reunirme con [persona/empresa] para hablar de [tema]. Ayudame a preparar 5 preguntas clave que debo hacerles."*
 
 **Escribir un reclamo:**
-*"Necesito escribir un reclamo formal a [empresa/institución] por [problema]. Que sea educado pero firme. Incluye una solicitud clara de solución."*
+*"Necesito escribir un reclamo formal a [empresa/institución] por [problema]. Que sea educado pero firme. Incluí una solicitud clara de solución."*
 
 ---
 
@@ -476,26 +476,26 @@ En esta lección te damos una colección de prompts listos para copiar y pegar. 
 *"¿Cuál es la diferencia entre [opción A] y [opción B]? Explicamelo en una tabla simple con pros y contras."*
 
 **Explorar un tema histórico o cultural:**
-*"Cuéntame la historia de [tema: la Revolución Mexicana / los mayas / el Día de Muertos] de una manera entretenida, en no más de 5 párrafos."*
+*"Contame la historia de [tema: el tango / la Patagonia / el mate] de una manera entretenida, en no más de 5 párrafos."*
 
 ---
 
 ### Para organización personal
 
 **Plan semanal:**
-*"Ayudame a organizar mi semana. Tengo estas actividades: [lista tus actividades]. Haceme un horario distribuido de lunes a viernes, dejando tiempo para descanso."*
+*"Ayudame a organizar mi semana. Tengo estas actividades: [listá tus actividades]. Haceme un horario distribuido de lunes a viernes, dejando tiempo para descanso."*
 
 **Lista de tareas:**
 *"Tengo que [situación: preparar una mudanza / organizar un evento / hacer trámites]. Haceme una lista de todas las tareas en orden de prioridad."*
 
-**Tomar una decisión:**
-*"Tengo que decidir entre [opción A] y [opción B]. Los pros de A son [X] y los de B son [Y]. Ayudame a analizar las dos opciones y sugiere cuál podría ser mejor para mí."*
+**Tomar una dicesión:**
+*"Tengo que decidir entre [opción A] y [opción B]. Los pros de A son [X] y los de B son [Y]. Ayudame a analizar las dos opciones y sugerí cuál podría ser mejor para mí."*
 
 ---
 
 ### Consejo para usar estos prompts
 
-Estos prompts funcionan mejor si los **personalizás** antes de enviarlos. Reemplaza las partes entre corchetes [ ] con tu información real y el resultado va a ser mucho más útil.
+Estos prompts funcionan mejor si los **personalizás** antes de enviarlos. Reemplazá las partes entre corchetes [ ] con tu información real y el resultado va a ser mucho más útil.
 
 También puedes combinarlos: por ejemplo, usar el prompt de "entender un diagnóstico" y luego, en el mismo chat, usar el de "preparar preguntas para el médico".
 
@@ -503,19 +503,19 @@ También puedes combinarlos: por ejemplo, usar el prompt de "entender un diagnó
 
 ### Resumen
 
-Tener una biblioteca de prompts listos te ahorra tiempo y garantiza mejores respuestas. Las categorías más útiles son: **comunicación personal, trabajo y trámites, salud, aprendizaje y organización**. Guarda los que más uses y personalizalos según tu situación.
+Tener una biblioteca de prompts listos te ahorra tiempo y garantiza mejores respuestas. Las categorías más útiles son: **comunicación personal, trabajo y trámites, salud, aprendizaje y organización**. Guardá los que más uses y personalizalos según tu situación.
 `;
 
 export const c5leccion6 = `
-## Ejercicio: transforma 5 prompts malos en buenos
+## Ejercicio: transformá 5 prompts malos en buenos
 
-Este ejercicio es la mejor manera de solidificar todo lo que aprendiste en este curso. Vamos a tomar 5 prompts típicos que usan personas que recién empiezan, analizaremos qué esta mal y veremos cómo transformarlos en prompts poderosos.
+Este ejercicio es la mejor manera de solidificar todo lo que aprendiste en este curso. Vamos a tomar 5 prompts típicos que usan personas que recién empiezan, analizaremos qué está mal y veremos cómo transformarlos en prompts poderosos.
 
 ---
 
 ### ¿Cómo hacer el ejercicio?
 
-Para cada prompt malo, primero **intenta mejorarlos tú mismo** antes de leer la versión mejorada. Recuerda aplicar la fórmula: ROL + TAREA + CONTEXTO + FORMATO.
+Para cada prompt malo, primero **intentá mejorarlos tú mismo** antes de leer la versión mejorada. Recordá aplicar la fórmula: ROL + TAREA + CONTEXTO + FORMATO.
 
 ---
 
@@ -524,13 +524,13 @@ Para cada prompt malo, primero **intenta mejorarlos tú mismo** antes de leer la
 **Prompt original:**
 *"¿Qué pasa con el corazón?"*
 
-**¿Qué esta mal?**
+**¿Qué está mal?**
 - No especifica qué aspecto del corazón.
 - No hay contexto personal.
 - La pregunta podría tener mil respuestas diferentes.
 
 **Versión mejorada:**
-*"Eres un cardiólogo que explica temas médicos a personas mayores. Tengo 67 años y me preocupa mi corazón porque tengo la presión alta. Explicame en palabras simples qué riesgos tiene la presión alta para el corazón y qué hábitos de vida me ayudan a cuidarlo. Haz una lista de 5 consejos prácticos."*
+*"Eres un cardiólogo que explica temas médicos a personas mayores. Tengo 67 años y me preocupa mi corazón porque tengo la presión alta. Explicame en palabras simples qué riesgos tiene la presión alta para el corazón y qué hábitos de vida me ayudan a cuidarlo. Hacé una lista de 5 consejos prácticos."*
 
 **¿Qué mejoró?**
 ✅ ROL: cardiólogo que explica a mayores.
@@ -543,16 +543,16 @@ Para cada prompt malo, primero **intenta mejorarlos tú mismo** antes de leer la
 ### Prompt 2 — Sobre escritura
 
 **Prompt original:**
-*"Escribe algo para mi amiga."*
+*"Escribí algo para mi amiga."*
 
-**¿Qué esta mal?**
+**¿Qué está mal?**
 - ¿Qué tipo de mensaje?
 - ¿Para qué ocasión?
 - ¿Cuál es el tono?
 - ¿Cuánto debe ser largo?
 
 **Versión mejorada:**
-*"Escríbeme un mensaje corto para mi amiga Rosa que acaba de perder a su perro. Quiero que sea cariñoso y que la haga sentir acompañada sin sonar exagerado. Máximo 4 oraciones. Usa un tono cálido y cercano."*
+*"Escribime un mensaje corto para mi amiga Rosa que acaba de perder a su perro. Quiero que sea cariñoso y que la haga sentir acompañada sin sonar exagerado. Máximo 4 oraciones. Usá un tono cálido y cercano."*
 
 **¿Qué mejoró?**
 ✅ TAREA clara: mensaje de condolencias por mascota.
@@ -567,11 +567,11 @@ Para cada prompt malo, primero **intenta mejorarlos tú mismo** antes de leer la
 **Prompt original:**
 *"Una receta."*
 
-**¿Qué esta mal?**
+**¿Qué está mal?**
 - ¿Para qué comida?
 - ¿Cuántas personas?
-- ¿Qué ingredientes tienes?
-- ¿Cuánto tiempo dispones?
+- ¿Qué ingredientes tenés?
+- ¿Cuánto tiempo disponés?
 
 **Versión mejorada:**
 *"Eres un chef que cocina para adultos mayores. Tengo en casa: arroz, pollo, cebolla, zanahoria y ajo. Quiero cocinar para 2 personas. Dame una receta fácil, sin muchos pasos, que no lleve más de 40 minutos de preparación. Que sea sabrosa y saludable."*
@@ -589,13 +589,13 @@ Para cada prompt malo, primero **intenta mejorarlos tú mismo** antes de leer la
 **Prompt original:**
 *"Explicame el WiFi."*
 
-**¿Qué esta mal?**
+**¿Qué está mal?**
 - ¿Qué nivel de explicación?
 - ¿Para qué lo necesita saber?
 - ¿Qué ya sabe la persona?
 
 **Versión mejorada:**
-*"Eres una maestra muy paciente. Explicame qué es el WiFi y cómo funciona, usando una comparación con algo de la vida cotidiana. Soy una persona de 68 años que nunca estudió tecnología. Quiero entenderlo para explicárselo a mis nietos. Usa un lenguaje muy simple, sin términos técnicos, en no más de 4 párrafos cortos."*
+*"Eres una maestra muy paciente. Explicame qué es el WiFi y cómo funciona, usando una comparación con algo de la vida cotidiana. Soy una persona de 68 años que nunca estudió tecnología. Quiero entenderlo para explicárselo a mis nietos. Usá un lenguaje muy simple, sin términos técnicos, en no más de 4 párrafos cortos."*
 
 **¿Qué mejoró?**
 ✅ ROL: maestra paciente.
@@ -610,13 +610,13 @@ Para cada prompt malo, primero **intenta mejorarlos tú mismo** antes de leer la
 **Prompt original:**
 *"Ayudame a organizar."*
 
-**¿Qué esta mal?**
+**¿Qué está mal?**
 - ¿Organizar qué?
 - ¿En qué plazo?
 - ¿Cuáles son las restricciones?
 
 **Versión mejorada:**
-*"Necesito organizar una reunión familiar para el cumpleaños de mi madre que cumple 80 años. Van a venir aproximadamente 20 personas, el evento es en mi casa y el presupuesto es limitado. Ayudame a hacer una lista de tareas organizadas por prioridad y por semana (tengo 3 semanas hasta el evento). Incluye la compra de comida, decoración, invitaciones y entretenimiento."*
+*"Necesito organizar una reunión familiar para el cumpleaños de mi madre que cumple 80 años. Van a venir aproximadamente 20 personas, el evento es en mi casa y el presupuesto es limitado. Ayudame a hacer una lista de tareas organizadas por prioridad y por semana (tengo 3 semanas hasta el evento). Incluí la compra de comida, decoración, invitaciones y entretenimiento."*
 
 **¿Qué mejoró?**
 ✅ EVENTO específico: cumpleaños de 80 años.
@@ -641,13 +641,13 @@ Con práctica, escribir buenos prompts se vuelve natural y rápido.
 
 ### Resumen
 
-Los 5 prompts malos tenían en común que eran demasiado vagos y sin contexto. Las versiones mejoradas incluyen: **quién eres, qué quieres exactamente, para qué lo necesitas, y cómo quieres la respuesta**. Practicar este tipo de transformaciones es la forma más rápida de mejorar con la IA.
+Los 5 prompts malos tenían en común que eran demasiado vagos y sin contexto. Las versiones mejoradas incluyen: **quién sos, qué quieres exactamente, para qué lo necesitás, y cómo quieres la respuesta**. Practicar este tipo de transformaciones es la forma más rápida de mejorar con la IA.
 `;
 
 export const c5leccion7 = `
 ## Quiz: Prompts efectivos
 
-¡Llegaste al final del Curso 5! Es momento de revisar todo lo aprendido con este quiz de 10 preguntas. Lee cada pregunta, piensa tu respuesta y luego lee la explicación.
+¡Llegaste al final del Curso 5! Es momento de revisar todo lo aprendido con este quiz de 10 preguntas. Leé cada pregunta, pensá tu respuesta y luego leé la explicación.
 
 ---
 
@@ -672,8 +672,8 @@ D) FORMATO
 
 A) "Explicame la diabetes"
 B) "¿Qué es la diabetes?"
-C) "Eres un médico. Explicame en palabras simples qué es la diabetes tipo 2, sus síntomas principales y qué debo evitar comer. Háblame como si tuvieras 65 años sin conocimientos médicos."
-D) "Háblame de enfermedades"
+C) "Eres un médico. Explicame en palabras simples qué es la diabetes tipo 2, sus síntomas principales y qué debo evitar comer. Hablame como si tuvieras 65 años sin conocimientos médicos."
+D) "Hablame de enfermedades"
 
 **Respuesta correcta: C)**
 
@@ -687,7 +687,7 @@ D) "Háblame de enfermedades"
 
 A) "No me gustó, empieza de nuevo."
 B) "Hazlo otra vez pero más corto."
-C) "Escribe algo mejor."
+C) "Escribí algo mejor."
 D) "Cambialo todo."
 
 **Respuesta correcta: B) "Hazlo otra vez pero más corto."**
@@ -737,7 +737,7 @@ D) Solo si pagas la versión premium
 
 **Respuesta correcta: C) Sin límite**
 
-*Puedes iterar todas las veces que necesites dentro de una misma conversación. La IA no se cansa ni se ofende, y cada ajuste te acerca más al resultado que buscas.*
+*Puedes iterar todas las veces que necesites dentro de una misma conversación. La IA no se cansa ni se ofende, y cada ajuste te acerca más al resultado que buscás.*
 
 ---
 
@@ -752,7 +752,7 @@ D) Configura el idioma de la respuesta
 
 **Respuesta correcta: B) Le indica a la IA desde qué perspectiva o expertise debe responder**
 
-*Al decirle "eres un médico" o "eres una maestra", la IA ajusta su vocabulario, tono y nivel de detalle para responder como ese tipo de experto.*
+*Al decirle "sos un médico" o "sos una maestra", la IA ajusta su vocabulario, tono y nivel de detalle para responder como ese tipo de experto.*
 
 ---
 
@@ -775,9 +775,9 @@ D) "Eres un fisioterapeuta. Recomendame rutina de ejercicios para artritis."
 
 **¿Cuál es la mejor manera de pedir que la IA simplifique una respuesta?**
 
-A) "Esta mal, reescribilo."
+A) "Está mal, reescribilo."
 B) "No lo entiendo."
-C) "Usa palabras más simples, como si me hablaras a mí que no soy experto en este tema."
+C) "Usá palabras más simples, como si me hablaras a mí que no soy experto en este tema."
 D) "Menos palabras."
 
 **Respuesta correcta: C)**
@@ -803,7 +803,7 @@ D) Cuando la IA no entiende español
 
 ### ¡Felicitaciones!
 
-Completaste el Curso 5. Ahora sabes:
+Completaste el Curso 5. Ahora sabés:
 - La fórmula de 4 ingredientes para un buen prompt (ROL + TAREA + CONTEXTO + FORMATO).
 - Cómo dar contexto de 5 tipos diferentes.
 - Cómo ser específico para obtener mejores respuestas.

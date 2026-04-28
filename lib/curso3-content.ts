@@ -25,7 +25,7 @@ La IA es muy buena para tareas repetitivas:
 
 Pero la IA **no puede** hacer muchas cosas que las personas hacemos naturalmente:
 - Entender las emociones de un cliente enojado y calmarlo
-- Tomar decisiones éticas complicadas
+- Tomar dicesiones éticas complicadas
 - Crear una relación de confianza con otra persona
 - Adaptarse a situaciones completamente nuevas e inesperadas
 - Usar el sentido comun que viene de la experiencia de vida
@@ -197,7 +197,7 @@ Menos confiable para:
 
 ## Para llevar a casa
 
-- **La IA se equivoca**, y eso esta bien si lo sabemos de antemano
+- **La IA se equivoca**, y eso está bien si lo sabemos de antemano
 - Las "alucinaciones" son errores que suenan muy reales — por eso son peligrosas
 - **Siempre verifica** datos importantes antes de actuar sobre ellos
 - Usa la IA como un **primer borrador**, no como la verdad absoluta
@@ -209,7 +209,7 @@ export const c3leccion4 = `## Pensemos en la calculadora
 
 Se acuerdan cuando aparecieron las calculadoras de bolsillo? Hubo un gran debate: "Los niños van a dejar de aprender matemáticas!" Que paso? La calculadora no reemplazo el conocimiento matemático — lo **complemento**. Si no sabes que necesitas multiplicar, la calculadora no te sirve de nada.
 
-**La IA funciona exactamente igual.** Necesita que **tú** le digas que hacer, revises lo que produce, y tomes las decisiones finales.
+**La IA funciona exactamente igual.** Necesita que **vos** le digas que hacer, revises lo que produce, y tomes las dicesiones finales.
 
 ## Cuando USAR la IA?
 
@@ -229,7 +229,7 @@ Se acuerdan cuando aparecieron las calculadoras de bolsillo? Hubo un gran debate
 | Situacion | Por que NO solo la IA |
 |---|---|
 | Decidir un tratamiento médico | La IA no te conoce, no te examina, no es tu doctor |
-| Tomar una decisión legal importante | Las leyes cambian por pais y caso; necesitas un abogado |
+| Tomar una dicesión legal importante | Las leyes cambian por pais y caso; necesitas un abogado |
 | Invertir dinero | La IA no tiene info en tiempo real ni conoce tu situación |
 | Verificar si una noticia es real | La IA puede repetir información falsa |
 | Evaluar si un correo es una estafa | Tu banco y tu sentido comun son mejores |
@@ -237,9 +237,9 @@ Se acuerdan cuando aparecieron las calculadoras de bolsillo? Hubo un gran debate
 
 ## La analogia completa
 
-- **El GPS** te dice por donde ir, pero **tú** decides si tomas esa ruta. Si el GPS te dice que cruces un rio, no lo haces sin pensar.
-- **El microondas** calienta la comida, pero **tú** decides que cocinar y cuanto tiempo.
-- **Google** te da miles de resultados, pero **tú** decides cuál es confiable.
+- **El GPS** te dice por donde ir, pero **vos** decides si tomas esa ruta. Si el GPS te dice que cruces un rio, no lo haces sin pensar.
+- **El microondas** calienta la comida, pero **vos** decides que cocinar y cuanto tiempo.
+- **Google** te da miles de resultados, pero **vos** decides cuál es confiable.
 
 La IA es lo mismo: una herramienta que amplifica tus capacidades, pero que necesita tu supervision.
 
@@ -247,7 +247,7 @@ La IA es lo mismo: una herramienta que amplifica tus capacidades, pero que neces
 
 **Lo que hace bien la IA:** Procesar mucha información rápido, escribir textos claros, dar múltiples opciones, explicar cosas complejas de forma simple, trabajar 24 horas.
 
-**Lo que haces bien tú:** Conocer tu situación personal, tener empatía, aplicar valores y ética, tomar decisiones con sentido comun, saber qué es importante para ti.
+**Lo que haces bien vos:** Conocer tu situación personal, tener empatía, aplicar valores y ética, tomar dicesiones con sentido comun, saber qué es importante para ti.
 
 **Juntos:** la IA te da el borrador, tú le das el toque final. La IA te da opciones, tú elegis la correcta. La IA te ahorra tiempo, tú usas ese tiempo en lo que importa.
 
@@ -260,7 +260,7 @@ La IA es lo mismo: una herramienta que amplifica tus capacidades, pero que neces
 
 ## Para llevar a casa
 
-- La IA es como una calculadora: potente pero necesita que **tú** la dirijas
+- La IA es como una calculadora: potente pero necesita que **vos** la dirijas
 - Hay momentos para usarla y momentos para consultar a un profesional humano
 - El mejor resultado sale de combinar la velocidad de la IA con tu experiencia y criterio
 - No hay que tenerle miedo ni depender ciegamente — hay que usarla con equilibrio
@@ -352,7 +352,7 @@ Al final de la semana:
 ## Y después de la semana?
 
 Si te gusto: segui usando la IA, explora funciones nuevas, ayuda a alguien más a empezar.
-Si no te convencio: también esta bien! Al menos ahora sabes qué es y puedes tomar una decisión informada.
+Si no te convencio: también está bien! Al menos ahora sabes qué es y puedes tomar una dicesión informada.
 
 ## Para llevar a casa
 
@@ -449,7 +449,7 @@ d) Ignorarlo porque la IA siempre se equivoca
 ### Pregunta 11
 **La IA es como una calculadora porque:**
 a) Solo sirve para hacer cálculos matematicos
-b) Es una herramienta poderosa que necesita que tu la dirijas y tomes las decisiones
+b) Es una herramienta poderosa que necesita que tu la dirijas y tomes las dicesiones
 c) Funciona sin electricidad
 d) Reemplaza completamente el pensamiento humano
 **Respuesta correcta: b)**

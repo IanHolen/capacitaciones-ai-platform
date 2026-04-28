@@ -37,7 +37,8 @@ export async function POST(request: Request) {
     );
   }
 
-  const { prompt } = await request.json();
+  const { prompt, lang } = await request.json();
+  const userLang = lang === 'en' ? 'en' : 'es';
 
   if (!prompt || typeof prompt !== "string" || prompt.trim().length === 0) {
     return new Response(
@@ -53,14 +54,17 @@ export async function POST(request: Request) {
     );
   }
 
+  const systemContent = userLang === 'en'
+    ? "You are an educational AI assistant. Always respond in English in a clear and concise manner. If the user asks for something inappropriate, politely decline."
+    : "Eres un asistente de IA educativo. Responde siempre en español latinoamericano de forma clara y concisa. Si el usuario pide algo inapropiado, rechaza educadamente.";
+
   const stream = new ReadableStream({
     async start(controller) {
       try {
         const chunks = chatStream("tutor", [
           {
             role: "system",
-            content:
-              "Eres un asistente de IA educativo. Responde siempre en español latinoamericano de forma clara y concisa. Si el usuario pide algo inapropiado, rechaza educadamente.",
+            content: systemContent,
           },
           { role: "user", content: prompt },
         ]);

@@ -53,7 +53,7 @@ export function AiTutor({ lessonId }: { lessonId?: string }) {
           const updated = [...prev];
           updated[updated.length - 1] = {
             role: "assistant",
-            content: "Disculpa, hubo un error. ¿Podés intentar de nuevo?",
+            content: "Disculpa, hubo un error. ¿Puedes intentar de nuevo?",
           };
           return updated;
         });

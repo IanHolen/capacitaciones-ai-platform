@@ -15,7 +15,7 @@ Imagínate que quieres aprender a hacer el mejor arroz con pollo. Qué haces? Pr
 
 **La Inteligencia Artificial funciona de una manera parecida.** Es un programa de computadora que "aprende" a partir de miles y miles de ejemplos, igual que tú aprendes cada vez que cocinas.
 
-Pero hay una diferencia importante: **la IA no piensa como nosotros**. No tiene sentimientos, no tiene opiniones propias, no sabe lo que esta haciendo. Simplemente encuentra patrones en los datos que le dieron y los usa para dar respuestas.
+Pero hay una diferencia importante: **la IA no piensa como nosotros**. No tiene sentimientos, no tiene opiniones propias, no sabe lo que está haciendo. Simplemente encuentra patrones en los datos que le dieron y los usa para dar respuestas.
 
 ### Una definición simple
 
@@ -67,9 +67,9 @@ Entender qué es y cómo funciona te da poder. Te permite usarla a tu favor, det
 - No es magia, no es perfecta y no es un robot de película.
 - Ya es parte de tu vida diaria, y entenderla te beneficia.`;
 
-export const leccion2 = `### La IA ya te conoce (más de lo que piensas)
+export const leccion2 = `### La IA ya te conoce (más de lo que pensas)
 
-Si alguien te dijera "tú usas inteligencia artificial todos los días", quizás no lo creerías. Pero es cierto. La IA esta en tu teléfono, en tu televisor, en tu banco y hasta en tu supermercado. Lo que pasa es que no lleva un cartel que diga "soy IA".
+Si alguien te dijera "tú usas inteligencia artificial todos los días", quizás no lo creerías. Pero es cierto. La IA está en tu teléfono, en tu televisor, en tu banco y hasta en tu supermercado. Lo que pasa es que no lleva un cartel que diga "soy IA".
 
 Vamos a recorrer un día típico y descubrir donde se esconde.
 
@@ -87,7 +87,7 @@ Si lees noticias en tu teléfono, las que aparecen primero no son al azar. La IA
 ### Durante el día
 
 **4. Google Maps y Waze**
-Cuando usas el GPS para ir a algún lado, la IA calcula la mejor ruta en tiempo real. Analiza el tráfico, los accidentes, las obras en la calle y hasta los eventos que podrian causar congestión. Esa vocecita que te dice "en 300 metros gire a la derecha" esta respaldada por inteligencia artificial.
+Cuando usas el GPS para ir a algún lado, la IA calcula la mejor ruta en tiempo real. Analiza el tráfico, los accidentes, las obras en la calle y hasta los eventos que podrian causar congestión. Esa vocecita que te dice "en 300 metros gire a la derecha" está respaldada por inteligencia artificial.
 
 **5. El autocorrector del teclado**
 Cada vez que escribes un mensaje de WhatsApp y tu teléfono sugiere la siguiente palabra o corrige un error, eso es IA. El programa aprendio de millones de conversaciones cuales son las palabras más probables.
@@ -125,12 +125,12 @@ Cuando entras a la página de tu empresa de telefonía y te aparece un chat dici
 Es natural preguntarse: "Si la IA sabe tanto de mi, debería preocuparme?". Es una pregunta válida y la vamos a explorar en profundidad en el Curso 3. Por ahora, lo importante es saber que:
 
 - La mayoría de estos usos estan diseñados para **facilitarte la vida**.
-- Tú tienes control sobre muchas de estas funciones (puedes desactivar recomendaciones, ajustar la privacidad, etc.).
+- Tú tienes control sobre muchas de estas funciones (podes desactivar recomendaciones, ajustar la privacidad, etc.).
 - Saber que existen te pone en una posicion de **poder**, no de vulnerabilidad.
 
 ### Resumen de la lección
 
-- La IA esta presente en tu celular, tu email, tu GPS, tu banco, tu música y tu television.
+- La IA está presente en tu celular, tu email, tu GPS, tu banco, tu música y tu television.
 - Su objetivo principal es personalizar y simplificar tu experiencia.
 - No es invisible porque sea secreta, sino porque funciona tan bien que ni la notas.
 - Conocer estos ejemplos te ayuda a entender cuanta IA ya manejas sin darte cuenta.`;
@@ -187,7 +187,7 @@ Las películas, las noticias sensacionalistas y las redes sociales nos llenan la
 | **Realidad** | Algunas aplicaciones recopilan datos, pero hay controles y regulaciones |
 | **Veredicto** | PARCIALMENTE CIERTO |
 
-**Explicación:** Es verdad que muchas aplicaciones recopilan datos sobre tu uso. Pero no es que haya una IA "espiandote" personalmente. Los datos se usan de forma agregada para mejorar los servicios. Además, puedes controlar mucho de esto desde la configuración de privacidad de tu teléfono.
+**Explicación:** Es verdad que muchas aplicaciones recopilan datos sobre tu uso. Pero no es que haya una IA "espiándote" personalmente. Los datos se usan de forma agregada para mejorar los servicios. Además, puedes controlar mucho de esto desde la configuración de privacidad de tu teléfono.
 
 ### Mito 6: "La IA es nueva, aparecio hace poco"
 
@@ -242,7 +242,7 @@ Las películas, las noticias sensacionalistas y las redes sociales nos llenan la
 
 export const leccion4 = `### No todas las IA son iguales
 
-Cuando hablamos de "Inteligencia Artificial", parece que estuviéramos hablando de una sola cosa. Pero en realidad hay muchos tipos diferentes, cada uno especializado en algo distinto. Es como decir "vehiculo": puede ser un auto, una bicicleta, un avion o un barco.
+Cuando hablamos de "Inteligencia Artificial", parece que estuvieramos hablando de una sola cosa. Pero en realidad hay muchos tipos diferentes, cada uno especializado en algo distinto. Es como decir "vehiculo": puede ser un auto, una bicicleta, un avion o un barco.
 
 ### 1. Asistentes conversacionales (Chatbots inteligentes)
 
@@ -278,7 +278,7 @@ Los mismos ChatGPT, Claude y Gemini pueden generar textos. También hay herramie
 - **Midjourney** — conocido por crear imágenes muy artísticas
 - **Adobe Firefly** — integrado en Photoshop
 
-**Analogía:** Es como tener un dibujante que trabaja increiblemente rápido y al que solo tienes que describir lo que quieres.
+**Analogía:** Es como tener un dibujante que trabaja increiblemente rápido y al que solo tienes que describir lo que queres.
 
 ### 4. Asistentes de voz
 
@@ -290,7 +290,7 @@ Los mismos ChatGPT, Claude y Gemini pueden generar textos. También hay herramie
 - **Google Assistant** — en telefonos Android
 
 **Para que sirven?**
-- Poner alarmas y recordatorios ("Siri, recordame tomar la pastilla a las 8")
+- Poner alarmas y recordatorios ("Siri, recuérdame tomar la pastilla a las 8")
 - Consultar el clima, noticias o resultados deportivos
 - Hacer llamadas sin tocar el teléfono
 - Poner música o podcasts
@@ -329,7 +329,7 @@ No necesitas usar todas. Te recomendamos empezar con **una sola herramienta** y 
 - Hay muchos tipos de IA: conversacionales, de texto, de imagen, de voz, de traducción.
 - Cada tipo tiene su especialidad y sus limitaciones.
 - Muchas apps que ya usas tienen IA incorporada.
-- No necesitas aprenderlas todas — empeza de a una.`;
+- No necesitas aprenderlas todas — empieza de a una.`;
 
 export const leccion5 = `### Las palabras que necesitas conocer
 
@@ -406,7 +406,7 @@ La información previa en una conversación que la IA usa para entender mejor tu
 *Analogía:* Cuando hablas con alguien y dices "y ella que dijo?", esa persona entiende quien es "ella" porque estuvo escuchando la conversación desde el principio.
 
 **18. Open Source (Código Abierto)**
-Software cuyo código esta disponible publicamente para que cualquiera lo vea, use y modifique.
+Software cuyo código está disponible publicamente para que cualquiera lo vea, use y modifique.
 *Analogía:* Como una receta de cocina publicada en un libro: cualquiera puede leerla y cocinar el plato.
 
 ### Tarjeta de referencia rápida
@@ -433,7 +433,7 @@ Software cuyo código esta disponible publicamente para que cualquiera lo vea, u
 
 export const leccion6 = `### Instrucciones
 
-Este quiz tiene 10 preguntas de opción múltiple. Para cada pregunta, elegi la respuesta que consideres correcta. Después de cada pregunta encuentras la respuesta correcta y una breve explicación.
+Este quiz tiene 10 preguntas de opción múltiple. Para cada pregunta, elegi la respuesta que consideres correcta. Después de cada pregunta encontras la respuesta correcta y una breve explicación.
 
 ---
 
@@ -465,7 +465,7 @@ Los datos son como los ingredientes: son la materia prima que la IA necesita par
 
 a) Leer tu mente para saber que quieres comprar
 b) Filtrar los correos de spam en tu email
-c) Tomar decisiones importantes por ti sin consultarte
+c) Tomar dicesiones importantes por ti sin consultarte
 d) Grabar todas tus conversaciones telefonicas
 
 **Respuesta correcta: b)**
@@ -559,10 +559,10 @@ ChatGPT es un asistente conversacional de IA creado por OpenAI.
 
 ### Cómo te fue?
 
-- **8-10 correctas:** Excelente! Tenes una base sólida sobre qué es la IA. Estas listo para el Curso 2.
+- **8-10 correctas:** Excelente! Tienes una base sólida sobre qué es la IA. Estas listo para el Curso 2.
 - **5-7 correctas:** Muy bien! Repasa las lecciones de los temas que te costaron y vas a estar perfecto.
 - **Menos de 5:** No te desanimes. Vuelve a leer las lecciones con calma — no hay apuro.
 
 ### Felicitaciones por completar el Curso 1!
 
-Ahora sabes qué es la IA, donde la encuentras en tu vida diaria, que mitos existen, que tipos hay y cómo se llaman las cosas. En el **Curso 2: "Tu primera conversación con IA"**, vas a poner todo esto en práctica!`;
+Ahora sabes qué es la IA, donde la encontras en tu vida diaria, que mitos existen, que tipos hay y cómo se llaman las cosas. En el **Curso 2: "Tu primera conversación con IA"**, vas a poner todo esto en práctica!`;

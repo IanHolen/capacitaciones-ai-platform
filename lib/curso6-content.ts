@@ -12,24 +12,24 @@ Una de las tareas cotidianas donde la IA puede ayudarte más es en la escritura 
 
 **Forma 1: Escribir desde cero**
 
-Describes la situación y la IA redacta el mensaje completo. Ideal cuando no sabes por dónde empezar o cuando el tema es delicado.
+Describís la situación y la IA redacta el mensaje completo. Ideal cuando no sabes por dónde empezar o cuando el tema es delicado.
 
 *Ejemplo de prompt:*
 *"Necesito escribir un correo al administrador de mi edificio para quejarme porque hace tres semanas que no funciona el ascensor y vivo en el piso 7. El tono debe ser formal pero firme. Que tenga saludo, cuerpo y despedida."*
 
-**Forma 2: Mejorar algo que ya escribiste**
+**Forma 2: Mejorar algo que ya escribeste**
 
-Escribes tu versión (aunque sea básica) y le pides que la mejore. Tú mantienes el control del contenido y la IA mejora la forma.
+Escribís tu versión (aunque sea básica) y le pedís que la mejore. Tú mantenés el control del contenido y la IA mejora la forma.
 
 *Ejemplo de prompt:*
-*"Mejora este mensaje que escribe, sin cambiar el sentido: [tu texto]. Que suene más formal y sin errores."*
+*"Mejorá este mensaje que escribí, sin cambiar el sentido: [tu texto]. Que suene más formal y sin errores."*
 
 **Forma 3: Adaptar el tono**
 
 Tienes un texto y necesitas mandarlo a diferentes personas con distintos estilos. La IA adapta el mismo mensaje para cada caso.
 
 *Ejemplo:*
-- *"Adapta este mensaje para mandarle a mi médico (formal)."*
+- *"Adaptá este mensaje para mandarle a mi médico (formal)."*
 - *"Ahora adaptalo para mandarle a mi hijo (informal y directo)."*
 - *"Y ahora para el grupo de WhatsApp de mis amigas (cálido y divertido)."*
 
@@ -38,58 +38,58 @@ Tienes un texto y necesitas mandarlo a diferentes personas con distintos estilos
 ### Plantillas listas para usar
 
 **Correo formal a una institución:**
-*"Escribe un correo formal a [institución] solicitando [trámite]. El tono debe ser respetuoso y claro. Mi nombre es [nombre] y mi DNI es [número]."*
+*"Escribí un correo formal a [institución] solicitando [trámite]. El tono debe ser respetuoso y claro. Mi nombre es [nombre] y mi DNI es [número]."*
 
 **Mensaje de agradecimiento:**
-*"Escribe un mensaje corto de agradecimiento para [persona] que me ayudó con [situación]. Que sea sincero y cálido. No más de 5 oraciones."*
+*"Escribí un mensaje corto de agradecimiento para [persona] que me ayudó con [situación]. Que sea sincero y cálido. No más de 5 oraciones."*
 
 **Invitación a un evento:**
-*"Escribe una invitación para [evento: cumpleaños / reunión / cena] el [fecha] en [lugar]. Que incluya hora, qué llevar y cómo confirmar asistencia. Tono: [formal/informal/divertido]."*
+*"Escribí una invitación para [evento: cumpleaños / reunión / cena] el [fecha] en [lugar]. Que incluya hora, qué llevar y cómo confirmar asistencia. Tono: [formal/informal/divertido]."*
 
 **Mensaje de disculpa:**
 *"Necesito disculparme con [persona] porque [situación]. Que el mensaje sea sincero, sin excusas innecesarias y que termine con un gesto concreto de enmienda."*
 
 **Reclamo o queja:**
-*"Redacta una carta de reclamo a [empresa] porque [problema ocurrido] el [fecha]. Exige una solución en un plazo de [días] días. Tono: firme pero educado."*
+*"Redactá una carta de reclamo a [empresa] porque [problema ocurrido] el [fecha]. Exigí una solución en un plazo de [días] días. Tono: firme pero educado."*
 
 ---
 
 ### Tips para mejores resultados
 
-**Siempre di el tono que quieres.** La diferencia entre "formal", "cálido", "directo" o "divertido" cambia completamente el resultado.
+**Siempre decí el tono que querés.** La diferencia entre "formal", "cálido", "directo" o "divertido" cambia completamente el resultado.
 
-**Especifica la extensión.** Un mensaje de WhatsApp debe ser corto; un correo a una empresa puede ser más largo. Indicalo.
+**Especificá la extensión.** Un mensaje de WhatsApp debe ser corto; un correo a una empresa puede ser más largo. Indicalo.
 
-**Usa la iteración.** Si el primer resultado es casi perfecto pero no del todo, pide ajustes: *"Esta bien pero hazlo un poco más corto y menos formal."*
+**Usá la iteración.** Si el primer resultado es casi perfecto pero no del todo, pedí ajustes: *"Está bien pero hacelo un poco más corto y menos formal."*
 
-**No le des información que no debe estar en el mensaje.** Si adjuntas contexto privado, aclara que es solo para que entienda la situación, no para incluirlo en el texto.
+**No le des información que no debe estar en el mensaje.** Si adjuntás contexto privado, aclará que es solo para que entienda la situación, no para incluirlo en el texto.
 
 ---
 
 ### Consejo práctico
 
-Esta semana, la próxima vez que tengas que escribir un correo difícil o un mensaje incómodo, antes de escribirlo tú solo, abre la IA y describile la situación. Vas a ver que el proceso se vuelve mucho menos estresante.
+Esta semana, la próxima vez que tengas que escribir un correo difícil o un mensaje incómodo, antes de escribirlo tú solo, abrí la IA y describile la situación. Vas a ver que el proceso se vuelve mucho menos estresante.
 
 ---
 
 ### Resumen
 
-La IA puede escribir desde cero, mejorar lo que tú escribiste y adaptar el tono para diferentes destinatarios. Con las plantillas de esta lección tienes un punto de partida para cualquier tipo de comunicación escrita: correos, mensajes, invitaciones, reclamos y agradecimientos.
+La IA puede escribir desde cero, mejorar lo que tú escribeste y adaptar el tono para diferentes destinatarios. Con las plantillas de esta lección tienes un punto de partida para cualquier tipo de comunicación escrita: correos, mensajes, invitaciones, reclamos y agradecimientos.
 `;
 
 export const c6leccion2 = `
 ## Recetas y planificación de comidas
 
-La cocina es uno de los ámbitos donde la IA puede ser más creativa y útil en el día a día. Puedes pedirle recetas con lo que tienes en la refrigerador, planes de comida para toda la semana, adaptaciones para dietas especiales o ideas para cocinar para muchas personas.
+La cocina es uno de los ámbitos donde la IA puede ser más creativa y útil en el día a día. Puedes pedirle recetas con lo que tienes en la heladera, planes de comida para toda la semana, adaptaciones para dietas especiales o ideas para cocinar para muchas personas.
 
 ---
 
 ### Recetas con lo que tienes en casa
 
-Esta es una de las funciones favoritas de muchas personas. En vez de ir al supermercado a buscar ingredientes específicos para una receta, le dices a la IA qué tienes y te dice qué puedes cocinar.
+Esta es una de las funciones favoritas de muchas personas. En vez de ir al supermercado a buscar ingredientes específicos para una receta, le decís a la IA qué tienes y te dice qué puedes cocinar.
 
 **Cómo hacerlo:**
-*"Tengo en casa: [lista los ingredientes]. ¿Qué puedo cocinar con esto para [cantidad] personas? Que sea una receta fácil y rápida."*
+*"Tengo en casa: [listá los ingredientes]. ¿Qué puedo cocinar con esto para [cantidad] personas? Que sea una receta fácil y rápida."*
 
 **Ejemplo real:**
 *"Tengo: arroz, dos pechugas de pollo, cebolla, ajo, pimentón y limón. ¿Qué puedo hacer para 2 personas sin usar el horno? Que lleve menos de 30 minutos."*
@@ -103,7 +103,7 @@ La IA te va a dar una receta completa con ingredientes, pasos y tiempos de cocci
 Planear las comidas de la semana con anticipación ahorra tiempo, dinero y te ayuda a comer más sano. La IA puede armar un menú semanal completo en segundos.
 
 **Cómo hacerlo:**
-*"Haceme un plan de comidas para 5 días (lunes a viernes) para [cantidad] personas. Que sea variado, saludable y con recetas simples. [Agrega restricciones si las tienes]."*
+*"Haceme un plan de comidas para 5 días (lunes a viernes) para [cantidad] personas. Que sea variado, saludable y con recetas simples. [Agregá restricciones si las tenés]."*
 
 **Ejemplo con restricciones:**
 *"Haceme un menú para una semana. Somos 2 personas mayores. Una tiene diabetes tipo 2 y la otra hipertensión. Sin fritos, bajo en sal y sin azúcar añadida. Que las recetas sean sencillas, con ingredientes comunes en Argentina."*
@@ -127,7 +127,7 @@ Muchas personas tienen restricciones alimentarias por salud o preferencias. La I
 Cuando tienes que cocinar para muchas personas, la IA puede ayudarte a planificar el menú, calcular cantidades y organizar los tiempos.
 
 **Prompts útiles:**
-- *"Voy a tener 12 personas a comer. Sugiere un menú completo (entrada, plato principal y postre) para un almuerzo familiar de fin de semana. Que sea festivo pero no demasiado elaborado."*
+- *"Voy a tener 12 personas a comer. Sugerí un menú completo (entrada, plato principal y postre) para un almuerzo familiar de fin de semana. Que sea festivo pero no demasiado elaborado."*
 - *"¿Cuánto arroz necesito para 15 personas como guarnición?"*
 - *"¿En qué orden debo preparar estas 4 recetas para que todo esté listo al mismo tiempo?"*
 
@@ -146,9 +146,9 @@ La IA también es perfecta para ampliar tu repertorio culinario o aprender técn
 
 ### Consejo práctico
 
-Esta semana, en vez de buscar recetas en internet, prueba abrir ChatGPT y decirle:
+Esta semana, en vez de buscar recetas en internet, probá abrir ChatGPT y decirle:
 
-*"Mira los ingredientes que tengo: [lista lo que tienes en tu refrigerador y alacena]. ¿Qué podría cocinar esta noche para 2 personas? Que sea sencillo y rico."*
+*"Mirá los ingredientes que tengo: [listá lo que tienes en tu heladera y alacena]. ¿Qué podría cocinar esta noche para 2 personas? Que sea sencillo y rico."*
 
 Te va a sorprender lo creativo y práctico que puede ser.
 
@@ -156,7 +156,7 @@ Te va a sorprender lo creativo y práctico que puede ser.
 
 ### Resumen
 
-La IA es una sous chef disponible las 24 horas. Te ayuda a **cocinar con lo que tienes**, hacer **planes semanales**, **adaptar recetas** a restricciones de salud y **organizar la cocina para eventos**. Una vez que la uses para esto, se vuelve indispensable en la cocina.
+La IA es una sous chef disponible las 24 horas. Te ayuda a **cocinar con lo que tenés**, hacer **planes semanales**, **adaptar recetas** a restricciones de salud y **organizar la cocina para eventos**. Una vez que la uses para esto, se vuelve indispensable en la cocina.
 `;
 
 export const c6leccion3 = `
@@ -221,13 +221,13 @@ No hace falta viajar lejos para explorar. La IA puede ayudarte a descubrir lugar
 *"Voy a [país donde hablan otro idioma]. Dame las 15 frases más importantes que debo saber: saludos, pedir comida, pedir ayuda, usar el transporte. Con pronunciación fonética en español."*
 
 **Costumbres y cultura:**
-*"¿Cuáles son las costumbres culturales más importantes que debo conocer antes de viajar a [destino]? ¿Hay algo que se considera de mala educación alla?"*
+*"¿Cuáles son las costumbres culturales más importantes que debo conocer antes de viajar a [destino]? ¿Hay algo que se considera de mala educación allá?"*
 
 ---
 
 ### Consejo práctico
 
-La próxima vez que estés planeando un viaje, antes de buscar en múltiples sitios web, abre ChatGPT o Perplexity y describe tu viaje ideal. Vas a tener un punto de partida organizado en minutos que luego puedes ir refinando.
+La próxima vez que estés planeando un viaje, antes de buscar en múltiples sitios web, abrí ChatGPT o Perplexity y describí tu viaje ideal. Vas a tener un punto de partida organizado en minutos que luego puedes ir refinando.
 
 Un buen flujo de trabajo:
 1. **Perplexity** para información actualizada de precios, requisitos de visa y noticias del destino.
@@ -243,7 +243,7 @@ La IA es tu agente de viajes personal y gratuito. Puede **armar itinerarios día
 export const c6leccion4 = `
 ## Ayudar con tareas escolares
 
-Si tienes nietos, hijos o si tú mismo sigues aprendiendo, la IA puede ser una herramienta educativa extraordinaria. Pero hay que saber usarla bien: la diferencia entre que la IA ayude genuinamente y que simplemente "haga la tarea" depende de cómo la uses.
+Si tienes nietos, hijos o si tú mismo seguís aprendiendo, la IA puede ser una herramienta educativa extraordinaria. Pero hay que saber usarla bien: la diferencia entre que la IA ayude genuinamente y que simplemente "haga la tarea" depende de cómo la uses.
 
 ---
 
@@ -251,12 +251,12 @@ Si tienes nietos, hijos o si tú mismo sigues aprendiendo, la IA puede ser una h
 
 La IA es más valiosa en la educación cuando **enseña el camino** en vez de dar el destino.
 
-**Esto esta mal:**
-*"Resuelve este ejercicio de matemática: [ejercicio]."*
+**Esto está mal:**
+*"Resolvé este ejercicio de matemática: [ejercicio]."*
 El alumno recibe la respuesta pero no aprende nada.
 
-**Esto esta bien:**
-*"Mi nieto de 12 años no entiende cómo resolver este ejercicio de fracciones: [ejercicio]. Explícale paso a paso por qué se hace así, sin darle la respuesta directamente."*
+**Esto está bien:**
+*"Mi nieto de 12 años no entiende cómo resolver este ejercicio de fracciones: [ejercicio]. Explicale paso a paso por qué se hace así, sin darle la respuesta directamente."*
 El alumno entiende el proceso y puede resolver ejercicios similares.
 
 ---
@@ -266,7 +266,7 @@ El alumno entiende el proceso y puede resolver ejercicios similares.
 Una de las formas más poderosas de usar la IA en la educación es como tutora personalizada, siempre disponible y con infinita paciencia.
 
 **Prompts para usar en modo tutor:**
-- *"Eres una tutora de matemáticas para alumnos de 6to grado. Mi nieta no entiende las fracciones. Explícale el concepto desde cero, con ejemplos de la vida cotidiana (como cortar una torta o dividir pizza)."*
+- *"Eres una tutora de matemáticas para alumnos de 6to grado. Mi nieta no entiende las fracciones. Explicale el concepto desde cero, con ejemplos de la vida cotidiana (como cortar una torta o dividir pizza)."*
 - *"Eres un profesor de historia. Mi nieto tiene que aprender la Revolución de Mayo. Explicala de una manera entretenida, como si contaras una historia con personajes reales."*
 - *"Mi nieta tiene un examen de biología sobre la célula. ¿Puedes hacerle 5 preguntas de práctica y luego corregir sus respuestas?"*
 
@@ -277,21 +277,21 @@ Una de las formas más poderosas de usar la IA en la educación es como tutora p
 La IA puede generar ejercicios ilimitados sobre cualquier tema, adaptados al nivel del alumno.
 
 **Prompts:**
-- *"Crea 10 ejercicios de multiplicaciones para un niño de 8 años. De dificultad progresiva, de más fácil a más difícil."*
-- *"Haz 5 preguntas de comprensión lectora para este texto: [pega el texto]. Para alumno de 5to grado."*
-- *"Crea una sopa de letras con 10 palabras relacionadas con el sistema solar para un alumno de primaria."*
-- *"Haz un crucigrama simple con 8 palabras sobre los animales de Argentina."*
+- *"Creá 10 ejercicios de multiplicaciones para un niño de 8 años. De dificultad progresiva, de más fácil a más difícil."*
+- *"Hacé 5 preguntas de comprensión lectora para este texto: [pegá el texto]. Para alumno de 5to grado."*
+- *"Creá una sopa de letras con 10 palabras relacionadas con el sistema solar para un alumno de primaria."*
+- *"Hacé un crucigrama simple con 8 palabras sobre los animales de Argentina."*
 
 ---
 
 ### Revisar y corregir tareas
 
-La IA puede revisar el trabajo del alumno, señalar errores y explicar por qué esta mal, sin simplemente reescribirlo.
+La IA puede revisar el trabajo del alumno, señalar errores y explicar por qué está mal, sin simplemente reescribirlo.
 
 **Prompts:**
-- *"Mi nieto escribió este texto para la escuela: [pega el texto]. ¿Puedes señalar los errores de ortografía y puntuación sin corregirlos tú, sino indicando dónde están para que él los corrija?"*
-- *"Revisa esta redacción de un alumno de 4to grado y dile qué esta bien y qué podría mejorar. Sé alentador y constructivo."*
-- *"Mi nieto resolvió este problema de matemática: [problema y solución del alumno]. ¿Esta bien? Si hay errores, explícale dónde se equivocó."*
+- *"Mi nieto escribió este texto para la escuela: [pegá el texto]. ¿Puedes señalar los errores de ortografía y puntuación sin corregirlos vos, sino indicando dónde están para que él los corrija?"*
+- *"Revisá esta redacción de un alumno de 4to grado y dile qué está bien y qué podría mejorar. Sé alentador y constructivo."*
+- *"Mi nieto resolvió este problema de matemática: [problema y solución del alumno]. ¿Está bien? Si hay errores, explicale dónde se equivocó."*
 
 ---
 
@@ -310,8 +310,8 @@ La IA es igual de útil si eres tú quien quiere aprender algo nuevo o recordar 
 
 Si tienes nietos que usan la IA para hacer tareas, mostrales la diferencia entre usarla bien y usarla como "copiadora". Una conversación sobre esto puede ser muy valiosa.
 
-Prueba hacer este ejercicio juntos:
-1. Toma una tarea que el nieto tenga que hacer.
+Probá hacer este ejercicio juntos:
+1. Tomá una tarea que el nieto tenga que hacer.
 2. En vez de pedirle a la IA que la haga, pedíle que **explique el tema**.
 3. El nieto hace la tarea con esa explicación.
 4. Después le piden a la IA que revise y corrija.
@@ -337,15 +337,15 @@ Vivimos en una época donde hay demasiada información. Artículos largos, docum
 La forma más básica de resumir con IA es copiar el texto y pegarlo directamente en el chat.
 
 **Pasos:**
-1. Selecciona el texto del artículo o documento.
+1. Seleccioná el texto del artículo o documento.
 2. Copialo (Ctrl+C o clic derecho → Copiar).
-3. Abre el chat de la IA.
-4. Escribe tu instrucción y pega el texto a continuación.
+3. Abrí el chat de la IA.
+4. Escribí tu instrucción y pegá el texto a continuación.
 
 **Prompts para usar con este método:**
-- *"Resume este artículo en 5 puntos principales: [pega el texto]"*
-- *"Explicame de qué habla este texto con palabras simples: [pega el texto]"*
-- *"¿Cuál es la idea más importante de este artículo?: [pega el texto]"*
+- *"Resumí este artículo en 5 puntos principales: [pegá el texto]"*
+- *"Explicame de qué habla este texto con palabras simples: [pegá el texto]"*
+- *"¿Cuál es la idea más importante de este artículo?: [pegá el texto]"*
 
 ---
 
@@ -354,35 +354,35 @@ La forma más básica de resumir con IA es copiar el texto y pegarlo directament
 Si tienes un documento completo (PDF, Word, etc.), en lugar de copiar y pegar puedes subir el archivo directamente. Esto funciona especialmente bien con Claude (hasta 200 páginas) y ChatGPT.
 
 **Pasos:**
-1. Haz clic en el ícono del clip (📎) en el chat.
-2. Selecciona el archivo de tu computadora.
-3. Escribe tu pedido a continuación.
+1. Hacé clic en el ícono del clip (📎) en el chat.
+2. Seleccioná el archivo de tu computadora.
+3. Escribí tu pedido a continuación.
 
 **Prompts:**
 - *"Adjunté un contrato de alquiler. Resumime los puntos más importantes, especialmente los que hablan de mis obligaciones y derechos como inquilino."*
-- *"Sube mi análisis de sangre. Explicame qué significa cada valor y cuáles están fuera del rango normal. En palabras simples."*
+- *"Subí mi análisis de sangre. Explicame qué significa cada valor y cuáles están fuera del rango normal. En palabras simples."*
 - *"Adjunté el manual de mi televisor nuevo. Busca la parte que explica cómo conectarlo a internet y explicame esos pasos."*
 
 ---
 
-### Tipos de resumen según lo que necesitas
+### Tipos de resumen según lo que necesitás
 
-No siempre quieres el mismo tipo de resumen. Puedes especificar exactamente qué formato de resumen necesitas:
+No siempre quieres el mismo tipo de resumen. Puedes especificar exactamente qué formato de resumen necesitás:
 
 **Resumen ejecutivo (lo más importante en pocas líneas):**
 *"Dame un resumen de 3 líneas de este artículo, capturando solo lo esencial."*
 
 **Resumen en bullets (lista de puntos):**
-*"Haz una lista con los 5 puntos más importantes de este texto."*
+*"Hacé una lista con los 5 puntos más importantes de este texto."*
 
 **Resumen con explicaciones (para entender mejor):**
-*"Resume este artículo y explicame los términos que puedan ser difíciles de entender para alguien sin estudios médicos."*
+*"Resumí este artículo y explicame los términos que puedan ser difíciles de entender para alguien sin estudios médicos."*
 
 **Resumen de acción (qué hacer con esa información):**
 *"Leí este artículo sobre presión alta. ¿Cuáles son las 3 cosas concretas que debo hacer según lo que dice?"*
 
 **Resumen comparativo:**
-*"Tengo dos artículos sobre el mismo tema. Resume cada uno y dime en qué están de acuerdo y en qué difieren."*
+*"Tengo dos artículos sobre el mismo tema. Resumí cada uno y decime en qué están de acuerdo y en qué difieren."*
 
 ---
 
@@ -392,13 +392,13 @@ No siempre quieres el mismo tipo de resumen. Puedes especificar exactamente qué
 *"Adjunté mi contrato de tarjeta de crédito. Explicame en palabras simples qué dice sobre las comisiones y cuándo me pueden cobrar intereses."*
 
 **Noticias largas:**
-*"Resume esta nota periodística en 3 oraciones. Que quede claro quién, qué pasó, y por qué es importante."*
+*"Resumí esta nota periodística en 3 oraciones. Que quede claro quién, qué pasó, y por qué es importante."*
 
 **Libros de no ficción:**
 *"Quiero entender las ideas principales del libro [título]. ¿Puedes darme un resumen de los puntos más importantes?"*
 
 **Correos largos:**
-*"Resume este hilo de correos y dime cuál es el punto central y qué acción se espera de mí."*
+*"Resumí este hilo de correos y decime cuál es el punto central y qué acción se espera de mí."*
 
 ---
 
@@ -412,9 +412,9 @@ No siempre quieres el mismo tipo de resumen. Puedes especificar exactamente qué
 
 ### Consejo práctico
 
-La próxima vez que recibas un correo largo del banco, una circular de tu obra social o un artículo de salud que te mandaron, en vez de leerlo completo (o dejarlo para después), prueba copiarlo y pegarlo en ChatGPT o Claude con esta instrucción:
+La próxima vez que recibas un correo largo del banco, una circular de tu obra social o un artículo de salud que te mandaron, en vez de leerlo completo (o dejarlo para después), probá copiarlo y pegarlo en ChatGPT o Claude con esta instrucción:
 
-*"Resume este texto en 3 puntos simples y dime si hay algo que deba hacer o tener en cuenta."*
+*"Resumí este texto en 3 puntos simples y decime si hay algo que deba hacer o tener en cuenta."*
 
 ---
 
@@ -432,38 +432,38 @@ Ya sea que necesitas entender algo en inglés, escribirle a alguien en otro idio
 
 ### ¿Por qué la IA traduce mejor que el diccionario?
 
-La traducción con IA va mucho más alla de simplemente cambiar palabras de un idioma a otro. La IA entiende el **contexto**, el **tono** y las **expresiones idiomáticas**, lo que da traducciones mucho más naturales y precisas que un diccionario tradicional o incluso que el viejo Google Translate.
+La traducción con IA va mucho más allá de simplemente cambiar palabras de un idioma a otro. La IA entiende el **contexto**, el **tono** y las **expresiones idiomáticas**, lo que da traducciones mucho más naturales y precisas que un diccionario tradicional o incluso que el viejo Google Translate.
 
 Por ejemplo:
-- *"It's raining cats and dogs"* no significa "esta lloviendo gatos y perros", sino "esta lloviendo a cántaros."
+- *"It's raining cats and dogs"* no significa "está lloviendo gatos y perros", sino "está lloviendo a cántaros."
 - *"Break a leg"* no es una amenaza, es una forma de desear buena suerte en inglés.
 
 La IA entiende estas expresiones y las traduce correctamente al español de tu país.
 
 ---
 
-### Traducir al español: entender lo que recibes
+### Traducir al español: entender lo que recibís
 
-Esta es la situación más común: recibes algo en otro idioma y necesitas entenderlo.
+Esta es la situación más común: recibís algo en otro idioma y necesitas entenderlo.
 
 **Prompts:**
-- *"Traduce este texto al español de Argentina: [pega el texto en inglés]"*
-- *"Traduce este correo que recibe en inglés y explicame si hay algo importante que deba hacer: [pega el correo]"*
+- *"Traducí este texto al español de Argentina: [pegá el texto en inglés]"*
+- *"Traduce este correo que recibí en inglés y explicame si hay algo importante que deba hacer: [pegá el correo]"*
 - *"¿Qué significa esta frase en inglés?: 'Please confirm your attendance by Friday'"*
 
 **Con contexto para mejor resultado:**
-*"Traduce este texto al español mexicano (argentino), que suene natural y no demasiado formal: [texto]"*
+*"Traduce este texto al español rioplatense (argentino), que suene natural y no demasiado formal: [texto]"*
 
 ---
 
 ### Traducir del español: escribir a alguien en otro idioma
 
-Cuando necesitas comunicarte con alguien que no habla español, la IA puede escribir el mensaje directamente en el idioma que necesitas.
+Cuando necesitas comunicarte con alguien que no habla español, la IA puede escribir el mensaje directamente en el idioma que necesitás.
 
 **Prompts:**
-- *"Escribe en inglés un correo para reservar una habitación en un hotel para 2 noches. Mi nombre es [nombre] y llego el [fecha]."*
-- *"Necesito decirle a mi médico en Italia que soy alérgica a la penicilina. Escríbeme esa frase en italiano."*
-- *"Traduce al portugués este mensaje que quiero mandarle a mi amiga brasileña: [tu mensaje en español]"*
+- *"Escribí en inglés un correo para reservar una habitación en un hotel para 2 noches. Mi nombre es [nombre] y llego el [fecha]."*
+- *"Necesito decirle a mi médico en Italia que soy alérgica a la penicilina. Escribime esa frase en italiano."*
+- *"Traducí al portugués este mensaje que quiero mandarle a mi amiga brasileña: [tu mensaje en español]"*
 
 ---
 
@@ -472,12 +472,12 @@ Cuando necesitas comunicarte con alguien que no habla español, la IA puede escr
 Cuando viajás a un país con otro idioma, tener algunas frases clave puede hacer una gran diferencia.
 
 **Prompt para prepararte antes de viajar:**
-*"Voy a viajar a [país que habla otro idioma]. Dame las 20 frases más útiles para un turista en [idioma]. Incluye pronunciación escrita en español (fonética) para cada frase. Organizalas por categorías: saludos, restaurante, transporte, emergencias, compras."*
+*"Voy a viajar a [país que habla otro idioma]. Dame las 20 frases más útiles para un turista en [idioma]. Incluí pronunciación escrita en español (fonética) para cada frase. Organizalas por categorías: saludos, restaurante, transporte, emergencias, compras."*
 
 **Ejemplo de respuesta esperada:**
 Para inglés:
 - Hello → "Hello" (se pronuncia: JE-lou)
-- Where is the bathroom? → ¿Dónde esta el baño? (se pronuncia: uer IS de BAS-rum)
+- Where is the bathroom? → ¿Dónde está el baño? (se pronuncia: uer IS de BAS-rum)
 
 ---
 
@@ -510,7 +510,7 @@ Es una forma divertida y práctica de aprender idiomas de a poco.
 
 ### Resumen
 
-La IA traduce con **contexto y naturalidad**, mucho mejor que simplemente cambiar palabras. Puedes usarla para **entender textos que recibes** en otro idioma, **escribir a personas** en su idioma, **prepararte para viajes** con frases clave, y **entender expresiones** idiomáticas que no son literales.
+La IA traduce con **contexto y naturalidad**, mucho mejor que simplemente cambiar palabras. Puedes usarla para **entender textos que recibís** en otro idioma, **escribir a personas** en su idioma, **prepararte para viajes** con frases clave, y **entender expresiones** idiomáticas que no son literales.
 `;
 
 export const c6leccion7 = `
@@ -537,7 +537,7 @@ D) Solo usarla para corregir errores de ortografía
 
 ### Pregunta 2
 
-**Si tienes en casa: pollo, papa, cebolla y ajo, pero no sabes qué cocinar, ¿cómo le pides ayuda a la IA?**
+**Si tienes en casa: pollo, papa, cebolla y ajo, pero no sabes qué cocinar, ¿cómo le pedís ayuda a la IA?**
 
 A) "Dame una receta."
 B) "Tengo pollo, papa, cebolla y ajo. ¿Qué plato puedo hacer para 2 personas en menos de 30 minutos sin usar horno?"
@@ -615,7 +615,7 @@ D) Porque puede traducir solo del inglés al español
 **Si quieres pedirle a la IA que adapte el mismo mensaje para tu médico (formal) y para tu grupo de WhatsApp (informal), ¿cómo lo harías?**
 
 A) Escribir dos prompts completamente distintos desde cero
-B) Pedirle que adapte el tono en la misma conversación: "Ahora haz una versión formal para el médico" y luego "Ahora una versión informal para WhatsApp"
+B) Pedirle que adapte el tono en la misma conversación: "Ahora hacé una versión formal para el médico" y luego "Ahora una versión informal para WhatsApp"
 C) Usar dos herramientas diferentes para cada versión
 D) Es imposible, la IA solo puede escribir en un tono
 
@@ -636,13 +636,13 @@ D) No puede resumir PDFs
 
 **Respuesta correcta: B)**
 
-*La IA resume bien, pero para documentos legales oficiales o decisiones médicas críticas, el resumen de la IA es un punto de partida, no un reemplazo de la consulta profesional.*
+*La IA resume bien, pero para documentos legales oficiales o dicesiones médicas críticas, el resumen de la IA es un punto de partida, no un reemplazo de la consulta profesional.*
 
 ---
 
 ### Pregunta 9
 
-**¿Qué información es más útil incluir cuando le pides a la IA un itinerario de viaje?**
+**¿Qué información es más útil incluir cuando le pedís a la IA un itinerario de viaje?**
 
 A) Tu nombre completo y número de pasaporte
 B) El destino, cantidad de días, perfil de los viajeros, intereses y limitaciones físicas
@@ -681,5 +681,5 @@ Con este quiz finalizaste los 6 cursos del Nivel Básico. A lo largo de este rec
 **Curso 5:** Cómo escribir prompts efectivos para obtener los mejores resultados.
 **Curso 6:** Cómo aplicar la IA en situaciones reales de la vida cotidiana.
 
-Ahora tienes las herramientas para usar la inteligencia artificial con confianza, de manera segura y efectiva en tu vida diaria. ¡Sigue practicando, que cada día te vas a sorprender con nuevas posibilidades!
+Ahora tienes las herramientas para usar la inteligencia artificial con confianza, de manera segura y efectiva en tu vida diaria. ¡Seguí practicando, que cada día te vas a sorprender con nuevas posibilidades!
 `;

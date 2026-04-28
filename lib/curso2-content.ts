@@ -204,7 +204,7 @@ Imagina que le preguntas a alguien algo que no sabe, pero en vez de decirte "no 
 
 ## Regla de oro
 
-**Usa la IA como punto de partida, no como verdad absoluta.** Es como pedir consejo a un amigo que sabe mucho: te orienta, pero para decisiones importantes, consulta a un profesional.
+**Usa la IA como punto de partida, no como verdad absoluta.** Es como pedir consejo a un amigo que sabe mucho: te orienta, pero para dicesiones importantes, consulta a un profesional.
 
 ## Resumen
 - Los asistentes a veces inventan información (alucinaciones). Es normal.

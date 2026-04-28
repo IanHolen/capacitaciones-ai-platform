@@ -82,7 +82,9 @@ model Level {
   id          String    @id @default(uuid()) @db.Uuid
   slug        LevelSlug @unique
   name        String
+  nameEn      String?   @map("name_en")
   description String?
+  descriptionEn String? @map("description_en")
   sortOrder   Int       @map("sort_order")
 
   createdAt DateTime  @default(now()) @map("created_at")
@@ -102,8 +104,10 @@ model Course {
   id          String  @id @default(uuid()) @db.Uuid
   levelId     String  @map("level_id") @db.Uuid
   title       String
+  titleEn     String? @map("title_en")
   slug        String  @unique
   description String?
+  descriptionEn String? @map("description_en")
   imageUrl    String? @map("image_url")
   sortOrder   Int     @map("sort_order")
   published   Boolean @default(false)
@@ -130,8 +134,10 @@ model Lesson {
   id          String  @id @default(uuid()) @db.Uuid
   courseId     String  @map("course_id") @db.Uuid
   title       String
+  titleEn     String? @map("title_en")
   slug        String
   description String?
+  descriptionEn String? @map("description_en")
   sortOrder   Int     @map("sort_order")
   published   Boolean @default(false)
 
@@ -161,7 +167,8 @@ model LessonContent {
   sortOrder   Int         @map("sort_order")
 
   // TEXT content
-  body String? @db.Text
+  body   String? @db.Text
+  bodyEn String? @map("body_en") @db.Text
 
   // VIDEO content
   videoUrl      String? @map("video_url")
@@ -188,7 +195,9 @@ model Exercise {
   id           String       @id @default(uuid()) @db.Uuid
   exerciseType ExerciseType @map("exercise_type")
   title        String
+  titleEn      String?      @map("title_en")
   instructions String       @db.Text
+  instructionsEn String?    @map("instructions_en") @db.Text
 
   // QUIZ fields
   // (options stored in QuizOption child table)
@@ -215,6 +224,7 @@ model QuizOption {
   id         String  @id @default(uuid()) @db.Uuid
   exerciseId String  @map("exercise_id") @db.Uuid
   text       String
+  textEn     String? @map("text_en")
   isCorrect  Boolean @default(false) @map("is_correct")
   sortOrder  Int     @map("sort_order")
 
@@ -314,7 +324,9 @@ model UserExerciseResult {
 model Badge {
   id           String  @id @default(uuid()) @db.Uuid
   name         String  @unique
+  nameEn       String? @map("name_en")
   description  String?
+  descriptionEn String? @map("description_en")
   icon         String?
   criteriaJson Json?   @map("criteria_json")
 
