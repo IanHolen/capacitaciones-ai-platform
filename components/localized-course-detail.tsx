@@ -19,7 +19,6 @@ import {
 } from "lucide-react";
 import { CourseRating } from "@/components/course-rating";
 import type { Curso, Nivel } from "@/lib/cursos-data";
-import { CourseRating } from "@/components/course-rating";
 
 interface LocalizedCourseDetailProps {
   curso: Curso;
