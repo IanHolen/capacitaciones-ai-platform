@@ -2,8 +2,19 @@
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import { useTranslation } from "react-i18next";
 
-export function MarkdownContent({ content }: { content: string }) {
+export function MarkdownContent({
+  content,
+  contentEn,
+}: {
+  content: string;
+  contentEn?: string;
+}) {
+  const { i18n } = useTranslation();
+  const displayContent =
+    i18n.language === "en" && contentEn ? contentEn : content;
+
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -55,7 +66,7 @@ export function MarkdownContent({ content }: { content: string }) {
         ),
       }}
     >
-      {content}
+      {displayContent}
     </ReactMarkdown>
   );
 }

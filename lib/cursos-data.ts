@@ -1,3 +1,98 @@
+import { coursesEnMeta } from "./cursos-data-en";
+import {
+  leccion1 as leccion1En,
+  leccion2 as leccion2En,
+  leccion3 as leccion3En,
+  leccion4 as leccion4En,
+  leccion5 as leccion5En,
+  leccion6 as leccion6En,
+} from "./curso1-content-en";
+import {
+  c2leccion1 as c2leccion1En,
+  c2leccion2 as c2leccion2En,
+  c2leccion3 as c2leccion3En,
+  c2leccion4 as c2leccion4En,
+  c2leccion5 as c2leccion5En,
+  c2leccion6 as c2leccion6En,
+  c2leccion7 as c2leccion7En,
+} from "./curso2-content-en";
+import {
+  c3leccion1 as c3leccion1En,
+  c3leccion2 as c3leccion2En,
+  c3leccion3 as c3leccion3En,
+  c3leccion4 as c3leccion4En,
+  c3leccion5 as c3leccion5En,
+  c3leccion6 as c3leccion6En,
+} from "./curso3-content-en";
+import {
+  c4leccion1 as c4leccion1En, c4leccion2 as c4leccion2En,
+  c4leccion3 as c4leccion3En, c4leccion4 as c4leccion4En,
+  c4leccion5 as c4leccion5En, c4leccion6 as c4leccion6En,
+  c4leccion7 as c4leccion7En, c4leccion8 as c4leccion8En,
+} from "./curso4-content-en";
+import {
+  c5leccion1 as c5leccion1En, c5leccion2 as c5leccion2En,
+  c5leccion3 as c5leccion3En, c5leccion4 as c5leccion4En,
+  c5leccion5 as c5leccion5En, c5leccion6 as c5leccion6En,
+  c5leccion7 as c5leccion7En,
+} from "./curso5-content-en";
+import {
+  c6leccion1 as c6leccion1En, c6leccion2 as c6leccion2En,
+  c6leccion3 as c6leccion3En, c6leccion4 as c6leccion4En,
+  c6leccion5 as c6leccion5En, c6leccion6 as c6leccion6En,
+  c6leccion7 as c6leccion7En,
+} from "./curso6-content-en";
+import {
+  c7leccion1 as c7leccion1En, c7leccion2 as c7leccion2En,
+  c7leccion3 as c7leccion3En, c7leccion4 as c7leccion4En,
+  c7leccion5 as c7leccion5En, c7leccion6 as c7leccion6En,
+  c7leccion7 as c7leccion7En, c7leccion8 as c7leccion8En,
+} from "./curso7-content-en";
+import {
+  c8leccion1 as c8leccion1En, c8leccion2 as c8leccion2En,
+  c8leccion3 as c8leccion3En, c8leccion4 as c8leccion4En,
+  c8leccion5 as c8leccion5En, c8leccion6 as c8leccion6En,
+} from "./curso8-content-en";
+import {
+  c9leccion1 as c9leccion1En, c9leccion2 as c9leccion2En,
+  c9leccion3 as c9leccion3En, c9leccion4 as c9leccion4En,
+  c9leccion5 as c9leccion5En, c9leccion6 as c9leccion6En,
+  c9leccion7 as c9leccion7En,
+} from "./curso9-content-en";
+import {
+  c10leccion1 as c10leccion1En, c10leccion2 as c10leccion2En,
+  c10leccion3 as c10leccion3En, c10leccion4 as c10leccion4En,
+  c10leccion5 as c10leccion5En, c10leccion6 as c10leccion6En,
+  c10leccion7 as c10leccion7En, c10leccion8 as c10leccion8En,
+} from "./curso10-content-en";
+import {
+  c11leccion1 as c11leccion1En, c11leccion2 as c11leccion2En,
+  c11leccion3 as c11leccion3En, c11leccion4 as c11leccion4En,
+  c11leccion5 as c11leccion5En, c11leccion6 as c11leccion6En,
+  c11leccion7 as c11leccion7En,
+} from "./curso11-content-en";
+import {
+  c12leccion1 as c12leccion1En, c12leccion2 as c12leccion2En,
+  c12leccion3 as c12leccion3En, c12leccion4 as c12leccion4En,
+  c12leccion5 as c12leccion5En, c12leccion6 as c12leccion6En,
+  c12leccion7 as c12leccion7En,
+} from "./curso12-content-en";
+import {
+  leccion1 as c13l1En, leccion2 as c13l2En, leccion3 as c13l3En,
+  leccion4 as c13l4En, leccion5 as c13l5En, leccion6 as c13l6En,
+  leccion7 as c13l7En, leccion8 as c13l8En, leccion9 as c13l9En,
+  leccion10 as c13l10En,
+} from "./curso13-content-en";
+import {
+  leccion1 as c14l1En, leccion2 as c14l2En, leccion3 as c14l3En,
+  leccion4 as c14l4En, leccion5 as c14l5En, leccion6 as c14l6En,
+  leccion7 as c14l7En, leccion8 as c14l8En,
+} from "./curso14-content-en";
+import {
+  leccion1 as c15l1En, leccion2 as c15l2En, leccion3 as c15l3En,
+  leccion4 as c15l4En, leccion5 as c15l5En, leccion6 as c15l6En,
+  leccion7 as c15l7En, leccion8 as c15l8En,
+} from "./curso15-content-en";
 import {
   leccion1,
   leccion2,
@@ -92,17 +187,24 @@ export const nivelConfig: Record<
 
 export interface QuizQuestion {
   question: string;
+  questionEn?: string;
   options: string[];
+  optionsEn?: string[];
   correctIndex: number;
   explanation: string;
+  explanationEn?: string;
 }
 
 export interface Leccion {
   id: string;
   titulo: string;
+  tituloEn?: string;
   descripcion: string;
+  descripcionEn?: string;
   duracion: string;
+  duracionEn?: string;
   contenido: string;
+  contenidoEn?: string;
   tieneVideo: boolean;
   tieneQuiz: boolean;
   tieneSandbox?: boolean;
@@ -125,10 +227,13 @@ export const sandboxLessons = new Set([
 export interface Curso {
   id: string;
   titulo: string;
+  tituloEn?: string;
   descripcion: string;
+  descripcionEn?: string;
   nivel: Nivel;
   lecciones: Leccion[];
   duracion: string;
+  duracionEn?: string;
 }
 
 export const cursos: Curso[] = [
@@ -467,6 +572,63 @@ export const cursos: Curso[] = [
     { id: "ag-8", titulo: "Quiz: Agentes de IA", descripcion: "Evalúa lo aprendido.", duracion: "15 min", contenido: c15l8, tieneVideo: false, tieneQuiz: true },
   ] },
 ];
+
+// English content mapping (lesson ID → English markdown content)
+const englishContentMap: Record<string, string> = {
+  "que-es-ia-1": leccion1En, "que-es-ia-2": leccion2En, "que-es-ia-3": leccion3En,
+  "que-es-ia-4": leccion4En, "que-es-ia-5": leccion5En, "que-es-ia-6": leccion6En,
+  "conv-ia-1": c2leccion1En, "conv-ia-2": c2leccion2En, "conv-ia-3": c2leccion3En,
+  "conv-ia-4": c2leccion4En, "conv-ia-5": c2leccion5En, "conv-ia-6": c2leccion6En,
+  "conv-ia-7": c2leccion7En,
+  "sin-miedo-1": c3leccion1En, "sin-miedo-2": c3leccion2En, "sin-miedo-3": c3leccion3En,
+  "sin-miedo-4": c3leccion4En, "sin-miedo-5": c3leccion5En, "sin-miedo-6": c3leccion6En,
+  "dcg-1": c4leccion1En, "dcg-2": c4leccion2En, "dcg-3": c4leccion3En, "dcg-4": c4leccion4En,
+  "dcg-5": c4leccion5En, "dcg-6": c4leccion6En, "dcg-7": c4leccion7En, "dcg-8": c4leccion8En,
+  "pef-1": c5leccion1En, "pef-2": c5leccion2En, "pef-3": c5leccion3En, "pef-4": c5leccion4En,
+  "pef-5": c5leccion5En, "pef-6": c5leccion6En, "pef-7": c5leccion7En,
+  "ivc-1": c6leccion1En, "ivc-2": c6leccion2En, "ivc-3": c6leccion3En, "ivc-4": c6leccion4En,
+  "ivc-5": c6leccion5En, "ivc-6": c6leccion6En, "ivc-7": c6leccion7En,
+  "pe-1": c7leccion1En, "pe-2": c7leccion2En, "pe-3": c7leccion3En, "pe-4": c7leccion4En,
+  "pe-5": c7leccion5En, "pe-6": c7leccion6En, "pe-7": c7leccion7En, "pe-8": c7leccion8En,
+  "di-1": c8leccion1En, "di-2": c8leccion2En, "di-3": c8leccion3En, "di-4": c8leccion4En,
+  "di-5": c8leccion5En, "di-6": c8leccion6En,
+  "ft-1": c9leccion1En, "ft-2": c9leccion2En, "ft-3": c9leccion3En, "ft-4": c9leccion4En,
+  "ft-5": c9leccion5En, "ft-6": c9leccion6En, "ft-7": c9leccion7En,
+  "ap-1": c10leccion1En, "ap-2": c10leccion2En, "ap-3": c10leccion3En, "ap-4": c10leccion4En,
+  "ap-5": c10leccion5En, "ap-6": c10leccion6En, "ap-7": c10leccion7En, "ap-8": c10leccion8En,
+  "aut-1": c11leccion1En, "aut-2": c11leccion2En, "aut-3": c11leccion3En, "aut-4": c11leccion4En,
+  "aut-5": c11leccion5En, "aut-6": c11leccion6En, "aut-7": c11leccion7En,
+  "api-1": c12leccion1En, "api-2": c12leccion2En, "api-3": c12leccion3En, "api-4": c12leccion4En,
+  "api-5": c12leccion5En, "api-6": c12leccion6En, "api-7": c12leccion7En,
+  "prog-1": c13l1En, "prog-2": c13l2En, "prog-3": c13l3En, "prog-4": c13l4En,
+  "prog-5": c13l5En, "prog-6": c13l6En, "prog-7": c13l7En, "prog-8": c13l8En,
+  "prog-9": c13l9En, "prog-10": c13l10En,
+  "rag-1": c14l1En, "rag-2": c14l2En, "rag-3": c14l3En, "rag-4": c14l4En,
+  "rag-5": c14l5En, "rag-6": c14l6En, "rag-7": c14l7En, "rag-8": c14l8En,
+  "ag-1": c15l1En, "ag-2": c15l2En, "ag-3": c15l3En, "ag-4": c15l4En,
+  "ag-5": c15l5En, "ag-6": c15l6En, "ag-7": c15l7En, "ag-8": c15l8En,
+};
+
+// Apply English metadata and content to all courses
+for (const curso of cursos) {
+  const meta = coursesEnMeta[curso.id];
+  if (!meta) continue;
+  curso.tituloEn = meta.tituloEn;
+  curso.descripcionEn = meta.descripcionEn;
+  curso.duracionEn = meta.duracionEn;
+  for (const leccion of curso.lecciones) {
+    const lecMeta = meta.lecciones[leccion.id];
+    if (lecMeta) {
+      leccion.tituloEn = lecMeta.tituloEn;
+      leccion.descripcionEn = lecMeta.descripcionEn;
+      if (lecMeta.duracionEn) leccion.duracionEn = lecMeta.duracionEn;
+    }
+    const enContent = englishContentMap[leccion.id];
+    if (enContent) {
+      leccion.contenidoEn = enContent;
+    }
+  }
+}
 
 export function getCurso(cursoId: string): Curso | undefined {
   return cursos.find((c) => c.id === cursoId);

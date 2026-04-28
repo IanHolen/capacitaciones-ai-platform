@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Quiz } from "@/components/quiz";
 import { LessonCompleteButton } from "@/components/lesson-complete-button";
 import type { QuizQuestion } from "@/lib/cursos-data";
@@ -19,11 +20,12 @@ export function LessonQuizSection({
   accentColor,
 }: LessonQuizSectionProps) {
   const [passed, setPassed] = useState(false);
+  const { t } = useTranslation();
 
   return (
     <>
       <div className="mb-10">
-        <h2 className="mb-4 text-2xl font-bold">Quiz</h2>
+        <h2 className="mb-4 text-2xl font-bold">{t("lesson.quiz")}</h2>
         <div className="rounded-xl border bg-card p-6 md:p-8">
           <Quiz
             questions={questions}
@@ -42,8 +44,7 @@ export function LessonQuizSection({
           />
         ) : (
           <p className="text-base text-muted-foreground">
-            Completá el quiz con al menos 80% para marcar esta lección como
-            completada.
+            {t("lesson.quizRequired")}
           </p>
         )}
       </div>

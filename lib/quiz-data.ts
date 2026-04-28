@@ -1,6 +1,24 @@
 import type { QuizQuestion } from "./cursos-data";
+import {
+  curso1QuizEn,
+  curso2QuizEn,
+  curso3QuizEn,
+  curso7QuizEn,
+  curso8QuizEn,
+  curso9QuizEn,
+} from "./quiz-data-en";
 
-export const curso1Quiz: QuizQuestion[] = [
+function mergeEnglish(
+  esQuestions: QuizQuestion[],
+  enPartials: Partial<QuizQuestion>[],
+): QuizQuestion[] {
+  return esQuestions.map((q, i) => ({
+    ...q,
+    ...(enPartials[i] ?? {}),
+  }));
+}
+
+export const curso1Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "Qué es la Inteligencia Artificial?",
     options: [
@@ -109,9 +127,9 @@ export const curso1Quiz: QuizQuestion[] = [
     explanation:
       "ChatGPT es un asistente conversacional de IA creado por OpenAI.",
   },
-];
+], curso1QuizEn);
 
-export const curso2Quiz: QuizQuestion[] = [
+export const curso2Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "Cuál de estos NO es un asistente de IA?",
     options: ["ChatGPT", "Claude", "Wikipedia", "Gemini"],
@@ -216,9 +234,9 @@ export const curso2Quiz: QuizQuestion[] = [
     correctIndex: 1,
     explanation: "Siempre puedes pedir cambios.",
   },
-];
+], curso2QuizEn);
 
-export const curso3Quiz: QuizQuestion[] = [
+export const curso3Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "Qué es la inteligencia artificial en términos simples?",
     options: [
@@ -390,9 +408,9 @@ export const curso3Quiz: QuizQuestion[] = [
     explanation:
       "La curiosidad informada es la mejor actitud: aprender con criterio.",
   },
-];
+], curso3QuizEn);
 
-export const curso7Quiz: QuizQuestion[] = [
+export const curso7Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "¿Cuál de estas es una técnica core de prompting?",
     options: [
@@ -513,9 +531,9 @@ export const curso7Quiz: QuizQuestion[] = [
     explanation:
       "Si el enfoque base es incorrecto, es más eficiente rediseñar el prompt que seguir iterando.",
   },
-];
+], curso7QuizEn);
 
-export const curso8Quiz: QuizQuestion[] = [
+export const curso8Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "¿Qué puede hacer la IA con un PDF que le subes?",
     options: [
@@ -636,9 +654,9 @@ export const curso8Quiz: QuizQuestion[] = [
     explanation:
       "Los proyectos mantienen contexto persistente, evitando re-explicar documentos y preferencias cada vez.",
   },
-];
+], curso8QuizEn);
 
-export const curso9Quiz: QuizQuestion[] = [
+export const curso9Quiz: QuizQuestion[] = mergeEnglish([
   {
     question: "¿Qué es prompt chaining?",
     options: [
@@ -759,4 +777,4 @@ export const curso9Quiz: QuizQuestion[] = [
     explanation:
       "El flujo correcto va de idea → investigación → esquema → borrador → edición → publicación.",
   },
-];
+], curso9QuizEn);

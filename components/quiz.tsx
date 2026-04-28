@@ -4,12 +4,16 @@ import { useState, useCallback } from "react";
 import { CheckCircle2, XCircle, RotateCcw, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 interface QuizQuestion {
   question: string;
+  questionEn?: string;
   options: string[];
+  optionsEn?: string[];
   correctIndex: number;
   explanation: string;
+  explanationEn?: string;
 }
 
 interface QuizProps {
@@ -30,6 +34,9 @@ function shuffleArray<T>(arr: T[]): T[] {
 }
 
 export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 10 }: QuizProps) {
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === "en";
+
   const [pool] = useState(() => {
     const shuffled = shuffleArray(questions);
     return shuffled.slice(0, Math.min(maxQuestions, shuffled.length));
@@ -42,6 +49,13 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
 
   const current = pool[currentIndex];
   const isCorrect = selectedIndex === current?.correctIndex;
+
+  const getQuestion = (q: QuizQuestion) =>
+    isEn && q.questionEn ? q.questionEn : q.question;
+  const getOptions = (q: QuizQuestion) =>
+    isEn && q.optionsEn ? q.optionsEn : q.options;
+  const getExplanation = (q: QuizQuestion) =>
+    isEn && q.explanationEn ? q.explanationEn : q.explanation;
 
   const handleSelect = useCallback(
     (index: number) => {
@@ -76,9 +90,10 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
   const handleKeyDown = useCallback(
     (e: React.KeyboardEvent, index: number) => {
       if (answered) return;
+      const opts = getOptions(current);
       if (e.key === "ArrowDown" || e.key === "ArrowRight") {
         e.preventDefault();
-        const next = (index + 1) % current.options.length;
+        const next = (index + 1) % opts.length;
         (
           document.querySelector(
             `[data-quiz-option="${next}"]`,
@@ -86,8 +101,7 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
         )?.focus();
       } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
         e.preventDefault();
-        const prev =
-          (index - 1 + current.options.length) % current.options.length;
+        const prev = (index - 1 + opts.length) % opts.length;
         (
           document.querySelector(
             `[data-quiz-option="${prev}"]`,
@@ -102,10 +116,10 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
     const percentage = Math.round((correctCount / pool.length) * 100);
     const passed = percentage >= 80;
     const message = passed
-      ? "¡Excelente! Tenés una base sólida."
+      ? t("quiz.excellent")
       : percentage >= 50
-        ? "Necesitás al menos 80% para completar esta lección. ¡Intentalo de nuevo!"
-        : "No te desanimes. Volvé a leer las lecciones con calma e intentá de nuevo.";
+        ? t("quiz.needMore")
+        : t("quiz.tryAgain");
 
     if (passed && onPass) {
       onPass();
@@ -116,7 +130,7 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
         <div className="text-5xl font-bold" style={{ color: accentColor }}>
           {correctCount} de {pool.length}
         </div>
-        <div className="text-xl font-medium">correctas</div>
+        <div className="text-xl font-medium">{t("quiz.correctAnswers")}</div>
         <div
           className="h-4 w-full max-w-xs overflow-hidden rounded-full bg-gray-200"
           role="progressbar"
@@ -140,7 +154,7 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
               className="h-12 gap-2 px-6 text-base"
             >
               <ArrowLeft className="size-5" aria-hidden="true" />
-              Volver al curso
+              {t("quiz.backToCourse")}
             </Button>
           </Link>
           <Button
@@ -149,19 +163,21 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
             onClick={handleRestart}
           >
             <RotateCcw className="size-5" aria-hidden="true" />
-            Repetir Quiz
+            {t("quiz.retryQuiz")}
           </Button>
         </div>
       </div>
     );
   }
 
+  const displayOptions = getOptions(current);
+
   return (
     <div className="flex flex-col gap-6">
       {/* Progress */}
       <div>
         <div className="mb-2 text-base text-gray-600">
-          Pregunta {currentIndex + 1} de {pool.length}
+          {t("quiz.questionOf", { current: currentIndex + 1, total: pool.length })}
         </div>
         <div
           className="h-3 w-full overflow-hidden rounded-full bg-gray-200"
@@ -181,11 +197,11 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
       </div>
 
       {/* Question */}
-      <h3 className="text-xl font-bold">{current.question}</h3>
+      <h3 className="text-xl font-bold">{getQuestion(current)}</h3>
 
       {/* Options */}
-      <div className="flex flex-col gap-3" role="radiogroup" aria-label="Opciones">
-        {current.options.map((option, index) => {
+      <div className="flex flex-col gap-3" role="radiogroup" aria-label={t("a11y.options")}>
+        {displayOptions.map((option, index) => {
           let classes =
             "w-full cursor-pointer text-left p-4 rounded-xl border-2 border-gray-200 bg-white text-lg min-h-[56px] transition-all focus:outline-none";
           let icon = null;
@@ -263,9 +279,9 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
             )}
             <div>
               <div className="font-semibold">
-                {isCorrect ? "Correcto!" : "Incorrecto"}
+                {isCorrect ? t("quiz.correct") : t("quiz.incorrect")}
               </div>
-              <div className="mt-1 text-base">{current.explanation}</div>
+              <div className="mt-1 text-base">{getExplanation(current)}</div>
             </div>
           </div>
         </div>
@@ -279,8 +295,8 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
           onClick={handleNext}
         >
           {currentIndex < pool.length - 1
-            ? "Siguiente pregunta"
-            : "Ver resultados"}
+            ? t("quiz.nextQuestion")
+            : t("quiz.viewResults")}
         </Button>
       )}
     </div>

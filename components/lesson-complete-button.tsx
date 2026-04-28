@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { CheckCircle2, Loader2 } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const PROGRESS_KEY = "capacitaciones_progress";
 
@@ -28,6 +29,7 @@ export function LessonCompleteButton({
   lessonId,
   accentColor,
 }: LessonCompleteButtonProps) {
+  const { t } = useTranslation();
   const [completed, setCompleted] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -63,7 +65,7 @@ export function LessonCompleteButton({
     return (
       <div className="flex items-center gap-2 text-base font-medium text-green-600">
         <CheckCircle2 className="size-5" />
-        Lección completada
+        {t("lesson.completed")}
       </div>
     );
   }
@@ -80,7 +82,7 @@ export function LessonCompleteButton({
       ) : (
         <CheckCircle2 className="size-5" />
       )}
-      Marcar como completada
+      {t("lesson.markComplete")}
     </button>
   );
 }

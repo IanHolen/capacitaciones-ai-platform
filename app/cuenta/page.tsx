@@ -26,6 +26,7 @@ import { cursos, nivelConfig, type Curso } from "@/lib/cursos-data";
 import { createClient } from "@/lib/supabase/client";
 import { BadgesDisplay } from "@/components/badges-display";
 import { FadeIn, AnimatedProgressBar } from "@/components/animations";
+import { useTranslation } from "react-i18next";
 
 interface CourseProgress {
   courseId: string;
@@ -35,6 +36,8 @@ interface CourseProgress {
 }
 
 export default function CuentaPage() {
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === "en";
   const router = useRouter();
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
@@ -59,12 +62,12 @@ export default function CuentaPage() {
       }
 
       setUserName(
-        user.user_metadata?.name || user.email?.split("@")[0] || "Estudiante",
+        user.user_metadata?.name || user.email?.split("@")[0] || "User",
       );
       setUserEmail(user.email || "");
       setCreatedAt(
         user.created_at
-          ? new Date(user.created_at).toLocaleDateString("es-LA", {
+          ? new Date(user.created_at).toLocaleDateString(isEn ? "en-US" : "es-LA", {
               day: "numeric",
               month: "long",
               year: "numeric",
@@ -134,7 +137,7 @@ export default function CuentaPage() {
     }
 
     loadData();
-  }, [router]);
+  }, [router, isEn]);
 
   const handleSaveGoal = useCallback(async () => {
     setSavingGoal(true);
@@ -205,24 +208,24 @@ export default function CuentaPage() {
           <div className="mt-2 flex flex-wrap justify-center gap-3 sm:justify-start">
             <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
               <BookOpen className="size-4" aria-hidden="true" />
-              {coursesCompleted} cursos completados
+              {coursesCompleted} {t("account.coursesCompleted")}
             </span>
             <span className="inline-flex items-center gap-1.5 text-sm text-muted-foreground">
               <CheckCircle2 className="size-4" aria-hidden="true" />
-              {completedLessons} lecciones
+              {completedLessons} {t("account.lessonsCount")}
             </span>
           </div>
         </div>
       </div>
 
-      {/* Goal Section — prominent at top */}
+      {/* Goal Section */}
       {goal && (
         <Card className="mb-6 rounded-2xl border-2 border-[#1E40AF]/20 bg-gradient-to-r from-blue-50/50 to-white">
           <CardContent className="flex items-start gap-4 p-6">
             <Target className="mt-1 size-6 shrink-0 text-[#1E40AF]" />
             <div>
               <div className="text-sm font-semibold text-[#1E40AF]">
-                Mi meta
+                {t("account.myGoal")}
               </div>
               <p className="mt-1 text-lg">{goal}</p>
             </div>
@@ -239,9 +242,11 @@ export default function CuentaPage() {
             </div>
             <div className="flex-1">
               <div className="text-sm font-medium text-[#1E40AF]">
-                Continuá donde lo dejaste
+                {t("account.continueWhere")}
               </div>
-              <div className="text-lg font-semibold">{continueCurso.titulo}</div>
+              <div className="text-lg font-semibold">
+                {isEn && continueCurso.tituloEn ? continueCurso.tituloEn : continueCurso.titulo}
+              </div>
               <div className="mt-2 h-2 w-full overflow-hidden rounded-full bg-gray-200">
                 <div
                   className="h-full rounded-full bg-[#1E40AF] transition-all"
@@ -254,7 +259,7 @@ export default function CuentaPage() {
                 className="h-12 gap-2 px-6 text-base font-semibold"
                 style={{ backgroundColor: "#1E40AF" }}
               >
-                Continuar
+                {t("dashboard.continue")}
                 <ArrowRight className="size-5" aria-hidden="true" />
               </Button>
             </Link>
@@ -272,7 +277,7 @@ export default function CuentaPage() {
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
-          Progreso
+          {t("account.progressTab")}
         </button>
         <button
           onClick={() => setActiveTab("datos")}
@@ -282,11 +287,11 @@ export default function CuentaPage() {
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
-          Datos personales
+          {t("account.dataTab")}
         </button>
       </div>
 
-      {/* Progreso Tab */}
+      {/* Progress Tab */}
       {activeTab === "progreso" && (
         <div className="space-y-6">
           {/* Overall Progress */}
@@ -294,14 +299,14 @@ export default function CuentaPage() {
             <Card className="rounded-2xl">
               <CardContent className="p-6">
                 <div className="mb-3 flex items-center justify-between">
-                  <span className="text-base font-medium">Progreso general</span>
+                  <span className="text-base font-medium">{t("account.overallProgress")}</span>
                   <span className="text-2xl font-bold text-[#1E40AF]">
                     {overallPercentage}%
                   </span>
                 </div>
                 <AnimatedProgressBar percentage={overallPercentage} />
                 <div className="mt-2 text-sm text-muted-foreground">
-                  {completedLessons} de {totalLessons} lecciones completadas
+                  {t("account.completedOf", { completed: completedLessons, total: totalLessons })}
                 </div>
               </CardContent>
             </Card>
@@ -312,12 +317,14 @@ export default function CuentaPage() {
 
           {/* Courses Grid */}
           <div>
-            <h2 className="mb-4 text-xl font-semibold">Mis cursos</h2>
+            <h2 className="mb-4 text-xl font-semibold">{t("account.myCourses")}</h2>
             <div className="grid gap-4 sm:grid-cols-2">
               {cursos.map((curso) => {
                 const cp = progress.find((p) => p.courseId === curso.id);
                 const config = nivelConfig[curso.nivel];
                 const pct = cp?.percentage || 0;
+                const displayTitulo = isEn && curso.tituloEn ? curso.tituloEn : curso.titulo;
+                const levelLabel = t(`levels.${curso.nivel}`, config.label);
                 return (
                   <Link
                     key={curso.id}
@@ -334,22 +341,22 @@ export default function CuentaPage() {
                               color: config.color,
                             }}
                           >
-                            {config.label}
+                            {levelLabel}
                           </Badge>
                           {pct === 100 && (
                             <CheckCircle2
                               className="size-5 text-green-500"
-                              aria-label="Completado"
+                              aria-label={t("lesson.completed")}
                             />
                           )}
                         </div>
                         <h3 className="mb-3 text-base font-semibold leading-snug">
-                          {curso.titulo}
+                          {displayTitulo}
                         </h3>
                         <div className="mb-1 flex items-center justify-between text-sm text-muted-foreground">
                           <span>
                             {cp?.completedLessons || 0}/{curso.lecciones.length}{" "}
-                            lecciones
+                            {t("courses.lessons")}
                           </span>
                           <span className="font-medium" style={{ color: config.color }}>
                             {pct}%
@@ -380,7 +387,7 @@ export default function CuentaPage() {
         </div>
       )}
 
-      {/* Datos Tab */}
+      {/* Data Tab */}
       {activeTab === "datos" && (
         <div className="space-y-6">
           {/* Personal Info */}
@@ -388,14 +395,14 @@ export default function CuentaPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl">
                 <User className="size-5" />
-                Información personal
+                {t("account.personalInfo")}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-5">
               <div className="flex items-center gap-4 rounded-xl bg-muted/30 p-4">
                 <User className="size-5 shrink-0 text-muted-foreground" />
                 <div>
-                  <div className="text-sm text-muted-foreground">Nombre</div>
+                  <div className="text-sm text-muted-foreground">{t("auth.name")}</div>
                   <div className="text-lg font-medium">{userName}</div>
                 </div>
               </div>
@@ -403,7 +410,7 @@ export default function CuentaPage() {
                 <Mail className="size-5 shrink-0 text-muted-foreground" />
                 <div>
                   <div className="text-sm text-muted-foreground">
-                    Correo electrónico
+                    {t("auth.email")}
                   </div>
                   <div className="text-lg font-medium">{userEmail}</div>
                 </div>
@@ -413,7 +420,7 @@ export default function CuentaPage() {
                   <Calendar className="size-5 shrink-0 text-muted-foreground" />
                   <div>
                     <div className="text-sm text-muted-foreground">
-                      Miembro desde
+                      {t("account.memberSince")}
                     </div>
                     <div className="text-lg font-medium">{createdAt}</div>
                   </div>
@@ -427,18 +434,17 @@ export default function CuentaPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2 text-xl">
                 <Target className="size-5" />
-                {goal ? "Actualizar mi meta" : "Mi meta con la IA"}
+                {goal ? t("account.updateGoal") : t("account.goalWith")}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="mb-4 text-base text-muted-foreground">
-                Escribí qué querés lograr aprendiendo IA. Tener una meta clara
-                te va a ayudar a mantener la motivación.
+                {t("account.goalMotivation")}
               </p>
               <textarea
                 value={goal}
                 onChange={(e) => setGoal(e.target.value)}
-                placeholder="Ejemplo: Quiero aprender a usar IA para hacer crecer mi negocio, automatizar reportes, o simplemente entender de qué hablan mis nietos..."
+                placeholder={t("account.goalPlaceholder")}
                 className="min-h-[100px] w-full rounded-xl border-2 border-gray-200 p-4 text-lg leading-relaxed transition-colors placeholder:text-gray-400 focus:border-[#1E40AF] focus:outline-none focus:ring-4 focus:ring-[#1E40AF]/20"
                 rows={3}
               />
@@ -454,12 +460,12 @@ export default function CuentaPage() {
                   ) : (
                     <Save className="size-5" />
                   )}
-                  Guardar meta
+                  {t("account.saveGoal")}
                 </Button>
                 {goalSaved && (
                   <span className="flex items-center gap-1 text-base text-green-600">
                     <CheckCircle2 className="size-5" />
-                    Guardado
+                    {t("account.saved")}
                   </span>
                 )}
               </div>

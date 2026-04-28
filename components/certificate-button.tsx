@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Download, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useTranslation } from "react-i18next";
 
 interface CertificateProps {
   userName: string;
@@ -10,6 +11,7 @@ interface CertificateProps {
   levelColor: string;
   courses: string[];
   completionDate: Date;
+  lang: string;
 }
 
 async function generateCertificate({
@@ -18,7 +20,9 @@ async function generateCertificate({
   levelColor,
   courses,
   completionDate,
+  lang,
 }: CertificateProps) {
+  const isEn = lang === "en";
   const { jsPDF } = await import("jspdf");
   const doc = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
 
@@ -41,7 +45,7 @@ async function generateCertificate({
   // Title
   doc.setFontSize(32);
   doc.setTextColor("#1E40AF");
-  doc.text("CERTIFICADO DE COMPLETACIÓN", width / 2, 50, { align: "center" });
+  doc.text(isEn ? "CERTIFICATE OF COMPLETION" : "CERTIFICADO DE COMPLETACIÓN", width / 2, 50, { align: "center" });
 
   // Divider line
   doc.setDrawColor(levelColor);
@@ -51,7 +55,7 @@ async function generateCertificate({
   // "Otorgado a"
   doc.setFontSize(14);
   doc.setTextColor("#6B7280");
-  doc.text("Otorgado a", width / 2, 70, { align: "center" });
+  doc.text(isEn ? "Awarded to" : "Otorgado a", width / 2, 70, { align: "center" });
 
   // User name
   doc.setFontSize(28);
@@ -61,12 +65,12 @@ async function generateCertificate({
   // Level
   doc.setFontSize(16);
   doc.setTextColor(levelColor);
-  doc.text(`Nivel: ${levelName}`, width / 2, 100, { align: "center" });
+  doc.text(`${isEn ? "Level" : "Nivel"}: ${levelName}`, width / 2, 100, { align: "center" });
 
   // Courses completed
   doc.setFontSize(11);
   doc.setTextColor("#6B7280");
-  doc.text("Cursos completados:", width / 2, 115, { align: "center" });
+  doc.text(isEn ? "Courses completed:" : "Cursos completados:", width / 2, 115, { align: "center" });
 
   let y = 122;
   doc.setFontSize(10);
@@ -80,17 +84,17 @@ async function generateCertificate({
   y = Math.max(y + 8, 155);
   doc.setFontSize(12);
   doc.setTextColor("#6B7280");
-  const dateStr = completionDate.toLocaleDateString("es-LA", {
+  const dateStr = completionDate.toLocaleDateString(isEn ? "en-US" : "es-LA", {
     day: "numeric",
     month: "long",
     year: "numeric",
   });
-  doc.text(`Fecha: ${dateStr}`, width / 2, y, { align: "center" });
+  doc.text(`${isEn ? "Date" : "Fecha"}: ${dateStr}`, width / 2, y, { align: "center" });
 
   // Cert ID
   doc.setFontSize(8);
   doc.setTextColor("#9CA3AF");
-  doc.text(`ID de verificación: ${certId}`, width / 2, height - 18, {
+  doc.text(`${isEn ? "Verification ID" : "ID de verificación"}: ${certId}`, width / 2, height - 18, {
     align: "center",
   });
 
@@ -108,6 +112,7 @@ export function CertificateButton({
   levelColor: string;
   courses: string[];
 }) {
+  const { t, i18n } = useTranslation();
   const [generating, setGenerating] = useState(false);
 
   async function handleDownload() {
@@ -119,6 +124,7 @@ export function CertificateButton({
         levelColor,
         courses,
         completionDate: new Date(),
+        lang: i18n.language,
       });
     } catch {
       // Error generating PDF
@@ -136,12 +142,12 @@ export function CertificateButton({
       {generating ? (
         <>
           <Loader2 className="size-5 animate-spin" />
-          Generando...
+          {t("certificate.generating")}
         </>
       ) : (
         <>
           <Download className="size-5" />
-          Descargar certificado
+          {t("certificate.download")}
         </>
       )}
     </Button>

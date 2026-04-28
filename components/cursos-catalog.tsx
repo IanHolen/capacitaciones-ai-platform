@@ -36,8 +36,13 @@ function highlightMatch(text: string, query: string): React.ReactNode {
 }
 
 function CourseCard({ curso, query }: { curso: Curso; query: string }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const isEn = i18n.language === "en";
   const config = nivelConfig[curso.nivel];
+  const displayTitulo = isEn && curso.tituloEn ? curso.tituloEn : curso.titulo;
+  const displayDescripcion = isEn && curso.descripcionEn ? curso.descripcionEn : curso.descripcion;
+  const displayDuracion = isEn && curso.duracionEn ? curso.duracionEn : curso.duracion;
+  const levelLabel = t(`levels.${curso.nivel}`, config.label);
 
   return (
     <Card className="flex h-full flex-col transition-shadow hover:shadow-md">
@@ -47,14 +52,14 @@ function CourseCard({ curso, query }: { curso: Curso; query: string }) {
             className="text-sm font-semibold"
             style={{ backgroundColor: config.bg, color: config.color }}
           >
-            {config.label}
+            {levelLabel}
           </Badge>
         </div>
         <CardTitle className="text-xl leading-snug">
-          {highlightMatch(curso.titulo, query)}
+          {highlightMatch(displayTitulo, query)}
         </CardTitle>
         <CardDescription className="text-base leading-relaxed">
-          {highlightMatch(curso.descripcion, query)}
+          {highlightMatch(displayDescripcion, query)}
         </CardDescription>
       </CardHeader>
       <CardContent className="flex items-center gap-4 text-base text-muted-foreground">
@@ -64,7 +69,7 @@ function CourseCard({ curso, query }: { curso: Curso; query: string }) {
         </span>
         <span className="flex items-center gap-1.5">
           <Clock className="size-4" aria-hidden="true" />
-          {curso.duracion}
+          {displayDuracion}
         </span>
       </CardContent>
       <CardFooter className="mt-auto">
@@ -87,9 +92,13 @@ function searchCursos(query: string): Curso[] {
 
   return cursos.filter((curso) => {
     if (curso.titulo.toLowerCase().includes(q)) return true;
+    if (curso.tituloEn?.toLowerCase().includes(q)) return true;
     if (curso.descripcion.toLowerCase().includes(q)) return true;
+    if (curso.descripcionEn?.toLowerCase().includes(q)) return true;
     if (curso.lecciones.some((l) => l.titulo.toLowerCase().includes(q))) return true;
+    if (curso.lecciones.some((l) => l.tituloEn?.toLowerCase().includes(q))) return true;
     if (curso.lecciones.some((l) => l.descripcion.toLowerCase().includes(q))) return true;
+    if (curso.lecciones.some((l) => l.descripcionEn?.toLowerCase().includes(q))) return true;
     return false;
   });
 }
@@ -176,7 +185,7 @@ export default function CursosCatalog() {
               }}
               aria-pressed={isActive}
             >
-              {config.label}
+              {t(`levels.${nivel}`, config.label)}
             </button>
           );
         })}
@@ -214,8 +223,8 @@ export default function CursosCatalog() {
           animate={{ opacity: 1 }}
         >
           {query
-            ? `No se encontraron cursos para "${query}".`
-            : "No hay cursos disponibles para este nivel todavía."}
+            ? t("courses.noResults", { query })
+            : t("courses.noCoursesLevel")}
         </motion.p>
       )}
     </>

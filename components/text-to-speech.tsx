@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { Play, Pause, Square, Volume2, VolumeX } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 interface TextToSpeechProps {
   audioUrl?: string;
@@ -84,6 +85,8 @@ export function TextToSpeech({ audioUrl }: TextToSpeechProps) {
     setMuted(!muted);
   }, [muted]);
 
+  const { t } = useTranslation();
+
   if (!audioUrl) return null;
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
@@ -99,10 +102,10 @@ export function TextToSpeech({ audioUrl }: TextToSpeechProps) {
         />
         <div>
           <div className="text-lg font-bold text-[#1E40AF]">
-            Escuchá esta lección en audio
+            {t("tts.title")}
           </div>
           <div className="text-sm text-[#1E40AF]/70">
-            Ideal para aprender mientras hacés otras cosas
+            {t("tts.subtitle")}
           </div>
         </div>
       </div>
@@ -165,7 +168,7 @@ export function TextToSpeech({ audioUrl }: TextToSpeechProps) {
       {/* Speed Controls */}
       <div className="mt-3 flex items-center gap-1.5">
         <span className="text-sm font-medium text-[#1E40AF]/70">
-          Velocidad:
+          {t("tts.speed")}:
         </span>
         {[0.75, 0.9, 1, 1.25].map((s) => (
           <button
