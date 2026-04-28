@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { BookOpen, AlertCircle, Loader2 } from "lucide-react";
+import { BookOpen, AlertCircle, Loader2, AlertTriangle } from "lucide-react";
 import { createClient } from "@/lib/supabase/client";
 import { useTranslation } from "react-i18next";
 
@@ -58,6 +58,10 @@ export default function RegisterPage() {
           <p className="text-lg text-gray-600">
             {t("auth.verificationSent", { email })}
           </p>
+          <div className="mt-4 flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 p-4 text-left text-base text-amber-800">
+            <AlertTriangle className="mt-0.5 size-5 shrink-0" />
+            <span>{t("auth.spamNotice")}</span>
+          </div>
           <Link
             href="/login"
             className="mt-6 inline-block text-[#1E40AF] underline"

@@ -104,7 +104,8 @@
     "backToLogin": "Ir al inicio de sesión",
     "wrongCredentials": "Correo o contraseña incorrectos",
     "enterEmail": "Ingresa tu correo electrónico primero",
-    "passwordMin": "La contraseña debe tener al menos 8 caracteres"
+    "passwordMin": "La contraseña debe tener al menos 8 caracteres",
+    "spamNotice": "Si no encuentras el correo, revisa tu carpeta de spam o correo no deseado."
   },
   "dashboard": {
     "hello": "Hola, {name}!",

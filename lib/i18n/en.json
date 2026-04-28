@@ -104,7 +104,8 @@
     "backToLogin": "Back to login",
     "wrongCredentials": "Wrong email or password",
     "enterEmail": "Enter your email first",
-    "passwordMin": "Password must be at least 8 characters"
+    "passwordMin": "Password must be at least 8 characters",
+    "spamNotice": "If you can't find the email, check your spam or junk folder."
   },
   "dashboard": {
     "hello": "Hello, {name}!",
