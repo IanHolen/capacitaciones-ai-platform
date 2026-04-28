@@ -778,12 +778,4 @@ Esto te confirma que la IA cargó todo correctamente y entiende el contenido de 
 - Cuantos más documentos, más importante es ser preciso en los prompts
 - Si la conversación se alarga, empieza una nueva dentro del mismo proyecto`;
 
-export const c8leccion6 = `## Quiz: Trabaja con documentos e imágenes
-
-Llegaste a la evaluación final del Curso 8. Este quiz está diseñado para que repases los conceptos más importantes que vimos a lo largo de las lecciones.
-
-Durante este curso aprendiste a aprovechar una de las capacidades más prácticas de la IA: trabajar directamente con tus documentos e imágenes. Desde subir un PDF y obtener un resumen ejecutivo en segundos, hasta extraer datos de facturas y organizar proyectos complejos con múltiples archivos — estas son habilidades que puedes aplicar desde hoy en tu trabajo diario.
-
-Recuerda los puntos clave: siempre especifica el formato de salida que necesitas, verifica los datos numéricos extraídos por la IA, ten en cuenta la privacidad antes de subir documentos sensibles, y usa las funciones de Proyectos (tanto en ChatGPT como en Claude) para organizar trabajos que involucren múltiples documentos.
-
-¡Éxitos con el quiz! Ya tienes las herramientas para trabajar con documentos e imágenes como un profesional.`;
+export const c8leccion6 = ``;

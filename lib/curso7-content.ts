@@ -957,12 +957,4 @@ Este enfoque incremental (outline → secciones → refinamiento) produce textos
 - Construye respuestas de forma incremental para tareas complejas
 - Tu colección personal de prompts probados es uno de tus activos más valiosos`;
 
-export const c7leccion8 = `## Quiz: Prompt Engineering
-
-Llegaste al quiz final del curso "Prompt Engineering: el arte de preguntar". Este es el momento de poner a prueba todo lo que aprendiste a lo largo de las 7 lecciones anteriores.
-
-Durante este curso recorrimos las 5 técnicas fundamentales de prompting, aprendimos a enseñar con ejemplos mediante few-shot learning, descubrimos el poder de pedirle a la IA que razone paso a paso con chain-of-thought, exploramos cómo asignar roles y personas para obtener respuestas especializadas, vimos cómo usar estructura (markdown, XML, JSON) para organizar mejor nuestros prompts y respuestas, entendimos la diferencia entre system prompts y user prompts, y finalmente aprendimos a iterar y refinar para llegar al resultado ideal.
-
-Estas no son técnicas teóricas — son herramientas prácticas que puedes aplicar desde hoy en cada conversación con IA. La diferencia entre alguien que "usa IA" y alguien que realmente le saca provecho está precisamente en la calidad de sus prompts.
-
-Responde las siguientes preguntas para evaluar tu comprensión. No te preocupes si no sacas todo perfecto — lo importante es identificar qué temas vale la pena repasar. Cada pregunta tiene su respuesta explicada para que sigas aprendiendo incluso durante el quiz.`;
+export const c7leccion8 = ``;
