@@ -28,19 +28,19 @@ Pero la IA **no puede** hacer muchas cosas que las personas hacemos naturalmente
 - Tomar decisiones éticas complicadas
 - Crear una relación de confianza con otra persona
 - Adaptarse a situaciones completamente nuevas e inesperadas
-- Usar el sentido comun que viene de la experiencia de vida
+- Usar el sentido común que viene de la experiencia de vida
 
 ## La frase clave que hay que recordar
 
-> **"La IA no va a reemplazarte. Pero una persona que sepa usar IA si podría tener ventaja."**
+> **"La IA no va a reemplazarte. Pero una persona que sepa usar IA sí podría tener ventaja."**
 
 No se trata de competir contra la IA — se trata de aprender a usarla como una herramienta más. Igual que aprendimos a usar el celular, el correo electrónico o las hojas de calculo.
 
 ## Ejemplos concretos
 
-**Si trabajas en atención al cliente:** La IA puede responder las preguntas simples y repetitivas, y vos te enfocas en los casos que realmente necesitan atención humana.
+**Si trabajas en atención al cliente:** La IA puede responder las preguntas simples y repetitivas, y tú te enfocas en los casos que realmente necesitan atención humana.
 
-**Si eres profesor o capacitador:** La IA puede ayudarte a preparar material, generar ejercicios y resumir textos. Vos seguis siendo quien ensena, motiva y conecta con los estudiantes.
+**Si eres profesor o capacitador:** La IA puede ayudarte a preparar material, generar ejercicios y resumir textos. Tú sigues siendo quien enseña, motiva y conecta con los estudiantes.
 
 **Si estas jubilado/a:** La IA es simplemente una herramienta más que puede hacerte la vida más fácil — desde redactar un correo hasta planificar un viaje.
 
@@ -63,7 +63,7 @@ Esto no significa que la IA sea peligrosa. Significa que, al igual que no le dam
 
 ## La regla de oro
 
-> **Si no se lo dirias a un extrano amable en la calle, no se lo escribas a la IA.**
+> **Si no se lo dirías a un extraño amable en la calle, no se lo escribas a la IA.**
 
 ## Lo que SI puedes compartir con la IA
 
@@ -132,7 +132,7 @@ No te asustes:
 
 La IA es una herramienta maravillosa, pero requiere un uso consciente. No hace falta tenerle miedo — hace falta tenerle **respeto**, igual que le tenemos respeto al fuego: lo usamos para cocinar, pero no metemos la mano.
 
-Si alguna vez tienes duda, recuerda la regla de oro: si no se lo dirias a un extrano amable, no se lo escribas a la IA.`;
+Si alguna vez tienes duda, recuerda la regla de oro: si no se lo dirías a un extraño amable, no se lo escribas a la IA.`;
 
 export const c3leccion3 = `## La verdad que pocos te cuentan
 
@@ -154,7 +154,7 @@ En 2023, un abogado en EEUU uso ChatGPT para preparar un caso legal. La IA le di
 **Lección:** La IA puede inventar datos que suenan muy convincentes.
 
 ### Ejemplo 2: La biografia equivocada
-Si le preguntas a la IA sobre una persona no muy famosa — un profesor universitario o politico local — es comun que mezcle datos de diferentes personas o invente logros que nunca ocurrieron.
+Si le preguntas a la IA sobre una persona no muy famosa — un profesor universitario o político local — es común que mezcle datos de diferentes personas o invente logros que nunca ocurrieron.
 
 **Lección:** La IA es menos confiable con información sobre personas especificas no mundialmente conocidas.
 
@@ -177,7 +177,7 @@ Señales de alerta:
 **Paso 1:** Preguntale: "Estas seguro? Podrías estar equivocado?" — A veces se corrige sola.
 **Paso 2:** Busca en Google. Copia el dato clave y buscalo.
 **Paso 3:** Cruza con dos fuentes confiables.
-**Paso 4:** Usa el sentido comun. Si suena demasiado bueno, probablemente la IA exagera.
+**Paso 4:** Usa el sentido común. Si suena demasiado bueno, probablemente la IA exagera.
 
 ## Para que SI es confiable la IA?
 
@@ -185,7 +185,7 @@ Bastante confiable para:
 - **Explicar conceptos generales** (qué es la inflacion, cómo funciona el sistema solar)
 - **Ayudarte a redactar** (correos, cartas, mensajes)
 - **Darte ideas** (recetas, planes de viaje, regalos)
-- **Resumir textos** que vos le das
+- **Resumir textos** que tú le das
 - **Traducir** textos de un idioma a otro
 
 Menos confiable para:
@@ -201,7 +201,7 @@ Menos confiable para:
 - Las "alucinaciones" son errores que suenan muy reales — por eso son peligrosas
 - **Siempre verifica** datos importantes antes de actuar sobre ellos
 - Usa la IA como un **primer borrador**, no como la verdad absoluta
-- Tu sentido comun y tu experiencia son herramientas que la IA no tiene
+- Tu sentido común y tu experiencia son herramientas que la IA no tiene
 
 Saber que la IA se equivoca no es razón para no usarla. Es razón para usarla **con inteligencia**.`;
 
@@ -209,7 +209,7 @@ export const c3leccion4 = `## Pensemos en la calculadora
 
 Se acuerdan cuando aparecieron las calculadoras de bolsillo? Hubo un gran debate: "Los niños van a dejar de aprender matemáticas!" Que paso? La calculadora no reemplazo el conocimiento matemático — lo **complemento**. Si no sabes que necesitas multiplicar, la calculadora no te sirve de nada.
 
-**La IA funciona exactamente igual.** Necesita que **vos** le digas que hacer, revises lo que produce, y tomes las decisiones finales.
+**La IA funciona exactamente igual.** Necesita que **tú** le digas qué hacer, revises lo que produce, y tomes las decisiones finales.
 
 ## Cuando USAR la IA?
 
@@ -232,24 +232,24 @@ Se acuerdan cuando aparecieron las calculadoras de bolsillo? Hubo un gran debate
 | Tomar una decisión legal importante | Las leyes cambian por pais y caso; necesitas un abogado |
 | Invertir dinero | La IA no tiene info en tiempo real ni conoce tu situación |
 | Verificar si una noticia es real | La IA puede repetir información falsa |
-| Evaluar si un correo es una estafa | Tu banco y tu sentido comun son mejores |
+| Evaluar si un correo es una estafa | Tu banco y tu sentido común son mejores |
 | Decisiones que afectan a otras personas | El juicio etico y emocional es humano |
 
 ## La analogia completa
 
-- **El GPS** te dice por donde ir, pero **vos** decides si tomas esa ruta. Si el GPS te dice que cruces un rio, no lo haces sin pensar.
-- **El microondas** calienta la comida, pero **vos** decides que cocinar y cuanto tiempo.
-- **Google** te da miles de resultados, pero **vos** decides cuál es confiable.
+- **El GPS** te dice por donde ir, pero **tú** decides si tomas esa ruta. Si el GPS te dice que cruces un rio, no lo haces sin pensar.
+- **El microondas** calienta la comida, pero **tú** decides que cocinar y cuanto tiempo.
+- **Google** te da miles de resultados, pero **tú** decides cuál es confiable.
 
 La IA es lo mismo: una herramienta que amplifica tus capacidades, pero que necesita tu supervision.
 
-## El secreto: la IA + vos = mejor resultado
+## El secreto: la IA + tú = mejor resultado
 
 **Lo que hace bien la IA:** Procesar mucha información rápido, escribir textos claros, dar múltiples opciones, explicar cosas complejas de forma simple, trabajar 24 horas.
 
-**Lo que haces bien vos:** Conocer tu situación personal, tener empatía, aplicar valores y ética, tomar decisiones con sentido comun, saber qué es importante para vos.
+**Lo que haces bien tú:** Conocer tu situación personal, tener empatía, aplicar valores y ética, tomar decisiones con sentido común, saber qué es importante para ti.
 
-**Juntos:** la IA te da el borrador, vos le das el toque final. La IA te da opciones, vos elegis la correcta. La IA te ahorra tiempo, vos usas ese tiempo en lo que importa.
+**Juntos:** la IA te da el borrador, tú le das el toque final. La IA te da opciones, tú eliges la correcta. La IA te ahorra tiempo, tú usas ese tiempo en lo que importa.
 
 ## Errores comunes que hay que evitar
 
@@ -260,7 +260,7 @@ La IA es lo mismo: una herramienta que amplifica tus capacidades, pero que neces
 
 ## Para llevar a casa
 
-- La IA es como una calculadora: potente pero necesita que **vos** la dirijas
+- La IA es como una calculadora: potente pero necesita que **tú** la dirijas
 - Hay momentos para usarla y momentos para consultar a un profesional humano
 - El mejor resultado sale de combinar la velocidad de la IA con tu experiencia y criterio
 - No hay que tenerle miedo ni depender ciegamente — hay que usarla con equilibrio
@@ -351,7 +351,7 @@ Al final de la semana:
 
 ## Y después de la semana?
 
-Si te gusto: segui usando la IA, explora funciones nuevas, ayuda a alguien más a empezar.
+Si te gusto: sigue usando la IA, explora funciones nuevas, ayuda a alguien más a empezar.
 Si no te convencio: también está bien! Al menos ahora sabes qué es y puedes tomar una decisión informada.
 
 ## Para llevar a casa

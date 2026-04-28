@@ -7,7 +7,7 @@ export const leccion1 = `### Qué es RAG y por qué revolucionó la IA
 
 Los modelos de lenguaje grandes (LLMs) como GPT-4, Claude o Llama son impresionantes. Pueden escribir código, resumir textos, mantener conversaciones complejas y razonar sobre problemas. Pero tienen un problema fundamental que limita su utilidad en aplicaciones reales: **su conocimiento tiene fecha de corte y no conocen tus datos privados**.
 
-Imaginá que le preguntás a ChatGPT: "¿Cuáles fueron las ventas del Q3 2025 de mi empresa?" — el modelo no tiene idea. No importa cuán inteligente sea, simplemente no tiene acceso a esa información. Lo mismo ocurre con documentación interna, bases de conocimiento corporativas, manuales técnicos propietarios o cualquier dato que no estuviera en su set de entrenamiento.
+Imagina que le preguntas a ChatGPT: "¿Cuáles fueron las ventas del Q3 2025 de mi empresa?" — el modelo no tiene idea. No importa cuán inteligente sea, simplemente no tiene acceso a esa información. Lo mismo ocurre con documentación interna, bases de conocimiento corporativas, manuales técnicos propietarios o cualquier dato que no estuviera en su set de entrenamiento.
 
 Esto genera dos problemas críticos:
 
@@ -55,7 +55,7 @@ Una pregunta natural es: ¿por qué no simplemente re-entrenar el modelo con mis
 |---------|-----|-------------|
 | Actualización de datos | Instantánea | Requiere re-entrenar |
 | Costo | Bajo | Alto (GPU, tiempo) |
-| Trazabilidad | Podés citar fuentes | No hay trazabilidad |
+| Trazabilidad | Puedes citar fuentes | No hay trazabilidad |
 | Alucinaciones | Reducidas (contexto real) | Persisten |
 | Datos privados | Se mantienen separados | Se integran al modelo |
 | Tiempo de implementación | Horas/días | Días/semanas |
@@ -76,7 +76,7 @@ RAG no reemplaza al fine-tuning completamente — son complementarios. Pero para
 
 #### Los componentes clave de un sistema RAG
 
-Para entender RAG a fondo, necesitás conocer estos conceptos fundamentales:
+Para entender RAG a fondo, necesitas conocer estos conceptos fundamentales:
 
 - **Embeddings:** Representaciones numéricas (vectores) de texto que capturan significado semántico. Textos similares tienen embeddings similares.
 - **Vector Store:** Base de datos optimizada para almacenar y buscar embeddings de forma eficiente (ej: Pinecone, Weaviate, ChromaDB, FAISS).
@@ -88,7 +88,7 @@ Para entender RAG a fondo, necesitás conocer estos conceptos fundamentales:
 
 El ecosistema de herramientas para RAG creció enormemente. Frameworks como **LangChain**, **LlamaIndex**, **Haystack** y **Semantic Kernel** facilitan la implementación. Bases de datos vectoriales como **Pinecone**, **Weaviate**, **Qdrant**, **ChromaDB** y **pgvector** (extensión de PostgreSQL) ofrecen almacenamiento y búsqueda eficiente.
 
-En las siguientes lecciones vas a construir tu propio sistema RAG desde cero, entender cada componente en profundidad, y aprender a optimizarlo para obtener respuestas de alta calidad.
+En las siguientes lecciones vas a construir tu propio sistema RAG desde cero, entender cada componente en profundidad y aprender a optimizarlo para obtener respuestas de alta calidad.
 
 #### Conclusión
 
@@ -101,7 +101,7 @@ export const leccion2 = `### Pipeline completo: documento → chunks → embeddi
 
 #### Visión general del flujo
 
-En esta lección vamos a recorrer cada etapa del pipeline RAG en detalle, con código Python funcional. Al terminar, vas a entender exactamente qué pasa desde que tenés un documento de texto hasta que obtenés una respuesta generada por un LLM con información de ese documento.
+En esta lección vamos a recorrer cada etapa del pipeline RAG en detalle, con código Python funcional. Al terminar, vas a entender exactamente qué pasa desde que tienes un documento de texto hasta que obtienes una respuesta generada por un LLM con información de ese documento.
 
 \`\`\`
 Documento Original
@@ -159,13 +159,13 @@ texto = cargar_documento("manual_producto.txt")
 print(f"Documento cargado: {len(texto)} caracteres")
 \`\`\`
 
-Para formatos más complejos como PDF, necesitás librerías especializadas. Lo veremos en detalle en la lección 4.
+Para formatos más complejos como PDF, necesitas librerías especializadas. Lo veremos en detalle en la lección 4.
 
 #### Paso 2: Chunking — El arte de dividir documentos
 
 Este es posiblemente el paso más crítico y subestimado del pipeline. Un mal chunking puede arruinar todo tu sistema RAG, sin importar cuán bueno sea tu modelo de embeddings o tu LLM.
 
-**¿Por qué dividir?** Los LLMs tienen un límite de contexto (ventana de tokens). No podés meter un documento de 500 páginas en el prompt. Además, los embeddings funcionan mejor con textos más cortos y focalizados.
+**¿Por qué dividir?** Los LLMs tienen un límite de contexto (ventana de tokens). No puedes meter un documento de 500 páginas en el prompt. Además, los embeddings funcionan mejor con textos más cortos y focalizados.
 
 **Estrategia 1: Chunking por caracteres con overlap**
 
@@ -336,7 +336,7 @@ print(f"Dimensiones: {embeddings_locales.shape}")  # (n_chunks, 384)
 
 #### Paso 4: Almacenar en un Vector Store
 
-Necesitás un lugar eficiente para guardar y buscar tus embeddings. Usaremos **ChromaDB** por ser simple y local:
+Necesitas un lugar eficiente para guardar y buscar tus embeddings. Usaremos **ChromaDB** por ser simple y local:
 
 \`\`\`python
 import chromadb
@@ -396,8 +396,8 @@ def generar_respuesta_rag(consulta: str, n_contextos: int = 3) -> str:
     # 2. Construir prompt con contexto
     contexto_combinado = "\\n\\n---\\n\\n".join(contextos)
 
-    prompt = f"""Basándote ÚNICAMENTE en el siguiente contexto, respondé la pregunta del usuario.
-Si la información no está en el contexto, decí que no tenés suficiente información.
+    prompt = f"""Basándote ÚNICAMENTE en el siguiente contexto, responde la pregunta del usuario.
+Si la información no está en el contexto, di que no tienes suficiente información.
 
 CONTEXTO:
 {contexto_combinado}
@@ -410,7 +410,7 @@ RESPUESTA:"""
     respuesta = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
-            {"role": "system", "content": "Sos un asistente útil que responde basándose solo en el contexto proporcionado."},
+            {"role": "system", "content": "Eres un asistente útil que responde basándose solo en el contexto proporcionado."},
             {"role": "user", "content": prompt}
         ],
         temperature=0.2  # Baja temperatura para respuestas más fieles al contexto
@@ -425,7 +425,7 @@ print(respuesta)
 
 #### Resumen del pipeline
 
-Acabás de ver el pipeline RAG completo en acción. Cada paso es una oportunidad de optimización:
+Acabas de ver el pipeline RAG completo en acción. Cada paso es una oportunidad de optimización:
 
 - **Chunking**: Tamaño, overlap, estrategia de división
 - **Embeddings**: Modelo, dimensiones, normalización
@@ -451,7 +451,7 @@ pip install langchain langchain-openai langchain-community chromadb
 pip install tiktoken unstructured  # Dependencias opcionales útiles
 \`\`\`
 
-Configurá tu API key:
+Configura tu API key:
 
 \`\`\`bash
 export OPENAI_API_KEY="tu-api-key-aquí"
@@ -650,9 +650,9 @@ llm = ChatOpenAI(
 )
 
 # Prompt personalizado
-template = """Usá el siguiente contexto para responder la pregunta del usuario.
-Si no encontrás la respuesta en el contexto, decí que no tenés información suficiente.
-Respondé en español de forma clara y concisa.
+template = """Usa el siguiente contexto para responder la pregunta del usuario.
+Si no encuentras la respuesta en el contexto, di que no tienes información suficiente.
+Responde en español de forma clara y concisa.
 
 Contexto:
 {context}
@@ -699,8 +699,8 @@ def formatear_docs(docs):
 
 # Prompt
 prompt = ChatPromptTemplate.from_template("""
-Basándote en el siguiente contexto, respondé la pregunta.
-Si no sabés la respuesta basándote en el contexto, decí que no tenés información.
+Basándote en el siguiente contexto, responde la pregunta.
+Si no sabes la respuesta basándote en el contexto, di que no tienes información.
 
 Contexto: {context}
 
@@ -726,7 +726,7 @@ print(respuesta)
 
 #### Cargar un vector store persistente
 
-Si ya creaste un vector store, podés cargarlo sin re-procesar todo:
+Si ya creaste un vector store, puedes cargarlo sin re-procesar todo:
 
 \`\`\`python
 # Cargar vector store existente
@@ -744,7 +744,7 @@ retriever_existente = vectorstore_existente.as_retriever()
 
 LangChain reduce drásticamente la cantidad de código necesario para implementar RAG. Lo que en la lección anterior eran ~100 líneas de código manual, acá se resuelve en ~30 líneas con abstracciones bien diseñadas.
 
-Lo más importante: LangChain te permite **intercambiar componentes** fácilmente. ¿Querés cambiar de OpenAI a un modelo local? Cambiá una línea. ¿De ChromaDB a Pinecone? Dos líneas. Esta modularidad es clave para producción.
+Lo más importante: LangChain te permite **intercambiar componentes** fácilmente. ¿Quieres cambiar de OpenAI a un modelo local? Cambia una línea. ¿De ChromaDB a Pinecone? Dos líneas. Esta modularidad es clave para producción.
 
 En la próxima lección, aplicamos todo esto a un caso de uso concreto: RAG sobre tus propios PDFs.
 `;
@@ -988,12 +988,12 @@ def crear_sistema_consulta(persist_dir: str = "./chroma_db"):
     llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.1)
 
     prompt = ChatPromptTemplate.from_template("""
-Sos un asistente experto que responde preguntas basándose ÚNICAMENTE en el contexto proporcionado.
+Eres un asistente experto que responde preguntas basándose ÚNICAMENTE en el contexto proporcionado.
 
 Instrucciones:
-- Respondé de forma clara y completa en español
-- Citá la fuente (nombre del archivo y página) cuando sea relevante
-- Si la información no está en el contexto, decí: "No encontré información sobre esto en los documentos proporcionados."
+- Responde de forma clara y completa en español
+- Cita la fuente (nombre del archivo y página) cuando sea relevante
+- Si la información no está en el contexto, di: "No encontré información sobre esto en los documentos proporcionados."
 - No inventes información
 
 Contexto de los documentos:
@@ -1027,7 +1027,7 @@ Respuesta detallada con fuentes:""")
 def main():
     print("Cargando sistema RAG...")
     chain, retriever = crear_sistema_consulta()
-    print("Sistema listo. Escribí 'salir' para terminar.\\n")
+    print("Sistema listo. Escribe 'salir' para terminar.\\n")
 
     while True:
         pregunta = input("\\n📄 Tu pregunta: ").strip()
@@ -1055,20 +1055,20 @@ if __name__ == "__main__":
 #### Ejecutar el proyecto completo
 
 \`\`\`bash
-# 1. Colocá tus PDFs en la carpeta pdfs/
+# 1. Coloca tus PDFs en la carpeta pdfs/
 mkdir -p pdfs/
 
-# 2. Procesá los PDFs (solo la primera vez)
+# 2. Procesa los PDFs (solo la primera vez)
 python cargar_pdfs.py
 
-# 3. Consultá tus documentos
+# 3. Consulta tus documentos
 python consultar.py
 \`\`\`
 
 #### Tips para mejorar la extracción de PDFs
 
-1. **PDFs escaneados (imágenes):** Necesitás OCR. Usá \`pytesseract\` o \`unstructured\` con el parámetro \`strategy="ocr_only"\`.
-2. **PDFs con tablas complejas:** \`pdfplumber\` es mejor que \`PyPDF\` para tablas. Considerá \`camelot-py\` para tablas muy complejas.
+1. **PDFs escaneados (imágenes):** Necesitas OCR. Usa \`pytesseract\` o \`unstructured\` con el parámetro \`strategy="ocr_only"\`.
+2. **PDFs con tablas complejas:** \`pdfplumber\` es mejor que \`PyPDF\` para tablas. Considera \`camelot-py\` para tablas muy complejas.
 3. **PDFs con columnas:** Muchos extractores mezclan el texto de las columnas. \`unstructured\` maneja esto mejor.
 4. **Metadatos del PDF:** Extraé título, autor y fecha del PDF y agregalos como metadata a tus chunks.
 
@@ -1099,7 +1099,7 @@ El tamaño del chunk tiene un impacto enorme en la calidad. Chunks muy grandes d
 
 **Técnica avanzada: Parent-Child Chunking**
 
-Creás chunks pequeños para la búsqueda (más precisa) pero recuperás el chunk padre (más contexto) para enviarlo al LLM:
+Se crean chunks pequeños para la búsqueda (más precisa) pero se recupera el chunk padre (más contexto) para enviarlo al LLM:
 
 \`\`\`python
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -1142,10 +1142,10 @@ def crear_chunks_parent_child(documentos: list[Document]):
 
     return all_children, parent_map, parents
 
-# Uso: buscás entre children, pero devolvés el parent al LLM
+# Uso: buscas entre children, pero devuelves el parent al LLM
 children, parent_map, parents = crear_chunks_parent_child(documentos)
 
-# Al buscar, recuperás el parent:
+# Al buscar, se recupera el parent:
 def buscar_con_parent(query, vectorstore, parent_map, k=3):
     """Busca children pero retorna parents para contexto completo."""
     child_results = vectorstore.similarity_search(query, k=k)
@@ -1175,7 +1175,7 @@ llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 def enriquecer_chunk(chunk: Document) -> Document:
     """Agrega metadata generada por LLM al chunk."""
 
-    prompt = f"""Analizá el siguiente texto y generá metadata en formato JSON:
+    prompt = f"""Analiza el siguiente texto y genera metadata en formato JSON:
 - "resumen": resumen de 1 oración
 - "temas": lista de 3-5 temas principales
 - "tipo": tipo de contenido (definición, procedimiento, ejemplo, tabla, etc.)
@@ -1308,22 +1308,22 @@ hybrid_retriever = crear_hybrid_retriever(chunks, vectorstore)
 
 #### 5. Prompt Engineering para RAG
 
-El prompt que usás para la generación impacta enormemente en la calidad:
+El prompt que usas para la generación impacta enormemente en la calidad:
 
 \`\`\`python
 # Prompt básico (malo)
-prompt_basico = "Respondé usando el contexto: {context}. Pregunta: {question}"
+prompt_basico = "Responde usando el contexto: {context}. Pregunta: {question}"
 
 # Prompt optimizado (bueno)
-prompt_optimizado = """Sos un asistente experto y preciso. Tu tarea es responder preguntas
+prompt_optimizado = """Eres un asistente experto y preciso. Tu tarea es responder preguntas
 basándote EXCLUSIVAMENTE en los fragmentos de documentos proporcionados como contexto.
 
 REGLAS ESTRICTAS:
-1. Usá SOLO información del contexto. NO inventes ni agregues información externa.
+1. Usa SOLO información del contexto. NO inventes ni agregues información externa.
 2. Si la respuesta no está en el contexto, respondé: "No encontré esta información en los documentos disponibles."
-3. Citá la fuente específica (documento y página) para cada afirmación importante.
+3. Cita la fuente específica (documento y página) para cada afirmación importante.
 4. Si la información es parcial, indicalo: "Basándome en la información disponible..."
-5. Si hay información contradictoria entre fuentes, mencioná ambas versiones.
+5. Si hay información contradictoria entre fuentes, menciona ambas versiones.
 
 CONTEXTO (fragmentos de documentos relevantes):
 {context}
@@ -1341,7 +1341,7 @@ A veces la pregunta del usuario es vaga o ambigua. Transformarla antes de buscar
 \`\`\`python
 def expandir_query(query: str, llm) -> list[str]:
     """Genera múltiples versiones de la query para buscar más ampliamente."""
-    prompt = f"""Generá 3 reformulaciones de la siguiente pregunta para buscar
+    prompt = f"""Genera 3 reformulaciones de la siguiente pregunta para buscar
 en una base de documentos. Cada reformulación debe capturar un aspecto diferente
 de lo que el usuario podría estar buscando.
 
@@ -1390,11 +1390,11 @@ La clave es iterar: medir, optimizar, medir de nuevo. En la próxima lección va
 
 export const leccion6 = `### Evaluaciones y métricas de RAG
 
-#### ¿Cómo sabés si tu RAG funciona bien?
+#### ¿Cómo sabes si tu RAG funciona bien?
 
-Construiste tu sistema RAG, hiciste algunas preguntas de prueba y las respuestas "se ven bien". Pero eso no alcanza. Necesitás métricas cuantitativas para saber qué tan bien funciona tu sistema y, más importante, para medir si tus optimizaciones realmente mejoran las cosas.
+Construiste tu sistema RAG, hiciste algunas preguntas de prueba y las respuestas "se ven bien". Pero eso no alcanza. Necesitas métricas cuantitativas para saber qué tan bien funciona tu sistema y, más importante, para medir si tus optimizaciones realmente mejoran las cosas.
 
-Evaluar un sistema RAG es más complejo que evaluar un modelo de ML tradicional porque tenés **dos componentes independientes** que evaluar:
+Evaluar un sistema RAG es más complejo que evaluar un modelo de ML tradicional porque tienes **dos componentes independientes** que evaluar:
 1. **Retrieval**: ¿Se recuperaron los documentos correctos?
 2. **Generation**: ¿La respuesta generada es fiel al contexto y responde la pregunta?
 
@@ -1424,7 +1424,7 @@ Mide si la respuesta realmente responde la pregunta del usuario.
 
 **3. Context Relevancy (Relevancia del contexto)**
 
-Mide si los documentos recuperados son relevantes para la pregunta. Si recuperás documentos irrelevantes, el LLM tiene que filtrar ruido y es más probable que genere respuestas pobres.
+Mide si los documentos recuperados son relevantes para la pregunta. Si se recuperan documentos irrelevantes, el LLM tiene que filtrar ruido y es más probable que genere respuestas pobres.
 
 **4. Context Recall**
 
@@ -1473,7 +1473,7 @@ llm_evaluador = ChatOpenAI(model="gpt-4o", temperature=0)  # Modelo potente para
 
 def evaluar_fidelidad(respuesta: str, contexto: str) -> dict:
     """Evalúa la fidelidad de una respuesta con respecto al contexto."""
-    prompt = f"""Evaluá la fidelidad de la siguiente respuesta con respecto al contexto dado.
+    prompt = f"""Evalúa la fidelidad de la siguiente respuesta con respecto al contexto dado.
 
 Contexto:
 {contexto}
@@ -1482,9 +1482,9 @@ Respuesta a evaluar:
 {respuesta}
 
 Instrucciones:
-1. Identificá cada afirmación factual en la respuesta
-2. Verificá si cada afirmación está soportada por el contexto
-3. Devolvé un JSON con:
+1. Identifica cada afirmación factual en la respuesta
+2. Verifica si cada afirmación está soportada por el contexto
+3. Devuelve un JSON con:
    - "afirmaciones": lista de afirmaciones encontradas
    - "soportadas": cantidad de afirmaciones soportadas por el contexto
    - "total": cantidad total de afirmaciones
@@ -1503,12 +1503,12 @@ JSON:"""
 
 def evaluar_relevancia(pregunta: str, respuesta: str) -> dict:
     """Evalúa si la respuesta es relevante para la pregunta."""
-    prompt = f"""Evaluá si la siguiente respuesta es relevante y útil para la pregunta.
+    prompt = f"""Evalúa si la siguiente respuesta es relevante y útil para la pregunta.
 
 Pregunta: {pregunta}
 Respuesta: {respuesta}
 
-Devolvé un JSON con:
+Devuelve un JSON con:
 - "score": de 0 a 1 (1 = perfectamente relevante)
 - "explicacion": por qué diste ese score
 - "responde_pregunta": true/false
@@ -1543,7 +1543,7 @@ from ragas.metrics import (
 from datasets import Dataset
 
 # Preparar datos para RAGAS
-# Necesitás ejecutar tu pipeline RAG y guardar los resultados
+# Necesitas ejecutar tu pipeline RAG y guardar los resultados
 def preparar_datos_ragas(dataset_eval, rag_chain, retriever):
     """Ejecuta el RAG y prepara datos en formato RAGAS."""
     preguntas = []
@@ -1647,7 +1647,7 @@ metricas_retrieval = evaluar_retrieval(evaluacion_dataset, retriever)
 
 #### Pipeline de evaluación continua
 
-En producción, necesitás evaluar continuamente:
+En producción, necesitas evaluar continuamente:
 
 \`\`\`python
 import json
@@ -1714,11 +1714,12 @@ No hay un estándar universal, pero como referencia:
 - **Faithfulness > 0.85**: Tu sistema no alucina demasiado
 - **Answer Relevancy > 0.80**: Las respuestas son útiles
 - **Context Recall > 0.75**: El retrieval encuentra la información necesaria
-- **Hit Rate > 0.90**: Casi siempre recuperás al menos un documento relevante
+- **Hit Rate > 0.90**: Casi siempre se recupera al menos un documento relevante
 
-Si tus scores son bajos, la lección 5 te da las herramientas para mejorarlos. Evaluá, optimizá, evaluá de nuevo — ese es el ciclo.
+Si tus scores son bajos, la lección 5 te da las herramientas para mejorarlos. Evalúa, optimiza, evalúa de nuevo — ese es el ciclo.
 
 En la próxima lección, vas a integrar todo lo que aprendiste en un proyecto completo.
+
 `;
 
 export const leccion7 = `### Proyecto: buscador inteligente sobre tus documentos
@@ -1795,7 +1796,7 @@ COLLECTION_NAME = "buscador_docs"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 if not OPENAI_API_KEY:
     print("ADVERTENCIA: OPENAI_API_KEY no está configurada")
-    print("Ejecutá: export OPENAI_API_KEY='tu-key-aqui'")
+    print("Ejecuta: export OPENAI_API_KEY='tu-key-aqui'")
 \`\`\`
 
 #### indexador.py — Carga e indexación de documentos
@@ -1923,7 +1924,7 @@ def indexar_documentos() -> tuple[int, int]:
     archivos = descubrir_documentos(config.DOCUMENTOS_DIR)
     if not archivos:
         print(f"No se encontraron documentos en: {config.DOCUMENTOS_DIR}")
-        print(f"Colocá archivos .txt, .pdf o .md en esa carpeta")
+        print(f"Coloca archivos .txt, .pdf o .md en esa carpeta")
         return 0, 0
 
     print(f"Archivos encontrados: {len(archivos)}")
@@ -1994,7 +1995,7 @@ class BuscadorInteligente:
 
             count = self.vectorstore._collection.count()
             if count == 0:
-                print("El índice está vacío. Ejecutá primero: python main.py indexar")
+                print("El índice está vacío. Ejecuta primero: python main.py indexar")
                 return False
 
             self.retriever = self.vectorstore.as_retriever(
@@ -2015,13 +2016,13 @@ class BuscadorInteligente:
 
     def _crear_chain(self):
         """Crea la cadena RAG."""
-        prompt = ChatPromptTemplate.from_template("""Sos un asistente experto que responde preguntas basándose EXCLUSIVAMENTE en los documentos proporcionados.
+        prompt = ChatPromptTemplate.from_template("""Eres un asistente experto que responde preguntas basándose EXCLUSIVAMENTE en los documentos proporcionados.
 
 REGLAS:
-1. Usá SOLO información del contexto. NO inventes datos.
-2. Si no encontrás la respuesta, decí: "No encontré esta información en los documentos indexados."
-3. Citá la fuente (nombre de archivo y página si aplica) para cada afirmación importante.
-4. Respondé en español, de forma clara y estructurada.
+1. Usa SOLO información del contexto. NO inventes datos.
+2. Si no encuentras la respuesta, di: "No encontré esta información en los documentos indexados."
+3. Cita la fuente (nombre de archivo y página si aplica) para cada afirmación importante.
+4. Responde en español, de forma clara y estructurada.
 5. Si la información es parcial, indicalo.
 
 DOCUMENTOS RECUPERADOS:
@@ -2131,7 +2132,7 @@ def comando_indexar():
     if n_archivos > 0:
         console.print(f"\\n[green]Indexación exitosa: {n_archivos} archivos, {n_chunks} chunks[/green]")
     else:
-        console.print(f"\\n[yellow]Colocá documentos en: {config.DOCUMENTOS_DIR}[/yellow]")
+        console.print(f"\\n[yellow]Coloca documentos en: {config.DOCUMENTOS_DIR}[/yellow]")
 
 
 def comando_buscar():
@@ -2139,12 +2140,12 @@ def comando_buscar():
     buscador = BuscadorInteligente()
 
     if not buscador.cargar_indice():
-        console.print("[red]No se pudo cargar el índice. Ejecutá primero: python main.py indexar[/red]")
+        console.print("[red]No se pudo cargar el índice. Ejecuta primero: python main.py indexar[/red]")
         return
 
     console.print(Panel(
         "[bold]Buscador Inteligente de Documentos[/bold]\\n\\n"
-        "Escribí tu pregunta en lenguaje natural.\\n"
+        "Escribe tu pregunta en lenguaje natural.\\n"
         "Comandos: 'salir' para terminar, 'buscar' para búsqueda sin generación",
         title="Bienvenido",
         border_style="blue"
@@ -2232,7 +2233,7 @@ def comando_info():
         console.print(f"  Modelo embeddings: {config.EMBEDDING_MODEL}")
         console.print(f"  Modelo LLM: {config.LLM_MODEL}")
     except Exception:
-        console.print("[yellow]No hay índice creado. Ejecutá: python main.py indexar[/yellow]")
+        console.print("[yellow]No hay índice creado. Ejecuta: python main.py indexar[/yellow]")
 
 
 def main():
@@ -2298,12 +2299,12 @@ Este proyecto base se puede extender de muchas formas:
 6. **API REST** con FastAPI para integrarlo en otras aplicaciones
 7. **Feedback del usuario** para mejorar el sistema continuamente
 
-Este proyecto demuestra que con ~300 líneas de Python y las herramientas correctas, podés construir un buscador inteligente sobre tus propios documentos que compite con soluciones comerciales.
+Este proyecto demuestra que con ~300 líneas de Python y las herramientas correctas, puedes construir un buscador inteligente sobre tus propios documentos que compite con soluciones comerciales.
 `;
 
 export const leccion8 = `### Quiz — RAG y búsqueda inteligente
 
-Evaluá tu comprensión de los conceptos de RAG, embeddings, chunking y evaluación con estas 10 preguntas.
+Evalúa tu comprensión de los conceptos de RAG, embeddings, chunking y evaluación con estas 10 preguntas.
 
 ---
 
@@ -2368,7 +2369,7 @@ b) RAG permite actualizar la información sin re-entrenar el modelo y ofrece tra
 c) RAG es siempre más preciso que fine-tuning
 d) RAG no necesita ningún tipo de procesamiento previo
 
-**Respuesta correcta: b)** RAG permite actualizar datos instantáneamente (solo agregás documentos al índice), cita las fuentes de donde sacó la información, mantiene los datos privados separados del modelo, y es significativamente más barato y rápido que re-entrenar.
+**Respuesta correcta: b)** RAG permite actualizar datos instantáneamente (solo agregas documentos al índice), cita las fuentes de donde sacó la información, mantiene los datos privados separados del modelo, y es significativamente más barato y rápido que re-entrenar.
 
 ---
 
@@ -2426,7 +2427,7 @@ d) Indexar tanto el documento original como su resumen
 
 ### Pregunta 10
 
-Tenés un sistema RAG con alta "answer relevancy" pero baja "faithfulness". ¿Qué está pasando?
+Tienes un sistema RAG con alta "answer relevancy" pero baja "faithfulness". ¿Qué está pasando?
 
 a) El sistema no encuentra documentos relevantes
 b) Las respuestas son relevantes para la pregunta pero contienen información inventada que no está en los documentos

@@ -3,9 +3,9 @@
 
 export const c11leccion1 = `## ¿Qué es la automatización y por qué importa?
 
-Imaginá que todos los días hacés lo mismo: revisás tu email, copiás los datos de los nuevos pedidos a una planilla, mandás un mensaje de confirmación al cliente y actualizás tu inventario. Cada paso es simple, pero juntos te consumen 2 horas diarias.
+Imagina que todos los días haces lo mismo: revisas tu email, copias los datos de los nuevos pedidos a una planilla, mandas un mensaje de confirmación al cliente y actualizas tu inventario. Cada paso es simple, pero juntos te consumen 2 horas diarias.
 
-**La automatización es hacer que una máquina haga esos pasos por vos.**
+**La automatización es hacer que una máquina haga esos pasos por ti.**
 
 ### La automatización antes y después de la IA
 
@@ -24,14 +24,14 @@ Imaginá que todos los días hacés lo mismo: revisás tu email, copiás los dat
 |---|---|
 | 2 horas copiando datos | 0 minutos — se hace solo |
 | Errores humanos por cansancio | Precisión consistente |
-| Solo podés procesar X por día | Sin límite práctico |
-| Tu tiempo vale más | Te enfocás en lo que importa |
+| Solo puedes procesar X por día | Sin límite práctico |
+| Tu tiempo vale más | Te enfocas en lo que importa |
 
 ### Los tres niveles de automatización
 
 **Nivel 1: Automatización simple (sin IA)**
-- Reglas fijas: si pasa A, hacé B
-- Ejemplo: "Cuando llega un email, mandá una respuesta automática"
+- Reglas fijas: si pasa A, haz B
+- Ejemplo: "Cuando llega un email, manda una respuesta automática"
 
 **Nivel 2: Automatización con IA (lo que vamos a aprender)**
 - La IA procesa, clasifica y decide
@@ -49,14 +49,14 @@ Imaginá que todos los días hacés lo mismo: revisás tu email, copiás los dat
 
 ### ¿Necesito saber programar?
 
-**No.** Todas estas herramientas son **no-code** (sin código). Funcionan con bloques visuales que conectás arrastrando y soltando, como un diagrama de flujo.
+**No.** Todas estas herramientas son **no-code** (sin código). Funcionan con bloques visuales que conectas arrastrando y soltando, como un diagrama de flujo.
 
 ### Para llevar
 
 - La automatización te libera de tareas repetitivas
 - Con IA, la automatización entiende contexto y toma decisiones
-- No necesitás programar — hay herramientas visuales
-- Empezá automatizando una tarea que hacés todos los días`;
+- No necesitas programar — hay herramientas visuales
+- Empieza automatizando una tarea que haces todos los días`;
 
 export const c11leccion2 = `## Zapier + IA: tu primer flujo automatizado
 
@@ -76,34 +76,34 @@ Vamos a crear un flujo que:
 3. Envía el resumen a un canal de Slack (o a tu WhatsApp/Telegram)
 
 **Paso 1: Crear cuenta en Zapier**
-- Andá a **zapier.com** y registrate (hay plan gratuito)
-- Confirmá tu email
+- Ve a **zapier.com** y regístrate (hay plan gratuito)
+- Confirma tu email
 
 **Paso 2: Crear un nuevo Zap**
-- Hacé clic en **"Create"** → **"New Zap"**
+- Haz clic en **"Create"** → **"New Zap"**
 
 **Paso 3: Configurar el Trigger**
-- Buscá **"Gmail"**
-- Elegí **"New Email"** (nuevo email recibido)
-- Conectá tu cuenta de Gmail
-- Elegí la carpeta a monitorear (Inbox, por ejemplo)
-- Probá el trigger — Zapier va a traer un email de ejemplo
+- Busca **"Gmail"**
+- Elige **"New Email"** (nuevo email recibido)
+- Conecta tu cuenta de Gmail
+- Elige la carpeta a monitorear (Inbox, por ejemplo)
+- Prueba el trigger — Zapier va a traer un email de ejemplo
 
 **Paso 4: Agregar la acción de IA**
-- Hacé clic en **"+"** para agregar un paso
-- Buscá **"ChatGPT"** o **"AI by Zapier"**
-- Si elegís "AI by Zapier" (más fácil):
+- Haz clic en **"+"** para agregar un paso
+- Busca **"ChatGPT"** o **"AI by Zapier"**
+- Si eliges "AI by Zapier" (más fácil):
   - Modelo: GPT-4o-mini (rápido y económico)
-  - Prompt: "Resumí el siguiente email en exactamente 3 oraciones en español: {{Body}}"
+  - Prompt: "Resume el siguiente email en exactamente 3 oraciones en español: {{Body}}"
   - {{Body}} es el contenido del email del paso anterior
 
 **Paso 5: Enviar el resumen**
-- Agregá otro paso con **"Slack"** (o **"Email by Zapier"**)
-- Configurá: "Enviar mensaje al canal #resúmenes"
+- Agrega otro paso con **"Slack"** (o **"Email by Zapier"**)
+- Configura: "Enviar mensaje al canal #resúmenes"
 - Mensaje: "📧 Nuevo email de {{From}}: {{resumen del paso anterior}}"
 
 **Paso 6: Encender el Zap**
-- Hacé clic en **"Publish"**
+- Haz clic en **"Publish"**
 - El Zap empieza a funcionar automáticamente
 
 ### Plan gratuito vs pago
@@ -125,7 +125,7 @@ Vamos a crear un flujo que:
 
 - Zapier conecta miles de apps sin necesidad de código
 - "AI by Zapier" permite agregar IA a cualquier flujo
-- Empezá con un flujo simple de 3 pasos
+- Empieza con un flujo simple de 3 pasos
 - El plan gratuito es suficiente para experimentar`;
 
 export const c11leccion3 = `## Make/n8n: alternativas potentes
@@ -137,42 +137,42 @@ Zapier es genial para empezar, pero tiene limitaciones en su plan gratuito. Exis
 **Make** es una plataforma de automatización visual más potente que Zapier, con un enfoque en flujos complejos.
 
 **Ventajas sobre Zapier:**
-- Interfaz visual con diagrama de flujo real (podés ver las conexiones)
+- Interfaz visual con diagrama de flujo real (puedes ver las conexiones)
 - Más operaciones en el plan gratuito (1,000/mes vs 100 en Zapier)
 - Lógica condicional más avanzada (si/entonces con múltiples ramas)
 - Mejor manejo de errores
 
 **Cómo funciona:**
-1. Entrá a **make.com** y creá una cuenta
-2. Creá un nuevo "Scenario" (equivalente a un Zap)
-3. Arrastrá módulos al canvas y conectalos visualmente
+1. Ve a **make.com** y crea una cuenta
+2. Crea un nuevo "Scenario" (equivalente a un Zap)
+3. Arrastra módulos al canvas y conéctalos visualmente
 4. Cada módulo es una app o acción
 
 **Ejemplo: Procesar facturas automáticamente**
 1. **Watch emails** (Gmail) — detecta emails con adjuntos
 2. **Download attachment** — descarga el PDF de la factura
-3. **Analyze with AI** (OpenAI) — "Extraé de esta factura: proveedor, monto, fecha, concepto"
+3. **Analyze with AI** (OpenAI) — "Extrae de esta factura: proveedor, monto, fecha, concepto"
 4. **Add row** (Google Sheets) — guarda los datos en una planilla
 5. **Send notification** (Slack) — "Nueva factura procesada: $X de Proveedor Y"
 
 ### n8n: la opción gratuita y de código abierto
 
-**n8n** (se pronuncia "n-eight-n") es una herramienta de automatización de código abierto. Eso significa que es **completamente gratuita** si la instalás en tu propio servidor.
+**n8n** (se pronuncia "n-eight-n") es una herramienta de automatización de código abierto. Eso significa que es **completamente gratuita** si la instalas en tu propio servidor.
 
 **Ventajas:**
 - Gratis sin límites de ejecuciones
-- Código abierto — podés ver y modificar el código
+- Código abierto — puedes ver y modificar el código
 - Se ejecuta en tu propio servidor — tus datos no salen de tu infraestructura
 - Muy potente para flujos complejos con IA
 
 **Opción cloud:**
 - n8n también ofrece un servicio cloud (n8n.io) con plan gratuito limitado
-- Si no querés instalar nada, es una buena opción para empezar
+- Si no quieres instalar nada, es una buena opción para empezar
 
 **Cuándo elegir n8n:**
-- Necesitás procesar muchos datos sin costo por ejecución
+- Necesitas procesar muchos datos sin costo por ejecución
 - Te preocupa la privacidad (los datos se quedan en tu servidor)
-- Querés máxima flexibilidad
+- Quieres máxima flexibilidad
 
 ### Comparación de las tres herramientas
 
@@ -186,16 +186,16 @@ Zapier es genial para empezar, pero tiene limitaciones en su plan gratuito. Exis
 
 ### ¿Cuál elegir?
 
-- **Empezando?** → Zapier (más fácil)
-- **Necesitás más potencia?** → Make (mejor relación precio/funcionalidad)
-- **Técnico o presupuesto limitado?** → n8n (gratis, máxima flexibilidad)
+- **¿Empezando?** → Zapier (más fácil)
+- **¿Necesitas más potencia?** → Make (mejor relación precio/funcionalidad)
+- **¿Técnico o presupuesto limitado?** → n8n (gratis, máxima flexibilidad)
 
 ### Para llevar
 
 - Zapier no es la única opción — Make y n8n son alternativas potentes
 - Make ofrece más operaciones gratis y flujos más visuales
 - n8n es gratuito y ideal si te preocupa la privacidad
-- Empezá con la que te resulte más cómoda y cambiá si necesitás más`;
+- Empieza con la que te resulte más cómoda y cambia si necesitas más`;
 
 export const c11leccion4 = `## Automatizar emails y respuestas
 
@@ -203,7 +203,7 @@ El email es una de las tareas que más tiempo consume. La IA puede ayudarte a au
 
 ### Escenario 1: Clasificación automática de emails
 
-**Problema**: Recibís 50+ emails al día y perdés tiempo clasificándolos manualmente.
+**Problema**: Recibes 50+ emails al día y pierdes tiempo clasificándolos manualmente.
 
 **Solución con Zapier/Make:**
 1. Trigger: Nuevo email en Gmail
@@ -214,11 +214,11 @@ El email es una de las tareas que más tiempo consume. La IA puede ayudarte a au
 4. Si es urgente: enviar notificación a Slack/WhatsApp
 
 **Prompt para la IA:**
-> "Clasificá este email en una de estas categorías: URGENTE, VENTA, SOPORTE, INFO, SPAM. Respondé SOLO con la categoría, sin explicación. Email: {{body}}"
+> "Clasifica este email en una de estas categorías: URGENTE, VENTA, SOPORTE, INFO, SPAM. Responde SOLO con la categoría, sin explicación. Email: {{body}}"
 
 ### Escenario 2: Respuestas automáticas inteligentes
 
-**Problema**: El 70% de los emails que recibís tienen respuestas similares.
+**Problema**: El 70% de los emails que recibes tienen respuestas similares.
 
 **Solución:**
 1. Trigger: Nuevo email
@@ -226,11 +226,11 @@ El email es una de las tareas que más tiempo consume. La IA puede ayudarte a au
 3. Si sí: genera la respuesta y la envía (o la pone en borrador para tu aprobación)
 4. Si no: te notifica para que respondas manualmente
 
-**Importante**: Empezá poniendo las respuestas en **borrador** para revisarlas antes de enviar. Cuando estés seguro de que la IA responde bien, podés activar el envío automático.
+**Importante**: Empieza poniendo las respuestas en **borrador** para revisarlas antes de enviar. Cuando estés seguro de que la IA responde bien, puedes activar el envío automático.
 
 ### Escenario 3: Resumen diario de emails
 
-**Problema**: Llegás a la oficina con 30 emails sin leer y no sabés por dónde empezar.
+**Problema**: Llegas a la oficina con 30 emails sin leer y no sabes por dónde empezar.
 
 **Solución:**
 1. Trigger: Todos los días a las 7:00 AM
@@ -244,9 +244,9 @@ El email es una de las tareas que más tiempo consume. La IA puede ayudarte a au
 ### Consideraciones de seguridad
 
 - **Nunca automatices** emails que contengan información financiera o médica sensible
-- **Empezá con borradores**, no con envío directo
-- **Revisá periódicamente** las respuestas automáticas
-- **Informá a tu equipo** que usás automatización
+- **Empieza con borradores**, no con envío directo
+- **Revisa periódicamente** las respuestas automáticas
+- **Informa a tu equipo** que usas automatización
 
 ### Herramientas específicas para email + IA
 
@@ -260,25 +260,25 @@ El email es una de las tareas que más tiempo consume. La IA puede ayudarte a au
 ### Para llevar
 
 - La clasificación automática te ahorra tiempo desde el primer día
-- Empezá con borradores antes de automatizar envíos
+- Empieza con borradores antes de automatizar envíos
 - El resumen diario te da visión general sin abrir cada email
-- Siempre supervisá las automatizaciones de email`;
+- Siempre supervisa las automatizaciones de email`;
 
 export const c11leccion5 = `## Automatizar resúmenes y reportes
 
-Generar reportes es una tarea que consume horas y a menudo es repetitiva. Con IA podés automatizar la recolección de datos, el análisis y hasta la redacción del reporte.
+Generar reportes es una tarea que consume horas y a menudo es repetitiva. Con IA puedes automatizar la recolección de datos, el análisis y hasta la redacción del reporte.
 
 ### Escenario 1: Reporte semanal automático de ventas
 
 **El flujo:**
 1. **Trigger**: Todos los lunes a las 8:00 AM
 2. **Recolectar datos**: Obtener ventas de la semana desde Google Sheets o tu CRM
-3. **Análisis IA**: "Analizá estas ventas de la última semana. Incluí: total vendido, comparación con semana anterior, top 3 productos, tendencia general, y una recomendación."
+3. **Análisis IA**: "Analiza estas ventas de la última semana. Incluye: total vendido, comparación con semana anterior, top 3 productos, tendencia general, y una recomendación."
 4. **Formatear**: La IA genera el reporte en formato legible
 5. **Distribuir**: Enviar por email al equipo + publicar en Slack
 
 **Prompt para el reporte:**
-> "Sos un analista de ventas. Con los siguientes datos de ventas semanales, generá un reporte ejecutivo en español con estas secciones: 1) Resumen (3 líneas), 2) Métricas clave (tabla), 3) Productos destacados, 4) Comparación con semana anterior, 5) Recomendación. Datos: {{datos_ventas}}"
+> "Eres un analista de ventas. Con los siguientes datos de ventas semanales, genera un reporte ejecutivo en español con estas secciones: 1) Resumen (3 líneas), 2) Métricas clave (tabla), 3) Productos destacados, 4) Comparación con semana anterior, 5) Recomendación. Datos: {{datos_ventas}}"
 
 ### Escenario 2: Monitoreo de redes sociales
 
@@ -294,12 +294,12 @@ Generar reportes es una tarea que consume horas y a menudo es repetitiva. Con IA
 **El flujo:**
 1. **Input**: Grabación o notas de la reunión
 2. **Transcripción**: Si es audio, transcribir con Whisper (la IA de OpenAI para voz)
-3. **Resumen IA**: "Resumí esta reunión: participantes, temas discutidos, decisiones tomadas, próximos pasos con responsables y fechas"
+3. **Resumen IA**: "Resume esta reunión: participantes, temas discutidos, decisiones tomadas, próximos pasos con responsables y fechas"
 4. **Distribuir**: Enviar a todos los participantes
 
 ### Plantilla de reporte con IA
 
-Pedile a la IA que siga esta estructura:
+Pídele a la IA que siga esta estructura:
 
 \`\`\`
 📊 REPORTE [TIPO] — [FECHA]
@@ -327,69 +327,69 @@ Pedile a la IA que siga esta estructura:
 
 - Los reportes automáticos ahorran horas semanales
 - La IA puede analizar datos, detectar tendencias y redactar el reporte
-- Empezá con un reporte semanal simple y expandí desde ahí
-- Siempre revisá el reporte antes de distribuirlo`;
+- Empieza con un reporte semanal simple y expande desde ahí
+- Siempre revisa el reporte antes de distribuirlo`;
 
 export const c11leccion6 = `## Vibe coding: describir apps en español
 
-**Vibe coding** es un concepto nuevo: en vez de escribir código, le describís a la IA lo que querés construir y ella lo hace por vos. Es como decirle a un arquitecto "quiero una casa con 3 habitaciones y jardín" en vez de dibujar los planos vos mismo.
+**Vibe coding** es un concepto nuevo: en vez de escribir código, le describes a la IA lo que quieres construir y ella lo hace por ti. Es como decirle a un arquitecto "quiero una casa con 3 habitaciones y jardín" en vez de dibujar los planos tú mismo.
 
 ### ¿Qué es vibe coding?
 
-Es la práctica de crear aplicaciones describiendo lo que querés en lenguaje natural (español, inglés, cualquier idioma). La IA genera el código por vos.
+Es la práctica de crear aplicaciones describiendo lo que quieres en lenguaje natural (español, inglés, cualquier idioma). La IA genera el código por ti.
 
 **Ejemplo:**
-> "Creame una página web con un formulario de contacto que tenga campos para nombre, email y mensaje. Que cuando envíen el formulario, me llegue un email con los datos. Diseño moderno y simple."
+> "Crea una página web con un formulario de contacto que tenga campos para nombre, email y mensaje. Que cuando envíen el formulario, me llegue un email con los datos. Diseño moderno y simple."
 
 Con esas pocas líneas, herramientas como **Bolt.new**, **v0.dev**, **Lovable** o **Claude** pueden generar una página completa y funcional.
 
 ### Herramientas de vibe coding
 
 **1. Bolt.new**
-- Generá aplicaciones web completas desde una descripción
+- Genera aplicaciones web completas desde una descripción
 - Incluye frontend, backend y base de datos
-- Podés descargar el código o publicar directamente
+- Puedes descargar el código o publicar directamente
 
 **2. v0.dev (de Vercel)**
 - Especializado en interfaces de usuario
-- Generá componentes React desde una descripción
+- Genera componentes React desde una descripción
 - Ideal para prototipos rápidos
 
 **3. Lovable (antes GPT Engineer)**
-- Creá aplicaciones completas conversando
-- Iterá sobre el diseño y funcionalidad en tiempo real
+- Crea aplicaciones completas conversando
+- Itera sobre el diseño y funcionalidad en tiempo real
 - Publica directamente en la web
 
 **4. Claude / ChatGPT**
-- Pedile que genere código para cualquier cosa
+- Pídele que genere código para cualquier cosa
 - Más flexible pero requiere más guía
-- Ideal si ya tenés algo de contexto técnico
+- Ideal si ya tienes algo de contexto técnico
 
 ### Ejemplo práctico: Dashboard de ventas
 
 Prompt para Bolt.new o similar:
 
-> "Creame un dashboard de ventas con: 1) Gráfico de barras de ventas por mes, 2) Tarjetas con total vendido, número de pedidos y ticket promedio, 3) Tabla con los últimos 10 pedidos, 4) Filtro por fecha. Usa colores azul y blanco. Los datos son de ejemplo."
+> "Crea un dashboard de ventas con: 1) Gráfico de barras de ventas por mes, 2) Tarjetas con total vendido, número de pedidos y ticket promedio, 3) Tabla con los últimos 10 pedidos, 4) Filtro por fecha. Usa colores azul y blanco. Los datos son de ejemplo."
 
-En menos de 5 minutos tenés un dashboard funcional que podés personalizar después.
+En menos de 5 minutos tienes un dashboard funcional que puedes personalizar después.
 
 ### Consejos para mejores resultados
 
 1. **Sé específico**: "Un botón azul que diga Enviar" es mejor que "un botón"
-2. **Describí la experiencia del usuario**: "Cuando el usuario hace clic, aparece un mensaje de confirmación"
-3. **Mencioná el estilo**: "Diseño minimalista, colores oscuros, tipografía moderna"
-4. **Iterá**: "Me gusta pero cambiá el color del botón a verde y hacé la tabla más grande"
+2. **Describe la experiencia del usuario**: "Cuando el usuario hace clic, aparece un mensaje de confirmación"
+3. **Menciona el estilo**: "Diseño minimalista, colores oscuros, tipografía moderna"
+4. **Itera**: "Me gusta pero cambia el color del botón a verde y haz la tabla más grande"
 
 ### Limitaciones
 
 - Las apps generadas pueden necesitar ajustes
-- Para proyectos complejos, eventualmente necesitás entender algo de código
+- Para proyectos complejos, eventualmente necesitas entender algo de código
 - La IA puede cometer errores de lógica
 - No reemplaza a un desarrollador para sistemas críticos
 
 ### Para llevar
 
-- Vibe coding permite crear apps describiendo lo que querés
+- Vibe coding permite crear apps describiendo lo que quieres
 - Herramientas como Bolt.new, v0.dev y Lovable hacen el trabajo pesado
 - Sé específico en tus descripciones para mejores resultados
 - Ideal para prototipos, herramientas internas y proyectos personales`;
@@ -444,7 +444,7 @@ c) Un lenguaje de programación
 d) Un servicio de email
 
 **Respuesta correcta: b)**
-n8n es una herramienta de automatización open source que podés usar gratis instalándola en tu propio servidor.
+n8n es una herramienta de automatización open source que puedes usar gratis instalándola en tu propio servidor.
 
 ---
 
@@ -462,13 +462,13 @@ Empezar con borradores permite revisar la calidad de las respuestas automáticas
 
 ### Pregunta 6
 **¿Qué es "vibe coding"?**
-a) Programar mientras escuchás música
-b) Crear aplicaciones describiendo lo que querés en lenguaje natural
+a) Programar mientras escuchas música
+b) Crear aplicaciones describiendo lo que quieres en lenguaje natural
 c) Un estilo de diseño web
 d) Una marca de computadoras
 
 **Respuesta correcta: b)**
-Vibe coding es describir en español (o cualquier idioma) lo que querés que haga una aplicación, y la IA genera el código.
+Vibe coding es describir en español (o cualquier idioma) lo que quieres que haga una aplicación, y la IA genera el código.
 
 ---
 
@@ -511,17 +511,17 @@ La IA puede cometer errores o generar respuestas inadecuadas, por lo que es cruc
 ### Pregunta 10
 **¿Cuál es el primer paso recomendado para empezar con automatización?**
 a) Automatizar todos los procesos de la empresa al mismo tiempo
-b) Identificar una tarea repetitiva que hacés todos los días y automatizarla
+b) Identificar una tarea repetitiva que haces todos los días y automatizarla
 c) Comprar el plan más caro de todas las herramientas
 d) Aprender a programar desde cero
 
 **Respuesta correcta: b)**
-Empezá con una sola tarea repetitiva. Una vez que funciona bien, expandí a otras tareas.
+Empieza con una sola tarea repetitiva. Una vez que funciona bien, expande a otras tareas.
 
 ---
 
 ### ¿Cómo te fue?
 
 - **8-10 correctas**: Excelente. Estás listo para automatizar tu flujo de trabajo.
-- **5-7 correctas**: Bien. Repasá las lecciones donde tuviste dudas.
-- **Menos de 5**: Volvé a leer las lecciones con calma.`;
+- **5-7 correctas**: Bien. Repasa las lecciones donde tuviste dudas.
+- **Menos de 5**: Vuelve a leer las lecciones con calma.`;

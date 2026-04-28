@@ -16,13 +16,13 @@
     "step1Title": "Elige tu nivel",
     "step1Desc": "Desde introducción hasta avanzado. Hay un curso perfecto para ti, sin importar tu experiencia.",
     "step2Title": "Aprende con ejercicios",
-    "step2Desc": "Practicá con ejercicios interactivos y quizzes que refuerzan lo que aprendés en cada lección.",
+    "step2Desc": "Practica con ejercicios interactivos y quizzes que refuerzan lo que aprendes en cada lección.",
     "step3Title": "Domina la IA",
-    "step3Desc": "Aplicá lo aprendido con proyectos reales y obtené tu certificado de completación.",
+    "step3Desc": "Aplica lo aprendido con proyectos reales y obtén tu certificado de completación.",
     "threeSteps": "Tres pasos para aprender IA",
     "step": "Paso",
-    "ctaTitle": "Comenzá hoy, es gratis",
-    "ctaSub": "No necesitás experiencia previa. Nuestros cursos te guían desde lo más básico hasta niveles profesionales.",
+    "ctaTitle": "Comienza hoy, es gratis",
+    "ctaSub": "No necesitas experiencia previa. Nuestros cursos te guían desde lo más básico hasta niveles profesionales.",
     "viewAll": "Ver todos los cursos"
   },
   "courses": {
@@ -52,7 +52,7 @@
     "finishCourse": "Finalizar curso",
     "markComplete": "Marcar como completada",
     "completed": "Lección completada",
-    "quizRequired": "Completá el quiz con al menos 80% para marcar esta lección como completada.",
+    "quizRequired": "Completa el quiz con al menos 80% para marcar esta lección como completada.",
     "videoPlaceholder": "Video de la lección",
     "comingSoon": "Próximamente"
   },
@@ -63,15 +63,15 @@
     "nextQuestion": "Siguiente pregunta",
     "viewResults": "Ver resultados",
     "correctAnswers": "correctas",
-    "excellent": "¡Excelente! Tenés una base sólida.",
-    "needMore": "Necesitás al menos 80% para completar esta lección. ¡Intentalo de nuevo!",
-    "tryAgain": "No te desanimes. Volvé a leer las lecciones con calma e intentá de nuevo.",
+    "excellent": "¡Excelente! Tienes una base sólida.",
+    "needMore": "Necesitas al menos 80% para completar esta lección. ¡Inténtalo de nuevo!",
+    "tryAgain": "No te desanimes. Vuelve a leer las lecciones con calma e inténtalo de nuevo.",
     "backToCourse": "Volver al curso",
     "retryQuiz": "Repetir Quiz"
   },
   "auth": {
     "welcomeBack": "Bienvenido de vuelta",
-    "loginSub": "Iniciá sesión para continuar aprendiendo",
+    "loginSub": "Inicia sesión para continuar aprendiendo",
     "continueGoogle": "Continuar con Google",
     "registerGoogle": "Registrarse con Google",
     "or": "o",
@@ -82,28 +82,28 @@
     "login": "Iniciar sesión",
     "loading": "Cargando...",
     "magicLink": "Recibir enlace mágico por correo",
-    "noAccount": "¿No tenés cuenta?",
-    "register": "Registrate",
+    "noAccount": "¿No tienes cuenta?",
+    "register": "Regístrate",
     "createAccount": "Crea tu cuenta gratis",
     "createSub": "Empieza a aprender IA hoy",
     "name": "Nombre",
     "minChars": "Mínimo 8 caracteres",
     "createButton": "Crear mi cuenta",
-    "hasAccount": "¿Ya tenés cuenta?",
-    "loginLink": "Iniciá sesión",
+    "hasAccount": "¿Ya tienes cuenta?",
+    "loginLink": "Inicia sesión",
     "checkEmail": "Revisa tu correo",
     "magicSent": "Te enviamos un enlace mágico a {email}. Haz clic en el enlace del correo para iniciar sesión.",
     "verificationSent": "Te enviamos un enlace de verificación a {email}. Haz clic en el enlace para activar tu cuenta.",
     "backToLogin": "Ir al inicio de sesión",
     "wrongCredentials": "Correo o contraseña incorrectos",
-    "enterEmail": "Ingresá tu correo electrónico primero",
+    "enterEmail": "Ingresa tu correo electrónico primero",
     "passwordMin": "La contraseña debe tener al menos 8 caracteres"
   },
   "dashboard": {
     "hello": "Hola, {name}!",
     "overallProgress": "Tu progreso general",
     "lessonsOf": "{completed} de {total} lecciones",
-    "continueWhere": "Continuá donde lo dejaste",
+    "continueWhere": "Continúa donde lo dejaste",
     "continue": "Continuar",
     "myCourses": "Mis Cursos",
     "lessonsCompleted": "de {total} lecciones"
@@ -114,7 +114,7 @@
     "updateGoal": "Actualizar mi meta",
     "goalWith": "Mi meta con la IA",
     "goalPlaceholder": "Ejemplo: Quiero aprender a usar IA para hacer crecer mi negocio, automatizar reportes, o simplemente entender de qué hablan mis nietos...",
-    "goalMotivation": "Escribí qué querés lograr aprendiendo IA. Tener una meta clara te va a ayudar a mantener la motivación.",
+    "goalMotivation": "Escribe qué quieres lograr aprendiendo IA. Tener una meta clara te va a ayudar a mantener la motivación.",
     "saveGoal": "Guardar meta",
     "saved": "Guardado",
     "personalInfo": "Información personal",
@@ -126,7 +126,7 @@
     "lessonsCount": "lecciones",
     "completedOf": "{completed} de {total} lecciones completadas",
     "myCourses": "Mis cursos",
-    "continueWhere": "Continuá donde lo dejaste"
+    "continueWhere": "Continúa donde lo dejaste"
   },
   "sandbox": {
     "title": "Sandbox de Prompts",
@@ -148,7 +148,7 @@
     "inputPlaceholder": "Escribe tu pregunta...",
     "send": "Enviar mensaje",
     "connectionError": "Error de conexión. Intenta de nuevo.",
-    "serverError": "Disculpa, hubo un error. ¿Podés intentar de nuevo?"
+    "serverError": "Disculpa, hubo un error. ¿Puedes intentar de nuevo?"
   },
   "comments": {
     "title": "Comentarios",
@@ -166,8 +166,8 @@
     "empty": "Completa lecciones y quizzes para ganar badges."
   },
   "tts": {
-    "title": "Escuchá esta lección en audio",
-    "subtitle": "Ideal para aprender mientras hacés otras cosas",
+    "title": "Escucha esta lección en audio",
+    "subtitle": "Ideal para aprender mientras haces otras cosas",
     "speed": "Velocidad"
   },
   "profile": {

@@ -5,25 +5,25 @@ export const c8leccion1 = `## Subir PDFs y analizarlos con IA
 
 Una de las capacidades más útiles de las herramientas de IA modernas es la posibilidad de **subir archivos** — especialmente PDFs — y pedirle al modelo que los analice, resuma, busque información o responda preguntas sobre su contenido.
 
-Si ya venís usando ChatGPT, Claude o Gemini para hacer preguntas de texto, esto es el siguiente nivel: en vez de copiar y pegar fragmentos, le das el documento entero y dejás que la IA haga el trabajo pesado.
+Si ya vienes usando ChatGPT, Claude o Gemini para hacer preguntas de texto, esto es el siguiente nivel: en vez de copiar y pegar fragmentos, le das el documento entero y dejas que la IA haga el trabajo pesado.
 
 ### Cómo subir archivos en cada plataforma
 
 **ChatGPT (Plus/Team/Enterprise)**
-- Hacé clic en el ícono de clip (📎) en la barra de mensajes
-- Seleccioná el archivo PDF desde tu computadora
-- Esperá a que se cargue y después escribí tu prompt
-- También podés arrastrar y soltar el archivo directamente en la conversación
+- Haz clic en el ícono de clip (📎) en la barra de mensajes
+- Selecciona el archivo PDF desde tu computadora
+- Espera a que se cargue y después escribe tu prompt
+- También puedes arrastrar y soltar el archivo directamente en la conversación
 
 **Claude (Pro/Team)**
-- Hacé clic en el ícono de clip en la barra de mensajes
-- Seleccioná uno o más archivos (Claude permite subir hasta 5 archivos a la vez)
+- Haz clic en el ícono de clip en la barra de mensajes
+- Selecciona uno o más archivos (Claude permite subir hasta 5 archivos a la vez)
 - Los archivos aparecen como adjuntos antes de enviar tu mensaje
 - Claude soporta PDFs de hasta ~150 páginas dependiendo de la densidad del texto
 
 **Gemini (Advanced)**
-- Hacé clic en el ícono "+" o el clip en la barra de mensajes
-- Subí tu archivo PDF
+- Haz clic en el ícono "+" o el clip en la barra de mensajes
+- Sube tu archivo PDF
 - Gemini puede procesar documentos extensos gracias a su ventana de contexto grande
 
 ### ¿Qué puede hacer la IA con un PDF?
@@ -44,7 +44,7 @@ La IA puede:
 - **PDFs protegidos con contraseña**: La IA no puede abrir archivos encriptados
 - **Documentos extremadamente largos**: Cada modelo tiene un límite. Si tu PDF tiene 500 páginas, probablemente tengas que dividirlo
 
-### Límites prácticos que debés conocer
+### Límites prácticos que debes conocer
 
 | Plataforma | Tamaño máximo | Páginas recomendadas | Formatos |
 |---|---|---|---|
@@ -52,26 +52,26 @@ La IA puede:
 | Claude | ~30 MB | Hasta ~150 págs. | PDF, DOCX, TXT, CSV, RTF |
 | Gemini | ~100 MB | Hasta ~1500 págs. | PDF, DOCX, TXT |
 
-*Estos límites cambian frecuentemente. Siempre verificá la documentación oficial actualizada.*
+*Estos límites cambian frecuentemente. Siempre verifica la documentación oficial actualizada.*
 
 ### Prompts prácticos para copiar y pegar
 
 **Resumen general:**
 \`\`\`
-Leé este documento PDF y haceme un resumen de máximo 300 palabras
+Lee este documento PDF y hazme un resumen de máximo 300 palabras
 con los puntos más importantes.
 \`\`\`
 
 **Búsqueda de cláusulas:**
 \`\`\`
-Revisá este contrato y encontrá todas las cláusulas relacionadas con
-penalidades, multas o incumplimiento. Listá cada una con el número
+Revisa este contrato y encuentra todas las cláusulas relacionadas con
+penalidades, multas o incumplimiento. Lista cada una con el número
 de cláusula y un resumen en lenguaje simple.
 \`\`\`
 
 **Extracción de datos:**
 \`\`\`
-De este informe financiero, extraé los siguientes datos y presentalos
+De este informe financiero, extrae los siguientes datos y preséntelos
 en una tabla: ingresos totales, gastos totales, resultado neto,
 y período cubierto.
 \`\`\`
@@ -79,35 +79,35 @@ y período cubierto.
 **Preguntas específicas:**
 \`\`\`
 Según este documento, ¿cuáles son las obligaciones del cliente?
-Listálas de forma numerada.
+Lístalas de forma numerada.
 \`\`\`
 
 **Simplificación:**
 \`\`\`
-Explicame este documento legal como si le estuvieras explicando
-a alguien que no tiene formación jurídica. Usá lenguaje simple
+Explícame este documento legal como si le estuvieras explicando
+a alguien que no tiene formación jurídica. Usa lenguaje simple
 y ejemplos cotidianos.
 \`\`\`
 
 ### Consideraciones de privacidad
 
-Antes de subir cualquier documento, pensá:
+Antes de subir cualquier documento, piensa:
 
 1. **¿Contiene información confidencial?** Contratos con datos de clientes, documentos internos de la empresa, información financiera sensible — todo esto podría ser procesado y almacenado por el proveedor de IA.
 
-2. **¿Tu empresa lo permite?** Muchas organizaciones tienen políticas sobre qué información se puede compartir con herramientas de IA externas. Consultá antes.
+2. **¿Tu empresa lo permite?** Muchas organizaciones tienen políticas sobre qué información se puede compartir con herramientas de IA externas. Consulta antes.
 
-3. **¿Podés anonimizar?** Si necesitás analizar un contrato pero no querés compartir los nombres reales, podés reemplazarlos antes de subir el documento.
+3. **¿Puedes anonimizar?** Si necesitas analizar un contrato pero no quieres compartir los nombres reales, puedes reemplazarlos antes de subir el documento.
 
-4. **Usá las opciones de privacidad disponibles:** ChatGPT tiene la opción de "no usar mis datos para entrenamiento" en la configuración. Claude no usa las conversaciones del plan Pro para entrenar sus modelos.
+4. **Usa las opciones de privacidad disponibles:** ChatGPT tiene la opción de "no usar mis datos para entrenamiento" en la configuración. Claude no usa las conversaciones del plan Pro para entrenar sus modelos.
 
 ### Para llevar
 
 - Subir PDFs a la IA te ahorra horas de lectura y análisis manual
 - Cada plataforma tiene sus propios límites de tamaño y páginas
 - La calidad del análisis depende de la calidad del PDF (texto seleccionable > imagen escaneada)
-- Siempre verificá la información extraída — la IA puede cometer errores
-- Pensá dos veces antes de subir documentos con información sensible`;
+- Siempre verifica la información extraída — la IA puede cometer errores
+- Piensa dos veces antes de subir documentos con información sensible`;
 
 export const c8leccion2 = `## Resumir documentos largos
 
@@ -115,67 +115,67 @@ Uno de los usos más poderosos de la IA es tomar un documento de 50, 100 o 200 p
 
 ### El problema con "Resumime esto"
 
-Si le decís a la IA simplemente "resumí este documento", vas a obtener un resumen genérico que probablemente no sea exactamente lo que necesitás. Es como ir a un restaurante y decir "traéme algo de comer" — técnicamente te van a traer comida, pero quizás no lo que querías.
+Si le dices a la IA simplemente "resume este documento", vas a obtener un resumen genérico que probablemente no sea exactamente lo que necesitas. Es como ir a un restaurante y decir "tráeme algo de comer" — técnicamente te van a traer comida, pero quizás no lo que querías.
 
 La clave está en ser específico sobre:
-- **Qué querés saber** (todo el documento o solo una parte)
-- **Qué extensión** querés (un párrafo, media página, una página)
-- **Para quién** es el resumen (para vos, tu jefe, un cliente)
-- **En qué formato** lo necesitás (párrafo, bullets, tabla)
+- **Qué quieres saber** (todo el documento o solo una parte)
+- **Qué extensión** quieres (un párrafo, media página, una página)
+- **Para quién** es el resumen (para ti, tu jefe, un cliente)
+- **En qué formato** lo necesitas (párrafo, bullets, tabla)
 
 ### Técnica 1: Resumen con extensión controlada
 
 \`\`\`
-Resumí este documento en exactamente 5 bullet points.
+Resume este documento en exactamente 5 bullet points.
 Cada punto debe tener máximo 2 oraciones.
 \`\`\`
 
 \`\`\`
-Hacé un resumen ejecutivo de este informe en máximo 200 palabras.
-Incluí: contexto, hallazgos principales y recomendaciones.
+Haz un resumen ejecutivo de este informe en máximo 200 palabras.
+Incluye: contexto, hallazgos principales y recomendaciones.
 \`\`\`
 
 \`\`\`
-Resumí este artículo en una sola oración que capture la idea central.
+Resume este artículo en una sola oración que capture la idea central.
 \`\`\`
 
 ### Técnica 2: Resumen con enfoque específico
 
-En vez de resumir todo, pedí que se enfoque en lo que te importa:
+En vez de resumir todo, pide que se enfoque en lo que te importa:
 
 \`\`\`
-Leé este contrato y resumí únicamente las obligaciones del proveedor.
-Ignorá las cláusulas de pago y jurisdicción.
-\`\`\`
-
-\`\`\`
-De este informe anual, resumí solo la sección de riesgos y desafíos
-identificados por la empresa. Omití los datos financieros.
+Lee este contrato y resume únicamente las obligaciones del proveedor.
+Ignora las cláusulas de pago y jurisdicción.
 \`\`\`
 
 \`\`\`
-Resumí este paper académico enfocándote en: metodología utilizada,
+De este informe anual, resume solo la sección de riesgos y desafíos
+identificados por la empresa. Omite los datos financieros.
+\`\`\`
+
+\`\`\`
+Resume este paper académico enfocándote en: metodología utilizada,
 resultados principales y limitaciones del estudio.
 \`\`\`
 
 ### Técnica 3: Resumen progresivo (resumen de resúmenes)
 
-Cuando un documento es **demasiado largo** para procesarlo de una sola vez, podés usar la técnica de resumen progresivo:
+Cuando un documento es **demasiado largo** para procesarlo de una sola vez, puedes usar la técnica de resumen progresivo:
 
-**Paso 1:** Dividí el documento en secciones (capítulos, partes, etc.)
+**Paso 1:** Divide el documento en secciones (capítulos, partes, etc.)
 
-**Paso 2:** Pedí un resumen de cada sección:
+**Paso 2:** Pide un resumen de cada sección:
 \`\`\`
-Resumí el capítulo 1 de este documento en 3-4 bullet points.
+Resume el capítulo 1 de este documento en 3-4 bullet points.
 \`\`\`
 
-**Paso 3:** Una vez que tenés todos los resúmenes parciales, pedí un resumen del resumen:
+**Paso 3:** Una vez que tienes todos los resúmenes parciales, pide un resumen del resumen:
 \`\`\`
 A continuación te doy resúmenes de los 8 capítulos de un informe.
-Creá un resumen ejecutivo unificado de máximo 500 palabras que
+Crea un resumen ejecutivo unificado de máximo 500 palabras que
 integre los puntos más importantes de todos los capítulos.
 
-[Pegá los resúmenes parciales]
+[Pega los resúmenes parciales]
 \`\`\`
 
 Esta técnica funciona especialmente bien para:
@@ -186,21 +186,21 @@ Esta técnica funciona especialmente bien para:
 
 ### Técnica 4: Resumen comparativo
 
-Si tenés dos o más documentos sobre el mismo tema:
+Si tienes dos o más documentos sobre el mismo tema:
 
 \`\`\`
 Te voy a dar dos artículos sobre el mismo tema. Necesito que:
-1. Resumís cada artículo en 3 puntos clave
-2. Identificá en qué coinciden
-3. Identificá en qué se contradicen
-4. Decime cuál tiene argumentos más sólidos y por qué
+1. Resumes cada artículo en 3 puntos clave
+2. Identifica en qué coinciden
+3. Identifica en qué se contradicen
+4. Dime cuál tiene argumentos más sólidos y por qué
 \`\`\`
 
 ### Plantillas de resumen por tipo de documento
 
 **Para contratos:**
 \`\`\`
-Resumí este contrato usando la siguiente estructura:
+Resume este contrato usando la siguiente estructura:
 - Partes involucradas
 - Objeto del contrato
 - Duración y plazos
@@ -211,7 +211,7 @@ Resumí este contrato usando la siguiente estructura:
 
 **Para informes y reportes:**
 \`\`\`
-Creá un resumen ejecutivo de este informe con:
+Crea un resumen ejecutivo de este informe con:
 - Objetivo del informe (1 oración)
 - Hallazgos principales (3-5 bullets)
 - Datos clave con números
@@ -221,7 +221,7 @@ Creá un resumen ejecutivo de este informe con:
 
 **Para artículos académicos:**
 \`\`\`
-Resumí este paper usando la estructura:
+Resume este paper usando la estructura:
 - Pregunta de investigación
 - Metodología en lenguaje simple
 - Resultados principales
@@ -231,7 +231,7 @@ Resumí este paper usando la estructura:
 
 **Para artículos periodísticos:**
 \`\`\`
-Resumí esta noticia respondiendo:
+Resume esta noticia respondiendo:
 - ¿Qué pasó?
 - ¿Quiénes están involucrados?
 - ¿Cuándo y dónde?
@@ -241,18 +241,18 @@ Resumí esta noticia respondiendo:
 
 ### Errores comunes al resumir
 
-1. **No dar contexto sobre el propósito**: No es lo mismo un resumen para una reunión de directorio que uno para estudio personal. Decile a la IA para qué lo necesitás.
+1. **No dar contexto sobre el propósito**: No es lo mismo un resumen para una reunión de directorio que uno para estudio personal. Dile a la IA para qué lo necesitas.
 
-2. **Confiar ciegamente en el resumen**: La IA puede omitir detalles importantes o malinterpretar matices. Si el documento es crítico (un contrato, un diagnóstico médico), usá el resumen como guía pero leé las partes clave vos mismo.
+2. **Confiar ciegamente en el resumen**: La IA puede omitir detalles importantes o malinterpretar matices. Si el documento es crítico (un contrato, un diagnóstico médico), usa el resumen como guía pero lee las partes clave tú mismo.
 
-3. **No pedir que cite las fuentes**: Si necesitás verificar, pedile que indique en qué página o sección encontró cada punto.
+3. **No pedir que cite las fuentes**: Si necesitas verificar, pídele que indique en qué página o sección encontró cada punto.
 
 \`\`\`
-Resumí este documento e indicá entre paréntesis el número de página
+Resume este documento e indica entre paréntesis el número de página
 donde se encuentra cada punto mencionado.
 \`\`\`
 
-4. **Resumir sin especificar idioma**: Si el documento está en un idioma y querés el resumen en otro, aclaralo:
+4. **Resumir sin especificar idioma**: Si el documento está en un idioma y quieres el resumen en otro, acláralo:
 
 \`\`\`
 Este documento está en inglés. Necesito un resumen en español
@@ -261,10 +261,10 @@ de máximo 10 bullet points.
 
 ### Para llevar
 
-- Siempre especificá extensión, formato y enfoque del resumen
-- Usá la técnica progresiva para documentos que exceden el límite de la IA
-- Adaptá la plantilla de resumen al tipo de documento
-- Pedí que cite las páginas o secciones si necesitás verificar
+- Siempre especifica extensión, formato y enfoque del resumen
+- Usa la técnica progresiva para documentos que exceden el límite de la IA
+- Adapta la plantilla de resumen al tipo de documento
+- Pide que cite las páginas o secciones si necesitas verificar
 - Un buen resumen con IA te ahorra horas, pero no reemplaza la lectura de las partes críticas`;
 
 export const c8leccion3 = `## Analizar imágenes con IA
@@ -276,17 +276,17 @@ Esta capacidad se conoce como **visión por computadora** o **modelos multimodal
 ### Cómo subir imágenes en cada plataforma
 
 **ChatGPT (Plus/Team/Enterprise)**
-- Hacé clic en el ícono de clip y seleccioná una imagen
+- Haz clic en el ícono de clip y selecciona una imagen
 - Formatos soportados: PNG, JPG, GIF, WEBP
-- También podés pegar una imagen directamente desde el portapapeles (Ctrl+V / Cmd+V)
+- También puedes pegar una imagen directamente desde el portapapeles (Ctrl+V / Cmd+V)
 
 **Claude (Pro/Team)**
-- Hacé clic en el ícono de clip y seleccioná la imagen
+- Haz clic en el ícono de clip y selecciona la imagen
 - Formatos soportados: PNG, JPG, GIF, WEBP
-- Podés subir múltiples imágenes en un solo mensaje
+- Puedes subir múltiples imágenes en un solo mensaje
 
 **Gemini (Advanced)**
-- Subí imágenes directamente o tomá fotos desde el celular
+- Sube imágenes directamente o toma fotos desde el celular
 - Gemini tiene integración nativa con Google Lens
 - Formatos soportados: PNG, JPG, WEBP
 
@@ -320,30 +320,30 @@ Esta capacidad se conoce como **visión por computadora** o **modelos multimodal
 
 **Descripción general:**
 \`\`\`
-Describí esta imagen en detalle. Incluí: qué se ve,
+Describe esta imagen en detalle. Incluye: qué se ve,
 dónde parece estar tomada, y cualquier texto visible.
 \`\`\`
 
 **Análisis de gráficos:**
 \`\`\`
-Analizá este gráfico y decime:
+Analiza este gráfico y dime:
 1. ¿Qué tipo de gráfico es?
 2. ¿Qué datos muestra?
 3. ¿Cuál es la tendencia principal?
 4. ¿Hay algo inusual o destacable?
-5. Extraé los valores aproximados en una tabla.
+5. Extrae los valores aproximados en una tabla.
 \`\`\`
 
 **Lectura de recibos y tickets:**
 \`\`\`
-Leé este recibo/ticket y extraé la siguiente información en formato
+Lee este recibo/ticket y extrae la siguiente información en formato
 de tabla: fecha, comercio, lista de items con precios individuales,
 subtotal, impuestos y total.
 \`\`\`
 
 **Análisis de capturas de pantalla:**
 \`\`\`
-Mirá esta captura de pantalla y decime:
+Mira esta captura de pantalla y dime:
 - ¿De qué aplicación o sitio web se trata?
 - ¿Qué está mostrando?
 - ¿Hay errores visibles?
@@ -352,14 +352,14 @@ Mirá esta captura de pantalla y decime:
 
 **Accesibilidad (alt text):**
 \`\`\`
-Generá un texto alternativo (alt text) para esta imagen,
+Genera un texto alternativo (alt text) para esta imagen,
 apto para lectores de pantalla. Debe ser descriptivo pero conciso,
 máximo 2 oraciones.
 \`\`\`
 
 **Análisis de diseño:**
 \`\`\`
-Analizá esta imagen como si fueras un diseñador gráfico. Comentá sobre:
+Analiza esta imagen como si fueras un diseñador gráfico. Comenta sobre:
 - Composición y layout
 - Paleta de colores utilizada
 - Tipografía visible
@@ -370,42 +370,42 @@ Analizá esta imagen como si fueras un diseñador gráfico. Comentá sobre:
 **Comparación de imágenes:**
 \`\`\`
 Te muestro dos imágenes. Necesito que:
-1. Describás cada una brevemente
-2. Listés las diferencias que encontrás
-3. Listés las similitudes
+1. Describas cada una brevemente
+2. Listes las diferencias que encuentres
+3. Listes las similitudes
 \`\`\`
 
 ### Casos de uso prácticos
 
 **1. Analizar dashboards y reportes visuales**
-Tenés una captura de pantalla de un dashboard de ventas y necesitás un análisis rápido:
+Tienes una captura de pantalla de un dashboard de ventas y necesitas un análisis rápido:
 \`\`\`
-Analizá este dashboard de ventas. Identificá:
+Analiza este dashboard de ventas. Identifica:
 - Las métricas principales y sus valores
 - Tendencias positivas y negativas
 - Cualquier dato que parezca preocupante
-Presentá tu análisis como si fuera para una reunión de 5 minutos.
+Presenta tu análisis como si fuera para una reunión de 5 minutos.
 \`\`\`
 
 **2. Traducir texto de imágenes**
 Sacaste una foto de un menú en otro idioma:
 \`\`\`
-Leé el texto de esta imagen, identificá el idioma,
-y traducilo al español. Mantené el formato original.
+Lee el texto de esta imagen, identifica el idioma,
+y tradúcelo al español. Mantén el formato original.
 \`\`\`
 
 **3. Entender diagramas técnicos**
 Te pasaron un diagrama de flujo o un diagrama de arquitectura:
 \`\`\`
-Explicame este diagrama paso a paso, como si yo no tuviera
+Explícame este diagrama paso a paso, como si yo no tuviera
 conocimiento técnico. ¿Qué proceso describe? ¿Cuáles son
 los puntos de decisión?
 \`\`\`
 
 **4. Analizar fotos para accesibilidad**
-Si trabajás en contenido web y necesitás descripciones:
+Si trabajas en contenido web y necesitas descripciones:
 \`\`\`
-Para cada una de estas imágenes, generá:
+Para cada una de estas imágenes, genera:
 1. Alt text corto (máximo 125 caracteres)
 2. Descripción larga para contexto adicional
 3. Sugerencia de caption para redes sociales
@@ -413,19 +413,19 @@ Para cada una de estas imágenes, generá:
 
 ### Consejos para mejores resultados
 
-1. **Subí imágenes de buena resolución**: Cuanto más clara la imagen, mejor el análisis
-2. **Recortá lo innecesario**: Si solo necesitás analizar una parte de la imagen, recortala antes de subirla
-3. **Sé específico en tu prompt**: "Analizá esta imagen" es vago. "Leé el texto de la etiqueta y listá los ingredientes" es preciso
-4. **Combiná texto e imagen**: Podés dar contexto adicional. "Esta es una factura de mi proveedor de internet. Extraé el monto total y la fecha de vencimiento."
-5. **Verificá datos numéricos**: La IA puede leer mal números en imágenes. Si los datos son críticos, verificá manualmente
+1. **Sube imágenes de buena resolución**: Cuanto más clara la imagen, mejor el análisis
+2. **Recorta lo innecesario**: Si solo necesitas analizar una parte de la imagen, recórtala antes de subirla
+3. **Sé específico en tu prompt**: "Analiza esta imagen" es vago. "Lee el texto de la etiqueta y lista los ingredientes" es preciso
+4. **Combina texto e imagen**: Puedes dar contexto adicional. "Esta es una factura de mi proveedor de internet. Extrae el monto total y la fecha de vencimiento."
+5. **Verifica datos numéricos**: La IA puede leer mal números en imágenes. Si los datos son críticos, verifica manualmente
 
 ### Para llevar
 
 - ChatGPT, Claude y Gemini pueden analizar imágenes con notable precisión
 - Funcionan mejor con texto impreso claro, gráficos y capturas de pantalla
 - Tienen limitaciones con texto muy pequeño, manuscrito y conteo de objetos
-- Combiná siempre la imagen con un prompt específico para obtener mejores resultados
-- Verificá la información extraída, especialmente datos numéricos`;
+- Combina siempre la imagen con un prompt específico para obtener mejores resultados
+- Verifica la información extraída, especialmente datos numéricos`;
 
 export const c8leccion4 = `## Extraer datos de tablas y facturas
 
@@ -433,13 +433,13 @@ Una de las tareas más tediosas en cualquier trabajo es la **extracción manual 
 
 ### El poder de la extracción estructurada
 
-La clave para extraer datos con IA es pedirle que te devuelva la información en un **formato estructurado** que puedas usar directamente. No le pidas que te "cuente" lo que dice la factura — pedile que te dé los datos en una tabla, CSV o JSON.
+La clave para extraer datos con IA es pedirle que te devuelva la información en un **formato estructurado** que puedas usar directamente. No le pidas que te "cuente" lo que dice la factura — pídele que te dé los datos en una tabla, CSV o JSON.
 
 ### Extracción de facturas y recibos
 
 **Prompt básico para facturas:**
 \`\`\`
-Analizá esta factura y extraé los siguientes datos en formato de tabla:
+Analiza esta factura y extrae los siguientes datos en formato de tabla:
 
 | Campo | Valor |
 |---|---|
@@ -457,45 +457,45 @@ Analizá esta factura y extraé los siguientes datos en formato de tabla:
 
 **Prompt para múltiples facturas:**
 \`\`\`
-Te voy a mostrar 5 facturas. Para cada una extraé:
+Te voy a mostrar 5 facturas. Para cada una extrae:
 - Número de factura
 - Fecha
 - Proveedor
 - Monto total
 - Concepto principal
 
-Presentá todo en una tabla unificada para que pueda copiarla
+Presenta todo en una tabla unificada para que pueda copiarla
 a una planilla de Excel.
 \`\`\`
 
 **Prompt para recibos de supermercado:**
 \`\`\`
-Leé este ticket de supermercado y creá una tabla con columnas:
+Lee este ticket de supermercado y crea una tabla con columnas:
 Item | Cantidad | Precio unitario | Precio total
 
-Al final incluí el subtotal, descuentos (si los hay) y total final.
+Al final incluye el subtotal, descuentos (si los hay) y total final.
 \`\`\`
 
 ### Extracción de tablas de PDFs e imágenes
 
-Cuando tenés una tabla en un PDF o captura de pantalla y necesitás los datos en formato utilizable:
+Cuando tienes una tabla en un PDF o captura de pantalla y necesitas los datos en formato utilizable:
 
 **Formato tabla markdown:**
 \`\`\`
-Extraé la tabla que aparece en este documento y reproducila
+Extrae la tabla que aparece en este documento y reprodúcela
 en formato markdown, manteniendo todas las filas y columnas.
 \`\`\`
 
 **Formato CSV (para importar a Excel/Sheets):**
 \`\`\`
-Extraé todos los datos de esta tabla y devolvélos en formato CSV.
-Usá punto y coma (;) como separador para que funcione bien
+Extrae todos los datos de esta tabla y devuélvelos en formato CSV.
+Usa punto y coma (;) como separador para que funcione bien
 en Excel en español. La primera fila debe ser los encabezados.
 \`\`\`
 
 **Formato JSON (para uso técnico):**
 \`\`\`
-Extraé los datos de esta tabla en formato JSON. Cada fila debe ser
+Extrae los datos de esta tabla en formato JSON. Cada fila debe ser
 un objeto con las columnas como claves. Ejemplo de estructura:
 [
   {"columna1": "valor", "columna2": "valor"},
@@ -505,14 +505,14 @@ un objeto con las columnas como claves. Ejemplo de estructura:
 
 ### Procesamiento de planillas y screenshots de Excel
 
-A veces tenés una captura de pantalla de una planilla de Excel o Google Sheets:
+A veces tienes una captura de pantalla de una planilla de Excel o Google Sheets:
 
 \`\`\`
-Mirá esta captura de pantalla de una planilla. Necesito que:
+Mira esta captura de pantalla de una planilla. Necesito que:
 1. Extraigas todos los datos visibles en formato de tabla
 2. Identifiques las fórmulas que podrían estar en uso
    (basándote en los patrones de datos)
-3. Señalés cualquier dato que parezca inconsistente
+3. Señales cualquier dato que parezca inconsistente
 \`\`\`
 
 ### Validación y verificación de datos extraídos
@@ -525,30 +525,30 @@ Este es un paso **crítico** que muchos se saltan. La IA puede cometer errores a
 
 **Prompt de validación:**
 \`\`\`
-Revisá los datos que acabás de extraer y hacé las siguientes
+Revisa los datos que acabas de extraer y haz las siguientes
 verificaciones:
 1. ¿Los subtotales suman correctamente el total?
 2. ¿El IVA corresponde al porcentaje estándar sobre la base?
 3. ¿Las cantidades × precios unitarios dan los precios totales?
 4. ¿Hay algún dato que te resulte sospechoso o difícil de leer?
-Marcá con ⚠️ cualquier valor del que no estés seguro.
+Marca con ⚠️ cualquier valor del que no estés seguro.
 \`\`\`
 
 **Prompt de doble verificación:**
 \`\`\`
-Mirá de nuevo la imagen original y comparala con la tabla que
-extrajiste. ¿Hay alguna diferencia? Listá cualquier corrección
+Mira de nuevo la imagen original y compárala con la tabla que
+extrajiste. ¿Hay alguna diferencia? Lista cualquier corrección
 que debas hacer.
 \`\`\`
 
 ### Procesamiento en lote (batch)
 
-Si necesitás procesar muchos documentos similares, la estrategia es:
+Si necesitas procesar muchos documentos similares, la estrategia es:
 
-**1. Definí una plantilla primero:**
+**1. Define una plantilla primero:**
 \`\`\`
 Voy a mostrarte varias facturas de mi proveedor. Para cada una,
-extraé los datos usando EXACTAMENTE este formato:
+extrae los datos usando EXACTAMENTE este formato:
 
 Factura: [número]
 Fecha: [dd/mm/aaaa]
@@ -556,60 +556,60 @@ Monto: [monto con 2 decimales]
 Concepto: [descripción breve]
 Estado: [pagada/pendiente si se puede determinar]
 
-Separalos con una línea "---" entre cada factura.
+Sepáralos con una línea "---" entre cada factura.
 \`\`\`
 
-**2. Procesá en grupos:**
-Si tenés muchos documentos, subí de a 3-5 por conversación para evitar que la IA se confunda o pierda precisión.
+**2. Procesa en grupos:**
+Si tienes muchos documentos, sube de a 3-5 por conversación para evitar que la IA se confunda o pierda precisión.
 
-**3. Pedí un resumen consolidado al final:**
+**3. Pide un resumen consolidado al final:**
 \`\`\`
-Ahora con todas las facturas que procesamos, creá una tabla resumen
+Ahora con todas las facturas que procesamos, crea una tabla resumen
 con: número de factura, fecha, proveedor, monto.
-Agregá una fila final con el total de todos los montos.
-Ordenalo por fecha de la más antigua a la más reciente.
+Agrega una fila final con el total de todos los montos.
+Ordénalo por fecha de la más antigua a la más reciente.
 \`\`\`
 
 ### Consejos avanzados
 
 **Para facturas con mala calidad de imagen:**
 \`\`\`
-La calidad de esta imagen no es la mejor. Extraé los datos que puedas
-leer con confianza y marcá con [?] cualquier valor que no puedas
+La calidad de esta imagen no es la mejor. Extrae los datos que puedas
+leer con confianza y marca con [?] cualquier valor que no puedas
 leer claramente.
 \`\`\`
 
 **Para documentos con formato no estándar:**
 \`\`\`
 Este documento no tiene un formato estándar de factura.
-Primero describí qué ves en el documento, y después intentá
+Primero describe qué ves en el documento, y después intenta
 extraer los datos equivalentes a: emisor, receptor, fecha,
 concepto, monto total.
 \`\`\`
 
 **Para convertir a formato contable:**
 \`\`\`
-Tomá los datos de esta factura y convertílos a un asiento contable
+Toma los datos de esta factura y conviértelos a un asiento contable
 con formato: Fecha | Cuenta | Debe | Haber
-Usá el Plan de Cuentas estándar argentino.
+Usa el Plan de Cuentas estándar mexicano.
 \`\`\`
 
 ### Para llevar
 
-- Siempre pedí los datos en un formato estructurado (tabla, CSV, JSON)
-- Usá prompts de validación para verificar que los números extraídos sean correctos
-- Marcá con símbolos de advertencia los datos de lectura dudosa
-- Procesá documentos en lote con una plantilla consistente
-- Los datos numéricos son los más propensos a errores — verificá siempre los totales
+- Siempre pide los datos en un formato estructurado (tabla, CSV, JSON)
+- Usa prompts de validación para verificar que los números extraídos sean correctos
+- Marca con símbolos de advertencia los datos de lectura dudosa
+- Procesa documentos en lote con una plantilla consistente
+- Los datos numéricos son los más propensos a errores — verifica siempre los totales
 - Cuanto mejor sea la calidad de la imagen o PDF, mejor será la extracción`;
 
 export const c8leccion5 = `## Proyectos con múltiples archivos
 
-Hasta ahora trabajamos con un documento a la vez. Pero en la vida real, muchas veces necesitás que la IA trabaje con **varios documentos simultáneamente**: comparar contratos, cruzar datos de diferentes reportes, o analizar un conjunto de documentos relacionados.
+Hasta ahora trabajamos con un documento a la vez. Pero en la vida real, muchas veces necesitas que la IA trabaje con **varios documentos simultáneamente**: comparar contratos, cruzar datos de diferentes reportes, o analizar un conjunto de documentos relacionados.
 
 ### El desafío: contexto limitado
 
-Cada modelo de IA tiene un **límite de contexto** — es decir, una cantidad máxima de texto que puede "tener en mente" al mismo tiempo. Pensalo como la memoria de trabajo: cuantos más documentos le das, menos espacio tiene para razonar sobre ellos.
+Cada modelo de IA tiene un **límite de contexto** — es decir, una cantidad máxima de texto que puede "tener en mente" al mismo tiempo. Piénsalo como la memoria de trabajo: cuantos más documentos le das, menos espacio tiene para razonar sobre ellos.
 
 | Modelo | Ventana de contexto aproximada |
 |---|---|
@@ -630,18 +630,18 @@ Te subí 3 archivos:
 3. Propuesta de renovación (2025)
 
 Necesito que:
-- Listés los cambios principales entre el contrato original y el addendum
-- Comparés las condiciones del addendum con la propuesta de renovación
-- Identificá si hay cláusulas del contrato original que la renovación
+- Listes los cambios principales entre el contrato original y el addendum
+- Compares las condiciones del addendum con la propuesta de renovación
+- Identifica si hay cláusulas del contrato original que la renovación
   elimina o modifica
 \`\`\`
 
 \`\`\`
 Te subí el informe de ventas Q1, Q2, Q3 y Q4 del 2025.
 Quiero que:
-1. Creés una tabla comparativa trimestre a trimestre
-2. Identifiqués tendencias de crecimiento o caída
-3. Señalés los productos con mejor y peor desempeño
+1. Crees una tabla comparativa trimestre a trimestre
+2. Identifiques tendencias de crecimiento o caída
+3. Señales los productos con mejor y peor desempeño
 4. Me des un resumen ejecutivo de todo el año
 \`\`\`
 
@@ -650,61 +650,61 @@ Quiero que:
 **ChatGPT Projects** te permite organizar conversaciones y archivos bajo un mismo "proyecto":
 
 **Cómo funciona:**
-1. En ChatGPT, creá un nuevo Proyecto desde el menú lateral
+1. En ChatGPT, crea un nuevo Proyecto desde el menú lateral
 2. Dale un nombre descriptivo (ej: "Análisis contratos proveedor X")
-3. Subí los documentos al proyecto — quedan disponibles para TODAS las conversaciones dentro de ese proyecto
-4. Agregá instrucciones del proyecto que se aplican automáticamente
+3. Sube los documentos al proyecto — quedan disponibles para TODAS las conversaciones dentro de ese proyecto
+4. Agrega instrucciones del proyecto que se aplican automáticamente
 
 **Instrucciones de proyecto ejemplo:**
 \`\`\`
-Sos un analista legal especializado en contratos comerciales.
-Tenés acceso a los contratos de nuestro proveedor principal.
+Eres un analista legal especializado en contratos comerciales.
+Tienes acceso a los contratos de nuestro proveedor principal.
 Siempre que respondas:
-- Citá el documento y la cláusula específica
-- Usá lenguaje simple, no jerga legal
-- Si no estás seguro de algo, indicalo claramente
+- Cita el documento y la cláusula específica
+- Usa lenguaje simple, no jerga legal
+- Si no estás seguro de algo, indícalo claramente
 \`\`\`
 
-**Ventaja:** No necesitás volver a subir los documentos en cada conversación nueva.
+**Ventaja:** No necesitas volver a subir los documentos en cada conversación nueva.
 
 ### Estrategia 3: Usar Claude Projects
 
 **Claude Projects** funciona de manera similar:
 
-1. En Claude, andá a la sección de "Projects"
-2. Creá un nuevo proyecto y subí tus documentos
-3. Definí las instrucciones del proyecto (Claude las llama "Project Instructions")
+1. En Claude, ve a la sección de "Projects"
+2. Crea un nuevo proyecto y sube tus documentos
+3. Define las instrucciones del proyecto (Claude las llama "Project Instructions")
 4. Todas las conversaciones dentro del proyecto tienen acceso a los documentos
 
 **Ejemplo de instrucciones:**
 \`\`\`
 Este proyecto contiene los documentos financieros de la empresa
 para el año 2025. Cuando analices estos documentos:
-- Usá pesos argentinos como moneda por defecto
-- Presentá los números con formato de miles (1.000.000)
+- Usa pesos mexicanos como moneda por defecto
+- Presenta los números con formato de miles (1.000.000)
 - Si hay discrepancias entre documentos, señalalas
-- Priorizá la precisión sobre la velocidad
+- Prioriza la precisión sobre la velocidad
 \`\`\`
 
 **Ventaja clave de Claude:** Su ventana de contexto más grande permite trabajar con documentos más extensos antes de perder precisión.
 
 ### Estrategia 4: Referencia cruzada entre documentos
 
-Cuando necesitás cruzar información entre archivos:
+Cuando necesitas cruzar información entre archivos:
 
 \`\`\`
 Tengo dos documentos:
 - Documento A: Lista de empleados con sus salarios
 - Documento B: Registro de asistencia del mes
 
-Cruzá la información y generá un reporte que muestre:
+Cruza la información y genera un reporte que muestre:
 1. Empleados que tuvieron más de 3 ausencias
 2. El costo estimado de las ausencias (salario diario × días ausentes)
 3. Empleados que aparecen en un documento pero no en el otro
 \`\`\`
 
 \`\`\`
-Comparé estos dos presupuestos (Proveedor A y Proveedor B) y creá
+Compara estos dos presupuestos (Proveedor A y Proveedor B) y crea
 una tabla comparativa que incluya:
 - Items en común y diferencia de precio
 - Items que solo ofrece uno de los proveedores
@@ -716,7 +716,7 @@ una tabla comparativa que incluya:
 
 Para proyectos de investigación o análisis extensos:
 
-**Paso 1 — Indexá tus documentos:**
+**Paso 1 — Indexa tus documentos:**
 \`\`\`
 Te voy a subir 10 artículos sobre [tema]. Para cada uno necesito
 que anotes:
@@ -726,30 +726,30 @@ que anotes:
 - Argumento principal
 - Datos clave mencionados
 
-Guardá esta información como un "índice" que vamos a usar después.
+Guarda esta información como un "índice" que vamos a usar después.
 \`\`\`
 
-**Paso 2 — Hacé preguntas cruzadas:**
+**Paso 2 — Haz preguntas cruzadas:**
 \`\`\`
 Basándote en el índice que armamos, ¿cuáles de los artículos
 coinciden en que [X]? ¿Cuáles se contradicen? ¿Hay algún dato
 que aparezca en múltiples fuentes?
 \`\`\`
 
-**Paso 3 — Sintetizá:**
+**Paso 3 — Sintetiza:**
 \`\`\`
-Usando toda la información de los 10 artículos, escribí un informe
+Usando toda la información de los 10 artículos, escribe un informe
 de síntesis de 1 página que presente las conclusiones principales,
 los puntos de acuerdo y los debates abiertos.
 \`\`\`
 
-### Limitaciones que debés conocer
+### Limitaciones que debes conocer
 
-1. **Pérdida de atención**: Cuantos más documentos le das, más probable es que la IA "se olvide" de detalles de alguno. Si notás respuestas imprecisas, recordale: "Revisá específicamente el documento X".
+1. **Pérdida de atención**: Cuantos más documentos le das, más probable es que la IA "se olvide" de detalles de alguno. Si notas respuestas imprecisas, recuérdale: "Revisa específicamente el documento X".
 
-2. **Confusión entre documentos**: Con muchos archivos, la IA puede mezclar información. Siempre pedí que cite de qué documento viene cada dato.
+2. **Confusión entre documentos**: Con muchos archivos, la IA puede mezclar información. Siempre pide que cite de qué documento viene cada dato.
 
-3. **Límites de carga**: Cada plataforma tiene un máximo de archivos por mensaje o por proyecto. Verificá los límites actuales.
+3. **Límites de carga**: Cada plataforma tiene un máximo de archivos por mensaje o por proyecto. Verifica los límites actuales.
 
 4. **Formato importa**: Documentos en texto seleccionable (PDF nativo, DOCX) funcionan mucho mejor que documentos escaneados como imagen.
 
@@ -760,8 +760,8 @@ los puntos de acuerdo y los debates abiertos.
 Antes de empezar un análisis complejo con múltiples documentos:
 
 \`\`\`
-Antes de empezar, confirmame que tenés acceso a los siguientes
-documentos y decime brevemente qué contiene cada uno:
+Antes de empezar, confírmame que tienes acceso a los siguientes
+documentos y dime brevemente qué contiene cada uno:
 1. [nombre archivo 1]
 2. [nombre archivo 2]
 3. [nombre archivo 3]
@@ -773,17 +773,17 @@ Esto te confirma que la IA cargó todo correctamente y entiende el contenido de 
 
 - Subir múltiples archivos permite análisis cruzados poderosos
 - ChatGPT Projects y Claude Projects son ideales para trabajos con muchos documentos
-- Definí instrucciones de proyecto para no repetir contexto
-- Siempre pedí que la IA cite de qué documento viene cada dato
+- Define instrucciones de proyecto para no repetir contexto
+- Siempre pide que la IA cite de qué documento viene cada dato
 - Cuantos más documentos, más importante es ser preciso en los prompts
-- Si la conversación se alarga, empezá una nueva dentro del mismo proyecto`;
+- Si la conversación se alarga, empieza una nueva dentro del mismo proyecto`;
 
 export const c8leccion6 = `## Quiz: Trabaja con documentos e imágenes
 
 Llegaste a la evaluación final del Curso 8. Este quiz está diseñado para que repases los conceptos más importantes que vimos a lo largo de las lecciones.
 
-Durante este curso aprendiste a aprovechar una de las capacidades más prácticas de la IA: trabajar directamente con tus documentos e imágenes. Desde subir un PDF y obtener un resumen ejecutivo en segundos, hasta extraer datos de facturas y organizar proyectos complejos con múltiples archivos — estas son habilidades que podés aplicar desde hoy en tu trabajo diario.
+Durante este curso aprendiste a aprovechar una de las capacidades más prácticas de la IA: trabajar directamente con tus documentos e imágenes. Desde subir un PDF y obtener un resumen ejecutivo en segundos, hasta extraer datos de facturas y organizar proyectos complejos con múltiples archivos — estas son habilidades que puedes aplicar desde hoy en tu trabajo diario.
 
-Recordá los puntos clave: siempre especificá el formato de salida que necesitás, verificá los datos numéricos extraídos por la IA, tené en cuenta la privacidad antes de subir documentos sensibles, y usá las funciones de Proyectos (tanto en ChatGPT como en Claude) para organizar trabajos que involucren múltiples documentos.
+Recuerda los puntos clave: siempre especifica el formato de salida que necesitas, verifica los datos numéricos extraídos por la IA, ten en cuenta la privacidad antes de subir documentos sensibles, y usa las funciones de Proyectos (tanto en ChatGPT como en Claude) para organizar trabajos que involucren múltiples documentos.
 
-¡Éxitos con el quiz! Ya tenés las herramientas para trabajar con documentos e imágenes como un profesional.`;
+¡Éxitos con el quiz! Ya tienes las herramientas para trabajar con documentos e imágenes como un profesional.`;

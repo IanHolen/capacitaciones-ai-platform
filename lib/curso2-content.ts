@@ -120,12 +120,12 @@ Llegamos a la parte emocionante! Ya tienes tu cuenta lista, ahora vas a hablar c
 Respuesta esperada: 10-12 minutos en agua hirviendo, con consejos para que se pele fácil.
 
 **Ejemplo 2 — Pedir explicación:**
-> Explicame qué es el wifi como si fuera un niño de 10 años
+> Explícame qué es el wifi como si fuera un niño de 10 años
 
 Respuesta esperada: El wifi es como una senal invisible que sale del router y conecta tus dispositivos a internet sin cables.
 
 **Ejemplo 3 — Ayuda para escribir:**
-> Ayudame a escribir un mensaje de cumpleanos para mi nieta que cumple 15 años. Quiero que sea cariñoso.
+> Ayúdame a escribir un mensaje de cumpleanos para mi nieta que cumple 15 años. Quiero que sea cariñoso.
 
 Respuesta esperada: Un mensaje bonito con varias opciones para elegir.
 
@@ -217,7 +217,7 @@ export const c2leccion5 = `Cada ejemplo incluye texto exacto que puedes **copiar
 ## Cosa 1: Escribir o mejorar un correo electrónico
 
 **Copia y pega:**
-> Ayudame a escribir un correo formal para mi jefe. Quiero pedirle permiso para faltar el viernes porque tengo una cita médica. Mi jefe se llama Roberto. Quiero sonar respetuoso pero directo.
+> Ayúdame a escribir un correo formal para mi jefe. Quiero pedirle permiso para faltar el viernes porque tengo una cita médica. Mi jefe se llama Roberto. Quiero sonar respetuoso pero directo.
 
 **Para mejorar un correo existente:**
 > Revisa este correo y mejoralo para que suene más profesional: "Hola Roberto necesito el viernes libre por médico gracias"
@@ -269,7 +269,7 @@ export const c2leccion6 = `**Antes de empezar:** Abre tu asistente en otra pesta
 
 **Paso 1:** Ve a tu asistente de IA.
 **Paso 2:** Copia y pega:
-> Explicame de forma muy simple, como si le explicaras a alguien que no sabe nada de tecnología, qué es "la nube" cuando la gente dice "guardar archivos en la nube". Usa ejemplos cotidianos.
+> Explícame de forma muy simple, como si le explicaras a alguien que no sabe nada de tecnología, qué es "la nube" cuando la gente dice "guardar archivos en la nube". Usa ejemplos cotidianos.
 
 **Paso 3:** Lee la respuesta con calma.
 **Paso 4:** Ahora escribe: "Resumelo en 3 puntos simples"
@@ -281,7 +281,7 @@ export const c2leccion6 = `**Antes de empezar:** Abre tu asistente en otra pesta
 
 **Paso 1:** Empieza una conversación nueva.
 **Paso 2:** Copia y pega:
-> Ayudame a escribir un mensaje de WhatsApp para mi vecina. Quiero invitarla a tomar cafe el sabado a las 4 de la tarde en mi casa. Quiero sonar amable y casual.
+> Ayúdame a escribir un mensaje de WhatsApp para mi vecina. Quiero invitarla a tomar cafe el sabado a las 4 de la tarde en mi casa. Quiero sonar amable y casual.
 
 **Paso 3:** Lee la respuesta.
 **Paso 4:** Escribe: "Me gusta la primera opción, pero hazla más corta. También agrega que puede traer a su esposo si quiere."
