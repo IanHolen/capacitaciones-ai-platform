@@ -18,6 +18,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import type { Curso, Nivel } from "@/lib/cursos-data";
+import { CourseRating } from "@/components/course-rating";
 
 interface LocalizedCourseDetailProps {
   curso: Curso;
