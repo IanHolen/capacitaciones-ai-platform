@@ -85,9 +85,9 @@ function LoginForm() {
             <p className="text-lg text-gray-600">
               {t("auth.magicSent", { email })}
             </p>
-            <div className="mt-2 flex items-start gap-3 rounded-xl border border-amber-300 bg-amber-50 p-4 text-left text-base text-amber-800">
-              <AlertTriangle className="mt-0.5 size-5 shrink-0" />
-              <span>{t("auth.spamNotice")}</span>
+            <div className="mt-2 flex items-start gap-3 rounded-xl border-2 border-red-400 bg-red-50 p-5 text-left text-lg text-red-800 shadow-sm">
+              <AlertTriangle className="mt-0.5 size-7 shrink-0 text-red-600" />
+              <span className="font-bold leading-snug">{t("auth.spamNotice")}</span>
             </div>
             <button
               onClick={() => setMagicLinkSent(false)}

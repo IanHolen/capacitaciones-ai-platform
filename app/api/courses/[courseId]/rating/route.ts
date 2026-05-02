@@ -2,6 +2,33 @@ import { createClient } from "@/lib/supabase/server";
 import { NextResponse } from "next/server";
 
 /**
+ * Resolve a course slug or UUID to a verified course UUID.
+ * Returns the UUID if found, or null if the course doesn't exist.
+ */
+async function resolveCourseId(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  courseId: string
+): Promise<string | null> {
+  // Try slug first
+  const { data: bySlug } = await supabase
+    .from("courses")
+    .select("id")
+    .eq("slug", courseId)
+    .maybeSingle();
+
+  if (bySlug) return bySlug.id;
+
+  // Try as UUID directly
+  const { data: byId } = await supabase
+    .from("courses")
+    .select("id")
+    .eq("id", courseId)
+    .maybeSingle();
+
+  return byId?.id ?? null;
+}
+
+/**
  * GET /api/courses/[courseId]/rating
  * Returns average rating + count for a course, and the current user's rating if authenticated.
  */
@@ -21,14 +48,13 @@ export async function GET(
 
     const supabase = await createClient();
 
-    // Resolve course slug → UUID
-    const { data: course } = await supabase
-      .from("courses")
-      .select("id")
-      .eq("slug", courseId)
-      .maybeSingle();
-
-    const resolvedCourseId = course?.id ?? courseId;
+    const resolvedCourseId = await resolveCourseId(supabase, courseId);
+    if (!resolvedCourseId) {
+      return NextResponse.json(
+        { error: "Course not found" },
+        { status: 404 }
+      );
+    }
 
     // Get aggregate rating for the course
     const { data: ratings, error: ratingsError } = await supabase
@@ -124,14 +150,13 @@ export async function POST(
       );
     }
 
-    // Resolve course slug → UUID
-    const { data: course } = await supabase
-      .from("courses")
-      .select("id")
-      .eq("slug", courseId)
-      .maybeSingle();
-
-    const resolvedCourseId = course?.id ?? courseId;
+    const resolvedCourseId = await resolveCourseId(supabase, courseId);
+    if (!resolvedCourseId) {
+      return NextResponse.json(
+        { error: "Course not found" },
+        { status: 404 }
+      );
+    }
 
     // Upsert: insert or update if user already rated this course
     const { data: result, error } = await supabase
@@ -184,14 +209,13 @@ export async function DELETE(
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // Resolve course slug → UUID
-    const { data: course } = await supabase
-      .from("courses")
-      .select("id")
-      .eq("slug", courseId)
-      .maybeSingle();
-
-    const resolvedCourseId = course?.id ?? courseId;
+    const resolvedCourseId = await resolveCourseId(supabase, courseId);
+    if (!resolvedCourseId) {
+      return NextResponse.json(
+        { error: "Course not found" },
+        { status: 404 }
+      );
+    }
 
     const { error } = await supabase
       .from("course_ratings")
