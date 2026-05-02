@@ -16,22 +16,32 @@ export async function GET() {
     if (!authError && authData?.users) {
       // Get progress counts
       const userIds = authData.users.map((u) => u.id);
+      const userEmails = authData.users.map((u) => u.email).filter(Boolean) as string[];
 
-      const { data: progressCounts } = await supabase!
-        .from("user_progress")
-        .select("user_id")
-        .eq("completed", true)
-        .in("user_id", userIds.length > 0 ? userIds : ["none"]);
+      const [progressRes, adminRes] = await Promise.all([
+        supabase!
+          .from("user_progress")
+          .select("user_id")
+          .eq("completed", true)
+          .in("user_id", userIds.length > 0 ? userIds : ["none"]),
+        supabase!
+          .from("admin_users")
+          .select("email")
+          .in("email", userEmails.length > 0 ? userEmails : ["none"]),
+      ]);
 
       const progressMap = new Map<string, number>();
-      for (const p of progressCounts ?? []) {
+      for (const p of progressRes.data ?? []) {
         progressMap.set(p.user_id, (progressMap.get(p.user_id) ?? 0) + 1);
       }
+
+      const adminEmails = new Set((adminRes.data ?? []).map((a) => a.email));
 
       const users = authData.users.map((u) => ({
         id: u.id,
         email: u.email ?? "N/A",
         name: u.user_metadata?.name ?? u.user_metadata?.full_name ?? "Sin nombre",
+        role: adminEmails.has(u.email ?? "") || u.email === "holenderian@gmail.com" ? "ADMIN" : "USER",
         created_at: u.created_at,
         last_sign_in: u.last_sign_in_at,
         lessonsCompleted: progressMap.get(u.id) ?? 0,

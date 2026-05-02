@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/server";
+import { createAdminClient } from "@/lib/supabase/admin";
 import { NextResponse } from "next/server";
 
 export async function requireAdmin() {
@@ -22,5 +23,10 @@ export async function requireAdmin() {
     return { error: NextResponse.json({ error: "Forbidden" }, { status: 403 }), supabase: null, user: null };
   }
 
-  return { error: null, supabase, user };
+  // Use service-role client for data queries (bypasses RLS).
+  // Fall back to user session client if service key is unavailable.
+  const adminClient = createAdminClient();
+  const dataClient = adminClient ?? supabase;
+
+  return { error: null, supabase: dataClient, user };
 }

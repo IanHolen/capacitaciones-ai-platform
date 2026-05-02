@@ -137,10 +137,7 @@ export default function AdminPage() {
           fetch("/api/admin/errors").then((r) => (r.ok ? r.json() : { errors: [] })),
         ]);
 
-      const mData = metricsRes as Record<string, unknown>;
-      setMetrics(
-        (mData?.data as Metrics[] | undefined)?.[0] || (mData as Metrics) || {},
-      );
+      setMetrics((metricsRes as Metrics) || {});
       setSignups(signupsRes.data || []);
       setCompletions(completionsRes.data || []);
       setUsers(usersRes.users || []);
@@ -264,80 +261,78 @@ export default function AdminPage() {
 
       {/* Usuarios Tab */}
       {activeTab === "usuarios" && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <div className="rounded-xl border">
-            <div className="flex flex-col gap-3 border-b p-4 sm:flex-row sm:items-center sm:justify-between">
-              <div className="relative max-w-xs flex-1">
-                <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-                <input
-                  type="text"
-                  value={userSearch}
-                  onChange={(e) => setUserSearch(e.target.value)}
-                  placeholder="Buscar por email o nombre..."
-                  className="h-10 w-full rounded-lg border bg-background pl-9 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
-                />
-              </div>
-              <div className="flex gap-2 text-xs">
-                <button
-                  onClick={() => setUserSort("created_at")}
-                  className={`rounded-md px-3 py-1.5 font-medium ${
-                    userSort === "created_at" ? "bg-[#1E40AF] text-white" : "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  Recientes
-                </button>
-                <button
-                  onClick={() => setUserSort("lessonsCompleted")}
-                  className={`rounded-md px-3 py-1.5 font-medium ${
-                    userSort === "lessonsCompleted" ? "bg-[#1E40AF] text-white" : "bg-muted text-muted-foreground"
-                  }`}
-                >
-                  Más activos
-                </button>
-              </div>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
+              <input
+                type="text"
+                value={userSearch}
+                onChange={(e) => setUserSearch(e.target.value)}
+                placeholder="Buscar por email o nombre..."
+                className="h-10 w-full rounded-lg border bg-background pl-9 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
+              />
             </div>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b text-left text-xs uppercase tracking-wider text-muted-foreground">
-                    <th className="px-4 py-3">Email</th>
-                    <th className="px-4 py-3">Nombre</th>
-                    <th className="px-4 py-3">Registro</th>
-                    <th className="px-4 py-3 text-center">Lecciones</th>
-                    <th className="px-4 py-3">Rol</th>
+            <div className="flex gap-2 text-xs">
+              <button
+                onClick={() => setUserSort("created_at")}
+                className={`rounded-md px-3 py-1.5 font-medium ${
+                  userSort === "created_at" ? "bg-[#1E40AF] text-white" : "bg-muted text-muted-foreground"
+                }`}
+              >
+                Recientes
+              </button>
+              <button
+                onClick={() => setUserSort("lessonsCompleted")}
+                className={`rounded-md px-3 py-1.5 font-medium ${
+                  userSort === "lessonsCompleted" ? "bg-[#1E40AF] text-white" : "bg-muted text-muted-foreground"
+                }`}
+              >
+                Más activos
+              </button>
+            </div>
+          </div>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="border-b text-left text-xs uppercase tracking-wider text-muted-foreground">
+                  <th className="px-4 py-3">Email</th>
+                  <th className="px-4 py-3">Nombre</th>
+                  <th className="px-4 py-3">Registro</th>
+                  <th className="px-4 py-3 text-center">Lecciones</th>
+                  <th className="px-4 py-3">Rol</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filteredUsers.map((u) => (
+                  <tr key={u.id} className="border-b last:border-0 hover:bg-muted/30">
+                    <td className="px-4 py-3 font-medium">{u.email}</td>
+                    <td className="px-4 py-3 text-muted-foreground">{u.name || "—"}</td>
+                    <td className="px-4 py-3 text-muted-foreground">
+                      {new Date(u.created_at).toLocaleDateString("es-LA")}
+                    </td>
+                    <td className="px-4 py-3 text-center">
+                      <span className="rounded-full bg-[#1E40AF]/10 px-2 py-0.5 text-xs font-medium text-[#1E40AF]">
+                        {u.lessonsCompleted}
+                      </span>
+                    </td>
+                    <td className="px-4 py-3">
+                      <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
+                        u.role === "ADMIN" ? "bg-red-100 text-red-600" : "bg-muted text-muted-foreground"
+                      }`}>
+                        {u.role || "USER"}
+                      </span>
+                    </td>
                   </tr>
-                </thead>
-                <tbody>
-                  {filteredUsers.map((u) => (
-                    <tr key={u.id} className="border-b last:border-0 hover:bg-muted/30">
-                      <td className="px-4 py-3 font-medium">{u.email}</td>
-                      <td className="px-4 py-3 text-muted-foreground">{u.name || "—"}</td>
-                      <td className="px-4 py-3 text-muted-foreground">
-                        {new Date(u.created_at).toLocaleDateString("es-LA")}
-                      </td>
-                      <td className="px-4 py-3 text-center">
-                        <span className="rounded-full bg-[#1E40AF]/10 px-2 py-0.5 text-xs font-medium text-[#1E40AF]">
-                          {u.lessonsCompleted}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3">
-                        <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                          u.role === "ADMIN" ? "bg-red-100 text-red-600" : "bg-muted text-muted-foreground"
-                        }`}>
-                          {u.role}
-                        </span>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-              {filteredUsers.length === 0 && (
-                <p className="p-6 text-center text-sm text-muted-foreground">No se encontraron usuarios.</p>
-              )}
-            </div>
-            <div className="border-t px-4 py-3 text-xs text-muted-foreground">
-              {filteredUsers.length} usuarios
-            </div>
+                ))}
+              </tbody>
+            </table>
+            {filteredUsers.length === 0 && (
+              <p className="p-6 text-center text-sm text-muted-foreground">No se encontraron usuarios.</p>
+            )}
+          </div>
+          <div className="text-xs text-muted-foreground">
+            {filteredUsers.length} usuarios
           </div>
         </motion.div>
       )}
@@ -345,12 +340,12 @@ export default function AdminPage() {
       {/* Cursos Tab — reads from static cursos-data.ts */}
       {activeTab === "cursos" && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
-          <div className="rounded-xl border">
-            <div className="border-b p-4">
+          <div>
+            <div className="mb-4">
               <h3 className="text-lg font-semibold">Cursos ({cursos.length})</h3>
               <p className="mt-1 text-xs text-muted-foreground">Haz clic en un curso para ver sus comentarios</p>
             </div>
-            <div className="divide-y">
+            <div className="divide-y border-t">
               {cursos.map((curso) => {
                 const config = nivelConfig[curso.nivel];
                 const isSelected = selectedCourseId === curso.id;
@@ -418,8 +413,8 @@ export default function AdminPage() {
 
           {/* Course Comments Panel */}
           {selectedCourseId && (
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="rounded-xl border">
-              <div className="border-b p-4">
+            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
+              <div className="mb-4 border-t pt-6">
                 <h3 className="flex items-center gap-2 text-lg font-semibold">
                   <MessageSquare className="size-5 text-[#06b6d4]" />
                   Comentarios — {cursos.find((c) => c.id === selectedCourseId)?.titulo}
@@ -491,7 +486,7 @@ export default function AdminPage() {
       {activeTab === "contenido" && (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
           {/* Section 1 — Total Usage */}
-          <div className="rounded-xl border p-6">
+          <div>
             <div className="flex items-center justify-between">
               <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
                 <Database className="size-5 text-[#1E40AF]" />
@@ -542,7 +537,7 @@ export default function AdminPage() {
           {/* Section 2 — Status Banner */}
           {hasDbData && (
             <div
-              className="flex items-center gap-3 rounded-xl border-2 p-4"
+              className="flex items-center gap-3 rounded-xl p-4"
               style={{
                 borderColor:
                   dbSizeMb / 500 > 0.8 ? "#fecaca" : dbSizeMb / 500 > 0.6 ? "#fde68a" : "#bbf7d0",
@@ -589,7 +584,7 @@ export default function AdminPage() {
                     const numCount = typeof count === "number" ? count : 0;
                     const isLargest = numCount === maxCount && numCount > 0;
                     return (
-                      <div key={name} className="rounded-xl border p-4">
+                      <div key={name} className="rounded-xl bg-muted/30 p-4">
                         <div className="flex items-center justify-between">
                           <span className="font-mono text-sm text-muted-foreground">{name}</span>
                           {isLargest && (
@@ -617,15 +612,15 @@ export default function AdminPage() {
                 Crecimiento
               </h4>
               <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-xl border p-4 text-center">
+                <div className="rounded-xl bg-muted/30 p-4 text-center">
                   <div className="text-2xl font-bold text-[#1E40AF]">{db.totalRecords?.toLocaleString()}</div>
                   <div className="text-xs text-muted-foreground">Total registros</div>
                 </div>
-                <div className="rounded-xl border p-4 text-center">
+                <div className="rounded-xl bg-muted/30 p-4 text-center">
                   <div className="text-2xl font-bold text-[#1E40AF]">{activeConns ?? "—"}</div>
                   <div className="text-xs text-muted-foreground">Conexiones activas</div>
                 </div>
-                <div className="rounded-xl border p-4 text-center">
+                <div className="rounded-xl bg-muted/30 p-4 text-center">
                   <div className="text-2xl font-bold text-green-600">
                     {dbSizeMb > 0 ? `~${Math.round(500 / dbSizeMb)}` : "∞"}
                   </div>
@@ -637,7 +632,7 @@ export default function AdminPage() {
 
           {/* Quiz Stats */}
           {quizStats.length > 0 && (
-            <div className="rounded-xl border p-6">
+            <div className="border-t pt-6">
               <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold">
                 <BarChart3 className="size-5 text-[#7C3AED]" />
                 Tasa de Aprobación por Curso
@@ -676,53 +671,49 @@ export default function AdminPage() {
 
       {/* Errores Tab */}
       {activeTab === "errores" && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
-          <div className="rounded-xl border">
-            <div className="border-b p-4">
-              <h3 className="flex items-center gap-2 text-lg font-semibold">
-                <AlertTriangle className="size-5 text-red-500" />
-                Errores recientes ({errors.length})
-              </h3>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
+          <h3 className="flex items-center gap-2 text-lg font-semibold">
+            <AlertTriangle className="size-5 text-red-500" />
+            Errores recientes ({errors.length})
+          </h3>
+          {errors.length === 0 ? (
+            <div className="flex flex-col items-center gap-2 py-12 text-center">
+              <CheckCircle className="size-10 text-green-500" />
+              <p className="text-base font-medium text-green-700">Sin errores recientes</p>
+              <p className="text-sm text-muted-foreground">Todo funciona correctamente.</p>
             </div>
-            {errors.length === 0 ? (
-              <div className="flex flex-col items-center gap-2 p-8 text-center">
-                <CheckCircle className="size-10 text-green-500" />
-                <p className="text-base font-medium text-green-700">Sin errores recientes</p>
-                <p className="text-sm text-muted-foreground">Todo funciona correctamente.</p>
-              </div>
-            ) : (
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b text-left text-xs uppercase tracking-wider text-muted-foreground">
-                      <th className="px-4 py-3">Timestamp</th>
-                      <th className="px-4 py-3">Ruta</th>
-                      <th className="px-4 py-3">Status</th>
-                      <th className="px-4 py-3">Mensaje</th>
+          ) : (
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b text-left text-xs uppercase tracking-wider text-muted-foreground">
+                    <th className="px-4 py-3">Timestamp</th>
+                    <th className="px-4 py-3">Ruta</th>
+                    <th className="px-4 py-3">Status</th>
+                    <th className="px-4 py-3">Mensaje</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {errors.map((err, i) => (
+                    <tr key={i} className="border-b last:border-0 hover:bg-muted/30">
+                      <td className="px-4 py-3 text-xs text-muted-foreground whitespace-nowrap">
+                        {new Date(err.timestamp).toLocaleString("es-LA")}
+                      </td>
+                      <td className="px-4 py-3 font-mono text-xs">{err.route}</td>
+                      <td className="px-4 py-3">
+                        <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-600">
+                          {err.status_code}
+                        </span>
+                      </td>
+                      <td className="px-4 py-3 text-muted-foreground">
+                        {err.message}
+                      </td>
                     </tr>
-                  </thead>
-                  <tbody>
-                    {errors.map((err, i) => (
-                      <tr key={i} className="border-b last:border-0">
-                        <td className="px-4 py-3 text-xs text-muted-foreground">
-                          {new Date(err.timestamp).toLocaleString("es-LA")}
-                        </td>
-                        <td className="px-4 py-3 font-mono text-xs">{err.route}</td>
-                        <td className="px-4 py-3">
-                          <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-600">
-                            {err.status_code}
-                          </span>
-                        </td>
-                        <td className="max-w-xs truncate px-4 py-3 text-muted-foreground">
-                          {err.message}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
-          </div>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </motion.div>
       )}
       </div>
