@@ -6,10 +6,25 @@ export async function GET(request: Request) {
   if (error) return error;
 
   const { searchParams } = new URL(request.url);
-  const courseId = searchParams.get("courseId");
+  let courseId = searchParams.get("courseId");
+  const slug = searchParams.get("slug");
 
-  if (!courseId) {
-    return NextResponse.json({ error: "courseId is required" }, { status: 400 });
+  if (!courseId && !slug) {
+    return NextResponse.json({ error: "courseId or slug is required" }, { status: 400 });
+  }
+
+  // Resolve slug to courseId if needed
+  if (!courseId && slug) {
+    const { data: course } = await supabase!
+      .from("courses")
+      .select("id")
+      .eq("slug", slug)
+      .maybeSingle();
+
+    if (!course) {
+      return NextResponse.json({ comments: [] });
+    }
+    courseId = course.id;
   }
 
   // Get all lessons for this course

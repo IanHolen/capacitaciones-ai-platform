@@ -366,18 +366,10 @@ export default function AdminPage() {
                       setSelectedCourseId(curso.id);
                       setLoadingComments(true);
                       try {
-                        // First resolve the DB course ID from slug
-                        const coursesRes = await fetch("/api/courses");
-                        const coursesData = await coursesRes.json();
-                        const dbCourse = (coursesData.courses ?? []).find(
-                          (c: { slug: string }) => c.slug === curso.id
-                        );
-                        if (dbCourse) {
-                          const res = await fetch(`/api/admin/course-comments?courseId=${dbCourse.id}`);
-                          if (res.ok) {
-                            const data = await res.json();
-                            setCourseComments(data.comments ?? []);
-                          }
+                        const res = await fetch(`/api/admin/course-comments?slug=${curso.id}`);
+                        if (res.ok) {
+                          const data = await res.json();
+                          setCourseComments(data.comments ?? []);
                         } else {
                           setCourseComments([]);
                         }
