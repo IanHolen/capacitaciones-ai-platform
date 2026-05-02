@@ -43,6 +43,9 @@
     "noCoursesLevel": "No courses available for this level yet.",
     "completed": "Completed",
     "progressOf": "{{completed}} of {{total}}",
+    "courseCompleted": "Congratulations! You completed this course",
+    "courseCompletedDesc": "You finished all the lessons and passed the final quiz.",
+    "reviewCourse": "Review course",
     "ratingAverage": "{{average}} ({{count}} ratings)",
     "noRatings": "No ratings yet",
     "rateStar": "Rate {{star}} stars"
@@ -79,7 +82,10 @@
     "needMore": "You need at least 80% to complete this lesson. Try again!",
     "tryAgain": "Don't give up. Review the lessons calmly and try again.",
     "backToCourse": "Back to course",
-    "retryQuiz": "Retry Quiz"
+    "retryQuiz": "Retry Quiz",
+    "courseCompleted": "Course completed!",
+    "lockedTitle": "Quiz locked",
+    "lockedDesc": "Complete all previous lessons to unlock the final quiz."
   },
   "auth": {
     "welcomeBack": "Welcome back",

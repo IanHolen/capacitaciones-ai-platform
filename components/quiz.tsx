@@ -126,7 +126,36 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
     }
 
     return (
-      <div className="flex flex-col items-center gap-6 py-8 text-center">
+      <div className="relative flex flex-col items-center gap-6 py-8 text-center">
+        {/* Confetti celebration for passing */}
+        {passed && (
+          <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+            {Array.from({ length: 40 }).map((_, i) => (
+              <span
+                key={i}
+                className="absolute animate-confetti rounded-sm"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  width: `${6 + Math.random() * 8}px`,
+                  height: `${6 + Math.random() * 8}px`,
+                  backgroundColor: ["#16A34A", "#1E40AF", "#7C3AED", "#EA580C", "#CA8A04", "#EF4444", "#EC4899"][i % 7],
+                  animationDelay: `${Math.random() * 1.5}s`,
+                  animationDuration: `${2 + Math.random() * 2}s`,
+                }}
+              />
+            ))}
+          </div>
+        )}
+
+        {passed ? (
+          <>
+            <div className="text-6xl" aria-hidden="true">🎉</div>
+            <h3 className="text-3xl font-extrabold" style={{ color: accentColor }}>
+              {t("quiz.courseCompleted")}
+            </h3>
+          </>
+        ) : null}
+
         <div className="text-5xl font-bold" style={{ color: accentColor }}>
           {correctCount} de {pool.length}
         </div>
@@ -157,14 +186,16 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
               {t("quiz.backToCourse")}
             </Button>
           </Link>
-          <Button
-            className="h-12 gap-2 px-6 text-base font-semibold"
-            style={{ backgroundColor: accentColor }}
-            onClick={handleRestart}
-          >
-            <RotateCcw className="size-5" aria-hidden="true" />
-            {t("quiz.retryQuiz")}
-          </Button>
+          {!passed && (
+            <Button
+              className="h-12 gap-2 px-6 text-base font-semibold"
+              style={{ backgroundColor: accentColor }}
+              onClick={handleRestart}
+            >
+              <RotateCcw className="size-5" aria-hidden="true" />
+              {t("quiz.retryQuiz")}
+            </Button>
+          )}
         </div>
       </div>
     );
