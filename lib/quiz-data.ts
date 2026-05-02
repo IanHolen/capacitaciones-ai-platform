@@ -3,16 +3,19 @@ import {
   curso1QuizEn,
   curso2QuizEn,
   curso3QuizEn,
+  curso4QuizEn,
+  curso5QuizEn,
+  curso6QuizEn,
   curso7QuizEn,
   curso8QuizEn,
   curso9QuizEn,
   curso10QuizEn,
   curso11QuizEn,
   curso12QuizEn,
+  curso13QuizEn,
+  curso14QuizEn,
+  curso15QuizEn,
 } from "./quiz-data-en";
-
-// Placeholder empty arrays for courses without English translations yet
-const emptyEnPartials: Partial<QuizQuestion>[] = [];
 
 function mergeEnglish(
   esQuestions: QuizQuestion[],
@@ -523,7 +526,7 @@ export const curso4Quiz: QuizQuestion[] = mergeEnglish([
   { question: "¿En qué temas es especialmente importante la doble verificación?", options: ["Recetas de cocina", "Salud, asuntos legales y finanzas", "Viajes y turismo", "Entretenimiento"], correctIndex: 1, explanation: "Para salud, legales y finanzas siempre se debe usar doble verificación." },
   { question: "¿Cuál es el primer mensaje recomendado al empezar con un asistente?", options: ["Pedirle creatividad", "Presentarte con nombre, edad, país y nivel tecnológico", "Preguntarle sus capacidades", "Pedirle respuestas cortas"], correctIndex: 1, explanation: "Presentarte ayuda al asistente a adaptar su lenguaje a tu perfil." },
   { question: "¿Cuál sería el 'kit avanzado' de asistentes de IA?", options: ["ChatGPT, Perplexity, Gemini y Copilot", "ChatGPT, Perplexity, Claude y Gemini", "Claude, Gemini, Midjourney y Perplexity", "ChatGPT, Claude, Bing y Siri"], correctIndex: 1, explanation: "El kit avanzado incluye ChatGPT, Perplexity, Claude y Gemini." },
-], emptyEnPartials);
+], curso4QuizEn);
 
 // ─── CURSO 5: Prompts Efectivos ─────────────────────────────────────────────
 export const curso5Quiz: QuizQuestion[] = mergeEnglish([
@@ -562,7 +565,7 @@ export const curso5Quiz: QuizQuestion[] = mergeEnglish([
   { question: "¿Cuál es una categoría de plantillas de prompts?", options: ["Entretenimiento", "Tareas laborales", "Investigación académica", "Programación"], correctIndex: 1, explanation: "Las categorías incluyen: comunicación personal, tareas laborales, salud, aprendizaje y organización." },
   { question: "¿Qué representa el contexto SITUACIONAL?", options: ["Nombre y ocupación", "Qué está pasando y por qué necesitas la información", "Formato de respuesta", "A quién entregarás el resultado"], correctIndex: 1, explanation: "Describe qué ocurre y por qué necesitas ayuda." },
   { question: "¿Cómo funciona la conversación iterativa?", options: ["Un prompt perfecto y aceptar la primera respuesta", "Preguntas → IA responde → especificas cambios → mejora → repites", "Una pregunta por sesión", "Todas las variantes al mismo tiempo"], correctIndex: 1, explanation: "Es un ciclo de refinamiento continuo." },
-], emptyEnPartials);
+], curso5QuizEn);
 
 // ─── CURSO 6: IA en tu vida cotidiana ───────────────────────────────────────
 export const curso6Quiz: QuizQuestion[] = mergeEnglish([
@@ -601,7 +604,7 @@ export const curso6Quiz: QuizQuestion[] = mergeEnglish([
   { question: "¿Cuál tono sería apropiado para una disculpa sincera?", options: ["Formal y distante", "Firme y directo", "Cálido y genuino, sin excusas", "Técnico y detallado"], correctIndex: 2, explanation: "Una disculpa efectiva debe ser cálida, genuina y sin excusas." },
   { question: "¿Cuál escenario de traducción requiere especial cuidado?", options: ["Mensaje casual a un amigo", "Menú de restaurante", "Contrato legal con validez jurídica", "Receta de cocina"], correctIndex: 2, explanation: "Los documentos legales necesitan traductores certificados, no solo IA." },
   { question: "¿Qué técnica culinaria describe cocinar lentamente en poco líquido?", options: ["Hervir", "Escalfar", "Pochar (estofar)", "Freír"], correctIndex: 2, explanation: "Pochar/estofar implica cocinar a fuego lento en poco líquido." },
-], emptyEnPartials);
+], curso6QuizEn);
 
 export const curso7Quiz: QuizQuestion[] = mergeEnglish([
   {
@@ -3462,7 +3465,7 @@ export const curso13Quiz: QuizQuestion[] = mergeEnglish([
     correctIndex: 1,
     explanation: "El proyecto final demuestra que con Python básico, una API de IA y Streamlit se puede construir una app funcional real, sin necesidad de experiencia avanzada.",
   },
-], emptyEnPartials);
+], curso13QuizEn);
 
 // ============================================================
 // CURSO 14 — RAG y búsqueda inteligente
@@ -3833,7 +3836,7 @@ export const curso14Quiz: QuizQuestion[] = mergeEnglish([
     correctIndex: 1,
     explanation: "Los vector stores están optimizados para búsqueda de vecinos más cercanos (ANN) en espacios de alta dimensión, algo para lo que las BDs relacionales no son adecuadas.",
   },
-], emptyEnPartials);
+], curso14QuizEn);
 
 // ============================================================
 // CURSO 15 — Agentes de IA y deployment
@@ -4224,4 +4227,4 @@ export const curso15Quiz: QuizQuestion[] = mergeEnglish([
     correctIndex: 1,
     explanation: "La potencia de los agentes multi-herramienta está en la composición: combinar búsqueda + lectura de archivos + ejecución de código permite resolver problemas que requieren múltiples pasos heterogéneos.",
   },
-], emptyEnPartials);
+], curso15QuizEn);
