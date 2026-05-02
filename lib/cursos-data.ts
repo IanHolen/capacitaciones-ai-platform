@@ -118,8 +118,7 @@ import {
   c3leccion5,
   c3leccion6,
 } from "./curso3-content";
-import { curso1Quiz, curso2Quiz, curso3Quiz, curso4Quiz, curso5Quiz, curso6Quiz, curso7Quiz, curso8Quiz, curso9Quiz } from "./quiz-data";
-import { curso10Quiz, curso11Quiz, curso12Quiz, curso13Quiz, curso14Quiz, curso15Quiz } from "./quiz-data-extra";
+import { curso1Quiz, curso2Quiz, curso3Quiz, curso4Quiz, curso5Quiz, curso6Quiz, curso7Quiz, curso8Quiz, curso9Quiz, curso10Quiz, curso11Quiz, curso12Quiz, curso13Quiz, curso14Quiz, curso15Quiz } from "./quiz-data";
 import {
   c7leccion1, c7leccion2, c7leccion3, c7leccion4,
   c7leccion5, c7leccion6, c7leccion7, c7leccion8,
