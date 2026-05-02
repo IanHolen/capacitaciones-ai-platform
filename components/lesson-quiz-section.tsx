@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Lock } from "lucide-react";
 import { Quiz } from "@/components/quiz";
 import type { QuizQuestion } from "@/lib/cursos-data";
 
@@ -13,6 +13,7 @@ interface LessonQuizSectionProps {
   courseId: string;
   lessonId: string;
   accentColor: string;
+  allLessonIds: string[];
 }
 
 export function LessonQuizSection({
@@ -20,12 +21,28 @@ export function LessonQuizSection({
   courseId,
   lessonId,
   accentColor,
+  allLessonIds,
 }: LessonQuizSectionProps) {
   const [passed, setPassed] = useState(false);
+  const [allLessonsComplete, setAllLessonsComplete] = useState(false);
   const { t } = useTranslation();
   const autoSaved = useRef(false);
 
-  // Auto-complete lesson when quiz is passed
+  // Check if all non-quiz lessons are completed
+  useEffect(() => {
+    try {
+      const progress = JSON.parse(
+        localStorage.getItem(PROGRESS_KEY) || "{}"
+      );
+      const otherLessons = allLessonIds.filter((id) => id !== lessonId);
+      const allDone = otherLessons.every((id) => progress[id] === true);
+      setAllLessonsComplete(allDone);
+    } catch {
+      setAllLessonsComplete(false);
+    }
+  }, [allLessonIds, lessonId]);
+
+  // Auto-complete lesson + mark course completed when quiz is passed
   useEffect(() => {
     if (!passed || autoSaved.current) return;
     autoSaved.current = true;
@@ -41,13 +58,37 @@ export function LessonQuizSection({
       // localStorage not available
     }
 
-    // Save to DB (best effort)
+    // Save lesson progress to DB (best effort)
     fetch("/api/progress", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ lessonId }),
     }).catch(() => {});
-  }, [passed, lessonId]);
+
+    // Mark course as completed in DB (best effort)
+    fetch("/api/progress/complete-course", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ courseSlug: courseId }),
+    }).catch(() => {});
+  }, [passed, lessonId, courseId]);
+
+  if (!allLessonsComplete && !passed) {
+    return (
+      <div className="mb-10">
+        <h2 className="mb-4 text-2xl font-bold">{t("lesson.quiz")}</h2>
+        <div className="flex flex-col items-center gap-4 rounded-xl border-2 border-dashed border-gray-300 bg-gray-50 p-10 text-center">
+          <Lock className="size-10 text-gray-400" />
+          <p className="text-lg font-medium text-gray-600">
+            {t("quiz.lockedTitle")}
+          </p>
+          <p className="text-base text-muted-foreground">
+            {t("quiz.lockedDesc")}
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>

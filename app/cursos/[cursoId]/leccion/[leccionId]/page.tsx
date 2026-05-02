@@ -122,6 +122,7 @@ export default async function LeccionPage({
           courseId={curso.id}
           lessonId={leccion.id}
           accentColor={config.color}
+          allLessonIds={curso.lecciones.map((l) => l.id)}
         />
       )}
 

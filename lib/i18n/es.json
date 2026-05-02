@@ -43,6 +43,9 @@
     "noCoursesLevel": "No hay cursos disponibles para este nivel todavía.",
     "completed": "Completado",
     "progressOf": "{{completed}} de {{total}}",
+    "courseCompleted": "¡Felicitaciones! Completaste este curso",
+    "courseCompletedDesc": "Terminaste todas las lecciones y aprobaste el quiz final.",
+    "reviewCourse": "Repasar curso",
     "ratingAverage": "{{average}} ({{count}} calificaciones)",
     "noRatings": "Sin calificaciones aún",
     "rateStar": "Calificar {{star}} estrellas"
@@ -79,7 +82,10 @@
     "needMore": "Necesitas al menos 80% para completar esta lección. ¡Inténtalo de nuevo!",
     "tryAgain": "No te desanimes. Vuelve a leer las lecciones con calma e inténtalo de nuevo.",
     "backToCourse": "Volver al curso",
-    "retryQuiz": "Repetir Quiz"
+    "retryQuiz": "Repetir Quiz",
+    "courseCompleted": "¡Curso completado!",
+    "lockedTitle": "Quiz bloqueado",
+    "lockedDesc": "Completa todas las lecciones anteriores para desbloquear el quiz final."
   },
   "auth": {
     "welcomeBack": "Bienvenido de vuelta",

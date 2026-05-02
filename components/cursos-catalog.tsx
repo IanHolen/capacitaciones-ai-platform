@@ -73,7 +73,7 @@ function CourseCard({ curso, query, progress }: { curso: Curso; query: string; p
   return (
     <Card className="relative flex h-full flex-col transition-shadow hover:shadow-md">
       {isCompleted && (
-        <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-[#22c55e] px-3 py-1 text-sm font-semibold text-white shadow-sm">
+        <div className="absolute right-3 top-3 z-10 flex items-center gap-1.5 rounded-full bg-green-100 px-3 py-1 text-sm font-bold text-green-700 shadow-sm">
           <CheckCircle2 className="size-4" />
           {t("courses.completed")}
         </div>
@@ -129,7 +129,11 @@ function CourseCard({ curso, query, progress }: { curso: Curso; query: string; p
             className="w-full text-base font-semibold"
             style={{ backgroundColor: config.color }}
           >
-            {hasProgress ? t("courses.continueCourse") : t("courses.viewCourse")}
+            {isCompleted
+              ? t("courses.reviewCourse")
+              : hasProgress
+                ? t("courses.continueCourse")
+                : t("courses.viewCourse")}
           </Button>
         </Link>
       </CardFooter>
