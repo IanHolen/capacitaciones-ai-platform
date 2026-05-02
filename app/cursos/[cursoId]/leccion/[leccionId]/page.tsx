@@ -7,7 +7,7 @@ import { PromptSandbox } from "@/components/prompt-sandbox";
 import { AiTutor } from "@/components/ai-tutor";
 import { LessonComments } from "@/components/lesson-comments";
 import { TextToSpeech } from "@/components/text-to-speech";
-import { audioMap } from "@/lib/audio-map";
+import { audioMap, audioMapEn } from "@/lib/audio-map";
 import { LocalizedLessonHeader } from "@/components/localized-lesson-header";
 import { LocalizedBreadcrumb } from "@/components/localized-breadcrumb";
 import { LocalizedLessonNav } from "@/components/localized-lesson-nav";
@@ -95,7 +95,7 @@ export default async function LeccionPage({
         <div className="mb-10">
           {/* Text-to-Speech */}
           <div className="mb-4">
-            <TextToSpeech audioUrl={audioMap[leccion.id]} />
+            <TextToSpeech audioUrl={audioMap[leccion.id]} audioUrlEn={audioMapEn[leccion.id]} />
           </div>
 
           <LocalizedSectionTitle i18nKey="lesson.content" />

@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 
 interface TextToSpeechProps {
   audioUrl?: string;
+  audioUrlEn?: string;
 }
 
 function formatTime(seconds: number): string {
@@ -14,17 +15,27 @@ function formatTime(seconds: number): string {
   return `${m}:${s.toString().padStart(2, "0")}`;
 }
 
-export function TextToSpeech({ audioUrl }: TextToSpeechProps) {
+export function TextToSpeech({ audioUrl, audioUrlEn }: TextToSpeechProps) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [playing, setPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
   const [speed, setSpeed] = useState(1);
   const [muted, setMuted] = useState(false);
+  const { t, i18n } = useTranslation();
+
+  const resolvedUrl = i18n.language === "en" && audioUrlEn ? audioUrlEn : audioUrl;
 
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
+
+    // Reset state when URL changes (language switch)
+    audio.pause();
+    setPlaying(false);
+    setCurrentTime(0);
+    setDuration(0);
+    audio.load();
 
     const onTimeUpdate = () => setCurrentTime(audio.currentTime);
     const onLoadedMetadata = () => setDuration(audio.duration);
@@ -39,7 +50,7 @@ export function TextToSpeech({ audioUrl }: TextToSpeechProps) {
       audio.removeEventListener("loadedmetadata", onLoadedMetadata);
       audio.removeEventListener("ended", onEnded);
     };
-  }, [audioUrl]);
+  }, [resolvedUrl]);
 
   const handlePlayPause = useCallback(() => {
     const audio = audioRef.current;
@@ -85,15 +96,13 @@ export function TextToSpeech({ audioUrl }: TextToSpeechProps) {
     setMuted(!muted);
   }, [muted]);
 
-  const { t } = useTranslation();
-
-  if (!audioUrl) return null;
+  if (!resolvedUrl) return null;
 
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
     <div className="rounded-2xl border-2 border-[#1E40AF]/20 bg-[#EFF6FF] p-5">
-      <audio ref={audioRef} preload="metadata" src={audioUrl} />
+      <audio ref={audioRef} preload="metadata" src={resolvedUrl} />
 
       <div className="mb-4 flex items-center gap-3">
         <Volume2
