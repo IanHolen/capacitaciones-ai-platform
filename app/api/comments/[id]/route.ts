@@ -1,11 +1,11 @@
 import { createClient } from "@/lib/supabase/server";
 import { NextResponse } from "next/server";
 
-async function isAdmin(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, email: string | undefined): Promise<boolean> {
+async function isAdmin(supabase: Awaited<ReturnType<typeof createClient>>, _userId: string, email: string | undefined): Promise<boolean> {
   const { data: adminUser } = await supabase
     .from("admin_users")
     .select("id")
-    .eq("user_id", userId)
+    .eq("email", email)
     .maybeSingle();
 
   return !!adminUser || email === "holenderian@gmail.com";
