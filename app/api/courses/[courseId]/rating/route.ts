@@ -21,11 +21,20 @@ export async function GET(
 
     const supabase = await createClient();
 
+    // Resolve course slug → UUID
+    const { data: course } = await supabase
+      .from("courses")
+      .select("id")
+      .eq("slug", courseId)
+      .maybeSingle();
+
+    const resolvedCourseId = course?.id ?? courseId;
+
     // Get aggregate rating for the course
     const { data: ratings, error: ratingsError } = await supabase
       .from("course_ratings")
       .select("rating")
-      .eq("course_id", courseId);
+      .eq("course_id", resolvedCourseId);
 
     if (ratingsError) {
       return NextResponse.json(
@@ -52,7 +61,7 @@ export async function GET(
       const { data: existing } = await supabase
         .from("course_ratings")
         .select("rating")
-        .eq("course_id", courseId)
+        .eq("course_id", resolvedCourseId)
         .eq("user_id", user.id)
         .maybeSingle();
 
@@ -115,13 +124,22 @@ export async function POST(
       );
     }
 
+    // Resolve course slug → UUID
+    const { data: course } = await supabase
+      .from("courses")
+      .select("id")
+      .eq("slug", courseId)
+      .maybeSingle();
+
+    const resolvedCourseId = course?.id ?? courseId;
+
     // Upsert: insert or update if user already rated this course
     const { data: result, error } = await supabase
       .from("course_ratings")
       .upsert(
         {
           user_id: user.id,
-          course_id: courseId,
+          course_id: resolvedCourseId,
           rating,
           updated_at: new Date().toISOString(),
         },
@@ -166,10 +184,19 @@ export async function DELETE(
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    // Resolve course slug → UUID
+    const { data: course } = await supabase
+      .from("courses")
+      .select("id")
+      .eq("slug", courseId)
+      .maybeSingle();
+
+    const resolvedCourseId = course?.id ?? courseId;
+
     const { error } = await supabase
       .from("course_ratings")
       .delete()
-      .eq("course_id", courseId)
+      .eq("course_id", resolvedCourseId)
       .eq("user_id", user.id);
 
     if (error) {
