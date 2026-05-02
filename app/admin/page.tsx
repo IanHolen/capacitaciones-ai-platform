@@ -37,11 +37,11 @@ type Tab = "overview" | "usuarios" | "cursos" | "contenido" | "errores";
 interface Metrics {
   total_users?: number;
   active_users_7d?: number;
-  lessons_completed?: number;
-  quizzes_approved?: number;
-  quizzes_failed?: number;
+  total_lessons_completed?: number;
+  total_quizzes_passed?: number;
+  total_quizzes_attempted?: number;
   total_comments?: number;
-  total_courses?: number;
+  courses_count?: number;
 }
 
 interface ChartPoint {
@@ -244,12 +244,12 @@ export default function AdminPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <StatCard icon={<Users className="size-5" />} label="Total Usuarios" value={metrics.total_users ?? 0} color="#1E40AF" />
             <StatCard icon={<TrendingUp className="size-5" />} label="Activos (7d)" value={metrics.active_users_7d ?? 0} color="#22c55e" />
-            <StatCard icon={<CheckCircle className="size-5" />} label="Lecciones Completadas" value={metrics.lessons_completed ?? 0} color="#7C3AED" />
-            <StatCard icon={<BookOpen className="size-5" />} label="Cursos Totales" value={15} color="#f59e0b" />
+            <StatCard icon={<CheckCircle className="size-5" />} label="Lecciones Completadas" value={metrics.total_lessons_completed ?? 0} color="#7C3AED" />
+            <StatCard icon={<BookOpen className="size-5" />} label="Cursos Totales" value={metrics.courses_count ?? 0} color="#f59e0b" />
           </div>
           <div className="grid gap-4 sm:grid-cols-3">
-            <StatCard icon={<CheckCircle className="size-5" />} label="Quizzes Aprobados" value={metrics.quizzes_approved ?? 0} color="#22c55e" />
-            <StatCard icon={<XCircle className="size-5" />} label="Quizzes Reprobados" value={metrics.quizzes_failed ?? 0} color="#ef4444" />
+            <StatCard icon={<CheckCircle className="size-5" />} label="Quizzes Aprobados" value={metrics.total_quizzes_passed ?? 0} color="#22c55e" />
+            <StatCard icon={<XCircle className="size-5" />} label="Quizzes Reprobados" value={Math.max(0, (metrics.total_quizzes_attempted ?? 0) - (metrics.total_quizzes_passed ?? 0))} color="#ef4444" />
             <StatCard icon={<MessageSquare className="size-5" />} label="Comentarios" value={metrics.total_comments ?? 0} color="#06b6d4" />
           </div>
           <div className="grid gap-6 lg:grid-cols-2">

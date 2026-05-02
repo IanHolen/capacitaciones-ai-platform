@@ -10,21 +10,8 @@ export async function GET() {
 
   if (!rpcError && data != null) {
     // RPC may return array or object — normalize to flat object
-    const raw = Array.isArray(data) ? data[0] : data;
-    // Map RPC field names → frontend-expected names
-    return NextResponse.json({
-      total_users: raw?.total_users ?? 0,
-      active_users_7d: raw?.active_users_7d ?? 0,
-      lessons_completed: raw?.total_lessons_completed ?? 0,
-      quizzes_approved: raw?.total_quizzes_passed ?? 0,
-      quizzes_failed: Math.max(
-        0,
-        (raw?.total_quizzes_attempted ?? raw?.total_quizzes_passed ?? 0) -
-          (raw?.total_quizzes_passed ?? 0),
-      ),
-      total_comments: raw?.total_comments ?? 0,
-      total_courses: raw?.courses_count ?? 0,
-    });
+    const metrics = Array.isArray(data) ? data[0] : data;
+    return NextResponse.json(metrics ?? {});
   }
 
   // Fallback: build metrics from direct queries if RPC doesn't exist
@@ -53,10 +40,10 @@ export async function GET() {
   return NextResponse.json({
     total_users: usersRes.count ?? 0,
     active_users_7d: activeRes.count ?? 0,
-    lessons_completed: lessonsRes.count ?? 0,
-    quizzes_approved: quizzesPassRes.count ?? 0,
-    quizzes_failed: quizzesFailRes.count ?? 0,
+    total_lessons_completed: lessonsRes.count ?? 0,
+    total_quizzes_passed: quizzesPassRes.count ?? 0,
+    total_quizzes_attempted: (quizzesPassRes.count ?? 0) + (quizzesFailRes.count ?? 0),
     total_comments: commentsRes.count ?? 0,
-    total_courses: 15,
+    courses_count: 15,
   });
 }
