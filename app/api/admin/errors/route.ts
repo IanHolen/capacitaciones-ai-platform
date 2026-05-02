@@ -28,8 +28,16 @@ export async function GET(request: Request) {
     );
   }
 
+  // Map DB column names to frontend-expected field names
+  const mapped = (errors ?? []).map((e) => ({
+    timestamp: e.created_at,
+    route: e.route,
+    message: e.error_message,
+    status_code: e.status_code,
+  }));
+
   return NextResponse.json({
-    errors: errors ?? [],
-    count: errors?.length ?? 0,
+    errors: mapped,
+    count: mapped.length,
   });
 }

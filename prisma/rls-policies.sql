@@ -199,6 +199,7 @@ BEGIN
     'completed_enrollments', (SELECT count(*) FROM enrollments WHERE status = 'COMPLETED'),
     'total_lessons_completed', (SELECT count(*) FROM user_progress WHERE completed = true),
     'total_quizzes_passed', (SELECT count(*) FROM user_exercise_results WHERE is_correct = true),
+    'total_quizzes_failed', (SELECT count(*) FROM user_exercise_results WHERE is_correct = false),
     'total_comments', (SELECT count(*) FROM comments),
     'total_badges_earned', (SELECT count(*) FROM user_badges),
     'courses_count', (SELECT count(*) FROM courses WHERE deleted_at IS NULL),

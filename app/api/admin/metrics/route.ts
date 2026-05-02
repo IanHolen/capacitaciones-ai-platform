@@ -10,8 +10,14 @@ export async function GET() {
 
   if (!rpcError && data != null) {
     // RPC may return array or object — normalize to flat object
-    const metrics = Array.isArray(data) ? data[0] : data;
-    return NextResponse.json(metrics ?? {});
+    const raw = Array.isArray(data) ? data[0] : data;
+    const metrics = raw ?? {};
+    // Derive total_quizzes_attempted from passed + failed for the frontend
+    if (metrics.total_quizzes_passed != null || metrics.total_quizzes_failed != null) {
+      metrics.total_quizzes_attempted =
+        (metrics.total_quizzes_passed ?? 0) + (metrics.total_quizzes_failed ?? 0);
+    }
+    return NextResponse.json(metrics);
   }
 
   // Fallback: build metrics from direct queries if RPC doesn't exist
