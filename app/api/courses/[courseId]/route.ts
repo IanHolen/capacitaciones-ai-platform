@@ -15,10 +15,10 @@ function localize<T extends Record<string, unknown>>(row: T, lang: string, field
 
 export async function GET(
   request: Request,
-  { params }: { params: Promise<{ id: string }> }
+  { params }: { params: Promise<{ courseId: string }> }
 ) {
   try {
-    const { id } = await params;
+    const { courseId: id } = await params;
     const { searchParams } = new URL(request.url);
     const lang = searchParams.get('lang') || 'es';
 

@@ -15,8 +15,8 @@ export async function requireAdmin() {
   const { data: adminUser } = await supabase
     .from("admin_users")
     .select("id")
-    .eq("user_id", user.id)
-    .single();
+    .eq("email", user.email)
+    .maybeSingle();
 
   if (!adminUser && user.email !== "holenderian@gmail.com") {
     return { error: NextResponse.json({ error: "Forbidden" }, { status: 403 }), supabase: null, user: null };
