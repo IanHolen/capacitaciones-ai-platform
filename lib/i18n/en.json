@@ -41,6 +41,8 @@
     "filterByLevel": "Filter courses by level",
     "noResults": "No courses found for \"{{query}}\".",
     "noCoursesLevel": "No courses available for this level yet.",
+    "completed": "Completed",
+    "progressOf": "{{completed}} of {{total}}",
     "ratingAverage": "{{average}} ({{count}} ratings)",
     "noRatings": "No ratings yet",
     "rateStar": "Rate {{star}} stars"
@@ -231,6 +233,16 @@
     "ctaTitle": "Start for free",
     "ctaSub": "There's nothing to lose and a lot to gain. Your first course is waiting.",
     "ctaButton": "Create my free account"
+  },
+  "rating": {
+    "rateThisCourse": "Rate this course",
+    "starLabel": "{{value}} star",
+    "summary": "{{average}} out of 5 ({{count}} ratings)",
+    "noRatings": "No ratings yet",
+    "yourRating": "Your rating: {{rating}} out of 5",
+    "loginRequired": "Log in to rate",
+    "error": "Failed to save rating",
+    "loading": "Loading rating..."
   },
   "a11y": {
     "skipToContent": "Skip to main content",

@@ -3,6 +3,9 @@ import {
   curso1QuizEn,
   curso2QuizEn,
   curso3QuizEn,
+  curso4QuizEn,
+  curso5QuizEn,
+  curso6QuizEn,
   curso7QuizEn,
   curso8QuizEn,
   curso9QuizEn,
@@ -778,3 +781,348 @@ export const curso9Quiz: QuizQuestion[] = mergeEnglish([
       "El flujo correcto va de idea → investigación → esquema → borrador → edición → publicación.",
   },
 ], curso9QuizEn);
+
+// ─── Curso 4: Domina ChatGPT, Claude y Gemini ──────────────────────────────
+
+export const curso4Quiz: QuizQuestion[] = mergeEnglish([
+  {
+    question: "Cuál es una diferencia clave entre ChatGPT y Claude?",
+    options: [
+      "ChatGPT es gratis y Claude es siempre de pago",
+      "Claude tiene una ventana de contexto más grande y puede procesar documentos más largos",
+      "ChatGPT puede generar imágenes pero Claude no puede hacer nada con imágenes",
+      "Claude solo funciona en inglés",
+    ],
+    correctIndex: 1,
+    explanation: "Claude se destaca por su ventana de contexto grande, ideal para documentos largos. Ambos tienen versiones gratis y de pago.",
+  },
+  {
+    question: "Qué es Gemini de Google?",
+    options: [
+      "Un motor de búsqueda tradicional",
+      "Un asistente de IA integrado con los servicios de Google como Gmail, Drive y Maps",
+      "Una red social de Google",
+      "Un navegador web alternativo a Chrome",
+    ],
+    correctIndex: 1,
+    explanation: "Gemini es el asistente de IA de Google, integrado con Gmail, Drive, Maps y otros servicios de Google.",
+  },
+  {
+    question: "Qué son los 'Artifacts' de Claude?",
+    options: [
+      "Errores que comete la IA",
+      "Un panel lateral donde Claude muestra código, documentos y contenido que puedes editar directamente",
+      "Los datos de entrenamiento de Claude",
+      "Una función de pago premium",
+    ],
+    correctIndex: 1,
+    explanation: "Los Artifacts son un panel lateral donde Claude puede crear y mostrar código, documentos, tablas y otro contenido editable.",
+  },
+  {
+    question: "Cuándo es mejor usar Perplexity en vez de ChatGPT o Claude?",
+    options: [
+      "Para escribir código de programación",
+      "Para generar imágenes artísticas",
+      "Para buscar información actualizada con fuentes verificables",
+      "Para traducir documentos largos",
+    ],
+    correctIndex: 2,
+    explanation: "Perplexity se especializa en búsquedas con IA, proporcionando respuestas con fuentes citadas y verificables.",
+  },
+  {
+    question: "Qué ventaja tienen las apps móviles de IA con modo voz?",
+    options: [
+      "Son más baratas que la versión web",
+      "Permiten tener conversaciones naturales con IA, ideal para cuando no puedes escribir",
+      "Funcionan sin conexión a internet",
+      "Tienen más funciones que la versión de escritorio",
+    ],
+    correctIndex: 1,
+    explanation: "El modo voz permite conversar naturalmente con la IA, útil cuando estás caminando, cocinando o no puedes escribir.",
+  },
+  {
+    question: "Qué son los 'Custom GPTs' de ChatGPT?",
+    options: [
+      "Versiones más caras de ChatGPT",
+      "Asistentes personalizados que puedes crear con instrucciones y documentos específicos",
+      "Plugins que se instalan en el navegador",
+      "Modelos de IA que solo funcionan offline",
+    ],
+    correctIndex: 1,
+    explanation: "Los Custom GPTs son asistentes personalizados que puedes crear y configurar con instrucciones, conocimiento y comportamiento específico.",
+  },
+  {
+    question: "Qué es una 'extensión' en Gemini?",
+    options: [
+      "Un cable para conectar el teléfono",
+      "Una conexión con servicios de Google que permite a Gemini acceder a tu correo, documentos y más",
+      "Un programa que hay que descargar por separado",
+      "Una suscripción premium de Google",
+    ],
+    correctIndex: 1,
+    explanation: "Las extensiones conectan Gemini con servicios como Gmail, Drive y Maps, permitiéndole acceder y trabajar con tu información.",
+  },
+  {
+    question: "Para qué situación es mejor usar Claude en vez de ChatGPT?",
+    options: [
+      "Generar imágenes fotorrealistas",
+      "Analizar un documento PDF de 100 páginas",
+      "Buscar información en tiempo real de internet",
+      "Crear presentaciones de PowerPoint",
+    ],
+    correctIndex: 1,
+    explanation: "Claude es ideal para documentos largos gracias a su ventana de contexto grande, pudiendo procesar PDFs extensos de forma efectiva.",
+  },
+  {
+    question: "Qué significa que un asistente de IA tiene 'memoria'?",
+    options: [
+      "Que tiene sentimientos y recuerdos como una persona",
+      "Que puede recordar conversaciones anteriores y preferencias del usuario entre sesiones",
+      "Que almacena todos los datos de internet",
+      "Que no necesita conexión a internet para funcionar",
+    ],
+    correctIndex: 1,
+    explanation: "La 'memoria' en IA significa que el asistente puede recordar lo que discutiste en conversaciones anteriores y tus preferencias.",
+  },
+  {
+    question: "Cuál es la principal limitación que comparten todos los asistentes de IA actuales?",
+    options: [
+      "No pueden entender español",
+      "Solo funcionan con conexión a internet rápida",
+      "Pueden generar información incorrecta con confianza (alucinaciones)",
+      "No pueden procesar texto de más de 100 palabras",
+    ],
+    correctIndex: 2,
+    explanation: "Todos los asistentes de IA pueden 'alucinar' — generar información que suena correcta pero es falsa. Siempre hay que verificar datos importantes.",
+  },
+], curso4QuizEn);
+
+// ─── Curso 5: Prompts efectivos ─────────────────────────────────────────────
+
+export const curso5Quiz: QuizQuestion[] = mergeEnglish([
+  {
+    question: "Cuál es la fórmula básica para un buen prompt?",
+    options: [
+      "Pregunta + Respuesta esperada",
+      "ROL + TAREA + CONTEXTO + FORMATO",
+      "Saludo + Pregunta + Despedida",
+      "Tema + Subtema + Detalle",
+    ],
+    correctIndex: 1,
+    explanation: "La fórmula ROL + TAREA + CONTEXTO + FORMATO ayuda a estructurar prompts que obtienen respuestas precisas y útiles.",
+  },
+  {
+    question: "Por qué es importante dar contexto en un prompt?",
+    options: [
+      "Para que la IA tarde más en responder",
+      "Porque la IA no puede responder sin contexto",
+      "Para transformar respuestas genéricas en personalizadas y relevantes",
+      "Para que la respuesta sea más larga",
+    ],
+    correctIndex: 2,
+    explanation: "El contexto permite que la IA entienda tu situación específica y genere respuestas mucho más útiles y personalizadas.",
+  },
+  {
+    question: "Cuál es un ejemplo de prompt vago vs. específico?",
+    options: [
+      "Vago: 'Escríbeme algo' / Específico: 'Escríbeme un email formal de 3 párrafos para solicitar una reunión con mi jefe'",
+      "Vago: 'Hola' / Específico: 'Buenos días'",
+      "Vago: un prompt corto / Específico: un prompt largo",
+      "Vago: en español / Específico: en inglés",
+    ],
+    correctIndex: 0,
+    explanation: "Un prompt específico incluye detalles como el tipo de contenido, formato, tono y longitud deseada.",
+  },
+  {
+    question: "Qué significa 'iterar' un prompt?",
+    options: [
+      "Borrar el prompt y empezar de cero",
+      "Copiar el mismo prompt varias veces",
+      "Mejorar el prompt progresivamente basándote en las respuestas que recibes",
+      "Traducir el prompt a otro idioma",
+    ],
+    correctIndex: 2,
+    explanation: "Iterar significa refinar tu prompt paso a paso, ajustando según las respuestas para obtener mejores resultados.",
+  },
+  {
+    question: "Cuál de estos es un buen prompt para pedir correcciones?",
+    options: [
+      "'Arreglá esto'",
+      "'Está mal, hacelo de nuevo'",
+      "'La respuesta es buena pero necesito que sea más formal, más corta y que incluya datos específicos'",
+      "'No me gustó'",
+    ],
+    correctIndex: 2,
+    explanation: "Un buen pedido de corrección explica específicamente qué cambiar: tono, longitud, contenido, formato, etc.",
+  },
+  {
+    question: "Qué es un prompt de 'rol' o 'role prompting'?",
+    options: [
+      "Pedirle a la IA que adivine tu profesión",
+      "Asignarle a la IA un rol específico como 'Sos un nutricionista experto' para obtener respuestas especializadas",
+      "Usar la IA solo para juegos de rol",
+      "Pedirle a la IA que actúe como un robot",
+    ],
+    correctIndex: 1,
+    explanation: "Asignar un rol le da a la IA un marco de referencia que mejora significativamente la calidad y relevancia de las respuestas.",
+  },
+  {
+    question: "Por qué es útil pedir un formato específico en el prompt?",
+    options: [
+      "Porque la IA no puede responder sin un formato",
+      "Para que la respuesta sea exactamente como la necesitas: lista, tabla, párrafo, email, etc.",
+      "Para que la IA responda más rápido",
+      "Para que la respuesta sea más corta",
+    ],
+    correctIndex: 1,
+    explanation: "Especificar el formato (tabla, lista, email, etc.) te ahorra trabajo de reformateo y asegura que la respuesta sea directamente usable.",
+  },
+  {
+    question: "Cuál es la mejor estrategia si la IA da una respuesta incorrecta?",
+    options: [
+      "Cerrar la conversación y empezar otra",
+      "Repetir exactamente el mismo prompt",
+      "Indicar qué está mal y pedir que corrija, dando más contexto o restricciones",
+      "Cambiar a otro asistente de IA",
+    ],
+    correctIndex: 2,
+    explanation: "La mejor estrategia es señalar el error específico y dar más contexto. La conversación iterativa es clave para buenos resultados.",
+  },
+  {
+    question: "Qué tipo de prompt usarías para resumir un artículo largo?",
+    options: [
+      "'Resumilo'",
+      "'Resume este artículo en 5 puntos clave, enfocándote en las conclusiones principales. Público: profesionales de marketing'",
+      "'Leé esto'",
+      "'Qué dice acá?'",
+    ],
+    correctIndex: 1,
+    explanation: "Un buen prompt de resumen especifica la cantidad de puntos, el enfoque y el público objetivo.",
+  },
+  {
+    question: "Cuántas formas de ser más específico en un prompt se mencionan en el curso?",
+    options: [
+      "2 formas",
+      "4 formas",
+      "6 formas",
+      "10 formas",
+    ],
+    correctIndex: 2,
+    explanation: "El curso menciona 6 formas de ser más específico: definir el público, el tono, el formato, la longitud, las restricciones y dar ejemplos.",
+  },
+], curso5QuizEn);
+
+// ─── Curso 6: IA en tu vida cotidiana ───────────────────────────────────────
+
+export const curso6Quiz: QuizQuestion[] = mergeEnglish([
+  {
+    question: "Cuál es el mejor enfoque para usar IA al escribir emails?",
+    options: [
+      "Copiar exactamente lo que la IA genera sin revisar",
+      "Dar contexto sobre el destinatario, tono y propósito, y luego personalizar el resultado",
+      "Solo usar la IA para emails informales",
+      "Nunca usar IA para comunicaciones profesionales",
+    ],
+    correctIndex: 1,
+    explanation: "Lo ideal es dar contexto claro y luego personalizar la respuesta de la IA para que suene auténtica.",
+  },
+  {
+    question: "Cómo puede la IA ayudar con recetas de cocina?",
+    options: [
+      "Solo puede buscar recetas existentes",
+      "Puede crear recetas personalizadas basadas en los ingredientes que tenés, restricciones alimentarias y preferencias",
+      "Solo funciona con recetas en inglés",
+      "No es confiable para temas de cocina",
+    ],
+    correctIndex: 1,
+    explanation: "La IA puede crear recetas personalizadas considerando ingredientes disponibles, dietas, tiempo de preparación y más.",
+  },
+  {
+    question: "Cuál es la forma correcta de usar IA para ayudar con tareas escolares?",
+    options: [
+      "Pedirle que haga la tarea completa por el estudiante",
+      "Usarla como tutor que explica conceptos y guía al estudiante paso a paso",
+      "Solo usarla para copiar respuestas",
+      "No debería usarse nunca en educación",
+    ],
+    correctIndex: 1,
+    explanation: "La IA funciona mejor como tutor: explicando conceptos, dando pistas y guiando al estudiante para que aprenda, no dando respuestas directas.",
+  },
+  {
+    question: "Qué puede hacer la IA al planificar un viaje?",
+    options: [
+      "Solo buscar vuelos",
+      "Crear itinerarios completos con actividades, presupuestos, checklists y recomendaciones personalizadas",
+      "Solo funciona para viajes dentro del país",
+      "Reservar hoteles automáticamente",
+    ],
+    correctIndex: 1,
+    explanation: "La IA puede crear itinerarios detallados día por día, estimar presupuestos, crear checklists de equipaje y dar recomendaciones según tus intereses.",
+  },
+  {
+    question: "Cuál es la mejor forma de pedirle a la IA que resuma un artículo?",
+    options: [
+      "'Resumilo'",
+      "Especificar el tipo de resumen (ejecutivo, puntos clave, para niños), la longitud y el enfoque",
+      "Copiar solo el primer párrafo",
+      "Pedirle que lo traduzca",
+    ],
+    correctIndex: 1,
+    explanation: "Un buen pedido de resumen especifica el tipo, la longitud, el público y qué aspectos enfatizar.",
+  },
+  {
+    question: "Para qué es útil la IA al traducir entre idiomas?",
+    options: [
+      "Solo para traducciones palabra por palabra",
+      "Para traducciones con contexto cultural, expresiones locales y diferentes niveles de formalidad",
+      "Solo funciona entre inglés y español",
+      "Es menos precisa que Google Translate",
+    ],
+    correctIndex: 1,
+    explanation: "La IA puede traducir con contexto, adaptando expresiones culturales, nivel de formalidad y jerga específica.",
+  },
+  {
+    question: "Qué ventaja tiene usar IA para escribir mensajes difíciles?",
+    options: [
+      "La IA siempre escribe mejor que las personas",
+      "Te ayuda a encontrar el tono correcto y las palabras adecuadas para situaciones delicadas",
+      "Los mensajes generados por IA son siempre perfectos",
+      "Es más rápido que pensar qué escribir",
+    ],
+    correctIndex: 1,
+    explanation: "La IA te ayuda a encontrar la forma correcta de comunicar mensajes difíciles — quejas, disculpas, negociaciones — con el tono apropiado.",
+  },
+  {
+    question: "Cuál es una limitación importante de la IA al dar consejos de salud?",
+    options: [
+      "No puede entender síntomas",
+      "No reemplaza la consulta médica profesional y puede dar información incorrecta",
+      "Solo funciona para enfermedades comunes",
+      "Necesita acceso a tu historial médico",
+    ],
+    correctIndex: 1,
+    explanation: "La IA puede dar información general de salud pero NUNCA reemplaza la consulta con un profesional médico.",
+  },
+  {
+    question: "Cómo puede la IA ayudar con las finanzas personales?",
+    options: [
+      "Invirtiendo dinero automáticamente",
+      "Creando presupuestos, categorizando gastos y sugiriendo estrategias de ahorro",
+      "Prediciendo con certeza qué acciones van a subir",
+      "Accediendo a tu cuenta bancaria",
+    ],
+    correctIndex: 1,
+    explanation: "La IA puede ayudar a organizar finanzas: crear presupuestos, analizar patrones de gastos y sugerir formas de ahorrar.",
+  },
+  {
+    question: "Qué aprendiste en el Nivel Básico sobre el uso de IA en la vida cotidiana?",
+    options: [
+      "La IA solo sirve para programadores",
+      "La IA puede asistir en emails, cocina, viajes, educación, traducción, resúmenes y muchas tareas diarias",
+      "La IA reemplaza completamente el trabajo humano",
+      "Solo los expertos pueden beneficiarse de la IA",
+    ],
+    correctIndex: 1,
+    explanation: "El Nivel Básico demostró que la IA es una herramienta versátil que cualquier persona puede usar para mejorar tareas cotidianas.",
+  },
+], curso6QuizEn);

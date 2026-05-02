@@ -62,6 +62,11 @@ export function LocalizedCourseDetail({
           {displayDescripcion}
         </p>
 
+        {/* Course Rating */}
+        <div className="mb-4">
+          <CourseRating courseId={curso.id} />
+        </div>
+
         {/* Course Stats */}
         <div className="flex flex-wrap items-center gap-6 text-base text-muted-foreground">
           <span className="flex items-center gap-2">
@@ -72,11 +77,6 @@ export function LocalizedCourseDetail({
             <Clock className="size-5" aria-hidden="true" />
             {displayDuracion}
           </span>
-        </div>
-
-        {/* Course Rating */}
-        <div className="mt-4">
-          <CourseRating courseId={curso.id} />
         </div>
 
         {/* Progress Bar */}

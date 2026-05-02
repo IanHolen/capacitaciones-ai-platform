@@ -134,6 +134,24 @@ CREATE POLICY "user_goals_update_own" ON user_goals
   FOR UPDATE USING (auth.uid()::text = user_id::text);
 
 -- ============================================================
+-- COURSE RATINGS: public read, own user insert/update/delete
+-- ============================================================
+
+ALTER TABLE course_ratings ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "course_ratings_public_read" ON course_ratings
+  FOR SELECT USING (true);
+
+CREATE POLICY "course_ratings_insert_own" ON course_ratings
+  FOR INSERT WITH CHECK (auth.uid()::text = user_id::text);
+
+CREATE POLICY "course_ratings_update_own" ON course_ratings
+  FOR UPDATE USING (auth.uid()::text = user_id::text);
+
+CREATE POLICY "course_ratings_delete_own" ON course_ratings
+  FOR DELETE USING (auth.uid()::text = user_id::text);
+
+-- ============================================================
 -- ADMIN: admin_users table + read access on all tables
 -- ============================================================
 
@@ -163,6 +181,7 @@ CREATE POLICY "user_exercise_results_admin_read" ON user_exercise_results FOR SE
 CREATE POLICY "badges_admin_read" ON badges FOR SELECT USING (EXISTS (SELECT 1 FROM admin_users WHERE email = auth.jwt() ->> 'email'));
 CREATE POLICY "user_badges_admin_read" ON user_badges FOR SELECT USING (EXISTS (SELECT 1 FROM admin_users WHERE email = auth.jwt() ->> 'email'));
 CREATE POLICY "comments_admin_read" ON comments FOR SELECT USING (EXISTS (SELECT 1 FROM admin_users WHERE email = auth.jwt() ->> 'email'));
+CREATE POLICY "course_ratings_admin_read" ON course_ratings FOR SELECT USING (EXISTS (SELECT 1 FROM admin_users WHERE email = auth.jwt() ->> 'email'));
 
 -- ============================================================
 -- RPC FUNCTIONS: metrics for admin dashboard

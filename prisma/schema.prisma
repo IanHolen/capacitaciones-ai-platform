@@ -117,9 +117,10 @@ model Course {
   updatedAt DateTime  @updatedAt @map("updated_at")
   deletedAt DateTime? @map("deleted_at")
 
-  level       Level        @relation(fields: [levelId], references: [id])
-  lessons     Lesson[]
-  enrollments Enrollment[]
+  level        Level          @relation(fields: [levelId], references: [id])
+  lessons      Lesson[]
+  enrollments  Enrollment[]
+  courseRatings CourseRating[]
 
   @@index([levelId])
   @@index([slug])
@@ -401,13 +402,14 @@ model Comment {
 model CourseRating {
   id       String @id @default(uuid()) @db.Uuid
   userId   String @map("user_id") @db.Uuid
-  courseId  String @map("course_id")
+  courseId  String @map("course_id") @db.Uuid
   rating   Int
 
   createdAt DateTime @default(now()) @map("created_at")
   updatedAt DateTime @updatedAt @map("updated_at")
 
-  user User @relation(fields: [userId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+  course Course @relation(fields: [courseId], references: [id])
 
   @@unique([userId, courseId])
   @@index([courseId])
