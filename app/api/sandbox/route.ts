@@ -1,4 +1,4 @@
-import { chatStream } from "@/lib/llm-client";
+import { chatStream, hasLLMProvider } from "@/lib/llm-client";
 import { headers } from "next/headers";
 import { NextResponse } from "next/server";
 
@@ -17,9 +17,9 @@ function isRateLimited(ip: string): boolean {
 }
 
 export async function POST(request: Request) {
-  if (!process.env.GROQ_API_KEY && !process.env.GEMINI_API_KEY) {
+  if (!hasLLMProvider()) {
     return NextResponse.json(
-      { error: "El sandbox no está configurado. Falta una API key (GROQ o GEMINI)." },
+      { error: "El sandbox no está configurado. Falta una API key (GEMINI o GROQ)." },
       { status: 503 }
     );
   }

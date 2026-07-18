@@ -22,6 +22,8 @@ import {
 } from "lucide-react";
 import type { Curso, Nivel } from "@/lib/cursos-data";
 import { CourseRating } from "@/components/course-rating";
+import { CertificateButton } from "@/components/certificate-button";
+import { createClient } from "@/lib/supabase/client";
 
 const PROGRESS_KEY = "capacitaciones_progress";
 
@@ -75,13 +77,23 @@ export function LocalizedCourseDetail({
   const levelLabel = t(`levels.${curso.nivel}`, nivelLabel);
   const { completadas, lessonStatus, isComplete } = useCourseProgress(curso);
 
+  const [userName, setUserName] = useState("Estudiante");
+  useEffect(() => {
+    const supabase = createClient();
+    supabase.auth.getUser().then(({ data: { user } }) => {
+      if (user) {
+        setUserName(user.user_metadata?.name || user.email?.split("@")[0] || "Estudiante");
+      }
+    });
+  }, []);
+
   return (
     <>
       {/* Completion Banner */}
       {isComplete && (
-        <div className="mb-6 flex items-center gap-3 rounded-xl border-2 border-green-400 bg-green-50 p-5 shadow-sm">
-          <Trophy className="size-8 text-green-600" />
-          <div>
+        <div className="mb-6 flex flex-col gap-4 rounded-xl border-2 border-green-400 bg-green-50 p-5 shadow-sm sm:flex-row sm:items-center">
+          <Trophy className="size-8 shrink-0 text-green-600" />
+          <div className="flex-1">
             <p className="text-lg font-bold text-green-800">
               {t("courses.courseCompleted")}
             </p>
@@ -89,6 +101,12 @@ export function LocalizedCourseDetail({
               {t("courses.courseCompletedDesc")}
             </p>
           </div>
+          <CertificateButton
+            userName={userName}
+            levelName={levelLabel}
+            levelColor={nivelColor}
+            courses={[displayTitulo]}
+          />
         </div>
       )}
 

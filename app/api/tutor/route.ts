@@ -1,4 +1,4 @@
-import { chatStream } from "@/lib/llm-client";
+import { chatStream, hasLLMProvider } from "@/lib/llm-client";
 import { cursos } from "@/lib/cursos-data";
 import { NextResponse } from "next/server";
 
@@ -18,9 +18,9 @@ function getLessonContext(lessonId: string, lang: string): string {
 }
 
 export async function POST(request: Request) {
-  if (!process.env.GROQ_API_KEY) {
+  if (!hasLLMProvider()) {
     return NextResponse.json(
-      { error: "El tutor no está configurado. Falta la API key de Groq." },
+      { error: "El tutor no está configurado. Falta una API key (GEMINI o GROQ)." },
       { status: 503 }
     );
   }

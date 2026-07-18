@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 import CursosCatalog from "@/components/cursos-catalog";
 import { OnboardingModal } from "@/components/onboarding-modal";
+import { PersonalizedSection } from "@/components/personalized-section";
 
 export default function CursosPage() {
   const { t } = useTranslation();
@@ -21,6 +22,8 @@ export default function CursosPage() {
           {t("courses.catalogSub")}
         </p>
       </div>
+
+      <PersonalizedSection />
 
       <Suspense fallback={<div className="text-center text-muted-foreground">...</div>}>
         <CursosCatalog />

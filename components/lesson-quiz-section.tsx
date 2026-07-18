@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { CheckCircle2, Lock } from "lucide-react";
-import { Quiz } from "@/components/quiz";
+import { Quiz, type QuizResult } from "@/components/quiz";
 import type { QuizQuestion } from "@/lib/cursos-data";
 
 const PROGRESS_KEY = "capacitaciones_progress";
@@ -73,6 +73,23 @@ export function LessonQuizSection({
     }).catch(() => {});
   }, [passed, lessonId, courseId]);
 
+  // Registrar cada intento (aprobado o no) en la base de datos
+  const handleFinish = (result: QuizResult) => {
+    fetch("/api/quiz-attempts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        courseId,
+        lessonId,
+        score: result.score,
+        total: result.total,
+        passed: result.passed,
+      }),
+    }).catch(() => {
+      // Sin conexión o sin sesión — no bloquear la experiencia
+    });
+  };
+
   if (!allLessonsComplete && !passed) {
     return (
       <div className="mb-10">
@@ -100,6 +117,7 @@ export function LessonQuizSection({
             courseId={courseId}
             accentColor={accentColor}
             onPass={() => setPassed(true)}
+            onFinish={handleFinish}
           />
         </div>
       </div>

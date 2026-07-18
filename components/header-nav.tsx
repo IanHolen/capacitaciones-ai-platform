@@ -18,6 +18,7 @@ export function HeaderNav() {
     name?: string;
   } | null>(null);
   const [checked, setChecked] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
     const supabase = createClient();
@@ -27,6 +28,11 @@ export function HeaderNav() {
           email: user.email,
           name: user.user_metadata?.name,
         });
+        // Consultar rol de admin en el servidor (tabla admin_users)
+        fetch("/api/admin/me")
+          .then((r) => (r.ok ? r.json() : { isAdmin: false }))
+          .then((data) => setIsAdmin(!!data.isAdmin))
+          .catch(() => setIsAdmin(false));
       }
       setChecked(true);
     });
@@ -79,8 +85,6 @@ export function HeaderNav() {
     .join("")
     .slice(0, 2)
     .toUpperCase();
-
-  const isAdmin = user.email === "holenderian@gmail.com";
 
   return (
     <div className="flex items-center gap-1">

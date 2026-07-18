@@ -1,160 +1,59 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import {
   Loader2,
+  ShieldAlert,
+  Shield,
+  Activity,
+  LayoutDashboard,
   Users,
   BookOpen,
-  CheckCircle,
-  XCircle,
   Database,
-  TrendingUp,
-  ShieldAlert,
-  MessageSquare,
-  BarChart3,
-  Search,
-  Activity,
   AlertTriangle,
+  ArrowLeft,
 } from "lucide-react";
-import { motion } from "framer-motion";
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
-import { createClient } from "@/lib/supabase/client";
-import { cursos, nivelConfig } from "@/lib/cursos-data";
+import { OverviewTab } from "@/components/admin/overview-tab";
+import { UsersTab } from "@/components/admin/users-tab";
+import { CoursesTab } from "@/components/admin/courses-tab";
+import { DatabaseTab } from "@/components/admin/database-tab";
+import { ErrorsTab } from "@/components/admin/errors-tab";
+import { ADMIN_ACCENT } from "@/components/admin/ui";
 
-const ADMIN_EMAIL = "holenderian@gmail.com";
+type Section = "overview" | "usuarios" | "cursos" | "database" | "errores";
 
-type Tab = "overview" | "usuarios" | "cursos" | "contenido" | "errores";
+const SECTIONS: {
+  id: Section;
+  label: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string }>;
+}[] = [
+  { id: "overview", label: "Overview", description: "Resumen general de la plataforma", icon: LayoutDashboard },
+  { id: "usuarios", label: "Usuarios", description: "Actividad de los usuarios registrados", icon: Users },
+  { id: "cursos", label: "Cursos", description: "Progreso real de aprendizaje por curso", icon: BookOpen },
+  { id: "database", label: "Base de Datos", description: "Estado de tu proyecto en Supabase", icon: Database },
+  { id: "errores", label: "Errores", description: "Log de errores de la API", icon: AlertTriangle },
+];
 
-interface Metrics {
-  total_users?: number;
-  active_users_7d?: number;
-  total_lessons_completed?: number;
-  total_quizzes_passed?: number;
-  total_quizzes_attempted?: number;
-  total_comments?: number;
-  courses_count?: number;
-}
-
-interface ChartPoint {
-  date: string;
-  count: number;
-}
-
-interface UserRow {
-  id: string;
-  email: string;
-  name: string;
-  role: string;
-  created_at: string;
-  lessonsCompleted: number;
-}
-
-interface QuizStat {
-  course_name: string;
-  total_attempts: number;
-  passed: number;
-  failed: number;
-  pass_rate: number;
-}
-
-interface DbHealth {
-  status?: string;
-  database?: {
-    sizeMb: number | string;
-    sizeLimit: string;
-    totalRecords: number;
-    tableCounts: Record<string, number | string>;
-    activeConnections: number | string;
-  };
-  freeTierLimits?: Record<string, string>;
-}
-
-interface ErrorEntry {
-  timestamp: string;
-  route: string;
-  message: string;
-  status_code: number;
-}
+// Altura del header global del sitio (sticky)
+const HEADER_H = "61px";
 
 export default function AdminPage() {
-  const router = useRouter();
   const [authorized, setAuthorized] = useState<boolean | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<Tab>("overview");
-
-  const [metrics, setMetrics] = useState<Metrics>({});
-  const [signups, setSignups] = useState<ChartPoint[]>([]);
-  const [completions, setCompletions] = useState<ChartPoint[]>([]);
-  const [users, setUsers] = useState<UserRow[]>([]);
-  const [quizStats, setQuizStats] = useState<QuizStat[]>([]);
-  const [dbHealth, setDbHealth] = useState<DbHealth>({});
-  const [errors, setErrors] = useState<ErrorEntry[]>([]);
-  const [userSearch, setUserSearch] = useState("");
-  const [userSort, setUserSort] = useState<"created_at" | "lessonsCompleted">("created_at");
-  const [selectedCourseId, setSelectedCourseId] = useState<string | null>(null);
-  const [courseComments, setCourseComments] = useState<{
-    id: string;
-    body: string;
-    created_at: string;
-    parent_id: string | null;
-    user: { id: string; name: string; email: string };
-    lesson: { id: string; title: string; slug: string };
-  }[]>([]);
-  const [loadingComments, setLoadingComments] = useState(false);
+  const [active, setActive] = useState<Section>("overview");
 
   useEffect(() => {
-    async function load() {
-      const supabase = createClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+    fetch("/api/admin/me")
+      .then((r) => (r.ok ? r.json() : { isAdmin: false }))
+      .then((data) => setAuthorized(!!data.isAdmin))
+      .catch(() => setAuthorized(false));
+  }, []);
 
-      if (!user || user.email !== ADMIN_EMAIL) {
-        setAuthorized(false);
-        setLoading(false);
-        return;
-      }
-
-      setAuthorized(true);
-
-      const [metricsRes, signupsRes, completionsRes, usersRes, quizRes, dbRes, errorsRes] =
-        await Promise.all([
-          fetch("/api/admin/metrics").then((r) => (r.ok ? r.json() : {})),
-          fetch("/api/admin/signups-chart").then((r) => (r.ok ? r.json() : { data: [] })),
-          fetch("/api/admin/completions-chart").then((r) => (r.ok ? r.json() : { data: [] })),
-          fetch("/api/admin/users").then((r) => (r.ok ? r.json() : { users: [] })),
-          fetch("/api/admin/quiz-stats").then((r) => (r.ok ? r.json() : { data: [] })),
-          fetch("/api/admin/db-health").then((r) => (r.ok ? r.json() : {})),
-          fetch("/api/admin/errors").then((r) => (r.ok ? r.json() : { errors: [] })),
-        ]);
-
-      setMetrics((metricsRes as Metrics) || {});
-      setSignups(signupsRes.data || []);
-      setCompletions(completionsRes.data || []);
-      setUsers(usersRes.users || []);
-      setQuizStats(quizRes.data || []);
-      setDbHealth(dbRes as DbHealth || {});
-      setErrors(errorsRes.errors || []);
-
-      setLoading(false);
-    }
-
-    load();
-  }, [router]);
-
-  if (loading) {
+  if (authorized === null) {
     return (
       <div className="flex min-h-[60vh] items-center justify-center">
-        <Loader2 className="size-8 animate-spin text-[#1E40AF]" />
+        <Loader2 className="size-8 animate-spin" style={{ color: ADMIN_ACCENT }} />
       </div>
     );
   }
@@ -171,674 +70,99 @@ export default function AdminPage() {
     );
   }
 
-  const filteredUsers = users
-    .filter(
-      (u) =>
-        u.email?.toLowerCase().includes(userSearch.toLowerCase()) ||
-        u.name?.toLowerCase().includes(userSearch.toLowerCase()),
-    )
-    .sort((a, b) =>
-      userSort === "lessonsCompleted"
-        ? b.lessonsCompleted - a.lessonsCompleted
-        : new Date(b.created_at).getTime() - new Date(a.created_at).getTime(),
-    );
-
-  const tabs: { id: Tab; label: string }[] = [
-    { id: "overview", label: "Overview" },
-    { id: "usuarios", label: "Usuarios" },
-    { id: "cursos", label: "Cursos" },
-    { id: "contenido", label: "Base de Datos" },
-    { id: "errores", label: "Errores" },
-  ];
-
-  const db = dbHealth.database;
-  const hasDbData = db != null;
-  const dbSizeMb = typeof db?.sizeMb === "number" ? db.sizeMb : 0;
-  const tableCounts = db?.tableCounts ? Object.entries(db.tableCounts) : [];
-  const activeConns = typeof db?.activeConnections === "number" ? db.activeConnections : null;
+  const current = SECTIONS.find((s) => s.id === active)!;
 
   return (
-    <div className="mx-auto max-w-7xl px-4 py-6 md:px-6 lg:px-8">
-      {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="text-2xl font-bold" style={{ color: "#1E40AF" }}>
-          Admin Console
-        </h1>
-        <div className="flex items-center gap-2 text-sm text-muted-foreground">
-          <Activity className="size-4 text-green-500" />
-          Sistema activo
-        </div>
-      </div>
-
-      {/* Tabs */}
-      <div className="mb-6 flex gap-1 overflow-x-auto rounded-xl bg-muted/50 p-1">
-        {tabs.map((tab) => (
-          <button
-            key={tab.id}
-            onClick={() => setActiveTab(tab.id)}
-            className={`flex-1 whitespace-nowrap rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
-              activeTab === tab.id
-                ? "bg-white text-[#1E40AF] shadow-sm"
-                : "text-muted-foreground hover:text-foreground"
-            }`}
-          >
-            {tab.label}
-            {tab.id === "errores" && errors.length > 0 && (
-              <span className="ml-1.5 rounded-full bg-red-100 px-1.5 py-0.5 text-xs text-red-600">
-                {errors.length}
-              </span>
-            )}
-          </button>
-        ))}
-      </div>
-
-      {/* Tab content — consistent container */}
-      <div className="min-h-[900px] w-full rounded-xl border bg-card p-6 shadow-sm">
-      {/* Overview Tab */}
-      {activeTab === "overview" && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className="space-y-6"
-        >
-          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <StatCard icon={<Users className="size-5" />} label="Total Usuarios" value={metrics.total_users ?? 0} color="#1E40AF" />
-            <StatCard icon={<TrendingUp className="size-5" />} label="Activos (7d)" value={metrics.active_users_7d ?? 0} color="#22c55e" />
-            <StatCard icon={<CheckCircle className="size-5" />} label="Lecciones Completadas" value={metrics.total_lessons_completed ?? 0} color="#7C3AED" />
-            <StatCard icon={<BookOpen className="size-5" />} label="Cursos Totales" value={metrics.courses_count ?? 0} color="#f59e0b" />
-          </div>
-          <div className="grid gap-4 sm:grid-cols-3">
-            <StatCard icon={<CheckCircle className="size-5" />} label="Quizzes Aprobados" value={metrics.total_quizzes_passed ?? 0} color="#22c55e" />
-            <StatCard icon={<XCircle className="size-5" />} label="Quizzes Reprobados" value={Math.max(0, (metrics.total_quizzes_attempted ?? 0) - (metrics.total_quizzes_passed ?? 0))} color="#ef4444" />
-            <StatCard icon={<MessageSquare className="size-5" />} label="Comentarios" value={metrics.total_comments ?? 0} color="#06b6d4" />
-          </div>
-          <div className="grid gap-6 lg:grid-cols-2">
-            <ChartCard title="Registros — últimos 7 días" data={signups} color="#1E40AF" />
-            <ChartCard title="Lecciones completadas — últimos 30 días" data={completions} color="#22c55e" />
-          </div>
-        </motion.div>
-      )}
-
-      {/* Usuarios Tab */}
-      {activeTab === "usuarios" && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="relative flex-1">
-              <Search className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-muted-foreground" />
-              <input
-                type="text"
-                value={userSearch}
-                onChange={(e) => setUserSearch(e.target.value)}
-                placeholder="Buscar por email o nombre..."
-                className="h-10 w-full rounded-lg border bg-background pl-9 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#1E40AF]"
-              />
-            </div>
-            <div className="flex gap-2 text-xs">
-              <button
-                onClick={() => setUserSort("created_at")}
-                className={`rounded-md px-3 py-1.5 font-medium ${
-                  userSort === "created_at" ? "bg-[#1E40AF] text-white" : "bg-muted text-muted-foreground"
-                }`}
-              >
-                Recientes
-              </button>
-              <button
-                onClick={() => setUserSort("lessonsCompleted")}
-                className={`rounded-md px-3 py-1.5 font-medium ${
-                  userSort === "lessonsCompleted" ? "bg-[#1E40AF] text-white" : "bg-muted text-muted-foreground"
-                }`}
-              >
-                Más activos
-              </button>
-            </div>
-          </div>
-          <div className="overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b text-left text-xs uppercase tracking-wider text-muted-foreground">
-                  <th className="px-4 py-3">Email</th>
-                  <th className="px-4 py-3">Nombre</th>
-                  <th className="px-4 py-3">Registro</th>
-                  <th className="px-4 py-3 text-center">Lecciones</th>
-                  <th className="px-4 py-3">Rol</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredUsers.map((u) => (
-                  <tr key={u.id} className="border-b last:border-0 hover:bg-muted/30">
-                    <td className="px-4 py-3 font-medium">{u.email}</td>
-                    <td className="px-4 py-3 text-muted-foreground">{u.name || "—"}</td>
-                    <td className="px-4 py-3 text-muted-foreground">
-                      {new Date(u.created_at).toLocaleDateString("es-LA")}
-                    </td>
-                    <td className="px-4 py-3 text-center">
-                      <span className="rounded-full bg-[#1E40AF]/10 px-2 py-0.5 text-xs font-medium text-[#1E40AF]">
-                        {u.lessonsCompleted}
-                      </span>
-                    </td>
-                    <td className="px-4 py-3">
-                      <span className={`rounded-full px-2 py-0.5 text-xs font-medium ${
-                        u.role === "ADMIN" ? "bg-red-100 text-red-600" : "bg-muted text-muted-foreground"
-                      }`}>
-                        {u.role || "USER"}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-            {filteredUsers.length === 0 && (
-              <p className="p-6 text-center text-sm text-muted-foreground">No se encontraron usuarios.</p>
-            )}
-          </div>
-          <div className="text-xs text-muted-foreground">
-            {filteredUsers.length} usuarios
-          </div>
-        </motion.div>
-      )}
-
-      {/* Cursos Tab — reads from static cursos-data.ts */}
-      {activeTab === "cursos" && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
-          <div>
-            <div className="mb-4">
-              <h3 className="text-lg font-semibold">Cursos ({cursos.length})</h3>
-              <p className="mt-1 text-xs text-muted-foreground">Haz clic en un curso para ver sus comentarios</p>
-            </div>
-            <div className="divide-y border-t">
-              {cursos.map((curso) => {
-                const config = nivelConfig[curso.nivel];
-                const isSelected = selectedCourseId === curso.id;
-                return (
-                  <button
-                    key={curso.id}
-                    onClick={async () => {
-                      if (isSelected) {
-                        setSelectedCourseId(null);
-                        setCourseComments([]);
-                        return;
-                      }
-                      setSelectedCourseId(curso.id);
-                      setLoadingComments(true);
-                      try {
-                        const res = await fetch(`/api/admin/course-comments?slug=${curso.id}`);
-                        if (res.ok) {
-                          const data = await res.json();
-                          setCourseComments(data.comments ?? []);
-                        } else {
-                          setCourseComments([]);
-                        }
-                      } catch {
-                        setCourseComments([]);
-                      }
-                      setLoadingComments(false);
-                    }}
-                    className={`flex w-full flex-col gap-3 p-4 text-left transition-colors sm:flex-row sm:items-center ${
-                      isSelected ? "bg-[#1E40AF]/5" : "hover:bg-muted/30"
-                    }`}
-                  >
-                    <div className="flex-1">
-                      <div className="font-medium">{curso.titulo}</div>
-                      <div className="mt-0.5 flex items-center gap-2 text-xs text-muted-foreground">
-                        <span
-                          className="rounded-full px-2 py-0.5 text-xs font-semibold"
-                          style={{ backgroundColor: config.bg, color: config.color }}
-                        >
-                          {config.label}
-                        </span>
-                        <span>{curso.lecciones.length} lecciones</span>
-                        <span>{curso.duracion}</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-4 text-sm">
-                      <div className="text-center">
-                        <div className="text-lg font-bold" style={{ color: config.color }}>
-                          {curso.lecciones.length}
-                        </div>
-                        <div className="text-xs text-muted-foreground">Lecciones</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-lg font-bold text-[#1E40AF]">
-                          {curso.lecciones.filter((l) => l.tieneQuiz).length}
-                        </div>
-                        <div className="text-xs text-muted-foreground">Quizzes</div>
-                      </div>
-                      <MessageSquare className={`size-5 ${isSelected ? "text-[#1E40AF]" : "text-muted-foreground"}`} />
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Course Comments Panel */}
-          {selectedCourseId && (
-            <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
-              <div className="mb-4 border-t pt-6">
-                <h3 className="flex items-center gap-2 text-lg font-semibold">
-                  <MessageSquare className="size-5 text-[#06b6d4]" />
-                  Comentarios — {cursos.find((c) => c.id === selectedCourseId)?.titulo}
-                </h3>
-              </div>
-              {loadingComments ? (
-                <div className="flex justify-center p-8">
-                  <Loader2 className="size-6 animate-spin text-muted-foreground" />
-                </div>
-              ) : courseComments.length === 0 ? (
-                <div className="p-8 text-center text-sm text-muted-foreground">
-                  No hay comentarios para este curso.
-                </div>
-              ) : (
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm">
-                    <thead>
-                      <tr className="border-b text-left text-xs uppercase tracking-wider text-muted-foreground">
-                        <th className="px-4 py-3">Usuario</th>
-                        <th className="px-4 py-3">Fecha</th>
-                        <th className="px-4 py-3">Lección</th>
-                        <th className="px-4 py-3">Comentario</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {courseComments.map((c) => (
-                        <tr key={c.id} className="border-b last:border-0 hover:bg-muted/30">
-                          <td className="px-4 py-3">
-                            <div className="font-medium">{c.user.name}</div>
-                            <div className="text-xs text-muted-foreground">{c.user.email}</div>
-                          </td>
-                          <td className="px-4 py-3 text-xs text-muted-foreground whitespace-nowrap">
-                            {new Date(c.created_at).toLocaleDateString("es-LA", {
-                              day: "numeric",
-                              month: "short",
-                              year: "numeric",
-                              hour: "2-digit",
-                              minute: "2-digit",
-                            })}
-                          </td>
-                          <td className="px-4 py-3 text-xs">
-                            <span className="rounded-full bg-muted px-2 py-0.5 font-medium">
-                              {c.lesson.title}
-                            </span>
-                          </td>
-                          <td className="max-w-md px-4 py-3">
-                            <p className="whitespace-pre-wrap">{c.body}</p>
-                            {c.parent_id && (
-                              <span className="mt-1 inline-block text-xs text-muted-foreground italic">
-                                (respuesta)
-                              </span>
-                            )}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                  <div className="border-t px-4 py-3 text-xs text-muted-foreground">
-                    {courseComments.length} comentario{courseComments.length !== 1 ? "s" : ""}
-                  </div>
-                </div>
-              )}
-            </motion.div>
-          )}
-        </motion.div>
-      )}
-
-      {/* Base de Datos Tab */}
-      {activeTab === "contenido" && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-6">
-          {/* Section 1 — Total Usage */}
-          <div>
-            <div className="flex items-center justify-between">
-              <h3 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                <Database className="size-5 text-[#1E40AF]" />
-                Uso Total de la Base de Datos
-              </h3>
-              <button
-                onClick={() => window.location.reload()}
-                className="rounded-lg border px-3 py-1.5 text-xs font-medium text-muted-foreground hover:bg-muted"
-              >
-                Refrescar
-              </button>
-            </div>
-
-            {!loading ? (
-              <div className="mt-4">
-                <div className="flex items-baseline gap-3">
-                  <span className="text-4xl font-bold" style={{ color: "#1E40AF" }}>
-                    {dbSizeMb.toFixed(1)} MB
-                  </span>
-                  <span className="text-lg text-muted-foreground">/ 500 MB</span>
-                  <span className="text-sm text-muted-foreground">
-                    ({dbSizeMb > 0 ? Math.round((dbSizeMb / 500) * 100) : 0}%)
-                  </span>
-                  <span
-                    className="ml-2 rounded-full px-2.5 py-0.5 text-xs font-semibold"
-                    style={{
-                      backgroundColor:
-                        dbSizeMb / 500 > 0.8 ? "#fef2f2" : dbSizeMb / 500 > 0.6 ? "#fffbeb" : "#f0fdf4",
-                      color:
-                        dbSizeMb / 500 > 0.8 ? "#dc2626" : dbSizeMb / 500 > 0.6 ? "#d97706" : "#16a34a",
-                    }}
-                  >
-                    {dbSizeMb / 500 > 0.8 ? "Crítico" : dbSizeMb / 500 > 0.6 ? "Atención" : "Saludable"}
-                  </span>
-                </div>
-                <div className="mt-3">
-                  <UsageBar label="" used={dbSizeMb} limit={500} unit="MB" />
-                </div>
-              </div>
-            ) : (
-              <p className="mt-4 text-sm text-muted-foreground">
-                <Loader2 className="mr-2 inline size-4 animate-spin" />
-                Cargando datos...
-              </p>
-            )}
-          </div>
-
-          {/* Section 2 — Status Banner */}
-          {hasDbData && (
+    <div className="flex w-full flex-1 bg-muted/30">
+      {/* ── Sidebar de altura completa, pegado al borde ───── */}
+      <aside
+        className="sticky hidden w-60 shrink-0 flex-col justify-between border-r bg-background px-3 py-5 md:flex"
+        style={{ top: HEADER_H, height: `calc(100vh - ${HEADER_H})` }}
+      >
+        <div className="flex flex-col gap-5">
+          <div className="flex items-center gap-2.5 px-2">
             <div
-              className="flex items-center gap-3 rounded-xl p-4"
-              style={{
-                borderColor:
-                  dbSizeMb / 500 > 0.8 ? "#fecaca" : dbSizeMb / 500 > 0.6 ? "#fde68a" : "#bbf7d0",
-                backgroundColor:
-                  dbSizeMb / 500 > 0.8 ? "#fef2f2" : dbSizeMb / 500 > 0.6 ? "#fffbeb" : "#f0fdf4",
-              }}
+              className="flex size-9 shrink-0 items-center justify-center rounded-lg text-white"
+              style={{ backgroundColor: ADMIN_ACCENT }}
             >
-              {dbSizeMb / 500 > 0.8 ? (
-                <XCircle className="size-5 text-red-500" />
-              ) : dbSizeMb / 500 > 0.6 ? (
-                <AlertTriangle className="size-5 text-amber-500" />
-              ) : (
-                <CheckCircle className="size-5 text-green-500" />
-              )}
-              <span
-                className="text-sm font-medium"
-                style={{
-                  color:
-                    dbSizeMb / 500 > 0.8 ? "#dc2626" : dbSizeMb / 500 > 0.6 ? "#d97706" : "#16a34a",
-                }}
-              >
-                {dbSizeMb / 500 > 0.8
-                  ? "Uso crítico — considera limpiar datos o actualizar el plan"
-                  : dbSizeMb / 500 > 0.6
-                  ? "Uso moderado — monitorea el crecimiento"
-                  : "Tu base de datos está en buen estado"}
-              </span>
+              <Shield className="size-5" />
             </div>
-          )}
-
-          {/* Section 3 — Tables */}
-          {tableCounts.length > 0 && (() => {
-            const maxCount = Math.max(
-              ...tableCounts
-                .map(([, c]) => (typeof c === "number" ? c : 0))
-            );
-            return (
-              <div>
-                <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                  Tablas ({tableCounts.length})
-                </h4>
-                <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                  {tableCounts.map(([name, count]) => {
-                    const numCount = typeof count === "number" ? count : 0;
-                    const isLargest = numCount === maxCount && numCount > 0;
-                    return (
-                      <div key={name} className="rounded-xl bg-muted/30 p-4">
-                        <div className="flex items-center justify-between">
-                          <span className="font-mono text-sm text-muted-foreground">{name}</span>
-                          {isLargest && (
-                            <span className="rounded-full bg-[#1E40AF]/10 px-2 py-0.5 text-[10px] font-bold text-[#1E40AF]">
-                              MAYOR TABLA
-                            </span>
-                          )}
-                        </div>
-                        <div className="mt-2 text-2xl font-bold">
-                          {typeof count === "number" ? count.toLocaleString() : count}
-                        </div>
-                        <div className="text-xs text-muted-foreground">filas</div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
-            );
-          })()}
-
-          {/* Section 4 — Growth Stats */}
-          {hasDbData && (
             <div>
-              <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-                Crecimiento
-              </h4>
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div className="rounded-xl bg-muted/30 p-4 text-center">
-                  <div className="text-2xl font-bold text-[#1E40AF]">{db.totalRecords?.toLocaleString()}</div>
-                  <div className="text-xs text-muted-foreground">Total registros</div>
-                </div>
-                <div className="rounded-xl bg-muted/30 p-4 text-center">
-                  <div className="text-2xl font-bold text-[#1E40AF]">{activeConns ?? "—"}</div>
-                  <div className="text-xs text-muted-foreground">Conexiones activas</div>
-                </div>
-                <div className="rounded-xl bg-muted/30 p-4 text-center">
-                  <div className="text-2xl font-bold text-green-600">
-                    {dbSizeMb > 0 ? `~${Math.round(500 / dbSizeMb)}` : "∞"}
-                  </div>
-                  <div className="text-xs text-muted-foreground">Meses hasta llenarse</div>
-                </div>
-              </div>
+              <div className="text-sm font-bold leading-tight">Admin Console</div>
+              <div className="text-xs text-muted-foreground">Certificaciones AI</div>
             </div>
-          )}
+          </div>
 
-          {/* Quiz Stats */}
-          {quizStats.length > 0 && (
-            <div className="border-t pt-6">
-              <h3 className="mb-4 flex items-center gap-2 text-lg font-semibold">
-                <BarChart3 className="size-5 text-[#7C3AED]" />
-                Tasa de Aprobación por Curso
-              </h3>
-              <div className="space-y-3">
-                {quizStats.map((stat) => (
-                  <div key={stat.course_name} className="space-y-1">
-                    <div className="flex items-center justify-between text-sm">
-                      <span>{stat.course_name}</span>
-                      <span className="font-medium">
-                        {stat.pass_rate}%
-                        <span className="ml-2 text-xs text-muted-foreground">
-                          ({stat.passed}/{stat.total_attempts})
-                        </span>
-                      </span>
-                    </div>
-                    <div className="h-2 overflow-hidden rounded-full bg-muted">
-                      <motion.div
-                        className="h-full rounded-full"
-                        style={{
-                          backgroundColor:
-                            stat.pass_rate > 70 ? "#22c55e" : stat.pass_rate > 40 ? "#f59e0b" : "#ef4444",
-                        }}
-                        initial={{ width: 0 }}
-                        animate={{ width: `${stat.pass_rate}%` }}
-                        transition={{ duration: 0.8 }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </motion.div>
-      )}
-
-      {/* Errores Tab */}
-      {activeTab === "errores" && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-4">
-          <h3 className="flex items-center gap-2 text-lg font-semibold">
-            <AlertTriangle className="size-5 text-red-500" />
-            Errores recientes ({errors.length})
-          </h3>
-          {errors.length === 0 ? (
-            <div className="flex flex-col items-center gap-2 py-12 text-center">
-              <CheckCircle className="size-10 text-green-500" />
-              <p className="text-base font-medium text-green-700">Sin errores recientes</p>
-              <p className="text-sm text-muted-foreground">Todo funciona correctamente.</p>
-            </div>
-          ) : (
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr className="border-b text-left text-xs uppercase tracking-wider text-muted-foreground">
-                    <th className="px-4 py-3">Timestamp</th>
-                    <th className="px-4 py-3">Ruta</th>
-                    <th className="px-4 py-3">Status</th>
-                    <th className="px-4 py-3">Mensaje</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {errors.map((err, i) => (
-                    <tr key={i} className="border-b last:border-0 hover:bg-muted/30">
-                      <td className="px-4 py-3 text-xs text-muted-foreground whitespace-nowrap">
-                        {new Date(err.timestamp).toLocaleString("es-LA")}
-                      </td>
-                      <td className="px-4 py-3 font-mono text-xs">{err.route}</td>
-                      <td className="px-4 py-3">
-                        <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs font-medium text-red-600">
-                          {err.status_code}
-                        </span>
-                      </td>
-                      <td className="px-4 py-3 text-muted-foreground">
-                        {err.message}
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </motion.div>
-      )}
-      </div>
-    </div>
-  );
-}
-
-function StatCard({
-  icon,
-  label,
-  value,
-  color,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: number;
-  color: string;
-}) {
-  return (
-    <motion.div
-      className="rounded-xl border p-5"
-      initial={{ opacity: 0, y: 10 }}
-      animate={{ opacity: 1, y: 0 }}
-    >
-      <div className="flex items-center gap-3">
-        <div
-          className="flex size-10 shrink-0 items-center justify-center rounded-lg"
-          style={{ backgroundColor: `${color}15`, color }}
-        >
-          {icon}
+          <nav className="flex flex-col gap-1" aria-label="Secciones de administración">
+            {SECTIONS.map((s) => {
+              const Icon = s.icon;
+              const isActive = active === s.id;
+              return (
+                <button
+                  key={s.id}
+                  onClick={() => setActive(s.id)}
+                  className={`flex items-center gap-3 rounded-lg px-3 py-2 text-left text-sm font-medium transition-colors ${
+                    isActive
+                      ? "bg-[#1E40AF]/10 text-[#1E40AF]"
+                      : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                  }`}
+                  aria-current={isActive ? "page" : undefined}
+                >
+                  <Icon className="size-4 shrink-0" />
+                  {s.label}
+                </button>
+              );
+            })}
+          </nav>
         </div>
-        <div>
-          <div className="text-2xl font-bold">{value.toLocaleString()}</div>
-          <div className="text-xs text-muted-foreground">{label}</div>
+
+        <div className="border-t pt-3">
+          <div className="mb-2 flex items-center gap-2 px-3 text-xs text-muted-foreground">
+            <Activity className="size-3.5 text-green-500" />
+            Sistema activo
+          </div>
+          <Link
+            href="/cursos"
+            className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+          >
+            <ArrowLeft className="size-4" />
+            Volver al sitio
+          </Link>
         </div>
-      </div>
-    </motion.div>
-  );
-}
+      </aside>
 
-function ChartCard({
-  title,
-  data,
-  color,
-}: {
-  title: string;
-  data: ChartPoint[];
-  color: string;
-}) {
-  const formattedData = data.map((d) => ({
-    ...d,
-    label: new Date(d.date).toLocaleDateString("es-LA", {
-      day: "numeric",
-      month: "short",
-    }),
-  }));
+      {/* ── Contenido sobre fondo gris de consola ─────────── */}
+      <div className="min-w-0 flex-1 px-4 py-8 md:px-8">
+        <div className="mx-auto max-w-6xl">
+          {/* Nav móvil */}
+          <div className="mb-4 flex gap-1 overflow-x-auto rounded-xl bg-background p-1 shadow-sm md:hidden">
+            {SECTIONS.map((s) => (
+              <button
+                key={s.id}
+                onClick={() => setActive(s.id)}
+                className={`flex-1 whitespace-nowrap rounded-lg px-4 py-2.5 text-sm font-medium transition-colors ${
+                  active === s.id ? "bg-muted" : "text-muted-foreground hover:text-foreground"
+                }`}
+                style={active === s.id ? { color: ADMIN_ACCENT } : undefined}
+              >
+                {s.label}
+              </button>
+            ))}
+          </div>
 
-  return (
-    <div className="rounded-xl border p-6">
-      <h3 className="mb-4 text-sm font-semibold text-muted-foreground">{title}</h3>
-      {formattedData.length > 0 ? (
-        <ResponsiveContainer width="100%" height={200}>
-          <LineChart data={formattedData}>
-            <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-            <XAxis dataKey="label" stroke="#9ca3af" fontSize={11} tickLine={false} />
-            <YAxis stroke="#9ca3af" fontSize={11} tickLine={false} allowDecimals={false} />
-            <Tooltip
-              contentStyle={{
-                borderRadius: "8px",
-                fontSize: "12px",
-                border: "1px solid #e5e7eb",
-              }}
-            />
-            <Line
-              type="monotone"
-              dataKey="count"
-              stroke={color}
-              strokeWidth={2}
-              dot={{ fill: color, r: 3 }}
-              activeDot={{ r: 5 }}
-            />
-          </LineChart>
-        </ResponsiveContainer>
-      ) : (
-        <div className="flex h-[200px] items-center justify-center text-sm text-muted-foreground">
-          Sin datos disponibles
+          <div className="mb-6">
+            <h1 className="text-2xl font-bold tracking-tight">{current.label}</h1>
+            <p className="mt-1 text-sm text-muted-foreground">{current.description}</p>
+          </div>
+
+          <div className="min-h-[60vh] w-full rounded-2xl border bg-card p-6 shadow-sm md:p-8">
+            {active === "overview" && <OverviewTab />}
+            {active === "usuarios" && <UsersTab />}
+            {active === "cursos" && <CoursesTab />}
+            {active === "database" && <DatabaseTab />}
+            {active === "errores" && <ErrorsTab />}
+          </div>
         </div>
-      )}
-    </div>
-  );
-}
-
-function UsageBar({
-  label,
-  used,
-  limit,
-  unit,
-}: {
-  label: string;
-  used: number;
-  limit: number;
-  unit: string;
-}) {
-  const pct = limit > 0 ? Math.round((used / limit) * 100) : 0;
-  const color = pct > 80 ? "#ef4444" : pct > 60 ? "#f59e0b" : "#22c55e";
-
-  return (
-    <div>
-      <div className="mb-1 flex items-center justify-between text-sm">
-        <span className="text-muted-foreground">{label}</span>
-        <span className="font-medium">
-          {used.toFixed(1)} {unit} / {limit} {unit}
-          <span className="ml-1 text-xs" style={{ color }}>
-            ({pct}%)
-          </span>
-        </span>
-      </div>
-      <div className="h-3 overflow-hidden rounded-full bg-muted">
-        <motion.div
-          className="h-full rounded-full"
-          style={{ backgroundColor: color }}
-          initial={{ width: 0 }}
-          animate={{ width: `${pct}%` }}
-          transition={{ duration: 0.8 }}
-        />
       </div>
     </div>
   );

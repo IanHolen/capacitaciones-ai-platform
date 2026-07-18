@@ -1,0 +1,56 @@
+# ============================================================
+# .env — Certificaciones AI
+# Proyecto Supabase: nqgvngqxslwlbenszgdf
+# ============================================================
+#
+# PARA CORRER LA APP EN LOCAL (npm run dev) SOLO NECESITAS 3 LLAVES:
+#   (1) SUPABASE_SERVICE_ROLE_KEY  -> panel de admin
+#   (2) GEMINI_API_KEY             -> buscador con IA
+#   (3) GROQ_API_KEY               -> tutor y sandbox
+#
+# La URL y la ANON KEY ya estan listas (NO las toques).
+# DATABASE_URL / DIRECT_URL son OPCIONALES (solo para `npm run db:seed`).
+#
+# Despues de pegar las llaves: guarda el archivo y REINICIA `npm run dev`
+# (Next.js lee el .env solo al arrancar).
+# ============================================================
+
+
+# ============================================================
+# Supabase — Auth y API   (LISTO, no tocar)
+# ============================================================
+NEXT_PUBLIC_SUPABASE_URL="https://nqgvngqxslwlbenszgdf.supabase.co"
+NEXT_PUBLIC_SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5xZ3ZuZ3F4c2x3bGJlbnN6Z2RmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxNzE3MTAsImV4cCI6MjA5Mjc0NzcxMH0.1YRTG4AbLLPRPCNNuFMYzc4SdOAuZ3ldf8U1OmacPms"
+
+
+# ============================================================
+# (1) SERVICE ROLE KEY   <-- PEGA AQUI (reemplaza el placeholder, deja las comillas)
+#     Dashboard -> Project Settings -> API Keys -> copia la "service_role" (secret)
+#     https://supabase.com/dashboard/project/nqgvngqxslwlbenszgdf/settings/api-keys
+# ============================================================
+SUPABASE_SERVICE_ROLE_KEY="PEGA-AQUI-TU-SERVICE-ROLE-KEY"
+
+
+# ============================================================
+# (2) GEMINI API KEY     <-- PEGA AQUI
+#     https://aistudio.google.com/apikey   (Create API key -> Copy)
+# ============================================================
+GEMINI_API_KEY="PEGA-AQUI-TU-GEMINI-KEY"
+
+
+# ============================================================
+# (3) GROQ API KEY       <-- PEGA AQUI
+#     https://console.groq.com/keys        (Create API Key -> Copy)
+# ============================================================
+GROQ_API_KEY="PEGA-AQUI-TU-GROQ-KEY"
+
+
+# ============================================================
+# OPCIONAL — solo si vas a correr el seed o migraciones de Prisma en local
+# (`npm run db:seed`). La app NO necesita esto para funcionar.
+# Consigue la password de la DB en:
+#   https://supabase.com/dashboard/project/nqgvngqxslwlbenszgdf/settings/database
+# y reemplaza [TU-DB-PASSWORD] en las dos lineas de abajo.
+# ============================================================
+DATABASE_URL="postgresql://postgres.nqgvngqxslwlbenszgdf:[TU-DB-PASSWORD]@aws-0-us-west-2.pooler.supabase.com:6543/postgres"
+DIRECT_URL="postgresql://postgres:[TU-DB-PASSWORD]@db.nqgvngqxslwlbenszgdf.supabase.co:5432/postgres"

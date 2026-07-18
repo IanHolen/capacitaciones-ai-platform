@@ -5,12 +5,13 @@ export async function GET() {
   const { error, supabase } = await requireAdmin();
   if (error) return error;
 
-  const sevenDaysAgo = new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString();
+  // 14 días para poder comparar la semana actual vs la anterior
+  const fourteenDaysAgo = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString();
 
   const { data, error: dbError } = await supabase!
     .from("users")
     .select("created_at")
-    .gte("created_at", sevenDaysAgo)
+    .gte("created_at", fourteenDaysAgo)
     .order("created_at", { ascending: true });
 
   if (dbError) {
@@ -25,7 +26,7 @@ export async function GET() {
 
   // Fill in missing days
   const result = [];
-  for (let i = 6; i >= 0; i--) {
+  for (let i = 13; i >= 0; i--) {
     const d = new Date(Date.now() - i * 24 * 60 * 60 * 1000);
     const date = d.toISOString().split("T")[0];
     result.push({ date, count: countByDate.get(date) ?? 0 });

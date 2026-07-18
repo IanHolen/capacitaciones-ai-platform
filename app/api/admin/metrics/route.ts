@@ -33,13 +33,13 @@ export async function GET() {
         .select("*", { count: "exact", head: true })
         .eq("completed", true),
       supabase!
-        .from("user_exercise_results")
+        .from("quiz_attempts")
         .select("*", { count: "exact", head: true })
-        .eq("is_correct", true),
+        .eq("passed", true),
       supabase!
-        .from("user_exercise_results")
+        .from("quiz_attempts")
         .select("*", { count: "exact", head: true })
-        .eq("is_correct", false),
+        .eq("passed", false),
       supabase!.from("comments").select("*", { count: "exact", head: true }),
     ]);
 

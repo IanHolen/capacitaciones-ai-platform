@@ -50,7 +50,7 @@ export async function POST(request: Request) {
   // We need to resolve it to the DB UUID.
   const { data: lesson } = await supabase
     .from("lessons")
-    .select("id")
+    .select("id, course_id")
     .eq("slug", lessonId)
     .maybeSingle();
 
@@ -80,6 +80,22 @@ export async function POST(request: Request) {
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  // Registrar enrollment ACTIVE la primera vez que el usuario avanza en el curso.
+  // ignoreDuplicates evita pisar un enrollment ya COMPLETED.
+  if (lesson.course_id) {
+    await supabase
+      .from("enrollments")
+      .upsert(
+        { user_id: user.id, course_id: lesson.course_id, status: "ACTIVE" },
+        { onConflict: "user_id,course_id", ignoreDuplicates: true }
+      )
+      .then(({ error: enrollError }) => {
+        if (enrollError) {
+          console.warn("[progress] enrollment upsert failed:", enrollError.message);
+        }
+      });
   }
 
   return NextResponse.json({ progress });

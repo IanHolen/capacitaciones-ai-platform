@@ -65,10 +65,10 @@ export async function POST() {
     .eq("completed", true);
 
   const { count: quizzesCompleted } = await supabase
-    .from("user_exercise_results")
+    .from("quiz_attempts")
     .select("*", { count: "exact", head: true })
     .eq("user_id", user.id)
-    .eq("is_correct", true);
+    .eq("passed", true);
 
   // Count completed courses (all lessons in a course completed)
   const { data: enrollments } = await supabase

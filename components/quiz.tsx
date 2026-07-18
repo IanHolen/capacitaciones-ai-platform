@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { CheckCircle2, XCircle, RotateCcw, ArrowLeft } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -16,11 +16,18 @@ interface QuizQuestion {
   explanationEn?: string;
 }
 
+export interface QuizResult {
+  score: number;
+  total: number;
+  passed: boolean;
+}
+
 interface QuizProps {
   questions: QuizQuestion[];
   courseId: string;
   accentColor: string;
   onPass?: () => void;
+  onFinish?: (result: QuizResult) => void;
   maxQuestions?: number;
 }
 
@@ -33,7 +40,7 @@ function shuffleArray<T>(arr: T[]): T[] {
   return shuffled;
 }
 
-export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 10 }: QuizProps) {
+export function Quiz({ questions, courseId, accentColor, onPass, onFinish, maxQuestions = 10 }: QuizProps) {
   const { t, i18n } = useTranslation();
   const isEn = i18n.language === "en";
 
@@ -46,6 +53,17 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
   const [answered, setAnswered] = useState(false);
   const [correctCount, setCorrectCount] = useState(0);
   const [finished, setFinished] = useState(false);
+  const reported = useRef(false);
+
+  // Reportar el resultado UNA vez por intento, fuera del render
+  useEffect(() => {
+    if (!finished || reported.current) return;
+    reported.current = true;
+    const percentage = Math.round((correctCount / pool.length) * 100);
+    const passed = percentage >= 80;
+    onFinish?.({ score: correctCount, total: pool.length, passed });
+    if (passed) onPass?.();
+  }, [finished, correctCount, pool.length, onFinish, onPass]);
 
   const current = pool[currentIndex];
   const isCorrect = selectedIndex === current?.correctIndex;
@@ -85,6 +103,7 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
     setAnswered(false);
     setCorrectCount(0);
     setFinished(false);
+    reported.current = false;
   }, []);
 
   const handleKeyDown = useCallback(
@@ -120,10 +139,6 @@ export function Quiz({ questions, courseId, accentColor, onPass, maxQuestions = 
       : percentage >= 50
         ? t("quiz.needMore")
         : t("quiz.tryAgain");
-
-    if (passed && onPass) {
-      onPass();
-    }
 
     return (
       <div className="relative flex flex-col items-center gap-6 py-8 text-center">
