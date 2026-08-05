@@ -296,98 +296,406 @@ export const immersionBloque1Quiz: QuizQuestion[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// BLOQUES 2 a 5 — esqueleto aprobado (título, orden y objetivo).
-// El contenido se escribe después de la decisión de idioma.
+// BLOQUES 2 a 5 — plan de clase completo por sesión (2026-08-05).
+// Cada sesión trae: para qué es, cómo corre, el ejercicio con arranques,
+// cómo se verifica y qué se lleva la persona. La regla de todo el programa:
+// se trabaja con material PROPIO, nunca con datos de cliente ni de tarjeta
+// (sesión 3). El contenido puede profundizarse después sin tocar el plan.
 // ---------------------------------------------------------------------------
 
-const esqueleto = (objetivo: string, seLleva: string) => `### En construcción
+// ── BLOQUE 2 · Tu trabajo, con la herramienta ──────────────────────────────
 
-Esta sesión tiene definido su lugar en el arco y su objetivo. El contenido se escribe en la siguiente vuelta.
+export const im5 = `### Hoy no hay ejemplos: hay tu documento
 
-### Objetivo
+Hasta ahora escribiste cosas sueltas en la caja. Hoy traes un documento real —un manual, un procedimiento, una minuta larga, lo que uses de verdad— y trabajas sobre él. **Si tu documento tiene datos de cliente o de tarjeta, no es para hoy: elige otro.** Ésa es la regla de la sesión 3 y no se negocia.
 
-${objetivo}
+### Cómo corre la sesión
 
-### Lo que se lleva la persona
+Primeros diez minutos: eliges el documento y lo subes (o pegas el pedazo que importa). El resto de la hora es tuyo, con tres rondas guiadas.
 
-${seLleva}`;
+**Ronda 1 — Pregúntale lo que le preguntarías a quien lo escribió:**
 
-export const im5 = esqueleto(
-  "Trabajar sobre un documento propio en vez de un ejemplo: subirlo, preguntarle cosas y sacar lo que sirve.",
-  "Una respuesta útil sacada de un documento que trajo la persona.",
-);
+> Según este documento, ¿qué tengo que hacer si [la situación que siempre te genera duda]?
 
-export const im6 = esqueleto(
-  "Convertir una lista desordenada en una tabla limpia con la que se pueda trabajar.",
-  "Su propia lista, ordenada.",
-);
+> ¿Qué dice este documento sobre [el tema]? Cítame la parte exacta.
 
-export const im7 = esqueleto(
-  "Rehacer una vez, acompañados, ese reporte que se arma a mano todas las semanas.",
-  "El reporte hecho, y la noción de cuánto tiempo ocupa de verdad.",
-);
+**Ronda 2 — Pídele lo que nunca tienes tiempo de hacer:**
 
-export const im8 = esqueleto(
-  "Dónde se equivoca y cómo se agarra. Aprender a verificar en la misma quincena en que se aprende a confiar.",
-  "Una comprobación propia que puede correr sobre cualquier respuesta.",
-);
+> Resume este documento en diez puntos para alguien que entra mañana al puesto.
 
-export const im9 = esqueleto(
-  "Información partida entre dos sistemas, puesta lado a lado para responder una sola pregunta.",
-  "Una respuesta que hoy exige abrir dos pantallas.",
-);
+> Haz una lista de todas las fechas límite / obligaciones / pasos que aparecen aquí.
 
-export const im10 = esqueleto(
-  "Lo que se escribe una y otra vez, convertido en una plantilla que se llena sola.",
-  "Una plantilla suya, guardada.",
-);
+**Ronda 3 — Ponlo a prueba.** Pregúntale algo cuya respuesta TÚ ya sabes. Compara.
 
-export const im11 = esqueleto(
-  "Leer lo largo que nunca hay tiempo de leer, y sacar lo que hay que decidir.",
-  "El documento largo, resumido para decidir.",
-);
+### Cómo sabes que salió bien
 
-export const im12 = esqueleto(
-  "Convertirlo en una imagen que otra persona va a leer y entender.",
-  "Un gráfico propio que se puede mandar.",
-);
+La ronda 3 es la vara: si en lo que tú dominas contestó bien, las otras respuestas merecen confianza provisional — y verificación, como todo. Si contestó mal, encontraste el límite del documento o de la pregunta, y eso también es aprendizaje.
 
-export const im13 = esqueleto(
-  "Detectar la excepción: qué hay de raro en esta lista.",
-  "Una anomalía encontrada en datos propios.",
-);
+### Lo que te llevas
 
-export const im14 = esqueleto(
-  "Mapear a dónde se va la semana propia: qué se repite y cuánto cuesta.",
-  "El mapa de su propio trabajo repetitivo.",
-);
+Una respuesta útil sacada de un documento tuyo, y la costumbre de citar: "dime dónde lo dice" convierte una respuesta bonita en una respuesta comprobable.`;
 
-export const im15 = esqueleto(
-  "Elegir qué vale la pena automatizar: esfuerzo, impacto y riesgo.",
-  "Sus oportunidades, ordenadas por criterio y no por entusiasmo.",
-);
+export const im6 = `### La lista desordenada que todos tenemos
 
-export const im16 = esqueleto(
-  "Decidir qué NO se automatiza. El criterio es el compañero de la sesión 3.",
-  "Una lista corta de cosas que se dejan como están, con el motivo escrito.",
-);
+Todos tenemos una: nombres pegados de un correo, pendientes anotados en tres formatos distintos, un pedazo de Excel que se pegó mal. Hoy la conviertes en una tabla con la que se puede trabajar. Trae la tuya. **Sin datos de cliente ni de tarjeta** — si tu lista los tiene, cámbiales el nombre antes de empezar (en la sesión 3 aprendiste cómo).
 
-export const im17 = esqueleto(
-  "De un prompt que se retipea a algo guardado, con nombre, que el equipo puede usar.",
-  "Una cosa guardada y nombrada que otra persona puede correr.",
-);
+### El ejercicio
 
-export const im18 = esqueleto(
-  "Cuando tiene que tocar un sistema real: qué cuesta y quién lo tiene que aprobar.",
-  "Saber a quién se le pide permiso antes de construir nada.",
-);
+Pega tu lista tal cual está — no la limpies antes, ése es el punto — y pide la tabla:
 
-export const im19 = esqueleto(
-  "Sesión de construcción: cada persona termina una cosa.",
-  "Una cosa suya, funcionando.",
-);
+> Convierte esto en una tabla con columnas [las que necesites]. Si algún dato no aparece, deja la celda vacía y márcala.
 
-export const im20 = esqueleto(
-  "El mapa del área propia: tres oportunidades, ordenadas, con lo que necesita cada una.",
-  "El mapa. Es el resultado real del programa.",
-);
+Mira lo que devuelve. Casi siempre hace falta una segunda vuelta:
+
+> La columna [X] quedó mezclada con [Y]. Sepáralas. Y ordena por [criterio].
+
+**La instrucción clave de hoy es "deja la celda vacía y márcala".** Sin ella, la herramienta tiende a rellenar huecos con cosas que suenan razonables — y una tabla con datos inventados es peor que una lista desordenada.
+
+### Cómo sabes que salió bien
+
+Cuenta las filas de tu lista original. Cuenta las de la tabla. ¿Coinciden? Elige tres filas al azar y compáralas dato por dato con el original. Si las tres están bien, la tabla pasa. Si una está mal, se lo dices y lo corrige — y vuelves a muestrear.
+
+### Lo que te llevas
+
+Tu propia lista, ordenada y comprobada — y el hábito de contar filas antes de confiar en una tabla que no armaste tú.`;
+
+export const im7 = `### El reporte que rehaces cada semana
+
+Hay un reporte —o un resumen, o un correo de estado— que armas a mano cada semana con los mismos pasos. Hoy lo haces una vez más, pero acompañado, y midiendo cuánto tiempo te toma de verdad.
+
+### Cómo corre la sesión
+
+**Primero, cinco minutos sin herramienta:** escribe los pasos de tu reporte como receta. De dónde sacas cada dato, qué calculas, qué formato lleva, a quién le llega. Esa receta vale más que el reporte: es la primera vez que tu proceso está escrito.
+
+**Después, la herramienta entra en dos partes:**
+
+> Éste es el formato de mi reporte semanal: [pega uno viejo, sin datos sensibles]. Éstos son los datos de esta semana: [pega los datos]. Ármalo con el mismo formato.
+
+Lee el resultado con lupa la primera vez. Ajusta lo que salió distinto:
+
+> El apartado [X] va siempre en ese orden. Los totales van al final. Vuelve a armarlo.
+
+### Cómo sabes que salió bien
+
+Los números del reporte armado tienen que ser LOS TUYOS: la herramienta ordena y redacta, pero cada cifra vino de lo que tú pegaste. Verifica los totales a mano una vez. Si cuadran, tienes el molde.
+
+### Lo que te llevas
+
+El reporte de esta semana hecho, tu receta escrita, y un dato que nadie tenía: cuántos minutos cuesta a mano. Ese número vuelve en la sesión 14.`;
+
+export const im8 = `### Dónde se equivoca y cómo lo agarras
+
+Ésta es la sesión más importante del bloque. En la sesión 1 te dijimos que el tono de seguridad no es señal de nada. Hoy lo compruebas con tus propias manos: vas a hacer que se equivoque, verlo, y armar tu manera de agarrarlo.
+
+### Primera parte — provócalo
+
+Pídele algo donde el error sea fácil de ver:
+
+> ¿Cuántas letras tiene la palabra [una palabra larga]? Lístalas una por una.
+
+> Suma esta columna de números: [pega quince números]. Dame el total y muéstrame la cuenta.
+
+> ¿Qué dice el documento que te pegué sobre [algo que NO está en el documento]?
+
+La tercera es la trampa importante: cuando le preguntas por algo que no está, la versión mala de la herramienta lo inventa. Mira si te lo inventa o si te dice "eso no aparece".
+
+### Segunda parte — arma tu comprobación
+
+Para cada tipo de trabajo que hiciste en las sesiones 5, 6 y 7, escribe UNA comprobación que puedas correr siempre:
+
+- **Documento** → "cítame la parte exacta donde lo dice" y ve a mirarla.
+- **Tabla** → contar filas + muestrear tres al azar.
+- **Reporte** → verificar los totales a mano una vez.
+
+### La regla que te llevas
+
+**Confiar sin verificar no es usar la herramienta: es firmarle un cheque en blanco.** La verificación no es desconfianza — es exactamente lo que haces con un compañero nuevo las primeras semanas. Con el tiempo sabes qué le puedes delegar con los ojos cerrados y qué revisas siempre. Aquí es igual, con una diferencia: la herramienta nunca se ofende.`;
+
+// ── BLOQUE 3 · Juntar, moldear, mirar ──────────────────────────────────────
+
+export const im9 = `### La respuesta que hoy exige dos pantallas
+
+Hay preguntas que nadie contesta rápido porque la información vive partida: la mitad en un sistema, la mitad en otro. Hoy juntas las dos mitades en un solo lugar y respondes una de esas preguntas. **Exporta o copia sólo lo que la regla de la sesión 3 permite** — si el cruce necesita datos de cliente, usa nombres cambiados o cantidades sin nombres.
+
+### El ejercicio
+
+Elige una pregunta tuya que hoy exija abrir dos pantallas. Copia de cada sistema el pedazo relevante:
+
+> Éstos son mis datos de [sistema A]: [pega]. Éstos los de [sistema B]: [pega]. Crúzalos por [el campo común] y dime [tu pregunta].
+
+Casi siempre el campo común viene sucio — nombres escritos distinto, códigos con y sin guiones. Ahí va la segunda instrucción:
+
+> Estos dos campos son la misma cosa escrita distinto: [ejemplos]. Únelos de todas formas y márcame los que no pudiste emparejar.
+
+**"Márcame los que no pudiste emparejar" es la frase de hoy.** Los no-emparejados son donde viven los errores.
+
+### Cómo sabes que salió bien
+
+Toma dos casos emparejados y verifícalos a mano contra los dos sistemas. Y mira la lista de no-emparejados: ¿tiene sentido que hayan quedado fuera? Si te empareja el 100% de golpe con datos sucios, sospecha.
+
+### Lo que te llevas
+
+Una respuesta que antes costaba dos pantallas y media hora — y la técnica del campo común sucio, que es el 80% de todo cruce real.`;
+
+export const im10 = `### Lo que escribes una y otra vez
+
+Hay textos que redactas casi iguales todas las semanas: el correo de seguimiento, la respuesta al proveedor, el aviso interno. Hoy conviertes el más frecuente en una plantilla que se llena sola.
+
+### El ejercicio
+
+Busca tres versiones viejas del mismo texto (tres correos de seguimiento distintos, por ejemplo). Pégalas:
+
+> Estos tres textos son la misma cosa que escribo cada vez. Sácame la plantilla: qué parte es fija y qué partes cambian. Marca las que cambian como [CAMPO].
+
+Revisa la plantilla que te devuelve. Tú sabes qué es fijo de verdad — corrígela. Después pruébala:
+
+> Usa la plantilla con estos datos: [los del caso de esta semana].
+
+Y la prueba de fuego: úsala para un caso RARO, uno que no encaja del todo. Ahí ves si la plantilla aguanta o si le falta un campo.
+
+### Cómo sabes que salió bien
+
+El texto del caso de esta semana salió listo para mandar, con tus palabras y no las de un robot. Si suena a robot, se lo dices: "así no escribo yo — más corto, sin tanta ceremonia" — y la plantilla mejora.
+
+### Lo que te llevas
+
+Tu plantilla, guardada donde la encuentres la próxima vez. En la sesión 17 vas a aprender a dejarla guardada DENTRO de la herramienta para no volver a pegarla.`;
+
+export const im11 = `### Lo largo que nunca lees
+
+A todos nos llega material que habría que leer y no se lee: el contrato de veinte páginas, la norma nueva, el informe del trimestre. Hoy tomas el que tengas pendiente y sales con lo que hay que decidir.
+
+### El ejercicio
+
+Sube o pega el documento. La primera pasada es panorámica:
+
+> Resume esto en una página. Después dime: ¿qué me obliga a hacer algo? ¿qué fechas tiene? ¿qué es distinto a como se hacía antes?
+
+La segunda pasada es la que importa — el interrogatorio:
+
+> Sobre el punto [X]: cítame la parte exacta del documento donde lo dice.
+
+> ¿Hay algo en este documento que contradiga esto: [pega tu procedimiento actual / lo que tú creías]?
+
+**Un resumen sin citas es una opinión.** La diferencia entre "me lo resumió" y "lo puedo usar en una discusión" son las citas — pídelas siempre.
+
+### Cómo sabes que salió bien
+
+Ve a dos de las citas y compruébalas contra el documento. Si las dos existen y dicen lo que el resumen dice que dicen, el resumen es utilizable. Si una no aparece, ya sabes qué hacer: ronda de la sesión 8.
+
+### Lo que te llevas
+
+El documento largo convertido en media página de decisiones con citas — y quince minutos de lectura en vez de dos horas.`;
+
+export const im12 = `### Convertirlo en una imagen
+
+Un número en una tabla convence a quien ya estaba convencido. Una imagen clara le llega a todos. Hoy tomas datos tuyos —los de la tabla de la sesión 6 o el cruce de la 9 sirven— y sales con un gráfico que puedes mandar.
+
+### El ejercicio
+
+> Con estos datos: [pega tu tabla], dime qué tres gráficos contarían mejor la historia, y por qué.
+
+Elige uno. Pide el gráfico. Y ahora viene la parte donde la mayoría se conforma y tú no:
+
+> El título no dice nada: ponle uno que diga la conclusión, no el tema. Ordena las barras de mayor a menor. Quita [lo que sobre].
+
+**Un buen título de gráfico es una oración con verbo.** "Ventas por mes" es un tema; "Las ventas caen desde marzo" es una conclusión. La persona que lo recibe lee el título y ya entendió.
+
+### Cómo sabes que salió bien
+
+Enséñale el gráfico a la persona de al lado cinco segundos y pregúntale qué entendió. Si dice la conclusión, está terminado. Si describe los ejes, le falta título.
+
+Y una verificación que no se salta: los números del gráfico son los de TU tabla. Elige la barra más alta y compárala con el dato original.
+
+### Lo que te llevas
+
+Un gráfico tuyo, con título con verbo, que se puede mandar tal cual.`;
+
+// ── BLOQUE 4 · Criterio: qué sí, qué no, cuánto vale ───────────────────────
+
+export const im13 = `### Qué hay de raro en esta lista
+
+Hasta ahora le pediste a la herramienta que haga cosas. Hoy le pides algo distinto: que MIRE. Detectar lo raro en un montón de datos es de las cosas que mejor hace — y de las que más verificación piden, porque "raro" es una opinión.
+
+### El ejercicio
+
+Toma una lista tuya con historia: gastos del mes, tiempos de entrega, pedidos, lo que tengas (regla de la sesión 3, como siempre).
+
+> Éstos son [qué son] de [periodo]: [pega]. ¿Qué patrones ves? ¿Qué se sale de lo normal? Para cada cosa rara que encuentres, dime en qué fila está y por qué te parece rara.
+
+La segunda vuelta es donde está el oficio — darle el contexto que no tiene:
+
+> Lo de [X] es normal porque [motivo]. Sabiendo eso, ¿qué más ves?
+
+**La herramienta ve patrones; tú sabes cuáles importan.** Sin tu contexto encuentra rarezas triviales; con tu contexto encuentra las que valen dinero.
+
+### Cómo sabes que salió bien
+
+De las anomalías que te señaló, al menos una te hizo decir "a ver, déjame ver eso". Ve a verla al sistema de verdad. Si resultó real, acabas de encontrar en veinte minutos lo que nadie tenía tiempo de buscar. Si resultó explicable, también sirvió: ahora la explicación está escrita.
+
+### Lo que te llevas
+
+Una anomalía real encontrada en datos tuyos, verificada contra la fuente — y la pregunta "¿qué ves de raro aquí?" incorporada a tu repertorio.`;
+
+export const im14 = `### A dónde se va tu semana
+
+Ésta es la sesión bisagra del programa: deja de mirar tareas sueltas y mira tu semana entera. El resultado es un mapa de qué se repite, cuánto cuesta y qué se podría delegar — a la herramienta o a nadie.
+
+### El ejercicio
+
+Primera parte, sin herramienta, quince minutos: lista todo lo que hiciste la semana pasada que ya habías hecho antes. Al lado de cada cosa: cuántas veces al mes, cuántos minutos cada vez. No lo pienses demasiado — mejor completo que exacto. (El reporte de la sesión 7 ya tiene su número medido: úsalo.)
+
+Segunda parte, con herramienta:
+
+> Ésta es mi lista de tareas repetitivas, con frecuencia y duración: [pega]. Calcula horas al mes de cada una y ordénalas de más a menos tiempo total. Después agrúpalas: ¿cuáles son del mismo tipo de trabajo?
+
+Mira el número de arriba de la lista. Casi siempre sorprende.
+
+### La conversación que sigue
+
+> De las cinco de arriba, ¿cuáles se parecen a cosas que ya hice contigo en estas semanas?
+
+La respuesta es tu borrador de candidatas para la sesión 15. Todavía no decidas nada — hoy sólo se mide.
+
+### Lo que te llevas
+
+El mapa de tu propio trabajo repetitivo, con horas al mes por tarea. Es la materia prima de las dos sesiones que vienen — y probablemente el documento más útil que has escrito sobre tu puesto.`;
+
+export const im15 = `### Qué vale la pena automatizar
+
+Tienes el mapa de la sesión 14. Hoy decides — con criterio y no con entusiasmo — cuáles de esas tareas valen el esfuerzo. La trampa habitual es elegir la más molesta; la correcta es elegir con tres preguntas.
+
+### Las tres preguntas
+
+Para cada candidata del mapa:
+
+1. **¿Cuánto ahorra?** Horas al mes — ya lo mediste.
+2. **¿Qué tan igual es cada vez?** Lo idéntico se automatiza fácil; lo que "depende" cuesta el triple.
+3. **¿Qué pasa si sale mal una vez?** Un borrador interno que nadie revisó: molestia. Un dato mal mandado a un cliente: problema.
+
+### El ejercicio
+
+> Éstas son mis tareas con horas al mes: [pega el mapa]. Para cada una te digo qué tan igual es cada vez (1-5) y qué tan grave es un error (1-5): [tus notas]. Ordénalas: primero las de mucho ahorro, muy repetitivas y de error barato.
+
+Discute el orden con la herramienta y contigo. Muévelo si tu contexto manda otra cosa — el criterio es tuyo; la cuenta es de ella.
+
+### Cómo sabes que salió bien
+
+Tu top 3 final cumple: ahorra horas de verdad, es casi igual cada vez, y un error se detecta antes de que duela. Si algo del top 3 falla la tercera pregunta, baja de lugar aunque duela.
+
+### Lo que te llevas
+
+Tus oportunidades ordenadas por criterio y no por entusiasmo — el insumo directo de tu proyecto del bloque 5.`;
+
+export const im16 = `### Qué NO automatizar
+
+La sesión más corta de leer y la más importante de respetar. Ayer elegiste qué sí; hoy escribes qué no — y por qué. El criterio es el compañero de la sesión 3: hay cosas que no se automatizan por datos, otras por riesgo, otras porque el juicio es el trabajo.
+
+### Las cuatro razones para dejar algo como está
+
+1. **Toca datos que no pueden salir** — cliente, tarjeta, nómina. La regla de la sesión 3 no tiene excepciones por conveniencia.
+2. **El error es caro y silencioso** — si sale mal, nadie lo nota hasta que dolió. Lo que no tiene verificación natural, no se suelta.
+3. **El juicio ES la tarea** — decidir a quién contratar, qué cliente priorizar, cómo dar una mala noticia. La herramienta puede preparar material; la decisión no se delega.
+4. **Pasa tan poco que no paga** — automatizar lo trimestral suele costar más que hacerlo.
+
+### El ejercicio
+
+> Éstas son las tareas de mi mapa que NO pienso automatizar: [lista]. Para cada una te digo el motivo. Hazme de abogado del diablo: ¿en cuál me estoy equivocando, en un sentido o en el otro?
+
+La discusión vale más que la lista. A veces te convence de que una era automatizable con salvaguardas; a veces te confirma que tu instinto era correcto. Las dos cosas son criterio ganado.
+
+### Lo que te llevas
+
+Una lista corta de cosas que se quedan como están, con el motivo escrito al lado. Cuando alguien pregunte "¿y por qué esto no?", la respuesta ya existe — y es tuya.`;
+
+// ── BLOQUE 5 · De uso propio a cosa del equipo ─────────────────────────────
+
+export const im17 = `### De un prompt que retipeas a algo guardado
+
+Todo lo que armaste hasta aquí vive en conversaciones sueltas: la plantilla de la 10, la receta de la 7, la comprobación de la 8. Hoy lo conviertes en cosas guardadas, con nombre, que tú — y pronto tu equipo — pueden volver a usar sin reconstruirlas.
+
+### El ejercicio
+
+Elige tu mejor pieza de las semanas anteriores. Primero, endurécela:
+
+> Éste es un prompt que uso mucho: [pega]. Reescríbelo para que cualquiera de mi equipo lo use: separa las instrucciones fijas de los datos que cambian cada vez, y marca los datos como [CAMPO].
+
+Después, guárdala según lo que tu herramienta ofrezca (instrucciones fijas, proyectos, o un simple documento de equipo con los prompts numerados — la forma importa menos que el hábito). Ponle nombre de verdad: "Reporte semanal de [área] v1", no "prompt2".
+
+Y la prueba definitiva: **pásasela a un compañero sin explicarle nada.** Si le funcionó a la primera, está bien guardada. Si te tuvo que preguntar, lo que te preguntó es lo que le falta al texto.
+
+### Cómo sabes que salió bien
+
+Otra persona corrió tu pieza y obtuvo un resultado del mismo nivel que el tuyo. Ésa es la diferencia entre "yo sé usar la herramienta" y "mi equipo tiene una capacidad nueva".
+
+### Lo que te llevas
+
+Una cosa guardada y nombrada que otra persona puede correr — tu primera pieza de infraestructura, aunque todavía no se llame así.`;
+
+export const im18 = `### Cuando toca un sistema real
+
+Hasta aquí todo pasó en la conversación: pegas, trabajas, copias de vuelta. El siguiente nivel — que la herramienta lea o escriba DIRECTO en un sistema de la empresa — existe, y no es tuyo para activarlo. Hoy aprendes qué implica y a quién se le pide.
+
+### La diferencia que importa
+
+Cuando pegas datos en la conversación, tú eres el filtro: elegiste qué entra y qué no. Cuando una herramienta se conecta a un sistema, el filtro tiene que estar construido — quién puede pedirle qué, qué puede ver, qué puede tocar, y qué queda registrado. Eso es trabajo de sistemas y seguridad, y es TODO el trabajo.
+
+### El ejercicio
+
+Toma tu candidata #1 de la sesión 15 y descríbela como pedido formal:
+
+> Quiero proponer esta automatización: [descríbela]. Ayúdame a escribir el pedido: qué sistema toca, si lee o escribe, qué datos ve, qué puede salir mal, y qué necesitaría revisar el equipo de sistemas antes de decir que sí.
+
+Lo que sale es un documento de una página. Compáralo con lo que hubieras mandado antes del programa ("¿me pueden conectar el chat al inventario?") y nota la diferencia.
+
+### La regla
+
+**Proponer es de todos; conectar es de sistemas.** Un pedido bien escrito con riesgos a la vista se aprueba rápido. Un "conéctame esto" sin más, se rechaza — y con razón.
+
+### Lo que te llevas
+
+Tu candidata #1 escrita como pedido serio, lista para la conversación real con quien aprueba — y saber exactamente a quién se le pide permiso antes de construir nada.`;
+
+export const im19 = `### Sesión de construcción
+
+Hoy no hay tema nuevo. Hoy se termina algo. Cada persona llega con su candidata elegida — la plantilla que faltaba endurecer, el reporte por armar de punta a punta, el cruce que quedó a medias — y sale con ella funcionando.
+
+### Cómo corre la sesión
+
+Los primeros cinco minutos, escribe en una línea qué vas a tener funcionando al final de la hora. En una línea: si no cabe, es más de una cosa — elige una.
+
+El resto es taller. Trabajas en lo tuyo; el facilitador rota. Las reglas de siempre aplican solas a esta altura: material propio, sin datos vedados, verificación antes de dar por buena cualquier salida.
+
+**Si te trabas, el protocolo es el del programa entero:**
+
+1. Dile a la herramienta QUÉ intentabas y QUÉ salió — pídele el diagnóstico antes que la solución.
+2. Si no destraba, pregunta al de al lado: ya hay veinte personas en este edificio que usan esto.
+3. Si tampoco, el facilitador — para eso rota.
+
+### Cómo sabes que salió bien
+
+La línea que escribiste al principio, cumplida. Corriste tu pieza de punta a punta con datos de esta semana y el resultado es usable sin retoques — o con los retoques anotados para la v2.
+
+### Lo que te llevas
+
+Una cosa tuya, funcionando, construida por ti. No un ejercicio: una pieza que el lunes trabaja contigo.`;
+
+export const im20 = `### El mapa de tu área
+
+Última sesión. Diez semanas atrás escribiste tu primera cosa en una caja de texto; hoy escribes el documento que resume lo que viste desde adentro: las tres mejores oportunidades de tu área, ordenadas, con lo que necesita cada una. Éste es el resultado real del programa.
+
+### El ejercicio
+
+Junta tus piezas: el mapa de horas (14), la lista ordenada (15), la lista de lo que no (16), el pedido formal (18). Con eso:
+
+> Con todo esto: [pega tus piezas], ayúdame a escribir el mapa de oportunidades de mi área. Para cada una de las tres mejores: qué es, cuántas horas al mes ahorra, qué necesita (herramienta, permiso, ayuda de sistemas), y qué riesgo hay que cuidar. Una página, para alguien que decide rápido.
+
+Revísalo como lo que eres ahora: alguien que sabe verificar. ¿Las horas son las medidas o las deseadas? ¿Los riesgos son los reales? ¿Lo que pide sistemas está dicho claro?
+
+### Qué pasa con el mapa
+
+Se presenta. Los mapas de todos los grupos suben juntos y de ahí sale el plan de la siguiente etapa de la empresa con estas herramientas. Tu mapa compite por recursos reales: escríbelo como algo que quieres que gane.
+
+### Lo que te llevas del programa
+
+No es la herramienta — la herramienta va a cambiar de nombre y de precio veinte veces. Es el criterio: sabes pedirle, sabes verificarla, sabes qué delegarle y qué jamás, y sabes escribir la propuesta para que el siguiente paso exista. Eso ya no se te quita.`;
