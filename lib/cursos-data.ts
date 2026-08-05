@@ -171,8 +171,19 @@ import {
   c6leccion1, c6leccion2, c6leccion3, c6leccion4,
   c6leccion5, c6leccion6, c6leccion7,
 } from "./curso6-content";
+import {
+  im1, im2, im3, im4, im5, im6, im7, im8, im9, im10,
+  im11, im12, im13, im14, im15, im16, im17, im18, im19, im20,
+  immersionBloque1Quiz,
+} from "./immersion-content";
 
-export type Nivel = "intro" | "básico" | "intermedio" | "avanzado" | "pro";
+export type Nivel =
+  | "intro"
+  | "básico"
+  | "intermedio"
+  | "avanzado"
+  | "pro"
+  | "immersion";
 
 export const nivelConfig: Record<
   Nivel,
@@ -183,6 +194,7 @@ export const nivelConfig: Record<
   intermedio: { label: "Intermedio", color: "#7C3AED", bg: "#F5F3FF" },
   avanzado: { label: "Avanzado", color: "#EA580C", bg: "#FFF7ED" },
   pro: { label: "Pro", color: "#CA8A04", bg: "#FEFCE8" },
+  immersion: { label: "AI Immersion Talks", color: "#9D174D", bg: "#FDF2F8" },
 };
 
 export interface QuizQuestion {
@@ -570,6 +582,40 @@ export const cursos: Curso[] = [
     { id: "ag-6", titulo: "Costos y optimización de latencia", descripcion: "Optimizar rendimiento y costos.", duracion: "25 min", contenido: c15l6, tieneVideo: true, tieneQuiz: false },
     { id: "ag-7", titulo: "Seguridad: prompt injection y jailbreaks", descripcion: "Proteger tus apps de IA.", duracion: "25 min", contenido: c15l7, tieneVideo: true, tieneQuiz: false },
     { id: "ag-8", titulo: "Quiz: Agentes de IA", descripcion: "Evalúa lo aprendido.", duracion: "15 min", contenido: c15l8, tieneVideo: false, tieneQuiz: true, quizQuestions: curso15Quiz },
+  ] },
+
+  // AI Immersion Talks — 5 bloques, 20 sesiones, 2 por semana durante 10 semanas.
+  // No es un peldaño más de la escalera de niveles: es otro eje. Los cinco niveles
+  // existentes enseñan a usar IA; esto entrena a ver la oportunidad en el trabajo propio.
+  { id: "immersion-bloque-1", titulo: "Bloque 1 — Empezar de cero", descripcion: "Para alguien que nunca escribió un prompt y cree que esto no es para él.", nivel: "immersion", duracion: "3 h 20 min", lecciones: [
+    { id: "imm-1", titulo: "Sesión 1 — Escribes, responde", descripcion: "Sin vocabulario y sin teoría: escribes algo tuyo y lees la respuesta.", duracion: "50 min", contenido: im1, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-2", titulo: "Sesión 2 — Pedir para que sirva", descripcion: "Contexto, un ejemplo y el formato: de una respuesta floja a una que se usa tal cual.", duracion: "50 min", contenido: im2, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-3", titulo: "Sesión 3 — Reglas del camino: privacidad, datos de cliente y datos de tarjeta", descripcion: "Sesión obligatoria. Qué no puede salir nunca, y cómo pedir la misma ayuda sin entregar el dato.", duracion: "50 min", contenido: im3, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-4", titulo: "Sesión 4 — Cinco cosas para mañana", descripcion: "Cinco usos que ya puedes hacer, y la evaluación del bloque.", duracion: "50 min", contenido: im4, tieneVideo: false, tieneQuiz: true, quizQuestions: immersionBloque1Quiz },
+  ] },
+  { id: "immersion-bloque-2", titulo: "Bloque 2 — Sobre tu propio trabajo", descripcion: "Dejar los ejemplos y trabajar sobre el material propio, sabiendo verificarlo.", nivel: "immersion", duracion: "3 h 20 min", lecciones: [
+    { id: "imm-5", titulo: "Sesión 5 — Trae tu documento", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im5, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-6", titulo: "Sesión 6 — De lista desordenada a tabla limpia", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im6, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-7", titulo: "Sesión 7 — El reporte que rehaces cada semana", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im7, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-8", titulo: "Sesión 8 — Dónde se equivoca y cómo lo agarras", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im8, tieneVideo: false, tieneQuiz: false },
+  ] },
+  { id: "immersion-bloque-3", titulo: "Bloque 3 — Dos lugares, una respuesta", descripcion: "Combinar fuentes y producir algo que otra persona va a leer.", nivel: "immersion", duracion: "3 h 20 min", lecciones: [
+    { id: "imm-9", titulo: "Sesión 9 — Información partida entre dos sistemas", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im9, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-10", titulo: "Sesión 10 — Una plantilla que se llena sola", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im10, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-11", titulo: "Sesión 11 — Leer lo largo que nunca lees", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im11, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-12", titulo: "Sesión 12 — Convertirlo en una imagen", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im12, tieneVideo: false, tieneQuiz: false },
+  ] },
+  { id: "immersion-bloque-4", titulo: "Bloque 4 — Verlo", descripcion: "El bloque que abre los ojos: nombrar y jerarquizar las oportunidades del área propia.", nivel: "immersion", duracion: "3 h 20 min", lecciones: [
+    { id: "imm-13", titulo: "Sesión 13 — Detectar la excepción", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im13, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-14", titulo: "Sesión 14 — A dónde se va tu semana", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im14, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-15", titulo: "Sesión 15 — Qué vale la pena automatizar", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im15, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-16", titulo: "Sesión 16 — Qué NO automatizar", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im16, tieneVideo: false, tieneQuiz: false },
+  ] },
+  { id: "immersion-bloque-5", titulo: "Bloque 5 — Que quede", descripcion: "Cada persona termina una cosa y se lleva el mapa de su área.", nivel: "immersion", duracion: "3 h 20 min", lecciones: [
+    { id: "imm-17", titulo: "Sesión 17 — De un prompt suelto a algo guardado", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im17, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-18", titulo: "Sesión 18 — Cuando toca un sistema real", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im18, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-19", titulo: "Sesión 19 — Sesión de construcción", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im19, tieneVideo: false, tieneQuiz: false },
+    { id: "imm-20", titulo: "Sesión 20 — El mapa de tu área", descripcion: "Esqueleto: título, orden y objetivo.", duracion: "50 min", contenido: im20, tieneVideo: false, tieneQuiz: false },
   ] },
 ];
 
